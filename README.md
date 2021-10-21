@@ -1,0 +1,2 @@
+# RAK-nRF52-RUI
+RUI V3 BSP for RAK4630/RAK4631 modules
