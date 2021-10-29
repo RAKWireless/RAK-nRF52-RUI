@@ -13,8 +13,9 @@ class cusPayload
      * 		api.ble.beacon.custom.payload.set(cus_adv_data[], cus_adv_len)
      * @param	cus_adv_data[]	set the advertising payload (MAX 31 bytes)
      * @param	cus_adv_len	the number of bytes to advertising data
-     *
-     * @return	TRUE for success SET,FALSE for SET fail(Type: bool)
+     * @return	bool
+     * @retval	TRUE for success
+     * @retval	FALSE for failure
      */
     bool set(uint8_t cus_adv_data[], uint8_t cus_adv_len);
   
@@ -47,7 +48,9 @@ app and deployment use case.
        * @par		Syntax
        *		api.ble.beacon.ibeacon.uuid.set(beaconUuid)
        * @param		beaconUuid	define 16 bytes
-       * @return	TRUE for success SET,FALSE for SET fail(Type: bool)
+       * @return	bool
+	     * @retval	TRUE for success
+	     * @retval	FALSE for failure
        */
       bool set(uint8_t beaconUuid[]);
     };
@@ -63,7 +66,9 @@ the UUID.
        * @par		Syntax
        *		api.ble.beacon.ibeacon.major.set(major_value)
        * @param		major_value	set major (define 2 bytes)
-       * @return	TRUE for success SET,FALSE for SET fail(Type: bool)
+       * @return	bool
+	     * @retval	TRUE for success
+	     * @retval	FALSE for failure
        */
       bool set(uint16_t major_value);
     };
@@ -78,7 +83,9 @@ application developer
        * @par		Syntax
        *		api.ble.beacon.ibeacon.minor.set(minor_value)
        * @param		minor_value	set minor (define 2 bytes)
-       * @return	TRUE for success SET,FALSE for SET fail(Type: bool)	
+       * @return	bool
+	     * @retval	TRUE for success
+	     * @retval	FALSE for failure
        */
       bool set(uint16_t minor_value);
     };
@@ -92,7 +99,9 @@ application developer
        * @par		Syntax
        *		api.ble.beacon.ibeacon.power.set(ibeacon_power)
        * @param		ibeacon_power	display measured power value (RSSI)
-       * @return	TRUE for success SET,FALSE for SET fail(Type: bool)
+       * @return	bool
+	     * @retval	TRUE for success
+	     * @retval	FALSE for failure
        */
       bool set(int8_t ibeacon_power);
     };

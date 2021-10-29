@@ -7063,7 +7063,7 @@ char *strsignal (int __signo);
 
 
 
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 67
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 
 
 
@@ -36723,7 +36723,7 @@ _Static_assert(27 < 252, "unspecified message");
 
 static void link_init(nrf_ble_gatt_link_t * p_link)
 {
-    p_link->att_mtu_desired = 67;
+    p_link->att_mtu_desired = 247;
     p_link->att_mtu_effective = 23;
     p_link->att_mtu_exchange_pending = 
 # 64 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/nrf_ble_gatt/nrf_ble_gatt.c" 3 4
@@ -37035,8 +37035,8 @@ ret_code_t nrf_ble_gatt_init(nrf_ble_gatt_t * p_gatt, nrf_ble_gatt_evt_handler_t
    ))) { return ((0x0) + 14); } } while (0);
 
     p_gatt->evt_handler = evt_handler;
-    p_gatt->att_mtu_desired_periph = 67;
-    p_gatt->att_mtu_desired_central = 67;
+    p_gatt->att_mtu_desired_periph = 247;
+    p_gatt->att_mtu_desired_central = 247;
     p_gatt->data_length = 27;
 
     for (uint32_t i = 0; i < (1 + 5); i++)
@@ -37056,7 +37056,7 @@ ret_code_t nrf_ble_gatt_att_mtu_periph_set(nrf_ble_gatt_t * p_gatt, uint16_t des
 # 389 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/nrf_ble_gatt/nrf_ble_gatt.c"
    ))) { return ((0x0) + 14); } } while (0);
 
-    if ((desired_mtu < 23) || (desired_mtu > 67))
+    if ((desired_mtu < 23) || (desired_mtu > 247))
     {
         return ((0x0) + 7);
     }
@@ -37074,7 +37074,7 @@ ret_code_t nrf_ble_gatt_att_mtu_central_set(nrf_ble_gatt_t * p_gatt, uint16_t de
 # 403 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/nrf_ble_gatt/nrf_ble_gatt.c"
    ))) { return ((0x0) + 14); } } while (0);
 
-    if ((desired_mtu < 23) || (desired_mtu > 67))
+    if ((desired_mtu < 23) || (desired_mtu > 247))
     {
         return ((0x0) + 7);
     }

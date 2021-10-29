@@ -66,7 +66,7 @@ class HardwareSerial : public Stream
     }
 
     void begin(uint32_t baud, uint8_t config, UART_MODE mode = AT_MODE); 
-    int32_t password(string new_passwd);
+    bool password(string new_passwd);
     size_t write(uint8_t n) {return write(&n, 1);}
 
     /**@addtogroup	Serial
@@ -157,7 +157,9 @@ class HardwareSerial : public Stream
      * @param	new_passwd	an char array to set for unlock the device
      * @param	len		the length your password set
      *
-     * @return	SERIAL_WLOCK_STATE
+     * @return	bool
+     * @retval	TRUE for success
+     * @retval	FALSE for failure
      * @par	Example
      * @verbatim
      void setup() {
@@ -173,7 +175,7 @@ class HardwareSerial : public Stream
      }
      @endverbatim
      */
-    int32_t password(char *new_passwd, size_t len);
+    bool password(char *new_passwd, size_t len);
 
 
     /**@par	Description

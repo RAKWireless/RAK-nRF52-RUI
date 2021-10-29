@@ -7063,7 +7063,7 @@ char *strsignal (int __signo);
 
 
 
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 67
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 
 
 
@@ -37554,7 +37554,7 @@ ret_code_t nrf_sdh_ble_default_cfg_set(uint8_t conn_cfg_tag, uint32_t * p_ram_st
 
     memset(&ble_cfg, 0x00, sizeof(ble_cfg));
     ble_cfg.conn_cfg.conn_cfg_tag = conn_cfg_tag;
-    ble_cfg.conn_cfg.params.gatt_conn_cfg.att_mtu = 67;
+    ble_cfg.conn_cfg.params.gatt_conn_cfg.att_mtu = 247;
 
     ret_code = sd_ble_cfg_set(BLE_CONN_CFG_GATT, &ble_cfg, *p_ram_start);
     if (ret_code != ((0x0) + 0))
@@ -37696,7 +37696,7 @@ static void nrf_sdh_ble_evts_poll(void * p_context)
 # 281 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.c" 3 4
                                      ) 
 # 281 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.c"
-                                     + ((67) - 1) / 4 * sizeof(ble_gattc_service_t) )];
+                                     + ((247) - 1) / 4 * sizeof(ble_gattc_service_t) )];
 
 
         ble_evt_t * p_ble_evt;

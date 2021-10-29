@@ -4,6 +4,9 @@ long delayTime = 1000;
 void setup()
 {
     Serial.begin(115200);
+    delay(5000);
+    Serial.println("RAKwireless Arduino Time Example");
+    Serial.println("------------------------------------------------------");
 }
 
 void loop()
@@ -27,7 +30,6 @@ void loop()
     Serial.println(millis());
     Serial.print("micros(): ");
     Serial.println(micros());
-
 
     Serial.println("");
 

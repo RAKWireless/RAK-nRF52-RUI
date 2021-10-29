@@ -84,6 +84,10 @@
 	 * @ingroup	System
 	 */
 
+		/**@defgroup	File_System_Data_Type	File System Data Type
+		 * @ingroup		File_System
+		 */
+
 	/**@defgroup	Powersave	Powersave
 	 * @ingroup	System
 	 */

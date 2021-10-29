@@ -24,7 +24,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+CLASS?          | --                 | AT+CLASS: get or set the device class                             | OK                 |
+ * | AT+CLASS?          | --                 | AT+CLASS: get or set the device class (A = class A, B = class B, C = class C)                             | OK                 |
  * | AT+CLASS=?         | --                 | A, B or C                                                         | OK                 |
  * | AT+CLASS=\<Input\> | A, B or C          | --                                                                | OK / AT_PARAM_ERROR|
  * | Example<br>AT+CLASS=?| --               | A                                                                 | OK                 |
@@ -47,7 +47,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+DR?             | --                 | AT+DR: get or set the data rate<br>0-7 correspond to DR_0-DR_7    | OK                 |
+ * | AT+DR?             | --                 | AT+DR: get or set the data rate                                   | OK                 |
  * | AT+DR=?            | --                 | 0, 1, 2, 3, 4, 5, 6 or 7                                          | OK                 |
  * | AT+DR=\<Input\>    | 0, 1, 2, 3, 4, 5, 6 or 7             | --                                              | OK / AT_PARAM_ERROR|
  * | Example<br>AT+DR=? | --                 | 3                                                                 | OK                 |
@@ -81,7 +81,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+PNM?            | --                 | AT+PNM: get or set the public network mode<br>0 = off<br>1 = on   | OK                 |
+ * | AT+PNM?            | --                 | AT+PNM: get or set the public network mode (0 = off, 1 = on)      | OK                 |
  * | AT+PNM=?           | --                 | 0 or 1                                                            | OK                 |
  * | AT+PNM=\<Input\>   | 0 or 1             | --                                                                | OK / AT_PARAM_ERROR|
  * | Example<br>AT+PNM=?| --                 | 0                                                                 | OK                 |
@@ -116,7 +116,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+RX2DR?          | --                 | AT+RX2DR: get or set the RX2 window data rate<br>0-7 correspond to DR_0-DR_7       | OK                 |
+ * | AT+RX2DR?          | --                 | AT+RX2DR: get or set the RX2 window data rate                     | OK                 |
  * | AT+RX2DR=?         | --                 | 0, 1, 2, 3, 4, 5, 6 or 7                                          | OK / AT_BUSY_ERROR                 |
  * | AT+RX2DR=\<Input\>    | 0, 1, 2, 3, 4, 5, 6 or 7       | --                                                 | OK / AT_PARAM_ERROR / AT_BUSY_ERROR |
  * | Example<br>AT+RX2DR=? | --              | 6                                                                 | OK                 |
@@ -128,7 +128,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+RX2FQ?          | --                 | AT+RX2FQ: get or set the RX2 window frequency                     | OK                 |
+ * | AT+RX2FQ?          | --                 | AT+RX2FQ: get or set the RX2 window frequency (Hz)                | OK                 |
  * | AT+RX2FQ=?         | --                 | <integer>                                                         | OK / AT_BUSY_ERROR                 |
  * | AT+RX2FQ=\<Input\>    | <integer>       | --                                                                | OK / AT_PARAM_ERROR / AT_BUSY_ERROR |
  * | Example<br>AT+RX2FQ=? | --              | 869535000                                                         | OK                 |
@@ -140,11 +140,24 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+TXP?            | --                 | AT+RX2FQ: get or set the transmitting power                       | OK                 |
+ * | AT+TXP?            | --                 | AT+TXP: get or set the transmitting power                         | OK                 |
  * | AT+TXP=?           | --                 | <integer>                                                         | OK                 |
  * | AT+TXP=\<Input\>   | <integer>          | --                                                                | OK / AT_PARAM_ERROR |
  * | Example<br>AT+TXP=?| --                 | 1                                                                 | OK                 |
  * | Example<br>AT+TXP= | 4                  | --                                                                | OK                 |
+ *
+ * @subsection ATCMD_nwk_mng_13 AT+LINKCHECK: link check
+ *
+ * This command allows the user to send the link check command
+ *
+ * | Command            | Input parameter    | Return value                                                      | Return code        |
+ * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
+ * | AT+LINKCHECK?            | --                 | AT+LINKCHECK: get or set the link check setting (0 = disabled, 1 = once, 2 = everytime)                       | OK                 |
+ * | AT+LINKCHECK=?     | --                 | <0-2>                                                             | OK                 |
+ * | AT+LINKCHECK=\<Input\>   | <0-2>        | --                                                                | OK / AT_PARAM_ERROR |
+ * | Example<br>AT+LINKCHECK=?| --                 | 1                                                           | OK                 |
+ * | Example<br>AT+LINKCHECK= | 2                  | --                                                          | OK                 |
+ *
  *
  */
 

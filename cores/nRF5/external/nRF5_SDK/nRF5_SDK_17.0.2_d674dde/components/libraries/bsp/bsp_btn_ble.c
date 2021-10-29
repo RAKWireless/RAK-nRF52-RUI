@@ -33524,7 +33524,7 @@ typedef union
 
 
 
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 67
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 
 
 

@@ -1,10 +1,15 @@
 
 void setup()
 {
+   
    api.system.restoreDefault();
    //If you want to read and write data through BLE API operations, you need to set BLE Serial (Serail6) to Custom Mode
    Serial6.begin(115200, SERIAL_8N1, CUSTOM_MODE); 
    Serial.begin(115200);
+   delay(5000);
+   Serial.println("RAKwireless BLE UART Example");
+   Serial.println("------------------------------------------------------");
+
    uint8_t pairing_pin[] = "004631";
    Serial.println("Setting pairing PIN to:");
    Serial.println((char *)pairing_pin);

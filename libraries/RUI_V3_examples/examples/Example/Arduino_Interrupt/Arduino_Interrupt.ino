@@ -14,6 +14,9 @@ void blink()
 void setup()
 {
     Serial.begin(115200);
+    delay(5000);
+    Serial.println("RAKwireless Arduino Interrupt Example");
+    Serial.println("------------------------------------------------------");
     pinMode(ledPin, OUTPUT);
     pinMode(interruptPin, INPUT_PULLUP);
     attachInterrupt(interruptPin, blink, CHANGE);
@@ -25,7 +28,7 @@ void loop()
     Serial.println(millis() - startTime);
 
     //After 20sec will disable ISR for pin13
-    if(millis() - startTime >= 20*1000)
+    if (millis() - startTime >= 20 * 1000)
         detachInterrupt(13);
 
     noInterrupts();
@@ -36,5 +39,3 @@ void loop()
 
     digitalWrite(ledPin, state);
 }
-
-

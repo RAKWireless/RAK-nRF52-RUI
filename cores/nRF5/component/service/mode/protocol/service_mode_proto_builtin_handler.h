@@ -12,11 +12,12 @@ extern "C" {
 #include <stdbool.h>
 
 typedef enum SERVICE_MODE_PROTO_ATCMD_ID_ {
-/* General Commands */
+/* General Command */
     SERVICE_MODE_PROTO_ATCMD_ATTENTION = 0,   /*0*/
     SERVICE_MODE_PROTO_ATCMD_REBOOT    = 1,   /*1*/
     SERVICE_MODE_PROTO_ATCMD_ATR       = 3,   /*3*/
     SERVICE_MODE_PROTO_ATCMD_BOOT      = 4,   /*4*/
+    SERVICE_MODE_PROTO_ATCMD_SN        = 87,  /*87*/
     SERVICE_MODE_PROTO_ATCMD_BAT       = 15,  /*15*/
     SERVICE_MODE_PROTO_ATCMD_BUILDTIME = 5,   /*5*/
     SERVICE_MODE_PROTO_ATCMD_REPOINFO  = 6,   /*6*/
@@ -25,17 +26,17 @@ typedef enum SERVICE_MODE_PROTO_ATCMD_ID_ {
     SERVICE_MODE_PROTO_ATCMD_APIVER    = 9,   /*9*/
     SERVICE_MODE_PROTO_ATCMD_HWMODEL   = 13,  /*13*/
     SERVICE_MODE_PROTO_ATCMD_HWID      = 14,  /*14*/
-/* Sleep */
+/* Sleep Command */
     SERVICE_MODE_PROTO_ATCMD_SLEEP     = 85,  /*85*/
-    SERVICE_MODE_PROTO_ATCMD_AUTOSLEEP = 86,  /*86*/
-/* Serial */
+    //SERVICE_MODE_PROTO_ATCMD_AUTOSLEEP = 86,  /*86*/
+/* Serial Port Command */
     SERVICE_MODE_PROTO_ATCMD_LOCK      = 10,  /*10*/
     SERVICE_MODE_PROTO_ATCMD_PWORD     = 11,  /*11*/
     SERVICE_MODE_PROTO_ATCMD_BAUD      = 12,  /*12*/
     SERVICE_MODE_PROTO_ATCMD_ATM       = 72,  /*72*/
     SERVICE_MODE_PROTO_ATCMD_APM       = 73,  /*73*/
     SERVICE_MODE_PROTO_ATCMD_PAM       = 74,  /*74*/
-/* Keys, IDs and EUIs Management */
+/* LoRaWAN Keys and IDs */
     SERVICE_MODE_PROTO_ATCMD_APPEUI    = 16,  /*16*/
     SERVICE_MODE_PROTO_ATCMD_APPKEY    = 17,  /*17*/
     SERVICE_MODE_PROTO_ATCMD_APPSKEY   = 18,  /*18*/
@@ -43,7 +44,7 @@ typedef enum SERVICE_MODE_PROTO_ATCMD_ID_ {
     SERVICE_MODE_PROTO_ATCMD_DEUI      = 20,  /*20*/
     SERVICE_MODE_PROTO_ATCMD_NETID     = 21,  /*21*/
     SERVICE_MODE_PROTO_ATCMD_NWKSKEY   = 22,  /*22*/
-/* Joining and Sending Data on LoRaWAN Network */
+/* LoRaWAN Joining and Sending */
     SERVICE_MODE_PROTO_ATCMD_CFM       = 23,  /*23*/
     SERVICE_MODE_PROTO_ATCMD_CFS       = 24,  /*24*/
     SERVICE_MODE_PROTO_ATCMD_JOIN      = 25,  /*25*/
@@ -68,22 +69,22 @@ typedef enum SERVICE_MODE_PROTO_ATCMD_ID_ {
     SERVICE_MODE_PROTO_ATCMD_RX2FQ     = 41,  /*41*/
     SERVICE_MODE_PROTO_ATCMD_TXP       = 42,  /*42*/
     SERVICE_MODE_PROTO_ATCMD_LINKCHECK = 43,  /*43*/
-/* Class B Mode */
+/* LoRaWAN Class B */
     SERVICE_MODE_PROTO_ATCMD_PGSLOT    = 44,  /*44*/
     SERVICE_MODE_PROTO_ATCMD_BFREQ     = 45,  /*45*/
     SERVICE_MODE_PROTO_ATCMD_BTIME     = 46,  /*46*/
     SERVICE_MODE_PROTO_ATCMD_BGW       = 47,  /*47*/
     SERVICE_MODE_PROTO_ATCMD_LTIME     = 48,  /*48*/
-/* Information */
+/* LoRaWAN Information */
     SERVICE_MODE_PROTO_ATCMD_RSSI      = 49,  /*49*/
     SERVICE_MODE_PROTO_ATCMD_ARSSI     = 75,  /*75*/
     SERVICE_MODE_PROTO_ATCMD_SNR       = 50,  /*50*/
-/* Supplement */
+/* Supplementary Command */
     SERVICE_MODE_PROTO_ATCMD_MASK      = 51,  /*51*/
     SERVICE_MODE_PROTO_ATCMD_CHE       = 52,  /*52*/
     SERVICE_MODE_PROTO_ATCMD_CHS       = 53,  /*53*/
     SERVICE_MODE_PROTO_ATCMD_BAND      = 54,  /*54*/
-/* P2P */
+/* LoRaWAN P2P */
     SERVICE_MODE_PROTO_ATCMD_NWM       = 55,  /*55*/
     SERVICE_MODE_PROTO_ATCMD_PFREQ     = 56,  /*56*/
     SERVICE_MODE_PROTO_ATCMD_PSF       = 57,  /*57*/
@@ -98,11 +99,11 @@ typedef enum SERVICE_MODE_PROTO_ATCMD_ID_ {
     SERVICE_MODE_PROTO_ATCMD_P2P       = 66,  /*66*/
     SERVICE_MODE_PROTO_ATCMD_PBR       = 67,  /*67*/
     SERVICE_MODE_PROTO_ATCMD_PFDEV     = 68,  /*68*/
-/* Multicast Group */
+/* LoRaWAN Multicast Group */
     SERVICE_MODE_PROTO_ATCMD_ADDMULC   = 69,  /*69*/
     SERVICE_MODE_PROTO_ATCMD_RMVMULC   = 70,  /*70*/
     SERVICE_MODE_PROTO_ATCMD_LSTMULC   = 71,  /*71*/
-/* RF Test */
+/* LoRaWAN RF Test */
     //SERVICE_MODE_PROTO_ATCMD_TRSSI     = 77,  /*77*/
     //SERVICE_MODE_PROTO_ATCMD_TTONE     = 78,  /*78*/
     //SERVICE_MODE_PROTO_ATCMD_TTX       = 79,  /*79*/
@@ -111,7 +112,7 @@ typedef enum SERVICE_MODE_PROTO_ATCMD_ID_ {
     //SERVICE_MODE_PROTO_ATCMD_TTH       = 82,  /*82*/
     //SERVICE_MODE_PROTO_ATCMD_TOFF      = 83,  /*83*/
     //SERVICE_MODE_PROTO_ATCMD_CERTIF    = ??,  /*??*/
-/* Misc */
+/* Miscellaneous Command */
     //SERVICE_MODE_PROTO_ATCMD_DELBONDS  = 76,  /*76*/
 } SERVICE_MODE_PROTO_ATCMD_ID;
 

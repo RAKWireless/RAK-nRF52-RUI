@@ -3,6 +3,9 @@ void setup()
 {
     api.ble.uart.stop();
     Serial.begin(115200);
+    delay(5000);
+    Serial.println("RAKwireless System Powersave Example");
+    Serial.println("------------------------------------------------------");
 }
 
 void loop()

@@ -56,7 +56,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+FSN?            | --                 | AT+FSN: get or set the serial number of the device                | OK                 |
+ * | AT+FSN?            | --                 | AT+FSN: get or set the serial number of the device (max 18 char)  | OK                 |
  * | AT+FSN=?           | --                 | <18 char>                                                         | OK                 |
  * | AT+FSN=\<Param\>   | \<18 char\>        | --                                                                | OK / AT_PARAM_ERROR|
  *
@@ -66,7 +66,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+BAT?            | --                 | AT+BAT: get the battery level                                     | OK                 |
+ * | AT+BAT?            | --                 | AT+BAT: get the battery level (volt)                              | OK                 |
  * | AT+BAT=?           | --                 | <float>                                                           | OK                 |
  * | Example<br>AT+BAT=?| --                 | 3.0                                                               | OK                 |
  *

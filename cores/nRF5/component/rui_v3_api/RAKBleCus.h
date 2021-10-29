@@ -165,7 +165,9 @@ class RAKBleCharacteristic
 
      * @par	Syntax
      *		bslc.notifyEnabled()
-     * @return	void
+     * @return	bool
+     * @retval	TRUE  : The mobile apps notification is enabled
+     * @retval	FALSE : The mobile apps notification is not enabled
      */
     bool notifyEnabled(void);
 

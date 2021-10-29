@@ -104,11 +104,11 @@ enum BitOrder {
 #define delayMicroseconds udrv_app_delay_us 
 
 /**@par	Description
- *     	Returns the number of microseconds since the device  began 
+ *      	Returns the number of milliseconds passed since the device began
  * 		running the current program
  * @par	Syntax
- *	millis();
- * @return	the number of microseconds since the device began running the current program(Type: unsigned long)
+ *	micros();
+ * @return	Number of milliseconds passed since the program started(Type: unsigned long)
  * @par     Example
  * @verbatim
    unsigned long myTime;
@@ -128,11 +128,11 @@ enum BitOrder {
 unsigned long millis();
 
 /**@par	Description
- *      	Returns the number of milliseconds passed since the device began
+ *     	Returns the number of microseconds since the device  began 
  * 		running the current program
  * @par	Syntax
- *	micros();
- * @return	Number of milliseconds passed since the program started(Type: unsigned long)
+ *	millis();
+ * @return	the number of microseconds since the device began running the current program(Type: unsigned long)
  * @par     Example
  * @verbatim
    unsigned long time;

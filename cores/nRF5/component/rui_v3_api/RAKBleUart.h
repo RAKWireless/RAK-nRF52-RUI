@@ -12,7 +12,7 @@
 #include "udrv_ble.h"
 
 /**
- * @ingroup	BLE_Data_Type
+ * @ingroup	BLE_Uart
  */
 typedef enum
 {
@@ -22,7 +22,7 @@ typedef enum
 } RAK_CHARS_SECURITY_REQ;
 
 /**
- * @ingroup	BLE_Data_Type
+ * @ingroup	BLE_Uart
  */
 typedef enum
 {
@@ -71,8 +71,8 @@ class RAKBleUart {
      * @par	Syntax
      * 		api.ble.uart.available()
      * @return	bool
-     * @retval  false	nothing to get
-     * @retval  true	receive data from the ble device
+     * @retval	TRUE  : receive data from the ble device
+     * @retval	FALSE : nothing to get
      */
     bool available(void);
 
@@ -100,7 +100,7 @@ class RAKBleUart {
      * @par	Syntax
      * 		api.ble.uart.setPIN(key, size)
      * @param	key	the key to set the passkey(6 digits only)		
-     * @param	size    the length of key(can only be 6)
+     * @param	size the length of key(can only be 6)
      *
      * @return	void
      */

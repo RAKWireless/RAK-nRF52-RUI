@@ -17,6 +17,58 @@
 
 using namespace std;
 
+/**@addtogroup	File_System_Data_Type
+ * @{
+ */
+
+#define RAK_FS_OK                          SERVICE_FS_OK                       ///< (0) Succeeded
+#define RAK_FS_ERR_NOT_MOUNTED             SERVICE_FS_ERR_NOT_MOUNTED          ///< FS_ERR NOT MOUNTED
+#define RAK_FS_ERR_FULL                    SERVICE_FS_ERR_FULL                 ///< FS_ERR FULL
+#define RAK_FS_ERR_NOT_FOUND               SERVICE_FS_ERR_NOT_FOUND            ///< FS_ERR NOT FOUND
+#define RAK_FS_ERR_END_OF_OBJECT           SERVICE_FS_ERR_END_OF_OBJECT        ///< FS_ERR_END OF_OBJECT
+#define RAK_FS_ERR_DELETED                 SERVICE_FS_ERR_DELETED              ///< FS_ERR DELETED
+#define RAK_FS_ERR_NOT_FINALIZED           SERVICE_FS_ERR_NOT_FINALIZED        ///< FS_ERR NOT FINALIZED
+#define RAK_FS_ERR_NOT_INDEX               SERVICE_FS_ERR_NOT_INDEX            ///< FS_ERR NOT INDEX
+#define RAK_FS_ERR_OUT_OF_FILE_DESCS       SERVICE_FS_ERR_OUT_OF_FILE_DESCS    ///< FS_ERR OUT OF FILE DESCS
+#define RAK_FS_ERR_FILE_CLOSED             SERVICE_FS_ERR_FILE_CLOSED          ///< FS_ERR FILE CLOSED
+#define RAK_FS_ERR_FILE_DELETED            SERVICE_FS_ERR_FILE_DELETED         ///< FS_ERR FILE DELETED
+#define RAK_FS_ERR_BAD_DESCRIPTOR          SERVICE_FS_ERR_BAD_DESCRIPTOR       ///< FS_ERR BAD DESCRIPTOR
+#define RAK_FS_ERR_IS_INDEX                SERVICE_FS_ERR_IS_INDEX             ///< FS_ERR IS INDEX
+#define RAK_FS_ERR_IS_FREE                 SERVICE_FS_ERR_IS_FREE              ///< FS_ERR IS FREE
+#define RAK_FS_ERR_INDEX_SPAN_MISMATCH     SERVICE_FS_ERR_INDEX_SPAN_MISMATCH  ///< FS_ERR INDEX SPAN MISMATCH
+#define RAK_FS_ERR_DATA_SPAN_MISMATCH      SERVICE_FS_ERR_DATA_SPAN_MISMATCH   ///< FS_ERR DATA SPAN MISMATCH
+#define RAK_FS_ERR_INDEX_REF_FREE          SERVICE_FS_ERR_INDEX_REF_FREE       ///< FS_ERR INDEX REF FREE
+#define RAK_FS_ERR_INDEX_REF_LU            SERVICE_FS_ERR_INDEX_REF_LU         ///< FS_ERR INDEX REF LU
+#define RAK_FS_ERR_INDEX_REF_INVALID       SERVICE_FS_ERR_INDEX_REF_INVALID    ///< FS_ERR INDEX REF INVALID
+#define RAK_FS_ERR_INDEX_FREE              SERVICE_FS_ERR_INDEX_FREE           ///< FS_ERR INDEX FREE
+#define RAK_FS_ERR_INDEX_LU                SERVICE_FS_ERR_INDEX_LU             ///< FS_ERR INDEX LU
+#define RAK_FS_ERR_INDEX_INVALID           SERVICE_FS_ERR_INDEX_INVALID        ///< FS_ERR INDEX INVALID
+#define RAK_FS_ERR_NOT_WRITABLE            SERVICE_FS_ERR_NOT_WRITABLE         ///< FS_ERR NOT WRITABLE
+#define RAK_FS_ERR_NOT_READABLE            SERVICE_FS_ERR_NOT_READABLE         ///< FS_ERR NOT READABLE
+#define RAK_FS_ERR_CONFLICTING_NAME        SERVICE_FS_ERR_CONFLICTING_NAME     ///< FS_ERR CONFLICTING NAME
+#define RAK_FS_ERR_NOT_CONFIGURED          SERVICE_FS_ERR_NOT_CONFIGURED       ///< FS_ERR NOT CONFIGURED
+#define RAK_FS_ERR_NOT_A_FS                SERVICE_FS_ERR_NOT_A_FS             ///< FS_ERR_NOT A FS
+#define RAK_FS_ERR_MOUNTED                 SERVICE_FS_ERR_MOUNTED              ///< FS_ERR MOUNTED
+#define RAK_FS_ERR_ERASE_FAIL              SERVICE_FS_ERR_ERASE_FAIL           ///< FS_ERR ERASE FAIL
+#define RAK_FS_ERR_MAGIC_NOT_POSSIBLE      SERVICE_FS_ERR_MAGIC_NOT_POSSIBLE   ///< FS_ERR MAGIC NOT POSSIBLE
+#define RAK_FS_ERR_NO_DELETED_BLOCKS       SERVICE_FS_ERR_NO_DELETED_BLOCKS    ///< FS_ERR NO DELETED BLOCKS
+#define RAK_FS_ERR_FILE_EXISTS             SERVICE_FS_ERR_FILE_EXISTS          ///< FS_ERR FILE EXISTS
+#define RAK_FS_ERR_NOT_A_FILE              SERVICE_FS_ERR_NOT_A_FILE           ///< FS_ERR NOT A FILE
+#define RAK_FS_ERR_RO_NOT_IMPL             SERVICE_FS_ERR_RO_NOT_IMPL          ///< FS_ERR RO NOT IMPL
+#define RAK_FS_ERR_RO_ABORTED_OPERATION    SERVICE_FS_ERR_RO_ABORTED_OPERATION ///< FS_ERR RO ABORTED OPERATION
+#define RAK_FS_ERR_PROBE_TOO_FEW_BLOCKS    SERVICE_FS_ERR_PROBE_TOO_FEW_BLOCKS ///< FS_ERR PROBE TOO FEW BLOCKS
+#define RAK_FS_ERR_PROBE_NOT_A_FS          SERVICE_FS_ERR_PROBE_NOT_A_FS       ///< FS_ERR PROBE NOT A FS
+#define RAK_FS_ERR_NAME_TOO_LONG           SERVICE_FS_ERR_NAME_TOO_LONG        ///< FS_ERR NAME TOO LONG
+#define RAK_FS_ERR_IX_MAP_UNMAPPED         SERVICE_FS_ERR_IX_MAP_UNMAPPED      ///< FS_ERR IX MAP UNMAPPED
+#define RAK_FS_ERR_IX_MAP_MAPPED           SERVICE_FS_ERR_IX_MAP_MAPPED        ///< FS_ERR IX MAP MAPPED
+#define RAK_FS_ERR_IX_MAP_BAD_RANGE        SERVICE_FS_ERR_IX_MAP_BAD_RANGE     ///< FS_ERR IX MAP BAD RANGE
+#define RAK_FS_ERR_SEEK_BOUNDS             SERVICE_FS_ERR_SEEK_BOUNDS          ///< FS_ERR SEEK BOUNDS
+#define RAK_FS_ERR_INTERNAL                SERVICE_FS_ERR_INTERNAL             ///< FS_ERR INTERNAL
+#define RAK_FS_ERR_TEST                    SERVICE_FS_ERR_TEST                 ///< FS_ERR TEST
+#define RAK_FS_ERR_CONTINUE                SERVICE_FS_ERR_CONTINUE             ///< FS_ERR CONTINUE
+
+/**@}*/
+
 class RAKSystem {
   public:
     RAKSystem();
@@ -33,7 +85,7 @@ class RAKSystem {
 	 * 		This api allow user to get the firmware version
 	 * @ingroup	Firmware_Version
 	 * @par		Syntax
-	 * 		api.system.firmwreVersion.get()
+	 * 		api.system.firmwareVersion.get()
 	 * @return	firmware version(Type: string)
 	 * @par		Example
 	 * @verbatim	
@@ -240,7 +292,9 @@ class RAKSystem {
 	 * @param	passwd_Str	the password to lock the Default Serial(Type: string)
 	 * @param	passwd_Char	the password to lock the Default Serial(Type: cahr *)
 	 * @param	len		the length of passwod
-	 * @return	true for successfully set a password, false for set a password fail
+	 * @return	bool
+	 * @retval	TRUE for successfully set a password
+	 * @retval	FALSE for set a password failure
 	 * @par		Example
 	 * @verbatim
 	   int loopCount = 0;
@@ -333,11 +387,11 @@ class RAKSystem {
     class bat {
       public:
 	/**@par		Description
-	 *		
+	 *		Get the current battery level
 	 * @ingroup	System_Battery
 	 * @par		Syntax
 	 * 		api.system.bat.get()
-	 * @return
+	 * @return	float
 	 * @par         Example
          * @verbatim
            void setup()
@@ -361,13 +415,13 @@ class RAKSystem {
     class atMode {
       public:
 	/**@par		Description
-	 *
+	 *		Provide developers to create AT CMD.
 	 * @par		Syntax
 	 * 		api.system.atMode.add(cmd, usage, title, handle)
-	 * @param	cmd	
-	 * @param	usage
-	 * @param	title
-	 * @param	handle
+	 * @param	cmd  	the cmd to define cmd name
+	 * @param	usage	the cmd usage
+	 * @param	title	the cmd title
+	 * @param	handle	the handler that this command will execute
 	 *
 	 * @return
 	 * @par		Example

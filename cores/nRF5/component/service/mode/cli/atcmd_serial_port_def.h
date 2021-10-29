@@ -21,7 +21,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+PWORD?          | --                 | AT+PWORD: set the serial port locking password                    | OK                 |
+ * | AT+PWORD?          | --                 | AT+PWORD: set the serial port locking password (max 8 char)       | OK                 |
  * | AT+PWORD=\<Input\> | <1-8 hex>          | --                                                                | OK                 |
  * | Example<br>AT+PWORD=88888888  | <1-8 hex>          | --                                                     | OK                 |
  *
@@ -66,6 +66,15 @@
  * | AT+PAM             | --                 |                                                                   | OK                 |
  * | AT+PAM=\<param\>   | <fport>            |                                                                   | OK / AT_PARAM_ERROR|
  * 
+ * @subsection ATCMD_serial_port_7 +++: Exit transparent transmission mode
+ *
+ * This command provides Exit data transparent transmission mode
+ *
+ * | Command            | Input parameter    | Return value                                                      | Return code        |
+ * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
+ * | +++                | --                 | --                                                                | --                 |
+ * 
+ *
  */
 
 #ifndef _ATCMD_SERIAL_PORT_DEF_H_

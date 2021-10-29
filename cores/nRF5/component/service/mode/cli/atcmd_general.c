@@ -104,7 +104,7 @@ int At_Sn (SERIAL_PORT port, char *cmd, stParam *param)
     } else if (param->argc == 1) {
         int32_t ret;
 
-	if (strlen(param->argv[0]) > 18) {
+	if (strlen(param->argv[0]) < 1 || strlen(param->argv[0]) > 18) {
             return AT_PARAM_ERROR;
 	}
 

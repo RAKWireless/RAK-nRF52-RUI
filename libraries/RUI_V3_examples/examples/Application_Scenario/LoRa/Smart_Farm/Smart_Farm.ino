@@ -9,11 +9,15 @@ rak1902 p_sensor;
 /** Packet buffer for sending */
 uint8_t collected_data[64] = {0};
 
+bool ret;
+
 void setup()
 {
-  api.ble.uart.stop();  // Stop BLE broadcast
-  
-  Serial.begin(115200, AT_MODE); 
+  api.ble.uart.stop(); // Stop BLE broadcast
+  Serial.begin(115200, AT_MODE);
+  delay(5000);
+  Serial.println("RAKwireless Smart Farm Example");
+  Serial.println("------------------------------------------------------");
 
   pinMode(LED_GREEN, OUTPUT);
   digitalWrite(LED_GREEN, HIGH);
@@ -26,10 +30,23 @@ void setup()
   uint8_t node_app_eui[8] = {0x0E, 0x0D, 0x0D, 0x01, 0x0E, 0x01, 0x02, 0x0E};
   // OTAA Application Key MSB
   uint8_t node_app_key[16] = {0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3E};
+  
+  if(!(ret = api.lorawan.appeui.set(node_app_eui, 8)))
+  {
+       Serial.printf("LoRaWan Smart Farm - set device EUI is incorrect! \r\n");
+       return;
+  }
+  if(!(ret = api.lorawan.appkey.set(node_app_key, 16)))
+  {
+       Serial.printf("LoRaWan Smart Farm - set application EUI is incorrect! \r\n");
+       return;
+  }
+  if(!(ret = api.lorawan.deui.set(node_device_eui, 8)))
+  {
+       Serial.printf("LoRaWan Smart Farm - set application key is incorrect! \r\n");
+       return;
+  }
 
-  api.lorawan.appeui.set(node_app_eui, 8);  // Set the LoRawan AppEUI
-  api.lorawan.appkey.set(node_app_key, 16); // Set the LoRaWan AppKey
-  api.lorawan.deui.set(node_device_eui, 8); // Set the LoRaWan DeviceEUI
   /*************************************
 
      LoRaWAN band setting:
@@ -45,19 +62,35 @@ void setup()
 
    * ************************************/
 
-  api.lorawan.band.set(RAK_REGION_EU868); // Set the LoRa region to EU868
-  api.lorawan.deviceClass.set(0);
-  api.lorawan.njm.set(RAK_LORA_OTAA);     // Set the network join mode to OTAA
-  api.lorawan.join();                     // Join to Gateway
+  if(!(ret = api.lorawan.band.set(RAK_REGION_EU868))) // Set the LoRa region to EU868
+  {
+       Serial.printf("LoRaWan Smart Farm - set band is incorrect! \r\n");
+       return;
+  }
+  if(!(ret = api.lorawan.deviceClass.set(0)))
+  {
+       Serial.printf("LoRaWan Smart Farm - set device class is incorrect! \r\n");
+       return;
+  }
+  if(!(ret = api.lorawan.njm.set(RAK_LORA_OTAA)))    // Set the network join mode to OTAA
+  {
+       Serial.printf("LoRaWan Smart Farm - set network join mode is incorrect! \r\n");
+       return;
+  }
+  if(!(ret = api.lorawan.join()))                   // Join to Gateway
+  {
+       Serial.printf("LoRaWan Smart Farm - join fail! \r\n");
+       return;
+  }
 
   Serial.println("++++++++++++++++++++++++++");
   Serial.println("RUI V3 Environment Sensing");
   Serial.println("++++++++++++++++++++++++++");
 
-  Wire.begin(); // Start I2C Bus
+  Wire.begin();                                                                // Start I2C Bus
   Serial.printf("RAK1901 init %s\n\r", th_sensor.init() ? "success" : "fail"); // Check if RAK1901 init success
   Serial.printf("RAK1902 init %s\n\r", p_sensor.init() ? "success" : "fail");  // Check if RAK1902 init success
-  
+
   /**Wait for Join success */
   while (api.lorawan.njs.get() == 0)
   {
@@ -66,9 +99,22 @@ void setup()
     delay(10000);
   }
   digitalWrite(LED_GREEN, LOW);
-  api.lorawan.adr.set(true);
-  api.lorawan.rety.set(1);
-  api.lorawan.cfm.set(1);
+
+  if(!(ret = api.lorawan.adr.set(true)))
+  {
+       Serial.printf("LoRaWan Smart Farm - set adaptive data rate is incorrect! \r\n");
+       return;
+  }
+  if(!(ret = api.lorawan.rety.set(1)))
+  {
+       Serial.printf("LoRaWan Smart Farm - set retry times is incorrect! \r\n");
+       return;
+  }
+  if(!(ret = api.lorawan.cfm.set(1)))
+  {
+       Serial.printf("LoRaWan Smart Farm - set confirm mode is incorrect! \r\n");
+       return;
+  }
 
   /**Check LoRaWan Status*/
   Serial.printf("Dutycycle is %s\n", api.lorawan.dcs.get() ? "ON" : "OFF");             // Check Duty Cycle status
@@ -112,8 +158,8 @@ void loop()
   collected_data[data_len++] = 0;
   collected_data[data_len++] = 0;
   collected_data[data_len++] = 0;
-  collected_data[data_len++] = (uint8_t) (batt >> 8);
-  collected_data[data_len++] = (uint8_t) batt;
+  collected_data[data_len++] = (uint8_t)(batt >> 8);
+  collected_data[data_len++] = (uint8_t)batt;
 
   Serial.println("Data Packet:");
   for (int i = 0; i < data_len; i++)
@@ -131,11 +177,11 @@ void loop()
   {
     Serial.println("Send failed");
   }
-  
+
   digitalWrite(LED_BLUE, LOW);
 
-  Serial.printf("Keep radio & MCU truned on for %u ms (RX2 delay)\r\n", api.lorawan.rx2dl.get()*1000);
-  delay(api.lorawan.rx2dl.get()*1000);
-  delay(4000);//additional processing time
+  Serial.printf("Keep radio & MCU truned on for %u ms (RX2 delay)\r\n", api.lorawan.rx2dl.get() * 1000);
+  delay(api.lorawan.rx2dl.get() * 1000);
+  delay(4000); //additional processing time
   api.system.sleep.all(20000);
 }

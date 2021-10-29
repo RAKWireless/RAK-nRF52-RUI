@@ -7063,7 +7063,7 @@ char *strsignal (int __signo);
 
 
 
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 67
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 
 
 
@@ -40321,7 +40321,7 @@ uint32_t ble_nus_c_string_send(ble_nus_c_t * p_ble_nus_c, uint8_t * p_string, ui
 
     memset(&write_req, 0, sizeof(nrf_ble_gq_req_t));
 
-    if (length > (67 - 1 - 2))
+    if (length > (247 - 1 - 2))
     {
         if (1 && (4 >= NRF_LOG_SEVERITY_WARNING) && (NRF_LOG_SEVERITY_WARNING <= 4)) { if (NRF_LOG_SEVERITY_DEBUG >= NRF_LOG_SEVERITY_WARNING) { nrf_log_frontend_std_0(((NRF_LOG_SEVERITY_WARNING) | (((uint32_t)(&m_nrf_log_ble_nus_c_logs_data_const) - (uint32_t)&__start_log_const_data) / sizeof(nrf_log_module_const_data_t)) << 16), "Content too long."); } };
         return ((0x0) + 7);

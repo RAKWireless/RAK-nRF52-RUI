@@ -422,8 +422,24 @@ static void MlmeIndication(MlmeIndication_t *mlmeIndication)
             {
             case 0:
                 beacon_bgw.GPS_coordinate = 0;
+
+                beacon_bgw.latitude = (mlmeIndication->BeaconInfo.GwSpecific.Info[2] << 16)|
+                                      (mlmeIndication->BeaconInfo.GwSpecific.Info[1] << 8) |
+                                      (mlmeIndication->BeaconInfo.GwSpecific.Info[0]);
+                beacon_bgw.longitude = (mlmeIndication->BeaconInfo.GwSpecific.Info[5] << 16) |
+                                      (mlmeIndication->BeaconInfo.GwSpecific.Info[4] << 8) |
+                                      (mlmeIndication->BeaconInfo.GwSpecific.Info[3]);
+		break;
             case 1:
                 beacon_bgw.GPS_coordinate = 1;
+		
+                beacon_bgw.latitude = (mlmeIndication->BeaconInfo.GwSpecific.Info[2] << 16)|
+                                      (mlmeIndication->BeaconInfo.GwSpecific.Info[1] << 8) |
+                                      (mlmeIndication->BeaconInfo.GwSpecific.Info[0]);
+                beacon_bgw.longitude = (mlmeIndication->BeaconInfo.GwSpecific.Info[5] << 16) |
+                                      (mlmeIndication->BeaconInfo.GwSpecific.Info[4] << 8) |
+                                      (mlmeIndication->BeaconInfo.GwSpecific.Info[3]);
+		break;
             case 2:
                 beacon_bgw.GPS_coordinate = 2;
 

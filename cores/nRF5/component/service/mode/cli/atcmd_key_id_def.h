@@ -12,7 +12,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+APPEUI?         | --                 | AT+APPEUI: get or set the application EUI                         | OK                 |
+ * | AT+APPEUI?         | --                 | AT+APPEUI: get or set the application EUI (8 bytes in hex)        | OK                 |
  * | AT+APPEUI=?        | --                 | \<8 hex\>                                                         | OK                 |
  * | AT+APPEUI=\<Param\>| \<8 hex\>          | --                                                                | OK / AT_PARAM_ERROR|
  * | Example<br>AT+APPEUI= | 0102030405060708   | --                                                             | OK                 |
@@ -25,7 +25,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+APPKEY?         | --                 | AT+APPKEY: get or set the application key                         | OK                 |
+ * | AT+APPKEY?         | --                 | AT+APPKEY: get or set the application key (16 bytes in hex)       | OK                 |
  * | AT+APPKEY=?        | --                 | \<16 hex\>                                                        | OK                 |
  * | AT+APPKEY=\<Param\>| \<16 hex\>         | --                                                                | OK / AT_PARAM_ERROR|
  * | Example<br>AT+APPKEY= | 0102030405060708090A0B0C0D0E0F00   | --                                             | OK                 |
@@ -38,7 +38,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+APPSKEY?         | --                 | AT+APPSKEY: get or set the application session key               | OK                 |
+ * | AT+APPSKEY?         | --                 | AT+APPSKEY: get or set the application session key (16 bytes in hex)              | OK                 |
  * | AT+APPSKEY=?        | --                 | \<16 hex\>                                                       | OK                 |
  * | AT+APPSKEY=\<Param\>| \<16 hex\>         | --                                                               | OK / AT_PARAM_ERROR|
  * | Example<br>AT+APPSKEY= | 0102030405060708090A0B0C0D0E0F00   | --                                            | OK                 |
@@ -51,7 +51,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+DADDR?          | --                 | AT+DADDR: get or set the device address                           | OK                 |
+ * | AT+DADDR?          | --                 | AT+DADDR: get or set the device address (4 bytes in hex)          | OK                 |
  * | AT+DADDR=?         | --                 | \<4 hex\>                                                         | OK                 |
  * | AT+DADDR=\<Param\> | \<4 hex\>          | --                                                                | OK / AT_PARAM_ERROR|
  * | Example<br>AT+DADDR= | 01020304         | --                                                                | OK                 |
@@ -64,7 +64,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+DEUI?           | --                 | AT+DEUI: get or set the device EUI                                | OK                 |
+ * | AT+DEUI?           | --                 | AT+DEUI: get or set the device EUI (8 bytes in hex)               | OK                 |
  * | AT+DEUI=?          | --                 | \<8 hex\>                                                         | OK                 |
  * | AT+DEUI=\<Param\>  | \<8 hex\>          | --                                                                | OK / AT_PARAM_ERROR|
  * | Example<br>AT+DEUI= | 0102030405060708   | --                                                               | OK                 |
@@ -77,7 +77,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+NETID?          | --                 | AT+NETID: get the network identifier (NetID) of 3 octets          | OK                 |
+ * | AT+NETID?          | --                 | AT+NETID: get the network identifier (NetID) (3 bytes in hex)     | OK                 |
  * | AT+NETID=?         | --                 | \<3 hex\>                                                         | OK                 |
  * | AT+NETID=\<Param\> | \<3 hex\>          | --                                                                | OK / AT_PARAM_ERROR|
  * | Example<br>AT+NETID=?|                  | 010203                                                            | OK                 |
@@ -88,7 +88,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+NWKSKEY?          | --                 | AT+NWKSKEY: get or set the network session key                  | OK                 |
+ * | AT+NWKSKEY?          | --                 | AT+NWKSKEY: get or set the network session key (16 bytes in hex)                  | OK                 |
  * | AT+NWKSKEY=?         | --                 | \<16 hex\>                                                      | OK                 |
  * | AT+NWKSKEY=\<Param\> | \<16 hex\>         | --                                                              | OK / AT_PARAM_ERROR|
  * | Example<br>AT+NWKSKEY= | 0102030405060708090A0B0C0D0E0F00         | --                                      | OK                 |

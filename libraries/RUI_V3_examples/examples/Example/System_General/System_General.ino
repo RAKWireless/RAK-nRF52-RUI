@@ -3,12 +3,16 @@ int i;
 
 void setup()
 {
+    delay(5000);
+    Serial.println("RAKwireless System General Example");
+    Serial.println("------------------------------------------------------");
     api.system.restoreDefault();
 }
 
 void loop()
 {
-    if (++i == 20) {
+    if (++i == 20)
+    {
         Serial.printf("Reboot now..\r\n");
         api.system.reboot();
     }

@@ -20,7 +20,9 @@
  * @par	Syntax
  *     	isAlphaNumeric(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is alphanumeric(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is alphanumeric
+ * @retval	FALSE : The character is not alphanumeric
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -47,7 +49,9 @@ inline boolean isAlphaNumeric(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isAlpha(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is alpha(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is a letter
+ * @retval	FALSE : The character is not a letter
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -74,7 +78,9 @@ inline boolean isAlpha(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isAscii(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is Ascii(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is Ascii
+ * @retval	FALSE : The character is not Ascii
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -102,7 +108,9 @@ inline boolean isAscii(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isWhitespace(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is a space character(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is a space or tab
+ * @retval	FALSE : The character is not a space or tab
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -129,7 +137,9 @@ inline boolean isWhitespace(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isControl(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is a control character(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is a control character
+ * @retval	FALSE : The character is not a control character
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -156,7 +166,9 @@ inline boolean isControl(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isDigit(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is a number(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is a number
+ * @retval	FALSE : The character is not a number
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -183,7 +195,9 @@ inline boolean isDigit(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isGraph(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is printable(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is printable
+ * @retval	FALSE : The character is not printable
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -210,7 +224,9 @@ inline boolean isGraph(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isLowerCase(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is lower case(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is lower case
+ * @retval	FALSE : The character is not lower case
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -237,7 +253,9 @@ inline boolean isLowerCase(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isPrintAble(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is printable(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is printable
+ * @retval	FALSE : The character is not printable
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -264,7 +282,9 @@ inline boolean isPrintable(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isPunct(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is punctuation(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is a punctuation
+ * @retval	FALSE : The character is not a punctuation
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -292,7 +312,9 @@ inline boolean isPunct(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isSpace(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is a white-space character(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is white-space
+ * @retval	FALSE : The character is not white-space
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -319,7 +341,9 @@ inline boolean isSpace(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isUpperCase(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is upper case(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is upper case
+ * @retval	FALSE : The character is not upper case
  * @par     Example
  * @verbatim
    char mychar = 'A';
@@ -346,7 +370,9 @@ inline boolean isUpperCase(int thisChar) __attribute__((always_inline));
  * @par	Syntax
  *     	isHexadecimalDigit(thisChar);
  * @param	thisChar	variable(Type: char)
- * @return	true: if thisChar is an hexdecimal digit(Type: bool)
+ * @return	bool
+ * @retval	TRUE  : The character is an hexadecimal digit
+ * @retval	FALSE : The character is not an hexadecimal digit
  * @par     Example
  * @verbatim
    char mychar = 'A';

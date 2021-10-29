@@ -30496,7 +30496,7 @@ _Static_assert(sizeof(nrf_svc_func_reg_t) % 4 == 0, "unspecified message");
 
 
 
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 67
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 
 
 

@@ -7972,7 +7972,7 @@ extern uintmax_t _wcstoumax_r(struct _reent *, const wchar_t *restrict, wchar_t 
 
 
 
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 67
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 
 
 

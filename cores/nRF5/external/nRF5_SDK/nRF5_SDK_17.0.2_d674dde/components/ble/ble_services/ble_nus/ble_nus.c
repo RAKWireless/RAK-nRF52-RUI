@@ -7063,7 +7063,7 @@ char *strsignal (int __signo);
 
 
 
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 67
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 
 
 
@@ -37675,7 +37675,7 @@ uint32_t ble_nus_init(ble_nus_t * p_nus, ble_nus_init_t const * p_nus_init)
     memset(&add_char_params, 0, sizeof(add_char_params));
     add_char_params.uuid = 0x0002;
     add_char_params.uuid_type = p_nus->uuid_type;
-    add_char_params.max_len = (67 - 1 - 2);
+    add_char_params.max_len = (247 - 1 - 2);
     add_char_params.init_len = sizeof(uint8_t);
     add_char_params.is_var_len = 
 # 282 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_nus/ble_nus.c" 3 4
@@ -37699,7 +37699,7 @@ uint32_t ble_nus_init(ble_nus_t * p_nus, ble_nus_init_t const * p_nus_init)
     memset(&add_char_params, 0, sizeof(add_char_params));
     add_char_params.uuid = 0x0003;
     add_char_params.uuid_type = p_nus->uuid_type;
-    add_char_params.max_len = (67 - 1 - 2);
+    add_char_params.max_len = (247 - 1 - 2);
     add_char_params.init_len = sizeof(uint8_t);
     add_char_params.is_var_len = 
 # 302 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_nus/ble_nus.c" 3 4
@@ -37749,7 +37749,7 @@ uint32_t ble_nus_data_send(ble_nus_t * p_nus,
         return ((0x0) + 8);
     }
 
-    if (*p_length > (67 - 1 - 2))
+    if (*p_length > (247 - 1 - 2))
     {
         return ((0x0) + 7);
     }

@@ -2,6 +2,9 @@
 void setup()
 {
     Serial.begin(115200);
+    delay(5000);
+    Serial.println("RAKwireless Arduino Analog Example");
+    Serial.println("------------------------------------------------------");
 }
 
 void loop()

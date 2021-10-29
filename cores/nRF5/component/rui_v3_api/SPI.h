@@ -157,8 +157,7 @@ class SPIClass
 	 * 
 	 * @par	Syntax
 	 *
-	 * @param	
-	 * @return
+	 * @return void
 	 */
 	void usingInterrupt();
 

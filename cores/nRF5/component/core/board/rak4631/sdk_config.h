@@ -11722,7 +11722,7 @@
 
 // <o> NRF_SDH_BLE_GATT_MAX_MTU_SIZE - Static maximum MTU size. 
 #ifndef NRF_SDH_BLE_GATT_MAX_MTU_SIZE
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 67 //23 //247
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 #endif
 
 #ifdef DFU_SUPPORT

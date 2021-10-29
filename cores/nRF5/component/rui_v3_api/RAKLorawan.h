@@ -17,7 +17,6 @@
 
 using namespace std;
 
-
 /**@addtogroup	LoRaWan_Data_Type
  * @{
  */
@@ -27,15 +26,15 @@ using namespace std;
  */
 typedef enum _RAK_LORA_BAND
 {
-    RAK_REGION_EU433 = 0,	///< EU433 
-    RAK_REGION_CN470 = 1,	///< CN470 ~ 510
-    RAK_REGION_RU864 = 2,	///< RU864 ~ 870
-    RAK_REGION_IN865 = 3,	///< IN865 ~ 867
-    RAK_REGION_EU868 = 4,	///< EU863 ~ 870
-    RAK_REGION_US915 = 5,	///< US902 ~ 928
-    RAK_REGION_AU915 = 6,	///< AU915 ~ 928
-    RAK_REGION_KR920 = 7,	///< KR920 ~ 923
-    RAK_REGION_AS923 = 8,	///< AS923
+  RAK_REGION_EU433 = 0, ///< EU433
+  RAK_REGION_CN470 = 1, ///< CN470 ~ 510
+  RAK_REGION_RU864 = 2, ///< RU864 ~ 870
+  RAK_REGION_IN865 = 3, ///< IN865 ~ 867
+  RAK_REGION_EU868 = 4, ///< EU863 ~ 870
+  RAK_REGION_US915 = 5, ///< US902 ~ 928
+  RAK_REGION_AU915 = 6, ///< AU915 ~ 928
+  RAK_REGION_KR920 = 7, ///< KR920 ~ 923
+  RAK_REGION_AS923 = 8, ///< AS923
 } RAK_LORA_BAND;
 
 /**@par	Description
@@ -43,8 +42,8 @@ typedef enum _RAK_LORA_BAND
  */
 typedef enum _RAK_LORA_JOIN_MODE
 {
-    RAK_LORA_ABP = 0,	///< activation by personalization	
-    RAK_LORA_OTAA = 1	///< over-the-air activation
+  RAK_LORA_ABP = 0, ///< activation by personalization
+  RAK_LORA_OTAA = 1 ///< over-the-air activation
 } RAK_LORA_JOIN_MODE;
 
 /**@par	Description
@@ -52,9 +51,9 @@ typedef enum _RAK_LORA_JOIN_MODE
  */
 typedef enum _RAK_LORA_WORK_MODE
 {
-    RAK_LORA_P2P = 0,	///< Switch to P2P mode	
-    RAK_LORAWAN = 1, 	///< Switch to LoRaWan mode
-    RAK_LORA_FSK = 2,	///< Switch to FSK mode
+  RAK_LORA_P2P = 0, ///< Switch to P2P mode
+  RAK_LORAWAN = 1,  ///< Switch to LoRaWan mode
+  RAK_LORA_FSK = 2, ///< Switch to FSK mode
 } RAK_LORA_WORK_MODE;
 
 /**@par	Description
@@ -62,8 +61,8 @@ typedef enum _RAK_LORA_WORK_MODE
  */
 typedef enum _RAK_LORA_CONFIRM_MODE
 {
-    RAK_LORA_NO_ACK = 0,	///< The device will not get received data from network
-    RAL_LORA_ACK = 1,		///< The device will get received data from network
+  RAK_LORA_NO_ACK = 0, ///< The device will not get received data from network
+  RAL_LORA_ACK = 1,    ///< The device will get received data from network
 } RAK_LORA_CONFIRM_MODE;
 
 /**@par	Description
@@ -71,9 +70,9 @@ typedef enum _RAK_LORA_CONFIRM_MODE
  */
 typedef enum _RAK_LORA_CLASS
 {
-    RAK_LORA_CLASS_A = 0,	///< The LoRaWan will work in Class A
-    RAK_LORA_CLASS_B = 1,	///< The LoRaWan will work in Class B
-    RAK_LORA_CLASS_C = 2,	///< The LoRaWan will work in Class C
+  RAK_LORA_CLASS_A = 0, ///< The LoRaWan will work in Class A
+  RAK_LORA_CLASS_B = 1, ///< The LoRaWan will work in Class B
+  RAK_LORA_CLASS_C = 2, ///< The LoRaWan will work in Class C
 } RAK_LORA_CLASS;
 
 /**@par	Description
@@ -81,15 +80,15 @@ typedef enum _RAK_LORA_CLASS
  */
 typedef struct _RAK_LORA_McSession
 {
-    uint8_t McDevclass;		///< The device class of a multicast group	
-    uint32_t McAddress;		///< The address of a multicast group
-    uint8_t McAppSKey[16];	///< The application session key of a multicast group
-    uint8_t McNwkSKey[16];	///< The Network session key of a multicast group
-    uint32_t McFrequency;	///< The frequency of a multicast group
-    int8_t McDatarate;		///< The data rate of a multicast group
-    uint16_t McPeriodicity;	///< The periodicity of a multicast group
-    int8_t McGroupID;		///< The group ID of a multicast group
-    uint8_t entry;		///< The entry of a multicast group
+  uint8_t McDevclass;     ///< The device class of a multicast group
+  uint32_t McAddress;     ///< The address of a multicast group
+  uint8_t McAppSKey[16];  ///< The application session key of a multicast group
+  uint8_t McNwkSKey[16];  ///< The Network session key of a multicast group
+  uint32_t McFrequency;   ///< The frequency of a multicast group
+  int8_t McDatarate;      ///< The data rate of a multicast group
+  uint16_t McPeriodicity; ///< The periodicity of a multicast group
+  int8_t McGroupID;       ///< The group ID of a multicast group
+  uint8_t entry;          ///< The entry of a multicast group
 } RAK_LORA_McSession;
 
 /**@par	Description
@@ -97,24 +96,27 @@ typedef struct _RAK_LORA_McSession
  */
 typedef struct RAK_LORA_chan_rssi_t
 {
-    uint32_t chan;	///< The channel of a rssi
-    uint16_t mask;	///< The mask of a rssi
-    int8_t rssi;	///< The rssi on reception
+  uint32_t chan; ///< The channel of a rssi
+  uint16_t mask; ///< The mask of a rssi
+  int8_t rssi;   ///< The rssi on reception
 } RAK_LORA_chan_rssi;
 
 /**@}*/
 
-class RAKLorawan {
+class RAKLorawan
+{
 
-  public:
-    RAKLorawan();
+public:
+  RAKLorawan();
 
-    /**@par	Description
+  /**@par	Description
      *      	This api does a join request to the network
      * @ingroup	Joining_and_Sending
      * @par	Syntax
      *      	api.lorawan.join()
-     * @return  TRUE for success join,FALSE for join fail(Type: bool)
+     * @return	bool
+     * @retval	TRUE for success
+     * @retval	FALSE for join failure
      * @par     Example
      * @verbatim
        // OTAA Device EUI MSB
@@ -151,9 +153,9 @@ class RAKLorawan {
 
            @endverbatim
      */
-    bool join();
+  bool join();
 
-    /**@par	Description
+  /**@par	Description
      *          This api provides the way to send data on a dedicated port number
      * @ingroup	Joining_and_Sending
      * @par	Syntax
@@ -163,10 +165,12 @@ class RAKLorawan {
      *
      * @param   length		the length of the payload
      * @param   payload		the date to uplink
-     * @param   fport		allow 1 ~ 223
-     * @param	confirm		whether to get confirm message from gateway
-     * @param	retry		the retry time when send fail
-     * @return	True for sending uplink success, False for sending uplink fail(Type: bool)
+     * @param   fport		  allow 1 ~ 223
+     * @param	  confirm		whether to get confirm message from gateway
+     * @param	  retry		  the retry time when send fail
+     * @return	bool
+     * @retval	TRUE for sending uplink success
+     * @retval	FALSE for sending uplink
      * @par         Example
      * @verbatim
        // OTAA Device EUI MSB
@@ -213,15 +217,16 @@ class RAKLorawan {
 
            @endverbatim
      */
-    bool send(uint8_t length, uint8_t *payload, uint8_t fport, bool confirm = true, uint8_t retry = 0);
+  bool send(uint8_t length, uint8_t *payload, uint8_t fport, bool confirm = true, uint8_t retry = 0);
 
-    /**@par	Description
+  /**@par	Description
      * 		This api gets or sets the times of retransmission of Confirm packet data
      * @ingroup		Generic_LoRaWAN_Instructions
      */
-    class rety {
-      public:
-	/**@par	Description
+  class rety
+  {
+  public:
+    /**@par	Description
          *     	This api allows to get the times of retransmission of Confirm packet data
 	 *
 	 * @par	Syntax
@@ -245,9 +250,9 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-        uint8_t get();
+    uint8_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows to set the times of retransmission of Confirm packet data
 	 *
 	 * @par	Syntax
@@ -255,7 +260,9 @@ class RAKLorawan {
 	 *
 	 * @note	Cant only input 0 ~ 7 times
 	 * @param	value	the retry times for retransmission
-	 * @return	True for setting retry time success, False for setting retry times fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting retry time success
+	 * @retval	FALSE for setting retry times failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -274,10 +281,10 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(uint8_t value);
-    };
+    bool set(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *      	This api provides a way to send long packet(1024 bytes) text data
      *
      * @ingroup	Generic_LoRaWAN_Instructions
@@ -287,7 +294,9 @@ class RAKLorawan {
      * @param	ack	indicate this is a confirmed message or not
      * @param	payload	the date you want to send
      * @param	length	the length of the paylaod
-     * @return	True for sending data success, False for sending data fail(Tpye: bool)	
+     * @return	bool
+     * @retval	TRUE for sending data success
+     * @retval	FALSE for sending data failure
      * @par     Example
      * @verbatim
        // OTAA Device EUI MSB
@@ -322,7 +331,7 @@ class RAKLorawan {
        {
            uint8_t payload[] = "12345678901234567890";
 
-           if (api.lorawan.send(sizeof(payload), payload, 129, true, 1)) {
+           if (api.lorawan.lpsend(129, 1, payload, sizeof(payload))) {
                Serial.println("Send Success");
            } else {
                Serial.println("Send fail");
@@ -334,9 +343,9 @@ class RAKLorawan {
 
            @endverbatim
      */
-    bool lpsend(uint8_t port, bool ack, uint8_t *payload, int length);
+  bool lpsend(uint8_t port, bool ack, uint8_t *payload, int length);
 
-    /**@par	Description
+  /**@par	Description
      *      
      *
      * @par	Syntax
@@ -346,11 +355,11 @@ class RAKLorawan {
      * @param	retry
      * @param	payload
      * @param	length
-     * @return	
+     * @return
      */
-    bool usend(uint8_t port, bool confirm, uint8_t retry, uint8_t *payload, uint8_t length);
+  bool usend(uint8_t port, bool confirm, uint8_t retry, uint8_t *payload, uint8_t length);
 
-    /**@par	Description
+  /**@par	Description
      *          This API is used to register a callback function,
                 so that application can be notified on receiving LoRaWAN data.
      *
@@ -358,7 +367,9 @@ class RAKLorawan {
      * @par	Syntax
      *      	api.lorawan.registerRecvCallback(service_lora_recv_cb callback)
      * @param	The callgback function
-     * @return	True for setting callback function success, False for setting callback function fail
+     * @return	bool
+     * @retval	TRUE for setting callback function success
+     * @retval	FALSE for setting callback function failure
      * @par	Example
      * @verbatim
      void recv_cb(SERVICE_LORA_RECEIVE_T *data) {
@@ -426,9 +437,9 @@ class RAKLorawan {
 
        @endverbatim
      */
-    bool registerRecvCallback(service_lora_recv_cb callback);
+  bool registerRecvCallback(service_lora_recv_cb callback);
 
-    /**@par	Description
+  /**@par	Description
      *          This API is used to register a callback function,
                 so that application can be notified when joining process is done.
      *
@@ -436,7 +447,9 @@ class RAKLorawan {
      * @par	Syntax
      *      	api.lorawan.registerJoinCallback(service_lora_join_cb callback)
      * @param	The callgback function
-     * @return	True for setting callback function success, False for setting callback function fail
+     * @return	bool
+     * @retval	TRUE for setting callback function success
+     * @retval	FALSE for setting callback function failure
      * @par	Example
      * @verbatim
      void recv_cb(SERVICE_LORA_RECEIVE_T *data) {
@@ -504,9 +517,9 @@ class RAKLorawan {
 
        @endverbatim
      */
-    bool registerJoinCallback(service_lora_join_cb callback);
+  bool registerJoinCallback(service_lora_join_cb callback);
 
-    /**@par	Description
+  /**@par	Description
      *          This API is used to register a callback function,
                 so that application can be notified when uplink process is done.
      *
@@ -514,7 +527,9 @@ class RAKLorawan {
      * @par	Syntax
      *      	api.lorawan.registerSendCallback(service_lora_send_cb callback)
      * @param	The callback function
-     * @return	True for setting callback function success, False for setting callback function fail
+     * @return	bool
+     * @retval	TRUE for setting callback function success
+     * @retval	FALSE for setting callback function failure
      * @par	Example
      * @verbatim
      void recv_cb(SERVICE_LORA_RECEIVE_T *data) {
@@ -582,9 +597,9 @@ class RAKLorawan {
 
        @endverbatim
      */
-    bool registerSendCallback(service_lora_send_cb callback);
+  bool registerSendCallback(service_lora_send_cb callback);
 
-    /**@par	Description
+  /**@par	Description
      *          This API is used to register a callback function,
                 so that application can be notified on receiving P2P data.
      *
@@ -592,7 +607,9 @@ class RAKLorawan {
      * @par	Syntax
      *      	api.lorawan.registerPRecvCallback(service_lora_p2p_recv_cb_type callback)
      * @param	The callback function
-     * @return	True for setting callback function success, False for setting callback function fail
+     * @return	bool
+     * @retval	TRUE for setting callback function success
+     * @retval	FALSE for setting callback function failure
      * @par 	Example
      * @verbatim
        void recv_cb(rui_lora_p2p_recv_t data) {
@@ -649,9 +666,9 @@ class RAKLorawan {
        }       
        @endverbatim
      */
-    bool registerPRecvCallback(service_lora_p2p_recv_cb_type callback);
+  bool registerPRecvCallback(service_lora_p2p_recv_cb_type callback);
 
-    /**@par	Description
+  /**@par	Description
      *          This API is used to register a callback function,
                 so that application can be notified when P2P uplink process is done.
      *
@@ -659,7 +676,9 @@ class RAKLorawan {
      * @par	Syntax
      *      	api.lorawan.registerPSendCallback(service_lora_p2p_send_cb_type callback)
      * @param	The callback function
-     * @return	True for setting callback function success, False for setting callback function fail
+     * @return	bool
+     * @retval	TRUE for setting callback function success
+     * @retval	FALSE for setting callback function failure
      * @par 	Example
      * @verbatim
        void recv_cb(rui_lora_p2p_recv_t data) {
@@ -716,22 +735,25 @@ class RAKLorawan {
        }       
        @endverbatim
      */
-    bool registerPSendCallback(service_lora_p2p_send_cb_type callback);
+  bool registerPSendCallback(service_lora_p2p_send_cb_type callback);
 
-    /**@par	Description
+  /**@par	Description
      *      	view or change the LoRAWAN APPEUI and use it to setup the LoRAWAN connection	
      * @ingroup		Keys_IDs_and_EUI_Management
      */
-    class appeui {
-      public:
-	/**@par	Description
+  class appeui
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the global application identifier
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.appeui.get(buf, len)
 	 * @param	buf	the buffer to get AppEUI
 	 * @param	len	the length of AppEUI(must be 8 bytes)
-	 * @return	True for getting AppEUI successfully,False for getting AppEUI fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for getting AppEUI successfully
+	 * @retval	FALSE for getting AppEUI failure
 	 * @par         Example
          * @verbatim
        // OTAA Application EUI MSB
@@ -769,16 +791,18 @@ class RAKLorawan {
            @endverbatim
 
 	 */
-	bool get(uint8_t *buf, uint32_t len);
+    bool get(uint8_t *buf, uint32_t len);
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the global application identifier
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.appeui.set(buf, len)
 	 * @param	buf	the buffer to set AppEUI
 	 * @param	len	the length of AppEUI(must be 8 bytes)
-	 * @return	True for setting AppEUI successfully,False for setting AppEUI fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting AppEUI successfully
+	 * @retval	FALSE for setting AppEUI failure
 	 * @par		Example
 	 * @verbatim
        // OTAA Application EUI MSB
@@ -815,24 +839,26 @@ class RAKLorawan {
 
    @endverbatim
 	 */
-	bool set(uint8_t *buf, uint32_t len);
-    };
+    bool set(uint8_t *buf, uint32_t len);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		view or change the LoRAWAN APPKEY and  use it to setup the LoRAWAN connection
      * @ingroup		Keys_IDs_and_EUI_Management	 
      */
-    class appkey {
-      public:
-	      
-	/**@par	Description
+  class appkey
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the application key
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.appkey.get(buf, len)
 	 * @param	buf	the buffer to get AppKey
 	 * @param	len	the length of AppKey(must be 16 bytes)
-	 * @return	True for getting AppKey successfully,False for getting Appkey fail(type: bool)	
+   * @return	bool
+	 * @retval	TRUE for getting AppKey successfully
+	 * @retval	FALSE for getting Appkey failure
 	 * @par         Example
          * @verbatim
        // OTAA Application Key MSB
@@ -869,16 +895,18 @@ class RAKLorawan {
 
            @endverbatim
          */
-	bool get(uint8_t *buf, uint32_t len);
+    bool get(uint8_t *buf, uint32_t len);
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the application key
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.appkey.set(buf, len);
 	 * @param	buf	the buffer to set AppKey
 	 * @param	len	the length of AppKey(must be 16 bytes)
-	 * @return	True for setting AppKey successfully,False for setting Appkey fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting AppKey successfully
+	 * @retval	FALSE for setting Appkey failure
 	 * @par         Example
          * @verbatim
        // OTAA Application Key MSB
@@ -915,23 +943,26 @@ class RAKLorawan {
 
            @endverbatim
          */
-	bool set(uint8_t *buf, uint32_t len);
-    };
+    bool set(uint8_t *buf, uint32_t len);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to get or set the application session key	
      * @ingroup		Keys_IDs_and_EUI_Management
      */
-    class appskey {
-      public:
-	/**@par	Description
+  class appskey
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the application session key
 	 * @par	Syntax
 	 *	api.lorawan.appskey.get(buf, len);
 	 * @note	This function can only work in ABP mode
 	 * @param	buf	the buffer to get AppSKey
 	 * @param	len	the length of AppSKey(must be 16 bytes)
-	 * @return	True for getting AppSKey successfully,False for getting AppSKey fail
+   * @return	bool
+	 * @retval	TRUE for getting AppSKey successfully
+	 * @retval	FALSE for getting AppSKey failure
 	 * @par         Example
          * @verbatim
        // ABP Application Session Key
@@ -968,16 +999,18 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get(uint8_t *buf, uint32_t len);
-	
-	/**@par	Description
+    bool get(uint8_t *buf, uint32_t len);
+
+    /**@par	Description
 	 *     	This api allows the user to set the application session key
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.appskey.set(buf, len)
 	 * @param	buf	The buffer to get AppSKey
 	 * @param	len	the length of AppSkey(must be 16 bytes)
-	 * @return	True for getting AppSKey successfully,False for getting AppSKey fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for getting AppSKey successfully
+	 * @retval	FALSE for getting AppSKey failure
 	 * @par         Example
          * @verbatim
        // ABP Application Session Key
@@ -1015,16 +1048,17 @@ class RAKLorawan {
            @endverbatim
 
 	 */
-	bool set(uint8_t *buf, uint32_t len);
-    };
+    bool set(uint8_t *buf, uint32_t len);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the device address
      * @ingroup		Keys_IDs_and_EUI_Management
      */
-    class daddr {
-      public:
-	/**@par	Description
+  class daddr
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the device address
 	 *
 	 * @par	Syntax
@@ -1032,7 +1066,9 @@ class RAKLorawan {
 	 * @note	This function can only work in ABP mode
 	 * @param	buf	the buffer to get device address
 	 * @param	len	the length of device address(must be 4 bytes)
-	 * @return	True for getting device address successfully,False for getting device address fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for getting device address successfully
+	 * @retval	FALSE for getting device address failure
 	 * @par         Example
          * @verbatim
        // ABP Device Address
@@ -1069,16 +1105,18 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get(uint8_t *buf, uint32_t len);
+    bool get(uint8_t *buf, uint32_t len);
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the device address
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.daddr.set(buf, len);
 	 * @param	buf	the buffer to set device address
 	 * @param	len	the length of device address(must be 4 bytes)
-	 * @return	True for getting device address successfully,False for getting device address fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting device address successfully
+	 * @retval	FALSE for setting device address failure
 	 * @par         Example
          * @verbatim
        // ABP Device Address
@@ -1115,23 +1153,26 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(uint8_t *buf, uint32_t len);
-    };
+    bool set(uint8_t *buf, uint32_t len);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		view or change the LoRAWAN DEUI and  use it to setup the LoRAWAN connection
      * @ingroup		Keys_IDs_and_EUI_Management
      */
-    class deui {
-      public:
-	/**@par	Description
+  class deui
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the global end-device ID
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.deui.get(buf, len)
 	 * @param	buf	the buffer to get device EUI
 	 * @param	len	the length of device EUI(must be 8 bytes)
-	 * @return	True for getting device EUI successfully,False for getting device EUI fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for getting device EUI successfully
+	 * @retval	FALSE for getting device EUI failure
 	 * @par         Example
          * @verbatim
        // OTAA Device EUI MSB
@@ -1168,16 +1209,18 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get(uint8_t *buf, uint32_t len);
+    bool get(uint8_t *buf, uint32_t len);
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the global end-device ID
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.deui.set(buf, len)
 	 * @param	buf	the buffer to set device EUI
 	 * @param	len	the length of device EUI(must be 8 bytes)
-	 * @return	True for setting device EUI successfully,False for setting device EUI fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting device EUI successfully
+	 * @retval	FALSE for setting device EUI failure
 	 * @par         Example
          * @verbatim
        // OTAA Device EUI MSB
@@ -1214,16 +1257,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(uint8_t *buf, uint32_t len);
-    };
+    bool set(uint8_t *buf, uint32_t len);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the network identifier(NetID)
      * @ingroup		Keys_IDs_and_EUI_Management
      */
-    class netid {
-      public:
-	/**@par	Description
+  class netid
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the network identifier(NetID)
 	 *
 	 * @par	Syntax
@@ -1231,7 +1275,9 @@ class RAKLorawan {
 	 * @note	Even though the length of network identifier(NetID) is 3 bytes, you should give 4-bytes buffer for natural alignment
 	 * @param	buf	the buffer to get network identifier(NetID)
 	 * @param	len	the length of network identifier(NetID)(must be 3 bytes)
-	 * @return	True for getting network identifier(NetID) successfully,False for getting network identifier(NetID) fail(Type: bool)	
+   * @return	bool
+	 * @retval	TRUE for getting network identifier(NetID) successfully
+	 * @retval	FALSE for getting network identifier(NetID) failure
 	 * @par         Example
          * @verbatim
        // OTAA Device EUI MSB
@@ -1281,16 +1327,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get(uint8_t *buf, uint32_t len);
-    };
+    bool get(uint8_t *buf, uint32_t len);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to get or set the network session key
      * @ingroup		Keys_IDs_and_EUI_Management
      */
-    class nwkskey {
-      public:
-	/**@par	Description
+  class nwkskey
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the network session key
 	 *
 	 * @par	Syntax
@@ -1298,7 +1345,9 @@ class RAKLorawan {
 	 * @note	This function can only work in ABP mode0
 	 * @param	buf	the buffer to get network session key
 	 * @param	len	the length of network session key(must be 16 bytes)
-	 * @return	True for getting network session key successfully,False for getting network session key fail
+   * @return	bool
+	 * @retval	TRUE for getting network session key successfully
+	 * @retval	FALSE for getting network session key failure
 	 * @par         Example
          * @verbatim
        // ABP Network Session Key
@@ -1335,16 +1384,18 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get(uint8_t *buf, uint32_t len);
+    bool get(uint8_t *buf, uint32_t len);
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the network session key
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.nwkskey.set(buf, len)
 	 * @param	buf	the buffer to set network session key
 	 * @param	len	the length of network session key(must be 16 bytes)
-	 * @return	True for setting network session key successfully,False for setting network session key fail
+   * @return	bool
+	 * @retval	TRUE for setting network session key successfully
+	 * @retval	FALSE for setting network session key failure
 	 * @par         Example
          * @verbatim
        // ABP Network Session Key
@@ -1381,23 +1432,24 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(uint8_t *buf, uint32_t len);
-    };
+    bool set(uint8_t *buf, uint32_t len);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the notification on received data coming from the network
      * @ingroup		Joining_and_Sending
      */
-    class cfm {
-      public:
-	/**@par	Description
+  class cfm
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the notification on received data coming from the network
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.cfm.get()
-	 * @return	bool	
-	 * @retval	0	LoRaWan uplink is on confirm mode	
-	 * @retval	1	LoRaWan uplink is not on confirm mode
+   * @return	bool
+	 * @retval	TRUE  : LoRaWan uplink is not on confirm mode
+	 * @retval	FALSE : LoRaWan uplink is on confirm mode
 	 * @par         Example
          * @verbatim
        void setup()
@@ -1416,15 +1468,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get();
+    bool get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the notification on received data coming from the network
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.cfm.set(value)
 	 * @param	value	the mode of confirm mode to set 
-	 * @return	True for setting confirm mode success,False for setting confirm mode fail	
+   * @return	bool
+	 * @retval	TRUE for setting confirm mode success
+	 * @retval	FALSE for setting confirm mode failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -1443,24 +1497,25 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(bool value);
-    };
+    bool set(bool value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the status of the last “SEND” command
      * @ingroup		Joining_and_Sending
      */
-    class cfs {
-      public:
-	/**@par	Description
+  class cfs
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the status of the last “SEND” command
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.cfs.get();
 	 * @note	This api can only work when Confirm mode is on
-	 * @return	The last confirm status for last "Send"(Type: bool)
-	 * @retval	0	Confirm Fail
-	 * @retval	1	Confirm Success
+   * @return	bool
+	 * @retval	TRUE  : Confirm Succes
+	 * @retval	FALSE : Confirm Failure
 	 * @par         Example
          * @verbatim
        // OTAA Device EUI MSB
@@ -1509,23 +1564,24 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get();
-    };
+    bool get();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the network join mode
      * @ingroup		Joining_and_Sending
      */
-    class njm {
-      public:
-	/**@par	Description
+  class njm
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the network join mode
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.njm.get()
-	 * @return	Network join mode(Type: bool)	
-	 * @retval	0	ABP
-	 * @retval	1	OTAA
+	 * @return	bool
+	 * @retval	TRUE  : OTAA
+	 * @retval	FALSE : ABP
 	 * @par         Example
          * @verbatim
        void setup()
@@ -1544,9 +1600,9 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get();
+    bool get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the network join mode
 	 *
 	 * @par	Syntax
@@ -1554,7 +1610,9 @@ class RAKLorawan {
 	 * @param	value	the mode of network join mode \n
 	 * 			ABP:   0\n
 	 * 			OTAA:  1
-	 * @return	True for setting network join mode success,False for setting network join mode fail
+	 * @return	bool
+	 * @retval	TRUE for setting network join mode success
+	 * @retval	FALSE for setting network join mode failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -1573,23 +1631,24 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(bool value);
-    };
+    bool set(bool value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the current status of the LoRa® link
      * @ingroup		Joining_and_Sending
      */
-    class njs {
-      public:
-	/**@par	Description
+  class njs
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the current status of the LoRa® link
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.njs.get()
-	 * @return	the status of LoRa link(Type: bool)
-	 * @retval	0	Network not join
-	 * @retval	1	Netwok	join	
+   * @return	bool
+   * @retval	TRUE  : Netwok	join
+   * @retval	FALSE : Network not join
 	 * @par         Example
          * @verbatim
        // OTAA Device EUI MSB
@@ -1626,25 +1685,26 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get();
-    };
+    bool get();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the adaptive data rate
      * @ingroup		Network
      * @note		The default value of the ADR is 1 (enabled)
      */
-    class adr {
-      public:
-	/**@par	Description
+  class adr
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the adaptive data rate
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.adr.get()
 	 *
-	 * @return	the status of adaptive data rate
-	 * @retval	0	disable adaptive data rate	
-	 * @retval	1	enable adaptive data rate	
+   * @return	bool
+	 * @retval	TRUE  : enable adaptive data rate	
+	 * @retval	FALSE : disable adaptive data rate
 	 * @par         Example
          * @verbatim
        void setup()
@@ -1662,16 +1722,18 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get();
+    bool get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the adaptive data rate
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.adr.set(value)
 	 *
 	 * @param	value	the status of adaptive data rate
-	 * @return	True for setting status of adr success, False for setting status of adr fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE  for setting status of adr success
+	 * @retval	FALSE for setting status of adr failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -1690,16 +1752,17 @@ class RAKLorawan {
            @endverbatim
 
 	 */
-	bool set(bool value);
-    };
+    bool set(bool value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the LoRaWAN® class
      * @ingroup		Network
      */
-    class deviceClass {
-      public:
-	/**@par	Description
+  class deviceClass
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the LoRaWAN® class
 	 *
 	 * @par	Syntax
@@ -1738,16 +1801,18 @@ class RAKLorawan {
            @endverbatim
 
 	 */
-	uint8_t get();
+    uint8_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the LoRaWAN® class
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.deviceClass.set(value)
 	 *
 	 * @param	value	the LoRaWan class
-	 * @return	True for setting LoRaWan class success, False for setting LoRaWan class fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE  for setting LoRaWan class success
+	 * @retval	FALSE for setting LoRaWan class failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -1776,24 +1841,25 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(uint8_t value);
-    };
+    bool set(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the duty cycle parameter
      * @ingroup		Network
      */
-    class dcs {
-      public:
-	/**@par	Description
+  class dcs
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the duty cycle parameter
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.dcs.get()
 	 *
-	 * @return	the duty cycle status(Type: bool)
-	 * @retval	0	disable duty cycle
-	 * @retval	1	enable duty cycle
+   * @return	bool
+	 * @retval	TRUE  : enable duty cycle
+	 * @retval	FALSE : disable duty cycle
 	 * @par         Example
          * @verbatim
        void setup()
@@ -1811,15 +1877,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get();
+    bool get();
 
-	/**@par	Description
+    /**@par	Description
 	 *      This api allows the user to set the duty cycle paramter
 	 * @par Syntax
 	 *      api.lorawan.dcs.set(dutyCycle)
 	 *
 	 * @param	dutyCycle	the LoRaWan duty cycle
-	 * @return	True for setting duty cycle success, False for setting duty cycle fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting duty cycle success
+	 * @retval	FALSE for setting duty cycle failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -1837,16 +1905,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(uint8_t dutyCycle);
-    };
+    bool set(uint8_t dutyCycle);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the data rate
      * @ingroup		Network
      */
-    class dr {
-      public:
-	/**@par	Description
+  class dr
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the data rate
 	 *
 	 * @par	Syntax
@@ -1869,16 +1938,19 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	uint8_t get();
+    uint8_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the data rate
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.dr.set(value)
 	 *
 	 * @param	value	the data rate
-	 * @return	True for setting data rate success, False for setting date rate fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting data rate success
+	 * @retval	FALSE for setting date rate failure
+   * 
 	 * @par         Example
          * @verbatim
        void setup()
@@ -1896,16 +1968,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(uint8_t value);
-    };
+    bool set(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the join delay on RX window 1 
      * @ingroup		Network
      */
-    class jn1dl {
-      public:
-	/**@par	Description
+  class jn1dl
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the join delay on RX window 1
 	 *
 	 * @par	Syntax
@@ -1929,16 +2002,18 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	int get();
+    int get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the join delay on RX window 1
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.jn1dl.set(value)
 	 *
 	 * @param	value	the join delay on RX window 1
-	 * @return	True for setting join delay success, False for setting join delay false(Type: bool) 
+   * @return	bool
+	 * @retval	TRUE for setting join delay success
+	 * @retval	FALSE for setting join delay failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -1956,16 +2031,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(int value);
-    };
+    bool set(int value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the join delay on RX window 2
      * @ingroup		Network
      */
-    class jn2dl {
-      public:
-	/**@par	Description
+  class jn2dl
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to access the join delay on RX window 2
 	 *
 	 * @par	Syntax
@@ -1987,22 +2063,25 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	int get();
-    };
+    int get();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the public network mode
      * @ingroup		Network
      */
-    class pnm {
-      public:
-	/**@par	Description
+  class pnm
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the public network mode
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.pnm.get()
 	 *
-	 * @return	the public network mode(Type: bool)
+   * @return	bool
+	 * @retval	TRUE  : On
+	 * @retval	FALSE : Off
 	 * @par         Example
          * @verbatim
        void setup()
@@ -2020,16 +2099,18 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool get();
+    bool get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the public network mode
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.pnm.set(value)
 	 *
 	 * @param	value	the public network mode
-	 * @return	True for setting public network mode success, False for setting public network mode fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting public network mode success
+	 * @retval	FALSE for setting public network mode failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -2047,16 +2128,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(bool value);
-    };
+    bool set(bool value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the delay of the received window 1 (
      * @ingroup		Network
      */
-    class rx1dl {
-      public:
-	/**@par	Description
+  class rx1dl
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the delay of the received window 1
 	 *
 	 * @par	Syntax
@@ -2080,15 +2162,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	int get();
+    int get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the delay of the received window 1
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.rx1dl.set(value)
 	 * @param	value	the delay of the received window 1
-	 * @return	True for setting delay success, False for setting delay fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting delay success
+	 * @retval	FALSE for setting delay failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -2106,16 +2190,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(int value);
-    };
+    bool set(int value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the delay of the received window 2 
      * @ingroup		Network
      */
-    class rx2dl {
-      public:
-	/**@par	Description
+  class rx2dl
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the delay of the received window 2
 	 *
 	 * @par	Syntax
@@ -2137,16 +2222,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	int get();
-    };
+    int get();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the data rate of received window 2
      * @ingroup		Network
      */
-    class rx2dr {
-      public:
-	/**@par	Description
+  class rx2dr
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the data rate of received window 2
 	 *
 	 * @par	Syntax
@@ -2170,16 +2256,18 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	uint8_t get();
+    uint8_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the data rate of received window 2
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.rx2dr.set(value)
 	 *
 	 * @param	value	the date rate of received window 2
-	 * @return	True for setting data rate success, Fasle for setting data rate fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting data rate success
+	 * @retval	FALSE for setting data rate failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -2197,16 +2285,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(uint8_t value);
-    };
+    bool set(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the frequency of the received window 2
      * @ingroup		Network
      */
-    class rx2fq {
-      public:
-	/**@par	Description
+  class rx2fq
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the frequency of the received window 2
 	 *
 	 * @par	Syntax
@@ -2228,16 +2317,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	long get();
-    };
+    long get();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the transmit power
      * @ingroup		Network
      */
-    class txp {
-      public:
-	/**@par	Description
+  class txp
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the transmit power
 	 *
 	 * @par	Syntax
@@ -2261,16 +2351,18 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	uint8_t get();
+    uint8_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the transmit power
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.txp.set(value)
 	 *
 	 * @param	value	the LoRaWan transmit power
-	 * @return	True for setting transmit power success, False for setting transmit power fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting transmit power successs
+	 * @retval	FALSE for setting transmit power failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -2288,17 +2380,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	bool set(uint8_t value);
+    bool set(uint8_t value);
+  };
 
-    };
-
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to get or set the unicast ping slot periodicity
      * @ingroup		Class_B
      */
-    class pgslot {
-      public:
-	/**@par	Description
+  class pgslot
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the unicast ping slot periodicity
 	 *
 	 * @par	Syntax
@@ -2344,16 +2436,18 @@ class RAKLorawan {
        }
            @endverbatim
 	 */
-	uint8_t get();
+    uint8_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set the unicast ping slot periodicity
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.pgslot.set(value)
 	 *
 	 * @param	value	the unicast ping slot periodicity	
-	 * @return	True for setting ping slot periodicity success, False for setting ping slot periodicity fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting ping slot periodicity success
+	 * @retval	FALSE for setting ping slot periodicity failure
 	 * @par         Example
          * @verbatim
        // OTAA Device EUI MSB
@@ -2393,16 +2487,17 @@ class RAKLorawan {
        }
            @endverbatim
 	 */
-	bool set(uint8_t value);
-    };
+    bool set(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the current beacon (default broadcast) frequency	
      * @ingroup		Class_B
      */
-    class bfreq {
-      public:
-	/**@par	Description
+  class bfreq
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the current beacon (default broadcast) frequency
 	 *
 	 * @par	Syntax
@@ -2447,16 +2542,17 @@ class RAKLorawan {
        }
            @endverbatim
 	 */
-	float get();
-    };
+    float get();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api(a) allows the user to access the current beacon time(b)
      * @ingroup		Class_B
      */
-    class btime {
-      public:
-	/**@par	Description
+  class btime
+  {
+  public:
+    /**@par	Description
 	 *     	This api(a) allows the user to get the current beacon time(b)
 	 *
 	 * @par	Syntax
@@ -2501,16 +2597,17 @@ class RAKLorawan {
        }
            @endverbatim
 	 */
-	long get();
-    };
+    long get();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api(a) allows the user to access the gateway GPS coordinate, NetID and GwID(b)
      * @ingroup		Class_B
      */
-    class bgw {
-      public:
-	/**@par	Description
+  class bgw
+  {
+  public:
+    /**@par	Description
 	 *     	This api(a) allows the user to access the gateway GPS coordinate, NetID and GwID(b)
 	 *
 	 * @par	Syntax
@@ -2564,17 +2661,18 @@ class RAKLorawan {
        }
 	   @endverbatim
 	 */
-	beacon_bgw_t get();
-    };
+    beacon_bgw_t get();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the RSSI on reception
      * @ingroup		Information
      * @note		When the connection is successful and get the RSSI of the last received packet
      */
-    class rssi {
-      public:
-	/**@par	Description
+  class rssi
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the RSSI on reception
 	 *
 	 * @par	Syntax
@@ -2628,17 +2726,18 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	int get();
-    };
+    int get();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to access the SNR of the last received packet 
      * @ingroup		Information
      * @note		When the connection is successful and get the SNR of the last received packet
      */
-    class snr {
-      public:
-	/**@par	Description
+  class snr
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the SNR of the last received packet
 	 *
 	 * @par	Syntax
@@ -2692,16 +2791,17 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-	int get();
-    };
+    int get();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api(a) allows the user to access the local time in a UTC format
      * @ingroup		Class_B
      */
-    class ltime {
-      public:
-	/**@par	Description
+  class ltime
+  {
+  public:
+    /**@par	Description
 	 *     	This api(a) allows the user to get the local time in a UTC format 
 	 *
 	 * @par	Syntax
@@ -2746,17 +2846,17 @@ class RAKLorawan {
        }
            @endverbatim
 	 */
-        string get();
-    };
+    string get();
+  };
 
-
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to get the lorawan version
      * @ingroup		Information
      */
-    class ver {
-      public:
-	/**@par	Description
+  class ver
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to get the lorawan version
 	 *
 	 * @par	Syntax
@@ -2778,231 +2878,264 @@ class RAKLorawan {
 
            @endverbatim
 	 */
-        string get();
-    };
+    string get();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		
      * @ingruop		RF_Test
      */
-    class trssi {
-      public:
-	/**@par	Description
+  class trssi
+  {
+  public:
+    /**@par	Description
 	 *      
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.trssi.start();
-	 * @return
+   * @return	bool
+	 * @retval	TRUE fot success
+	 * @retval	FALSE for failure
 	 */
-        bool start();
-    };
+    bool start();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *
      * @ingroup		RF_Test
      */
-    class ttone {
-      public:
-	/**@par	Description
+  class ttone
+  {
+  public:
+    /**@par	Description
 	 *      
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.ttone.start();
-	 * @return
+   * @return	bool
+	 * @retval	TRUE fot success
+	 * @retval	FALSE for failure
 	 */
-        bool start();
-    };
+    bool start();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *
      * @ingroup		RF_Test
      */
-    class ttx {
-      public:
-	/**@par	Description
+  class ttx
+  {
+  public:
+    /**@par	Description
 	 *      
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.ttx.start(value);
 	 * @param	value
-	 * @return
+   * @return	bool
+	 * @retval	TRUE fot success
+	 * @retval	FALSE for failu
 	 */
-        bool start(uint8_t value);
-    };
+    bool start(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *
      * @ingroup		RF_Test
      */
-    class trx {
-      public:
-	/**@par	Description
+  class trx
+  {
+  public:
+    /**@par	Description
 	 *      
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.trx.start(value);
 	 * @param	value
-	 * @return
+   * @return	bool
+	 * @retval	TRUE fot success
+	 * @retval	FALSE for failu
 	 */
-        bool start(uint8_t value);
-    };
+    bool start(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *
      * @ingroup		RF_Test
      */
-    class tconf {
-      public:
-	
-	class freq {
-	  public:
-	    bool set(long value);
-	};
-
-	class power {
-	  public:
-	    bool set(uint8_t value);
-	};
-
-	class dr {
-	  public:
-	    bool set(uint8_t value);
-	};
-
-	class cr {
-	  public:
-	    bool set(uint8_t value);
-	};
-
-	class lna {
-	  public:
-	    bool set(bool value);
-	};
-
-	class boost {
-	  public:
-	    bool set(bool value);
-	};
-
-	class modulation {
-	  public:
-	    bool set(uint8_t value);
-	};
-
-	class payloadLength {
-	  public:
-	    bool set(uint8_t value);
-	};
-
-	class fskDeviation {
-	  public:
-	    bool set(int, int);
-	};
-
-	class lowDrOpt {
-	  public:
-	    bool set(uint8_t value);
-	};
-
-	class BTProduct {
-	  public:
-	    bool set(uint8_t value);
-	};
-	//instance of tconf
-	freq freq;
-	power power;
-	dr dr;
-	cr cr;
-	lna lna;
-	boost boost;
-	modulation modulation;
-	payloadLength payloadLength;
-	fskDeviation fskDeviation;
-	lowDrOpt lowDrOpt;
-	BTProduct BTProduct;
+  class tconf
+  {
+  public:
+    class freq
+    {
+    public:
+      bool set(long value);
     };
 
-    /**@par	Description
+    class power
+    {
+    public:
+      bool set(uint8_t value);
+    };
+
+    class dr
+    {
+    public:
+      bool set(uint8_t value);
+    };
+
+    class cr
+    {
+    public:
+      bool set(uint8_t value);
+    };
+
+    class lna
+    {
+    public:
+      bool set(bool value);
+    };
+
+    class boost
+    {
+    public:
+      bool set(bool value);
+    };
+
+    class modulation
+    {
+    public:
+      bool set(uint8_t value);
+    };
+
+    class payloadLength
+    {
+    public:
+      bool set(uint8_t value);
+    };
+
+    class fskDeviation
+    {
+    public:
+      bool set(int, int);
+    };
+
+    class lowDrOpt
+    {
+    public:
+      bool set(uint8_t value);
+    };
+
+    class BTProduct
+    {
+    public:
+      bool set(uint8_t value);
+    };
+    //instance of tconf
+    freq freq;
+    power power;
+    dr dr;
+    cr cr;
+    lna lna;
+    boost boost;
+    modulation modulation;
+    payloadLength payloadLength;
+    fskDeviation fskDeviation;
+    lowDrOpt lowDrOpt;
+    BTProduct BTProduct;
+  };
+
+  /**@par	Description
      *
      * @ingroup		RF_Test
      */
-    class tth {
-      public:
-	bool start();
+  class tth
+  {
+  public:
+    bool start();
 
-        class freqStart {
-          public:
-            bool set(long value);
-	};
-
-	class freqStop {
-          public:
-            bool set(long value);
-	};
-
-	class freqDelta {
-          public:
-            bool set(long value);
-	};
-
-	class packetNb {
-          public:
-            bool set(uint8_t value);
-	};
-	//instance of tth
-	freqStart freqStart;
-	freqStop freqStop;
-	freqDelta freqDelt;
-	packetNb packetNb;
+    class freqStart
+    {
+    public:
+      bool set(long value);
     };
 
-    /**@par	Description
+    class freqStop
+    {
+    public:
+      bool set(long value);
+    };
+
+    class freqDelta
+    {
+    public:
+      bool set(long value);
+    };
+
+    class packetNb
+    {
+    public:
+      bool set(uint8_t value);
+    };
+    //instance of tth
+    freqStart freqStart;
+    freqStop freqStop;
+    freqDelta freqDelt;
+    packetNb packetNb;
+  };
+
+  /**@par	Description
      *
      * @ingroup		RF_Test
      */
-    class toff {
-      public:
-	/**@par	Description
+  class toff
+  {
+  public:
+    /**@par	Description
 	 *      
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.toff.stop();
 	 * @return
 	 */
-        bool stop();
-    };
+    bool stop();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *
      * @ingroup		RF_Test
      */
-    class certif {
-      public:				
-	/**@par	Description
+  class certif
+  {
+  public:
+    /**@par	Description
 	 *      
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.certif.start();
 	 * @return
 	 */
-	bool start();      
-    };
+    bool start();
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api configures the channel of the device by setting the hexadecimal 
 channel mask
      * @ingroup		Generic_LoRaWAN_Instructions
      */
-    class mask {
-      public:
-	/**@par	Description
+  class mask
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to set the channel mask, close or open the channel
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.mask.get(buff)
 	 *
 	 * @param	buff	the buffer to store channel mask
-	 * @return	True fot getting channel mask success, False for setting channel mask fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE fot getting channel mask success
+	 * @retval	FALSE for setting channel mask failure
 	 * @par         Example
          * @verbatim
        uint16_t maskBuff = 0x0003;
@@ -3026,16 +3159,18 @@ channel mask
 
            @endverbatim
 	 */
-        bool get(uint16_t *buff);
+    bool get(uint16_t *buff);
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to get the channel mask, close or open the channel
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.mask.set(value)
 	 *
 	 * @param	value	the buffer to set the channel mask
-	 * @return	True for setting channel mask success, False for setting channel mask fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting channel mask success
+	 * @retval	FALSE for setting channel mask failure
 	 * @par         Example
          * @verbatim
        uint16_t maskBuff = 0x0003;
@@ -3059,10 +3194,10 @@ channel mask
 
            @endverbatim
 	 */
-	bool set(uint16_t *value);
-    };
+    bool set(uint16_t *value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api set number corresponding to active regions
      * @ingroup		Generic_LoRaWAN_Instructions
      * @note		0: EU433\n
@@ -3075,9 +3210,10 @@ channel mask
      *                  7: KR920\n 
      *                  8: AS923
      */
-    class band {
-      public:
-	/**@par	Description
+  class band
+  {
+  public:
+    /**@par	Description
 	 *     	This api get number corresponding to active regions	
 	 *
 	 * @par	Syntax
@@ -3111,16 +3247,18 @@ channel mask
 
            @endverbatim
 	 */
-        int32_t get();
+    int32_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api set number corresponding to active regions
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.band.set(value)
 	 *
 	 * @param	value	the active region to set
-	 * @return	True for setting active region, False for setting active region(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting active region success
+	 * @retval	FALSE for setting active region failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -3139,16 +3277,17 @@ channel mask
 
            @endverbatim
 	 */
-	bool set(uint8_t value);
-    };
+    bool set(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api allows the user to Verify Network Link Status
      * @ingroup		Generic_LoRaWAN_Instructions
      */
-    class linkcheck {
-      public:
-	/**@par	Description
+  class linkcheck
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows the user to Verify Network Link Status
 	 *
 	 * @par	Syntax
@@ -3176,16 +3315,18 @@ channel mask
 
            @endverbatim
 	 */
-        uint32_t get();
+    uint32_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows the user to set Network Link Status
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.linkcheck.set(value)
 	 *
 	 * @param	value	the mode of Verifying network link status
-	 * @return	True for setting mode of verifying network link status, False for setting mode of verifying network link status fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting mode of verifying network link status success
+	 * @retval	FALSE for setting mode of verifying network link status failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -3204,17 +3345,18 @@ channel mask
 
            @endverbatim
 	 */
-	bool set(uint8_t value);
-    };
+    bool set(uint8_t value);
+  };
 
-    /**@par	Description
-     *		Switch to point-to-point mode, or LoRaWAN mode [0:Point to point, 1:LoRaWAN]
+  /**@par	Description
+     *		Switch to point-to-point mode, or LoRaWAN mode, or FSK mode [0:Point to point, 1:LoRaWAN, 2:FSK]
      * @ingroup		P2P
      */
-    class nwm {
-      public:
-	/**@par	Description
-	 *     	This api allows to get the network working mode (0 = P2P, 1 = LoRaWAN)
+  class nwm
+  {
+  public:
+    /**@par	Description
+	 *     	This api allows to get the network working mode (0 = P2P, 1 = LoRaWAN, 2 = FSK)
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.nwm.get()
@@ -3222,6 +3364,7 @@ channel mask
 	 * @return	the netwok working mode 
 	 * @retval	0	P2P mode
 	 * @retval	1	LoRaWan mode	
+   * @retval	2	FSK mode	
 	 * @par         Example
          * @verbatim
        void setup()
@@ -3240,16 +3383,18 @@ channel mask
 
            @endverbatim
 	 */
-        int get();
+    int get();
 
-	/**@par	Description
-	 *     	This api allows to set the network working mode (0 = P2P, 1 = LoRaWAN)
+    /**@par	Description
+	 *     	This api allows to set the network working mode (0 = P2P, 1 = LoRaWAN, 2 = FSK)
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.nwm.set(value)
 	 *
 	 * @param	value	the network working mode
-	 * @return	True for setting network working mode success, False for setting network working mode fail(Tpye: bool)
+   * @return	bool
+	 * @retval	TRUE for setting network working mode success
+	 * @retval	FALSE for setting network working mode failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -3268,16 +3413,17 @@ channel mask
 
            @endverbatim
 	 */
-	bool set(uint8_t value);
-    };
+    bool set(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api provides configuration frequency for the P2P mode
      * @ingroup		P2P
      */
-    class pfreq {
-      public:
-	/**@par	Description
+  class pfreq
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows to get the P2P frequency
 	 *
 	 * @par	Syntax
@@ -3303,16 +3449,18 @@ channel mask
 
            @endverbatim
 	 */
-        uint32_t get();
+    uint32_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows to set the P2P frequency
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.pfreq.set(value)
 	 *
 	 * @param	value the frequency for P2P mode
-	 * @return	True for setting frequency success, False for setting frequency fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting frequency success
+	 * @retval	FALSE for setting frequency failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -3332,16 +3480,17 @@ channel mask
 
            @endverbatim
 	 */
-	bool set(uint32_t value);
-    };
+    bool set(uint32_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api provides a configuration Spreading Factor for the P2P mode
      * @ingroup		P2P
      */
-    class psf {
-      public:
-	/**@par	Description
+  class psf
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows to get P2P Spreading Factor (6,7, 8,9, 10, 11, 12)
 	 *
 	 * @par	Syntax
@@ -3367,16 +3516,18 @@ channel mask
 
            @endverbatim
 	 */
-        uint8_t get();
+    uint8_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows to set P2P Spreading Factor (6,7, 8,9, 10, 11, 12)
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.psf.set(value)
 	 *
 	 * @param	value	the P2P spreading factor
-	 * @return	True for setting P2P spreading factor success, False for setting P2P spreading factor fail(Type: bool) 
+   * @return	bool
+	 * @retval	TRUE for setting P2P spreading factor success
+	 * @retval	FALSE for setting P2P spreading factor failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -3396,16 +3547,17 @@ channel mask
 
            @endverbatim
 	 */
-	bool set(uint8_t value);
-    };
+    bool set(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api provides configuration Bandwidth for the P2P mode
      * @ingroup		P2P
      */
-    class pbw {
-      public:
-	/**@par	Description
+  class pbw
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows to get P2P Bandwidth(125,250,500)
 	 *
 	 * @par	Syntax
@@ -3431,16 +3583,18 @@ channel mask
 
            @endverbatim
 	 */
-        uint32_t get();
+    uint32_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allow to set P2P Bandwidth(125,250,500)
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.pbw.set(value)
 	 *
 	 * @param	value	the P2P bandwidth
-	 * @return	True for setting P2P bandwidth success, False for setting P2P bandwidth fail(Type: bool)	
+   * @return	bool
+	 * @retval	TRUE for setting P2P bandwidth success
+	 * @retval	FALSE for setting P2P bandwidth failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -3460,16 +3614,17 @@ channel mask
 
            @endverbatim
 	 */
-	bool set(uint32_t value);
-    };
+    bool set(uint32_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api provides the configuration code rate for the P2P mode
      * @ingroup		P2P
      */
-    class pcr {
-      public:
-	/**@par	Description
+  class pcr
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows to get code rate for the P2P mode
 	 *
 	 * @par	Syntax
@@ -3495,16 +3650,18 @@ channel mask
 
            @endverbatim
 	 */
-        uint8_t get();
+    uint8_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows to set code rate for the P2P mode
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.pcr.set(value)
 	 *
 	 * @param	value	the code rate for P2P mode	
-	 * @return	True for setting code rate success, False for setting code rate fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting code rate success
+	 * @retval	FALSE for setting code rate failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -3524,16 +3681,17 @@ channel mask
 
            @endverbatim
 	 */
-	bool set(uint8_t value);
-    };
+    bool set(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api provides configuration Preamble Length for the P2P mode
      * @ingroup		P2P
      */
-    class ppl {
-      public:
-	/**@par	Description
+  class ppl
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows to get P2P Preamble Length (2-65535)
 	 *
 	 * @par	Syntax
@@ -3559,16 +3717,18 @@ channel mask
 
            @endverbatim
 	 */
-        uint16_t get();
+    uint16_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows to set P2P Preamble Length (2-65535)
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.ppl.set(value)
 	 *
 	 * @param	value	the P2P preamble length(2-65536)
-	 * @return	True for setting P2P preamble length success, False for setting preamble length fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting P2P preamble length success
+	 * @retval	FALSE for setting preamble length failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -3588,16 +3748,17 @@ channel mask
 
            @endverbatim
 	 */
-	bool set(uint16_t value);
-    };
+    bool set(uint16_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api provides configuration Power for the P2P mode
      * @ingroup		P2P
      */
-    class ptp {
-      public:
-	/**@par	Description
+  class ptp
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows to get P2P TX Power(5-22)
 	 *
 	 * @par	Syntax
@@ -3623,15 +3784,17 @@ channel mask
 
            @endverbatim
 	 */
-        uint8_t get();
+    uint8_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows to set P2P TX Power(5-22)
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.ptp.set(value)
 	 * @param	value	the P2P Tx power
-	 * @return	True for setting P2P Tx power success, False for setting P2P Tx power fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for setting P2P Tx power success
+	 * @retval	FALSE for setting P2P Tx power failure
 	 * @par         Example
          * @verbatim
        void setup()
@@ -3651,17 +3814,19 @@ channel mask
 
            @endverbatim
 	 */
-	bool set(uint8_t value);
-    };
+    bool set(uint8_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *          This API is used to enter P2P RX mode for a specified period.
      *
      * @par	Syntax
      *      	api.lorawan.precv(uint32_t timeout)
      *
-     * @param	timeout		the duration of P2P Rx mode 
-     * @return	True for entering P2P Rx mode success, False for entering P2P Rx mode fail(Type: bool)
+     * @param	timeout		the duration of P2P Rx mode
+     * @return	bool
+     * @retval	TRUE for entering P2P Rx mode success
+     * @retval	FALSE for entering P2P Rx mode failure
      * @par         Example
      * @verbatim
        void setup()
@@ -3688,61 +3853,61 @@ channel mask
 
            @endverbatim
      */
-    bool precv(uint32_t timeout);
+  bool precv(uint32_t timeout);
 
-    //instance
-    rety rety;
-    appeui appeui;
-    appkey appkey;
-    appskey appskey;
-    daddr daddr;
-    deui deui;
-    netid netid;
-    nwkskey nwkskey;
-    cfm cfm;
-    cfs cfs;
-    njm njm;
-    njs njs;
-    adr adr;
-    deviceClass deviceClass;
-    dcs dcs;
-    dr dr;
-    jn1dl jn1dl;
-    jn2dl jn2dl;
-    pnm pnm;
-    rx1dl rx1dl;
-    rx2dl rx2dl;
-    rx2dr rx2dr;
-    rx2fq rx2fq;
-    txp txp;
-    pgslot pgslot;
-    bfreq bfreq;
-    btime btime;
-    bgw bgw;
-    rssi rssi;
-    snr snr;
-    ltime ltime;
-    ver ver;
-    trssi trssi;
-    ttone ttone;
-    ttx ttx;
-    trx trx;
-    tconf tconf;
-    tth tth;
-    toff toff;
-    certif certif;
-    mask mask;
-    band band;
-    linkcheck linkcheck;
-    nwm nwm;
-    pfreq pfreq;
-    psf psf;
-    pbw pbw;
-    pcr pcr;
-    ppl ppl;
-    ptp ptp;
+  //instance
+  rety rety;
+  appeui appeui;
+  appkey appkey;
+  appskey appskey;
+  daddr daddr;
+  deui deui;
+  netid netid;
+  nwkskey nwkskey;
+  cfm cfm;
+  cfs cfs;
+  njm njm;
+  njs njs;
+  adr adr;
+  deviceClass deviceClass;
+  dcs dcs;
+  dr dr;
+  jn1dl jn1dl;
+  jn2dl jn2dl;
+  pnm pnm;
+  rx1dl rx1dl;
+  rx2dl rx2dl;
+  rx2dr rx2dr;
+  rx2fq rx2fq;
+  txp txp;
+  pgslot pgslot;
+  bfreq bfreq;
+  btime btime;
+  bgw bgw;
+  rssi rssi;
+  snr snr;
+  ltime ltime;
+  ver ver;
+  trssi trssi;
+  ttone ttone;
+  ttx ttx;
+  trx trx;
+  tconf tconf;
+  tth tth;
+  toff toff;
+  certif certif;
+  mask mask;
+  band band;
+  linkcheck linkcheck;
+  nwm nwm;
+  pfreq pfreq;
+  psf psf;
+  pbw pbw;
+  pcr pcr;
+  ppl ppl;
+  ptp ptp;
 
-    /**@par	Description
+  /**@par	Description
      * 		This api provides the way to P2P send data
      *   
      * @ingroup	P2P
@@ -3751,7 +3916,9 @@ channel mask
      *
      * @param   length		the length of the payload
      * @param   payload		the data send to the other device
-     * @return	True for sending data success, False for sending data fail(Type: bool)
+     * @return	bool
+     * @retval	TRUE for sending data success
+     * @retval	FALSE for sending data failure
      * @par         Example
      * @verbatim
        void setup()
@@ -3779,22 +3946,23 @@ channel mask
 
            @endverbatim
      */
-    bool psend(uint8_t length, uint8_t *payload);
+  bool psend(uint8_t length, uint8_t *payload);
 
-    /**@par	Description
+  /**@par	Description
      *		This api configures P2P mode encryption
      * @ingroup		P2P
      */
-    class encry {
-      public:
-	/**@par	Description
+  class encry
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows to get the status of P2P mode encryption
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.encry.get()
-	 * @return	The status of P2P mode encryption	
-	 * @retval	0	P2P mode encryption is disable
-	 * @retval	1	P2P mode encryption is enable
+   * @return	bool
+	 * @retval	TRUE  : P2P mode encryption is enable
+	 * @retval	FALSE : P2P mode encryption is disable
 	 * @par         Example
          * @verbatim
        long startTime;
@@ -3852,16 +4020,18 @@ channel mask
 
            @endverbatim
 	 */
-        bool get();
+    bool get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows to enable or disable P2P mode encryption
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.encry.set(value)
 	 *
 	 * @param	value	the status of P2P mode encryption
-	 * @return	True for Setting status of encryption success, False for setting status of encryption fail
+   * @return	bool
+	 * @retval	TRUE  : for Setting status of encryption success
+	 * @retval	FALSE : for setting status of encryption failure
 	 * @par         Example
          * @verbatim
        long startTime;
@@ -3917,16 +4087,17 @@ channel mask
        }
          @endverbatim
 	 */
-	bool set(bool value);
-    };
+    bool set(bool value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api will encrypt the date being sent and received
      * @ingroup		P2P
      */
-    class enckey {
-      public:
-	/**@par	Description
+  class enckey
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows to get the key of P2P mode encryption
 	 *
 	 * @par	Syntax
@@ -3934,7 +4105,9 @@ channel mask
 	 *
          * @param       buff	the buffer to store encryption key
          * @param       len	the length of encryption key(must be 8 bytes)
-	 * @return	True for getting encryption key success, False for getting encryption key fail	
+   * @return	bool
+	 * @retval	TRUE for getting encryption key success
+	 * @retval	FALSE for getting encryption key failure
 	 * @par         Example
          * @verbatim
        long startTime;
@@ -3991,9 +4164,9 @@ channel mask
        }
          @endverbatim
 	 */
-        bool get(uint8_t *buff, uint32_t len);
+    bool get(uint8_t *buff, uint32_t len);
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows to set the key of P2P mode encryption
 	 *
 	 * @par	Syntax
@@ -4001,7 +4174,9 @@ channel mask
 	 *
          * @param       buff	the buffer to set encryption key
          * @param       len	the length of encryption key(must be 8 bytes)
-	 * @return	True for setting encryption key success, False for setting encryption fail
+   * @return	bool
+	 * @retval	TRUE for setting encryption key success
+	 * @retval	FALSE for setting encryption failure
 	 * @par         Example
          * @verbatim
        long startTime;
@@ -4058,29 +4233,30 @@ channel mask
        }
          @endverbatim
 	 */
-	bool set(uint8_t *buff, uint32_t len);
-    };
+    bool set(uint8_t *buff, uint32_t len);
+  };
 
-    encry encry;
-    enckey enckey;
+  encry encry;
+  enckey enckey;
 
-    /**@par	Description
+  /**@par	Description
      *		This api configures the P2P FSK modem bitrate (600b/s-307200b/s)
      * @ingroup		P2P
      */
-    class pbr {
-      public:
-	/**@par	Description
+  class pbr
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows to get the P2P FSK modem bitrate (600b/s-307200b/s)
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.pbr.get()
 	 *
-	 * @return	
+   * @return The P2P FSK modem bitrate
 	 */
-        uint32_t get();
+    uint32_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows to set the P2P FSK modem bitrate (600b/s-307200b/s)
 	 *
 	 * @par	Syntax
@@ -4089,26 +4265,27 @@ channel mask
          * @param       value
 	 * @return	
 	 */
-	bool set(uint32_t value);
-    };
+    bool set(uint32_t value);
+  };
 
-    /**@par	Description
+  /**@par	Description
      *		This api configures the P2P FSK modem frequency deviation
      * @ingroup		P2P
      */
-    class pfdev {
-      public:
-	/**@par	Description
+  class pfdev
+  {
+  public:
+    /**@par	Description
 	 *     	This api allows to get the P2P FSK modem frequency deviation
 	 *
 	 * @par	Syntax
 	 *	api.lorawan.pfdev.get()
 	 *
-	 * @return	
+	 * @return	The P2P FSK modem frequency deviation
 	 */
-        uint32_t get();
+    uint32_t get();
 
-	/**@par	Description
+    /**@par	Description
 	 *     	This api allows to set the P2P FSK modem frequency deviation
 	 *
 	 * @par	Syntax
@@ -4117,19 +4294,21 @@ channel mask
          * @param       value
 	 * @return	
 	 */
-	bool set(uint32_t value);
-    };
+    bool set(uint32_t value);
+  };
 
-    pbr pbr;
-    pfdev pfdev;
+  pbr pbr;
+  pfdev pfdev;
 
-    /**@par	Description
+  /**@par	Description
      * 		This command adds a new multicast group configure multicast parameters
      * @ingroup	Multicast
      * @par	Syntax
      * 		api.lorawan.addmulc(session)
-     * @param	session		The structure of session 
-     * @return	True for adding multicast group success, False for adding multicast group fail(Type: bool)
+     * @param	session		The structure of session
+     * @return	bool
+     * @retval	TRUE for adding multicast group success
+     * @retval	FALSE for adding multicast group failure
      * @par	Example
      * @verbatim
        void setup()
@@ -4199,16 +4378,18 @@ channel mask
        }
        @endverbatim
      */
-    bool addmulc(RAK_LORA_McSession session);
+  bool addmulc(RAK_LORA_McSession session);
 
-    /**@par	Description
+  /**@par	Description
      * 		This command allows the removal of a configured multicast group
      * @ingroup	Multicast
      * @par	Syntax
      * 		api.lorawan.rmvmulc(devAddr)
      *
      * @param	devAddr		the address to remvoe a multicast group
-     * @return	True for removing success, False for removing fail(Type: bool)
+     * @return	bool
+     * @retval	TRUE for removing success
+     * @retval	FALSE for removing failure
      * @par	Example
      * @verbatim
        // OTAA Device EUI MSB
@@ -4278,16 +4459,18 @@ channel mask
        }
        @endverbatim
      */
-    bool rmvmulc(uint32_t devAddr);
+  bool rmvmulc(uint32_t devAddr);
 
-    /**@par	Description
+  /**@par	Description
      * 		This command can view current configured multicast group information
      * @ingroup	Multicast
      * @par	Syntax
      *		api.lorawan.lstmulc(&multicast_list)
      *
      * @param	multicast_list 	a RAK_LORA_McSession variable
-     * @return	True for getting multicast list success, False for getting multicast fail(Type: bool)
+     * @return	bool
+     * @retval	TRUE for getting multicast list success
+     * @retval	FALSE for getting multicast failure
      * @par	Example
      * @verbatim
        void setup()
@@ -4387,16 +4570,18 @@ channel mask
        
        @endverbatim
      */
-    bool lstmulc(RAK_LORA_McSession *iterator);
+  bool lstmulc(RAK_LORA_McSession *iterator);
 
-    /**@par	Description
+  /**@par	Description
      * 		This command can access all open channel rssi
      * @ingroup	Information
      * @par	Syntax
      * 		api.lorawan.arssi(chan_arssi)
      *
      * @param	chan_arssi	the struture array to store arssi
-     * @return	True for getting arssi success, Fail for getting arssi fail
+     * @return	bool
+     * @retval	TRUE for getting arssi success
+     * @retval	FALSE for getting arssi failure
      * @par	Example
      * @verbatim
      // OTAA Device EUI MSB
@@ -4443,7 +4628,7 @@ channel mask
      } 
        @endverbatim
      */
-    bool arssi(RAK_LORA_chan_rssi *iterator);
+  bool arssi(RAK_LORA_chan_rssi *iterator);
 };
 
 #endif

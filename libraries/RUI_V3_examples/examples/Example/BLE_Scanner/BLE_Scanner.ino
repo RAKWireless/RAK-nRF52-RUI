@@ -17,7 +17,6 @@ void string2hexString(char *input, char *output, uint16_t data_len)
 
 void scan_callback(int8_t rssi_value, uint8_t *device_mac, uint8_t *scan_data, uint16_t data_len)
 {
-    //Serial.println(hex_str);
     char mac_addr[64] = {0};
     int hextostr_length = (data_len * 2) + data_len;
     char hex_str[hextostr_length];
@@ -58,9 +57,16 @@ void scan_callback(int8_t rssi_value, uint8_t *device_mac, uint8_t *scan_data, u
 
 void setup()
 {
-    delay(6000);
+    bool ret;
+    delay(5000);
+    Serial.println("RAKwireless BLE Scanner Example");
+    Serial.println("------------------------------------------------------");
     api.ble.scanner.start(0);
-    api.ble.scanner.setInterval(1000, 500);
+    if (!(ret = api.ble.scanner.setInterval(1000, 500)))
+    {
+        Serial.printf("BLE Configuration - set broadcast name is incorrect! \r\n");
+        return;
+    }
     api.ble.scanner.setScannerCallback(scan_callback);
     Serial.println("\r\n==== Example : BLE Scanner ====");
     Serial.print("MAC Address");

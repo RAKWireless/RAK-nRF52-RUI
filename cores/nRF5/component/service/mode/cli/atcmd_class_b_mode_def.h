@@ -12,7 +12,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+PGSLOT?            | --                 | AT+PGSLOT: get or set the unicast ping slot periodicity        | OK                 |
+ * | AT+PGSLOT?            | --                 | AT+PGSLOT: get or set the unicast ping slot periodicity (0-7)  | OK                 |
  * | AT+PGSLOT=?           | --                 | 0, 1, 2, 3, 4, 5, 6 or 7                                       | OK                 |
  * | AT+PGSLOT=\<Input\>   | 0, 1, 2, 3, 4, 5, 6 or 7             | --                                           | OK / AT_PARAM_ERROR|
  * | Example<br>AT+PGSLOT= | 1                  | --                                                             | OK                 |
@@ -24,9 +24,9 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+BFREQ?          | --                 | AT+BFREQ: get the beacon frequency                                | OK                 |
- * | AT+BFREQ=?         | --                 | BCON: <0,1,2,3,4,5,6 or 7>, <integer>                             | OK                 |
- * | Example<br>AT+BFREQ=?| --                 | BCON: 3, 869.525                                                | OK                 |
+ * | AT+BFREQ?          | --                 | AT+BFREQ: get the data rate and beacon frequency (MHz)            | OK                 |
+ * | AT+BFREQ=?         | --                 | BCON: <0,1,2,3,4,5,6 or 7>, <float>                               | OK                 |
+ * | Example<br>AT+BFREQ=?| --               | BCON: 3, 869.525                                                  | OK                 |
  *
  * @subsection ATCMD_class_b_mode_3 AT+BTIME
  *
@@ -34,13 +34,13 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+BTIME?          | --                 | AT+BTIME: get the beacon time (GPS Epoch time)                    | OK                 |
- * | AT+BTIME=?         | --                 | BTIME: <GPS Epoch time>                                           | OK                 |
+ * | AT+BTIME?          | --                 | AT+BTIME: get the beacon time (seconds since GPS Epoch time)      | OK                 |
+ * | AT+BTIME=?         | --                 | BTIME: <integer>                                                  | OK                 |
  * | Example<br>AT+BTIME=?| --               | BTIME: 1226592311                                                 | OK                 |
  *
  * @subsection ATCMD_class_b_mode_4 AT+BGW
  *
- * This command allows the user to access the GW GPS coordinate, NetID and GwID.
+ * This command allows the user to access the gateway GPS coordinate, NetID and GwID.
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
@@ -49,11 +49,11 @@
  *
  * @subsection ATCMD_class_b_mode_5 AT+LTIME
  *
- * This command allows the user to access the local time in a UTC format.
+ * This command allows the user to access the local time in UTC format.
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+LTIME?          | --                 | AT+LTIME: get the local time in UTC format                        | OK                 |
+ * | AT+LTIME?          | --                 | AT+LTIME: get the local time                                      | OK                 |
  * | AT+LTIME=?         | --                 | LTIME: <HOUR>h<MINUTE>m<SECOND>s <YEAR>-<MONTH>-<DAY>             | OK                 |
  * | Example<br>AT+LTIME=?         | --      | LTIME: 00h37m58s 2018-11-14                                       | OK                 |
  *

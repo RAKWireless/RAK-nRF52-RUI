@@ -5,7 +5,7 @@
 #include "AString.h"
 
 /**
- * @ingroup	BLE_Data_Type
+ * @ingroup	BLE_Setting
  */
 typedef enum
 {
@@ -31,7 +31,9 @@ class RAKBleSettings {
 	 *
 	 * @param	txpwr	The TX power level (dBm), which can be one of the following values (from lowest to higher transmit power):\n
 0~8 , -4,-8,-12,-16,-20,-40
-	 * @return	TRUE for success SET,FALSE for SET fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for success
+	 * @retval	FALSE for failure
 	 */
         bool set(int8_t txpwr);
 
@@ -55,7 +57,9 @@ class RAKBleSettings {
 	 *	api.bel.setting.advertiseInterval.set(adv_interval)
 	 *
 	 * @param	adv_interval	1000ms ~10240ms
-	 * @return	TRUE for success SET,FALSE for SET fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for success
+	 * @retval	FALSE for failure
 	 */
         bool set(int32_t adv_interval);
 
@@ -81,7 +85,9 @@ class RAKBleSettings {
 	 *
 	 * @param	ble_name	setting device name an array of data to send as bytes
 	 * @param	device_name_length	the number of bytes to transmit
-	 * @return	TRUE for success SET,FALSE for SET fail(Type: bool)
+   * @return	bool
+	 * @retval	TRUE for success
+	 * @retval	FALSE for failure
 	 */
         bool set(char *ble_name, uint8_t device_name_length);
 
@@ -131,7 +137,9 @@ class RAKBleAdvertise {
      * @par	Syntax
      * 		api.ble.advertise.start(adv_time)
      * @param	adv_time	advertising timeout in seconds. If x = 0, advertising never stops
-     * @return	True for start advertising success, false for start advertising fail(Type: bool)
+     * @return	bool
+     * @retval	TRUE for start advertising success
+     * @retval	FALSE for for start advertising failure
      */
     bool start(uint8_t adv_time);
 
@@ -139,8 +147,9 @@ class RAKBleAdvertise {
      *		Used to stop advertising
      * @par	Syntax
      *		api.ble.advertise.stop()
-     *		
-     * @return	True for stop advertising success,false for stop advetising fail(Type: bool)
+     @return	bool
+     @retval	TRUE for stop advertising success
+     @retval	FALSE for for stop advertising failure
      * @par	Example
      * @verbatim
      void setup()
@@ -162,8 +171,8 @@ class RAKBleAdvertise {
      * 		api.ble.advertise.status()
      *
      * @return	bool
-     * @retval	0	the device is in advertising
-     * @retval	1	the device is adverting
+     * @retval	TRUE  : the device is in advertising
+     * @retval	FALSE : the device is stop advertis
      */
     bool status();
 };

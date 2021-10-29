@@ -5849,7 +5849,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 67
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 
 
 

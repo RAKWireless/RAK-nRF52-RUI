@@ -34911,7 +34911,7 @@ static inline void * nrf_section_iter_get(nrf_section_iter_t const * p_iter)
 
 
 
-#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 67
+#define NRF_SDH_BLE_GATT_MAX_MTU_SIZE 247
 
 
 

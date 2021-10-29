@@ -22,7 +22,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+ARSSI?          | --                 | AT+ARSSI: access all open channel rssi                            | OK                 |
+ * | AT+ARSSI?          | --                 | AT+ARSSI: access all open channel RSSI                            | OK                 |
  * | AT+ARSSI=?         | --                 |                                                                   | OK                 |
  * | Example<br>AT+ARSSI=?|                  | 0,-16 1,-18 2,-30                                                 | OK                 |
  *

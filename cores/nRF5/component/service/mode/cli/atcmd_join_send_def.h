@@ -12,7 +12,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+CFM?            | --                 | AT+CFM: get or set the confirm mode (0-1)                         | OK                 |
+ * | AT+CFM?            | --                 | AT+CFM: get or set the confirm mode (0 = off, 1 = on)             | OK                 |
  * | AT+CFM=?           | --                 | 0 or 1                                                            | OK                 |
  * | AT+CFM=\<Param\>   | 0 or 1             | --                                                                | OK / AT_PARAM_ERROR|
  * | Example<br>AT+CFM= | 1                  | --                                                                | OK                 |
@@ -24,7 +24,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+CFS?            | --                 | AT+CFS: get the confirmation status of the last AT+SEND (0-1)     | OK                 |
+ * | AT+CFS?            | --                 | AT+CFS: get the confirmation status of the last AT+SEND (0 = failure, 1 = success)     | OK                 |
  * | AT+CFS=?           | --                 | 0 or 1                                                            | OK                 |
  * | Example<br>AT+CFS=?|                    | 0                                                                 | OK                 |
  *
@@ -39,6 +39,13 @@
  * | AT+JOIN=\<input\>  | \<integer1\>,\<integer2\>,\<integer3\>,\<integer4\>                 | --               | OK / AT_BUSY_ERROR |
  * | Example<br>AT+JOIN=? | --               | 0,0,8,0                                                           | OK                 |
  * | Example<br>AT+JOIN=| 1,1,10,8           | --                                                                | OK                 |
+ *
+ * <integer1> represents manually join network: 0 means stop to join network; 1 means start to join network. The default value is 0.<br>
+ * <integer2> represents automatically join network: 0 means stop automatically joining network; 1 means start automatically joining network. The default value is 0.<br>
+ * <integer3> represents the join attempt period. The acceptance values are 7 to 255 (in seconds). The default value is 8.<br>
+ * <integer4> represents the maximum number of join attempts. The acceptance values are 0 to 255 (in seconds). The default value is 0.<br>
+ *
+ * This is an asynchronous command. OK means that the join is being run. The completion of the JOIN can be verified with AT+NJS=?.
  *
  * @subsection ATCMD_join_send_4 AT+NJM: LoRa network join mode
  *
@@ -59,7 +66,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+NJS?            | --                 | AT+NJS: get the join status                                       | OK                 |
+ * | AT+NJS?            | --                 | AT+NJS: get the join status (0 = not joined, 1 = joined)          | OK                 |
  * | AT+NJS=?           | --                 | 0 or 1                                                            | OK                 |
  * | Example<br>AT+NJS=?|                    | 0 (network not joined)                                            | OK                 |
  * | Example<br>AT+NJS=?|                    | 1 (network joined)                                                | OK                 |
@@ -90,7 +97,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+LPSEND?         | --                 | AT+LPSEND: This command provides the way to send long packet data | OK                 |
+ * | AT+LPSEND?         | --                 | AT+LPSEND: send long packet data (max 1024 bytes)                 | OK                 |
  * | AT+LPSEND=<port>:<ack>:<payload> |<port>:<ack>:<payload>|                                                   | OK / AT_PARAM_ERROR|
  * | Example<br>AT+LPSEND=| 2:1:123456       | --                                                                | OK                 |
  *
