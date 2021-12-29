@@ -10,7 +10,7 @@
 int At_Lock (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=unlocked\r\n", cmd);
+        atcmd_printf("unlocked\r\n");
 
         return AT_OK;
     } else if (param->argc == 0) {
@@ -29,7 +29,6 @@ int At_Pword (SERIAL_PORT port, char *cmd, stParam *param)
         int32_t len;
 
         if ((len = udrv_serial_get_passwd(passwd, 9)) > 0) {
-            atcmd_printf("%s=", cmd);
             for(uint8_t i = 0 ; i < len ; i++) {
                 atcmd_printf("%c", passwd[i]);
             }
@@ -60,7 +59,7 @@ int At_Baud (SERIAL_PORT port, char *cmd, stParam *param)
     int32_t ret;
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=%u\r\n", cmd, service_nvm_get_baudrate_from_nvm());
+        atcmd_printf("%u\r\n", service_nvm_get_baudrate_from_nvm());
         return AT_OK;
     } else if (param->argc == 1) {
         uint32_t baud;
@@ -177,7 +176,7 @@ int At_TransparentMode(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%s=%u\r\n", cmd, service_nvm_get_tp_port_from_nvm(port));
+        atcmd_printf("%u\r\n", service_nvm_get_tp_port_from_nvm(port));
         return AT_OK;
     }
     else if (param->argc == 1)

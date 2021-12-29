@@ -27,7 +27,7 @@ int32_t service_nvm_set_default_config_to_nvm(void) {
 
     for (int i = 0 ; i < SERIAL_MAX ; i++) {
         g_rui_cfg_t.mode_type[i] = SERVICE_MODE_TYPE_CUSTOM;
-        g_rui_cfg_t.g_lora_cfg_t.tp_port[i] = 130;
+        g_rui_cfg_t.g_lora_cfg_t.tp_port[i] = 1;
     }
 #ifdef WISBLOCK_BASE_5005
     g_rui_cfg_t.mode_type[SERIAL_UART0] = SERVICE_MODE_TYPE_CLI;
@@ -40,12 +40,14 @@ int32_t service_nvm_set_default_config_to_nvm(void) {
     g_rui_cfg_t.baudrate = 115200;
     memcpy(g_rui_cfg_t.serial_passwd, passwd, 8);
     g_rui_cfg_t.auto_sleep_time = 0;
+    g_rui_cfg_t.atcmd_echo = 0;
 #if WAN_TYPE == 0
     /* lora work mode */
     g_rui_cfg_t.lora_work_mode = SERVICE_LORAWAN;
 
     /* lorawan configuration */
     if (factory_default_exist) {
+        g_rui_cfg_t.g_lora_cfg_t.region = factory_default.g_lora_cfg_t.region;
         memcpy(g_rui_cfg_t.g_lora_cfg_t.dev_eui, factory_default.g_lora_cfg_t.dev_eui, 8);
         memcpy(g_rui_cfg_t.g_lora_cfg_t.app_eui, factory_default.g_lora_cfg_t.app_eui, 8);
         memcpy(g_rui_cfg_t.g_lora_cfg_t.app_key, factory_default.g_lora_cfg_t.app_key, 16);
@@ -53,9 +55,10 @@ int32_t service_nvm_set_default_config_to_nvm(void) {
         memcpy(g_rui_cfg_t.g_lora_cfg_t.dev_addr, factory_default.g_lora_cfg_t.dev_addr, 4);
         memcpy(g_rui_cfg_t.g_lora_cfg_t.nwk_skey, factory_default.g_lora_cfg_t.nwk_skey, 16);
         memcpy(g_rui_cfg_t.sn, factory_default.sn, 18);
+    } else {
+        g_rui_cfg_t.g_lora_cfg_t.region = SERVICE_LORA_EU868;
     }
     g_rui_cfg_t.g_lora_cfg_t.sof = RUI_CONFIG_MAGIC;
-    g_rui_cfg_t.g_lora_cfg_t.region = SERVICE_LORA_EU868;
     g_rui_cfg_t.g_lora_cfg_t.join_mode = SERVICE_LORA_OTAA;
     g_rui_cfg_t.g_lora_cfg_t.device_class = SERVICE_LORA_CLASS_A;
     g_rui_cfg_t.g_lora_cfg_t.confirm = SERVICE_LORA_ACK;
@@ -503,6 +506,7 @@ int32_t service_nvm_set_rx2dr_to_nvm (SERVICE_LORA_DATA_RATE dr) {
     return udrv_flash_write(SERVICE_NVM_CONFIG_NVM_ADDR, sizeof(rui_cfg_t), (uint8_t *)&g_rui_cfg_t);
 }
 
+
 uint32_t service_nvm_get_jn1dl_from_nvm (void) {
     return g_rui_cfg_t.g_lora_cfg_t.jn1dl;
 }
@@ -525,6 +529,20 @@ int32_t service_nvm_set_jn2dl_to_nvm (uint32_t jn2dl) {
     g_rui_cfg_t.crc_verify = SERVICE_RUI_CONFIG_CRC32;
 
     return udrv_flash_write(SERVICE_NVM_CONFIG_NVM_ADDR, sizeof(rui_cfg_t), (uint8_t *)&g_rui_cfg_t);
+}
+
+uint32_t service_nvm_set_rx2fq_to_nvm(uint32_t freq)
+{
+    g_rui_cfg_t.g_lora_cfg_t.rx2fq = freq;
+
+    g_rui_cfg_t.crc_verify = SERVICE_RUI_CONFIG_CRC32;
+
+    return udrv_flash_write(SERVICE_NVM_CONFIG_NVM_ADDR, sizeof(rui_cfg_t), (uint8_t *)&g_rui_cfg_t);
+}
+
+uint32_t service_nvm_get_rx2fq_from_nvm(void)
+{
+    return g_rui_cfg_t.g_lora_cfg_t.rx2fq ;
 }
 
 bool service_nvm_get_pub_nwk_mode_from_nvm (void) {
@@ -802,6 +820,18 @@ uint32_t service_nvm_get_baudrate_from_nvm(void) {
 
 int32_t service_nvm_set_baudrate_to_nvm(uint32_t baudrate) {
     g_rui_cfg_t.baudrate = baudrate;
+
+    g_rui_cfg_t.crc_verify = SERVICE_RUI_CONFIG_CRC32;
+
+    return udrv_flash_write(SERVICE_NVM_CONFIG_NVM_ADDR, sizeof(rui_cfg_t), (uint8_t *)&g_rui_cfg_t);
+}
+
+uint8_t service_nvm_get_atcmd_echo_from_nvm(void) {
+    return g_rui_cfg_t.atcmd_echo;
+}
+
+int32_t service_nvm_set_atcmd_echo_to_nvm(uint8_t atcmd_echo) {
+    g_rui_cfg_t.atcmd_echo = atcmd_echo;
 
     g_rui_cfg_t.crc_verify = SERVICE_RUI_CONFIG_CRC32;
 

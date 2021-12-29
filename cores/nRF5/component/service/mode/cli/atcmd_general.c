@@ -87,7 +87,22 @@ int At_Dfu (SERIAL_PORT port, char *cmd, stParam *param)
 }
 
 #ifndef RUI_BOOTLOADER
-int At_Sn (SERIAL_PORT port, char *cmd, stParam *param)
+int At_Echo (SERIAL_PORT port, char *cmd, stParam *param)
+{
+    if (param->argc == 0) {
+        if (service_nvm_get_atcmd_echo_from_nvm() == 0) {
+            service_nvm_set_atcmd_echo_to_nvm(1);
+        } else {
+            service_nvm_set_atcmd_echo_to_nvm(0);
+        }
+        return AT_OK;
+    } else {
+        return AT_PARAM_ERROR;
+    }
+
+}
+
+int At_FSn (SERIAL_PORT port, char *cmd, stParam *param)
 {
     uint8_t rbuff[18];
 
@@ -95,7 +110,6 @@ int At_Sn (SERIAL_PORT port, char *cmd, stParam *param)
         if (service_nvm_get_sn_from_nvm(rbuff, 18) != UDRV_RETURN_OK) {
             return AT_ERROR;
         }
-        atcmd_printf("%s=", cmd);
         for (int i = 0 ; i < 18 ; i++) {
             atcmd_printf("%c", rbuff[i]);
         }
@@ -140,13 +154,31 @@ int At_Sn (SERIAL_PORT port, char *cmd, stParam *param)
     }
 }
 
+int At_Sn (SERIAL_PORT port, char *cmd, stParam *param)
+{
+    uint8_t rbuff[18];
+
+    if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
+        if (service_nvm_get_sn_from_nvm(rbuff, 18) != UDRV_RETURN_OK) {
+            return AT_ERROR;
+        }
+        for (int i = 0 ; i < 18 ; i++) {
+            atcmd_printf("%c", rbuff[i]);
+        }
+        atcmd_printf("\r\n");
+        return AT_OK;
+    } else {
+        return AT_PARAM_ERROR;
+    }
+}
+
 int At_GetBat (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
         float bat_lvl;
 
         service_battery_get_batt_level(&bat_lvl);
-        atcmd_printf("%s=%f\r\n", cmd, bat_lvl);
+        atcmd_printf("%f\r\n", bat_lvl);
         return AT_OK;
     } else {
         return AT_PARAM_ERROR;
@@ -156,7 +188,7 @@ int At_GetBat (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetFwBuildTime (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=%s-%s\r\n", cmd, build_date, build_time);
+        atcmd_printf("%s-%s\r\n", build_date, build_time);
 
         return AT_OK;
     } else {
@@ -167,7 +199,7 @@ int At_GetFwBuildTime (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetFwRepoInfo (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=%s\r\n", cmd, repo_info);
+        atcmd_printf("%s\r\n", repo_info);
 
         return AT_OK;
     } else {
@@ -178,7 +210,7 @@ int At_GetFwRepoInfo (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetFwVersion (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=%s\r\n", cmd, sw_version);
+        atcmd_printf("%s\r\n", sw_version);
 
         return AT_OK;
     } else {
@@ -189,7 +221,7 @@ int At_GetFwVersion (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetCliVersion (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=%s\r\n", cmd, cli_version);
+        atcmd_printf("%s\r\n", cli_version);
 
         return AT_OK;
     } else {
@@ -200,7 +232,7 @@ int At_GetCliVersion (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetApiVersion (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=%s\r\n", cmd, api_version);
+        atcmd_printf("%s\r\n", api_version);
 
         return AT_OK;
     } else {
@@ -211,7 +243,7 @@ int At_GetApiVersion (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetHwModel (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=%s\r\n", cmd, model_id);
+        atcmd_printf("%s\r\n", model_id);
         return AT_OK;
     } else {
         return AT_PARAM_ERROR;
@@ -221,7 +253,7 @@ int At_GetHwModel (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetHwID (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=%s\r\n", cmd, chip_id);
+        atcmd_printf("%s\r\n", chip_id);
         return AT_OK;
     } else {
         return AT_PARAM_ERROR;

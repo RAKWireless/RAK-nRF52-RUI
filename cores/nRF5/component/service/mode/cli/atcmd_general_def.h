@@ -50,17 +50,25 @@
  * | AT+BOOT?           | --                 | AT+BOOT: enter bootloader mode for firmware upgrade               | OK                 |
  * | AT+BOOT            | --                 | No return value and return code. The MCU is reset and enters bootloader mode.                                  | --                 |
  *
- * @subsection ATCMD_general_6 AT+FSN: get or set the serial number of the device
+ * @subsection ATCMD_general_6 ATE: Set command echo
+ *
+ * This command is used to see the AT command input on the Serial Terminal.
+ *
+ * | Command            | Input parameter    | Return value                                                      | Return code        |
+ * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
+ * | ATE?               | --                 | ATE: see the AT command input on the Serial Terminal              | OK                 |
+ * | ATE                | --                 | No return value and return code.                                  | --                 |
+ *
+ * @subsection ATCMD_general_7 AT+SN: get the serial number of the device
  *
  * This command allows the user to access the serial number of the device.
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+FSN?            | --                 | AT+FSN: get or set the serial number of the device (max 18 char)  | OK                 |
- * | AT+FSN=?           | --                 | <18 char>                                                         | OK                 |
- * | AT+FSN=\<Param\>   | \<18 char\>        | --                                                                | OK / AT_PARAM_ERROR|
+ * | AT+SN?             | --                 | AT+SN: get the serial number of the device (max 18 char)          | OK                 |
+ * | AT+SN=?            | --                 | <1-18 char>                                                       | OK                 |
  *
- * @subsection ATCMD_general_7 AT+BAT: battery level
+ * @subsection ATCMD_general_8 AT+BAT: battery level
  *
  * This command allows the user to access the battery level.
  *
@@ -70,7 +78,7 @@
  * | AT+BAT=?           | --                 | <float>                                                           | OK                 |
  * | Example<br>AT+BAT=?| --                 | 3.0                                                               | OK                 |
  *
- * @subsection ATCMD_general_8 AT+BUILDTIME: build time of the firmware
+ * @subsection ATCMD_general_9 AT+BUILDTIME: build time of the firmware
  *
  * This command allows the user to access the build time of the firmware.
  *
@@ -79,7 +87,7 @@
  * | AT+BUILDTIME?      | --                 | AT+BUILDTIME: get the build time of the firmware                  | OK                 |
  * | AT+BUILDTIME=?     | --                 | <string>-<string>                                                 | OK                 |
  *
- * @subsection ATCMD_general_9 AT+REPOINFO: code repository information of the firmware
+ * @subsection ATCMD_general_10 AT+REPOINFO: code repository information of the firmware
  *
  * This command allows the user to access the commit ID of the firmware.
  *
@@ -88,7 +96,7 @@
  * | AT+REPOINFO?       | --                 | AT+REPOINFO: get the commit ID of the firmware                    | OK                 |
  * | AT+REPOINFO=?      | --                 | <string>,<string>,<string>,<string>,<string>,<string>,<string>,<string>,                            | OK                 |
  *
- * @subsection ATCMD_general_10 AT+VER: version of the firmware
+ * @subsection ATCMD_general_11 AT+VER: version of the firmware
  *
  * This command allows the user to access the version of the firmware.
  *
@@ -98,7 +106,7 @@
  * | AT+VER=?           | --                 | <string>                                                          | OK                 |
  * | Example<br>AT+VER=?| --                 | 1.0.0                                                             | OK                 |
  *
- * @subsection ATCMD_general_11 AT+CLIVER: version of the AT command
+ * @subsection ATCMD_general_12 AT+CLIVER: version of the AT command
  *
  * This command allows the user to access the version of the AT command.
  *
@@ -108,7 +116,7 @@
  * | AT+CLIVER=?        | --                 | <string>                                                          | OK                 |
  * | Example<br>AT+CLIVER=?| --              | 1.0.0                                                             | OK                 |
  *
- * @subsection ATCMD_general_12 AT+APIVER: version of the RUI API
+ * @subsection ATCMD_general_13 AT+APIVER: version of the RUI API
  *
  * This command allows the user to access the version of the RUI API.
  *
@@ -118,7 +126,7 @@
  * | AT+APIVER=?        | --                 | <string>                                                          | OK                 |
  * | Example<br>AT+APIVER=?| --              | 1.0.0                                                             | OK                 |
  *
- * @subsection ATCMD_general_13 AT+HWMODEL: hardware model of the firmware
+ * @subsection ATCMD_general_14 AT+HWMODEL: hardware model of the firmware
  *
  * This command allows the user to access the hardware model of the firmware.
  *
@@ -128,7 +136,7 @@
  * | AT+HWMODEL=?       | --                 | <string>                                                          | OK                 |
  * | Example<br>AT+HWMODEL=?| --             | rak4631                                                           | OK                 |
  *
- * @subsection ATCMD_general_14 AT+HWID: hardware ID of the firmware
+ * @subsection ATCMD_general_15 AT+HWID: hardware ID of the firmware
  *
  * This command allows the user to access the hardware ID of the firmware.
  *
@@ -148,7 +156,9 @@
 #define ATCMD_REBOOT                "ATZ"
 #define ATCMD_ATR                   "ATR"
 #define ATCMD_BOOT                  "AT+BOOT"
-#define ATCMD_SN                    "AT+FSN"
+#define ATCMD_ATE                   "ATE"
+#define ATCMD_FSN                   "AT+FSN"
+#define ATCMD_SN                    "AT+SN"
 #define ATCMD_BAT                   "AT+BAT"
 #define ATCMD_BUILDTIME             "AT+BUILDTIME"
 #define ATCMD_REPOINFO              "AT+REPOINFO"

@@ -36,23 +36,15 @@
 #include "service_mode_cli.h"
 
 
-#ifdef RUI_BOOTLOADER
-__attribute__((section(".bootloader_new"))) void At_RespOK (char* pStr)
-#else
 void At_RespOK (char* pStr)
-#endif
 {
     atcmd_printf("\r\nOK\r\n");
 }
 
-#ifdef RUI_BOOTLOADER
-__attribute__((section(".bootloader_new"))) int parseBuff2Param(char* bufCmd, stParam* pParam, uint8_t maxargu)
-#else
 int parseBuff2Param(char* bufCmd, stParam* pParam, uint8_t maxargu)
-#endif
 {
 	int buflen, i;
-	const char delimiters = ',';
+	const char delimiters = ':';
 
     buflen = strlen (bufCmd);
 	if (strlen (bufCmd) == 0) 
@@ -110,7 +102,10 @@ const at_cmd_info atcmd_info_tbl[] =
     {ATCMD_ATR,      /*3*/          At_Restore,            0, "restore default parameters"},
     {ATCMD_BOOT,     /*4*/          At_Dfu,                0, "enter bootloader mode for firmware upgrade"},
 #ifndef RUI_BOOTLOADER
-    {ATCMD_SN,       /*87*/         At_Sn,                 0, "get or set the serial number of the device (max 18 char)"},
+    {ATCMD_ATE,      /*88*/         At_Echo,               0, "toggle the At Command echo available"},
+    {ATCMD_FSN,      /*hidden*/     At_FSn,                0, ""},
+    {ATCMD_FACTORY , /*hidden*/     At_Factory,            0, ""},
+    {ATCMD_SN,       /*87*/         At_Sn,                 0, "get the serial number of the device (max 18 char)"},
     {ATCMD_BAT,      /*15*/         At_GetBat,             0, "get the battery level (volt)"},
     {ATCMD_BUILDTIME,/*5*/          At_GetFwBuildTime,     0, "get the build time of the firmware"},
     {ATCMD_REPOINFO, /*6*/          At_GetFwRepoInfo,      0, "get the commit ID of the firmware"},
@@ -215,16 +210,11 @@ const at_cmd_info atcmd_info_tbl[] =
 #else
 /* Bootloader */
     {ATCMD_BOOTSTATUS ,             At_Bootstatus,         0, "get the status of the bootloader"},
-    {ATCMD_FACTORY ,                At_Factory,            0, ""},
 #endif
 
 };
 
-#ifdef RUI_BOOTLOADER
-__attribute__((section(".bootloader_new"))) uint32_t At_CmdGetTotalNum (void)
-#else
 uint32_t At_CmdGetTotalNum (void)
-#endif
 {
     return sizeof(atcmd_info_tbl)/sizeof(at_cmd_info);
 }
@@ -233,11 +223,7 @@ uint32_t At_CmdGetTotalNum (void)
 at_cmd_cust_info atcmd_cust_tbl[ATCMD_CUST_TABLE_SIZE];
 #endif
 
-#ifdef RUI_BOOTLOADER
-__attribute__((section(".bootloader_new"))) static int At_CmdList (SERIAL_PORT port, stParam *param)
-#else
 static int At_CmdList (SERIAL_PORT port, stParam *param)
-#endif
 {
     int i = 0;
     atcmd_printf("\r\n");
@@ -266,11 +252,7 @@ static int At_CmdList (SERIAL_PORT port, stParam *param)
     return AT_OK;
 }
 
-#ifdef RUI_BOOTLOADER
-__attribute__((section(".bootloader_new"))) int At_Parser (SERIAL_PORT port, char *buff, int len)
-#else
 int At_Parser (SERIAL_PORT port, char *buff, int len)
-#endif
 {
     int i, j, help = 0;
     int	nRet = AT_ERROR;
@@ -368,9 +350,9 @@ int At_Parser (SERIAL_PORT port, char *buff, int len)
 
 exit_rsp:
     if (nRet < sizeof(atcmd_err_tbl)/sizeof(char *)) {
-        atcmd_printf("\r\n%s\r\n", atcmd_err_tbl[nRet]);
+        atcmd_printf("\r\n%s", atcmd_err_tbl[nRet]);
     } else {
-        atcmd_printf("\r\n%s\r\n", atcmd_err_tbl[1]);
+        atcmd_printf("\r\n%s", atcmd_err_tbl[1]);
     }
 
     if (i == sizeof(atcmd_info_tbl)/sizeof(at_cmd_info)
@@ -378,7 +360,7 @@ exit_rsp:
 		    && j == ATCMD_CUST_TABLE_SIZE
 #endif
 		    ) {
-        atcmd_printf("\r\n%s: Command not found!!\r\n", cmd);
+        atcmd_printf("\r\n%s: Command not found!!", cmd);
     }
 exit:
     return nRet;

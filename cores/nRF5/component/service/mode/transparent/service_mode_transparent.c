@@ -30,10 +30,8 @@ static void lora_handler(void *p_context) {
 
         if (arrived_byte_stream_info[(SERIAL_PORT)i].sgCurPos) {
             info.port = service_nvm_get_tp_port_from_nvm((SERIAL_PORT)i);
-            info.retry_valid = true;
-            info.retry = 8;
-            info.confirm_valid = true;
-            info.confirm == SERVICE_LORA_ACK;
+            info.retry_valid = false;
+            info.confirm_valid = false;
 
             if ((ret = service_lora_send(arrived_byte_stream_info[(SERIAL_PORT)i].sgTpBuffer, arrived_byte_stream_info[(SERIAL_PORT)i].sgCurPos, info, false)) == UDRV_RETURN_OK) {
                 memset(arrived_byte_stream_info[(SERIAL_PORT)i].sgTpBuffer, 0x00, TP_BUFFER_SIZE+1);

@@ -1,13 +1,13 @@
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
 #define __STDC_HOSTED__ 1
-#define __GNUC__ 9
-#define __GNUC_MINOR__ 3
+#define __GNUC__ 10
+#define __GNUC_MINOR__ 2
 #define __GNUC_PATCHLEVEL__ 1
-#define __VERSION__ "9.3.1 20200408 (release)"
+#define __VERSION__ "10.2.1 20201103 (release)"
 #define __ATOMIC_RELAXED 0
 #define __ATOMIC_SEQ_CST 5
 #define __ATOMIC_ACQUIRE 2
@@ -68,9 +68,7 @@
 #define __UINT_FAST64_TYPE__ long long unsigned int
 #define __INTPTR_TYPE__ int
 #define __UINTPTR_TYPE__ unsigned int
-#define __has_include(STR) __has_include__(STR)
-#define __has_include_next(STR) __has_include_next__(STR)
-#define __GXX_ABI_VERSION 1013
+#define __GXX_ABI_VERSION 1014
 #define __SCHAR_MAX__ 0x7f
 #define __SHRT_MAX__ 0x7fff
 #define __INT_MAX__ 0x7fffffff
@@ -156,6 +154,7 @@
 #define __FLT_MAX_10_EXP__ 38
 #define __FLT_DECIMAL_DIG__ 9
 #define __FLT_MAX__ 3.4028234663852886e+38F
+#define __FLT_NORM_MAX__ 3.4028234663852886e+38F
 #define __FLT_MIN__ 1.1754943508222875e-38F
 #define __FLT_EPSILON__ 1.1920928955078125e-7F
 #define __FLT_DENORM_MIN__ 1.4012984643248171e-45F
@@ -171,6 +170,7 @@
 #define __DBL_MAX_10_EXP__ 308
 #define __DBL_DECIMAL_DIG__ 17
 #define __DBL_MAX__ ((double)1.7976931348623157e+308L)
+#define __DBL_NORM_MAX__ ((double)1.7976931348623157e+308L)
 #define __DBL_MIN__ ((double)2.2250738585072014e-308L)
 #define __DBL_EPSILON__ ((double)2.2204460492503131e-16L)
 #define __DBL_DENORM_MIN__ ((double)4.9406564584124654e-324L)
@@ -186,6 +186,7 @@
 #define __DECIMAL_DIG__ 17
 #define __LDBL_DECIMAL_DIG__ 17
 #define __LDBL_MAX__ 1.7976931348623157e+308L
+#define __LDBL_NORM_MAX__ 1.7976931348623157e+308L
 #define __LDBL_MIN__ 2.2250738585072014e-308L
 #define __LDBL_EPSILON__ 2.2204460492503131e-16L
 #define __LDBL_DENORM_MIN__ 4.9406564584124654e-324L
@@ -200,6 +201,7 @@
 #define __FLT32_MAX_10_EXP__ 38
 #define __FLT32_DECIMAL_DIG__ 9
 #define __FLT32_MAX__ 3.4028234663852886e+38F32
+#define __FLT32_NORM_MAX__ 3.4028234663852886e+38F32
 #define __FLT32_MIN__ 1.1754943508222875e-38F32
 #define __FLT32_EPSILON__ 1.1920928955078125e-7F32
 #define __FLT32_DENORM_MIN__ 1.4012984643248171e-45F32
@@ -215,6 +217,7 @@
 #define __FLT64_MAX_10_EXP__ 308
 #define __FLT64_DECIMAL_DIG__ 17
 #define __FLT64_MAX__ 1.7976931348623157e+308F64
+#define __FLT64_NORM_MAX__ 1.7976931348623157e+308F64
 #define __FLT64_MIN__ 2.2250738585072014e-308F64
 #define __FLT64_EPSILON__ 2.2204460492503131e-16F64
 #define __FLT64_DENORM_MIN__ 4.9406564584124654e-324F64
@@ -229,33 +232,13 @@
 #define __FLT32X_MAX_10_EXP__ 308
 #define __FLT32X_DECIMAL_DIG__ 17
 #define __FLT32X_MAX__ 1.7976931348623157e+308F32x
+#define __FLT32X_NORM_MAX__ 1.7976931348623157e+308F32x
 #define __FLT32X_MIN__ 2.2250738585072014e-308F32x
 #define __FLT32X_EPSILON__ 2.2204460492503131e-16F32x
 #define __FLT32X_DENORM_MIN__ 4.9406564584124654e-324F32x
 #define __FLT32X_HAS_DENORM__ 1
 #define __FLT32X_HAS_INFINITY__ 1
 #define __FLT32X_HAS_QUIET_NAN__ 1
-#define __DEC32_MANT_DIG__ 7
-#define __DEC32_MIN_EXP__ (-94)
-#define __DEC32_MAX_EXP__ 97
-#define __DEC32_MIN__ 1E-95DF
-#define __DEC32_MAX__ 9.999999E96DF
-#define __DEC32_EPSILON__ 1E-6DF
-#define __DEC32_SUBNORMAL_MIN__ 0.000001E-95DF
-#define __DEC64_MANT_DIG__ 16
-#define __DEC64_MIN_EXP__ (-382)
-#define __DEC64_MAX_EXP__ 385
-#define __DEC64_MIN__ 1E-383DD
-#define __DEC64_MAX__ 9.999999999999999E384DD
-#define __DEC64_EPSILON__ 1E-15DD
-#define __DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD
-#define __DEC128_MANT_DIG__ 34
-#define __DEC128_MIN_EXP__ (-6142)
-#define __DEC128_MAX_EXP__ 6145
-#define __DEC128_MIN__ 1E-6143DL
-#define __DEC128_MAX__ 9.999999999999999999999999999999999E6144DL
-#define __DEC128_EPSILON__ 1E-33DL
-#define __DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL
 #define __SFRACT_FBIT__ 7
 #define __SFRACT_IBIT__ 0
 #define __SFRACT_MIN__ (-0.5HR-0.5HR)
@@ -412,6 +395,8 @@
 #undef __ARM_FEATURE_COMPLEX
 # 1 "<built-in>"
 #define __ARM_32BIT_STATE 1
+#undef __ARM_FEATURE_MVE
+# 1 "<built-in>"
 #undef __ARM_FEATURE_CMSE
 # 1 "<built-in>"
 #undef __ARM_FEATURE_LDREX
@@ -431,6 +416,7 @@
 # 1 "<built-in>"
 #define __ARM_ARCH 7
 #define __APCS_32__ 1
+#define __GCC_ASM_FLAG_OUTPUTS__ 1
 #define __thumb__ 1
 #define __thumb2__ 1
 #define __THUMBEL__ 1
@@ -465,12 +451,26 @@
 #define __ARM_ARCH_7EM__ 1
 #define __ARM_PCS_VFP 1
 #define __ARM_EABI__ 1
+#undef __FDPIC__
+# 1 "<built-in>"
 #define __ARM_ARCH_EXT_IDIV__ 1
 #define __ARM_FEATURE_IDIV 1
 #define __ARM_ASM_SYNTAX_UNIFIED__ 1
 #undef __ARM_FEATURE_COPROC
 # 1 "<built-in>"
 #define __ARM_FEATURE_COPROC 15
+#undef __ARM_FEATURE_CDE
+# 1 "<built-in>"
+#undef __ARM_FEATURE_CDE_COPROC
+# 1 "<built-in>"
+#undef __ARM_FEATURE_MATMUL_INT8
+# 1 "<built-in>"
+#undef __ARM_FEATURE_BF16_SCALAR_ARITHMETIC
+# 1 "<built-in>"
+#undef __ARM_FEATURE_BF16_VECTOR_ARITHMETIC
+# 1 "<built-in>"
+#undef __ARM_BF16_FORMAT_ALTERNATIVE
+# 1 "<built-in>"
 #define __GXX_TYPEINFO_EQUALITY_INLINE 0
 #define __ELF__ 1
 # 1 "<command-line>"
@@ -522,19 +522,19 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
-# 44 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 1
-# 51 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 44 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 1
+# 51 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h"
 #define SDK_COMMON_H__ 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stdint.h" 1 3 4
-# 9 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stdint.h" 3 4
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 1 3 4
-# 10 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 1 3 4
+# 9 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 3 4
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 1 3 4
+# 10 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define _STDINT_H 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_default_types.h" 1 3 4
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 1 3 4
 
 
 
@@ -542,15 +542,15 @@
 
 #define _MACHINE__DEFAULT_TYPES_H 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/features.h" 1 3 4
-# 22 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/features.h" 3 4
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 1 3 4
+# 22 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3 4
 #define _SYS_FEATURES_H 
 
 
 
 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/_newlib_version.h" 1 3 4
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_newlib_version.h" 1 3 4
 
 
 
@@ -560,7 +560,7 @@
 #define __NEWLIB__ 3
 #define __NEWLIB_MINOR__ 3
 #define __NEWLIB_PATCHLEVEL__ 0
-# 29 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/features.h" 2 3 4
+# 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 2 3 4
 
 
 
@@ -573,7 +573,7 @@
 
 
 #define __GNUC_PREREQ__(ma,mi) __GNUC_PREREQ(ma, mi)
-# 249 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/features.h" 3 4
+# 249 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3 4
 #define __ATFILE_VISIBLE 0
 
 
@@ -609,7 +609,7 @@
 
 
 #define __MISC_VISIBLE 0
-# 299 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/features.h" 3 4
+# 299 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3 4
 #define __POSIX_VISIBLE 0
 
 
@@ -617,11 +617,11 @@
 
 
 #define __SVID_VISIBLE 0
-# 319 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/features.h" 3 4
+# 319 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3 4
 #define __XSI_VISIBLE 0
-# 330 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/features.h" 3 4
+# 330 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3 4
 #define __SSP_FORTIFY_LEVEL 0
-# 9 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_default_types.h" 2 3 4
+# 9 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 2 3 4
 
 
 
@@ -629,7 +629,7 @@
 
 
 #define __EXP(x) __ ##x ##__
-# 26 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 26 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
 #define __have_longlong64 1
 
 
@@ -646,7 +646,7 @@
 
 
 
-# 41 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 41 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef signed char __int8_t;
 
 typedef unsigned char __uint8_t;
@@ -668,7 +668,7 @@ typedef short unsigned int __uint16_t;
 
 
 #define ___int16_t_defined 1
-# 77 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 77 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef long int __int32_t;
 
 typedef long unsigned int __uint32_t;
@@ -676,7 +676,7 @@ typedef long unsigned int __uint32_t;
 
 
 #define ___int32_t_defined 1
-# 103 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 103 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef long long int __int64_t;
 
 typedef long long unsigned int __uint64_t;
@@ -684,7 +684,7 @@ typedef long long unsigned int __uint64_t;
 
 
 #define ___int64_t_defined 1
-# 134 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 134 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef signed char __int_least8_t;
 
 typedef unsigned char __uint_least8_t;
@@ -692,7 +692,7 @@ typedef unsigned char __uint_least8_t;
 
 
 #define ___int_least8_t_defined 1
-# 160 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 160 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef short int __int_least16_t;
 
 typedef short unsigned int __uint_least16_t;
@@ -700,7 +700,7 @@ typedef short unsigned int __uint_least16_t;
 
 
 #define ___int_least16_t_defined 1
-# 182 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 182 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef long int __int_least32_t;
 
 typedef long unsigned int __uint_least32_t;
@@ -708,7 +708,7 @@ typedef long unsigned int __uint_least32_t;
 
 
 #define ___int_least32_t_defined 1
-# 200 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 200 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef long long int __int_least64_t;
 
 typedef long long unsigned int __uint_least64_t;
@@ -742,11 +742,11 @@ typedef long long unsigned int __uintmax_t;
 typedef int __intptr_t;
 
 typedef unsigned int __uintptr_t;
-# 244 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 244 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
 #undef __EXP
-# 13 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 2 3 4
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 1 3 4
-# 10 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 13 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 2 3 4
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 1 3 4
+# 10 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define _SYS__INTSUP_H 
 
 
@@ -754,7 +754,7 @@ typedef unsigned int __uintptr_t;
 
 
 #define __STDINT_EXP(x) __ ##x ##__
-# 35 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 35 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
        
        
        
@@ -779,7 +779,7 @@ typedef unsigned int __uintptr_t;
 #define __int20__ +2
 #define int +2
 #define long +4
-# 67 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 67 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define _INTPTR_EQ_INT 
 
 
@@ -796,11 +796,11 @@ typedef unsigned int __uintptr_t;
 
 
 #define __INT8 "hh"
-# 93 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 93 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __INT16 "h"
-# 104 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 104 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __INT32 "l"
-# 113 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 113 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __INT64 "ll"
 
 
@@ -809,7 +809,7 @@ typedef unsigned int __uintptr_t;
 
 
 #define __FAST8 
-# 129 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 129 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __FAST16 
 
 
@@ -818,17 +818,17 @@ typedef unsigned int __uintptr_t;
 
 
 #define __FAST32 
-# 147 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 147 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __FAST64 "ll"
 
 
 
 #define __LEAST8 "hh"
-# 162 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 162 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __LEAST16 "h"
-# 173 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 173 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __LEAST32 "l"
-# 182 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 182 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __LEAST64 "ll"
 
 #undef signed
@@ -842,18 +842,18 @@ typedef unsigned int __uintptr_t;
        
        
        
-# 194 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 194 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #undef __int20
        
-# 195 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 195 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #undef __int20__
        
        
-# 14 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 2 3 4
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_stdint.h" 1 3 4
-# 10 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_stdint.h" 3 4
+# 14 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 2 3 4
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h" 1 3 4
+# 10 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h" 3 4
 #define _SYS__STDINT_H 
-# 20 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_stdint.h" 3 4
+# 20 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h" 3 4
 typedef __int8_t int8_t ;
 #define _INT8_T_DECLARED 
 
@@ -918,7 +918,7 @@ typedef __intptr_t intptr_t;
 
 typedef __uintptr_t uintptr_t;
 #define _UINTPTR_T_DECLARED 
-# 15 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 2 3 4
+# 15 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 2 3 4
 
 
 
@@ -946,7 +946,7 @@ typedef __uint_least32_t uint_least32_t;
 typedef __int_least64_t int_least64_t;
 typedef __uint_least64_t uint_least64_t;
 #define __int_least64_t_defined 1
-# 51 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 51 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
   typedef int int_fast8_t;
   typedef unsigned int uint_fast8_t;
 #define __int_fast8_t_defined 1
@@ -980,11 +980,11 @@ typedef __uint_least64_t uint_least64_t;
   typedef long long int int_fast64_t;
   typedef long long unsigned int uint_fast64_t;
 #define __int_fast64_t_defined 1
-# 128 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 128 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INTPTR_MIN (-__INTPTR_MAX__ - 1)
 #define INTPTR_MAX (__INTPTR_MAX__)
 #define UINTPTR_MAX (__UINTPTR_MAX__)
-# 152 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 152 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT8_MIN (-__INT8_MAX__ - 1)
 #define INT8_MAX (__INT8_MAX__)
 #define UINT8_MAX (__UINT8_MAX__)
@@ -998,7 +998,7 @@ typedef __uint_least64_t uint_least64_t;
 #define INT_LEAST8_MIN (-__INT_LEAST8_MAX__ - 1)
 #define INT_LEAST8_MAX (__INT_LEAST8_MAX__)
 #define UINT_LEAST8_MAX (__UINT_LEAST8_MAX__)
-# 174 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 174 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT16_MIN (-__INT16_MAX__ - 1)
 #define INT16_MAX (__INT16_MAX__)
 #define UINT16_MAX (__UINT16_MAX__)
@@ -1012,39 +1012,39 @@ typedef __uint_least64_t uint_least64_t;
 #define INT_LEAST16_MIN (-__INT_LEAST16_MAX__ - 1)
 #define INT_LEAST16_MAX (__INT_LEAST16_MAX__)
 #define UINT_LEAST16_MAX (__UINT_LEAST16_MAX__)
-# 196 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 196 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT32_MIN (-__INT32_MAX__ - 1)
 #define INT32_MAX (__INT32_MAX__)
 #define UINT32_MAX (__UINT32_MAX__)
-# 212 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 212 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_LEAST32_MIN (-__INT_LEAST32_MAX__ - 1)
 #define INT_LEAST32_MAX (__INT_LEAST32_MAX__)
 #define UINT_LEAST32_MAX (__UINT_LEAST32_MAX__)
-# 230 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 230 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT64_MIN (-__INT64_MAX__ - 1)
 #define INT64_MAX (__INT64_MAX__)
 #define UINT64_MAX (__UINT64_MAX__)
-# 246 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 246 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_LEAST64_MIN (-__INT_LEAST64_MAX__ - 1)
 #define INT_LEAST64_MAX (__INT_LEAST64_MAX__)
 #define UINT_LEAST64_MAX (__UINT_LEAST64_MAX__)
-# 262 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 262 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST8_MIN (-__INT_FAST8_MAX__ - 1)
 #define INT_FAST8_MAX (__INT_FAST8_MAX__)
 #define UINT_FAST8_MAX (__UINT_FAST8_MAX__)
-# 278 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 278 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST16_MIN (-__INT_FAST16_MAX__ - 1)
 #define INT_FAST16_MAX (__INT_FAST16_MAX__)
 #define UINT_FAST16_MAX (__UINT_FAST16_MAX__)
-# 294 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 294 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST32_MIN (-__INT_FAST32_MAX__ - 1)
 #define INT_FAST32_MAX (__INT_FAST32_MAX__)
 #define UINT_FAST32_MAX (__UINT_FAST32_MAX__)
-# 310 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 310 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST64_MIN (-__INT_FAST64_MAX__ - 1)
 #define INT_FAST64_MAX (__INT_FAST64_MAX__)
 #define UINT_FAST64_MAX (__UINT_FAST64_MAX__)
-# 326 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 326 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INTMAX_MAX (__INTMAX_MAX__)
 #define INTMAX_MIN (-INTMAX_MAX - 1)
 
@@ -1083,9 +1083,9 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define WCHAR_MIN (__WCHAR_MIN__)
-# 374 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 374 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define WCHAR_MAX (__WCHAR_MAX__)
-# 384 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 384 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define WINT_MAX (__WINT_MAX__)
 
 
@@ -1100,26 +1100,26 @@ typedef __uint_least64_t uint_least64_t;
 
 #define INT8_C(x) __INT8_C(x)
 #define UINT8_C(x) __UINT8_C(x)
-# 408 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 408 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT16_C(x) __INT16_C(x)
 #define UINT16_C(x) __UINT16_C(x)
-# 420 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 420 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT32_C(x) __INT32_C(x)
 #define UINT32_C(x) __UINT32_C(x)
-# 433 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 433 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT64_C(x) __INT64_C(x)
 #define UINT64_C(x) __UINT64_C(x)
-# 449 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdint.h" 3 4
+# 449 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INTMAX_C(x) __INTMAX_C(x)
 #define UINTMAX_C(x) __UINTMAX_C(x)
-# 10 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stdint.h" 2 3 4
+# 10 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 2 3 4
 
 
 
 #define _GCC_WRAP_STDINT_H 
-# 54 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stdbool.h" 1 3 4
-# 29 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stdbool.h" 3 4
+# 54 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
+# 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
 #define _STDBOOL_H 
 
 
@@ -1127,10 +1127,10 @@ typedef __uint_least64_t uint_least64_t;
 #define bool _Bool
 #define true 1
 #define false 0
-# 52 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stdbool.h" 3 4
+# 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
-# 55 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h" 1 3
+# 55 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 1 3
 
 
 
@@ -1140,7 +1140,7 @@ typedef __uint_least64_t uint_least64_t;
 
 #define _STRING_H_ 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/_ansi.h" 1 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 1 3
 
 
 
@@ -1150,7 +1150,7 @@ typedef __uint_least64_t uint_least64_t;
 
 #define _ANSIDECL_H_ 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/newlib.h" 1 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 1 3
 
 
 
@@ -1159,7 +1159,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define __NEWLIB_H__ 1
-# 18 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/newlib.h" 3
+# 18 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 3
 #define _WANT_IO_C99_FORMATS 1
 
 
@@ -1167,7 +1167,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _WANT_REGISTER_FINI 1
-# 37 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/newlib.h" 3
+# 37 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 3
 #define _REENT_CHECK_VERIFY 1
 
 
@@ -1175,7 +1175,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _MB_LEN_MAX 1
-# 53 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/newlib.h" 3
+# 53 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 3
 #define HAVE_INITFINI_ARRAY 1
 
 
@@ -1202,23 +1202,23 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _UNBUF_STREAM_OPT 1
-# 95 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/newlib.h" 3
+# 95 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 3
 #define _RETARGETABLE_LOCKING 1
-# 11 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/_ansi.h" 2 3
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/config.h" 1 3
+# 11 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 2 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 1 3
 
 #define __SYS_CONFIG_H__ 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/ieeefp.h" 1 3
-# 77 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/ieeefp.h" 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h" 1 3
+# 77 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h" 3
 #define __IEEE_LITTLE_ENDIAN 
-# 473 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/ieeefp.h" 3
+# 473 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h" 3
 #define __OBSOLETE_MATH_DEFAULT 1
 
 
 #define __OBSOLETE_MATH __OBSOLETE_MATH_DEFAULT
-# 5 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/config.h" 2 3
-# 224 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/config.h" 3
+# 5 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 2 3
+# 224 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 3
 #define _POINTER_INT long
 
 
@@ -1230,7 +1230,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define __RAND_MAX 0x7fffffff
-# 250 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/config.h" 3
+# 250 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 3
 #define __EXPORT 
 
 
@@ -1249,8 +1249,8 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _READ_WRITE_BUFSIZE_TYPE int
-# 12 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/_ansi.h" 2 3
-# 31 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/_ansi.h" 3
+# 12 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 2 3
+# 31 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 3
 #define _BEGIN_STD_C 
 #define _END_STD_C 
 #define _NOTHROW 
@@ -1264,27 +1264,27 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _ATTRIBUTE(attrs) __attribute__ (attrs)
-# 69 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/_ansi.h" 3
+# 69 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 3
 #define _ELIDABLE_INLINE static __inline__
 
 
 
 #define _NOINLINE __attribute__ ((__noinline__))
 #define _NOINLINE_STATIC _NOINLINE static
-# 11 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h" 2 3
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 1 3
-# 11 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 3
+# 11 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 1 3
+# 11 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _SYS_REENT_H_ 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/_ansi.h" 1 3
-# 14 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 2 3
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 1 3 4
-# 39 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 1 3
+# 14 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 39 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #define _STDDEF_H 
 #define _STDDEF_H_ 
 
 #define _ANSI_STDDEF_H 
-# 131 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 131 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #define _PTRDIFF_T 
 #define _T_PTRDIFF_ 
 #define _T_PTRDIFF 
@@ -1298,9 +1298,9 @@ typedef __uint_least64_t uint_least64_t;
 
 
 typedef int ptrdiff_t;
-# 155 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 155 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_ptrdiff_t
-# 181 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 181 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #define __size_t__ 
 #define __SIZE_T__ 
 #define _SIZE_T 
@@ -1330,9 +1330,9 @@ typedef int ptrdiff_t;
 
 
 typedef unsigned int size_t;
-# 231 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 231 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_size_t
-# 260 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 260 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #define __wchar_t__ 
 #define __WCHAR_T__ 
 #define _WCHAR_T 
@@ -1348,13 +1348,13 @@ typedef unsigned int size_t;
 #define __INT_WCHAR_T_H 
 #define _GCC_WCHAR_T 
 #define _WCHAR_T_DECLARED 
-# 287 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 287 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef _BSD_WCHAR_T_
-# 321 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 321 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 typedef unsigned int wchar_t;
-# 340 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 340 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_wchar_t
-# 390 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 390 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef NULL
 
 
@@ -1372,19 +1372,19 @@ typedef unsigned int wchar_t;
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 15 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 2 3
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_types.h" 1 3
-# 20 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_types.h" 3
+# 15 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 1 3
+# 20 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
 #define _SYS__TYPES_H 
 
 #define __need_size_t 
 #define __need_wint_t 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 1 3 4
-# 155 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 155 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_ptrdiff_t
-# 231 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 231 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_size_t
-# 340 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 340 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_wchar_t
 
 
@@ -1398,7 +1398,7 @@ typedef unsigned int wchar_t;
 typedef unsigned int wint_t;
 
 #undef __need_wint_t
-# 390 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 390 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef NULL
 
 
@@ -1416,17 +1416,17 @@ typedef unsigned int wint_t;
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 25 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_types.h" 2 3
+# 25 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 2 3
 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_types.h" 1 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_types.h" 1 3
 
 
 
 
 
 #define _MACHINE__TYPES_H 
-# 28 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_types.h" 2 3
+# 28 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 2 3
 
 
 typedef long __blkcnt_t;
@@ -1475,7 +1475,7 @@ typedef __uint32_t __id_t;
 
 
 typedef unsigned short __ino_t;
-# 90 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_types.h" 3
+# 90 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
 typedef __uint32_t __mode_t;
 
 
@@ -1503,17 +1503,17 @@ typedef long __key_t;
 
 
 typedef long _fpos_t;
-# 127 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_types.h" 3
+# 127 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
 #undef __size_t
 
 
 
 typedef unsigned int __size_t;
-# 146 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_types.h" 3
+# 146 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
 #define unsigned signed
 typedef signed int _ssize_t;
 #undef unsigned
-# 158 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_types.h" 3
+# 158 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
 typedef _ssize_t __ssize_t;
 
 
@@ -1576,7 +1576,7 @@ typedef unsigned long __useconds_t;
 
 
 typedef __builtin_va_list __va_list;
-# 16 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 2 3
+# 16 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
 
 #define _NULL 0
 
@@ -1584,11 +1584,11 @@ typedef __builtin_va_list __va_list;
 
 #define __Long long
 typedef unsigned long __ULong;
-# 34 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 3
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/lock.h" 1 3
+# 34 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/lock.h" 1 3
 
 #define __SYS_LOCK_H__ 
-# 33 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/lock.h" 3
+# 33 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/lock.h" 3
 struct __lock;
 typedef struct __lock * _LOCK_T;
 #define _LOCK_RECURSIVE_T _LOCK_T
@@ -1618,7 +1618,7 @@ extern void __retarget_lock_release(_LOCK_T lock);
 #define __lock_release(lock) __retarget_lock_release(lock)
 extern void __retarget_lock_release_recursive(_LOCK_T lock);
 #define __lock_release_recursive(lock) __retarget_lock_release_recursive(lock)
-# 35 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 2 3
+# 35 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
 typedef _LOCK_T _flock_t;
 
 
@@ -1672,7 +1672,7 @@ struct _on_exit_args {
 
  __ULong _is_cxa;
 };
-# 98 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 3
+# 98 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 struct _atexit {
  struct _atexit *_next;
  int _ind;
@@ -1687,12 +1687,12 @@ struct _atexit {
 
 
 #define _REENT_INIT_ATEXIT _NULL, _ATEXIT_INIT,
-# 122 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 3
+# 122 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 struct __sbuf {
  unsigned char *_base;
  int _size;
 };
-# 183 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 3
+# 183 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT_SMALL_CHECK_INIT(ptr) 
 
 
@@ -1746,7 +1746,7 @@ struct __sFILE {
   _mbstate_t _mbstate;
   int _flags2;
 };
-# 292 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 3
+# 292 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 typedef struct __sFILE __FILE;
 
 
@@ -1757,7 +1757,7 @@ struct _glue
   int _niobs;
   __FILE *_iobs;
 };
-# 317 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 3
+# 317 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _RAND48_SEED_0 (0x330e)
 #define _RAND48_SEED_1 (0xabcd)
 #define _RAND48_SEED_2 (0x1234)
@@ -1779,7 +1779,7 @@ struct _rand48 {
 #define _REENT_EMERGENCY_SIZE 25
 #define _REENT_ASCTIME_SIZE 26
 #define _REENT_SIGNAL_SIZE 24
-# 613 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 3
+# 613 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 struct _reent
 {
   int _errno;
@@ -1871,9 +1871,9 @@ struct _reent
 
 
 #define _REENT_INIT(var) { 0, _REENT_STDIO_STREAM(&(var), 0), _REENT_STDIO_STREAM(&(var), 1), _REENT_STDIO_STREAM(&(var), 2), 0, "", 0, _NULL, 0, _NULL, _NULL, 0, _NULL, _NULL, 0, _NULL, { { 0, _NULL, "", {0, 0, 0, 0, 0, 0, 0, 0, 0}, 0, 1, { {_RAND48_SEED_0, _RAND48_SEED_1, _RAND48_SEED_2}, {_RAND48_MULT_0, _RAND48_MULT_1, _RAND48_MULT_2}, _RAND48_ADD }, {0, {0}}, {0, {0}}, {0, {0}}, "", "", 0, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}} } }, _REENT_INIT_ATEXIT _NULL, {_NULL, 0, _NULL} }
-# 751 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 3
+# 751 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT_INIT_PTR_ZEROED(var) { (var)->_stdin = _REENT_STDIO_STREAM(var, 0); (var)->_stdout = _REENT_STDIO_STREAM(var, 1); (var)->_stderr = _REENT_STDIO_STREAM(var, 2); (var)->_new._reent._rand_next = 1; (var)->_new._reent._r48._seed[0] = _RAND48_SEED_0; (var)->_new._reent._r48._seed[1] = _RAND48_SEED_1; (var)->_new._reent._r48._seed[2] = _RAND48_SEED_2; (var)->_new._reent._r48._mult[0] = _RAND48_MULT_0; (var)->_new._reent._r48._mult[1] = _RAND48_MULT_1; (var)->_new._reent._r48._mult[2] = _RAND48_MULT_2; (var)->_new._reent._r48._add = _RAND48_ADD; }
-# 765 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 3
+# 765 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT_CHECK_RAND48(ptr) 
 #define _REENT_CHECK_MP(ptr) 
 #define _REENT_CHECK_TM(ptr) 
@@ -1932,7 +1932,7 @@ extern struct _reent *_impure_ptr ;
 extern struct _reent *const _global_impure_ptr ;
 
 void _reclaim_reent (struct _reent *);
-# 832 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h" 3
+# 832 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT _impure_ptr
 
 
@@ -1943,15 +1943,15 @@ void _reclaim_reent (struct _reent *);
 
 
 #define _GLOBAL_ATEXIT (_GLOBAL_REENT->_atexit)
-# 12 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h" 2 3
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 1 3
-# 43 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 12 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 1 3
+# 43 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define _SYS_CDEFS_H_ 
 
 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 1 3 4
-# 48 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 2 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 48 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 2 3
 
 #define __PMT(args) args
 #define __DOTS , ...
@@ -1973,26 +1973,15 @@ void _reclaim_reent (struct _reent *);
 #define __bounded 
 #define __unbounded 
 #define __ptrvalue 
-# 78 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 78 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __has_extension __has_feature
 
 
 #define __has_feature(x) 0
-
-
-
-
-
-#define __has_builtin(x) 0
-
-
-
-
-
-
+# 94 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __BEGIN_DECLS 
 #define __END_DECLS 
-# 107 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 107 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __GNUCLIKE_ASM 3
 #define __GNUCLIKE_MATH_BUILTIN_CONSTANTS 
 
@@ -2047,7 +2036,7 @@ void _reclaim_reent (struct _reent *);
 #define __CC_SUPPORTS_VARADIC_XXX 1
 
 #define __CC_SUPPORTS_DYNAMIC_ARRAY_INIT 1
-# 177 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 177 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __P(protos) protos
 #define __CONCAT1(x,y) x ## y
 #define __CONCAT(x,y) __CONCAT1(x,y)
@@ -2057,9 +2046,9 @@ void _reclaim_reent (struct _reent *);
 #define __const const
 #define __signed signed
 #define __volatile volatile
-# 230 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 230 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __weak_symbol __attribute__((__weak__))
-# 243 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 243 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __dead2 __attribute__((__noreturn__))
 #define __pure2 __attribute__((__const__))
 #define __unused __attribute__((__unused__))
@@ -2077,7 +2066,7 @@ void _reclaim_reent (struct _reent *);
 
 
 #define __alloc_align(x) __attribute__((__alloc_align__(x)))
-# 280 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 280 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define _Alignas(x) __aligned(x)
 
 
@@ -2086,7 +2075,7 @@ void _reclaim_reent (struct _reent *);
 
 
 #define _Alignof(x) __alignof(x)
-# 296 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 296 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define _Atomic(T) struct { T volatile __val; }
 
 
@@ -2094,11 +2083,11 @@ void _reclaim_reent (struct _reent *);
 
 
 #define _Noreturn __dead2
-# 331 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 331 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define _Thread_local __thread
-# 351 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 351 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __generic(expr,t,yes,no) __builtin_choose_expr( __builtin_types_compatible_p(__typeof(expr), t), yes, no)
-# 366 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 366 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __min_size(x) static (x)
 
 
@@ -2148,9 +2137,9 @@ void _reclaim_reent (struct _reent *);
 
 
 #define __unreachable() __builtin_unreachable()
-# 434 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 434 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __restrict restrict
-# 467 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 467 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __predict_true(exp) __builtin_expect((exp), 1)
 #define __predict_false(exp) __builtin_expect((exp), 0)
 
@@ -2164,12 +2153,12 @@ void _reclaim_reent (struct _reent *);
 
 
 #define __hidden __attribute__((__visibility__("hidden")))
-# 489 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 489 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __offsetof(type,field) offsetof(type, field)
 #define __rangeof(type,start,end) (__offsetof(type, end) - __offsetof(type, start))
-# 500 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 500 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __containerof(x,s,m) ({ const volatile __typeof(((s *)0)->m) *__x = (x); __DEQUALIFY(s *, (const volatile char *)__x - __offsetof(s, m));})
-# 522 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 522 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __printflike(fmtarg,firstvararg) __attribute__((__format__ (__printf__, fmtarg, firstvararg)))
 
 #define __scanflike(fmtarg,firstvararg) __attribute__((__format__ (__scanf__, fmtarg, firstvararg)))
@@ -2178,7 +2167,7 @@ void _reclaim_reent (struct _reent *);
 #define __strfmonlike(fmtarg,firstvararg) __attribute__((__format__ (__strfmon__, fmtarg, firstvararg)))
 
 #define __strftimelike(fmtarg,firstvararg) __attribute__((__format__ (__strftime__, fmtarg, firstvararg)))
-# 539 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 539 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __printf0like(fmtarg,firstvararg) 
 
 
@@ -2199,7 +2188,7 @@ void _reclaim_reent (struct _reent *);
 #define __sym_compat(sym,impl,verid) __asm__(".symver " #impl ", " #sym "@" #verid)
 
 #define __sym_default(sym,impl,verid) __asm__(".symver " #impl ", " #sym "@@" #verid)
-# 593 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 593 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __FBSDID(s) struct __hack
 
 
@@ -2240,10 +2229,10 @@ void _reclaim_reent (struct _reent *);
 #define _Null_unspecified 
 #define __NULLABILITY_PRAGMA_PUSH 
 #define __NULLABILITY_PRAGMA_POP 
-# 653 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 653 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __arg_type_tag(arg_kind,arg_idx,type_tag_idx) 
 #define __datatype_type_tag(kind,type) 
-# 672 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h" 3
+# 672 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __lock_annotate(x) 
 
 
@@ -2287,19 +2276,19 @@ void _reclaim_reent (struct _reent *);
 
 #define __guarded_by(x) __lock_annotate(guarded_by(x))
 #define __pt_guarded_by(x) __lock_annotate(pt_guarded_by(x))
-# 13 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h" 2 3
+# 13 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
 
 
 #define __need_size_t 
 #define __need_NULL 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 1 3 4
-# 155 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 155 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_ptrdiff_t
-# 231 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 231 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_size_t
-# 340 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 340 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_wchar_t
-# 390 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 3 4
+# 390 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef NULL
 
 
@@ -2317,8 +2306,8 @@ void _reclaim_reent (struct _reent *);
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 18 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h" 2 3
-# 27 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h" 3
+# 18 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
+# 27 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
 
 
 void * memchr (const void *, int, size_t);
@@ -2345,35 +2334,35 @@ char *strstr (const char *, const char *);
 char *strtok (char *restrict, const char *restrict);
 
 size_t strxfrm (char *restrict, const char *restrict, size_t);
-# 86 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h" 3
+# 86 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
 char *_strdup_r (struct _reent *, const char *);
 
 
 
 char *_strndup_r (struct _reent *, const char *, size_t);
-# 112 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h" 3
+# 112 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
 char * _strerror_r (struct _reent *, int, int, int *);
-# 134 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h" 3
+# 134 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
 char *strsignal (int __signo);
-# 175 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h" 3
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/string.h" 1 3
-# 176 "/opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h" 2 3
+# 175 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/string.h" 1 3
+# 176 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
 
 
-# 56 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h" 1
-# 44 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 56 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h" 1
+# 44 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SDK_CONFIG_H 
-# 63 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 63 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BL_FW_COPY_PROGRESS_STORE_STEP 8
 
 
 
 
 #define NRF_DFU_SETTINGS_VERSION 1
-# 77 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 77 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BSP_BTN_BLE_ENABLED 1
-# 90 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 90 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_ADVERTISING_ENABLED 1
 
 
@@ -2432,7 +2421,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_RADIO_ANTENNA_COUNT 12
-# 156 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 156 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_RACP_ENABLED 0
 
 
@@ -2453,7 +2442,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLE_CONN_PARAMS_MAX_SUPERVISION_TIMEOUT_DEVIATION 65535
-# 184 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 184 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLE_GATT_ENABLED 1
 
 
@@ -2554,7 +2543,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLE_SCAN_SUPERVISION_TIMEOUT 4000
-# 295 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 295 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLE_SCAN_SCAN_PHY 1
 
 
@@ -2586,7 +2575,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLE_SCAN_APPEARANCE_CNT 0
-# 335 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 335 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PEER_MANAGER_ENABLED 1
 
 
@@ -2599,11 +2588,11 @@ char *strsignal (int __signo);
 
 
 #define PM_FLASH_BUFFERS 4
-# 355 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 355 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PM_CENTRAL_ENABLED 1
-# 365 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 365 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PM_SERVICE_CHANGED_ENABLED 1
-# 374 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 374 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PM_PEER_RANKS_ENABLED 1
 
 
@@ -2640,9 +2629,9 @@ char *strsignal (int __signo);
 
 
 #define PM_RA_PROTECTION_REWARD_PERIOD 10000
-# 418 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 418 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PM_HANDLER_SEC_DELAY_MS 0
-# 434 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_ANCS_C_ENABLED 0
 
 
@@ -2669,13 +2658,13 @@ char *strsignal (int __signo);
 
 
 #define BLE_BAS_CONFIG_LOG_ENABLED 0
-# 470 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 470 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_BAS_CONFIG_LOG_LEVEL 4
-# 486 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 486 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_BAS_CONFIG_INFO_COLOR 0
-# 502 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 502 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_BAS_CONFIG_DEBUG_COLOR 0
-# 513 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 513 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_CSCS_ENABLED 0
 
 
@@ -2744,13 +2733,13 @@ char *strsignal (int __signo);
 
 
 #define BLE_IAS_CONFIG_LOG_ENABLED 0
-# 591 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 591 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_IAS_CONFIG_LOG_LEVEL 3
-# 607 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 607 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_IAS_CONFIG_INFO_COLOR 0
-# 623 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 623 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_IAS_CONFIG_DEBUG_COLOR 0
-# 634 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 634 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_LBS_C_ENABLED 0
 
 
@@ -2784,13 +2773,13 @@ char *strsignal (int __signo);
 
 
 #define BLE_NUS_CONFIG_LOG_ENABLED 0
-# 677 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 677 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_NUS_CONFIG_LOG_LEVEL 3
-# 693 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 693 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_NUS_CONFIG_INFO_COLOR 0
-# 709 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 709 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_NUS_CONFIG_DEBUG_COLOR 0
-# 720 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 720 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_RCS_C_ENABLED 1
 
 
@@ -2813,7 +2802,7 @@ char *strsignal (int __signo);
 
 
 #define BLE_TPS_ENABLED 0
-# 753 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 753 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_MPU_ENABLED 0
 
 
@@ -2829,11 +2818,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_STACK_GUARD_ENABLED 0
-# 781 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 781 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_STACK_GUARD_CONFIG_SIZE 7
-# 795 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 795 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_ENABLED 1
-# 808 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 808 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_ALLOCATOR 0
 
 
@@ -2856,11 +2845,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_CC310_BL_ECC_SECP256R1_ENABLED 1
-# 838 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 838 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_BL_HASH_SHA256_ENABLED 1
-# 847 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 847 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_BL_HASH_LITTLE_ENDIAN_DIGEST_ENABLED 0
-# 856 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 856 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_BL_HASH_AUTOMATIC_RAM_BUFFER_ENABLED 0
 
 
@@ -2869,11 +2858,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_CC310_BL_HASH_AUTOMATIC_RAM_BUFFER_SIZE 4096
-# 872 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 872 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_BL_ECC_LITTLE_ENDIAN_ENABLED 0
-# 881 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 881 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_BL_INTERRUPTS_ENABLED 1
-# 890 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 890 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_ENABLED 1
 
 
@@ -3022,13 +3011,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_CC310_ECC_ED25519_ENABLED 1
-# 1046 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1046 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_HASH_SHA256_ENABLED 1
-# 1055 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1055 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_HASH_SHA512_ENABLED 1
-# 1064 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1064 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_HMAC_SHA256_ENABLED 1
-# 1073 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1073 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_HMAC_SHA512_ENABLED 1
 
 
@@ -3037,9 +3026,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_CC310_RNG_ENABLED 1
-# 1090 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1090 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_INTERRUPTS_ENABLED 1
-# 1100 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1100 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CIFRA_ENABLED 0
 
 
@@ -3110,37 +3099,37 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_MBEDTLS_AES_GCM_ENABLED 1
-# 1178 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1178 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP192R1_ENABLED 1
-# 1187 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1187 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP224R1_ENABLED 1
-# 1196 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1196 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP256R1_ENABLED 1
-# 1205 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1205 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP384R1_ENABLED 1
-# 1214 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1214 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP521R1_ENABLED 1
-# 1223 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1223 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP192K1_ENABLED 1
-# 1232 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1232 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP224K1_ENABLED 1
-# 1241 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1241 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP256K1_ENABLED 1
-# 1250 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1250 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_BP256R1_ENABLED 1
-# 1259 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1259 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_BP384R1_ENABLED 1
-# 1268 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1268 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_BP512R1_ENABLED 1
-# 1277 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1277 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_CURVE25519_ENABLED 1
-# 1286 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1286 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_HASH_SHA256_ENABLED 1
-# 1295 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1295 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_HASH_SHA512_ENABLED 1
-# 1304 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1304 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_HMAC_SHA256_ENABLED 1
-# 1313 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1313 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_HMAC_SHA512_ENABLED 1
 
 
@@ -3158,13 +3147,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_MICRO_ECC_ECC_SECP192R1_ENABLED 1
-# 1338 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1338 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MICRO_ECC_ECC_SECP224R1_ENABLED 1
-# 1347 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1347 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MICRO_ECC_ECC_SECP256R1_ENABLED 1
-# 1356 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1356 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MICRO_ECC_ECC_SECP256K1_ENABLED 1
-# 1367 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1367 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_NRF_HW_RNG_ENABLED 0
 
 
@@ -3174,7 +3163,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_NRF_HW_RNG_MBEDTLS_CTR_DRBG_ENABLED 1
-# 1385 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1385 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_NRF_SW_ENABLED 0
 
 
@@ -3184,7 +3173,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_NRF_SW_HASH_SHA256_ENABLED 1
-# 1402 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1402 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_ENABLED 0
 
 
@@ -3192,21 +3181,21 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_OBERON_CHACHA_POLY_ENABLED 1
-# 1417 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1417 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_ECC_SECP256R1_ENABLED 1
-# 1426 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1426 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_ECC_CURVE25519_ENABLED 1
-# 1435 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1435 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_ECC_ED25519_ENABLED 1
-# 1444 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1444 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_HASH_SHA256_ENABLED 1
-# 1453 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1453 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_HASH_SHA512_ENABLED 1
-# 1462 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1462 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_HMAC_SHA256_ENABLED 1
-# 1471 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1471 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_HMAC_SHA512_ENABLED 1
-# 1480 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1480 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OPTIGA_ENABLED 0
 
 
@@ -3216,15 +3205,15 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_OPTIGA_RNG_ENABLED 0
-# 1497 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1497 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OPTIGA_ECC_SECP256R1_ENABLED 1
-# 1508 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1508 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_CURVE25519_BIG_ENDIAN_ENABLED 0
-# 1522 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1522 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_RNG_STATIC_MEMORY_BUFFERS_ENABLED 1
-# 1531 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1531 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CRYPTO_RNG_AUTO_INIT_ENABLED 1
-# 1551 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1551 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_DFU_ENABLED 1
 
 
@@ -3233,23 +3222,23 @@ char *strsignal (int __signo);
 
 
 #define NRF_DFU_BLE_BUTTONLESS_SUPPORTS_BONDS 0
-# 1592 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1592 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define COMP_ENABLED 0
-# 1603 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1603 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define COMP_CONFIG_REF 1
-# 1612 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1612 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define COMP_CONFIG_MAIN_MODE 0
-# 1622 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1622 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define COMP_CONFIG_SPEED_MODE 2
-# 1631 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1631 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define COMP_CONFIG_HYST 0
-# 1642 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1642 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define COMP_CONFIG_ISOURCE 0
-# 1657 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1657 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define COMP_CONFIG_INPUT 0
-# 1674 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1674 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define COMP_CONFIG_IRQ_PRIORITY 6
-# 1683 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1683 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define EGU_ENABLED 0
 
 
@@ -3261,7 +3250,7 @@ char *strsignal (int __signo);
 
 
 #define GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS 4
-# 1710 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1710 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define GPIOTE_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3303,21 +3292,21 @@ char *strsignal (int __signo);
 
 
 #define I2S_CONFIG_SDIN_PIN 28
-# 1759 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1759 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define I2S_CONFIG_MASTER 0
-# 1768 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1768 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define I2S_CONFIG_FORMAT 0
-# 1777 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1777 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define I2S_CONFIG_ALIGN 0
-# 1787 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1787 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define I2S_CONFIG_SWIDTH 1
-# 1797 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1797 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define I2S_CONFIG_CHANNELS 1
-# 1823 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1823 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define I2S_CONFIG_MCK_SETUP 536870912
-# 1839 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1839 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define I2S_CONFIG_RATIO 2000
-# 1856 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1856 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define I2S_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3325,19 +3314,19 @@ char *strsignal (int __signo);
 
 
 #define I2S_CONFIG_LOG_ENABLED 0
-# 1873 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1873 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define I2S_CONFIG_LOG_LEVEL 3
-# 1889 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1889 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define I2S_CONFIG_INFO_COLOR 0
-# 1905 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1905 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define I2S_CONFIG_DEBUG_COLOR 0
-# 1915 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1915 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define LPCOMP_ENABLED 0
-# 1938 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1938 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define LPCOMP_CONFIG_REFERENCE 3
-# 1948 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1948 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define LPCOMP_CONFIG_DETECTION 2
-# 1963 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1963 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define LPCOMP_CONFIG_INPUT 0
 
 
@@ -3346,7 +3335,7 @@ char *strsignal (int __signo);
 
 
 #define LPCOMP_CONFIG_HYST 0
-# 1987 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 1987 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define LPCOMP_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3356,9 +3345,9 @@ char *strsignal (int __signo);
 
 
 #define NRFX_CLOCK_ENABLED 1
-# 2004 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2004 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_CLOCK_CONFIG_LF_SRC 1
-# 2019 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2019 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_CLOCK_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3366,27 +3355,27 @@ char *strsignal (int __signo);
 
 
 #define NRFX_CLOCK_CONFIG_LOG_ENABLED 0
-# 2036 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2036 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_CLOCK_CONFIG_LOG_LEVEL 3
-# 2052 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2052 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_CLOCK_CONFIG_INFO_COLOR 0
-# 2068 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2068 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_CLOCK_CONFIG_DEBUG_COLOR 0
-# 2078 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2078 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_COMP_ENABLED 0
-# 2089 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2089 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_COMP_CONFIG_REF 1
-# 2098 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2098 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_COMP_CONFIG_MAIN_MODE 0
-# 2108 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2108 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_COMP_CONFIG_SPEED_MODE 2
-# 2117 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2117 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_COMP_CONFIG_HYST 0
-# 2128 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2128 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_COMP_CONFIG_ISOURCE 0
-# 2143 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2143 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_COMP_CONFIG_INPUT 0
-# 2158 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2158 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_COMP_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3394,19 +3383,19 @@ char *strsignal (int __signo);
 
 
 #define NRFX_COMP_CONFIG_LOG_ENABLED 0
-# 2175 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2175 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_COMP_CONFIG_LOG_LEVEL 3
-# 2191 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2191 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_COMP_CONFIG_INFO_COLOR 0
-# 2207 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2207 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_COMP_CONFIG_DEBUG_COLOR 0
-# 2217 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2217 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_GPIOTE_ENABLED 1
 
 
 
 #define NRFX_GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS 1
-# 2236 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2236 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_GPIOTE_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3414,13 +3403,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_GPIOTE_CONFIG_LOG_ENABLED 0
-# 2253 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2253 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_GPIOTE_CONFIG_LOG_LEVEL 3
-# 2269 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2269 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_GPIOTE_CONFIG_INFO_COLOR 0
-# 2285 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2285 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_GPIOTE_CONFIG_DEBUG_COLOR 0
-# 2295 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2295 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_ENABLED 0
 
 
@@ -3454,21 +3443,21 @@ char *strsignal (int __signo);
 
 
 #define NRFX_I2S_CONFIG_SDIN_PIN 28
-# 2336 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2336 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_CONFIG_MASTER 0
-# 2345 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2345 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_CONFIG_FORMAT 0
-# 2354 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2354 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_CONFIG_ALIGN 0
-# 2364 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2364 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_CONFIG_SWIDTH 1
-# 2374 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2374 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_CONFIG_CHANNELS 1
-# 2400 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2400 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_CONFIG_MCK_SETUP 536870912
-# 2416 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_CONFIG_RATIO 2000
-# 2431 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2431 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3476,19 +3465,19 @@ char *strsignal (int __signo);
 
 
 #define NRFX_I2S_CONFIG_LOG_ENABLED 0
-# 2448 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2448 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_CONFIG_LOG_LEVEL 3
-# 2464 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2464 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_CONFIG_INFO_COLOR 0
-# 2480 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2480 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_I2S_CONFIG_DEBUG_COLOR 0
-# 2490 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2490 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_LPCOMP_ENABLED 0
-# 2513 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2513 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_REFERENCE 3
-# 2523 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2523 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_DETECTION 2
-# 2538 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2538 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_INPUT 0
 
 
@@ -3497,7 +3486,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_LPCOMP_CONFIG_HYST 0
-# 2560 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2560 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3505,15 +3494,15 @@ char *strsignal (int __signo);
 
 
 #define NRFX_LPCOMP_CONFIG_LOG_ENABLED 0
-# 2577 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2577 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_LOG_LEVEL 3
-# 2593 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2593 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_INFO_COLOR 0
-# 2609 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2609 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_DEBUG_COLOR 0
-# 2619 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2619 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_NFCT_ENABLED 1
-# 2633 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2633 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_NFCT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3521,13 +3510,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_NFCT_CONFIG_LOG_ENABLED 0
-# 2650 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2650 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_NFCT_CONFIG_LOG_LEVEL 3
-# 2666 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2666 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_NFCT_CONFIG_INFO_COLOR 0
-# 2682 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2682 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_NFCT_CONFIG_DEBUG_COLOR 0
-# 2692 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2692 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PDM_ENABLED 0
 
 
@@ -3537,11 +3526,11 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PDM_CONFIG_MODE 1
-# 2709 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2709 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PDM_CONFIG_EDGE 0
-# 2719 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2719 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PDM_CONFIG_CLOCK_FREQ 138412032
-# 2734 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2734 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PDM_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3549,19 +3538,19 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PDM_CONFIG_LOG_ENABLED 0
-# 2751 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2751 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PDM_CONFIG_LOG_LEVEL 3
-# 2767 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2767 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PDM_CONFIG_INFO_COLOR 0
-# 2783 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2783 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PDM_CONFIG_DEBUG_COLOR 0
-# 2793 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2793 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_POWER_ENABLED 1
-# 2807 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2807 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_POWER_CONFIG_IRQ_PRIORITY 6
-# 2816 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2816 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_POWER_CONFIG_DEFAULT_DCDCEN 0
-# 2825 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2825 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_POWER_CONFIG_DEFAULT_DCDCENHV 0
 
 
@@ -3576,13 +3565,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PPI_CONFIG_LOG_ENABLED 0
-# 2849 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2849 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PPI_CONFIG_LOG_LEVEL 3
-# 2865 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2865 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PPI_CONFIG_INFO_COLOR 0
-# 2881 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2881 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PPI_CONFIG_DEBUG_COLOR 0
-# 2891 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2891 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PRS_ENABLED 1
 
 
@@ -3624,13 +3613,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PRS_CONFIG_LOG_ENABLED 0
-# 2942 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2942 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PRS_CONFIG_LOG_LEVEL 3
-# 2958 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2958 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PRS_CONFIG_INFO_COLOR 0
-# 2974 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2974 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PRS_CONFIG_DEBUG_COLOR 0
-# 2984 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 2984 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PWM_ENABLED 0
 
 
@@ -3680,20 +3669,20 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PWM_DEFAULT_CONFIG_OUT3_PIN 31
-# 3047 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3047 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PWM_DEFAULT_CONFIG_BASE_CLOCK 4
-# 3056 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3056 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PWM_DEFAULT_CONFIG_COUNT_MODE 0
 
 
 
 
 #define NRFX_PWM_DEFAULT_CONFIG_TOP_VALUE 1000
-# 3072 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3072 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PWM_DEFAULT_CONFIG_LOAD_MODE 0
-# 3081 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3081 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PWM_DEFAULT_CONFIG_STEP_MODE 0
-# 3096 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3096 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PWM_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3701,21 +3690,21 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PWM_CONFIG_LOG_ENABLED 0
-# 3113 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3113 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PWM_CONFIG_LOG_LEVEL 3
-# 3129 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3129 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PWM_CONFIG_INFO_COLOR 0
-# 3145 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3145 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PWM_CONFIG_DEBUG_COLOR 0
-# 3161 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3161 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PWM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
-# 3173 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3173 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_PWM_NRF52_ANOMALY_109_EGU_INSTANCE 5
-# 3183 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3183 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QDEC_ENABLED 0
-# 3197 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3197 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QDEC_CONFIG_REPORTPER 0
-# 3212 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3212 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QDEC_CONFIG_SAMPLEPER 7
 
 
@@ -3743,7 +3732,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_QDEC_CONFIG_LEDPRE 511
-# 3247 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3247 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QDEC_CONFIG_LEDPOL 1
 
 
@@ -3759,7 +3748,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_QDEC_CONFIG_SAMPLE_INTEN 0
-# 3276 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3276 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QDEC_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3767,13 +3756,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_QDEC_CONFIG_LOG_ENABLED 0
-# 3293 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3293 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QDEC_CONFIG_LOG_LEVEL 3
-# 3309 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3309 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QDEC_CONFIG_INFO_COLOR 0
-# 3325 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3325 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QDEC_CONFIG_DEBUG_COLOR 0
-# 3335 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3335 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QSPI_ENABLED 0
 
 
@@ -3786,15 +3775,15 @@ char *strsignal (int __signo);
 
 
 #define NRFX_QSPI_CONFIG_XIP_OFFSET 0
-# 3358 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3358 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QSPI_CONFIG_READOC 0
-# 3369 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3369 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QSPI_CONFIG_WRITEOC 0
-# 3378 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3378 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QSPI_CONFIG_ADDRMODE 0
-# 3387 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QSPI_CONFIG_MODE 0
-# 3410 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3410 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QSPI_CONFIG_FREQUENCY 15
 
 
@@ -3826,7 +3815,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_QSPI_PIN_IO3 NRF_QSPI_PIN_NOT_CONNECTED
-# 3455 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3455 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_QSPI_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3842,7 +3831,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_RNG_CONFIG_ERROR_CORRECTION 1
-# 3484 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3484 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_RNG_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3850,13 +3839,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_RNG_CONFIG_LOG_ENABLED 0
-# 3501 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_RNG_CONFIG_LOG_LEVEL 3
-# 3517 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3517 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_RNG_CONFIG_INFO_COLOR 0
-# 3533 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3533 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_RNG_CONFIG_DEBUG_COLOR 0
-# 3543 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3543 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_RTC_ENABLED 0
 
 
@@ -3897,7 +3886,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_RTC_DEFAULT_CONFIG_RELIABLE 0
-# 3597 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3597 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_RTC_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3905,17 +3894,17 @@ char *strsignal (int __signo);
 
 
 #define NRFX_RTC_CONFIG_LOG_ENABLED 0
-# 3614 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3614 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_RTC_CONFIG_LOG_LEVEL 3
-# 3630 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3630 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_RTC_CONFIG_INFO_COLOR 0
-# 3646 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3646 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_RTC_CONFIG_DEBUG_COLOR 0
-# 3656 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3656 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SAADC_ENABLED 1
-# 3666 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3666 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SAADC_CONFIG_RESOLUTION 1
-# 3682 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3682 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SAADC_CONFIG_OVERSAMPLE 0
 
 
@@ -3924,7 +3913,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SAADC_CONFIG_LP_MODE 0
-# 3704 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3704 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SAADC_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3932,13 +3921,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SAADC_CONFIG_LOG_ENABLED 0
-# 3721 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3721 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SAADC_CONFIG_LOG_LEVEL 3
-# 3737 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3737 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SAADC_CONFIG_INFO_COLOR 0
-# 3753 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3753 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SAADC_CONFIG_DEBUG_COLOR 0
-# 3763 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3763 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIM_ENABLED 1
 
 
@@ -3960,9 +3949,9 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SPIM2_ENABLED 0
-# 3793 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3793 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIM_MISO_PULL_CFG 1
-# 3808 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3808 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIM_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3970,13 +3959,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SPIM_CONFIG_LOG_ENABLED 0
-# 3825 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3825 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIM_CONFIG_LOG_LEVEL 3
-# 3841 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3841 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIM_CONFIG_INFO_COLOR 0
-# 3857 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3857 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIM_CONFIG_DEBUG_COLOR 0
-# 3873 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3873 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -4006,7 +3995,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SPIS2_ENABLED 0
-# 3916 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3916 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4028,13 +4017,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SPIS_CONFIG_LOG_ENABLED 0
-# 3947 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3947 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIS_CONFIG_LOG_LEVEL 3
-# 3963 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3963 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIS_CONFIG_INFO_COLOR 0
-# 3979 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3979 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIS_CONFIG_DEBUG_COLOR 0
-# 3995 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 3995 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPIS_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -4064,9 +4053,9 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SPI2_ENABLED 0
-# 4033 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4033 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPI_MISO_PULL_CFG 1
-# 4048 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4048 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPI_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4074,13 +4063,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SPI_CONFIG_LOG_ENABLED 0
-# 4065 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4065 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPI_CONFIG_LOG_LEVEL 3
-# 4081 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4081 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPI_CONFIG_INFO_COLOR 0
-# 4097 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4097 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SPI_CONFIG_DEBUG_COLOR 0
-# 4107 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4107 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SWI_ENABLED 0
 
 
@@ -4136,13 +4125,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SWI_CONFIG_LOG_ENABLED 0
-# 4172 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4172 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SWI_CONFIG_LOG_LEVEL 3
-# 4188 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4188 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SWI_CONFIG_INFO_COLOR 0
-# 4204 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4204 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_SWI_CONFIG_DEBUG_COLOR 0
-# 4214 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4214 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TIMER_ENABLED 1
 
 
@@ -4183,13 +4172,13 @@ char *strsignal (int __signo);
 
 
 #define TIMER4_ENABLED 1
-# 4270 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4270 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_FREQUENCY 0
-# 4279 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4279 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_MODE 0
-# 4290 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4290 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH 0
-# 4305 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4305 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4197,13 +4186,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TIMER_CONFIG_LOG_ENABLED 0
-# 4322 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4322 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TIMER_CONFIG_LOG_LEVEL 3
-# 4338 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4338 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TIMER_CONFIG_INFO_COLOR 0
-# 4354 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4354 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TIMER_CONFIG_DEBUG_COLOR 0
-# 4364 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4364 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIM_ENABLED 1
 
 
@@ -4218,7 +4207,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIM1_ENABLED 1
-# 4387 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIM_DEFAULT_CONFIG_FREQUENCY 26738688
 
 
@@ -4227,7 +4216,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIM_DEFAULT_CONFIG_HOLD_BUS_UNINIT 0
-# 4409 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4409 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIM_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4235,13 +4224,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIM_CONFIG_LOG_ENABLED 0
-# 4426 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4426 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIM_CONFIG_LOG_LEVEL 3
-# 4442 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4442 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIM_CONFIG_INFO_COLOR 0
-# 4458 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4458 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIM_CONFIG_DEBUG_COLOR 0
-# 4473 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4473 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -4264,9 +4253,9 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIS1_ENABLED 0
-# 4503 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4503 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIS_ASSUME_INIT_AFTER_RESET_ONLY 0
-# 4512 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4512 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIS_NO_SYNC_MODE 0
 
 
@@ -4278,11 +4267,11 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIS_DEFAULT_CONFIG_ADDR1 0
-# 4532 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4532 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIS_DEFAULT_CONFIG_SCL_PULL 0
-# 4542 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4542 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIS_DEFAULT_CONFIG_SDA_PULL 0
-# 4557 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4557 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4290,13 +4279,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIS_CONFIG_LOG_ENABLED 0
-# 4574 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4574 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIS_CONFIG_LOG_LEVEL 3
-# 4590 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4590 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIS_CONFIG_INFO_COLOR 0
-# 4606 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4606 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWIS_CONFIG_DEBUG_COLOR 0
-# 4616 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4616 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWI_ENABLED 1
 
 
@@ -4311,7 +4300,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWI1_ENABLED 0
-# 4639 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4639 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWI_DEFAULT_CONFIG_FREQUENCY 26738688
 
 
@@ -4320,7 +4309,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWI_DEFAULT_CONFIG_HOLD_BUS_UNINIT 0
-# 4661 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4661 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWI_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4328,13 +4317,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWI_CONFIG_LOG_ENABLED 0
-# 4678 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4678 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWI_CONFIG_LOG_LEVEL 3
-# 4694 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4694 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWI_CONFIG_INFO_COLOR 0
-# 4710 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4710 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_TWI_CONFIG_DEBUG_COLOR 0
-# 4720 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4720 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UARTE_ENABLED 1
 
 
@@ -4345,13 +4334,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_UARTE1_ENABLED 1
-# 4738 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4738 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_HWFC 0
-# 4747 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4747 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_PARITY 0
-# 4772 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4772 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_BAUDRATE 30801920
-# 4787 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4787 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4359,25 +4348,25 @@ char *strsignal (int __signo);
 
 
 #define NRFX_UARTE_CONFIG_LOG_ENABLED 0
-# 4804 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4804 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UARTE_CONFIG_LOG_LEVEL 3
-# 4820 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4820 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UARTE_CONFIG_INFO_COLOR 0
-# 4836 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4836 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UARTE_CONFIG_DEBUG_COLOR 0
-# 4846 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4846 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UART_ENABLED 1
 
 
 
 #define NRFX_UART0_ENABLED 0
-# 4859 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4859 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_HWFC 0
-# 4868 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4868 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_PARITY 0
-# 4893 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4893 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_BAUDRATE 30924800
-# 4908 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4908 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4385,23 +4374,23 @@ char *strsignal (int __signo);
 
 
 #define NRFX_UART_CONFIG_LOG_ENABLED 0
-# 4925 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4925 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UART_CONFIG_LOG_LEVEL 3
-# 4941 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4941 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UART_CONFIG_INFO_COLOR 0
-# 4957 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4957 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_UART_CONFIG_DEBUG_COLOR 0
-# 4967 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4967 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_USBD_ENABLED 1
-# 4981 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4981 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_USBD_CONFIG_IRQ_PRIORITY 3
-# 4990 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 4990 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_USBD_CONFIG_DMASCHEDULER_MODE 0
-# 5003 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5003 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_USBD_CONFIG_DMASCHEDULER_ISO_BOOST 1
-# 5013 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5013 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_USBD_CONFIG_ISO_IN_ZLP 0
-# 5024 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5024 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_USBD_USE_WORKAROUND_FOR_ANOMALY_211 0
 
 
@@ -4411,7 +4400,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_WDT_ENABLED 0
-# 5042 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5042 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_WDT_CONFIG_BEHAVIOUR 1
 
 
@@ -4420,7 +4409,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_WDT_CONFIG_RELOAD_VALUE 2000
-# 5064 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5064 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_WDT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4428,15 +4417,15 @@ char *strsignal (int __signo);
 
 
 #define NRFX_WDT_CONFIG_LOG_ENABLED 0
-# 5081 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5081 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_WDT_CONFIG_LOG_LEVEL 3
-# 5097 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5097 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_WDT_CONFIG_INFO_COLOR 0
-# 5113 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5113 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_WDT_CONFIG_DEBUG_COLOR 0
-# 5123 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5123 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLOCK_ENABLED 1
-# 5134 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5134 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define CLOCK_CONFIG_LF_SRC 1
 
 
@@ -4445,7 +4434,7 @@ char *strsignal (int __signo);
 
 
 #define CLOCK_CONFIG_LF_CAL_ENABLED 0
-# 5158 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5158 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define CLOCK_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4463,11 +4452,11 @@ char *strsignal (int __signo);
 
 
 #define PDM_CONFIG_MODE 1
-# 5183 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5183 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PDM_CONFIG_EDGE 0
-# 5193 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5193 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PDM_CONFIG_CLOCK_FREQ 138412032
-# 5210 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5210 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PDM_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4477,13 +4466,13 @@ char *strsignal (int __signo);
 
 
 #define POWER_ENABLED 1
-# 5234 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5234 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define POWER_CONFIG_IRQ_PRIORITY 6
-# 5243 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5243 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define POWER_CONFIG_DEFAULT_DCDCEN 1
-# 5252 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5252 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define POWER_CONFIG_DEFAULT_DCDCENHV 0
-# 5261 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5261 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PPI_ENABLED 1
 
 
@@ -4518,20 +4507,20 @@ char *strsignal (int __signo);
 
 
 #define PWM_DEFAULT_CONFIG_OUT3_PIN 31
-# 5309 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5309 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_BASE_CLOCK 4
-# 5318 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5318 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_COUNT_MODE 0
 
 
 
 
 #define PWM_DEFAULT_CONFIG_TOP_VALUE 1000
-# 5334 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5334 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_LOAD_MODE 0
-# 5343 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5343 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_STEP_MODE 0
-# 5360 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5360 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4554,15 +4543,15 @@ char *strsignal (int __signo);
 
 
 #define PWM2_ENABLED 0
-# 5395 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5395 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PWM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
-# 5407 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5407 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PWM_NRF52_ANOMALY_109_EGU_INSTANCE 5
-# 5417 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5417 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QDEC_ENABLED 0
-# 5431 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5431 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QDEC_CONFIG_REPORTPER 0
-# 5446 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5446 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QDEC_CONFIG_SAMPLEPER 7
 
 
@@ -4590,7 +4579,7 @@ char *strsignal (int __signo);
 
 
 #define QDEC_CONFIG_LEDPRE 511
-# 5481 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5481 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QDEC_CONFIG_LEDPOL 1
 
 
@@ -4606,7 +4595,7 @@ char *strsignal (int __signo);
 
 
 #define QDEC_CONFIG_SAMPLE_INTEN 0
-# 5512 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5512 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QDEC_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4627,15 +4616,15 @@ char *strsignal (int __signo);
 
 
 #define QSPI_CONFIG_XIP_OFFSET 0
-# 5543 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5543 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QSPI_CONFIG_READOC 0
-# 5554 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5554 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QSPI_CONFIG_WRITEOC 0
-# 5563 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5563 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QSPI_CONFIG_ADDRMODE 0
-# 5572 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5572 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QSPI_CONFIG_MODE 0
-# 5595 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5595 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QSPI_CONFIG_FREQUENCY 15
 
 
@@ -4667,7 +4656,7 @@ char *strsignal (int __signo);
 
 
 #define QSPI_PIN_IO3 NRF_QSPI_PIN_NOT_CONNECTED
-# 5642 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5642 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QSPI_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4688,7 +4677,7 @@ char *strsignal (int __signo);
 
 
 #define RNG_CONFIG_POOL_SIZE 64
-# 5678 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5678 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define RNG_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4711,7 +4700,7 @@ char *strsignal (int __signo);
 
 
 #define RTC_DEFAULT_CONFIG_RELIABLE 0
-# 5716 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5716 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define RTC_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4747,9 +4736,9 @@ char *strsignal (int __signo);
 
 
 #define SAADC_ENABLED 1
-# 5760 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5760 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SAADC_CONFIG_RESOLUTION 1
-# 5776 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5776 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SAADC_CONFIG_OVERSAMPLE 0
 
 
@@ -4758,7 +4747,7 @@ char *strsignal (int __signo);
 
 
 #define SAADC_CONFIG_LP_MODE 0
-# 5800 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5800 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SAADC_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4768,11 +4757,11 @@ char *strsignal (int __signo);
 
 
 #define SPIS_ENABLED 0
-# 5824 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5824 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
-# 5835 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5835 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPIS_DEFAULT_MODE 0
-# 5844 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5844 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPIS_DEFAULT_BIT_ORDER 0
 
 
@@ -4809,7 +4798,7 @@ char *strsignal (int __signo);
 
 
 #define SPIS2_ENABLED 0
-# 5893 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5893 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPIS_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -4819,9 +4808,9 @@ char *strsignal (int __signo);
 
 
 #define SPI_ENABLED 1
-# 5917 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5917 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPI_DEFAULT_CONFIG_IRQ_PRIORITY 6
-# 5927 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5927 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SPI_DRV_MISO_PULLUP_CFG 1
 
 
@@ -4863,7 +4852,7 @@ char *strsignal (int __signo);
 
 
 #define SPI2_USE_EASY_DMA 0
-# 5983 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 5983 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -4873,13 +4862,13 @@ char *strsignal (int __signo);
 
 
 #define TIMER_ENABLED 1
-# 6007 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6007 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_FREQUENCY 0
-# 6016 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6016 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_MODE 0
-# 6027 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6027 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_BIT_WIDTH 0
-# 6044 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6044 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4909,7 +4898,7 @@ char *strsignal (int __signo);
 
 
 #define TIMER3_ENABLED 1
-# 6087 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6087 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWIS_ENABLED 0
 
 
@@ -4924,9 +4913,9 @@ char *strsignal (int __signo);
 
 
 #define TWIS1_ENABLED 0
-# 6109 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6109 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWIS_ASSUME_INIT_AFTER_RESET_ONLY 0
-# 6118 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6118 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWIS_NO_SYNC_MODE 0
 
 
@@ -4938,11 +4927,11 @@ char *strsignal (int __signo);
 
 
 #define TWIS_DEFAULT_CONFIG_ADDR1 0
-# 6138 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6138 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWIS_DEFAULT_CONFIG_SCL_PULL 0
-# 6148 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6148 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWIS_DEFAULT_CONFIG_SDA_PULL 0
-# 6165 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6165 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4952,7 +4941,7 @@ char *strsignal (int __signo);
 
 
 #define TWI_ENABLED 1
-# 6182 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6182 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWI_DEFAULT_CONFIG_FREQUENCY 26738688
 
 
@@ -4968,7 +4957,7 @@ char *strsignal (int __signo);
 
 
 #define TWI_DEFAULT_CONFIG_HOLD_BUS_UNINIT 0
-# 6213 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6213 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWI_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4996,7 +4985,7 @@ char *strsignal (int __signo);
 
 
 #define TWI1_USE_EASY_DMA 0
-# 6254 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6254 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -5014,11 +5003,11 @@ char *strsignal (int __signo);
 
 
 #define UART_DEFAULT_CONFIG_HWFC 0
-# 6279 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6279 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define UART_DEFAULT_CONFIG_PARITY 0
-# 6302 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6302 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define UART_DEFAULT_CONFIG_BAUDRATE 30801920
-# 6319 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6319 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define UART_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -5054,15 +5043,15 @@ char *strsignal (int __signo);
 
 
 #define UART1_ENABLED 1
-# 6362 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6362 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define USBD_ENABLED 1
-# 6378 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6378 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define USBD_CONFIG_IRQ_PRIORITY 2
-# 6387 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define USBD_CONFIG_DMASCHEDULER_MODE 0
-# 6400 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6400 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define USBD_CONFIG_DMASCHEDULER_ISO_BOOST 1
-# 6411 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6411 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define USBD_CONFIG_ISO_IN_ZLP 0
 
 
@@ -5072,7 +5061,7 @@ char *strsignal (int __signo);
 
 
 #define WDT_ENABLED 1
-# 6429 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6429 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define WDT_CONFIG_BEHAVIOUR 9
 
 
@@ -5081,11 +5070,11 @@ char *strsignal (int __signo);
 
 
 #define WDT_CONFIG_RELOAD_VALUE 100000
-# 6453 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6453 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define WDT_CONFIG_IRQ_PRIORITY 6
-# 6474 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6474 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_TWI_SENSOR_ENABLED 0
-# 6487 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6487 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_FIFO_ENABLED 1
 
 
@@ -5128,11 +5117,11 @@ char *strsignal (int __signo);
 
 
 #define APP_SDCARD_ENABLED 0
-# 6537 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6537 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_SDCARD_SPI_INSTANCE 0
-# 6551 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6551 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_SDCARD_FREQ_INIT 67108864
-# 6565 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6565 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_SDCARD_FREQ_DATA 1073741824
 
 
@@ -5142,11 +5131,11 @@ char *strsignal (int __signo);
 
 
 #define APP_TIMER_ENABLED 1
-# 6585 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6585 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_TIMER_CONFIG_RTC_FREQUENCY 0
-# 6602 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6602 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_TIMER_CONFIG_IRQ_PRIORITY 6
-# 6612 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6612 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_TIMER_CONFIG_OP_QUEUE_SIZE 50
 
 
@@ -5155,11 +5144,11 @@ char *strsignal (int __signo);
 
 
 #define APP_TIMER_CONFIG_USE_SCHEDULER 0
-# 6629 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6629 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_TIMER_KEEPS_RTC_ACTIVE 0
-# 6640 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6640 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_TIMER_SAFE_WINDOW_MS 300000
-# 6650 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6650 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_TIMER_WITH_PROFILER 0
 
 
@@ -5168,7 +5157,7 @@ char *strsignal (int __signo);
 
 
 #define APP_TIMER_CONFIG_SWI_NUMBER 0
-# 6668 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6668 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_UART_ENABLED 1
 
 
@@ -5178,7 +5167,7 @@ char *strsignal (int __signo);
 
 
 #define APP_UART_DRIVER_INSTANCE 1
-# 6688 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6688 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_AUDIO_ENABLED 0
 
 
@@ -5186,15 +5175,15 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_ENABLED 1
-# 6703 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6703 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_VID 0x1915
-# 6713 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6713 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_PID 0x521F
-# 6722 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6722 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_DEVICE_VER_MAJOR 1
-# 6731 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6731 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_DEVICE_VER_MINOR 0
-# 6740 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6740 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_DEVICE_VER_SUB 0
 
 
@@ -5210,9 +5199,9 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_CONFIG_MAX_POWER 100
-# 6763 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6763 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CONFIG_POWER_EVENTS_PROCESS 1
-# 6774 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6774 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CONFIG_EVENT_QUEUE_ENABLE 0
 
 
@@ -5222,13 +5211,13 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_CONFIG_EVENT_QUEUE_SIZE 32
-# 6797 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6797 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CONFIG_SOF_HANDLING_MODE 2
-# 6812 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6812 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CONFIG_SOF_TIMESTAMP_PROVIDE 0
-# 6822 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6822 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CONFIG_DESC_STRING_SIZE 31
-# 6831 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6831 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CONFIG_DESC_STRING_UTF_ENABLED 0
 
 
@@ -5252,9 +5241,9 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_STRINGS_MANUFACTURER_EXTERN 0
-# 6867 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6867 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_STRINGS_MANUFACTURER APP_USBD_STRING_DESC("Nordic Semiconductor")
-# 6877 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6877 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_STRING_ID_PRODUCT 2
 
 
@@ -5270,7 +5259,7 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_STRINGS_PRODUCT APP_USBD_STRING_DESC("Rak4631 Serial COM")
-# 6901 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6901 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_STRING_ID_SERIAL 3
 
 
@@ -5286,7 +5275,7 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_STRING_SERIAL g_extern_serial_number
-# 6925 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6925 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_STRING_ID_CONFIGURATION 4
 
 
@@ -5302,7 +5291,7 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_STRINGS_CONFIGURATION APP_USBD_STRING_DESC("Default configuration")
-# 6960 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6960 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_STRINGS_USER X(APP_USER_1, , APP_USBD_STRING_DESC("User 1"))
 
 
@@ -5320,9 +5309,9 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_HID_DEFAULT_IDLE_RATE 0
-# 6985 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6985 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_HID_REPORT_IDLE_TABLE_SIZE 4
-# 6994 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 6994 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_HID_GENERIC_ENABLED 0
 
 
@@ -5372,25 +5361,25 @@ char *strsignal (int __signo);
 
 
 #define FDS_ENABLED 1
-# 7054 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7054 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define FDS_VIRTUAL_PAGES 3
-# 7067 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7067 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define FDS_VIRTUAL_PAGE_SIZE 1024
-# 7076 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7076 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define FDS_VIRTUAL_PAGES_RESERVED 4
-# 7095 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7095 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define FDS_BACKEND 2
-# 7108 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7108 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define FDS_OP_QUEUE_SIZE 4
-# 7124 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7124 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define FDS_CRC_CHECK_ON_READ 0
-# 7135 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define FDS_CRC_CHECK_ON_WRITE 0
-# 7148 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7148 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define FDS_MAX_USERS 4
-# 7159 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7159 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define HARDFAULT_HANDLER_ENABLED 1
-# 7173 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7173 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define HARDFAULT_HANDLER_GDB_PSP_BACKTRACE 1
 
 
@@ -5422,9 +5411,9 @@ char *strsignal (int __signo);
 
 
 #define HCI_SLIP_ENABLED 0
-# 7225 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7225 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define HCI_UART_BAUDRATE 30801920
-# 7234 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7234 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define HCI_UART_FLOW_CONTROL 0
 
 
@@ -5458,7 +5447,7 @@ char *strsignal (int __signo);
 
 
 #define HCI_MAX_PACKET_SIZE_IN_BITS 8000
-# 7275 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7275 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define LED_SOFTBLINK_ENABLED 0
 
 
@@ -5576,13 +5565,13 @@ char *strsignal (int __signo);
 
 
 #define MEM_MANAGER_CONFIG_LOG_ENABLED 0
-# 7402 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7402 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define MEM_MANAGER_CONFIG_LOG_LEVEL 3
-# 7418 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7418 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define MEM_MANAGER_CONFIG_INFO_COLOR 0
-# 7434 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define MEM_MANAGER_CONFIG_DEBUG_COLOR 0
-# 7443 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7443 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define MEM_MANAGER_DISABLE_API_PARAM_CHECK 0
 
 
@@ -5638,7 +5627,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_BALLOC_CLI_CMDS 0
-# 7507 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7507 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CSENSE_ENABLED 0
 
 
@@ -5695,9 +5684,9 @@ char *strsignal (int __signo);
 
 
 #define TIMER1_FOR_CSENSE 2
-# 7571 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7571 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define MEASUREMENT_PERIOD 20
-# 7582 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7582 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_FPRINTF_ENABLED 1
 
 
@@ -5711,7 +5700,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_QUEUE_CLI_CMDS 0
-# 7603 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7603 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SERIAL_ENABLED 1
 
 
@@ -5719,9 +5708,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_FSTORAGE_ENABLED 1
-# 7623 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7623 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_FSTORAGE_PARAM_CHECK_DISABLED 0
-# 7637 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7637 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_FSTORAGE_SD_QUEUE_SIZE 4
 
 
@@ -5731,9 +5720,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_FSTORAGE_SD_MAX_RETRIES 8
-# 7655 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7655 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_FSTORAGE_SD_MAX_WRITE_SIZE 4096
-# 7667 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7667 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_GFX_ENABLED 0
 
 
@@ -5755,9 +5744,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_PWR_MGMT_CONFIG_DEBUG_PIN_ENABLED 0
-# 7726 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7726 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_PWR_MGMT_SLEEP_DEBUG_PIN 31
-# 7737 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7737 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_CPU_USAGE_MONITOR_ENABLED 0
 
 
@@ -5771,7 +5760,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_PWR_MGMT_CONFIG_STANDBY_TIMEOUT_S 3
-# 7758 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7758 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_FPU_SUPPORT_ENABLED 1
 
 
@@ -5794,7 +5783,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_PWR_MGMT_CONFIG_HANDLER_PRIORITY_COUNT 3
-# 7802 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7802 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SECTION_ITER_ENABLED 1
 
 
@@ -5867,9 +5856,9 @@ char *strsignal (int __signo);
 
 
 #define TASK_MANAGER_CONFIG_STACK_PROFILER_ENABLED 1
-# 7886 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7886 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TASK_MANAGER_CONFIG_STACK_GUARD 7
-# 7898 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7898 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BUTTON_ENABLED 1
 
 
@@ -5878,11 +5867,11 @@ char *strsignal (int __signo);
 
 
 #define BUTTON_HIGH_ACCURACY_ENABLED 0
-# 7918 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7918 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CDC_ACM_ENABLED 1
-# 7928 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7928 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CDC_ACM_ZLP_ON_EPSIZE_WRITE 1
-# 7941 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 7941 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLI_ENABLED 0
 
 
@@ -5935,7 +5924,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_CLI_HISTORY_ELEMENT_COUNT 8
-# 8001 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8001 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLI_VT100_COLORS_ENABLED 1
 
 
@@ -5969,24 +5958,24 @@ char *strsignal (int __signo);
 
 
 #define NRF_LOG_BACKEND_UART_TX_PIN 29
-# 8056 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8056 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_BACKEND_UART_BAUDRATE 30801920
-# 8066 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8066 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_BACKEND_UART_TEMP_BUFFER_SIZE 256
-# 8081 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8081 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_BACKEND_RTT_ENABLED 1
-# 8091 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8091 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_BACKEND_RTT_TEMP_BUFFER_SIZE 128
 
 
 
 
 #define NRF_LOG_BACKEND_RTT_TX_RETRY_DELAY_MS 1
-# 8107 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8107 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_BACKEND_RTT_TX_RETRY_CNT 3
-# 8116 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8116 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_STR_FORMATTER_TIMESTAMP_FORMAT_ENABLED 1
-# 8126 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8126 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_ENABLED 1
 
 
@@ -5994,21 +5983,21 @@ char *strsignal (int __signo);
 
 
 #define NRF_LOG_USES_COLORS 1
-# 8147 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8147 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_COLOR_DEFAULT 3
-# 8163 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8163 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_ERROR_COLOR 2
-# 8179 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_WARNING_COLOR 7
-# 8193 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8193 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_DEFAULT_LEVEL 4
-# 8202 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8202 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_DEFERRED 0
-# 8220 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8220 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_BUFSIZE 1024
-# 8234 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8234 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_STR_PUSH_BUFFER_SIZE 128
-# 8243 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8243 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_ALLOW_OVERFLOW 1
 
 
@@ -6022,7 +6011,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_LOG_TIMESTAMP_DEFAULT_FREQUENCY 0
-# 8264 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8264 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_FILTERS_ENABLED 0
 
 
@@ -6031,17 +6020,17 @@ char *strsignal (int __signo);
 
 
 #define NRF_LOG_CLI_CMDS 0
-# 8284 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8284 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_MSGPOOL_ELEMENT_SIZE 20
-# 8294 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8294 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LOG_MSGPOOL_ELEMENT_COUNT 8
-# 8311 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8311 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_MPU_CONFIG_LOG_ENABLED 0
-# 8322 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8322 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_MPU_CONFIG_LOG_LEVEL 3
-# 8338 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8338 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_MPU_CONFIG_INFO_COLOR 0
-# 8354 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8354 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_MPU_CONFIG_DEBUG_COLOR 0
 
 
@@ -6051,11 +6040,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_STACK_GUARD_CONFIG_LOG_ENABLED 0
-# 8373 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8373 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_STACK_GUARD_CONFIG_LOG_LEVEL 3
-# 8389 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8389 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_STACK_GUARD_CONFIG_INFO_COLOR 0
-# 8405 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8405 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_STACK_GUARD_CONFIG_DEBUG_COLOR 0
 
 
@@ -6065,19 +6054,19 @@ char *strsignal (int __signo);
 
 
 #define TASK_MANAGER_CONFIG_LOG_ENABLED 0
-# 8424 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8424 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TASK_MANAGER_CONFIG_LOG_LEVEL 3
-# 8440 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8440 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TASK_MANAGER_CONFIG_INFO_COLOR 0
-# 8456 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8456 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TASK_MANAGER_CONFIG_DEBUG_COLOR 0
-# 8470 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8470 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define CLOCK_CONFIG_LOG_ENABLED 0
-# 8481 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8481 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define CLOCK_CONFIG_LOG_LEVEL 3
-# 8497 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8497 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define CLOCK_CONFIG_INFO_COLOR 0
-# 8513 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8513 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define CLOCK_CONFIG_DEBUG_COLOR 0
 
 
@@ -6087,11 +6076,11 @@ char *strsignal (int __signo);
 
 
 #define COMP_CONFIG_LOG_ENABLED 0
-# 8532 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8532 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define COMP_CONFIG_LOG_LEVEL 3
-# 8548 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8548 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define COMP_CONFIG_INFO_COLOR 0
-# 8564 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8564 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define COMP_CONFIG_DEBUG_COLOR 0
 
 
@@ -6101,11 +6090,11 @@ char *strsignal (int __signo);
 
 
 #define GPIOTE_CONFIG_LOG_ENABLED 0
-# 8583 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8583 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define GPIOTE_CONFIG_LOG_LEVEL 3
-# 8599 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8599 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define GPIOTE_CONFIG_INFO_COLOR 0
-# 8615 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8615 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define GPIOTE_CONFIG_DEBUG_COLOR 0
 
 
@@ -6115,11 +6104,11 @@ char *strsignal (int __signo);
 
 
 #define LPCOMP_CONFIG_LOG_ENABLED 0
-# 8634 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8634 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define LPCOMP_CONFIG_LOG_LEVEL 3
-# 8650 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8650 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define LPCOMP_CONFIG_INFO_COLOR 0
-# 8666 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8666 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define LPCOMP_CONFIG_DEBUG_COLOR 0
 
 
@@ -6129,11 +6118,11 @@ char *strsignal (int __signo);
 
 
 #define MAX3421E_HOST_CONFIG_LOG_ENABLED 0
-# 8685 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8685 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define MAX3421E_HOST_CONFIG_LOG_LEVEL 3
-# 8701 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8701 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define MAX3421E_HOST_CONFIG_INFO_COLOR 0
-# 8717 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8717 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define MAX3421E_HOST_CONFIG_DEBUG_COLOR 0
 
 
@@ -6143,11 +6132,11 @@ char *strsignal (int __signo);
 
 
 #define NRFX_USBD_CONFIG_LOG_ENABLED 0
-# 8736 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8736 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_USBD_CONFIG_LOG_LEVEL 3
-# 8752 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8752 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_USBD_CONFIG_INFO_COLOR 0
-# 8768 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8768 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRFX_USBD_CONFIG_DEBUG_COLOR 0
 
 
@@ -6157,11 +6146,11 @@ char *strsignal (int __signo);
 
 
 #define PDM_CONFIG_LOG_ENABLED 0
-# 8787 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8787 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PDM_CONFIG_LOG_LEVEL 3
-# 8803 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8803 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PDM_CONFIG_INFO_COLOR 0
-# 8819 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8819 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PDM_CONFIG_DEBUG_COLOR 0
 
 
@@ -6171,11 +6160,11 @@ char *strsignal (int __signo);
 
 
 #define PPI_CONFIG_LOG_ENABLED 0
-# 8838 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8838 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PPI_CONFIG_LOG_LEVEL 3
-# 8854 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8854 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PPI_CONFIG_INFO_COLOR 0
-# 8870 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8870 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PPI_CONFIG_DEBUG_COLOR 0
 
 
@@ -6185,11 +6174,11 @@ char *strsignal (int __signo);
 
 
 #define PWM_CONFIG_LOG_ENABLED 0
-# 8889 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8889 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PWM_CONFIG_LOG_LEVEL 3
-# 8905 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8905 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PWM_CONFIG_INFO_COLOR 0
-# 8921 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8921 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PWM_CONFIG_DEBUG_COLOR 0
 
 
@@ -6199,11 +6188,11 @@ char *strsignal (int __signo);
 
 
 #define QDEC_CONFIG_LOG_ENABLED 0
-# 8940 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8940 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QDEC_CONFIG_LOG_LEVEL 3
-# 8956 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8956 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QDEC_CONFIG_INFO_COLOR 0
-# 8972 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8972 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define QDEC_CONFIG_DEBUG_COLOR 0
 
 
@@ -6213,11 +6202,11 @@ char *strsignal (int __signo);
 
 
 #define RNG_CONFIG_LOG_ENABLED 0
-# 8991 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 8991 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define RNG_CONFIG_LOG_LEVEL 3
-# 9007 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9007 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define RNG_CONFIG_INFO_COLOR 0
-# 9023 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9023 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define RNG_CONFIG_DEBUG_COLOR 0
 
 
@@ -6234,11 +6223,11 @@ char *strsignal (int __signo);
 
 
 #define RTC_CONFIG_LOG_ENABLED 0
-# 9049 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9049 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define RTC_CONFIG_LOG_LEVEL 3
-# 9065 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9065 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define RTC_CONFIG_INFO_COLOR 0
-# 9081 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9081 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define RTC_CONFIG_DEBUG_COLOR 0
 
 
@@ -6248,11 +6237,11 @@ char *strsignal (int __signo);
 
 
 #define SAADC_CONFIG_LOG_ENABLED 0
-# 9100 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9100 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SAADC_CONFIG_LOG_LEVEL 3
-# 9116 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9116 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SAADC_CONFIG_INFO_COLOR 0
-# 9132 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9132 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SAADC_CONFIG_DEBUG_COLOR 0
 
 
@@ -6262,11 +6251,11 @@ char *strsignal (int __signo);
 
 
 #define SPIS_CONFIG_LOG_ENABLED 0
-# 9151 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9151 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPIS_CONFIG_LOG_LEVEL 3
-# 9167 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9167 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPIS_CONFIG_INFO_COLOR 0
-# 9183 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9183 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPIS_CONFIG_DEBUG_COLOR 0
 
 
@@ -6276,11 +6265,11 @@ char *strsignal (int __signo);
 
 
 #define SPI_CONFIG_LOG_ENABLED 0
-# 9202 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9202 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPI_CONFIG_LOG_LEVEL 3
-# 9218 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9218 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPI_CONFIG_INFO_COLOR 0
-# 9234 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9234 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SPI_CONFIG_DEBUG_COLOR 0
 
 
@@ -6290,11 +6279,11 @@ char *strsignal (int __signo);
 
 
 #define TIMER_CONFIG_LOG_ENABLED 0
-# 9253 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9253 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TIMER_CONFIG_LOG_LEVEL 3
-# 9269 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9269 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TIMER_CONFIG_INFO_COLOR 0
-# 9285 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9285 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TIMER_CONFIG_DEBUG_COLOR 0
 
 
@@ -6304,11 +6293,11 @@ char *strsignal (int __signo);
 
 
 #define TWIS_CONFIG_LOG_ENABLED 0
-# 9304 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9304 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWIS_CONFIG_LOG_LEVEL 3
-# 9320 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9320 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWIS_CONFIG_INFO_COLOR 0
-# 9336 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9336 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWIS_CONFIG_DEBUG_COLOR 0
 
 
@@ -6318,11 +6307,11 @@ char *strsignal (int __signo);
 
 
 #define TWI_CONFIG_LOG_ENABLED 0
-# 9355 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9355 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWI_CONFIG_LOG_LEVEL 3
-# 9371 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9371 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWI_CONFIG_INFO_COLOR 0
-# 9387 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define TWI_CONFIG_DEBUG_COLOR 0
 
 
@@ -6332,11 +6321,11 @@ char *strsignal (int __signo);
 
 
 #define UART_CONFIG_LOG_ENABLED 0
-# 9406 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9406 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define UART_CONFIG_LOG_LEVEL 3
-# 9422 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9422 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define UART_CONFIG_INFO_COLOR 0
-# 9438 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9438 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define UART_CONFIG_DEBUG_COLOR 0
 
 
@@ -6346,11 +6335,11 @@ char *strsignal (int __signo);
 
 
 #define USBD_CONFIG_LOG_ENABLED 0
-# 9457 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9457 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define USBD_CONFIG_LOG_LEVEL 3
-# 9473 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9473 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define USBD_CONFIG_INFO_COLOR 0
-# 9489 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9489 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define USBD_CONFIG_DEBUG_COLOR 0
 
 
@@ -6360,21 +6349,21 @@ char *strsignal (int __signo);
 
 
 #define WDT_CONFIG_LOG_ENABLED 0
-# 9508 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9508 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define WDT_CONFIG_LOG_LEVEL 3
-# 9524 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9524 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define WDT_CONFIG_INFO_COLOR 0
-# 9540 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9540 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define WDT_CONFIG_DEBUG_COLOR 0
-# 9554 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9554 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_TIMER_CONFIG_LOG_ENABLED 0
-# 9565 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9565 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_TIMER_CONFIG_LOG_LEVEL 3
-# 9581 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_TIMER_CONFIG_INITIAL_LOG_LEVEL 3
-# 9597 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9597 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_TIMER_CONFIG_INFO_COLOR 0
-# 9613 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9613 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_TIMER_CONFIG_DEBUG_COLOR 0
 
 
@@ -6384,11 +6373,11 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_CDC_ACM_CONFIG_LOG_ENABLED 0
-# 9632 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9632 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CDC_ACM_CONFIG_LOG_LEVEL 3
-# 9648 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9648 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CDC_ACM_CONFIG_INFO_COLOR 0
-# 9664 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9664 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CDC_ACM_CONFIG_DEBUG_COLOR 0
 
 
@@ -6398,11 +6387,11 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_CONFIG_LOG_ENABLED 0
-# 9683 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9683 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CONFIG_LOG_LEVEL 3
-# 9699 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9699 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CONFIG_INFO_COLOR 0
-# 9715 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9715 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_CONFIG_DEBUG_COLOR 0
 
 
@@ -6412,11 +6401,11 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_DUMMY_CONFIG_LOG_ENABLED 0
-# 9734 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9734 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_DUMMY_CONFIG_LOG_LEVEL 3
-# 9750 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9750 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_DUMMY_CONFIG_INFO_COLOR 0
-# 9766 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9766 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_DUMMY_CONFIG_DEBUG_COLOR 0
 
 
@@ -6426,11 +6415,11 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_MSC_CONFIG_LOG_ENABLED 0
-# 9785 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9785 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_MSC_CONFIG_LOG_LEVEL 3
-# 9801 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9801 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_MSC_CONFIG_INFO_COLOR 0
-# 9817 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9817 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_MSC_CONFIG_DEBUG_COLOR 0
 
 
@@ -6440,11 +6429,11 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_LOG_ENABLED 0
-# 9836 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9836 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_LOG_LEVEL 3
-# 9852 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9852 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_INFO_COLOR 0
-# 9868 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9868 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_DEBUG_COLOR 0
 
 
@@ -6454,13 +6443,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_ATFIFO_CONFIG_LOG_ENABLED 0
-# 9887 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9887 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_LOG_LEVEL 3
-# 9899 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9899 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 9915 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9915 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_INFO_COLOR 0
-# 9931 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9931 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_DEBUG_COLOR 0
 
 
@@ -6470,13 +6459,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_BALLOC_CONFIG_LOG_ENABLED 0
-# 9950 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9950 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BALLOC_CONFIG_LOG_LEVEL 3
-# 9966 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9966 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BALLOC_CONFIG_INITIAL_LOG_LEVEL 3
-# 9982 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9982 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BALLOC_CONFIG_INFO_COLOR 0
-# 9998 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 9998 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BALLOC_CONFIG_DEBUG_COLOR 0
 
 
@@ -6486,13 +6475,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_LOG_ENABLED 0
-# 10017 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10017 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_LOG_LEVEL 3
-# 10029 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10029 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10045 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10045 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_INFO_COLOR 0
-# 10061 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10061 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_DEBUG_COLOR 0
 
 
@@ -6502,13 +6491,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLOCK_DEV_QSPI_CONFIG_LOG_ENABLED 0
-# 10080 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10080 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_LOG_LEVEL 3
-# 10092 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10092 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10108 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10108 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_INFO_COLOR 0
-# 10124 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10124 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_DEBUG_COLOR 0
 
 
@@ -6518,13 +6507,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLOCK_DEV_RAM_CONFIG_LOG_ENABLED 0
-# 10143 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10143 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_LOG_LEVEL 3
-# 10155 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10155 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10171 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10171 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_INFO_COLOR 0
-# 10187 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10187 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_DEBUG_COLOR 0
 
 
@@ -6534,11 +6523,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_CLI_BLE_UART_CONFIG_LOG_ENABLED 0
-# 10206 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10206 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLI_BLE_UART_CONFIG_LOG_LEVEL 3
-# 10222 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10222 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLI_BLE_UART_CONFIG_INFO_COLOR 0
-# 10238 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10238 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLI_BLE_UART_CONFIG_DEBUG_COLOR 0
 
 
@@ -6548,11 +6537,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_CLI_LIBUARTE_CONFIG_LOG_ENABLED 0
-# 10257 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10257 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLI_LIBUARTE_CONFIG_LOG_LEVEL 3
-# 10273 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10273 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLI_LIBUARTE_CONFIG_INFO_COLOR 0
-# 10289 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10289 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLI_LIBUARTE_CONFIG_DEBUG_COLOR 0
 
 
@@ -6562,11 +6551,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_CLI_UART_CONFIG_LOG_ENABLED 0
-# 10308 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10308 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLI_UART_CONFIG_LOG_LEVEL 3
-# 10324 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10324 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLI_UART_CONFIG_INFO_COLOR 0
-# 10340 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10340 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_CLI_UART_CONFIG_DEBUG_COLOR 0
 
 
@@ -6576,11 +6565,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_LIBUARTE_CONFIG_LOG_ENABLED 0
-# 10359 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10359 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LIBUARTE_CONFIG_LOG_LEVEL 3
-# 10375 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10375 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LIBUARTE_CONFIG_INFO_COLOR 0
-# 10391 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10391 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_LIBUARTE_CONFIG_DEBUG_COLOR 0
 
 
@@ -6590,11 +6579,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_MEMOBJ_CONFIG_LOG_ENABLED 0
-# 10410 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10410 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_MEMOBJ_CONFIG_LOG_LEVEL 3
-# 10426 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10426 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_MEMOBJ_CONFIG_INFO_COLOR 0
-# 10442 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10442 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_MEMOBJ_CONFIG_DEBUG_COLOR 0
 
 
@@ -6604,11 +6593,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_PWR_MGMT_CONFIG_LOG_ENABLED 0
-# 10461 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10461 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_LOG_LEVEL 3
-# 10477 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10477 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_INFO_COLOR 0
-# 10493 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10493 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_DEBUG_COLOR 0
 
 
@@ -6618,13 +6607,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_QUEUE_CONFIG_LOG_ENABLED 0
-# 10512 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10512 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_QUEUE_CONFIG_LOG_LEVEL 3
-# 10524 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10524 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_QUEUE_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10540 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10540 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_QUEUE_CONFIG_INFO_COLOR 0
-# 10556 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10556 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_QUEUE_CONFIG_DEBUG_COLOR 0
 
 
@@ -6634,11 +6623,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_ANT_LOG_ENABLED 0
-# 10575 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10575 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_ANT_LOG_LEVEL 3
-# 10591 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10591 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_ANT_INFO_COLOR 0
-# 10607 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10607 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_ANT_DEBUG_COLOR 0
 
 
@@ -6648,11 +6637,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_BLE_LOG_ENABLED 1
-# 10626 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10626 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_BLE_LOG_LEVEL 3
-# 10642 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10642 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_BLE_INFO_COLOR 0
-# 10658 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10658 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_BLE_DEBUG_COLOR 0
 
 
@@ -6662,11 +6651,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_LOG_ENABLED 1
-# 10677 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10677 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_LOG_LEVEL 3
-# 10693 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10693 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_INFO_COLOR 0
-# 10709 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10709 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_DEBUG_COLOR 0
 
 
@@ -6676,11 +6665,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_SOC_LOG_ENABLED 1
-# 10728 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10728 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_SOC_LOG_LEVEL 3
-# 10744 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10744 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_SOC_INFO_COLOR 0
-# 10760 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10760 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_SOC_DEBUG_COLOR 0
 
 
@@ -6690,11 +6679,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SORTLIST_CONFIG_LOG_ENABLED 0
-# 10779 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10779 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SORTLIST_CONFIG_LOG_LEVEL 3
-# 10795 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10795 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SORTLIST_CONFIG_INFO_COLOR 0
-# 10811 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10811 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SORTLIST_CONFIG_DEBUG_COLOR 0
 
 
@@ -6704,11 +6693,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_TWI_SENSOR_CONFIG_LOG_ENABLED 0
-# 10830 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10830 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_TWI_SENSOR_CONFIG_LOG_LEVEL 3
-# 10846 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10846 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_TWI_SENSOR_CONFIG_INFO_COLOR 0
-# 10862 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10862 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_TWI_SENSOR_CONFIG_DEBUG_COLOR 0
 
 
@@ -6718,21 +6707,21 @@ char *strsignal (int __signo);
 
 
 #define PM_LOG_ENABLED 1
-# 10881 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10881 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PM_LOG_LEVEL 3
-# 10897 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10897 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PM_LOG_INFO_COLOR 0
-# 10913 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10913 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define PM_LOG_DEBUG_COLOR 0
-# 10927 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10927 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_LOG_ENABLED 0
-# 10938 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10938 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_LOG_LEVEL 3
-# 10954 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10954 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_INFO_COLOR 0
-# 10970 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10970 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_DEBUG_COLOR 0
-# 10994 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 10994 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_AC_REC_ENABLED 0
 
 
@@ -6755,7 +6744,7 @@ char *strsignal (int __signo);
 
 
 #define ADVANCED_ADVDATA_SUPPORT 0
-# 11024 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11024 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_BLE_OOB_ADVDATA_PARSER_ENABLED 0
 
 
@@ -6768,13 +6757,13 @@ char *strsignal (int __signo);
 
 
 #define NFC_BLE_PAIR_LIB_LOG_ENABLED 0
-# 11046 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11046 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_BLE_PAIR_LIB_LOG_LEVEL 3
-# 11062 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11062 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_BLE_PAIR_LIB_INFO_COLOR 0
-# 11078 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11078 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_BLE_PAIR_LIB_DEBUG_COLOR 0
-# 11091 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11091 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_NFC_SEC_PARAM_BOND 1
 
 
@@ -6803,11 +6792,11 @@ char *strsignal (int __signo);
 
 
 #define BLE_NFC_SEC_PARAM_KDIST_PEER_ID 1
-# 11137 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11137 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_NFC_SEC_PARAM_MIN_KEY_SIZE 7
-# 11154 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11154 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_NFC_SEC_PARAM_MAX_KEY_SIZE 16
-# 11166 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11166 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_BLE_PAIR_MSG_ENABLED 0
 
 
@@ -6885,11 +6874,11 @@ char *strsignal (int __signo);
 
 
 #define NFC_NDEF_MSG_PARSER_LOG_ENABLED 0
-# 11253 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11253 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_NDEF_MSG_PARSER_LOG_LEVEL 3
-# 11269 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11269 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_NDEF_MSG_PARSER_INFO_COLOR 0
-# 11280 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11280 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_NDEF_RECORD_ENABLED 1
 
 
@@ -6902,11 +6891,11 @@ char *strsignal (int __signo);
 
 
 #define NFC_NDEF_RECORD_PARSER_LOG_ENABLED 0
-# 11302 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11302 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_NDEF_RECORD_PARSER_LOG_LEVEL 3
-# 11318 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11318 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_NDEF_RECORD_PARSER_INFO_COLOR 0
-# 11329 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11329 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_NDEF_TEXT_RECORD_ENABLED 1
 
 
@@ -6933,55 +6922,55 @@ char *strsignal (int __signo);
 
 
 #define NFC_PLATFORM_LOG_ENABLED 4
-# 11365 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11365 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_PLATFORM_LOG_LEVEL 3
-# 11381 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11381 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_PLATFORM_INFO_COLOR 0
-# 11397 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11397 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_PLATFORM_DEBUG_COLOR 0
-# 11407 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11407 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T2T_PARSER_ENABLED 0
 
 
 
 
 #define NFC_T2T_PARSER_LOG_ENABLED 0
-# 11423 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11423 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T2T_PARSER_LOG_LEVEL 3
-# 11439 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11439 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T2T_PARSER_INFO_COLOR 0
-# 11449 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11449 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T4T_APDU_ENABLED 0
 
 
 
 
 #define NFC_T4T_APDU_LOG_ENABLED 0
-# 11465 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11465 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T4T_APDU_LOG_LEVEL 3
-# 11481 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11481 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T4T_APDU_LOG_COLOR 0
-# 11491 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11491 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T4T_CC_FILE_PARSER_ENABLED 0
 
 
 
 
 #define NFC_T4T_CC_FILE_PARSER_LOG_ENABLED 0
-# 11507 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11507 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T4T_CC_FILE_PARSER_LOG_LEVEL 3
-# 11523 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11523 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T4T_CC_FILE_PARSER_INFO_COLOR 0
-# 11533 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11533 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T4T_HL_DETECTION_PROCEDURES_ENABLED 0
 
 
 
 
 #define NFC_T4T_HL_DETECTION_PROCEDURES_LOG_ENABLED 0
-# 11549 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11549 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T4T_HL_DETECTION_PROCEDURES_LOG_LEVEL 3
-# 11565 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11565 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T4T_HL_DETECTION_PROCEDURES_INFO_COLOR 0
 
 
@@ -7008,11 +6997,11 @@ char *strsignal (int __signo);
 
 
 #define NFC_T4T_TLV_BLOCK_PARSER_LOG_ENABLED 0
-# 11601 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11601 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T4T_TLV_BLOCK_PARSER_LOG_LEVEL 3
-# 11617 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11617 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NFC_T4T_TLV_BLOCK_PARSER_INFO_COLOR 0
-# 11638 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11638 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SEGGER_RTT_CONFIG_BUFFER_SIZE_UP 512
 
 
@@ -7029,11 +7018,11 @@ char *strsignal (int __signo);
 
 
 #define SEGGER_RTT_CONFIG_MAX_NUM_DOWN_BUFFERS 2
-# 11668 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11668 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define SEGGER_RTT_CONFIG_DEFAULT_MODE 0
-# 11683 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11683 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_BLE_ENABLED 1
-# 11696 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11696 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_BLE_GAP_DATA_LENGTH 27
 
 
@@ -7076,11 +7065,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_BLE_VS_UUID_COUNT 3
-# 11757 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11757 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_BLE_SERVICE_CHANGED 0
-# 11771 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11771 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_BLE_OBSERVER_PRIO_LEVELS 4
-# 11781 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 11781 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_ADV_BLE_OBSERVER_PRIO 1
 
 
@@ -7320,7 +7309,7 @@ char *strsignal (int __signo);
 
 
 #define NFC_BLE_PAIR_LIB_BLE_OBSERVER_PRIO 1
-# 12166 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12166 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_BLE_BMS_BLE_OBSERVER_PRIO 2
 
 
@@ -7369,11 +7358,11 @@ char *strsignal (int __signo);
 
 
 #define PM_BLE_OBSERVER_PRIO 1
-# 12228 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12228 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_ENABLED 1
-# 12245 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12245 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_DISPATCH_MODEL 0
-# 12261 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12261 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_CLOCK_LF_SRC 1
 
 
@@ -7388,9 +7377,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_CLOCK_LF_RC_TEMP_CTIV 0
-# 12293 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12293 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_CLOCK_LF_ACCURACY 7
-# 12307 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12307 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_REQ_OBSERVER_PRIO_LEVELS 2
 
 
@@ -7408,7 +7397,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_STACK_OBSERVER_PRIO_LEVELS 2
-# 12334 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12334 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define CLOCK_CONFIG_STATE_OBSERVER_PRIO 0
 
 
@@ -7424,17 +7413,17 @@ char *strsignal (int __signo);
 
 
 #define RNG_CONFIG_STATE_OBSERVER_PRIO 0
-# 12363 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12363 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_ANT_STACK_OBSERVER_PRIO 0
-# 12372 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12372 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_BLE_STACK_OBSERVER_PRIO 0
-# 12381 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12381 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_SOC_STACK_OBSERVER_PRIO 0
-# 12396 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12396 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_SOC_ENABLED 1
-# 12406 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12406 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define NRF_SDH_SOC_OBSERVER_PRIO_LEVELS 2
-# 12416 "/home/jenkins/workspace/RAK4631/rui-v3/component/core/board/rak4631/sdk_config.h"
+# 12416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sdk_config.h"
 #define BLE_ADV_SOC_OBSERVER_PRIO 1
 
 
@@ -7461,11 +7450,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_BL_SETTINGS_PAGE_PROTECT 1
-# 57 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h" 1
-# 45 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
+# 57 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h" 1
+# 45 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
 #define NORDIC_COMMON_H__ 
-# 80 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
+# 80 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
 #define NRF_MODULE_ENABLED(module) ((defined(module ## _ENABLED) && (module ## _ENABLED)) ? 1 : 0)
 
 
@@ -7487,11 +7476,11 @@ char *strsignal (int __signo);
 
 
 #define MAX(a,b) ((a) < (b) ? (b) : (a))
-# 116 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
+# 116 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
 #define CONCAT_2(p1,p2) CONCAT_2_(p1, p2)
 
 #define CONCAT_2_(p1,p2) p1 ##p2
-# 135 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
+# 135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
 #define CONCAT_3(p1,p2,p3) CONCAT_3_(p1, p2, p3)
 
 #define CONCAT_3_(p1,p2,p3) p1 ##p2 ##p3
@@ -7519,7 +7508,7 @@ char *strsignal (int __signo);
 
 
 #define CLR_BIT(W,B) ((W) &= (~(uint32_t)(1U << (B))))
-# 172 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
+# 172 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
 #define IS_SET(W,B) (((W) >> (B)) & 1)
 
 #define BIT_0 0x01
@@ -7558,9 +7547,9 @@ char *strsignal (int __signo);
 #define UNUSED_VARIABLE(X) ((void)(X))
 #define UNUSED_PARAMETER(X) UNUSED_VARIABLE(X)
 #define UNUSED_RETURN_VALUE(X) UNUSED_VARIABLE(X)
-# 58 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h" 1
-# 43 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
+# 58 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h" 1
+# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
 #define _COMPILER_ABSTRACTION_H 
 
 
@@ -7570,7 +7559,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_STRING_CONCATENATE(lhs,rhs) NRF_STRING_CONCATENATE_IMPL(lhs, rhs)
-# 160 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
+# 160 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
 #define __ASM __asm
 
 
@@ -7597,7 +7586,7 @@ char *strsignal (int __signo);
 #define GET_SP() gcc_current_sp()
 
     
-# 185 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
+# 185 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
    static inline unsigned int gcc_current_sp(void)
     {
         unsigned int stack_pointer = 0;
@@ -7607,7 +7596,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_STATIC_ASSERT(cond,msg) _Static_assert(cond, msg)
-# 231 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
+# 231 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
 #define NRF_MDK_VERSION_ASSERT_AT_LEAST(major,minor,micro) NRF_STATIC_ASSERT( ( (major < MDK_MAJOR_VERSION) || (major == MDK_MAJOR_VERSION && minor < MDK_MINOR_VERSION) || (major == MDK_MAJOR_VERSION && minor == MDK_MINOR_VERSION && micro < MDK_MICRO_VERSION) ), "MDK version mismatch.")
 
 
@@ -7617,9 +7606,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_MDK_VERSION_ASSERT_EXACT(major,minor,micro) NRF_STATIC_ASSERT( ( (major != MDK_MAJOR_VERSION) || (major != MDK_MAJOR_VERSION) || (major != MDK_MAJOR_VERSION) ), "MDK version mismatch.")
-# 59 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_os.h" 1
-# 53 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_os.h"
+# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_os.h" 1
+# 53 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_os.h"
 #define SDK_OS_H__ 
 
 
@@ -7630,14 +7619,14 @@ char *strsignal (int __signo);
 #define SDK_MUTEX_INIT(X) 
 #define SDK_MUTEX_LOCK(X) 
 #define SDK_MUTEX_UNLOCK(X) 
-# 60 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 1
-# 70 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
+# 60 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 1
+# 70 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
 #define SDK_ERRORS_H__ 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h" 1
-# 48 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h" 1
+# 48 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h"
 #define NRF_ERROR_H__ 
 
 
@@ -7672,8 +7661,8 @@ char *strsignal (int __signo);
 #define NRF_ERROR_BUSY (NRF_ERROR_BASE_NUM + 17)
 #define NRF_ERROR_CONN_COUNT (NRF_ERROR_BASE_NUM + 18)
 #define NRF_ERROR_RESOURCES (NRF_ERROR_BASE_NUM + 19)
-# 74 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 2
-# 83 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
+# 74 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 2
+# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
 #define NRF_ERROR_SDK_ERROR_BASE (NRF_ERROR_BASE_NUM + 0x8000)
 #define NRF_ERROR_SDK_COMMON_ERROR_BASE (NRF_ERROR_BASE_NUM + 0x0080)
 
@@ -7724,39 +7713,39 @@ char *strsignal (int __signo);
 #define NRF_ERROR_DRV_TWI_ERR_OVERRUN (NRF_ERROR_PERIPH_DRIVERS_ERR_BASE + 0x0000)
 #define NRF_ERROR_DRV_TWI_ERR_ANACK (NRF_ERROR_PERIPH_DRIVERS_ERR_BASE + 0x0001)
 #define NRF_ERROR_DRV_TWI_ERR_DNACK (NRF_ERROR_PERIPH_DRIVERS_ERR_BASE + 0x0002)
-# 141 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
+# 141 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
 #define NRF_ERROR_BLE_IPSP_RX_PKT_TRUNCATED (NRF_ERROR_BLE_IPSP_ERR_BASE + 0x0000)
 #define NRF_ERROR_BLE_IPSP_CHANNEL_ALREADY_EXISTS (NRF_ERROR_BLE_IPSP_ERR_BASE + 0x0001)
 #define NRF_ERROR_BLE_IPSP_LINK_DISCONNECTED (NRF_ERROR_BLE_IPSP_ERR_BASE + 0x0002)
 #define NRF_ERROR_BLE_IPSP_PEER_REJECTED (NRF_ERROR_BLE_IPSP_ERR_BASE + 0x0003)
-# 159 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
+# 159 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
 typedef uint32_t ret_code_t;
-# 61 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 1
-# 50 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 61 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 1
+# 50 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define APP_UTIL_H__ 
 
 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 1 3 4
-# 55 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 55 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 1
-# 43 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 1
+# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
 #define NRF_H 
 
 
 #define MDK_MAJOR_VERSION 8
 #define MDK_MINOR_VERSION 35
 #define MDK_MICRO_VERSION 0
-# 79 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
+# 79 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
 #define NRF52_SERIES 
-# 169 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 1
-# 61 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 169 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 1
+# 61 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 #define NRF52840_H 
-# 78 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 78 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef enum {
 
   Reset_IRQn = -15,
@@ -7816,7 +7805,7 @@ typedef enum {
   PWM3_IRQn = 45,
   SPIM3_IRQn = 47
 } IRQn_Type;
-# 145 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 145 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 #define __CM4_REV 0x0001U
 #define __DSP_PRESENT 1
 #define __VTOR_PRESENT 1
@@ -7828,19 +7817,19 @@ typedef enum {
 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 1
-# 32 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 1
+# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define __CORE_CM4_H_GENERIC 
-# 63 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_version.h" 1
-# 32 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_version.h"
+# 63 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_version.h" 1
+# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_version.h"
 #define __CMSIS_VERSION_H 
 
 
 #define __CM_CMSIS_VERSION_MAIN ( 5U)
 #define __CM_CMSIS_VERSION_SUB ( 3U)
 #define __CM_CMSIS_VERSION ((__CM_CMSIS_VERSION_MAIN << 16U) | __CM_CMSIS_VERSION_SUB )
-# 64 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
+# 64 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
 
 
 #define __CM4_CMSIS_VERSION_MAIN (__CM_CMSIS_VERSION_MAIN)
@@ -7849,15 +7838,15 @@ typedef enum {
 
 
 #define __CORTEX_M (4U)
-# 103 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 103 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define __FPU_USED 1U
-# 162 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h" 1
-# 26 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h"
+# 162 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h" 1
+# 26 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h"
 #define __CMSIS_COMPILER_H 
-# 54 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h"
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h" 1
-# 26 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 54 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h" 1
+# 26 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __CMSIS_GCC_H 
 
 
@@ -7865,7 +7854,7 @@ typedef enum {
 #pragma GCC diagnostic ignored "-Wsign-conversion"
 #pragma GCC diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
-# 47 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 47 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __STATIC_INLINE static inline
 
 
@@ -7876,7 +7865,7 @@ typedef enum {
 
 
 #define __USED __attribute__((used))
-# 65 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 65 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __PACKED_STRUCT struct __attribute__((packed, aligned(1)))
 
 
@@ -7930,7 +7919,7 @@ typedef enum {
 
 
 #define __COMPILER_BARRIER() __ASM volatile("":::"memory")
-# 131 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 131 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline __attribute__((__noreturn__)) void __cmsis_start(void)
 {
   extern void _start(void) __attribute__((__noreturn__));
@@ -7983,7 +7972,7 @@ __attribute__((always_inline)) static inline __attribute__((__noreturn__)) void 
 
 
 #define __VECTOR_TABLE_ATTRIBUTE __attribute((used, section(".vectors")))
-# 196 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 196 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __enable_irq(void)
 {
   __asm volatile ("cpsie i" : : : "memory");
@@ -8013,12 +8002,12 @@ __attribute__((always_inline)) static inline uint32_t __get_CONTROL(void)
   __asm volatile ("MRS %0, control" : "=r" (result) );
   return(result);
 }
-# 248 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 248 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_CONTROL(uint32_t control)
 {
   __asm volatile ("MSR control, %0" : : "r" (control) : "memory");
 }
-# 272 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 272 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_IPSR(void)
 {
   uint32_t result;
@@ -8068,12 +8057,12 @@ __attribute__((always_inline)) static inline uint32_t __get_PSP(void)
   __asm volatile ("MRS %0, psp" : "=r" (result) );
   return(result);
 }
-# 344 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 344 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_PSP(uint32_t topOfProcStack)
 {
   __asm volatile ("MSR psp, %0" : : "r" (topOfProcStack) : );
 }
-# 368 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 368 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_MSP(void)
 {
   uint32_t result;
@@ -8081,12 +8070,12 @@ __attribute__((always_inline)) static inline uint32_t __get_MSP(void)
   __asm volatile ("MRS %0, msp" : "=r" (result) );
   return(result);
 }
-# 398 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 398 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_MSP(uint32_t topOfMainStack)
 {
   __asm volatile ("MSR msp, %0" : : "r" (topOfMainStack) : );
 }
-# 449 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 449 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_PRIMASK(void)
 {
   uint32_t result;
@@ -8094,12 +8083,12 @@ __attribute__((always_inline)) static inline uint32_t __get_PRIMASK(void)
   __asm volatile ("MRS %0, primask" : "=r" (result) :: "memory");
   return(result);
 }
-# 479 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 479 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_PRIMASK(uint32_t priMask)
 {
   __asm volatile ("MSR primask, %0" : : "r" (priMask) : "memory");
 }
-# 506 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 506 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __enable_fault_irq(void)
 {
   __asm volatile ("cpsie f" : : : "memory");
@@ -8129,12 +8118,12 @@ __attribute__((always_inline)) static inline uint32_t __get_BASEPRI(void)
   __asm volatile ("MRS %0, basepri" : "=r" (result) );
   return(result);
 }
-# 558 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 558 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_BASEPRI(uint32_t basePri)
 {
   __asm volatile ("MSR basepri, %0" : : "r" (basePri) : "memory");
 }
-# 583 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 583 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_BASEPRI_MAX(uint32_t basePri)
 {
   __asm volatile ("MSR basepri_max, %0" : : "r" (basePri) : "memory");
@@ -8153,23 +8142,22 @@ __attribute__((always_inline)) static inline uint32_t __get_FAULTMASK(void)
   __asm volatile ("MRS %0, faultmask" : "=r" (result) );
   return(result);
 }
-# 624 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 624 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_FAULTMASK(uint32_t faultMask)
 {
   __asm volatile ("MSR faultmask, %0" : : "r" (faultMask) : "memory");
 }
-# 833 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 833 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_FPSCR(void)
 {
-# 843 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
-  uint32_t result;
-
-  __asm volatile ("VMRS %0, fpscr" : "=r" (result) );
-  return(result);
 
 
 
 
+
+
+  return __builtin_arm_get_fpscr();
+# 851 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 }
 
 
@@ -8180,14 +8168,21 @@ __attribute__((always_inline)) static inline uint32_t __get_FPSCR(void)
 
 __attribute__((always_inline)) static inline void __set_FPSCR(uint32_t fpscr)
 {
-# 869 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
-  __asm volatile ("VMSR fpscr, %0" : : "r" (fpscr) : "vfpcc", "memory");
+
+
+
+
+
+
+  __builtin_arm_set_fpscr(fpscr);
+
+
 
 
 
 
 }
-# 894 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 894 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __CMSIS_GCC_OUT_REG(r) "=r" (r)
 #define __CMSIS_GCC_RW_REG(r) "+r" (r)
 #define __CMSIS_GCC_USE_REG(r) "r" (r)
@@ -8219,7 +8214,7 @@ __attribute__((always_inline)) static inline void __set_FPSCR(uint32_t fpscr)
 
 
 #define __SEV() __ASM volatile ("sev")
-# 933 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 933 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __ISB(void)
 {
   __asm volatile ("isb 0xF":::"memory");
@@ -8246,7 +8241,7 @@ __attribute__((always_inline)) static inline void __DMB(void)
 {
   __asm volatile ("dmb 0xF":::"memory");
 }
-# 967 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 967 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __REV(uint32_t value)
 {
 
@@ -8258,7 +8253,7 @@ __attribute__((always_inline)) static inline uint32_t __REV(uint32_t value)
 
 
 }
-# 986 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 986 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __REV16(uint32_t value)
 {
   uint32_t result;
@@ -8266,7 +8261,7 @@ __attribute__((always_inline)) static inline uint32_t __REV16(uint32_t value)
   __asm volatile ("rev16 %0, %1" : "=r" (result) : "r" (value) );
   return result;
 }
-# 1001 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1001 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline int16_t __REVSH(int16_t value)
 {
 
@@ -8278,7 +8273,7 @@ __attribute__((always_inline)) static inline int16_t __REVSH(int16_t value)
 
 
 }
-# 1021 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1021 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __ROR(uint32_t op1, uint32_t op2)
 {
   op2 %= 32U;
@@ -8288,9 +8283,9 @@ __attribute__((always_inline)) static inline uint32_t __ROR(uint32_t op1, uint32
   }
   return (op1 >> op2) | (op1 << (32U - op2));
 }
-# 1039 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1039 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __BKPT(value) __ASM volatile ("bkpt "#value)
-# 1048 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1048 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __RBIT(uint32_t value)
 {
   uint32_t result;
@@ -8299,20 +8294,20 @@ __attribute__((always_inline)) static inline uint32_t __RBIT(uint32_t value)
 
 
    __asm volatile ("rbit %0, %1" : "=r" (result) : "r" (value) );
-# 1068 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1068 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
   return result;
 }
-# 1078 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1078 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __CLZ(uint32_t value)
 {
-# 1089 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1089 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
   if (value == 0U)
   {
     return 32U;
   }
   return __builtin_clz(value);
 }
-# 1107 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1107 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __LDREXB(volatile uint8_t *addr)
 {
     uint32_t result;
@@ -8327,7 +8322,7 @@ __attribute__((always_inline)) static inline uint8_t __LDREXB(volatile uint8_t *
 
    return ((uint8_t) result);
 }
-# 1129 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1129 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint16_t __LDREXH(volatile uint16_t *addr)
 {
     uint32_t result;
@@ -8342,7 +8337,7 @@ __attribute__((always_inline)) static inline uint16_t __LDREXH(volatile uint16_t
 
    return ((uint16_t) result);
 }
-# 1151 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1151 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __LDREXW(volatile uint32_t *addr)
 {
     uint32_t result;
@@ -8350,7 +8345,7 @@ __attribute__((always_inline)) static inline uint32_t __LDREXW(volatile uint32_t
    __asm volatile ("ldrex %0, %1" : "=r" (result) : "Q" (*addr) );
    return(result);
 }
-# 1168 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1168 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXB(uint8_t value, volatile uint8_t *addr)
 {
    uint32_t result;
@@ -8358,7 +8353,7 @@ __attribute__((always_inline)) static inline uint32_t __STREXB(uint8_t value, vo
    __asm volatile ("strexb %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
    return(result);
 }
-# 1185 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1185 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
 {
    uint32_t result;
@@ -8366,7 +8361,7 @@ __attribute__((always_inline)) static inline uint32_t __STREXH(uint16_t value, v
    __asm volatile ("strexh %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
    return(result);
 }
-# 1202 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1202 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXW(uint32_t value, volatile uint32_t *addr)
 {
    uint32_t result;
@@ -8384,11 +8379,11 @@ __attribute__((always_inline)) static inline void __CLREX(void)
 {
   __asm volatile ("clrex" ::: "memory");
 }
-# 1236 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1236 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __SSAT(ARG1,ARG2) __extension__ ({ int32_t __RES, __ARG1 = (ARG1); __ASM ("ssat %0, %1, %2" : "=r" (__RES) : "I" (ARG2), "r" (__ARG1) ); __RES; })
-# 1252 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1252 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __USAT(ARG1,ARG2) __extension__ ({ uint32_t __RES, __ARG1 = (ARG1); __ASM ("usat %0, %1, %2" : "=r" (__RES) : "I" (ARG2), "r" (__ARG1) ); __RES; })
-# 1268 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1268 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __RRX(uint32_t value)
 {
   uint32_t result;
@@ -8396,7 +8391,7 @@ __attribute__((always_inline)) static inline uint32_t __RRX(uint32_t value)
   __asm volatile ("rrx %0, %1" : "=r" (result) : "r" (value) );
   return(result);
 }
-# 1283 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1283 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __LDRBT(volatile uint8_t *ptr)
 {
     uint32_t result;
@@ -8411,7 +8406,7 @@ __attribute__((always_inline)) static inline uint8_t __LDRBT(volatile uint8_t *p
 
    return ((uint8_t) result);
 }
-# 1305 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1305 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint16_t __LDRHT(volatile uint16_t *ptr)
 {
     uint32_t result;
@@ -8426,7 +8421,7 @@ __attribute__((always_inline)) static inline uint16_t __LDRHT(volatile uint16_t 
 
    return ((uint16_t) result);
 }
-# 1327 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1327 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __LDRT(volatile uint32_t *ptr)
 {
     uint32_t result;
@@ -8434,22 +8429,22 @@ __attribute__((always_inline)) static inline uint32_t __LDRT(volatile uint32_t *
    __asm volatile ("ldrt %0, %1" : "=r" (result) : "Q" (*ptr) );
    return(result);
 }
-# 1342 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1342 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRBT(uint8_t value, volatile uint8_t *ptr)
 {
    __asm volatile ("strbt %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
 }
-# 1354 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1354 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRHT(uint16_t value, volatile uint16_t *ptr)
 {
    __asm volatile ("strht %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
 }
-# 1366 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1366 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRT(uint32_t value, volatile uint32_t *ptr)
 {
    __asm volatile ("strt %1, %0" : "=Q" (*ptr) : "r" (value) );
 }
-# 1621 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1621 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __SADD8(uint32_t op1, uint32_t op2)
 {
   uint32_t result;
@@ -8957,7 +8952,7 @@ __attribute__((always_inline)) static inline int32_t __QSUB( int32_t op1, int32_
   __asm volatile ("qsub %0, %1, %2" : "=r" (result) : "r" (op1), "r" (op2) );
   return(result);
 }
-# 2148 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 2148 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __PKHBT(ARG1,ARG2,ARG3) ( ((((uint32_t)(ARG1)) ) & 0x0000FFFFUL) | ((((uint32_t)(ARG2)) << (ARG3)) & 0xFFFF0000UL) )
 
 
@@ -8977,11 +8972,11 @@ __attribute__((always_inline)) static inline int32_t __SMMLA (int32_t op1, int32
 
 
 #pragma GCC diagnostic pop
-# 55 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h" 2
-# 163 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
-# 174 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 55 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h" 2
+# 163 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
+# 174 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define __CORE_CM4_H_DEPENDANT 
-# 219 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 219 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define __I volatile const
 
 #define __O volatile
@@ -8991,7 +8986,7 @@ __attribute__((always_inline)) static inline int32_t __SMMLA (int32_t op1, int32
 #define __IM volatile const
 #define __OM volatile
 #define __IOM volatile
-# 259 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 259 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef union
 {
   struct
@@ -9125,7 +9120,7 @@ typedef union
 
 #define CONTROL_nPRIV_Pos 0U
 #define CONTROL_nPRIV_Msk (1UL )
-# 406 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 406 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile uint32_t ISER[8U];
@@ -9146,7 +9141,7 @@ typedef struct
 
 #define NVIC_STIR_INTID_Pos 0U
 #define NVIC_STIR_INTID_Msk (0x1FFUL )
-# 440 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 440 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile const uint32_t CPUID;
@@ -9412,7 +9407,7 @@ typedef struct
 
 #define SCB_DFSR_HALTED_Pos 0U
 #define SCB_DFSR_HALTED_Msk (1UL )
-# 719 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 719 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
         uint32_t RESERVED0[1U];
@@ -9439,7 +9434,7 @@ typedef struct
 
 #define SCnSCB_ACTLR_DISMCYCINT_Pos 0U
 #define SCnSCB_ACTLR_DISMCYCINT_Msk (1UL )
-# 759 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 759 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile uint32_t CTRL;
@@ -9478,7 +9473,7 @@ typedef struct
 
 #define SysTick_CALIB_TENMS_Pos 0U
 #define SysTick_CALIB_TENMS_Msk (0xFFFFFFUL )
-# 811 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 811 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile union
@@ -9553,7 +9548,7 @@ typedef struct
 
 #define ITM_LSR_Present_Pos 0U
 #define ITM_LSR_Present_Msk (1UL )
-# 899 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 899 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile uint32_t CTRL;
@@ -9687,7 +9682,7 @@ typedef struct
 
 #define DWT_FUNCTION_FUNCTION_Pos 0U
 #define DWT_FUNCTION_FUNCTION_Msk (0xFUL )
-# 1046 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1046 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile const uint32_t SSPSR;
@@ -9835,7 +9830,7 @@ typedef struct
 
 #define TPI_DEVTYPE_MajorType_Pos 0U
 #define TPI_DEVTYPE_MajorType_Msk (0xFUL << TPI_DEVTYPE_MajorType_Pos)
-# 1208 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile const uint32_t TYPE;
@@ -9917,7 +9912,7 @@ typedef struct
 
 #define MPU_RASR_ENABLE_Pos 0U
 #define MPU_RASR_ENABLE_Msk (1UL )
-# 1304 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1304 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
         uint32_t RESERVED0[1U];
@@ -10016,7 +10011,7 @@ typedef struct
 
 #define FPU_MVFR2_VFP_Misc_Pos 4U
 #define FPU_MVFR2_VFP_Misc_Msk (0xFUL << FPU_MVFR2_VFP_Misc_Pos)
-# 1416 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile uint32_t DHCSR;
@@ -10108,7 +10103,7 @@ typedef struct
 
 #define CoreDebug_DEMCR_VC_CORERESET_Pos 0U
 #define CoreDebug_DEMCR_VC_CORERESET_Msk (1UL )
-# 1524 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1524 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define _VAL2FLD(field,value) (((uint32_t)(value) << field ## _Pos) & field ## _Msk)
 
 
@@ -10118,7 +10113,7 @@ typedef struct
 
 
 #define _FLD2VAL(field,value) (((uint32_t)(value) & field ## _Msk) >> field ## _Pos)
-# 1545 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1545 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define SCS_BASE (0xE000E000UL)
 #define ITM_BASE (0xE0000000UL)
 #define DWT_BASE (0xE0001000UL)
@@ -10144,7 +10139,7 @@ typedef struct
 
 #define FPU_BASE (SCS_BASE + 0x0F30UL)
 #define FPU ((FPU_Type *) FPU_BASE )
-# 1603 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1603 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define NVIC_SetPriorityGrouping __NVIC_SetPriorityGrouping
 #define NVIC_GetPriorityGrouping __NVIC_GetPriorityGrouping
 #define NVIC_EnableIRQ __NVIC_EnableIRQ
@@ -10157,7 +10152,7 @@ typedef struct
 #define NVIC_SetPriority __NVIC_SetPriority
 #define NVIC_GetPriority __NVIC_GetPriority
 #define NVIC_SystemReset __NVIC_SystemReset
-# 1623 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1623 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define NVIC_SetVector __NVIC_SetVector
 #define NVIC_GetVector __NVIC_GetVector
 
@@ -10172,7 +10167,7 @@ typedef struct
 #define EXC_RETURN_HANDLER_FPU (0xFFFFFFE1UL)
 #define EXC_RETURN_THREAD_MSP_FPU (0xFFFFFFE9UL)
 #define EXC_RETURN_THREAD_PSP_FPU (0xFFFFFFEDUL)
-# 1648 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1648 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_SetPriorityGrouping(uint32_t PriorityGroup)
 {
   uint32_t reg_value;
@@ -10196,7 +10191,7 @@ static inline uint32_t __NVIC_GetPriorityGrouping(void)
 {
   return ((uint32_t)((((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->AIRCR & (7UL << 8U)) >> 8U));
 }
-# 1679 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1679 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_EnableIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10206,7 +10201,7 @@ static inline void __NVIC_EnableIRQ(IRQn_Type IRQn)
     __asm volatile("":::"memory");
   }
 }
-# 1698 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1698 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t __NVIC_GetEnableIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10218,7 +10213,7 @@ static inline uint32_t __NVIC_GetEnableIRQ(IRQn_Type IRQn)
     return(0U);
   }
 }
-# 1717 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1717 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_DisableIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10228,7 +10223,7 @@ static inline void __NVIC_DisableIRQ(IRQn_Type IRQn)
     __ISB();
   }
 }
-# 1736 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1736 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10240,7 +10235,7 @@ static inline uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
     return(0U);
   }
 }
-# 1755 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1755 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10248,7 +10243,7 @@ static inline void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
     ((NVIC_Type *) ((0xE000E000UL) + 0x0100UL) )->ISPR[(((uint32_t)IRQn) >> 5UL)] = (uint32_t)(1UL << (((uint32_t)IRQn) & 0x1FUL));
   }
 }
-# 1770 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1770 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10256,7 +10251,7 @@ static inline void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
     ((NVIC_Type *) ((0xE000E000UL) + 0x0100UL) )->ICPR[(((uint32_t)IRQn) >> 5UL)] = (uint32_t)(1UL << (((uint32_t)IRQn) & 0x1FUL));
   }
 }
-# 1787 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1787 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t __NVIC_GetActive(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10268,7 +10263,7 @@ static inline uint32_t __NVIC_GetActive(IRQn_Type IRQn)
     return(0U);
   }
 }
-# 1809 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1809 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10280,7 +10275,7 @@ static inline void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
     ((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->SHP[(((uint32_t)IRQn) & 0xFUL)-4UL] = (uint8_t)((priority << (8U - 3)) & (uint32_t)0xFFUL);
   }
 }
-# 1831 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1831 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t __NVIC_GetPriority(IRQn_Type IRQn)
 {
 
@@ -10293,7 +10288,7 @@ static inline uint32_t __NVIC_GetPriority(IRQn_Type IRQn)
     return(((uint32_t)((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->SHP[(((uint32_t)IRQn) & 0xFUL)-4UL] >> (8U - 3)));
   }
 }
-# 1856 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1856 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t PreemptPriority, uint32_t SubPriority)
 {
   uint32_t PriorityGroupTmp = (PriorityGroup & (uint32_t)0x07UL);
@@ -10308,7 +10303,7 @@ static inline uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t Pre
            ((SubPriority & (uint32_t)((1UL << (SubPriorityBits )) - 1UL)))
          );
 }
-# 1883 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1883 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void NVIC_DecodePriority (uint32_t Priority, uint32_t PriorityGroup, uint32_t* const pPreemptPriority, uint32_t* const pSubPriority)
 {
   uint32_t PriorityGroupTmp = (PriorityGroup & (uint32_t)0x07UL);
@@ -10321,14 +10316,14 @@ static inline void NVIC_DecodePriority (uint32_t Priority, uint32_t PriorityGrou
   *pPreemptPriority = (Priority >> SubPriorityBits) & (uint32_t)((1UL << (PreemptPriorityBits)) - 1UL);
   *pSubPriority = (Priority ) & (uint32_t)((1UL << (SubPriorityBits )) - 1UL);
 }
-# 1906 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1906 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_SetVector(IRQn_Type IRQn, uint32_t vector)
 {
   uint32_t vectors = (uint32_t )((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->VTOR;
   (* (int *) (vectors + ((int32_t)IRQn + 16) * 4)) = vector;
 
 }
-# 1922 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1922 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t __NVIC_GetVector(IRQn_Type IRQn)
 {
   uint32_t vectors = (uint32_t )((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->VTOR;
@@ -10354,9 +10349,9 @@ __attribute__((__noreturn__)) static inline void __NVIC_SystemReset(void)
     __asm volatile ("nop");
   }
 }
-# 1955 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h" 1
-# 32 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 1955 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h" 1
+# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_ARMV7_H 
 
 #define ARM_MPU_REGION_SIZE_32B ((uint8_t)0x04U)
@@ -10401,17 +10396,17 @@ __attribute__((__noreturn__)) static inline void __NVIC_SystemReset(void)
 
 
 #define ARM_MPU_RBAR(Region,BaseAddress) (((BaseAddress) & MPU_RBAR_ADDR_Msk) | ((Region) & MPU_RBAR_REGION_Msk) | (MPU_RBAR_VALID_Msk))
-# 88 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 88 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_ACCESS_(TypeExtField,IsShareable,IsCacheable,IsBufferable) ((((TypeExtField) << MPU_RASR_TEX_Pos) & MPU_RASR_TEX_Msk) | (((IsShareable) << MPU_RASR_S_Pos) & MPU_RASR_S_Msk) | (((IsCacheable) << MPU_RASR_C_Pos) & MPU_RASR_C_Msk) | (((IsBufferable) << MPU_RASR_B_Pos) & MPU_RASR_B_Msk))
-# 103 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 103 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_RASR_EX(DisableExec,AccessPermission,AccessAttributes,SubRegionDisable,Size) ((((DisableExec) << MPU_RASR_XN_Pos) & MPU_RASR_XN_Msk) | (((AccessPermission) << MPU_RASR_AP_Pos) & MPU_RASR_AP_Msk) | (((AccessAttributes) & (MPU_RASR_TEX_Msk | MPU_RASR_S_Msk | MPU_RASR_C_Msk | MPU_RASR_B_Msk))) | (((SubRegionDisable) << MPU_RASR_SRD_Pos) & MPU_RASR_SRD_Msk) | (((Size) << MPU_RASR_SIZE_Pos) & MPU_RASR_SIZE_Msk) | (((MPU_RASR_ENABLE_Msk))))
-# 123 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 123 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_RASR(DisableExec,AccessPermission,TypeExtField,IsShareable,IsCacheable,IsBufferable,SubRegionDisable,Size) ARM_MPU_RASR_EX(DisableExec, AccessPermission, ARM_MPU_ACCESS_(TypeExtField, IsShareable, IsCacheable, IsBufferable), SubRegionDisable, Size)
-# 133 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 133 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_ACCESS_ORDERED ARM_MPU_ACCESS_(0U, 1U, 0U, 0U)
-# 144 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 144 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_ACCESS_DEVICE(IsShareable) ((IsShareable) ? ARM_MPU_ACCESS_(0U, 1U, 0U, 1U) : ARM_MPU_ACCESS_(2U, 0U, 0U, 0U))
-# 157 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 157 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_ACCESS_NORMAL(OuterCp,InnerCp,IsShareable) ARM_MPU_ACCESS_((4U | (OuterCp)), IsShareable, ((InnerCp) & 2U), ((InnerCp) & 1U))
 
 
@@ -10504,9 +10499,9 @@ static inline void ARM_MPU_SetRegionEx(uint32_t rnr, uint32_t rbar, uint32_t ras
 
 
 static inline void ARM_MPU_OrderedMemcpy(volatile uint32_t* dst, const uint32_t* 
-# 248 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h" 3
+# 248 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h" 3
                                                                                   restrict 
-# 248 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 248 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
                                                                                              src, uint32_t len)
 {
   uint32_t i;
@@ -10530,8 +10525,8 @@ static inline void ARM_MPU_Load(ARM_MPU_Region_t const* table, uint32_t cnt)
   }
   ARM_MPU_OrderedMemcpy(&(((MPU_Type *) ((0xE000E000UL) + 0x0D90UL) )->RBAR), &(table->RBAR), cnt*rowWordSize);
 }
-# 1956 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
-# 1976 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1956 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
+# 1976 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t SCB_GetFPUType(void)
 {
   uint32_t mvfr0;
@@ -10546,7 +10541,7 @@ static inline uint32_t SCB_GetFPUType(void)
     return 0U;
   }
 }
-# 2017 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 2017 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t SysTick_Config(uint32_t ticks)
 {
   if ((ticks - 1UL) > (0xFFFFFFUL ))
@@ -10562,10 +10557,10 @@ static inline uint32_t SysTick_Config(uint32_t ticks)
                    (1UL );
   return (0UL);
 }
-# 2047 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 2047 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 extern volatile int32_t ITM_RxBuffer;
 #define ITM_RXBUFFER_EMPTY ((int32_t)0x5AA55AA5U)
-# 2059 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 2059 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t ITM_SendChar (uint32_t ch)
 {
   if (((((ITM_Type *) (0xE0000000UL) )->TCR & (1UL )) != 0UL) &&
@@ -10579,7 +10574,7 @@ static inline uint32_t ITM_SendChar (uint32_t ch)
   }
   return (ch);
 }
-# 2080 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 2080 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline int32_t ITM_ReceiveChar (void)
 {
   int32_t ch = -1;
@@ -10592,7 +10587,7 @@ static inline int32_t ITM_ReceiveChar (void)
 
   return (ch);
 }
-# 2100 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 2100 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline int32_t ITM_CheckChar (void)
 {
 
@@ -10605,18 +10600,18 @@ static inline int32_t ITM_CheckChar (void)
     return (1);
   }
 }
-# 157 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h" 1
-# 24 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
+# 157 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h" 1
+# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
 #define SYSTEM_NRF52840_H 
-# 33 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
+# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
 extern uint32_t SystemCoreClock;
-# 44 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
+# 44 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
 extern void SystemInit (void);
-# 55 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
+# 55 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
 extern void SystemCoreClockUpdate (void);
-# 158 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 2
-# 208 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 158 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 2
+# 208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t PART;
   volatile const uint32_t VARIANT;
@@ -11281,7 +11276,7 @@ typedef struct {
   volatile uint32_t IO2;
   volatile uint32_t IO3;
 } QSPI_PSEL_Type;
-# 897 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 897 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[4];
   volatile const uint32_t CODEPAGESIZE;
@@ -11307,7 +11302,7 @@ typedef struct {
   volatile const uint32_t RESERVED7[488];
   volatile FICR_TRNG90B_Type TRNG90B;
 } NRF_FICR_Type;
-# 934 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 934 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[5];
   volatile uint32_t NRFFW[13];
@@ -11327,7 +11322,7 @@ typedef struct {
   volatile uint32_t REGOUT0;
 
 } NRF_UICR_Type;
-# 965 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 965 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_HFCLKSTART;
   volatile uint32_t TASKS_HFCLKSTOP;
@@ -11372,7 +11367,7 @@ typedef struct {
   volatile const uint32_t RESERVED10[21];
   volatile uint32_t LFRCMODE;
 } NRF_CLOCK_Type;
-# 1021 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1021 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[30];
   volatile uint32_t TASKS_CONSTLAT;
@@ -11410,7 +11405,7 @@ typedef struct {
   volatile const uint32_t RESERVED13[175];
   volatile POWER_RAM_Type RAM[9];
 } NRF_POWER_Type;
-# 1070 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1070 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[321];
   volatile uint32_t OUT;
@@ -11429,7 +11424,7 @@ typedef struct {
   volatile uint32_t PIN_CNF[32];
 
 } NRF_GPIO_Type;
-# 1100 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1100 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_TXEN;
   volatile uint32_t TASKS_RXEN;
@@ -11537,7 +11532,7 @@ typedef struct {
   volatile const uint32_t RESERVED15[611];
   volatile uint32_t POWER;
 } NRF_RADIO_Type;
-# 1219 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1219 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_STARTRX;
   volatile uint32_t TASKS_STOPRX;
@@ -11574,7 +11569,7 @@ typedef struct {
   volatile const uint32_t RESERVED11[17];
   volatile uint32_t CONFIG;
 } NRF_UART_Type;
-# 1267 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1267 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_STARTRX;
   volatile uint32_t TASKS_STOPRX;
@@ -11623,7 +11618,7 @@ typedef struct {
   volatile const uint32_t RESERVED15[7];
   volatile uint32_t CONFIG;
 } NRF_UARTE_Type;
-# 1327 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1327 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[66];
   volatile uint32_t EVENTS_READY;
@@ -11643,7 +11638,7 @@ typedef struct {
   volatile const uint32_t RESERVED6[11];
   volatile uint32_t CONFIG;
 } NRF_SPI_Type;
-# 1358 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1358 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[4];
   volatile uint32_t TASKS_START;
@@ -11692,7 +11687,7 @@ typedef struct {
 
 
 } NRF_SPIM_Type;
-# 1418 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1418 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[9];
   volatile uint32_t TASKS_ACQUIRE;
@@ -11727,7 +11722,7 @@ typedef struct {
   volatile const uint32_t RESERVED12[24];
   volatile uint32_t ORC;
 } NRF_SPIS_Type;
-# 1464 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1464 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_STARTRX;
   volatile const uint32_t RESERVED;
@@ -11769,7 +11764,7 @@ typedef struct {
   volatile const uint32_t RESERVED15[24];
   volatile uint32_t ADDRESS;
 } NRF_TWI_Type;
-# 1517 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1517 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_STARTRX;
   volatile const uint32_t RESERVED;
@@ -11815,7 +11810,7 @@ typedef struct {
   volatile const uint32_t RESERVED14[13];
   volatile uint32_t ADDRESS;
 } NRF_TWIM_Type;
-# 1574 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1574 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[5];
   volatile uint32_t TASKS_STOP;
@@ -11861,7 +11856,7 @@ typedef struct {
   volatile uint32_t ORC;
 
 } NRF_TWIS_Type;
-# 1631 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1631 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_ACTIVATE;
 
@@ -11940,7 +11935,7 @@ typedef struct {
   volatile uint32_t SENSRES;
   volatile uint32_t SELRES;
 } NRF_NFCT_Type;
-# 1721 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1721 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_OUT[8];
 
@@ -11966,7 +11961,7 @@ typedef struct {
   volatile uint32_t CONFIG[8];
 
 } NRF_GPIOTE_Type;
-# 1758 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1758 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
 
@@ -12004,7 +11999,7 @@ typedef struct {
   volatile const uint32_t RESERVED6[12];
   volatile SAADC_RESULT_Type RESULT;
 } NRF_SAADC_Type;
-# 1807 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1807 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12031,7 +12026,7 @@ typedef struct {
   volatile uint32_t CC[6];
 
 } NRF_TIMER_Type;
-# 1845 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1845 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12057,7 +12052,7 @@ typedef struct {
   volatile const uint32_t RESERVED5[13];
   volatile uint32_t CC[4];
 } NRF_RTC_Type;
-# 1882 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1882 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12089,7 +12084,7 @@ typedef struct {
   volatile uint32_t T3;
   volatile uint32_t T4;
 } NRF_TEMP_Type;
-# 1925 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1925 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12105,7 +12100,7 @@ typedef struct {
   volatile uint32_t CONFIG;
   volatile const uint32_t VALUE;
 } NRF_RNG_Type;
-# 1952 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1952 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_STARTECB;
   volatile uint32_t TASKS_STOPECB;
@@ -12119,7 +12114,7 @@ typedef struct {
   volatile const uint32_t RESERVED2[126];
   volatile uint32_t ECBDATAPTR;
 } NRF_ECB_Type;
-# 1977 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1977 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
 
@@ -12142,7 +12137,7 @@ typedef struct {
   volatile uint32_t ADDRPTR;
   volatile uint32_t SCRATCHPTR;
 } NRF_AAR_Type;
-# 2011 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2011 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_KSGEN;
 
@@ -12175,7 +12170,7 @@ typedef struct {
 
   volatile uint32_t RATEOVERRIDE;
 } NRF_CCM_Type;
-# 2055 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2055 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile const uint32_t RESERVED[63];
@@ -12193,7 +12188,7 @@ typedef struct {
   volatile const uint32_t RESERVED4[60];
   volatile uint32_t RR[8];
 } NRF_WDT_Type;
-# 2084 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2084 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12231,7 +12226,7 @@ typedef struct {
   volatile const uint32_t ACCDBLREAD;
 
 } NRF_QDEC_Type;
-# 2133 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2133 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12259,7 +12254,7 @@ typedef struct {
   volatile uint32_t MODE;
   volatile uint32_t HYST;
 } NRF_COMP_Type;
-# 2172 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2172 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12286,7 +12281,7 @@ typedef struct {
   volatile const uint32_t RESERVED6[5];
   volatile uint32_t HYST;
 } NRF_LPCOMP_Type;
-# 2210 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2210 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_TRIGGER[16];
 
@@ -12299,11 +12294,11 @@ typedef struct {
   volatile uint32_t INTENSET;
   volatile uint32_t INTENCLR;
 } NRF_EGU_Type;
-# 2234 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2234 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t UNUSED;
 } NRF_SWI_Type;
-# 2249 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2249 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED;
   volatile uint32_t TASKS_STOP;
@@ -12347,7 +12342,7 @@ typedef struct {
   volatile PWM_SEQ_Type SEQ[2];
   volatile PWM_PSEL_Type PSEL;
 } NRF_PWM_Type;
-# 2304 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2304 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12376,12 +12371,12 @@ typedef struct {
   volatile const uint32_t RESERVED5[6];
   volatile PDM_SAMPLE_Type SAMPLE;
 } NRF_PDM_Type;
-# 2344 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2344 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[512];
   volatile ACL_ACL_Type ACL[8];
 } NRF_ACL_Type;
-# 2360 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2360 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[256];
   volatile const uint32_t READY;
@@ -12409,7 +12404,7 @@ typedef struct {
   volatile uint32_t IHIT;
   volatile uint32_t IMISS;
 } NRF_NVMC_Type;
-# 2399 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2399 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile PPI_TASKS_CHG_Type TASKS_CHG[6];
   volatile const uint32_t RESERVED[308];
@@ -12423,7 +12418,7 @@ typedef struct {
   volatile const uint32_t RESERVED3[62];
   volatile PPI_FORK_Type FORK[32];
 } NRF_PPI_Type;
-# 2424 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2424 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[64];
   volatile MWU_EVENTS_REGION_Type EVENTS_REGION[4];
@@ -12448,7 +12443,7 @@ typedef struct {
   volatile const uint32_t RESERVED7[32];
   volatile MWU_PREGION_Type PREGION[2];
 } NRF_MWU_Type;
-# 2460 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2460 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
 
@@ -12484,11 +12479,11 @@ typedef struct {
   volatile const uint32_t RESERVED7[3];
   volatile I2S_PSEL_Type PSEL;
 } NRF_I2S_Type;
-# 2507 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2507 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t UNUSED;
 } NRF_FPU_Type;
-# 2522 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2522 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED;
   volatile uint32_t TASKS_STARTEPIN[8];
@@ -12595,7 +12590,7 @@ typedef struct {
   volatile USBD_EPOUT_Type EPOUT[8];
   volatile USBD_ISOOUT_Type ISOOUT;
 } NRF_USBD_Type;
-# 2640 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2640 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_ACTIVATE;
   volatile uint32_t TASKS_READSTART;
@@ -12635,7 +12630,7 @@ typedef struct {
   volatile uint32_t CINSTRDAT1;
   volatile uint32_t IFTIMING;
 } NRF_QSPI_Type;
-# 2691 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2691 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[1678];
   volatile uint32_t HOST_CRYPTOKEY_SEL;
@@ -12662,12 +12657,12 @@ typedef struct {
   volatile uint32_t HOST_IOT_LCS;
 
 } NRF_CC_HOST_RGF_Type;
-# 2729 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2729 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[320];
   volatile uint32_t ENABLE;
 } NRF_CRYPTOCELL_Type;
-# 2747 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2747 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 #define NRF_FICR_BASE 0x10000000UL
 #define NRF_UICR_BASE 0x10001000UL
 #define NRF_CLOCK_BASE 0x40000000UL
@@ -12741,7 +12736,7 @@ typedef struct {
 #define NRF_CRYPTOCELL_BASE 0x5002A000UL
 #define NRF_PWM3_BASE 0x4002D000UL
 #define NRF_SPIM3_BASE 0x4002F000UL
-# 2833 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2833 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 #define NRF_FICR ((NRF_FICR_Type*) NRF_FICR_BASE)
 #define NRF_UICR ((NRF_UICR_Type*) NRF_UICR_BASE)
 #define NRF_CLOCK ((NRF_CLOCK_Type*) NRF_CLOCK_BASE)
@@ -12815,11 +12810,11 @@ typedef struct {
 #define NRF_CRYPTOCELL ((NRF_CRYPTOCELL_Type*) NRF_CRYPTOCELL_BASE)
 #define NRF_PWM3 ((NRF_PWM_Type*) NRF_PWM3_BASE)
 #define NRF_SPIM3 ((NRF_SPIM_Type*) NRF_SPIM3_BASE)
-# 170 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h" 1
-# 43 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 170 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h" 1
+# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define __NRF52840_BITS_H 
-# 54 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 54 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define AAR_TASKS_START_TASKS_START_Pos (0UL)
 #define AAR_TASKS_START_TASKS_START_Msk (0x1UL << AAR_TASKS_START_TASKS_START_Pos)
 #define AAR_TASKS_START_TASKS_START_Trigger (1UL)
@@ -12950,7 +12945,7 @@ typedef struct {
 
 #define AAR_SCRATCHPTR_SCRATCHPTR_Pos (0UL)
 #define AAR_SCRATCHPTR_SCRATCHPTR_Msk (0xFFFFFFFFUL << AAR_SCRATCHPTR_SCRATCHPTR_Pos)
-# 193 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 193 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define ACL_ACL_ADDR_ADDR_Pos (0UL)
 #define ACL_ACL_ADDR_ADDR_Msk (0xFFFFFFFFUL << ACL_ACL_ADDR_ADDR_Pos)
 
@@ -12975,7 +12970,7 @@ typedef struct {
 #define ACL_ACL_PERM_WRITE_Msk (0x1UL << ACL_ACL_PERM_WRITE_Pos)
 #define ACL_ACL_PERM_WRITE_Enable (0UL)
 #define ACL_ACL_PERM_WRITE_Disable (1UL)
-# 226 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 226 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define CCM_TASKS_KSGEN_TASKS_KSGEN_Pos (0UL)
 #define CCM_TASKS_KSGEN_TASKS_KSGEN_Msk (0x1UL << CCM_TASKS_KSGEN_TASKS_KSGEN_Pos)
 #define CCM_TASKS_KSGEN_TASKS_KSGEN_Trigger (1UL)
@@ -13175,7 +13170,7 @@ typedef struct {
 #define CCM_RATEOVERRIDE_RATEOVERRIDE_2Mbit (1UL)
 #define CCM_RATEOVERRIDE_RATEOVERRIDE_125Kbps (2UL)
 #define CCM_RATEOVERRIDE_RATEOVERRIDE_500Kbps (3UL)
-# 434 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define CC_HOST_RGF_HOST_CRYPTOKEY_SEL_HOST_CRYPTOKEY_SEL_Pos (0UL)
 #define CC_HOST_RGF_HOST_CRYPTOKEY_SEL_HOST_CRYPTOKEY_SEL_Msk (0x3UL << CC_HOST_RGF_HOST_CRYPTOKEY_SEL_HOST_CRYPTOKEY_SEL_Pos)
 #define CC_HOST_RGF_HOST_CRYPTOKEY_SEL_HOST_CRYPTOKEY_SEL_K_DR (0UL)
@@ -13233,7 +13228,7 @@ typedef struct {
 #define CC_HOST_RGF_HOST_IOT_LCS_LCS_Msk (0x7UL << CC_HOST_RGF_HOST_IOT_LCS_LCS_Pos)
 #define CC_HOST_RGF_HOST_IOT_LCS_LCS_Debug (0UL)
 #define CC_HOST_RGF_HOST_IOT_LCS_LCS_Secure (2UL)
-# 500 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 500 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define CLOCK_TASKS_HFCLKSTART_TASKS_HFCLKSTART_Pos (0UL)
 #define CLOCK_TASKS_HFCLKSTART_TASKS_HFCLKSTART_Msk (0x1UL << CLOCK_TASKS_HFCLKSTART_TASKS_HFCLKSTART_Pos)
 #define CLOCK_TASKS_HFCLKSTART_TASKS_HFCLKSTART_Trigger (1UL)
@@ -13559,7 +13554,7 @@ typedef struct {
 #define CLOCK_LFRCMODE_MODE_Msk (0x1UL << CLOCK_LFRCMODE_MODE_Pos)
 #define CLOCK_LFRCMODE_MODE_Normal (0UL)
 #define CLOCK_LFRCMODE_MODE_ULP (1UL)
-# 834 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 834 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define COMP_TASKS_START_TASKS_START_Pos (0UL)
 #define COMP_TASKS_START_TASKS_START_Msk (0x1UL << COMP_TASKS_START_TASKS_START_Pos)
 #define COMP_TASKS_START_TASKS_START_Trigger (1UL)
@@ -13833,12 +13828,12 @@ typedef struct {
 #define COMP_HYST_HYST_Msk (0x1UL << COMP_HYST_HYST_Pos)
 #define COMP_HYST_HYST_NoHyst (0UL)
 #define COMP_HYST_HYST_Hyst50mV (1UL)
-# 1116 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 1116 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define CRYPTOCELL_ENABLE_ENABLE_Pos (0UL)
 #define CRYPTOCELL_ENABLE_ENABLE_Msk (0x1UL << CRYPTOCELL_ENABLE_ENABLE_Pos)
 #define CRYPTOCELL_ENABLE_ENABLE_Disabled (0UL)
 #define CRYPTOCELL_ENABLE_ENABLE_Enabled (1UL)
-# 1129 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 1129 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define ECB_TASKS_STARTECB_TASKS_STARTECB_Pos (0UL)
 #define ECB_TASKS_STARTECB_TASKS_STARTECB_Msk (0x1UL << ECB_TASKS_STARTECB_TASKS_STARTECB_Pos)
 #define ECB_TASKS_STARTECB_TASKS_STARTECB_Trigger (1UL)
@@ -13909,7 +13904,7 @@ typedef struct {
 
 #define ECB_ECBDATAPTR_ECBDATAPTR_Pos (0UL)
 #define ECB_ECBDATAPTR_ECBDATAPTR_Msk (0xFFFFFFFFUL << ECB_ECBDATAPTR_ECBDATAPTR_Pos)
-# 1208 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 1208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define EGU_TASKS_TRIGGER_TASKS_TRIGGER_Pos (0UL)
 #define EGU_TASKS_TRIGGER_TASKS_TRIGGER_Msk (0x1UL << EGU_TASKS_TRIGGER_TASKS_TRIGGER_Pos)
 #define EGU_TASKS_TRIGGER_TASKS_TRIGGER_Trigger (1UL)
@@ -14251,7 +14246,7 @@ typedef struct {
 #define EGU_INTENCLR_TRIGGERED0_Disabled (0UL)
 #define EGU_INTENCLR_TRIGGERED0_Enabled (1UL)
 #define EGU_INTENCLR_TRIGGERED0_Clear (1UL)
-# 1558 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 1558 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define FICR_CODEPAGESIZE_CODEPAGESIZE_Pos (0UL)
 #define FICR_CODEPAGESIZE_CODEPAGESIZE_Msk (0xFFFFFFFFUL << FICR_CODEPAGESIZE_CODEPAGESIZE_Pos)
 
@@ -14619,7 +14614,7 @@ typedef struct {
 
 #define FICR_TRNG90B_ROSC4_ROSC4_Pos (0UL)
 #define FICR_TRNG90B_ROSC4_ROSC4_Msk (0xFFFFFFFFUL << FICR_TRNG90B_ROSC4_ROSC4_Pos)
-# 1934 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 1934 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define GPIOTE_TASKS_OUT_TASKS_OUT_Pos (0UL)
 #define GPIOTE_TASKS_OUT_TASKS_OUT_Msk (0x1UL << GPIOTE_TASKS_OUT_TASKS_OUT_Pos)
 #define GPIOTE_TASKS_OUT_TASKS_OUT_Trigger (1UL)
@@ -14821,7 +14816,7 @@ typedef struct {
 #define GPIOTE_CONFIG_MODE_Disabled (0UL)
 #define GPIOTE_CONFIG_MODE_Event (1UL)
 #define GPIOTE_CONFIG_MODE_Task (3UL)
-# 2144 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 2144 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define I2S_TASKS_START_TASKS_START_Pos (0UL)
 #define I2S_TASKS_START_TASKS_START_Msk (0x1UL << I2S_TASKS_START_TASKS_START_Pos)
 #define I2S_TASKS_START_TASKS_START_Trigger (1UL)
@@ -15158,7 +15153,7 @@ typedef struct {
 
 #define I2S_PSEL_SDOUT_PIN_Pos (0UL)
 #define I2S_PSEL_SDOUT_PIN_Msk (0x1FUL << I2S_PSEL_SDOUT_PIN_Pos)
-# 2489 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 2489 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define LPCOMP_TASKS_START_TASKS_START_Pos (0UL)
 #define LPCOMP_TASKS_START_TASKS_START_Msk (0x1UL << LPCOMP_TASKS_START_TASKS_START_Pos)
 #define LPCOMP_TASKS_START_TASKS_START_Trigger (1UL)
@@ -15393,7 +15388,7 @@ typedef struct {
 #define LPCOMP_HYST_HYST_Msk (0x1UL << LPCOMP_HYST_HYST_Pos)
 #define LPCOMP_HYST_HYST_Disabled (0UL)
 #define LPCOMP_HYST_HYST_Enabled (1UL)
-# 2732 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 2732 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define MWU_EVENTS_REGION_WA_WA_Pos (0UL)
 #define MWU_EVENTS_REGION_WA_WA_Msk (0x1UL << MWU_EVENTS_REGION_WA_WA_Pos)
 #define MWU_EVENTS_REGION_WA_WA_NotGenerated (0UL)
@@ -16785,7 +16780,7 @@ typedef struct {
 #define MWU_PREGION_SUBS_SR0_Msk (0x1UL << MWU_PREGION_SUBS_SR0_Pos)
 #define MWU_PREGION_SUBS_SR0_Exclude (0UL)
 #define MWU_PREGION_SUBS_SR0_Include (1UL)
-# 4132 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 4132 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define NFCT_TASKS_ACTIVATE_TASKS_ACTIVATE_Pos (0UL)
 #define NFCT_TASKS_ACTIVATE_TASKS_ACTIVATE_Msk (0x1UL << NFCT_TASKS_ACTIVATE_TASKS_ACTIVATE_Pos)
 #define NFCT_TASKS_ACTIVATE_TASKS_ACTIVATE_Trigger (1UL)
@@ -17591,7 +17586,7 @@ typedef struct {
 
 #define NFCT_SELRES_RFU10_Pos (0UL)
 #define NFCT_SELRES_RFU10_Msk (0x3UL << NFCT_SELRES_RFU10_Pos)
-# 4946 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 4946 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define NVMC_READY_READY_Pos (0UL)
 #define NVMC_READY_READY_Msk (0x1UL << NVMC_READY_READY_Pos)
 #define NVMC_READY_READY_Busy (0UL)
@@ -17697,7 +17692,7 @@ typedef struct {
 
 #define NVMC_IMISS_MISSES_Pos (0UL)
 #define NVMC_IMISS_MISSES_Msk (0xFFFFFFFFUL << NVMC_IMISS_MISSES_Pos)
-# 5060 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 5060 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define GPIO_OUT_PIN31_Pos (31UL)
 #define GPIO_OUT_PIN31_Msk (0x1UL << GPIO_OUT_PIN31_Pos)
 #define GPIO_OUT_PIN31_Low (0UL)
@@ -19431,7 +19426,7 @@ typedef struct {
 #define GPIO_PIN_CNF_DIR_Msk (0x1UL << GPIO_PIN_CNF_DIR_Pos)
 #define GPIO_PIN_CNF_DIR_Input (0UL)
 #define GPIO_PIN_CNF_DIR_Output (1UL)
-# 6802 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 6802 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define PDM_TASKS_START_TASKS_START_Pos (0UL)
 #define PDM_TASKS_START_TASKS_START_Msk (0x1UL << PDM_TASKS_START_TASKS_START_Pos)
 #define PDM_TASKS_START_TASKS_START_Trigger (1UL)
@@ -19653,7 +19648,7 @@ typedef struct {
 
 #define PDM_SAMPLE_MAXCNT_BUFFSIZE_Pos (0UL)
 #define PDM_SAMPLE_MAXCNT_BUFFSIZE_Msk (0x7FFFUL << PDM_SAMPLE_MAXCNT_BUFFSIZE_Pos)
-# 7032 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 7032 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Pos (0UL)
 #define POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Msk (0x1UL << POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Pos)
 #define POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Trigger (1UL)
@@ -20523,7 +20518,7 @@ typedef struct {
 #define POWER_RAM_POWERCLR_S0POWER_Pos (0UL)
 #define POWER_RAM_POWERCLR_S0POWER_Msk (0x1UL << POWER_RAM_POWERCLR_S0POWER_Pos)
 #define POWER_RAM_POWERCLR_S0POWER_Off (1UL)
-# 7910 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 7910 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define PPI_TASKS_CHG_EN_EN_Pos (0UL)
 #define PPI_TASKS_CHG_EN_EN_Msk (0x1UL << PPI_TASKS_CHG_EN_EN_Pos)
 #define PPI_TASKS_CHG_EN_EN_Trigger (1UL)
@@ -21400,7 +21395,7 @@ typedef struct {
 
 #define PPI_FORK_TEP_TEP_Pos (0UL)
 #define PPI_FORK_TEP_TEP_Msk (0xFFFFFFFFUL << PPI_FORK_TEP_TEP_Pos)
-# 8795 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 8795 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define PWM_TASKS_STOP_TASKS_STOP_Pos (0UL)
 #define PWM_TASKS_STOP_TASKS_STOP_Msk (0x1UL << PWM_TASKS_STOP_TASKS_STOP_Pos)
 #define PWM_TASKS_STOP_TASKS_STOP_Trigger (1UL)
@@ -21759,7 +21754,7 @@ typedef struct {
 
 #define PWM_PSEL_OUT_PIN_Pos (0UL)
 #define PWM_PSEL_OUT_PIN_Msk (0x1FUL << PWM_PSEL_OUT_PIN_Pos)
-# 9162 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 9162 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define QDEC_TASKS_START_TASKS_START_Pos (0UL)
 #define QDEC_TASKS_START_TASKS_START_Msk (0x1UL << QDEC_TASKS_START_TASKS_START_Pos)
 #define QDEC_TASKS_START_TASKS_START_Trigger (1UL)
@@ -22115,7 +22110,7 @@ typedef struct {
 
 #define QDEC_ACCDBLREAD_ACCDBLREAD_Pos (0UL)
 #define QDEC_ACCDBLREAD_ACCDBLREAD_Msk (0xFUL << QDEC_ACCDBLREAD_ACCDBLREAD_Pos)
-# 9526 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 9526 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define QSPI_TASKS_ACTIVATE_TASKS_ACTIVATE_Pos (0UL)
 #define QSPI_TASKS_ACTIVATE_TASKS_ACTIVATE_Msk (0x1UL << QSPI_TASKS_ACTIVATE_TASKS_ACTIVATE_Pos)
 #define QSPI_TASKS_ACTIVATE_TASKS_ACTIVATE_Trigger (1UL)
@@ -22588,7 +22583,7 @@ typedef struct {
 
 #define QSPI_IFTIMING_RXDELAY_Pos (8UL)
 #define QSPI_IFTIMING_RXDELAY_Msk (0x7UL << QSPI_IFTIMING_RXDELAY_Pos)
-# 10007 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 10007 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define RADIO_TASKS_TXEN_TASKS_TXEN_Pos (0UL)
 #define RADIO_TASKS_TXEN_TASKS_TXEN_Msk (0x1UL << RADIO_TASKS_TXEN_TASKS_TXEN_Pos)
 #define RADIO_TASKS_TXEN_TASKS_TXEN_Trigger (1UL)
@@ -23878,7 +23873,7 @@ typedef struct {
 #define RADIO_POWER_POWER_Msk (0x1UL << RADIO_POWER_POWER_Pos)
 #define RADIO_POWER_POWER_Disabled (0UL)
 #define RADIO_POWER_POWER_Enabled (1UL)
-# 11305 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 11305 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define RNG_TASKS_START_TASKS_START_Pos (0UL)
 #define RNG_TASKS_START_TASKS_START_Msk (0x1UL << RNG_TASKS_START_TASKS_START_Pos)
 #define RNG_TASKS_START_TASKS_START_Trigger (1UL)
@@ -23944,7 +23939,7 @@ typedef struct {
 
 #define RNG_VALUE_VALUE_Pos (0UL)
 #define RNG_VALUE_VALUE_Msk (0xFFUL << RNG_VALUE_VALUE_Pos)
-# 11379 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 11379 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define RTC_TASKS_START_TASKS_START_Pos (0UL)
 #define RTC_TASKS_START_TASKS_START_Msk (0x1UL << RTC_TASKS_START_TASKS_START_Pos)
 #define RTC_TASKS_START_TASKS_START_Trigger (1UL)
@@ -24239,7 +24234,7 @@ typedef struct {
 
 #define RTC_CC_COMPARE_Pos (0UL)
 #define RTC_CC_COMPARE_Msk (0xFFFFFFUL << RTC_CC_COMPARE_Pos)
-# 11682 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 11682 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define SAADC_TASKS_START_TASKS_START_Pos (0UL)
 #define SAADC_TASKS_START_TASKS_START_Msk (0x1UL << SAADC_TASKS_START_TASKS_START_Pos)
 #define SAADC_TASKS_START_TASKS_START_Trigger (1UL)
@@ -24973,7 +24968,7 @@ typedef struct {
 
 #define SAADC_RESULT_AMOUNT_AMOUNT_Pos (0UL)
 #define SAADC_RESULT_AMOUNT_AMOUNT_Msk (0x7FFFUL << SAADC_RESULT_AMOUNT_AMOUNT_Pos)
-# 12424 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 12424 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define SPI_EVENTS_READY_EVENTS_READY_Pos (0UL)
 #define SPI_EVENTS_READY_EVENTS_READY_Msk (0x1UL << SPI_EVENTS_READY_EVENTS_READY_Pos)
 #define SPI_EVENTS_READY_EVENTS_READY_NotGenerated (0UL)
@@ -25107,7 +25102,7 @@ typedef struct {
 #define SPI_CONFIG_ORDER_Msk (0x1UL << SPI_CONFIG_ORDER_Pos)
 #define SPI_CONFIG_ORDER_MsbFirst (0UL)
 #define SPI_CONFIG_ORDER_LsbFirst (1UL)
-# 12566 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 12566 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define SPIM_TASKS_START_TASKS_START_Pos (0UL)
 #define SPIM_TASKS_START_TASKS_START_Msk (0x1UL << SPIM_TASKS_START_TASKS_START_Pos)
 #define SPIM_TASKS_START_TASKS_START_Trigger (1UL)
@@ -25508,7 +25503,7 @@ typedef struct {
 
 #define SPIM_ORC_ORC_Pos (0UL)
 #define SPIM_ORC_ORC_Msk (0xFFUL << SPIM_ORC_ORC_Pos)
-# 12975 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 12975 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define SPIS_TASKS_ACQUIRE_TASKS_ACQUIRE_Pos (0UL)
 #define SPIS_TASKS_ACQUIRE_TASKS_ACQUIRE_Msk (0x1UL << SPIS_TASKS_ACQUIRE_TASKS_ACQUIRE_Pos)
 #define SPIS_TASKS_ACQUIRE_TASKS_ACQUIRE_Trigger (1UL)
@@ -25804,7 +25799,7 @@ typedef struct {
 
 #define SPIS_ORC_ORC_Pos (0UL)
 #define SPIS_ORC_ORC_Msk (0xFFUL << SPIS_ORC_ORC_Pos)
-# 13279 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 13279 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define TEMP_TASKS_START_TASKS_START_Pos (0UL)
 #define TEMP_TASKS_START_TASKS_START_Msk (0x1UL << TEMP_TASKS_START_TASKS_START_Pos)
 #define TEMP_TASKS_START_TASKS_START_Trigger (1UL)
@@ -25971,7 +25966,7 @@ typedef struct {
 
 #define TEMP_T4_T4_Pos (0UL)
 #define TEMP_T4_T4_Msk (0xFFUL << TEMP_T4_T4_Pos)
-# 13454 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 13454 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define TIMER_TASKS_START_TASKS_START_Pos (0UL)
 #define TIMER_TASKS_START_TASKS_START_Msk (0x1UL << TIMER_TASKS_START_TASKS_START_Pos)
 #define TIMER_TASKS_START_TASKS_START_Trigger (1UL)
@@ -26224,7 +26219,7 @@ typedef struct {
 
 #define TIMER_CC_CC_Pos (0UL)
 #define TIMER_CC_CC_Msk (0xFFFFFFFFUL << TIMER_CC_CC_Pos)
-# 13715 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 13715 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define TWI_TASKS_STARTRX_TASKS_STARTRX_Pos (0UL)
 #define TWI_TASKS_STARTRX_TASKS_STARTRX_Msk (0x1UL << TWI_TASKS_STARTRX_TASKS_STARTRX_Pos)
 #define TWI_TASKS_STARTRX_TASKS_STARTRX_Trigger (1UL)
@@ -26514,7 +26509,7 @@ typedef struct {
 
 #define TWI_ADDRESS_ADDRESS_Pos (0UL)
 #define TWI_ADDRESS_ADDRESS_Msk (0x7FUL << TWI_ADDRESS_ADDRESS_Pos)
-# 14013 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 14013 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define TWIM_TASKS_STARTRX_TASKS_STARTRX_Pos (0UL)
 #define TWIM_TASKS_STARTRX_TASKS_STARTRX_Msk (0x1UL << TWIM_TASKS_STARTRX_TASKS_STARTRX_Pos)
 #define TWIM_TASKS_STARTRX_TASKS_STARTRX_Trigger (1UL)
@@ -26942,7 +26937,7 @@ typedef struct {
 
 #define TWIM_ADDRESS_ADDRESS_Pos (0UL)
 #define TWIM_ADDRESS_ADDRESS_Msk (0x7FUL << TWIM_ADDRESS_ADDRESS_Pos)
-# 14449 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 14449 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define TWIS_TASKS_STOP_TASKS_STOP_Pos (0UL)
 #define TWIS_TASKS_STOP_TASKS_STOP_Msk (0x1UL << TWIS_TASKS_STOP_TASKS_STOP_Pos)
 #define TWIS_TASKS_STOP_TASKS_STOP_Trigger (1UL)
@@ -27336,7 +27331,7 @@ typedef struct {
 
 #define TWIS_ORC_ORC_Pos (0UL)
 #define TWIS_ORC_ORC_Msk (0xFFUL << TWIS_ORC_ORC_Pos)
-# 14851 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 14851 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define UART_TASKS_STARTRX_TASKS_STARTRX_Pos (0UL)
 #define UART_TASKS_STARTRX_TASKS_STARTRX_Msk (0x1UL << UART_TASKS_STARTRX_TASKS_STARTRX_Pos)
 #define UART_TASKS_STARTRX_TASKS_STARTRX_Trigger (1UL)
@@ -27695,7 +27690,7 @@ typedef struct {
 #define UART_CONFIG_HWFC_Msk (0x1UL << UART_CONFIG_HWFC_Pos)
 #define UART_CONFIG_HWFC_Disabled (0UL)
 #define UART_CONFIG_HWFC_Enabled (1UL)
-# 15218 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 15218 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define UARTE_TASKS_STARTRX_TASKS_STARTRX_Pos (0UL)
 #define UARTE_TASKS_STARTRX_TASKS_STARTRX_Msk (0x1UL << UARTE_TASKS_STARTRX_TASKS_STARTRX_Pos)
 #define UARTE_TASKS_STARTRX_TASKS_STARTRX_Trigger (1UL)
@@ -28266,7 +28261,7 @@ typedef struct {
 #define UARTE_CONFIG_HWFC_Msk (0x1UL << UARTE_CONFIG_HWFC_Pos)
 #define UARTE_CONFIG_HWFC_Disabled (0UL)
 #define UARTE_CONFIG_HWFC_Enabled (1UL)
-# 15797 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 15797 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define UICR_NRFFW_NRFFW_Pos (0UL)
 #define UICR_NRFFW_NRFFW_Msk (0xFFFFFFFFUL << UICR_NRFFW_NRFFW_Pos)
 
@@ -28347,7 +28342,7 @@ typedef struct {
 #define UICR_REGOUT0_VOUT_3V0 (4UL)
 #define UICR_REGOUT0_VOUT_3V3 (5UL)
 #define UICR_REGOUT0_VOUT_DEFAULT (7UL)
-# 15886 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 15886 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define USBD_TASKS_STARTEPIN_TASKS_STARTEPIN_Pos (0UL)
 #define USBD_TASKS_STARTEPIN_TASKS_STARTEPIN_Msk (0x1UL << USBD_TASKS_STARTEPIN_TASKS_STARTEPIN_Pos)
 #define USBD_TASKS_STARTEPIN_TASKS_STARTEPIN_Trigger (1UL)
@@ -29715,7 +29710,7 @@ typedef struct {
 
 #define USBD_ISOOUT_AMOUNT_AMOUNT_Pos (0UL)
 #define USBD_ISOOUT_AMOUNT_AMOUNT_Msk (0x3FFUL << USBD_ISOOUT_AMOUNT_AMOUNT_Pos)
-# 17262 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 17262 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define WDT_TASKS_START_TASKS_START_Pos (0UL)
 #define WDT_TASKS_START_TASKS_START_Msk (0x1UL << WDT_TASKS_START_TASKS_START_Pos)
 #define WDT_TASKS_START_TASKS_START_Trigger (1UL)
@@ -29889,11 +29884,11 @@ typedef struct {
 #define WDT_RR_RR_Pos (0UL)
 #define WDT_RR_RR_Msk (0xFFFFFFFFUL << WDT_RR_RR_Pos)
 #define WDT_RR_RR_Reload (0x6E524635UL)
-# 171 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h" 1
-# 43 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
+# 171 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h" 1
+# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
 #define NRF51_TO_NRF52840_H 
-# 56 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
+# 56 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
 #define UART0_IRQHandler UARTE0_UART0_IRQHandler
 
 
@@ -30093,7 +30088,7 @@ typedef struct {
 
 
 #define PSELSDA PSEL.SDA
-# 263 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
+# 263 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
 #define ERASEPROTECTEDPAGE ERASEPCR0
 
 
@@ -31164,16 +31159,16 @@ typedef struct {
 
 
 #define PPI_CHG3_CH0_Included PPI_CHG_CH0_Included
-# 172 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h" 1
-# 43 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
+# 172 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h" 1
+# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
 #define NRF52_TO_NRF52840_H 
-# 82 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
+# 82 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
 #define LPCOMP_HYST_HYST_NoHyst LPCOMP_HYST_HYST_Disabled
 
 
 #define LPCOMP_HYST_HYST_Hyst50mV LPCOMP_HYST_HYST_Enabled
-# 94 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
+# 94 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
 #define I2S_ENABLE_ENABLE_DISABLE I2S_ENABLE_ENABLE_Disabled
 
 
@@ -31235,17 +31230,17 @@ typedef struct {
 
 
 #define LPCOMP_RESULT_RESULT_Bellow LPCOMP_RESULT_RESULT_Below
-# 173 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
-# 192 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h" 1
-# 193 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
-# 58 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
-# 83 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 173 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
+# 192 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h" 1
+# 193 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
+# 58 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
+# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 extern uint32_t __StackTop;
 extern uint32_t __StackLimit;
 #define STACK_BASE &__StackLimit
 #define STACK_TOP &__StackTop
-# 121 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 121 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 extern uint32_t __isr_vector;
 extern uint32_t __etext;
 #define CODE_START ((uint32_t)&__isr_vector)
@@ -31258,19 +31253,19 @@ extern uint32_t __etext;
 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h" 1
-# 48 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h" 1
+# 48 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 #define NRF_MBR_H__ 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h" 1
-# 40 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h" 1
+# 40 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h"
 #define NRF_SVC__ 
-# 69 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h"
+# 69 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h"
 #define GCC_CAST_CPP 
 
 #define SVCALL(number,return_type,signature) _Pragma("GCC diagnostic push") _Pragma("GCC diagnostic ignored \"-Wreturn-type\"") __attribute__((naked)) __attribute__((unused)) static return_type signature { __asm( "svc %0\n" "bx r14" : : "I" (GCC_CAST_CPP number) : "r0" ); } _Pragma("GCC diagnostic pop")
-# 51 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h" 2
-# 61 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 51 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h" 2
+# 61 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 #define MBR_SVC_BASE (0x18)
 
 
@@ -31291,7 +31286,7 @@ extern uint32_t __etext;
 
 
 #define MBR_UICR_PARAM_PAGE_ADDR (&(NRF_UICR->NRFFW[1]))
-# 89 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 89 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 enum NRF_MBR_SVCS
 {
   SD_MBR_COMMAND = (0x18),
@@ -31308,7 +31303,7 @@ enum NRF_MBR_COMMANDS
   SD_MBR_COMMAND_RESERVED,
   SD_MBR_COMMAND_IRQ_FORWARD_ADDRESS_SET,
 };
-# 122 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 122 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 typedef struct
 {
   uint32_t *src;
@@ -31328,18 +31323,18 @@ typedef struct
   uint32_t *ptr2;
   uint32_t len;
 } sd_mbr_command_compare_t;
-# 165 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 165 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 typedef struct
 {
   uint32_t *bl_src;
   uint32_t bl_len;
 } sd_mbr_command_copy_bl_t;
-# 193 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 193 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 typedef struct
 {
   uint32_t address;
 } sd_mbr_command_vector_table_base_set_t;
-# 205 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 205 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 typedef struct
 {
   uint32_t address;
@@ -31363,21 +31358,21 @@ typedef struct
     sd_mbr_command_irq_forward_address_set_t irq_forward_address_set;
   } params;
 } sd_mbr_command_t;
-# 257 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 
-# 257 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 #pragma GCC diagnostic push
-# 257 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 
-# 257 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 257 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_mbr_command(sd_mbr_command_t* param) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_MBR_COMMAND) : "r0" ); }
-# 257 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 #pragma GCC diagnostic pop
-# 257 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
  ;
-# 134 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
+# 134 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
 #define BOOTLOADER_ADDRESS ((*(uint32_t *)MBR_BOOTLOADER_ADDR) == 0xFFFFFFFF ? *MBR_UICR_BOOTLOADER_ADDR : *(uint32_t *)MBR_BOOTLOADER_ADDR)
 #define MBR_PARAMS_PAGE_ADDRESS ((*(uint32_t *)MBR_PARAM_PAGE_ADDR) == 0xFFFFFFFF ? *MBR_UICR_PARAM_PAGE_ADDR : *(uint32_t *)MBR_PARAM_PAGE_ADDR)
 
@@ -31391,25 +31386,25 @@ enum
     UNIT_1_25_MS = 1250,
     UNIT_10_MS = 10000
 };
-# 159 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 159 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define VBITS(val) VBITS_32(val)
-# 179 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define VBITS_1(v) ((((v) & (0x0001U << 0)) != 0) ? 1U : 0U)
 #define VBITS_2(v) ((((v) & (0x0001U << 1)) != 0) ? VBITS_1 ((v) >> 1) + 1 : VBITS_1 (v))
 #define VBITS_4(v) ((((v) & (0x0003U << 2)) != 0) ? VBITS_2 ((v) >> 2) + 2 : VBITS_2 (v))
 #define VBITS_8(v) ((((v) & (0x000fU << 4)) != 0) ? VBITS_4 ((v) >> 4) + 4 : VBITS_4 (v))
 #define VBITS_16(v) ((((v) & (0x00ffU << 8)) != 0) ? VBITS_8 ((v) >> 8) + 8 : VBITS_8 (v))
 #define VBITS_32(v) ((((v) & (0xffffU << 16)) != 0) ? VBITS_16((v) >> 16) + 16 : VBITS_16(v))
-# 199 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 199 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define STRING_CONCATENATE_IMPL(lhs,rhs) lhs ## rhs
-# 209 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 209 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define STRING_CONCATENATE(lhs,rhs) STRING_CONCATENATE_IMPL(lhs, rhs)
-# 219 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 219 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define STATIC_ASSERT_SIMPLE(EXPR) _Static_assert(EXPR, "unspecified message")
 #define STATIC_ASSERT_MSG(EXPR,MSG) _Static_assert(EXPR, MSG)
-# 242 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 242 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define _SELECT_ASSERT_FUNC(x,EXPR,MSG,ASSERT_MACRO,...) ASSERT_MACRO
-# 256 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 256 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define STATIC_ASSERT(...) _SELECT_ASSERT_FUNC(x, ##__VA_ARGS__, STATIC_ASSERT_MSG(__VA_ARGS__), STATIC_ASSERT_SIMPLE(__VA_ARGS__))
 
 
@@ -31419,13 +31414,13 @@ enum
 
 
 #define NUM_VA_ARGS_IMPL(_0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,_21,_22,_23,_24,_25,_26,_27,_28,_29,_30,_31,_32,_33,_34,_35,_36,_37,_38,_39,_40,_41,_42,_43,_44,_45,_46,_47,_48,_49,_50,_51,_52,_53,_54,_55,_56,_57,_58,_59,_60,_61,_62,N,...) N
-# 280 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 280 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define NUM_VA_ARGS(...) NUM_VA_ARGS_IMPL(__VA_ARGS__, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
-# 289 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 289 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define NUM_VA_ARGS_LESS_1_IMPL(_ignored,_0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,_21,_22,_23,_24,_25,_26,_27,_28,_29,_30,_31,_32,_33,_34,_35,_36,_37,_38,_39,_40,_41,_42,_43,_44,_45,_46,_47,_48,_49,_50,_51,_52,_53,_54,_55,_56,_57,_58,_59,_60,_61,_62,N,...) N
-# 306 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 306 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define NUM_VA_ARGS_LESS_1(...) NUM_VA_ARGS_LESS_1_IMPL(__VA_ARGS__, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, ~)
-# 316 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 316 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 typedef uint8_t uint16_le_t[2];
 
 
@@ -31437,9 +31432,9 @@ typedef struct
     uint16_t size;
     uint8_t * p_data;
 } uint8_array_t;
-# 336 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 336 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define ROUNDED_DIV(A,B) (((A) + ((B) / 2)) / (B))
-# 346 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 346 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define IS_POWER_OF_TWO(A) ( ((A) != 0) && ((((A) - 1) & (A)) == 0) )
 
 
@@ -31449,18 +31444,18 @@ typedef struct
 
 
 #define MSEC_TO_UNITS(TIME,RESOLUTION) (((TIME) * 1000) / (RESOLUTION))
-# 367 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 367 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define CEIL_DIV(A,B) (((A) + (B) - 1) / (B))
-# 376 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 376 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define WORD_ALIGNED_MEM_BUFF(NAME,MIN_SIZE) static uint32_t NAME[CEIL_DIV(MIN_SIZE, sizeof(uint32_t))]
-# 387 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BYTES_TO_WORDS(n_bytes) (((n_bytes) + 3) >> 2)
 
 
 
 
 #define BYTES_PER_WORD (4)
-# 402 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 402 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define ALIGN_NUM(alignment,number) (((number) - 1) + (alignment) - (((number) - 1) % (alignment)))
 
 
@@ -31476,15 +31471,15 @@ typedef struct
 
 
 #define GET_ARG_2(a1,a2) a2
-# 429 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 429 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define CONTAINER_OF(ptr,type,member) (type *)((char *)ptr - offsetof(type, member))
-# 442 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 442 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_MASK(bcnt,boff) ( ((1U << (bcnt)) - 1U) << (boff) )
-# 455 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 455 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_GET(val,bcnt,boff) ( ( (val) & BF_MASK((bcnt), (boff)) ) >> (boff) )
-# 468 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 468 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_VAL(val,bcnt,boff) ( (((uint32_t)(val)) << (boff)) & BF_MASK(bcnt, boff) )
-# 477 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 477 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_BCNT_POS 0U
 
 #define BF_CX_BCNT_MASK (0xffU << BF_CX_BCNT_POS)
@@ -31492,41 +31487,41 @@ typedef struct
 #define BF_CX_BOFF_POS 8U
 
 #define BF_CX_BOFF_MASK (0xffU << BF_CX_BOFF_POS)
-# 499 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 499 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX(bcnt,boff) ( ((((uint32_t)(bcnt)) << BF_CX_BCNT_POS) & BF_CX_BCNT_MASK) | ((((uint32_t)(boff)) << BF_CX_BOFF_POS) & BF_CX_BOFF_MASK) )
-# 510 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 510 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_BCNT(bf_cx) ( ((bf_cx) & BF_CX_BCNT_MASK) >> BF_CX_BCNT_POS )
-# 521 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 521 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_BOFF(bf_cx) ( ((bf_cx) & BF_CX_BOFF_MASK) >> BF_CX_BOFF_POS )
-# 532 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 532 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_MASK(bf_cx) BF_MASK(BF_CX_BCNT(bf_cx), BF_CX_BOFF(bf_cx))
-# 548 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 548 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_GET(val,bf_cx) BF_GET(val, BF_CX_BCNT(bf_cx), BF_CX_BOFF(bf_cx))
-# 560 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 560 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_VAL(val,bf_cx) BF_VAL(val, BF_CX_BCNT(bf_cx), BF_CX_BOFF(bf_cx))
-# 584 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 584 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BRACKET_EXTRACT(a) BRACKET_EXTRACT_(a)
 #define BRACKET_EXTRACT_(a) BRACKET_EXTRACT__ a
 #define BRACKET_EXTRACT__(...) __VA_ARGS__
-# 600 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 600 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define NUM_VA_ARGS_IS_MORE_THAN_1(...) NUM_IS_MORE_THAN_1(NUM_VA_ARGS(__VA_ARGS__))
-# 618 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 618 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define NUM_IS_MORE_THAN_1(N) NUM_IS_MORE_THAN_1_(N)
 #define NUM_IS_MORE_THAN_1_(N) NUM_IS_MORE_THAN_1_PROBE_(NUM_IS_MORE_THAN_1_PROBE_ ## N, 1)
 #define NUM_IS_MORE_THAN_1_PROBE_(...) GET_VA_ARG_1(GET_ARGS_AFTER_1(__VA_ARGS__))
 #define NUM_IS_MORE_THAN_1_PROBE_0 ~, 0
 #define NUM_IS_MORE_THAN_1_PROBE_1 ~, 0
-# 631 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 631 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define GET_VA_ARG_1(...) GET_VA_ARG_1_(__VA_ARGS__, )
 #define GET_VA_ARG_1_(a1,...) a1
-# 641 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 641 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define GET_ARGS_AFTER_1(...) GET_ARGS_AFTER_1_(__VA_ARGS__, )
 #define GET_ARGS_AFTER_1_(a1,...) __VA_ARGS__
-# 653 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 653 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define FIELD_SIZE(struct_type,field) sizeof(((struct struct_type*)NULL)->field)
-# 666 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 666 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define FIELD_ARRAY_SIZE(struct_type,field) (FIELD_SIZE(struct_type, field) / FIELD_SIZE(struct_type, field[0]))
-# 678 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 678 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP(...) MACRO_MAP_(__VA_ARGS__)
 #define MACRO_MAP_(...) MACRO_MAP_N(NUM_VA_ARGS_LESS_1(__VA_ARGS__), __VA_ARGS__)
 
@@ -31537,7 +31532,7 @@ typedef struct
 
 #define MACRO_MAP_REC(...) MACRO_MAP_REC_(__VA_ARGS__)
 #define MACRO_MAP_REC_(...) MACRO_MAP_REC_N(NUM_VA_ARGS_LESS_1(__VA_ARGS__), __VA_ARGS__)
-# 700 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 700 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP_N(N,...) MACRO_MAP_N_(N, __VA_ARGS__)
 #define MACRO_MAP_N_(N,...) CONCAT_2(MACRO_MAP_, N)(__VA_ARGS__, )
 
@@ -31617,12 +31612,12 @@ typedef struct
 #define MACRO_MAP_REC_30(macro,a,...) macro(a) MACRO_MAP_REC_29(macro, __VA_ARGS__, )
 #define MACRO_MAP_REC_31(macro,a,...) macro(a) MACRO_MAP_REC_30(macro, __VA_ARGS__, )
 #define MACRO_MAP_REC_32(macro,a,...) macro(a) MACRO_MAP_REC_31(macro, __VA_ARGS__, )
-# 791 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 791 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP_FOR(...) MACRO_MAP_FOR_(__VA_ARGS__)
 #define MACRO_MAP_FOR_N_LIST 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32
 
 #define MACRO_MAP_FOR_(...) MACRO_MAP_FOR_N(NUM_VA_ARGS_LESS_1(__VA_ARGS__), __VA_ARGS__)
-# 808 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 808 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP_FOR_N(N,...) MACRO_MAP_FOR_N_(N, __VA_ARGS__)
 #define MACRO_MAP_FOR_N_(N,...) CONCAT_2(MACRO_MAP_FOR_, N)((MACRO_MAP_FOR_N_LIST), __VA_ARGS__, )
 
@@ -31659,10 +31654,10 @@ typedef struct
 #define MACRO_MAP_FOR_30(n_list,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list))) MACRO_MAP_FOR_29((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), macro, __VA_ARGS__, )
 #define MACRO_MAP_FOR_31(n_list,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list))) MACRO_MAP_FOR_30((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), macro, __VA_ARGS__, )
 #define MACRO_MAP_FOR_32(n_list,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list))) MACRO_MAP_FOR_31((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), macro, __VA_ARGS__, )
-# 857 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 857 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP_FOR_PARAM(param,...) MACRO_MAP_FOR_PARAM_(param, __VA_ARGS__)
 #define MACRO_MAP_FOR_PARAM_(param,...) MACRO_MAP_FOR_PARAM_N(NUM_VA_ARGS_LESS_1(__VA_ARGS__), param, __VA_ARGS__)
-# 870 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 870 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP_FOR_PARAM_N(N,param,...) MACRO_MAP_FOR_PARAM_N_(N, param, __VA_ARGS__)
 #define MACRO_MAP_FOR_PARAM_N_(N,param,...) CONCAT_2(MACRO_MAP_FOR_PARAM_, N)((MACRO_MAP_FOR_N_LIST), param, __VA_ARGS__, )
 
@@ -31700,7 +31695,7 @@ typedef struct
 #define MACRO_MAP_FOR_PARAM_30(n_list,param,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list)), param) MACRO_MAP_FOR_PARAM_29((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), param, macro, __VA_ARGS__, )
 #define MACRO_MAP_FOR_PARAM_31(n_list,param,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list)), param) MACRO_MAP_FOR_PARAM_30((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), param, macro, __VA_ARGS__, )
 #define MACRO_MAP_FOR_PARAM_32(n_list,param,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list)), param) MACRO_MAP_FOR_PARAM_31((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), param, macro, __VA_ARGS__, )
-# 919 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 919 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_REPEAT(count,macro,...) MACRO_REPEAT_(count, macro, __VA_ARGS__)
 #define MACRO_REPEAT_(count,macro,...) CONCAT_2(MACRO_REPEAT_, count)(macro, __VA_ARGS__)
 
@@ -31737,7 +31732,7 @@ typedef struct
 #define MACRO_REPEAT_30(macro,...) macro(__VA_ARGS__) MACRO_REPEAT_29(macro, __VA_ARGS__)
 #define MACRO_REPEAT_31(macro,...) macro(__VA_ARGS__) MACRO_REPEAT_30(macro, __VA_ARGS__)
 #define MACRO_REPEAT_32(macro,...) macro(__VA_ARGS__) MACRO_REPEAT_31(macro, __VA_ARGS__)
-# 969 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 969 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_REPEAT_FOR(count,macro,...) MACRO_REPEAT_FOR_(count, macro, __VA_ARGS__)
 #define MACRO_REPEAT_FOR_(count,macro,...) CONCAT_2(MACRO_REPEAT_FOR_, count)((MACRO_MAP_FOR_N_LIST), macro, __VA_ARGS__)
 
@@ -31782,19 +31777,19 @@ typedef struct
 
 
 #define PARAM_CBRACE(p) { p },
-# 1023 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1023 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint64_t value_rescale(uint32_t value, uint32_t old_unit_reversal, uint16_t new_unit_reversal)
 {
     return (uint64_t)((((uint64_t)value * new_unit_reversal) + ((old_unit_reversal) / 2)) / (old_unit_reversal));
 }
-# 1035 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1035 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint16_encode(uint16_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) ((value & 0x00FF) >> 0);
     p_encoded_data[1] = (uint8_t) ((value & 0xFF00) >> 8);
     return sizeof(uint16_t);
 }
-# 1049 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1049 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint24_encode(uint32_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) ((value & 0x000000FF) >> 0);
@@ -31802,7 +31797,7 @@ static inline uint8_t uint24_encode(uint32_t value, uint8_t * p_encoded_data)
     p_encoded_data[2] = (uint8_t) ((value & 0x00FF0000) >> 16);
     return 3;
 }
-# 1064 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1064 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint32_encode(uint32_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) ((value & 0x000000FF) >> 0);
@@ -31811,7 +31806,7 @@ static inline uint8_t uint32_encode(uint32_t value, uint8_t * p_encoded_data)
     p_encoded_data[3] = (uint8_t) ((value & 0xFF000000) >> 24);
     return sizeof(uint32_t);
 }
-# 1080 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1080 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint40_encode(uint64_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) ((value & 0x00000000FF) >> 0);
@@ -31821,7 +31816,7 @@ static inline uint8_t uint40_encode(uint64_t value, uint8_t * p_encoded_data)
     p_encoded_data[4] = (uint8_t) ((value & 0xFF00000000) >> 32);
     return 5;
 }
-# 1097 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1097 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint48_encode(uint64_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) ((value & 0x0000000000FF) >> 0);
@@ -31897,7 +31892,7 @@ static inline uint32_t uint32_big_decode(const uint8_t * p_encoded_data)
              (((uint32_t)((uint8_t *)p_encoded_data)[2]) << 8) |
              (((uint32_t)((uint8_t *)p_encoded_data)[3]) << 0) );
 }
-# 1181 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1181 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint16_big_encode(uint16_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) (value >> 8);
@@ -31905,7 +31900,7 @@ static inline uint8_t uint16_big_encode(uint16_t value, uint8_t * p_encoded_data
 
     return sizeof(uint16_t);
 }
-# 1199 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1199 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint32_big_encode(uint32_t value, uint8_t * p_encoded_data)
 {
     *(uint32_t *)p_encoded_data = __REV(value);
@@ -31942,7 +31937,7 @@ static inline uint64_t uint48_decode(const uint8_t * p_encoded_data)
              (((uint64_t)((uint8_t *)p_encoded_data)[4]) << 32) |
              (((uint64_t)((uint8_t *)p_encoded_data)[5]) << 40 ));
 }
-# 1256 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1256 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t battery_level_in_percent(const uint16_t mvolts)
 {
     uint8_t battery_level;
@@ -31982,47 +31977,47 @@ static inline uint8_t battery_level_in_percent(const uint16_t mvolts)
 
 
 static inline 
-# 1294 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
+# 1294 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
                _Bool 
-# 1294 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1294 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
                     is_word_aligned(void const* p)
 {
     return (((uintptr_t)p & 0x03) == 0);
 }
-# 1307 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1307 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline 
-# 1307 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
+# 1307 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
                _Bool 
-# 1307 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1307 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
                     is_address_from_stack(void * ptr)
 {
     if (((uint32_t)ptr >= (uint32_t)&__StackLimit) &&
         ((uint32_t)ptr < (uint32_t)&__StackTop) )
     {
         return 
-# 1312 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
+# 1312 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
               1
-# 1312 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1312 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
                   ;
     }
     else
     {
         return 
-# 1316 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
+# 1316 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
               0
-# 1316 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1316 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
                    ;
     }
 }
-# 62 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h" 1
-# 50 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 62 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h" 1
+# 50 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define SDK_MACROS_H__ 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h" 1
-# 45 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h" 1
+# 45 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
 #define NRF_ASSERT_H_ 
-# 75 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
+# 75 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
 void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 
@@ -32030,18 +32025,18 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 
 #define NRF_ASSERT_PRESENT 0
-# 103 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
+# 103 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
 #define ASSERT(expr) if (NRF_ASSERT_PRESENT) { if (expr) { } else { assert_nrf_callback((uint16_t)__LINE__, (uint8_t *)__FILE__); } }
-# 53 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h" 2
-# 78 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 53 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h" 2
+# 78 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define NRF_PARAM_CHECK(_module,_cond,_err,_printfn) do { if ((_cond)) { } else if (!(_module ## _PARAM_CHECK_DISABLED)) { _printfn("%s check failed in %s() with value 0x%x.", #_cond, __func__, _err); return (_err); } else { ASSERT((_cond)); } } while (0);
-# 106 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 106 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_TRUE(statement,err_code) do { if (!(statement)) { return err_code; } } while (0)
-# 121 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 121 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_TRUE_VOID(statement) VERIFY_TRUE((statement), )
-# 133 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 133 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_FALSE(statement,err_code) do { if ((statement)) { return err_code; } } while (0)
-# 148 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 148 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_FALSE_VOID(statement) VERIFY_FALSE((statement), )
 
 
@@ -32051,13 +32046,13 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 
 #define VERIFY_SUCCESS(statement) do { uint32_t _err_code = (uint32_t) (statement); if (_err_code != NRF_SUCCESS) { return _err_code; } } while(0)
-# 172 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 172 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_SUCCESS_VOID(err_code) VERIFY_TRUE_VOID((err_code) == NRF_SUCCESS)
-# 181 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 181 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_MODULE_INITIALIZED() VERIFY_TRUE((MODULE_INITIALIZED), NRF_ERROR_INVALID_STATE)
-# 190 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 190 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_MODULE_INITIALIZED_VOID() VERIFY_TRUE_VOID((MODULE_INITIALIZED))
-# 199 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 199 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_MODULE_INITIALIZED_BOOL() VERIFY_TRUE((MODULE_INITIALIZED), false)
 
 
@@ -32075,28 +32070,28 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 
 #define VERIFY_PARAM_NOT_NULL_VOID(param) VERIFY_FALSE_VOID(((param) == NULL))
-# 63 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 45 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 2
+# 63 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 45 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 2
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 1
-# 71 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 1
+# 71 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
 #define BLE_BAS_H__ 
 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 1
-# 50 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 1
+# 50 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #define BLE_H__ 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h" 1
-# 54 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h" 1
-# 55 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_err.h" 1
-# 55 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_err.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h" 1
+# 54 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h" 1
+# 55 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_err.h" 1
+# 55 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_err.h"
 #define NRF_BLE_ERR_H__ 
-# 65 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_err.h"
+# 65 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_err.h"
 #define BLE_ERROR_NOT_ENABLED (NRF_ERROR_STK_BASE_NUM+0x001)
 #define BLE_ERROR_INVALID_CONN_HANDLE (NRF_ERROR_STK_BASE_NUM+0x002)
 #define BLE_ERROR_INVALID_ATTR_HANDLE (NRF_ERROR_STK_BASE_NUM+0x003)
@@ -32114,16 +32109,16 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 #define NRF_GAP_ERR_BASE (NRF_ERROR_STK_BASE_NUM+0x200)
 #define NRF_GATTC_ERR_BASE (NRF_ERROR_STK_BASE_NUM+0x300)
 #define NRF_GATTS_ERR_BASE (NRF_ERROR_STK_BASE_NUM+0x400)
-# 56 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h" 1
-# 46 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 56 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h" 1
+# 46 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #define BLE_GAP_H__ 
 
 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_hci.h" 1
-# 46 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_hci.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_hci.h" 1
+# 46 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_hci.h"
 #define BLE_HCI_H__ 
 
 
@@ -32189,15 +32184,15 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 
 #define BLE_HCI_PARAMETER_OUT_OF_MANDATORY_RANGE 0x30
-# 121 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_hci.h"
+# 121 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_hci.h"
 #define BLE_HCI_CONTROLLER_BUSY 0x3A
 #define BLE_HCI_CONN_INTERVAL_UNACCEPTABLE 0x3B
 #define BLE_HCI_DIRECTED_ADVERTISER_TIMEOUT 0x3C
 #define BLE_HCI_CONN_TERMINATED_DUE_TO_MIC_FAILURE 0x3D
 #define BLE_HCI_CONN_FAILED_TO_BE_ESTABLISHED 0x3E
-# 52 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_ranges.h" 1
-# 60 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_ranges.h"
+# 52 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_ranges.h" 1
+# 60 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_ranges.h"
 #define BLE_RANGES_H__ 
 
 
@@ -32281,11 +32276,11 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 #define BLE_L2CAP_CFG_BASE 0xC0
 #define BLE_L2CAP_CFG_LAST 0xDF
-# 53 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_types.h" 1
-# 49 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_types.h"
+# 53 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_types.h" 1
+# 49 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_types.h"
 #define BLE_TYPES_H__ 
-# 62 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_types.h"
+# 62 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_types.h"
 #define BLE_CONN_HANDLE_INVALID 0xFFFF
 #define BLE_CONN_HANDLE_ALL 0xFFFE
 
@@ -32402,7 +32397,7 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 
 #define BLE_UUID_NEQ(p_uuid1,p_uuid2) (((p_uuid1)->type != (p_uuid2)->type) || ((p_uuid1)->uuid != (p_uuid2)->uuid))
-# 186 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_types.h"
+# 186 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_types.h"
 typedef struct
 {
   uint8_t uuid128[16];
@@ -32421,8 +32416,8 @@ typedef struct
   uint8_t *p_data;
   uint16_t len;
 } ble_data_t;
-# 54 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h" 2
-# 65 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 54 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h" 2
+# 65 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 enum BLE_GAP_SVCS
 {
   SD_BLE_GAP_ADDR_SET = 0x6C,
@@ -32537,7 +32532,7 @@ enum BLE_GAP_TX_POWER_ROLES
   BLE_GAP_TX_POWER_ROLE_SCAN_INIT = 2,
   BLE_GAP_TX_POWER_ROLE_CONN = 3,
 };
-# 187 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 187 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #define BLE_ERROR_GAP_UUID_LIST_MISMATCH (NRF_GAP_ERR_BASE + 0x000)
 #define BLE_ERROR_GAP_DISCOVERABLE_WITH_WHITELIST (NRF_GAP_ERR_BASE + 0x001)
 #define BLE_ERROR_GAP_INVALID_BLE_ADDR (NRF_GAP_ERR_BASE + 0x002)
@@ -32699,7 +32694,7 @@ enum BLE_GAP_TX_POWER_ROLES
 
 #define BLE_GAP_SCAN_TIMEOUT_MIN 0x0001
 #define BLE_GAP_SCAN_TIMEOUT_UNLIMITED 0x0000
-# 356 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 356 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #define BLE_GAP_SCAN_BUFFER_MIN (31)
 
 #define BLE_GAP_SCAN_BUFFER_MAX (31)
@@ -32709,7 +32704,7 @@ enum BLE_GAP_TX_POWER_ROLES
 #define BLE_GAP_SCAN_BUFFER_EXTENDED_MAX (1650)
 
 #define BLE_GAP_SCAN_BUFFER_EXTENDED_MAX_SUPPORTED (255)
-# 379 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 379 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #define BLE_GAP_ADV_TYPE_CONNECTABLE_SCANNABLE_UNDIRECTED 0x01
 
 #define BLE_GAP_ADV_TYPE_CONNECTABLE_NONSCANNABLE_DIRECTED_HIGH_DUTY_CYCLE 0x02
@@ -32890,7 +32885,7 @@ enum BLE_GAP_TX_POWER_ROLES
 
 
 #define BLE_GAP_PHYS_SUPPORTED (BLE_GAP_PHY_1MBPS | BLE_GAP_PHY_2MBPS | BLE_GAP_PHY_CODED)
-# 567 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 567 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #define BLE_GAP_CONN_SEC_MODE_SET_NO_ACCESS(ptr) do {(ptr)->sm = 0; (ptr)->lv = 0;} while(0)
 
 #define BLE_GAP_CONN_SEC_MODE_SET_OPEN(ptr) do {(ptr)->sm = 1; (ptr)->lv = 1;} while(0)
@@ -33051,7 +33046,7 @@ typedef struct
   uint8_t addr[(6)];
 
 } ble_gap_addr_t;
-# 740 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 740 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   uint16_t min_conn_interval;
@@ -33059,7 +33054,7 @@ typedef struct
   uint16_t slave_latency;
   uint16_t conn_sup_timeout;
 } ble_gap_conn_params_t;
-# 759 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 759 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   uint8_t sm : 4;
@@ -33095,7 +33090,7 @@ typedef struct
 {
   ble_gap_adv_properties_t properties;
   ble_gap_addr_t const *p_peer_addr;
-# 807 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 807 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
   uint32_t interval;
 
 
@@ -33124,7 +33119,7 @@ typedef struct
 
 
   uint8_t secondary_phy;
-# 844 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 844 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
   uint8_t set_id:4;
 
 
@@ -33136,7 +33131,7 @@ typedef struct
 
 
 } ble_gap_adv_params_t;
-# 867 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 867 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   ble_data_t adv_data;
@@ -33172,7 +33167,7 @@ typedef struct
 
 
   uint8_t scan_phys;
-# 919 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 919 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
   uint16_t interval;
   uint16_t window;
 
@@ -33184,7 +33179,7 @@ typedef struct
 
 
 } ble_gap_scan_params_t;
-# 949 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 949 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   uint8_t privacy_mode;
@@ -33194,7 +33189,7 @@ typedef struct
 
 
 } ble_gap_privacy_params_t;
-# 968 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 968 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   uint8_t tx_phys;
@@ -33490,7 +33485,7 @@ typedef struct
 
 
 } ble_gap_evt_adv_set_terminated_t;
-# 1272 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1272 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   ble_gap_adv_report_type_t type;
@@ -33498,7 +33493,7 @@ typedef struct
 
 
   ble_gap_addr_t direct_addr;
-# 1287 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1287 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
   uint8_t primary_phy;
 
   uint8_t secondary_phy;
@@ -33610,7 +33605,7 @@ typedef struct
     ble_gap_evt_qos_channel_survey_report_t qos_channel_survey_report;
   } params;
 } ble_gap_evt_t;
-# 1408 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1408 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   uint8_t conn_count;
@@ -33621,7 +33616,7 @@ typedef struct
 
 
 } ble_gap_conn_cfg_t;
-# 1432 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1432 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   uint8_t adv_set_count;
@@ -33631,7 +33626,7 @@ typedef struct
   uint8_t qos_channel_survey_role_available:1;
 
 } ble_gap_cfg_role_count_t;
-# 1471 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1471 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   ble_gap_conn_sec_mode_t write_perm;
@@ -33668,36 +33663,36 @@ typedef union
   ble_gap_cfg_car_incl_cfg_t car_include_cfg;
 
 } ble_gap_cfg_t;
-# 1532 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1532 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   uint16_t conn_handle;
   uint8_t ch_map[5];
 } ble_gap_opt_ch_map_t;
-# 1561 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1561 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   uint16_t conn_handle;
   uint16_t requested_latency;
   uint16_t * p_actual_latency;
 } ble_gap_opt_local_conn_latency_t;
-# 1580 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1580 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   uint16_t conn_handle;
   uint8_t disable : 1;
 } ble_gap_opt_slave_latency_disable_t;
-# 1601 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1601 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   uint8_t const * p_passkey;
 } ble_gap_opt_passkey_t;
-# 1622 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1622 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
    uint8_t enable : 1;
 } ble_gap_opt_compat_mode_1_t;
-# 1647 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1647 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 typedef struct
 {
   uint16_t conn_handle;
@@ -33729,613 +33724,613 @@ typedef struct
 
 
 } ble_gap_conn_event_trigger_t;
-# 1711 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1711 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1711 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1711 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 1711 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1711 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1711 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1711 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1711 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1711 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_addr_set(ble_gap_addr_t const *p_addr) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_ADDR_SET) : "r0" ); }
-# 1711 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1711 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 1711 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1711 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 1724 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1724 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1724 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1724 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 1724 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1724 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1724 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1724 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1724 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1724 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_addr_get(ble_gap_addr_t *p_addr) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_ADDR_GET) : "r0" ); }
-# 1724 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1724 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 1724 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1724 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 1743 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1743 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1743 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1743 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 1743 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1743 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1743 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1743 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1743 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1743 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_adv_addr_get(uint8_t adv_handle, ble_gap_addr_t *p_addr) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_ADV_ADDR_GET) : "r0" ); }
-# 1743 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1743 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 1743 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1743 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 1769 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1769 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1769 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1769 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 1769 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1769 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1769 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1769 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1769 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1769 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_whitelist_set(ble_gap_addr_t const * const * pp_wl_addrs, uint8_t len) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_WHITELIST_SET) : "r0" ); }
-# 1769 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1769 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 1769 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1769 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 1800 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1800 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1800 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1800 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 1800 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1800 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1800 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1800 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1800 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1800 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_device_identities_set(ble_gap_id_key_t const * const * pp_id_keys, ble_gap_irk_t const * const * pp_local_irks, uint8_t len) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_DEVICE_IDENTITIES_SET) : "r0" ); }
-# 1800 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1800 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 1800 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1800 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 1828 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1828 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1828 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1828 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 1828 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1828 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1828 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1828 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1828 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1828 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_privacy_set(ble_gap_privacy_params_t const *p_privacy_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_PRIVACY_SET) : "r0" ); }
-# 1828 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1828 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 1828 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1828 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 1842 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1842 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1842 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1842 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 1842 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1842 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1842 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1842 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1842 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1842 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_privacy_get(ble_gap_privacy_params_t *p_privacy_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_PRIVACY_GET) : "r0" ); }
-# 1842 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1842 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 1842 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1842 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 1889 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1889 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1889 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1889 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 1889 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1889 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1889 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1889 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1889 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1889 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_adv_set_configure(uint8_t *p_adv_handle, ble_gap_adv_data_t const *p_adv_data, ble_gap_adv_params_t const *p_adv_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_ADV_SET_CONFIGURE) : "r0" ); }
-# 1889 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1889 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 1889 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1889 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 1938 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1938 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1938 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1938 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 1938 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1938 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1938 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1938 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1938 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1938 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_adv_start(uint8_t adv_handle, uint8_t conn_cfg_tag) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_ADV_START) : "r0" ); }
-# 1938 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1938 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 1938 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1938 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 1954 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1954 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1954 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1954 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 1954 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1954 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1954 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1954 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1954 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1954 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_adv_stop(uint8_t adv_handle) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_ADV_STOP) : "r0" ); }
-# 1954 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1954 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 1954 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1954 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 1992 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1992 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1992 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1992 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 1992 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1992 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 1992 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1992 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1992 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1992 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_conn_param_update(uint16_t conn_handle, ble_gap_conn_params_t const *p_conn_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_CONN_PARAM_UPDATE) : "r0" ); }
-# 1992 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1992 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 1992 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 1992 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2016 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2016 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2016 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2016 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2016 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2016 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2016 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2016 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2016 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2016 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_disconnect(uint16_t conn_handle, uint8_t hci_status_code) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_DISCONNECT) : "r0" ); }
-# 2016 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2016 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2016 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2016 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2043 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2043 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2043 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2043 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2043 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2043 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2043 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2043 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2043 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2043 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_tx_power_set(uint8_t role, uint16_t handle, int8_t tx_power) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_TX_POWER_SET) : "r0" ); }
-# 2043 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2043 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2043 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2043 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2053 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2053 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2053 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2053 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2053 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2053 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2053 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2053 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2053 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2053 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_appearance_set(uint16_t appearance) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_APPEARANCE_SET) : "r0" ); }
-# 2053 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2053 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2053 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2053 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2063 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2063 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2063 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2063 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2063 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2063 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2063 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2063 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2063 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2063 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_appearance_get(uint16_t *p_appearance) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_APPEARANCE_GET) : "r0" ); }
-# 2063 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2063 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2063 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2063 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2076 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2076 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2076 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2076 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2076 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2076 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2076 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2076 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2076 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2076 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_ppcp_set(ble_gap_conn_params_t const *p_conn_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_PPCP_SET) : "r0" ); }
-# 2076 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2076 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2076 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2076 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2088 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2088 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2088 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2088 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2088 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2088 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2088 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2088 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2088 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2088 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_ppcp_get(ble_gap_conn_params_t *p_conn_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_PPCP_GET) : "r0" ); }
-# 2088 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2088 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2088 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2088 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2106 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2106 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2106 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2106 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2106 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2106 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2106 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2106 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2106 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2106 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_device_name_set(ble_gap_conn_sec_mode_t const *p_write_perm, uint8_t const *p_dev_name, uint16_t len) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_DEVICE_NAME_SET) : "r0" ); }
-# 2106 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2106 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2106 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2106 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2123 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2123 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2123 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2123 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2123 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2123 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2123 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2123 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2123 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2123 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_device_name_get(uint8_t *p_dev_name, uint16_t *p_len) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_DEVICE_NAME_GET) : "r0" ); }
-# 2123 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2123 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2123 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2123 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2179 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2179 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2179 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2179 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2179 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_authenticate(uint16_t conn_handle, ble_gap_sec_params_t const *p_sec_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_AUTHENTICATE) : "r0" ); }
-# 2179 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2179 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2242 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2242 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2242 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2242 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2242 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2242 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2242 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2242 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2242 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2242 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_sec_params_reply(uint16_t conn_handle, uint8_t sec_status, ble_gap_sec_params_t const *p_sec_params, ble_gap_sec_keyset_t const *p_sec_keyset) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_SEC_PARAMS_REPLY) : "r0" ); }
-# 2242 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2242 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2242 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2242 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2276 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2276 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2276 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2276 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2276 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2276 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2276 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2276 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2276 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2276 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_auth_key_reply(uint16_t conn_handle, uint8_t key_type, uint8_t const *p_key) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_AUTH_KEY_REPLY) : "r0" ); }
-# 2276 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2276 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2276 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2276 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2312 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2312 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2312 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2312 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2312 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2312 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2312 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2312 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2312 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2312 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_lesc_dhkey_reply(uint16_t conn_handle, ble_gap_lesc_dhkey_t const *p_dhkey) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_LESC_DHKEY_REPLY) : "r0" ); }
-# 2312 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2312 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2312 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2312 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2334 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2334 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2334 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2334 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2334 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2334 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2334 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2334 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2334 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2334 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_keypress_notify(uint16_t conn_handle, uint8_t kp_not) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_KEYPRESS_NOTIFY) : "r0" ); }
-# 2334 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2334 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2334 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2334 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2355 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2355 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2355 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2355 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2355 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2355 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2355 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2355 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2355 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2355 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_lesc_oob_data_get(uint16_t conn_handle, ble_gap_lesc_p256_pk_t const *p_pk_own, ble_gap_lesc_oob_data_t *p_oobd_own) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_LESC_OOB_DATA_GET) : "r0" ); }
-# 2355 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2355 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2355 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2355 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2387 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2387 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2387 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2387 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2387 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_lesc_oob_data_set(uint16_t conn_handle, ble_gap_lesc_oob_data_t const *p_oobd_own, ble_gap_lesc_oob_data_t const *p_oobd_peer) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_LESC_OOB_DATA_SET) : "r0" ); }
-# 2387 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2387 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2387 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2416 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2416 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2416 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2416 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2416 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_encrypt(uint16_t conn_handle, ble_gap_master_id_t const *p_master_id, ble_gap_enc_info_t const *p_enc_info) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_ENCRYPT) : "r0" ); }
-# 2416 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2416 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2442 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2442 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2442 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2442 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2442 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2442 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2442 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2442 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2442 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2442 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_sec_info_reply(uint16_t conn_handle, ble_gap_enc_info_t const *p_enc_info, ble_gap_irk_t const *p_id_info, ble_gap_sign_info_t const *p_sign_info) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_SEC_INFO_REPLY) : "r0" ); }
-# 2442 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2442 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2442 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2442 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2454 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2454 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2454 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2454 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2454 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2454 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2454 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2454 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2454 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2454 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_conn_sec_get(uint16_t conn_handle, ble_gap_conn_sec_t *p_conn_sec) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_CONN_SEC_GET) : "r0" ); }
-# 2454 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2454 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2454 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2454 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2480 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2480 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2480 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2480 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2480 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2480 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2480 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2480 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2480 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2480 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_rssi_start(uint16_t conn_handle, uint8_t threshold_dbm, uint8_t skip_count) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_RSSI_START) : "r0" ); }
-# 2480 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2480 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2480 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2480 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2499 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2499 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2499 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2499 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2499 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2499 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2499 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2499 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2499 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2499 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_rssi_stop(uint16_t conn_handle) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_RSSI_STOP) : "r0" ); }
-# 2499 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2499 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2499 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2499 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2521 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2521 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2521 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2521 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2521 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2521 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2521 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2521 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2521 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2521 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_rssi_get(uint16_t conn_handle, int8_t *p_rssi, uint8_t *p_ch_index) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_RSSI_GET) : "r0" ); }
-# 2521 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2521 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2521 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2521 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2574 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2574 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2574 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2574 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2574 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2574 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2574 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2574 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2574 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2574 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_scan_start(ble_gap_scan_params_t const *p_scan_params, ble_data_t const * p_adv_report_buffer) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_SCAN_START) : "r0" ); }
-# 2574 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2574 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2574 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2574 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2589 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2589 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2589 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2589 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2589 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2589 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2589 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2589 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2589 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2589 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_scan_stop(void) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_SCAN_STOP) : "r0" ); }
-# 2589 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2589 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2589 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2589 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2635 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2635 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2635 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2635 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2635 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2635 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2635 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2635 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2635 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2635 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_connect(ble_gap_addr_t const *p_peer_addr, ble_gap_scan_params_t const *p_scan_params, ble_gap_conn_params_t const *p_conn_params, uint8_t conn_cfg_tag) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_CONNECT) : "r0" ); }
-# 2635 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2635 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2635 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2635 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2648 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2648 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2648 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2648 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2648 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2648 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2648 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2648 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2648 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2648 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_connect_cancel(void) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_CONNECT_CANCEL) : "r0" ); }
-# 2648 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2648 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2648 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2648 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2704 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2704 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2704 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2704 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2704 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2704 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2704 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2704 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2704 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2704 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_phy_update(uint16_t conn_handle, ble_gap_phys_t const *p_gap_phys) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_PHY_UPDATE) : "r0" ); }
-# 2704 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2704 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2704 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2704 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2742 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2742 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2742 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2742 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2742 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2742 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2742 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2742 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2742 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2742 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_data_length_update(uint16_t conn_handle, ble_gap_data_length_params_t const *p_dl_params, ble_gap_data_length_limitation_t *p_dl_limitation) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_DATA_LENGTH_UPDATE) : "r0" ); }
-# 2742 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2742 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2742 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2742 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2774 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2774 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2774 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2774 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2774 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2774 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2774 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2774 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2774 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2774 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_qos_channel_survey_start(uint32_t interval_us) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_QOS_CHANNEL_SURVEY_START) : "r0" ); }
-# 2774 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2774 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2774 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2774 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2784 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2784 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2784 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2784 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2784 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2784 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2784 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2784 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2784 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2784 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_qos_channel_survey_stop(void) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_QOS_CHANNEL_SURVEY_STOP) : "r0" ); }
-# 2784 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2784 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2784 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2784 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2808 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2808 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2808 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2808 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2808 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2808 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2808 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2808 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2808 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2808 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_next_conn_evt_counter_get(uint16_t conn_handle, uint16_t * p_counter) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_NEXT_CONN_EVT_COUNTER_GET) : "r0" ); }
-# 2808 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2808 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2808 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2808 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2830 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2830 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2830 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2830 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2830 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2830 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2830 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2830 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2830 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2830 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_conn_evt_trigger_start(uint16_t conn_handle, ble_gap_conn_event_trigger_t const * p_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_CONN_EVT_TRIGGER_START) : "r0" ); }
-# 2830 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2830 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2830 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2830 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 2841 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2841 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2841 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2841 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic push
-# 2841 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2841 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 
-# 2841 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2841 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 2841 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2841 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gap_conn_evt_trigger_stop(uint16_t conn_handle) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GAP_CONN_EVT_TRIGGER_STOP) : "r0" ); }
-# 2841 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2841 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
 #pragma GCC diagnostic pop
-# 2841 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
+# 2841 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h"
  ;
-# 57 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h" 1
-# 46 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 57 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h" 1
+# 46 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #define BLE_L2CAP_H__ 
-# 85 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 85 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 enum BLE_L2CAP_SVCS
 {
   SD_BLE_L2CAP_CH_SETUP = 0xB8 + 0,
@@ -34407,7 +34402,7 @@ enum BLE_L2CAP_EVTS
 #define BLE_L2CAP_CH_STATUS_CODE_UNACCEPTABLE_PARAMS (0x000B)
 #define BLE_L2CAP_CH_STATUS_CODE_NOT_UNDERSTOOD (0x8000)
 #define BLE_L2CAP_CH_STATUS_CODE_TIMEOUT (0xC000)
-# 175 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 175 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 typedef struct
 {
   uint16_t rx_mps;
@@ -34537,81 +34532,81 @@ typedef struct
     ble_l2cap_evt_ch_tx_t tx;
   } params;
 } ble_l2cap_evt_t;
-# 350 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 350 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 
-# 350 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 350 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic push
-# 350 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 350 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 
-# 350 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 350 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 350 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 350 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_l2cap_ch_setup(uint16_t conn_handle, uint16_t *p_local_cid, ble_l2cap_ch_setup_params_t const *p_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_L2CAP_CH_SETUP) : "r0" ); }
-# 350 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 350 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic pop
-# 350 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 350 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
  ;
-# 373 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 373 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 
-# 373 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 373 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic push
-# 373 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 373 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 
-# 373 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 373 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 373 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 373 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_l2cap_ch_release(uint16_t conn_handle, uint16_t local_cid) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_L2CAP_CH_RELEASE) : "r0" ); }
-# 373 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 373 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic pop
-# 373 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 373 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
  ;
-# 407 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 407 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 
-# 407 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 407 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic push
-# 407 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 407 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 
-# 407 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 407 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 407 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 407 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_l2cap_ch_rx(uint16_t conn_handle, uint16_t local_cid, ble_data_t const *p_sdu_buf) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_L2CAP_CH_RX) : "r0" ); }
-# 407 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 407 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic pop
-# 407 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 407 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
  ;
-# 452 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 452 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 
-# 452 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 452 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic push
-# 452 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 452 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 
-# 452 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 452 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 452 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 452 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_l2cap_ch_tx(uint16_t conn_handle, uint16_t local_cid, ble_data_t const *p_sdu_buf) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_L2CAP_CH_TX) : "r0" ); }
-# 452 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 452 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic pop
-# 452 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 452 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
  ;
-# 496 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 496 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 
-# 496 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 496 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic push
-# 496 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 496 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 
-# 496 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 496 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 496 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 496 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_l2cap_ch_flow_control(uint16_t conn_handle, uint16_t local_cid, uint16_t credits, uint16_t *p_credits) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_L2CAP_CH_FLOW_CONTROL) : "r0" ); }
-# 496 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 496 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
 #pragma GCC diagnostic pop
-# 496 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
+# 496 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_l2cap.h"
  ;
-# 58 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatt.h" 1
-# 46 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatt.h"
+# 58 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatt.h" 1
+# 46 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatt.h"
 #define BLE_GATT_H__ 
-# 64 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatt.h"
+# 64 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatt.h"
 #define BLE_GATT_ATT_MTU_DEFAULT 23
 
 
@@ -34726,7 +34721,7 @@ typedef struct
 
 #define BLE_GATT_CPF_NAMESPACE_BTSIG 0x01
 #define BLE_GATT_CPF_NAMESPACE_DESCRIPTION_UNKNOWN 0x0000
-# 190 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatt.h"
+# 190 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatt.h"
 typedef struct
 {
   uint16_t att_mtu;
@@ -34758,11 +34753,11 @@ typedef struct
   uint8_t reliable_wr :1;
   uint8_t wr_aux :1;
 } ble_gatt_char_ext_props_t;
-# 59 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h" 1
-# 46 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h" 1
+# 46 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #define BLE_GATTC_H__ 
-# 65 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 65 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 enum BLE_GATTC_SVCS
 {
   SD_BLE_GATTC_PRIMARY_SERVICES_DISCOVER = 0x9B,
@@ -34805,7 +34800,7 @@ enum BLE_GATTC_OPTS
 {
   BLE_GATTC_OPT_UUID_DISC = 0x60,
 };
-# 115 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 115 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #define BLE_ERROR_GATTC_PROC_NOT_PERMITTED (NRF_GATTC_ERR_BASE + 0x000)
 
 
@@ -34818,7 +34813,7 @@ enum BLE_GATTC_OPTS
 
 
 #define BLE_GATTC_WRITE_CMD_TX_QUEUE_SIZE_DEFAULT 1
-# 137 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 137 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 typedef struct
 {
   uint8_t write_cmd_tx_queue_size;
@@ -35037,7 +35032,7 @@ typedef struct
     ble_gattc_evt_write_cmd_tx_complete_t write_cmd_tx_complete;
   } params;
 } ble_gattc_evt_t;
-# 378 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 378 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 typedef struct
 {
   uint8_t auto_add_vs_enable : 1;
@@ -35048,161 +35043,161 @@ typedef union
 {
   ble_gattc_opt_uuid_disc_t uuid_disc;
 } ble_gattc_opt_t;
-# 419 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 419 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 419 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 419 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic push
-# 419 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 419 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 419 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 419 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 419 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 419 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gattc_primary_services_discover(uint16_t conn_handle, uint16_t start_handle, ble_uuid_t const *p_srvc_uuid) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTC_PRIMARY_SERVICES_DISCOVER) : "r0" ); }
-# 419 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 419 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic pop
-# 419 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 419 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  ;
-# 447 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 447 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 447 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 447 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic push
-# 447 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 447 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 447 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 447 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 447 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 447 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gattc_relationships_discover(uint16_t conn_handle, ble_gattc_handle_range_t const *p_handle_range) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTC_RELATIONSHIPS_DISCOVER) : "r0" ); }
-# 447 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 447 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic pop
-# 447 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 447 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  ;
-# 474 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 474 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 474 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 474 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic push
-# 474 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 474 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 474 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 474 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 474 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 474 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gattc_characteristics_discover(uint16_t conn_handle, ble_gattc_handle_range_t const *p_handle_range) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTC_CHARACTERISTICS_DISCOVER) : "r0" ); }
-# 474 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 474 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic pop
-# 474 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 474 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  ;
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic push
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gattc_descriptors_discover(uint16_t conn_handle, ble_gattc_handle_range_t const *p_handle_range) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTC_DESCRIPTORS_DISCOVER) : "r0" ); }
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic pop
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  ;
-# 528 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 528 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 528 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 528 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic push
-# 528 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 528 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 528 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 528 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 528 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 528 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gattc_char_value_by_uuid_read(uint16_t conn_handle, ble_uuid_t const *p_uuid, ble_gattc_handle_range_t const *p_handle_range) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTC_CHAR_VALUE_BY_UUID_READ) : "r0" ); }
-# 528 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 528 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic pop
-# 528 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 528 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  ;
-# 555 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 555 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 555 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 555 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic push
-# 555 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 555 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 555 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 555 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 555 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 555 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gattc_read(uint16_t conn_handle, uint16_t handle, uint16_t offset) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTC_READ) : "r0" ); }
-# 555 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 555 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic pop
-# 555 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 555 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  ;
-# 581 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 581 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic push
-# 581 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 581 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 581 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gattc_char_values_read(uint16_t conn_handle, uint16_t const *p_handles, uint16_t handle_count) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTC_CHAR_VALUES_READ) : "r0" ); }
-# 581 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic pop
-# 581 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  ;
-# 628 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 628 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 628 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 628 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic push
-# 628 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 628 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 628 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 628 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 628 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 628 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gattc_write(uint16_t conn_handle, ble_gattc_write_params_t const *p_write_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTC_WRITE) : "r0" ); }
-# 628 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 628 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic pop
-# 628 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 628 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  ;
-# 646 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 646 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 646 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 646 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic push
-# 646 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 646 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 646 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 646 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 646 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 646 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gattc_hv_confirm(uint16_t conn_handle, uint16_t handle) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTC_HV_CONFIRM) : "r0" ); }
-# 646 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 646 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic pop
-# 646 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 646 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  ;
-# 664 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 664 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 664 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 664 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic push
-# 664 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 664 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 664 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 664 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 664 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 664 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gattc_attr_info_discover(uint16_t conn_handle, ble_gattc_handle_range_t const * p_handle_range) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTC_ATTR_INFO_DISCOVER) : "r0" ); }
-# 664 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 664 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic pop
-# 664 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 664 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  ;
-# 697 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 697 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 697 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 697 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic push
-# 697 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 697 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 
-# 697 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 697 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 697 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 697 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gattc_exchange_mtu_request(uint16_t conn_handle, uint16_t client_rx_mtu) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTC_EXCHANGE_MTU_REQUEST) : "r0" ); }
-# 697 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 697 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 #pragma GCC diagnostic pop
-# 697 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 697 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
  ;
-# 722 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
+# 722 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gattc.h"
 static inline uint32_t sd_ble_gattc_evt_char_val_by_uuid_read_rsp_iter(ble_gattc_evt_t *p_gattc_evt, ble_gattc_handle_value_t *p_iter);
 
 
@@ -35226,11 +35221,11 @@ static inline uint32_t sd_ble_gattc_evt_char_val_by_uuid_read_rsp_iter(ble_gattc
     return ((0x0) + 5);
   }
 }
-# 60 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h" 1
-# 46 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 60 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h" 1
+# 46 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #define BLE_GATTS_H__ 
-# 68 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 68 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 enum BLE_GATTS_SVCS
 {
   SD_BLE_GATTS_SERVICE_ADD = 0xA8,
@@ -35273,7 +35268,7 @@ enum BLE_GATTS_CFGS
   BLE_GATTS_CFG_SERVICE_CHANGED = 0xA0,
   BLE_GATTS_CFG_ATTR_TAB_SIZE,
 };
-# 118 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 118 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #define BLE_ERROR_GATTS_INVALID_ATTR_TYPE (NRF_GATTS_ERR_BASE + 0x000)
 #define BLE_ERROR_GATTS_SYS_ATTR_MISSING (NRF_GATTS_ERR_BASE + 0x001)
 
@@ -35354,7 +35349,7 @@ enum BLE_GATTS_CFGS
 
 
 #define BLE_GATTS_HVN_TX_QUEUE_SIZE_DEFAULT 1
-# 208 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 typedef struct
 {
   uint8_t hvn_tx_queue_size;
@@ -35470,7 +35465,7 @@ typedef struct
 {
   uint8_t service_changed : 1;
 } ble_gatts_cfg_service_changed_t;
-# 331 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 331 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 typedef struct
 {
   uint32_t attr_tab_size;
@@ -35561,204 +35556,204 @@ typedef struct
     ble_gatts_evt_hvn_tx_complete_t hvn_tx_complete;
   } params;
 } ble_gatts_evt_t;
-# 446 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 446 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 446 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 446 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 446 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 446 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 446 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 446 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 446 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 446 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_service_add(uint8_t type, ble_uuid_t const *p_uuid, uint16_t *p_handle) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_SERVICE_ADD) : "r0" ); }
-# 446 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 446 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 446 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 446 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 472 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 472 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 472 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 472 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 472 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 472 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 472 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 472 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 472 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 472 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_include_add(uint16_t service_handle, uint16_t inc_srvc_handle, uint16_t *p_include_handle) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_INCLUDE_ADD) : "r0" ); }
-# 472 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 472 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 472 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 472 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_characteristic_add(uint16_t service_handle, ble_gatts_char_md_t const *p_char_md, ble_gatts_attr_t const *p_attr_char_value, ble_gatts_char_handles_t *p_handles) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_CHARACTERISTIC_ADD) : "r0" ); }
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 501 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 501 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 524 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 524 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 524 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 524 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 524 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 524 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 524 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 524 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 524 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 524 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_descriptor_add(uint16_t char_handle, ble_gatts_attr_t const *p_attr, uint16_t *p_handle) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_DESCRIPTOR_ADD) : "r0" ); }
-# 524 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 524 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 524 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 524 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 547 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 547 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 547 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 547 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 547 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 547 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 547 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 547 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 547 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 547 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_value_set(uint16_t conn_handle, uint16_t handle, ble_gatts_value_t *p_value) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_VALUE_SET) : "r0" ); }
-# 547 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 547 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 547 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 547 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 571 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 571 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 571 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 571 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 571 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 571 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 571 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 571 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 571 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 571 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_value_get(uint16_t conn_handle, uint16_t handle, ble_gatts_value_t *p_value) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_VALUE_GET) : "r0" ); }
-# 571 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 571 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 571 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 571 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 636 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 636 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 636 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 636 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 636 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 636 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 636 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 636 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 636 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 636 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_hvx(uint16_t conn_handle, ble_gatts_hvx_params_t const *p_hvx_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_HVX) : "r0" ); }
-# 636 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 636 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 636 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 636 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 672 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 672 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 672 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 672 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 672 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 672 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 672 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 672 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 672 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 672 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_service_changed(uint16_t conn_handle, uint16_t start_handle, uint16_t end_handle) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_SERVICE_CHANGED) : "r0" ); }
-# 672 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 672 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 672 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 672 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 705 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 705 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 705 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 705 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 705 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 705 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 705 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 705 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 705 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 705 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_rw_authorize_reply(uint16_t conn_handle, ble_gatts_rw_authorize_reply_params_t const *p_rw_authorize_reply_params) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_RW_AUTHORIZE_REPLY) : "r0" ); }
-# 705 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 705 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 705 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 705 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 749 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 749 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 749 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 749 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 749 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 749 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 749 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 749 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 749 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 749 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_sys_attr_set(uint16_t conn_handle, uint8_t const *p_sys_attr_data, uint16_t len, uint32_t flags) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_SYS_ATTR_SET) : "r0" ); }
-# 749 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 749 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 749 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 749 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 782 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 782 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 782 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 782 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 782 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 782 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 782 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 782 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 782 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 782 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_sys_attr_get(uint16_t conn_handle, uint8_t *p_sys_attr_data, uint16_t *p_len, uint32_t flags) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_SYS_ATTR_GET) : "r0" ); }
-# 782 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 782 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 782 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 782 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 792 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 792 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 792 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 792 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 792 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 792 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 792 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 792 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 792 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 792 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_initial_user_handle_get(uint16_t *p_handle) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_INITIAL_USER_HANDLE_GET) : "r0" ); }
-# 792 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 792 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 792 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 792 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 805 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 805 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 805 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 805 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 805 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 805 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 805 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 805 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 805 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 805 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_attr_get(uint16_t handle, ble_uuid_t * p_uuid, ble_gatts_attr_md_t * p_md) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_ATTR_GET) : "r0" ); }
-# 805 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 805 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 805 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 805 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 835 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 835 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 835 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 835 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic push
-# 835 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 835 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 
-# 835 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 835 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 835 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 835 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_gatts_exchange_mtu_reply(uint16_t conn_handle, uint16_t server_rx_mtu) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_GATTS_EXCHANGE_MTU_REPLY) : "r0" ); }
-# 835 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 835 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
 #pragma GCC diagnostic pop
-# 835 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
+# 835 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatts.h"
  ;
-# 61 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
-# 72 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 61 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h" 2
+# 72 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 enum BLE_COMMON_SVCS
 {
   SD_BLE_ENABLE = 0x60,
@@ -35815,7 +35810,7 @@ enum BLE_COMMON_OPTS
   BLE_COMMON_OPT_CONN_EVT_EXT = 0x01 + 1,
   BLE_COMMON_OPT_EXTENDED_RC_CAL = 0x01 + 2,
 };
-# 136 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #define BLE_EVT_PTR_ALIGNMENT 4
 
 
@@ -35847,7 +35842,7 @@ enum BLE_COMMON_OPTS
 
 
 #define BLE_CONN_CFG_TAG_DEFAULT 0
-# 176 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 176 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 typedef struct
 {
   uint8_t *p_mem;
@@ -35919,7 +35914,7 @@ typedef struct
      uint8_t active_high :1;
      uint8_t gpio_pin :6;
 } ble_pa_lna_cfg_t;
-# 261 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 261 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 typedef struct
 {
    ble_pa_lna_cfg_t pa_cfg;
@@ -35929,12 +35924,12 @@ typedef struct
    uint8_t ppi_ch_id_clr;
    uint8_t gpiote_ch_id;
 } ble_common_opt_pa_lna_t;
-# 282 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 282 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 typedef struct
 {
    uint8_t enable : 1;
 } ble_common_opt_conn_evt_ext_t;
-# 302 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 302 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 typedef struct
 {
    uint8_t enable : 1;
@@ -35955,7 +35950,7 @@ typedef union
   ble_gap_opt_t gap_opt;
   ble_gattc_opt_t gattc_opt;
 } ble_opt_t;
-# 340 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 340 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 typedef struct
 {
   uint8_t conn_cfg_tag;
@@ -35997,176 +35992,176 @@ typedef union
   ble_gap_cfg_t gap_cfg;
   ble_gatts_cfg_t gatts_cfg;
 } ble_cfg_t;
-# 434 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 434 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic push
-# 434 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 434 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 434 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_enable(uint32_t * p_app_ram_base) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_ENABLE) : "r0" ); }
-# 434 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic pop
-# 434 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  ;
-# 470 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 470 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 470 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 470 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic push
-# 470 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 470 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 470 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 470 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 470 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 470 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_cfg_set(uint32_t cfg_id, ble_cfg_t const * p_cfg, uint32_t app_ram_base) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_CFG_SET) : "r0" ); }
-# 470 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 470 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic pop
-# 470 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 470 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  ;
-# 508 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 508 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 508 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 508 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic push
-# 508 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 508 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 508 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 508 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 508 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 508 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_evt_get(uint8_t *p_dest, uint16_t *p_len) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_EVT_GET) : "r0" ); }
-# 508 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 508 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic pop
-# 508 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 508 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  ;
-# 537 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 537 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 537 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 537 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic push
-# 537 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 537 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 537 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 537 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 537 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 537 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_uuid_vs_add(ble_uuid128_t const *p_vs_uuid, uint8_t *p_uuid_type) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_UUID_VS_ADD) : "r0" ); }
-# 537 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 537 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic pop
-# 537 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 537 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  ;
-# 558 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 558 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 558 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 558 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic push
-# 558 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 558 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 558 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 558 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 558 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 558 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_uuid_vs_remove(uint8_t *p_uuid_type) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_UUID_VS_REMOVE) : "r0" ); }
-# 558 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 558 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic pop
-# 558 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 558 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  ;
-# 579 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 579 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 579 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 579 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic push
-# 579 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 579 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 579 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 579 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 579 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 579 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_uuid_decode(uint8_t uuid_le_len, uint8_t const *p_uuid_le, ble_uuid_t *p_uuid) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_UUID_DECODE) : "r0" ); }
-# 579 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 579 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic pop
-# 579 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 579 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  ;
-# 594 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 594 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 594 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 594 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic push
-# 594 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 594 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 594 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 594 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 594 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 594 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_uuid_encode(ble_uuid_t const *p_uuid, uint8_t *p_uuid_le_len, uint8_t *p_uuid_le) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_UUID_ENCODE) : "r0" ); }
-# 594 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 594 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic pop
-# 594 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 594 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  ;
-# 607 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 607 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 607 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 607 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic push
-# 607 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 607 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 607 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 607 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 607 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 607 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_version_get(ble_version_t *p_version) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_VERSION_GET) : "r0" ); }
-# 607 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 607 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic pop
-# 607 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 607 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  ;
-# 633 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 633 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 633 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 633 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic push
-# 633 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 633 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 633 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 633 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 633 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 633 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_user_mem_reply(uint16_t conn_handle, ble_user_mem_block_t const *p_block) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_USER_MEM_REPLY) : "r0" ); }
-# 633 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 633 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic pop
-# 633 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 633 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  ;
-# 649 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 649 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 649 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 649 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic push
-# 649 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 649 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 649 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 649 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 649 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 649 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_opt_set(uint32_t opt_id, ble_opt_t const *p_opt) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_OPT_SET) : "r0" ); }
-# 649 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 649 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic pop
-# 649 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 649 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  ;
-# 668 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 668 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 668 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 668 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic push
-# 668 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 668 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 
-# 668 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 668 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 668 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 668 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ble_opt_get(uint32_t opt_id, ble_opt_t *p_opt) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_BLE_OPT_GET) : "r0" ); }
-# 668 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 668 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
 #pragma GCC diagnostic pop
-# 668 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
+# 668 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble.h"
  ;
-# 76 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 1
-# 49 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 76 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 1
+# 49 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
 #define BLE_SRV_COMMON_H__ 
 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_types.h" 1
-# 54 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 1
-# 55 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_types.h" 1
+# 54 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 1
+# 55 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 2
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h" 1
-# 57 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatt.h" 1
-# 58 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gap.h" 1
+# 57 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/ble_gatt.h" 1
+# 58 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 2
 
 
 
@@ -36301,7 +36296,7 @@ typedef union
 #define BLE_UUID_OTS_OLCP 0x2AC6
 #define BLE_UUID_OTS_LF 0x2AC7
 #define BLE_UUID_OTS_OBJECT_CHANGED 0x2AC8
-# 200 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 200 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
 #define BLE_CHAR_ALERT_LEVEL_NO_ALERT 0x00
 #define BLE_CHAR_ALERT_LEVEL_MILD_ALERT 0x01
 #define BLE_CHAR_ALERT_LEVEL_HIGH_ALERT 0x02
@@ -36313,7 +36308,7 @@ typedef union
 
 
 typedef void (*ble_srv_error_handler_t) (uint32_t nrf_error);
-# 219 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 219 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
 typedef struct
 {
     uint8_t report_id;
@@ -36351,19 +36346,19 @@ typedef struct
     ble_gap_conn_sec_mode_t read_perm;
     ble_gap_conn_sec_mode_t write_perm;
 } ble_srv_cccd_security_mode_t;
-# 265 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 265 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
 
-# 265 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 265 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
 _Bool 
-# 265 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 265 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
     ble_srv_is_notification_enabled(uint8_t const * p_encoded_data);
-# 276 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 276 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
 
-# 276 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 276 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
 _Bool 
-# 276 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 276 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
     ble_srv_is_indication_enabled(uint8_t const * p_encoded_data);
-# 286 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 286 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
 uint8_t ble_srv_report_ref_encode(uint8_t * p_encoded_buffer,
                                   const ble_srv_report_ref_t * p_report_ref);
 
@@ -36398,27 +36393,27 @@ typedef struct
     uint16_t size;
     uint8_t *p_char_user_desc;
     
-# 319 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 319 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 319 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 319 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                           is_var_len;
     ble_gatt_char_props_t char_props;
     
-# 321 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 321 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 321 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 321 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                           is_defered_read;
     
-# 322 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 322 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 322 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 322 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                           is_defered_write;
     security_req_t read_access;
     security_req_t write_access;
     
-# 325 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 325 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 325 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 325 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                           is_value_user;
 }ble_add_char_user_desc_t;
 
@@ -36434,29 +36429,29 @@ typedef struct
     uint16_t init_len;
     uint8_t * p_init_value;
     
-# 339 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 339 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 339 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 339 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                                is_var_len;
     ble_gatt_char_props_t char_props;
     ble_gatt_char_ext_props_t char_ext_props;
     
-# 342 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 342 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 342 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 342 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                                is_defered_read;
     
-# 343 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 343 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 343 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 343 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                                is_defered_write;
     security_req_t read_access;
     security_req_t write_access;
     security_req_t cccd_write_access;
     
-# 347 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 347 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 347 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 347 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                                is_value_user;
     ble_add_char_user_desc_t *p_user_descr;
     ble_gatts_char_pf_t *p_presentation_format;
@@ -36471,77 +36466,77 @@ typedef struct
     uint16_t uuid;
     uint8_t uuid_type;
     
-# 360 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 360 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 360 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 360 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                   is_defered_read;
     
-# 361 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 361 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 361 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 361 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                   is_defered_write;
     
-# 362 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 362 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 362 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 362 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                   is_var_len;
     security_req_t read_access;
     security_req_t write_access;
     
-# 365 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
+# 365 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h" 3 4
    _Bool 
-# 365 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 365 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
                   is_value_user;
     uint16_t init_len;
     uint16_t init_offs;
     uint16_t max_len;
     uint8_t* p_value;
 } ble_add_descr_params_t;
-# 384 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 384 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
 uint32_t characteristic_add(uint16_t service_handle,
                             ble_add_char_params_t * p_char_props,
                             ble_gatts_char_handles_t * p_char_handle);
-# 397 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
+# 397 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_srv_common.h"
 uint32_t descriptor_add(uint16_t char_handle,
                         ble_add_descr_params_t * p_descr_props,
                         uint16_t * p_descr_handle);
-# 77 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h" 1
-# 51 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
+# 77 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h" 1
+# 51 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
 #define NRF_SDH_BLE_H__ 
 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h" 1
-# 42 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h" 1
+# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
 #define NRF_SECTION_ITER_H__ 
 
-# 1 "/opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h" 1 3 4
-# 45 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h" 1
-# 41 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 45 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h" 1
+# 41 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_H__ 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h" 1
-# 44 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h" 2
-# 73 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h" 1
+# 44 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h" 2
+# 73 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_START_ADDR(section_name) &CONCAT_2(__start_, section_name)
-# 89 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 89 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_END_ADDR(section_name) &CONCAT_2(__stop_, section_name)
-# 101 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 101 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_LENGTH(section_name) ((size_t)NRF_SECTION_END_ADDR(section_name) - (size_t)NRF_SECTION_START_ADDR(section_name))
-# 120 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 120 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_DEF(section_name,data_type) extern data_type * CONCAT_2(__start_, section_name); extern void * CONCAT_2(__stop_, section_name)
-# 148 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 148 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_ITEM_REGISTER(section_name,section_var) section_var __attribute__ ((section("." STRINGIFY(section_name)))) __attribute__((used))
-# 170 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 170 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_ITEM_GET(section_name,data_type,i) ((data_type*)NRF_SECTION_START_ADDR(section_name) + (i))
-# 180 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 180 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_ITEM_COUNT(section_name,data_type) NRF_SECTION_LENGTH(section_name) / sizeof(data_type)
-# 46 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h" 1
-# 47 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h" 2
-# 61 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
+# 46 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h" 1
+# 47 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h" 2
+# 61 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
 typedef struct
 {
     void * p_start;
@@ -36554,7 +36549,7 @@ typedef struct
 {
 
     nrf_section_t section;
-# 82 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
+# 82 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
     size_t item_size;
 } nrf_section_set_t;
 
@@ -36563,14 +36558,14 @@ typedef struct
 typedef struct
 {
     nrf_section_set_t const * p_set;
-# 98 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
+# 98 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
     void * p_item;
 } nrf_section_iter_t;
-# 115 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
+# 115 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
 #define NRF_SECTION_SET_DEF(_name,_type,_count) NRF_SECTION_DEF(_name, _type); static nrf_section_set_t const _name = { .section = { .p_start = NRF_SECTION_START_ADDR(_name), .p_end = NRF_SECTION_END_ADDR(_name), }, .item_size = sizeof(_type), }
-# 169 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
+# 169 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
 #define NRF_SECTION_SET_ITEM_REGISTER(_name,_priority,_var) NRF_SECTION_ITEM_REGISTER(CONCAT_2(_name, _priority), _var)
-# 178 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
+# 178 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
 void nrf_section_iter_init(nrf_section_iter_t * p_iter, nrf_section_set_t const * p_set);
 
 
@@ -36579,25 +36574,25 @@ void nrf_section_iter_init(nrf_section_iter_t * p_iter, nrf_section_set_t const 
 
 
 void nrf_section_iter_next(nrf_section_iter_t * p_iter);
-# 194 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
+# 194 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"
 static inline void * nrf_section_iter_get(nrf_section_iter_t const * p_iter)
 {
-    if (0) { if (p_iter) { } else { assert_nrf_callback((uint16_t)196, (uint8_t *)"/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"); } };
+    if (0) { if (p_iter) { } else { assert_nrf_callback((uint16_t)196, (uint8_t *)"/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section_iter.h"); } };
     return p_iter->p_item;
 }
-# 56 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h" 2
+# 56 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h" 2
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 1
-# 58 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h" 2
-# 66 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 1
+# 58 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h" 2
+# 66 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
 #define NRF_SDH_BLE_EVT_BUF_SIZE BLE_EVT_LEN_MAX(NRF_SDH_BLE_GATT_MAX_MTU_SIZE)
-# 82 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
+# 82 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
 #define NRF_SDH_BLE_OBSERVER(_name,_prio,_handler,_context) STATIC_ASSERT(NRF_SDH_BLE_ENABLED, "NRF_SDH_BLE_ENABLED not set!"); STATIC_ASSERT(_prio < NRF_SDH_BLE_OBSERVER_PRIO_LEVELS, "Priority level unavailable."); NRF_SECTION_SET_ITEM_REGISTER(sdh_ble_observers, _prio, static nrf_sdh_ble_evt_observer_t _name) = { .handler = _handler, .p_context = _context }
-# 106 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
+# 106 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
 #define NRF_SDH_BLE_OBSERVERS(_name,_prio,_handler,_context,_cnt) STATIC_ASSERT(NRF_SDH_BLE_ENABLED, "NRF_SDH_BLE_ENABLED not set!"); STATIC_ASSERT(_prio < NRF_SDH_BLE_OBSERVER_PRIO_LEVELS, "Priority level unavailable."); NRF_SECTION_SET_ITEM_REGISTER(sdh_ble_observers, _prio, static nrf_sdh_ble_evt_observer_t _name[_cnt]) = { MACRO_REPEAT_FOR(_cnt, HANDLER_SET, _handler, _context) }
-# 115 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
+# 115 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
 #define HANDLER_SET(_idx,_handler,_context) { .handler = _handler, .p_context = _context[_idx], },
-# 134 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
+# 134 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
 typedef void (*nrf_sdh_ble_evt_handler_t)(ble_evt_t const * p_ble_evt, void * p_context);
 
 
@@ -36606,9 +36601,9 @@ typedef struct
     nrf_sdh_ble_evt_handler_t handler;
     void * p_context;
 } const nrf_sdh_ble_evt_observer_t;
-# 151 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
+# 151 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
 ret_code_t nrf_sdh_ble_app_ram_start_get(uint32_t * p_app_ram_start);
-# 168 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
+# 168 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/common/nrf_sdh_ble.h"
 ret_code_t nrf_sdh_ble_default_cfg_set(uint8_t conn_cfg_tag, uint32_t * p_ram_start);
 
 
@@ -36617,8 +36612,8 @@ ret_code_t nrf_sdh_ble_default_cfg_set(uint8_t conn_cfg_tag, uint32_t * p_ram_st
 
 
 ret_code_t nrf_sdh_ble_enable(uint32_t * p_app_ram_start);
-# 78 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 2
-# 88 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
+# 78 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 2
+# 88 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
 #define BLE_BAS_DEF(_name) static ble_bas_t _name; NRF_SDH_BLE_OBSERVER(_name ## _obs, BLE_BAS_BLE_OBSERVER_PRIO, ble_bas_on_ble_evt, &_name)
 
 
@@ -36652,9 +36647,9 @@ typedef struct
 {
     ble_bas_evt_handler_t evt_handler;
     
-# 120 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 3 4
+# 120 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 3 4
    _Bool 
-# 120 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
+# 120 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
                           support_notification;
     ble_srv_report_ref_t * p_report_ref;
     uint8_t initial_batt_level;
@@ -36672,35 +36667,35 @@ struct ble_bas_s
     uint16_t report_ref_handle;
     uint8_t battery_level_last;
     
-# 136 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 3 4
+# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h" 3 4
    _Bool 
-# 136 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
+# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
                             is_notification_supported;
 };
-# 149 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
+# 149 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
 ret_code_t ble_bas_init(ble_bas_t * p_bas, const ble_bas_init_t * p_bas_init);
-# 164 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
+# 164 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
 void ble_bas_on_ble_evt(ble_evt_t const * p_ble_evt, void * p_context);
-# 180 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
+# 180 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
 ret_code_t ble_bas_battery_level_update(ble_bas_t * p_bas,
                                         uint8_t battery_level,
                                         uint16_t conn_handle);
-# 202 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
+# 202 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.h"
 ret_code_t ble_bas_battery_lvl_on_reconnection_update(ble_bas_t * p_bas,
                                                       uint16_t conn_handle);
-# 47 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 2
+# 47 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 2
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 1
-# 64 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 1
+# 64 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 #define BLE_CONN_STATE_H__ 
 
 
 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h" 1
-# 52 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h" 1
+# 52 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 #define NRF_ATOMIC_H__ 
 
 
@@ -36714,51 +36709,51 @@ typedef volatile uint32_t nrf_atomic_u32_t;
 
 
 typedef volatile uint32_t nrf_atomic_flag_t;
-# 80 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 80 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_store(nrf_atomic_u32_t * p_data, uint32_t value);
-# 90 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 90 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_store(nrf_atomic_u32_t * p_data, uint32_t value);
-# 100 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 100 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_or(nrf_atomic_u32_t * p_data, uint32_t value);
-# 110 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 110 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_or(nrf_atomic_u32_t * p_data, uint32_t value);
-# 120 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 120 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_and(nrf_atomic_u32_t * p_data, uint32_t value);
-# 130 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 130 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_and(nrf_atomic_u32_t * p_data, uint32_t value);
-# 140 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 140 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_xor(nrf_atomic_u32_t * p_data, uint32_t value);
-# 150 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 150 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_xor(nrf_atomic_u32_t * p_data, uint32_t value);
-# 160 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 160 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_add(nrf_atomic_u32_t * p_data, uint32_t value);
-# 170 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 170 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_add(nrf_atomic_u32_t * p_data, uint32_t value);
-# 180 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 180 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_sub(nrf_atomic_u32_t * p_data, uint32_t value);
-# 190 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 190 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_sub(nrf_atomic_u32_t * p_data, uint32_t value);
-# 206 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 206 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 
-# 206 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h" 3 4
+# 206 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h" 3 4
 _Bool 
-# 206 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 206 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
     nrf_atomic_u32_cmp_exch(nrf_atomic_u32_t * p_data,
                              uint32_t * p_expected,
                              uint32_t desired);
-# 218 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 218 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_sub_hs(nrf_atomic_u32_t * p_data, uint32_t value);
-# 228 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 228 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_sub_hs(nrf_atomic_u32_t * p_data, uint32_t value);
-# 239 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 239 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_flag_set_fetch(nrf_atomic_flag_t * p_data);
-# 248 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 248 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_flag_set(nrf_atomic_flag_t * p_data);
-# 257 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 257 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_flag_clear_fetch(nrf_atomic_flag_t * p_data);
-# 266 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 266 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_flag_clear(nrf_atomic_flag_t * p_data);
-# 71 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 2
+# 71 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 2
 
 
 
@@ -36817,37 +36812,37 @@ typedef enum
     BLE_CONN_STATE_USER_FLAG23,
     BLE_CONN_STATE_USER_FLAG_INVALID,
 } ble_conn_state_user_flag_id_t;
-# 137 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 137 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 typedef void (*ble_conn_state_user_function_t)(uint16_t conn_handle, void * p_context);
-# 150 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 150 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 void ble_conn_state_init(void);
-# 164 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 164 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 
-# 164 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
+# 164 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
 _Bool 
-# 164 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 164 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
     ble_conn_state_valid(uint16_t conn_handle);
-# 174 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 174 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 uint8_t ble_conn_state_role(uint16_t conn_handle);
-# 184 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 184 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 ble_conn_state_status_t ble_conn_state_status(uint16_t conn_handle);
-# 194 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 194 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 
-# 194 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
+# 194 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
 _Bool 
-# 194 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 194 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
     ble_conn_state_encrypted(uint16_t conn_handle);
-# 206 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 206 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 
-# 206 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
+# 206 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
 _Bool 
-# 206 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 206 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
     ble_conn_state_mitm_protected(uint16_t conn_handle);
-# 222 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 222 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 
-# 222 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
+# 222 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
 _Bool 
-# 222 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 222 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
     ble_conn_state_lesc(uint16_t conn_handle);
 
 
@@ -36856,42 +36851,42 @@ _Bool
 
 
 uint32_t ble_conn_state_conn_count(void);
-# 238 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 238 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 uint32_t ble_conn_state_central_conn_count(void);
-# 247 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 247 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 uint32_t ble_conn_state_peripheral_conn_count(void);
-# 256 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 256 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 ble_conn_state_conn_handle_list_t ble_conn_state_conn_handles(void);
-# 267 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 267 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 ble_conn_state_conn_handle_list_t ble_conn_state_central_handles(void);
-# 278 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 278 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 ble_conn_state_conn_handle_list_t ble_conn_state_periph_handles(void);
-# 293 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 293 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 uint16_t ble_conn_state_conn_idx(uint16_t conn_handle);
-# 306 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 306 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 ble_conn_state_user_flag_id_t ble_conn_state_user_flag_acquire(void);
-# 316 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 316 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 
-# 316 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
+# 316 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
 _Bool 
-# 316 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 316 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
     ble_conn_state_user_flag_get(uint16_t conn_handle, ble_conn_state_user_flag_id_t flag_id);
-# 325 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 325 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 void ble_conn_state_user_flag_set(uint16_t conn_handle,
                                   ble_conn_state_user_flag_id_t flag_id,
                                   
-# 327 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
+# 327 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h" 3 4
                                  _Bool 
-# 327 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 327 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
                                                                value);
-# 337 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 337 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 uint32_t ble_conn_state_for_each_connected(ble_conn_state_user_function_t user_function,
                                            void * p_context);
-# 349 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
+# 349 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/common/ble_conn_state.h"
 uint32_t ble_conn_state_for_each_set_user_flag(ble_conn_state_user_flag_id_t flag_id,
                                                ble_conn_state_user_function_t user_function,
                                                void * p_context);
-# 50 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 2
+# 50 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 2
 
 #define NRF_LOG_MODULE_NAME ble_bas
 
@@ -36901,30 +36896,30 @@ uint32_t ble_conn_state_for_each_set_user_flag(ble_conn_state_user_flag_id_t fla
 
 #define NRF_LOG_LEVEL 0
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h" 1
-# 50 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h" 1
+# 50 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
 #define NRF_LOG_H_ 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h" 1
-# 54 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h" 1
+# 54 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h" 2
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/strerror/nrf_strerror.h" 1
-# 49 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/strerror/nrf_strerror.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/strerror/nrf_strerror.h" 1
+# 49 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/strerror/nrf_strerror.h"
 #define NRF_STRERROR_H__ 
-# 69 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/strerror/nrf_strerror.h"
+# 69 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/strerror/nrf_strerror.h"
 char const * nrf_strerror_get(ret_code_t code);
-# 81 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/strerror/nrf_strerror.h"
+# 81 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/strerror/nrf_strerror.h"
 char const * nrf_strerror_find(ret_code_t code);
-# 56 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h" 2
+# 56 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h" 2
 #define NRF_LOG_ERROR_STRING_GET(code) nrf_strerror_get(code)
-# 77 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
+# 77 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
 #define NRF_LOG_INITIAL_LEVEL NRF_LOG_LEVEL
 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h" 1
-# 41 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h" 1
+# 41 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 #define NRF_LOG_INTERNAL_H__ 
 
 
@@ -36932,14 +36927,14 @@ char const * nrf_strerror_find(ret_code_t code);
 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h" 1
-# 41 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h" 1
+# 41 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
 #define NRF_LOG_INSTANCE_H 
 
 
 
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_types.h" 1
-# 41 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_types.h"
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_types.h" 1
+# 41 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_types.h"
 #define NRF_LOG_TYPES_H 
 
 
@@ -36991,8 +36986,8 @@ typedef struct
     nrf_log_severity_t compiled_lvl;
     nrf_log_severity_t initial_lvl;
 } nrf_log_module_const_data_t;
-# 46 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h" 2
-# 55 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
+# 46 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h" 2
+# 55 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
 #define NRF_LOG_DYNAMIC_SECTION_NAME(_module_name) CONCAT_2(log_dynamic_data_,_module_name)
 #define NRF_LOG_FILTER_SECTION_NAME(_module_name) CONCAT_2(log_filter_data_,_module_name)
 #define NRF_LOG_CONST_SECTION_NAME(_module_name) CONCAT_2(log_const_data_,_module_name)
@@ -37020,22 +37015,22 @@ extern nrf_log_module_const_data_t * __start_log_const_data; extern void * __sto
 
 
 #define NRF_LOG_INTERNAL_CONST_ITEM_REGISTER(_name,_str_name,_info_color,_debug_color,_initial_lvl,_compiled_lvl) NRF_SECTION_ITEM_REGISTER(NRF_LOG_CONST_SECTION_NAME(_name), _CONST nrf_log_module_const_data_t NRF_LOG_ITEM_DATA_CONST(_name)) = { .p_module_name = _str_name, .info_color_id = (_info_color), .debug_color_id = (_debug_color), .compiled_lvl = (nrf_log_severity_t)(_compiled_lvl), .initial_lvl = (nrf_log_severity_t)(_initial_lvl), }
-# 107 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
+# 107 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
 #define NRF_LOG_INTERNAL_ITEM_REGISTER(_name,_str_name,_info_color,_debug_color,_initial_lvl,_compiled_lvl) NRF_LOG_INTERNAL_CONST_ITEM_REGISTER(_name, _str_name, _info_color, _debug_color, _initial_lvl, _compiled_lvl)
-# 158 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
+# 158 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
 #define NRF_LOG_INSTANCE_PTR_DECLARE(_p_name) 
 #define NRF_LOG_INSTANCE_REGISTER(_module_name,_inst_name,info_color,debug_color,_initial_lvl,compiled_lvl) 
 #define NRF_LOG_INSTANCE_PTR_INIT(_p_name,_module_name,_inst_name) 
-# 49 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h" 2
-# 1 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_types.h" 1
-# 50 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h" 2
-# 60 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 49 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h" 2
+# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_types.h" 1
+# 50 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h" 2
+# 60 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 #define NRF_LOG_INFO_COLOR NRF_LOG_COLOR_DEFAULT
 
 
 
 #define NRF_LOG_DEBUG_COLOR NRF_LOG_COLOR_DEFAULT
-# 92 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 92 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 #define NRF_LOG_LEVEL_BITS 3
 #define NRF_LOG_LEVEL_MASK ((1UL << NRF_LOG_LEVEL_BITS) - 1)
 #define NRF_LOG_MODULE_ID_BITS 16
@@ -37103,7 +37098,7 @@ extern nrf_log_module_const_data_t * __start_log_const_data; extern void * __sto
 
 
 #define LOG_INTERNAL_6(type,str,arg0,arg1,arg2,arg3,arg4,arg5) nrf_log_frontend_std_6(type, str, (uint32_t)(arg0), (uint32_t)(arg1), (uint32_t)(arg2), (uint32_t)(arg3), (uint32_t)(arg4), (uint32_t)(arg5))
-# 181 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 181 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 #define LOG_SEVERITY_MOD_ID(severity) ((severity) | NRF_LOG_MODULE_ID << NRF_LOG_MODULE_ID_POS)
 #define LOG_SEVERITY_INST_ID(severity,p_inst) ((severity) | NRF_LOG_INST_ID(p_inst) << NRF_LOG_MODULE_ID_POS)
 
@@ -37116,13 +37111,13 @@ extern nrf_log_module_const_data_t * __start_log_const_data; extern void * __sto
 
 
 #define NRF_LOG_INTERNAL_INST(level,level_id,p_inst,...) if (NRF_LOG_ENABLED && (NRF_LOG_LEVEL >= level) && (level <= NRF_LOG_DEFAULT_LEVEL)) { if (NRF_LOG_INST_FILTER(p_inst) >= level) { LOG_INTERNAL(LOG_SEVERITY_INST_ID(level_id, p_inst), __VA_ARGS__); } }
-# 202 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 202 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 #define NRF_LOG_INTERNAL_MODULE(level,level_id,...) if (NRF_LOG_ENABLED && (NRF_LOG_LEVEL >= level) && (level <= NRF_LOG_DEFAULT_LEVEL)) { if (NRF_LOG_FILTER >= level) { LOG_INTERNAL(LOG_SEVERITY_MOD_ID(level_id), __VA_ARGS__); } }
-# 212 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 212 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 #define NRF_LOG_INTERNAL_HEXDUMP_INST(level,level_id,p_inst,p_data,len) if (NRF_LOG_ENABLED && (NRF_LOG_LEVEL >= level) && (level <= NRF_LOG_DEFAULT_LEVEL)) { if (NRF_LOG_INST_FILTER(p_inst) >= level) { LOG_HEXDUMP(LOG_SEVERITY_INST_ID(level_id, p_inst), (p_data), (len)); } }
-# 223 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 223 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 #define NRF_LOG_INTERNAL_HEXDUMP_MODULE(level,level_id,p_data,len) if (NRF_LOG_ENABLED && (NRF_LOG_LEVEL >= level) && (level <= NRF_LOG_DEFAULT_LEVEL)) { if (NRF_LOG_FILTER >= level) { LOG_HEXDUMP(LOG_SEVERITY_MOD_ID(level_id), (p_data), (len)); } }
-# 234 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 234 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 #define NRF_LOG_INTERNAL_INST_ERROR(p_inst,...) NRF_LOG_INTERNAL_INST(NRF_LOG_SEVERITY_ERROR, NRF_LOG_SEVERITY_ERROR, p_inst, __VA_ARGS__)
 
 
@@ -37175,16 +37170,16 @@ extern nrf_log_module_const_data_t * __start_log_const_data; extern void * __sto
 
 
 #define NRF_LOG_INTERNAL_HEXDUMP_DEBUG(p_data,len) NRF_LOG_INTERNAL_HEXDUMP_MODULE(NRF_LOG_SEVERITY_DEBUG, NRF_LOG_SEVERITY_DEBUG, p_data, len)
-# 294 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 294 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 #define COMPILED_LOG_LEVEL NRF_LOG_LEVEL
 
 
 
 #define NRF_LOG_INTERNAL_MODULE_REGISTER() NRF_LOG_INTERNAL_ITEM_REGISTER(NRF_LOG_MODULE_NAME, STRINGIFY(NRF_LOG_MODULE_NAME), NRF_LOG_INFO_COLOR, NRF_LOG_DEBUG_COLOR, NRF_LOG_INITIAL_LEVEL, COMPILED_LOG_LEVEL)
-# 310 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 310 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 extern nrf_log_module_dynamic_data_t m_nrf_log_ble_bas_logs_data_dynamic;
 extern const nrf_log_module_const_data_t m_nrf_log_ble_bas_logs_data_const;
-# 358 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 358 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 #define STD_ADDR_MASK ((uint32_t)(1U << 22) - 1U)
 #define HEADER_TYPE_STD 1U
 #define HEADER_TYPE_HEXDUMP 2U
@@ -37233,31 +37228,31 @@ typedef struct
 } nrf_log_header_t;
 
 #define HEADER_SIZE (sizeof(nrf_log_header_t)/sizeof(uint32_t) - (NRF_LOG_USES_TIMESTAMP ? 0 : 1))
-# 414 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 414 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 void nrf_log_frontend_std_0(uint32_t severity_mid, char const * const p_str);
-# 423 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 423 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 void nrf_log_frontend_std_1(uint32_t severity_mid,
                             char const * const p_str,
                             uint32_t val0);
-# 434 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 void nrf_log_frontend_std_2(uint32_t severity_mid,
                             char const * const p_str,
                             uint32_t val0,
                             uint32_t val1);
-# 446 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 446 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 void nrf_log_frontend_std_3(uint32_t severity_mid,
                             char const * const p_str,
                             uint32_t val0,
                             uint32_t val1,
                             uint32_t val2);
-# 459 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 459 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 void nrf_log_frontend_std_4(uint32_t severity_mid,
                             char const * const p_str,
                             uint32_t val0,
                             uint32_t val1,
                             uint32_t val2,
                             uint32_t val3);
-# 473 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 473 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 void nrf_log_frontend_std_5(uint32_t severity_mid,
                             char const * const p_str,
                             uint32_t val0,
@@ -37265,7 +37260,7 @@ void nrf_log_frontend_std_5(uint32_t severity_mid,
                             uint32_t val2,
                             uint32_t val3,
                             uint32_t val4);
-# 488 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 488 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 void nrf_log_frontend_std_6(uint32_t severity_mid,
                             char const * const p_str,
                             uint32_t val0,
@@ -37274,7 +37269,7 @@ void nrf_log_frontend_std_6(uint32_t severity_mid,
                             uint32_t val3,
                             uint32_t val4,
                             uint32_t val5);
-# 506 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
+# 506 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/src/nrf_log_internal.h"
 void nrf_log_frontend_hexdump(uint32_t severity_mid,
                               const void * const p_data,
                               uint16_t length);
@@ -37285,13 +37280,13 @@ void nrf_log_frontend_hexdump(uint32_t severity_mid,
 
 
 uint8_t nrf_log_getchar(void);
-# 82 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h" 2
-# 111 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
+# 82 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h" 2
+# 111 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
 #define NRF_LOG_ERROR(...) NRF_LOG_INTERNAL_ERROR(__VA_ARGS__)
 #define NRF_LOG_WARNING(...) NRF_LOG_INTERNAL_WARNING( __VA_ARGS__)
 #define NRF_LOG_INFO(...) NRF_LOG_INTERNAL_INFO( __VA_ARGS__)
 #define NRF_LOG_DEBUG(...) NRF_LOG_INTERNAL_DEBUG( __VA_ARGS__)
-# 151 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
+# 151 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
 #define NRF_LOG_INST_ERROR(p_inst,...) NRF_LOG_INTERNAL_INST_ERROR(p_inst,__VA_ARGS__)
 #define NRF_LOG_INST_WARNING(p_inst,...) NRF_LOG_INTERNAL_INST_WARNING(p_inst,__VA_ARGS__)
 #define NRF_LOG_INST_INFO(p_inst,...) NRF_LOG_INTERNAL_INST_INFO(p_inst, __VA_ARGS__)
@@ -37301,12 +37296,12 @@ uint8_t nrf_log_getchar(void);
 
 
 #define NRF_LOG_RAW_INFO(...) NRF_LOG_INTERNAL_RAW_INFO( __VA_ARGS__)
-# 189 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
+# 189 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
 #define NRF_LOG_HEXDUMP_ERROR(p_data,len) NRF_LOG_INTERNAL_HEXDUMP_ERROR(p_data, len)
 #define NRF_LOG_HEXDUMP_WARNING(p_data,len) NRF_LOG_INTERNAL_HEXDUMP_WARNING(p_data, len)
 #define NRF_LOG_HEXDUMP_INFO(p_data,len) NRF_LOG_INTERNAL_HEXDUMP_INFO(p_data, len)
 #define NRF_LOG_HEXDUMP_DEBUG(p_data,len) NRF_LOG_INTERNAL_HEXDUMP_DEBUG(p_data, len)
-# 226 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
+# 226 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
 #define NRF_LOG_HEXDUMP_INST_ERROR(p_inst,p_data,len) NRF_LOG_INTERNAL_HEXDUMP_INST_ERROR(p_inst, p_data, len)
 #define NRF_LOG_HEXDUMP_INST_WARNING(p_inst,p_data,len) NRF_LOG_INTERNAL_HEXDUMP_INST_WARNING(p_inst, p_data, len)
 #define NRF_LOG_HEXDUMP_INST_INFO(p_inst,p_data,len) NRF_LOG_INTERNAL_HEXDUMP_INST_INFO(p_inst, p_data, len)
@@ -37324,18 +37319,18 @@ uint8_t nrf_log_getchar(void);
 
 
 #define NRF_LOG_PUSH(_str) NRF_LOG_INTERNAL_LOG_PUSH(_str)
-# 262 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
+# 262 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
 char const * nrf_log_push(char * const p_str);
-# 271 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
+# 271 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
 #define NRF_LOG_FLOAT_MARKER "%s%d.%02d"
 
 
 
 
 #define NRF_LOG_FLOAT(val) (uint32_t)(((val) < 0 && (val) > -1.0) ? "-" : ""), (int32_t)(val), (int32_t)((((val) > 0) ? (val) - (int32_t)(val) : (int32_t)(val) - (val))*100)
-# 287 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
+# 287 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log.h"
 #define NRF_LOG_MODULE_REGISTER() NRF_LOG_INTERNAL_MODULE_REGISTER()
-# 60 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 2
+# 60 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 2
 const nrf_log_module_const_data_t m_nrf_log_ble_bas_logs_data_const __attribute__ ((section("." "log_const_data_ble_bas"))) __attribute__((used)) = { .p_module_name = "ble_bas", .info_color_id = (3), .debug_color_id = (3), .compiled_lvl = (nrf_log_severity_t)(0), .initial_lvl = (nrf_log_severity_t)(0), };
 
 
@@ -37360,9 +37355,9 @@ static void on_write(ble_bas_t * p_bas, ble_evt_t const * p_ble_evt)
         && (p_evt_write->len == 2))
     {
         if (p_bas->evt_handler == 
-# 83 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
+# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
                                  ((void *)0)
-# 83 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
                                      )
         {
             return;
@@ -37389,13 +37384,13 @@ static void on_write(ble_bas_t * p_bas, ble_evt_t const * p_ble_evt)
 void ble_bas_on_ble_evt(ble_evt_t const * p_ble_evt, void * p_context)
 {
     if ((p_context == 
-# 108 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
+# 108 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
                      ((void *)0)
-# 108 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 108 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
                          ) || (p_ble_evt == 
-# 108 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
+# 108 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
                                             ((void *)0)
-# 108 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 108 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
                                                 ))
     {
         return;
@@ -37414,7 +37409,7 @@ void ble_bas_on_ble_evt(ble_evt_t const * p_ble_evt, void * p_context)
             break;
     }
 }
-# 135 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
 static ret_code_t battery_level_char_add(ble_bas_t * p_bas, const ble_bas_init_t * p_bas_init)
 {
     ret_code_t err_code;
@@ -37446,9 +37441,9 @@ static ret_code_t battery_level_char_add(ble_bas_t * p_bas, const ble_bas_init_t
     }
 
     if (p_bas_init->p_report_ref != 
-# 165 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
+# 165 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
                                    ((void *)0)
-# 165 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 165 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
                                        )
     {
 
@@ -37478,13 +37473,13 @@ static ret_code_t battery_level_char_add(ble_bas_t * p_bas, const ble_bas_init_t
 ret_code_t ble_bas_init(ble_bas_t * p_bas, const ble_bas_init_t * p_bas_init)
 {
     if (p_bas == 
-# 193 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
+# 193 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
                 ((void *)0) 
-# 193 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 193 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
                      || p_bas_init == 
-# 193 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
+# 193 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
                                       ((void *)0)
-# 193 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 193 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
                                           )
     {
         return ((0x0) + 14);
@@ -37508,7 +37503,7 @@ ret_code_t ble_bas_init(ble_bas_t * p_bas, const ble_bas_init_t * p_bas_init)
     err_code = battery_level_char_add(p_bas, p_bas_init);
     return err_code;
 }
-# 225 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 225 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
 static ret_code_t battery_notification_send(ble_gatts_hvx_params_t * const p_hvx_params,
                                             uint16_t conn_handle)
 {
@@ -37532,9 +37527,9 @@ ret_code_t ble_bas_battery_level_update(ble_bas_t * p_bas,
                                         uint16_t conn_handle)
 {
     if (p_bas == 
-# 247 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
+# 247 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
                 ((void *)0)
-# 247 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 247 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
                     )
     {
         return ((0x0) + 14);
@@ -37625,9 +37620,9 @@ ret_code_t ble_bas_battery_lvl_on_reconnection_update(ble_bas_t * p_bas,
                                                       uint16_t conn_handle)
 {
     if (p_bas == 
-# 336 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
+# 336 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c" 3 4
                 ((void *)0)
-# 336 "/home/jenkins/workspace/RAK4631/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
+# 336 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_bas/ble_bas.c"
                     )
     {
         return ((0x0) + 14);

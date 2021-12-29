@@ -9,7 +9,7 @@
 
 void uhal_adc_init ();
 void uhal_adc_deinit ();
-void uhal_adc_enable_channel (UDRV_ADC_CHANNEL chann, UDRV_ADC_PIN pin, UDRV_ADC_REF ref);
+void uhal_adc_enable_channel (UDRV_ADC_CHANNEL chann, uint32_t pin, UDRV_ADC_REF ref);
 void uhal_adc_disable_channel (UDRV_ADC_CHANNEL chann);
 int32_t uhal_adc_read (UDRV_ADC_CHANNEL chann, uint16_t *value);
 void uhal_adc_suspend (void);

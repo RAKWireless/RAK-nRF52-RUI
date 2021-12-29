@@ -56,15 +56,15 @@
  * | AT+APM?            | --                 | AT+APM: switch to API mode                                        | OK                 |
  * | AT+APM             | --                 |                                                                   | OK                 |
  * 
- * @subsection ATCMD_serial_port_6 AT+PAM: pass through mode
+ * @subsection ATCMD_serial_port_6 ATD: pass through mode
  *
  * This command provides a way to switch to pass through mode
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+PAM?            | --                 | AT+PAM: switch to pass through mode                               | OK                 |
- * | AT+PAM             | --                 |                                                                   | OK                 |
- * | AT+PAM=\<param\>   | <fport>            |                                                                   | OK / AT_PARAM_ERROR|
+ * | ATD?               | --                 | ATD: switch to pass through mode                                  | OK                 |
+ * | ATD                | --                 |                                                                   | OK                 |
+ * | ATD=\<param\>      | <fport>            |                                                                   | OK / AT_PARAM_ERROR|
  * 
  * @subsection ATCMD_serial_port_7 +++: Exit transparent transmission mode
  *
@@ -85,5 +85,5 @@
 #define ATCMD_BAUD                  "AT+BAUD"
 #define ATCMD_ATM                   "AT+ATM"
 #define ATCMD_APM                   "AT+APM"
-#define ATCMD_PAM                   "AT+PAM"
+#define ATCMD_PAM                   "ATD"
 #endif //_ATCMD_SERIAL_PORT_DEF_H_

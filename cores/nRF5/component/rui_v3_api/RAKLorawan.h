@@ -165,9 +165,9 @@ public:
      *
      * @param   length		the length of the payload
      * @param   payload		the date to uplink
-     * @param   fport		  allow 1 ~ 223
-     * @param	  confirm		whether to get confirm message from gateway
-     * @param	  retry		  the retry time when send fail
+     * @param   fport		allow 1 ~ 223
+     * @param	confirm		Override cfm setting to get confirm message from gateway (just for this time)
+     * @param	retry		Override rety setting to retry if sending failed (just for this time)
      * @return	bool
      * @retval	TRUE for sending uplink success
      * @retval	FALSE for sending uplink
@@ -217,7 +217,9 @@ public:
 
            @endverbatim
      */
-  bool send(uint8_t length, uint8_t *payload, uint8_t fport, bool confirm = true, uint8_t retry = 0);
+  bool send(uint8_t length, uint8_t *payload, uint8_t fport, bool confirm, uint8_t retry);
+  bool send(uint8_t length, uint8_t *payload, uint8_t fport, bool confirm);
+  bool send(uint8_t length, uint8_t *payload, uint8_t fport);
 
   /**@par	Description
      * 		This api gets or sets the times of retransmission of Confirm packet data
@@ -2020,7 +2022,7 @@ public:
        {
            Serial.begin(115200);
 
-           Serial.printf("Set the join delay on RX window 1  %s\r\n", api.lorawan.jn1dl.set(5) ? "Success" : "Fail");
+           Serial.printf("Set the join delay on RX window 1  %s\r\n", api.lorawan.jn1dl.set(5000) ? "Success" : "Fail");
        }
 
        void loop()
@@ -2064,6 +2066,35 @@ public:
            @endverbatim
 	 */
     int get();
+
+    /**@par	Description
+	 *     	This api allows the user to set the join delay on RX window 2
+	 *
+	 * @par	Syntax
+	 *	api.lorawan.jn2dl.set(value)
+	 *
+	 * @param	value	the join delay on RX window 2
+   * @return	bool
+	 * @retval	TRUE for setting join delay success
+	 * @retval	FALSE for setting join delay failure
+	 * @par         Example
+         * @verbatim
+       void setup()
+       {
+           Serial.begin(115200);
+
+           Serial.printf("Set the join delay on RX window 2  %s\r\n", api.lorawan.jn2dl.set(5000) ? "Success" : "Fail");
+       }
+
+       void loop()
+       {
+           Serial.printf("The join delay on RX window 2 is %d\r\n", api.lorawan.jn2dl.get());
+           delay(1000);
+       }
+
+           @endverbatim
+	 */
+    bool set(int value);
   };
 
   /**@par	Description
@@ -2179,7 +2210,7 @@ public:
        {
            Serial.begin(115200);
 
-           Serial.printf("Set the received delay on RX window 1  %s\r\n", api.lorawan.rx1dl.set(1) ? "Success" : "Fail");
+           Serial.printf("Set the received delay on RX window 1  %s\r\n", api.lorawan.rx1dl.set(1000) ? "Success" : "Fail");
        }
 
        void loop()
@@ -2223,6 +2254,34 @@ public:
            @endverbatim
 	 */
     int get();
+
+    /**@par	Description
+	 *     	This api allows the user to set the delay of the received window 2
+	 *
+	 * @par	Syntax
+	 *	api.lorawan.rx2dl.set(value)
+	 * @param	value	the delay of the received window 2
+   * @return	bool
+	 * @retval	TRUE for setting delay success
+	 * @retval	FALSE for setting delay failure
+	 * @par         Example
+         * @verbatim
+       void setup()
+       {
+           Serial.begin(115200);
+
+           Serial.printf("Set the received delay on RX window 2  %s\r\n", api.lorawan.rx2dl.set(2000) ? "Success" : "Fail");
+       }
+
+       void loop()
+       {
+           Serial.printf("The received delay on RX window 2 is %d\r\n", api.lorawan.rx2dl.get());
+           delay(1000);
+       }
+
+           @endverbatim
+	 */
+    bool set(int value);
   };
 
   /**@par	Description
@@ -2318,6 +2377,34 @@ public:
            @endverbatim
 	 */
     long get();
+
+    /**@par	Description
+	 *     	This api allows the user to set the frequency of the received window 2
+	 *
+	 * @par	Syntax
+	 *	api.lorawan.rx2fq.set(value)
+	 * @param	value	the frequency of the received window 2
+   * @return	bool
+	 * @retval	TRUE for setting frequency success
+	 * @retval	FALSE for setting frequency failure
+	 * @par         Example
+         * @verbatim
+       void setup()
+       {
+           Serial.begin(115200);
+
+           Serial.printf("Set the frequency on RX window 2  %s\r\n", api.lorawan.rx2fq.set(869535000) ? "Success" : "Fail");
+       }
+
+       void loop()
+       {
+           Serial.printf("The frequency on RX window 2 is %d\r\n", api.lorawan.rx2fq.get());
+           delay(1000);
+       }
+
+           @endverbatim
+	 */
+    bool set(int value);
   };
 
   /**@par	Description

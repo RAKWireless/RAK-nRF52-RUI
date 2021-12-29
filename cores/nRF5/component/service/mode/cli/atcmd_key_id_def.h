@@ -45,31 +45,31 @@
  * | Example<br>AT+APPSKEY= | 010203040506070809 | --                                                            | AT_PARAM_ERROR     |
  * | Example<br>AT+APPSKEY=?|                    | 0102030405060708090A0B0C0D0E0F00                              | OK                 |
  *
- * @subsection ATCMD_key_id_4 AT+DADDR: device address
+ * @subsection ATCMD_key_id_4 AT+DEVADDR: device address
  *
  * This command allows the user to access the device address.
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+DADDR?          | --                 | AT+DADDR: get or set the device address (4 bytes in hex)          | OK                 |
- * | AT+DADDR=?         | --                 | \<4 hex\>                                                         | OK                 |
- * | AT+DADDR=\<Param\> | \<4 hex\>          | --                                                                | OK / AT_PARAM_ERROR|
- * | Example<br>AT+DADDR= | 01020304         | --                                                                | OK                 |
- * | Example<br>AT+DADDR= | 0102030405       | --                                                                | AT_PARAM_ERROR     |
- * | Example<br>AT+DADDR=?|                  | 01020304                                                          | OK                 |
+ * | AT+DEVADDR?        | --                 | AT+DEVADDR: get or set the device address (4 bytes in hex)        | OK                 |
+ * | AT+DEVADDR=?       | --                 | \<4 hex\>                                                         | OK                 |
+ * | AT+DEVADDR=\<Param\> | \<4 hex\>        | --                                                                | OK / AT_PARAM_ERROR|
+ * | Example<br>AT+DEVADDR= | 01020304       | --                                                                | OK                 |
+ * | Example<br>AT+DEVADDR= | 0102030405     | --                                                                | AT_PARAM_ERROR     |
+ * | Example<br>AT+DEVADDR=?|                | 01020304                                                          | OK                 |
  *
- * @subsection ATCMD_key_id_5 AT+DEUI: device EUI
+ * @subsection ATCMD_key_id_5 AT+DEVEUI: device EUI
  *
  * This command allows the user to access the global end-device ID.
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+DEUI?           | --                 | AT+DEUI: get or set the device EUI (8 bytes in hex)               | OK                 |
- * | AT+DEUI=?          | --                 | \<8 hex\>                                                         | OK                 |
- * | AT+DEUI=\<Param\>  | \<8 hex\>          | --                                                                | OK / AT_PARAM_ERROR|
- * | Example<br>AT+DEUI= | 0102030405060708   | --                                                               | OK                 |
- * | Example<br>AT+DEUI= | 010203040506070809 | --                                                               | AT_PARAM_ERROR     |
- * | Example<br>AT+DEUI=?|                    | 0102030405060708                                                 | OK                 |
+ * | AT+DEVEUI?         | --                 | AT+DEVEUI: get or set the device EUI (8 bytes in hex)             | OK                 |
+ * | AT+DEVEUI=?        | --                 | \<8 hex\>                                                         | OK                 |
+ * | AT+DEVEUI=\<Param\>| \<8 hex\>          | --                                                                | OK / AT_PARAM_ERROR|
+ * | Example<br>AT+DEVEUI= | 0102030405060708   | --                                                             | OK                 |
+ * | Example<br>AT+DEVEUI= | 010203040506070809 | --                                                             | AT_PARAM_ERROR     |
+ * | Example<br>AT+DEVEUI=?|                 | 0102030405060708                                                  | OK                 |
  *
  * @subsection ATCMD_key_id_6 AT+NETID: network identifier (NetID)
  *
@@ -103,8 +103,8 @@
 #define ATCMD_APPEUI           "AT+APPEUI"
 #define ATCMD_APPKEY           "AT+APPKEY"
 #define ATCMD_APPSKEY          "AT+APPSKEY"
-#define ATCMD_DADDR            "AT+DADDR"
-#define ATCMD_DEUI             "AT+DEUI"
+#define ATCMD_DADDR            "AT+DEVADDR"
+#define ATCMD_DEUI             "AT+DEVEUI"
 #define ATCMD_NETID            "AT+NETID"
 #define ATCMD_NWKSKEY          "AT+NWKSKEY"
 

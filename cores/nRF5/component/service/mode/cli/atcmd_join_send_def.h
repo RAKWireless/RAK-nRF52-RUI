@@ -36,7 +36,7 @@
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
  * | AT+JOIN?           | --                 | AT+JOIN: join network                                             | OK                 |
  * | AT+JOIN=?          | --                 | \<integer1\>,\<integer2\>,\<integer3\>,\<integer4\>               | OK / AT_BUSY_ERROR |
- * | AT+JOIN=\<input\>  | \<integer1\>,\<integer2\>,\<integer3\>,\<integer4\>                 | --               | OK / AT_BUSY_ERROR |
+ * | AT+JOIN=\<input\>  | \<integer1\>:\<integer2\>:\<integer3\>:\<integer4\>                 | --               | OK / AT_BUSY_ERROR |
  * | Example<br>AT+JOIN=? | --               | 0,0,8,0                                                           | OK                 |
  * | Example<br>AT+JOIN=| 1,1,10,8           | --                                                                | OK                 |
  *

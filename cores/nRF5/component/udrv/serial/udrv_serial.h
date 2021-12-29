@@ -18,6 +18,34 @@ extern "C" {
 #include <stdarg.h>
 #include <stdbool.h>
 
+typedef enum _SERIAL_STATE{
+    SERIAL_STATE_DEFAULT = 0,
+    SERIAL_STATE_AT_START_1    = 1,    /* A */
+    SERIAL_STATE_AT_START_2    = 2,    /* T */
+    SERIAL_STATE_AT_START_3    = 3,    /* + */
+    SERIAL_STATE_BOOT_1        = 4,    /* B */
+    SERIAL_STATE_BOOT_2        = 5,    /* O */
+    SERIAL_STATE_BOOT_3        = 6,    /* O */
+    SERIAL_STATE_BOOT_4        = 7,    /* T */
+    SERIAL_STATE_ATM_1         = 8,    /* A */
+    SERIAL_STATE_ATM_2         = 9,    /* T */
+    SERIAL_STATE_ATM_3         = 10,   /* M */
+    SERIAL_STATE_AT_END        = 11,   /* CRLF */
+    SERIAL_STATE_MAX           = 12,
+} SERIAL_STATE;
+
+typedef enum _SERIAL_EVENT{
+    SERIAL_EVENT_RECV_A_A_CHAR    = 0,
+    SERIAL_EVENT_RECV_A_T_CHAR    = 1,
+    SERIAL_EVENT_RECV_A_PLUS_CHAR = 2,
+    SERIAL_EVENT_RECV_A_B_CHAR    = 3,
+    SERIAL_EVENT_RECV_A_O_CHAR    = 4,
+    SERIAL_EVENT_RECV_A_M_CHAR    = 5,
+    SERIAL_EVENT_RECV_CRLF        = 6,
+    SERIAL_EVENT_RECV_OTHER_CHAR  = 7,
+    SERIAL_EVENT_MAX              = 8,
+} SERIAL_EVENT;
+
 #define SERIAL_NO_TIMEOUT UINT32_MAX
 
 typedef enum _SERIAL_IE_E {
@@ -260,6 +288,14 @@ void udrv_serial_suspend();
  *
  */
 void udrv_serial_resume();
+
+/**
+ * @brief   Let AT+BOOT and AT+ATM works in any serial mode.
+ *
+ */
+#ifndef RUI_BOOTLOADER
+void serial_fallback_handler(SERIAL_PORT port, uint8_t ch);
+#endif
 
 #ifdef __cplusplus
 }

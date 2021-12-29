@@ -18,6 +18,7 @@ int At_Mask(SERIAL_PORT port, char *cmd, stParam *param)
         return AT_MODE_NO_SUPPORT;
     }
     int32_t ret;
+    SERVICE_LORA_BAND band = service_lora_get_band();
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
@@ -26,7 +27,7 @@ int At_Mask(SERIAL_PORT port, char *cmd, stParam *param)
 
         if (UDRV_RETURN_OK == service_lora_get_mask(&ch_mask))
         {
-            atcmd_printf("%s=%04X", cmd, ch_mask);
+            atcmd_printf("%04X", ch_mask);
             if ((freq = service_lora_get_chs()) > 0) {
                 atcmd_printf("(single channel mode: %d)", freq);
             }
@@ -45,6 +46,12 @@ int At_Mask(SERIAL_PORT port, char *cmd, stParam *param)
 
         if (0 != at_check_hex_uint16(param->argv[0], &mask_param))
             return AT_PARAM_ERROR;
+
+        if( band == SERVICE_LORA_US915 || band == SERVICE_LORA_AU915)
+        {
+            if(mask_param>255)
+                return AT_PARAM_ERROR;
+        }
 
         ret = service_lora_set_mask(&mask_param, true);
         if (ret == UDRV_RETURN_OK)
@@ -83,7 +90,6 @@ int At_Che(SERIAL_PORT port, char *cmd, stParam *param)
         {
             uint32_t i = 1, j = 1;
 
-            atcmd_printf("%s=", cmd);
             do {
                 if (ch_mask & 1) {
                     if (j != 1) {
@@ -126,10 +132,18 @@ int At_Che(SERIAL_PORT port, char *cmd, stParam *param)
                 return AT_PARAM_ERROR;
             }
 
+            SERVICE_LORA_BAND band = service_lora_get_band();
+            
+            if(band == SERVICE_LORA_US915 || band == SERVICE_LORA_AU915)
+            {
+                if(input > 8)
+                    return AT_PARAM_ERROR;
+            }
+
             switch (input) {
                 case 0:
                 {
-                    mask_param |= 0x0FFF;
+                    mask_param |= 0x0000;
                     break;
                 }
                 case 1:
@@ -232,33 +246,33 @@ int At_Band(SERIAL_PORT port, char *cmd, stParam *param)
         switch (service_lora_get_band())
         {
         case SERVICE_LORA_EU433:
-            atcmd_printf("%s=0\r\n", cmd);
+            atcmd_printf("0\r\n");
             break;
         case SERVICE_LORA_CN470:
-            atcmd_printf("%s=1\r\n", cmd);
+            atcmd_printf("1\r\n");
             break;
 #ifndef LEGACY
         case SERVICE_LORA_RU864:
-            atcmd_printf("%s=2\r\n", cmd);
+            atcmd_printf("2\r\n");
             break;
 #endif
         case SERVICE_LORA_IN865:
-            atcmd_printf("%s=3\r\n", cmd);
+            atcmd_printf("3\r\n");
             break;
         case SERVICE_LORA_EU868:
-            atcmd_printf("%s=4\r\n", cmd);
+            atcmd_printf("4\r\n");
             break;
         case SERVICE_LORA_US915:
-            atcmd_printf("%s=5\r\n", cmd);
+            atcmd_printf("5\r\n");
             break;
         case SERVICE_LORA_AU915:
-            atcmd_printf("%s=6\r\n", cmd);
+            atcmd_printf("6\r\n");
             break;
         case SERVICE_LORA_KR920:
-            atcmd_printf("%s=7\r\n", cmd);
+            atcmd_printf("7\r\n");
             break;
         case SERVICE_LORA_AS923:
-            atcmd_printf("%s=8\r\n", cmd);
+            atcmd_printf("8\r\n");
             break;
 #ifdef LEGACY
         case SERVICE_LORA_US915_HYBRID:
@@ -353,7 +367,7 @@ int At_Chs(SERIAL_PORT port, char *cmd, stParam *param)
         if((freq = service_lora_get_chs()) < 0) {
             return AT_ERROR;
         }
-        atcmd_printf("%s=%d\r\n", cmd, service_lora_get_chs());
+        atcmd_printf("%d\r\n", service_lora_get_chs());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -466,7 +480,7 @@ int At_Tconf(SERIAL_PORT port, char *cmd, stParam *param)
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
         service_lora_get_tconf(&Param);
-        atcmd_printf("%s=%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\r\n", cmd, Param.frequency, Param.power, Param.bandwidth, Param.datarate, Param.coderate, Param.lna,
+        atcmd_printf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\r\n", Param.frequency, Param.power, Param.bandwidth, Param.datarate, Param.coderate, Param.lna,
                      Param.paBoost, Param.modem, Param.payloadLen, Param.fdev, Param.lowDrOpt, Param.BTproduct);
         return AT_OK;
     }
@@ -558,7 +572,7 @@ int At_Tth(SERIAL_PORT port, char *cmd, stParam *param)
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
         service_lora_get_tconf(&Param);
-        atcmd_printf("%s=%d,%d,%d,%d\r\n", cmd, Param.freq_start,Param.freq_stop,Param.hp_step,Param.nb_tx);
+        atcmd_printf("%d,%d,%d,%d\r\n", Param.freq_start,Param.freq_stop,Param.hp_step,Param.nb_tx);
         return AT_OK;
     }
     else

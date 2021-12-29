@@ -22,10 +22,10 @@ typedef enum
     UDRV_SYS_EVT_OP_SERIAL_USB             = 0x01,     //operating mode parser - USB0
     UDRV_SYS_EVT_OP_SERIAL_BLE             = 0x02,     //operating mode parser - BLE
     UDRV_SYS_EVT_OP_LORAWAN                = 0x03,     //LoRaWAN RX process
-    UDRV_SYS_EVT_OP_LORAWAN_AUTO_JOIN      = 0x04,     //LoRaWAN auto join
-    UDRV_SYS_EVT_OP_LORAWAN_SEND_HELLO     = 0x05,     //LoRaWAN send hello
-    UDRV_SYS_EVT_OP_LORAWAN_BEACON_ACQUIRE = 0x06,     //LoRaWAN acquire beacon
-    UDRV_SYS_EVT_OP_USER_APP               = 0x07,     //user application
+    UDRV_SYS_EVT_OP_USER_APP               = 0x04,     //user application
+    UDRV_SYS_EVT_OP_USER_TIMER             = 0x05,     //user timer
+    UDRV_SYS_EVT_OP_SYS_TIMER              = 0x06,     //system timer
+    UDRV_SYS_EVT_OP_SERIAL_FALLBACK        = 0x08,     //serial fallback to AT mode 
 } udrv_system_event_op_t;
 
 typedef struct

@@ -3,6 +3,7 @@
 #include "udrv_errno.h"
 #include "udrv_serial.h"
 #include "udrv_system.h"
+#include "udrv_rtc.h"
 #include "board_basic.h"
 #include "service_nvm.h"
 #include "service_lora.h"
@@ -30,18 +31,17 @@ static uint8_t linkcheck_flag;
 static uint8_t DemodMargin;
 static uint8_t NbGateways;
 static uint8_t linkcheck_state;
+static delay_send_t delay_send;
 SERVICE_LORA_CLASS_B_STATE class_b_state = SERVICE_LORA_CLASS_B_S0;//Initial state
 
 static void service_lora_linkcheck_callback(void);
+static int32_t service_lora_delay_send_process(void);
 static service_lora_recv_cb service_lora_recv_callback;
 static SERVICE_LORA_RECEIVE_T recv_data_pkg;
 static service_lora_join_cb service_lora_join_callback;
 static service_lora_send_cb service_lora_send_callback;
 
 extern bool udrv_powersave_in_sleep;
-static udrv_system_event_t rui_lora_auto_join_event = {.request = UDRV_SYS_EVT_OP_LORAWAN_AUTO_JOIN, .p_context = NULL};
-static udrv_system_event_t rui_lora_send_hello_event = {.request = UDRV_SYS_EVT_OP_LORAWAN_SEND_HELLO, .p_context = NULL};
-static udrv_system_event_t rui_lora_beacon_acquire_event = {.request = UDRV_SYS_EVT_OP_LORAWAN_BEACON_ACQUIRE, .p_context = NULL};
 
 static uint32_t service_lora_wlock_cnt;
 
@@ -89,8 +89,7 @@ static int32_t service_lora_send_ping_slot_periodicity(uint8_t periodicity)
 
 static void service_lora_auto_join(void *m_data)
 {
-    udrv_system_event_produce(&rui_lora_auto_join_event);
-    udrv_powersave_in_sleep = false;
+    service_lora_join(1, -1, -1, -1);
 }
 
 static int32_t service_lora_start(void)
@@ -98,11 +97,11 @@ static int32_t service_lora_start(void)
     LoRaMacStatus_t Status = LoRaMacStart();
     if (Status == LORAMAC_STATUS_OK)
     {
-        //udrv_serial_log_printf("LORAMAC start OK!\r\n");
+        LORA_TEST_DEBUG("LORAMAC start OK!\r\n");
     }
     else
     {
-        //udrv_serial_log_printf("LORAMAC start FAILED!\r\n");
+        LORA_TEST_DEBUG("LORAMAC start FAILED!\r\n");
         return -UDRV_INTERNAL_ERR;
     }
 
@@ -118,7 +117,7 @@ static int32_t service_lora_start(void)
         }
         else
         {
-            udrv_serial_log_printf("+EVT: JOIN FAILED (%d)\r\n", __LINE__);
+            udrv_serial_log_printf("+EVT:JOIN FAILED(%d)\r\n", __LINE__);
         }
     }
 
@@ -142,6 +141,85 @@ static int32_t service_lora_stop(void)
     return UDRV_RETURN_OK;
 }
 
+static void service_lora_beacon_acquisition(void *m_data)
+{
+    LoRaMacStatus_t status;
+    MlmeReq_t mlmeReq;
+    mlmeReq.Type = MLME_BEACON_ACQUISITION;
+
+    status = LoRaMacMlmeRequest(&mlmeReq);
+
+    if (status == LORAMAC_STATUS_OK)
+    {
+        LORA_TEST_DEBUG("Acquire Beacon Success\r\n");
+    }
+    else
+    {
+        //udrv_serial_log_printf("Acquire Beacon Fail\r\n");
+        LORA_TEST_DEBUG("+BC: ONGOING\r\n");
+    }
+}
+
+static void service_lora_send_null(void *m_data)
+{
+    SERVICE_LORA_SEND_INFO info;
+    int32_t ret;
+    MlmeReq_t mlmeReq;
+    LoRaMacStatus_t status;
+
+    switch ((SERVICE_LORA_MAC_CMD)m_data) {
+        case SERVICE_LORA_MAC_CMD_DEVICE_TIME:
+        {
+            mlmeReq.Type = MLME_DEVICE_TIME;
+            status = LoRaMacMlmeRequest(&mlmeReq);
+            break;
+        }
+        case SERVICE_LORA_MAC_CMD_PING_SLOT_INFO:
+        {
+            mlmeReq.Type = MLME_PING_SLOT_INFO;
+            mlmeReq.Req.PingSlotInfo.PingSlot.Fields.Periodicity = service_lora_get_ping_slot_periodicity();
+            mlmeReq.Req.PingSlotInfo.PingSlot.Fields.RFU = 0;
+            status = LoRaMacMlmeRequest(&mlmeReq);
+            break;
+        }
+        case SERVICE_LORA_MAC_CMD_NONE:
+        default:
+        {
+            status = LORAMAC_STATUS_OK;
+            break;
+        }
+    }
+
+    if (status == LORAMAC_STATUS_OK)
+    {
+        info.port = 2;
+        info.retry_valid = true;
+        info.retry = 0;
+        info.confirm_valid = true;
+        info.confirm == SERVICE_LORA_NO_ACK;
+
+        if ((ret = service_lora_send("", 0, info, false)) == UDRV_RETURN_OK)
+        {
+            LORA_TEST_DEBUG("Send Null Success\r\n");
+        }
+        else
+        {
+            LORA_TEST_DEBUG("Send Null Fail\r\n");
+            //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
+
+            udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+        }
+    }
+    else
+    {
+        LORA_TEST_DEBUG("status=%d", status);
+        LORA_TEST_DEBUG("Send Null Fail\r\n");
+        //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
+
+        udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+    }
+}
+
 static void McpsConfirm(McpsConfirm_t *mcpsConfirm)
 {
     if (mcpsConfirm->Status == LORAMAC_EVENT_INFO_STATUS_OK)
@@ -156,12 +234,12 @@ static void McpsConfirm(McpsConfirm_t *mcpsConfirm)
             service_lora_send_callback(mcpsConfirm->Status);
         }
     }
-    if(SERVICE_LORA_ACK == service_lora_get_cfm())
+    if( mcpsConfirm->McpsRequest == MCPS_CONFIRMED)
     {
         if(mcpsConfirm->AckReceived)
-        udrv_serial_log_printf("+EVT: SEND CONFIRMED OK\r\n");
+        udrv_serial_log_printf("+EVT:SEND CONFIRMED OK\r\n");
         else
-        udrv_serial_log_printf("+EVT: SEND CONFIRMED FAILED\r\n");
+        udrv_serial_log_printf("+EVT:SEND CONFIRMED FAILED\r\n");
     }
 
     service_lora_lptp_send_callback(0);
@@ -179,12 +257,12 @@ static void McpsIndication(McpsIndication_t *mcpsIndication)
 
         if (mcpsIndication->BufferSize > 0)
         {
-            udrv_serial_log_printf("+EVT: RX_%s, RSSI %d, SNR %d\r\n", slotStrings[mcpsIndication->RxSlot], rssi, snr);
+            udrv_serial_log_printf("+EVT:RX_%s, RSSI %d, SNR %d\r\n", slotStrings[mcpsIndication->RxSlot], rssi, snr);
             if (mcpsIndication->Multicast == 1)
                 MulticastMcpsIndication(mcpsIndication);
             else
-                udrv_serial_log_printf("UNICAST\r\n");
-            udrv_serial_log_printf("%d : ", mcpsIndication->Port);
+                udrv_serial_log_printf("+EVT:UNICAST\r\n");
+            udrv_serial_log_printf("+EVT:%d:", mcpsIndication->Port);
             for (int i = 0 ; i < SERIAL_MAX ; i++)
             {
                 SERVICE_MODE_TYPE mode = service_nvm_get_mode_type_from_nvm((SERIAL_PORT)i);
@@ -217,8 +295,12 @@ static void McpsIndication(McpsIndication_t *mcpsIndication)
     }
     
     service_lora_linkcheck_callback();
-    service_lora_Certifi_Callback(mcpsIndication);
-    //FramePending TODO
+
+    //FramePending or Confirmed downlink
+    if(((mcpsIndication->FramePending == true) && (service_lora_get_class() == SERVICE_LORA_CLASS_A)) || (mcpsIndication->McpsIndication == MCPS_CONFIRMED))
+    {
+        service_lora_send_null(SERVICE_LORA_MAC_CMD_NONE);
+    }
 
     if(( mcpsIndication->Port ) !=224)
     {
@@ -233,18 +315,8 @@ static void McpsIndication(McpsIndication_t *mcpsIndication)
             service_lora_recv_callback(&recv_data_pkg);
         }
     }
-}
-
-static void service_lora_beacon_acquisition(void)
-{
-    udrv_system_event_produce(&rui_lora_beacon_acquire_event);
-    udrv_powersave_in_sleep = false;
-}
-
-static void service_lora_send_hello(void *m_data)
-{
-    udrv_system_event_produce(&rui_lora_send_hello_event);
-    udrv_powersave_in_sleep = false;
+    service_lora_Certifi_Callback(mcpsIndication);
+    service_lora_delay_send_process();
 }
 
 static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
@@ -257,17 +329,13 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
             LoRaMacStatus_t status;
             MlmeReq_t mlmeReq;
 
-            udrv_serial_log_printf("+EVT: JOINED\r\n");
+            udrv_serial_log_printf("+EVT:JOINED\r\n");
 
             udrv_system_timer_stop(SYSTIMER_LORAWAN);
 
             auto_join_retry_cnt = 0;
 
-            if (service_lora_get_class() == SERVICE_LORA_CLASS_B)
-            {
-                service_lora_class_b_process();
-            }
-            else if (service_lora_get_class() == SERVICE_LORA_CLASS_C)
+            if (service_lora_get_class() == SERVICE_LORA_CLASS_C)
             {
                 MibRequestConfirm_t mibReq;
 
@@ -276,7 +344,7 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
                 mibReq.Param.Class = CLASS_C;
                 if (LoRaMacMibSetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
                 {
-                    udrv_serial_log_printf("+EVT: SWITCH FAILED \r\n", __LINE__);
+                    udrv_serial_log_printf("+EVT:SWITCH FAILED\r\n");
                 }
             }
 
@@ -289,17 +357,17 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
             switch (mlmeConfirm->Status) {
                 case LORAMAC_EVENT_INFO_STATUS_TX_TIMEOUT:
                 {
-                    udrv_serial_log_printf("+EVT: JOIN FAILED (TX timeout)\r\n");
+                    udrv_serial_log_printf("+EVT:JOIN FAILED(TX timeout)\r\n");
                     break;
                 }
                 case LORAMAC_EVENT_INFO_STATUS_RX2_TIMEOUT:
                 {
-                    udrv_serial_log_printf("+EVT: JOIN FAILED (RX timeout)\r\n");
+                    udrv_serial_log_printf("+EVT:JOIN FAILED(RX timeout)\r\n");
                     break;
                 }
                 default:
                 {
-                    udrv_serial_log_printf("+EVT: JOIN FAILED (%d)\r\n", mlmeConfirm->Status);
+                    udrv_serial_log_printf("+EVT:JOIN FAILED(%d)\r\n", mlmeConfirm->Status);
                     break;
                 }
             }
@@ -320,7 +388,7 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
                     }
                     else
                     {
-                        udrv_serial_log_printf("+EVT: JOIN FAILED (%d)\r\n", __LINE__);
+                        udrv_serial_log_printf("+EVT:JOIN FAILED(%d)\r\n", __LINE__);
                     }
                 }
             }
@@ -341,14 +409,14 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
     {
         if (mlmeConfirm->Status == LORAMAC_EVENT_INFO_STATUS_OK)
         {
-            //udrv_serial_log_printf("Get Device Time Success\r\n");
+            LORA_TEST_DEBUG("Get Device Time Success\r\n");
 
             if (service_lora_get_class() == SERVICE_LORA_CLASS_B)
             {
                 if (class_b_state != SERVICE_LORA_CLASS_B_COMPLETED) {
                     class_b_state = SERVICE_LORA_CLASS_B_S1;//Beacon searching
 
-                    service_lora_class_b_process();
+                    service_lora_beacon_acquisition(NULL);
                 }
             }
         }
@@ -358,11 +426,29 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
     {
         if (mlmeConfirm->Status == LORAMAC_EVENT_INFO_STATUS_OK)
         {
-            udrv_serial_log_printf("+PS: DONE\r\n");
+            udrv_serial_log_printf("+PS:DONE\r\n");
 
             class_b_state = SERVICE_LORA_CLASS_B_COMPLETED;//Class B enabled
 
-            service_lora_class_b_process();
+            {
+                LoRaMacStatus_t status;
+                MibRequestConfirm_t mibReq;
+
+                // Class B is now activated
+                mibReq.Type = MIB_DEVICE_CLASS;
+                mibReq.Param.Class = CLASS_B;
+                if ((status = LoRaMacMibSetRequestConfirm(&mibReq)) == LORAMAC_STATUS_OK)
+                {
+                    udrv_serial_log_printf("+BC: DONE\r\n");
+                }
+                else
+                {
+                    //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
+
+                    LORA_TEST_DEBUG("status=%d",status);
+                    udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+                }
+            }
 
             service_lora_wake_unlock();
         }
@@ -371,7 +457,7 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
             //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
 
             LORA_TEST_DEBUG("mlmeConfirm->Status=%d",mlmeConfirm->Status);
-            udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+            udrv_serial_log_printf("+BC:FAILED(%d)\r\n", __LINE__);
         }
         break;
     }
@@ -383,7 +469,7 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
         linkcheck_state = mlmeConfirm->Status;
         if(linkcheck_state!= LORAMAC_EVENT_INFO_STATUS_OK)
         {
-            udrv_serial_log_printf("+EVT: LINKCHECK : 1,0,0,0,0\r\n");
+            udrv_serial_log_printf("+EVT:LINKCHECK:1,0,0,0,0\r\n");
         }
         break;
     }
@@ -398,24 +484,47 @@ static void MlmeIndication(MlmeIndication_t *mlmeIndication)
     {
     case MLME_BEACON_LOST:
     {
-        udrv_serial_log_printf("+BC: LOST (given up)\r\n");
+        udrv_serial_log_printf("+BC:LOST(given up)\r\n");
 
         class_b_state = SERVICE_LORA_CLASS_B_S1;//Beacon searching
 
-        service_lora_class_b_process();
+        udrv_system_timer_stop(SYSTIMER_LORAWAN);
+        if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_beacon_acquisition, HTMR_ONESHOT) == UDRV_RETURN_OK)
+        {
+            uint32_t ran = random()%128+1;
+            LORA_TEST_DEBUG("random backoff %u seconds\r\n", ran);
+            udrv_system_timer_start(SYSTIMER_LORAWAN, ran*1000, NULL);
+        }
+        else
+        {
+            udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+            udrv_system_timer_stop(SYSTIMER_LORAWAN);
+        }
     }
     break;
     case MLME_BEACON:
     {
         if (mlmeIndication->Status == LORAMAC_EVENT_INFO_STATUS_BEACON_LOCKED)
         {
-            udrv_serial_log_printf("+BC: LOCKED\r\n");
+            udrv_serial_log_printf("+BC:LOCKED\r\n");
 
-            //udrv_serial_log_printf("Lock Beacon Success\r\n");
+            LORA_TEST_DEBUG("Lock Beacon Success\r\n");
 
             if (class_b_state != SERVICE_LORA_CLASS_B_COMPLETED) {
                 class_b_state = SERVICE_LORA_CLASS_B_S2;//Beacon locked
-                service_lora_class_b_process();
+
+                udrv_system_timer_stop(SYSTIMER_LORAWAN);
+                if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_send_null, HTMR_ONESHOT) == UDRV_RETURN_OK)
+                {
+                    uint32_t ran = random()%128+1;
+                    LORA_TEST_DEBUG("random backoff %u seconds\r\n", ran);
+                    udrv_system_timer_start(SYSTIMER_LORAWAN, ran*1000, SERVICE_LORA_MAC_CMD_PING_SLOT_INFO);
+                }
+                else
+                {
+                    udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+                    udrv_system_timer_stop(SYSTIMER_LORAWAN);
+                }
             }
 
             switch (mlmeIndication->BeaconInfo.GwSpecific.InfoDesc)
@@ -467,20 +576,26 @@ static void MlmeIndication(MlmeIndication_t *mlmeIndication)
             MlmeReq_t mlmeReq;
             LoRaMacStatus_t status;
 
-            udrv_serial_log_printf("+BC: LOST (temporarily)\r\n");
+            udrv_serial_log_printf("+BC:LOST(temporarily)\r\n");
 
-            mlmeReq.Type = MLME_DEVICE_TIME;
-            status = LoRaMacMlmeRequest(&mlmeReq);
-            //if (status == LORAMAC_STATUS_OK)
-            //{
-	        //service_lora_send_hello(NULL);
-            //}
+            udrv_system_timer_stop(SYSTIMER_LORAWAN);
+            if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_send_null, HTMR_ONESHOT) == UDRV_RETURN_OK)
+            {
+                uint32_t ran = random()%128+1;
+                LORA_TEST_DEBUG("random backoff %u seconds\r\n", ran);
+                udrv_system_timer_start(SYSTIMER_LORAWAN, ran*1000, SERVICE_LORA_MAC_CMD_DEVICE_TIME);
+            }
+            else
+            {
+                udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+                udrv_system_timer_stop(SYSTIMER_LORAWAN);
+            }
         }
         else
         {
             //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
 
-            udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+            udrv_serial_log_printf("+BC:FAILED(%d)\r\n", __LINE__);
         }
         btime = mlmeIndication->BeaconInfo.Time;
         break;
@@ -534,7 +649,7 @@ int32_t service_lora_init(SERVICE_LORA_BAND band)
         uint8_t buff[16];
 
         // Initialization successful
-        //udrv_serial_log_printf("LORAMAC initialization OK!\r\n");
+        LORA_TEST_DEBUG("LORAMAC initialization OK!\r\n");
 
         mibReq.Type = MIB_ABP_LORAWAN_VERSION;
         mibReq.Param.AbpLrWanVersion.Value = 0x01000300;
@@ -653,10 +768,12 @@ int32_t service_lora_init(SERVICE_LORA_BAND band)
     }
     else
     {
-        //udrv_serial_log_printf("LORAMAC initialization FAILED!\r\n");
+        LORA_TEST_DEBUG("LORAMAC initialization FAILED!\r\n");
         ret = -UDRV_INTERNAL_ERR;
         goto out;
     }
+
+    srandom(udrv_rtc_get_timestamp((RtcID_E)SYS_RTC_COUNTER_PORT));
 
 out:
     service_lora_sleep();
@@ -1063,7 +1180,7 @@ int32_t service_lora_set_band(SERVICE_LORA_BAND band)
         uint8_t buff[16];
 
         // Initialization successful
-        //udrv_serial_log_printf("LORAMAC initialization OK!\r\n");
+        LORA_TEST_DEBUG("LORAMAC initialization OK!\r\n");
 
         /**************************************************************************************
      *
@@ -1146,7 +1263,7 @@ int32_t service_lora_set_band(SERVICE_LORA_BAND band)
     }
     else
     {
-        //udrv_serial_log_printf("LORAMAC initialization FAILED!\r\n");
+        LORA_TEST_DEBUG("LORAMAC initialization FAILED!\r\n");
         return -UDRV_INTERNAL_ERR;
     }
 
@@ -1172,6 +1289,11 @@ int32_t service_lora_get_mask(uint16_t *mask)
     {
         if (p_mask[i])
             channel_mask |= (1 << i);
+    }
+
+    if(band == SERVICE_LORA_US915 || band == SERVICE_LORA_AU915)
+    {
+        channel_mask &= ~(1<<8);
     }
 
     *mask = channel_mask;
@@ -1213,14 +1335,14 @@ int32_t service_lora_set_mask(uint16_t *mask, bool commit)
         MibRequestConfirm_t mibReq;
 
         // Initialization successful
-        //udrv_serial_log_printf("LORAMAC initialization OK!\r\n");
+        LORA_TEST_DEBUG("LORAMAC initialization OK!\r\n");
 
         if (*mask == 0)
         { //All zero means enabling all channels; All ones still means enabling all channels.
             if (band == SERVICE_LORA_AU915)
                 *mask = 0x01FF; // channels 0 - 71
             if (band == SERVICE_LORA_US915)
-                *mask = 0x01FF; // channels 0 - 71
+                *mask = 0x00FF; // channels 0 - 71
             if (band == SERVICE_LORA_CN470)
                 *mask = 0x0FFF; // channels 0 - 95
         }
@@ -1231,6 +1353,18 @@ int32_t service_lora_set_mask(uint16_t *mask, bool commit)
             if (*mask & (1 << i))
             {
                 channel_mask[i / 2] |= mask_val[i % 2];
+            }
+        }
+
+        if(band == SERVICE_LORA_US915 || band == SERVICE_LORA_AU915) 
+        {
+            channel_mask[4] &= ~(0x00FF<<0); 
+            for(uint8_t i; i < 8;i++ )
+            {
+                if (*mask & (1 << i))
+                {
+                    channel_mask[4] |= 1<<i; 
+                }
             }
         }
 
@@ -1274,92 +1408,6 @@ int32_t service_lora_set_mask(uint16_t *mask, bool commit)
     }
 }
 #endif
-
-void service_lora_class_b_process(void)
-{
-    MlmeReq_t mlmeReq;
-    LoRaMacStatus_t status;
-
-    udrv_system_timer_stop(SYSTIMER_LORAWAN);
-
-    switch (class_b_state)
-    {
-        case SERVICE_LORA_CLASS_B_S0:
-        {
-            if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_send_hello, HTMR_PERIODIC) == UDRV_RETURN_OK)
-            {
-                udrv_system_timer_start(SYSTIMER_LORAWAN, 6000, NULL);
-            }
-            else
-            {
-                //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
-
-                udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
-            }
-            break;
-        }
-        case SERVICE_LORA_CLASS_B_S1:
-        {
-            if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_beacon_acquisition, HTMR_PERIODIC) == UDRV_RETURN_OK)
-            {
-                udrv_system_timer_start(SYSTIMER_LORAWAN, 6000, NULL);
-            }
-            else
-            {
-                //udrv_serial_log_printf("Acquire Beacon Fail\r\n");
-                //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
-
-                udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
-            }
-            break;
-        }
-        case SERVICE_LORA_CLASS_B_S2:
-        {
-            if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_send_hello, HTMR_PERIODIC) == UDRV_RETURN_OK)
-            {
-                udrv_system_timer_start(SYSTIMER_LORAWAN, 6000, NULL);
-            }
-            else
-            {
-                //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
-
-                udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
-            }
-            break;
-        }
-        //case SERVICE_LORA_CLASS_B_S3:
-        //{
-            //break;
-        //}
-        case SERVICE_LORA_CLASS_B_COMPLETED:
-        {
-            MibRequestConfirm_t mibReq;
-
-            // Class B is now activated
-            mibReq.Type = MIB_DEVICE_CLASS;
-            mibReq.Param.Class = CLASS_B;
-            if ((status = LoRaMacMibSetRequestConfirm(&mibReq)) == LORAMAC_STATUS_OK)
-            {
-                udrv_system_timer_stop(SYSTIMER_LORAWAN);
-
-                udrv_serial_log_printf("+BC: DONE\r\n");
-            }
-            else
-            {
-                //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
-
-                LORA_TEST_DEBUG("status=%d",status);
-                udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
-            }
-            break;
-        }
-        default:
-        {
-            //Do nothing
-            break;
-        }
-    }
-}
 
 int32_t service_lora_join(int32_t param1, int32_t param2, int32_t param3, int32_t param4)
 {
@@ -1456,7 +1504,7 @@ int32_t service_lora_join(int32_t param1, int32_t param2, int32_t param3, int32_
         }
         else if (status == LORAMAC_STATUS_DUTYCYCLE_RESTRICTED)
         {
-            udrv_serial_log_printf("Restricted (wait %d ms)\r\n", mlmeReq.ReqReturn.DutyCycleWaitTime);
+            udrv_serial_log_printf("Restricted(wait %d ms)\r\n", mlmeReq.ReqReturn.DutyCycleWaitTime);
             return -UDRV_BUSY;
         }
         else
@@ -1483,8 +1531,6 @@ int32_t service_lora_join(int32_t param1, int32_t param2, int32_t param3, int32_
             LoRaMacMibSetRequestConfirm(&mibReq);
         } else if (service_lora_get_class() == SERVICE_LORA_CLASS_B)
         {
-            service_lora_class_b_process();
-
             service_lora_wake_lock();
         }
     }
@@ -1735,6 +1781,7 @@ int32_t service_lora_send(uint8_t *buff, uint32_t len, SERVICE_LORA_SEND_INFO in
     LoRaMacTxInfo_t txInfo;
     SERVICE_LORA_DATA_RATE dr = service_lora_get_dr();
     bool tx_possible = true;
+    MlmeReq_t mlmeReq;
 
     if (service_lora_get_njs() == false)
     {
@@ -1756,8 +1803,43 @@ int32_t service_lora_send(uint8_t *buff, uint32_t len, SERVICE_LORA_SEND_INFO in
     }
     else if (service_lora_get_class() == SERVICE_LORA_CLASS_B)
     {
-        if (class_b_state != SERVICE_LORA_CLASS_B_COMPLETED) {
-            service_lora_class_b_process();
+        switch (class_b_state)
+        {
+            case SERVICE_LORA_CLASS_B_S0:
+            {
+                mlmeReq.Type = MLME_DEVICE_TIME;
+                status = LoRaMacMlmeRequest(&mlmeReq);
+                break;
+            }
+            case SERVICE_LORA_CLASS_B_S1:
+            {
+                udrv_system_timer_stop(SYSTIMER_LORAWAN);
+                if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_beacon_acquisition, HTMR_ONESHOT) == UDRV_RETURN_OK)
+                {
+                    uint32_t ran = random()%128+1;
+                    LORA_TEST_DEBUG("random backoff %u seconds\r\n", ran);
+                    udrv_system_timer_start(SYSTIMER_LORAWAN, ran*1000, NULL);
+                }
+                else
+                {
+                    udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+                    udrv_system_timer_stop(SYSTIMER_LORAWAN);
+                }
+                break;
+            }
+            case SERVICE_LORA_CLASS_B_S2:
+            {
+                mlmeReq.Type = MLME_PING_SLOT_INFO;
+                mlmeReq.Req.PingSlotInfo.PingSlot.Fields.Periodicity = service_lora_get_ping_slot_periodicity();
+                mlmeReq.Req.PingSlotInfo.PingSlot.Fields.RFU = 0;
+                status = LoRaMacMlmeRequest(&mlmeReq);
+                break;
+            }
+            default:
+            {
+                //Do nothing
+                break;
+            }
         }
     }
 
@@ -1774,8 +1856,10 @@ int32_t service_lora_send(uint8_t *buff, uint32_t len, SERVICE_LORA_SEND_INFO in
         LoRaMacStatus_t status = LoRaMacMlmeRequest(&mlmeReq);
     }
 
-    if (LoRaMacQueryTxPossible(len, &txInfo) != LORAMAC_STATUS_OK)
+    if( LoRaMacQueryTxPossible( len , &txInfo ) != LORAMAC_STATUS_OK )
     {
+        LORA_TEST_DEBUG("status %d CurrentPossiblePayloadSize %d MaxPossibleApplicationDataSize %d",
+        status,txInfo.CurrentPossiblePayloadSize,txInfo.MaxPossibleApplicationDataSize);
         // Send empty frame in order to flush MAC commands
         mcpsReq.Type = MCPS_UNCONFIRMED;
         mcpsReq.Req.Unconfirmed.fBuffer = NULL;
@@ -1825,7 +1909,7 @@ int32_t service_lora_send(uint8_t *buff, uint32_t len, SERVICE_LORA_SEND_INFO in
     {
         if (tx_possible == false)
         {
-            return -UDRV_BUSY;
+            return -UDRV_WRONG_ARG;
         }
 
         service_lora_wake_lock();
@@ -1842,7 +1926,7 @@ int32_t service_lora_send(uint8_t *buff, uint32_t len, SERVICE_LORA_SEND_INFO in
     }
     else if (status == LORAMAC_STATUS_DUTYCYCLE_RESTRICTED)
     {
-        udrv_serial_log_printf("Restricted (wait %d ms)\r\n", mcpsReq.ReqReturn.DutyCycleWaitTime);
+        udrv_serial_log_printf("Restricted(wait %d ms)\r\n", mcpsReq.ReqReturn.DutyCycleWaitTime);
         return -UDRV_BUSY;
     }
     else
@@ -2004,7 +2088,13 @@ int32_t service_lora_set_dcs(uint8_t dutycycle, bool commit )
 
 SERVICE_LORA_DATA_RATE service_lora_get_dr(void)
 {
-    return service_nvm_get_dr_from_nvm();
+    LoRaMacStatus_t status;
+    MibRequestConfirm_t mibReq;
+
+    mibReq.Type = MIB_CHANNELS_DATARATE;
+    status = LoRaMacMibGetRequestConfirm(&mibReq);
+    //return service_nvm_get_dr_from_nvm();
+    return mibReq.Param.ChannelsDatarate;
 }
 
 int32_t service_lora_set_dr(SERVICE_LORA_DATA_RATE dr, bool commit)
@@ -2016,6 +2106,7 @@ int32_t service_lora_set_dr(SERVICE_LORA_DATA_RATE dr, bool commit)
     mibReq.Param.ChannelsDatarate = (int8_t)dr;
 
     status = LoRaMacMibSetRequestConfirm(&mibReq);
+
     if (status == LORAMAC_STATUS_OK)
     {
         if (commit)
@@ -2054,19 +2145,8 @@ int32_t service_lora_set_jn1dl(uint32_t jn1dl, bool commit)
         return -UDRV_INTERNAL_ERR;
     }
 
-    mibReq.Type = MIB_JOIN_ACCEPT_DELAY_2;
-    mibReq.Param.JoinAcceptDelay2 = jn1dl + 1000;
-    if (LoRaMacMibSetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
-    {
-        return -UDRV_INTERNAL_ERR;
-    }
-
     if (commit)
     {
-        if ((ret = service_nvm_set_jn2dl_to_nvm(jn1dl + 1000)) != UDRV_RETURN_OK)
-        {
-            return ret;
-        }
         return service_nvm_set_jn1dl_to_nvm(jn1dl);
     }
     else
@@ -2079,6 +2159,29 @@ uint32_t service_lora_get_jn2dl(void)
 {
     return service_nvm_get_jn2dl_from_nvm();
 }
+
+int32_t service_lora_set_jn2dl(uint32_t jn2dl, bool commit)
+{
+    MibRequestConfirm_t mibReq;
+    int32_t ret;
+
+    mibReq.Type = MIB_JOIN_ACCEPT_DELAY_2;
+    mibReq.Param.JoinAcceptDelay2 = jn2dl;
+    if (LoRaMacMibSetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
+    {
+        return -UDRV_INTERNAL_ERR;
+    }
+
+    if (commit)
+    {
+        return service_nvm_set_jn2dl_to_nvm(jn2dl);
+    }
+    else
+    {
+        return UDRV_RETURN_OK;
+    }
+}
+
 
 bool service_lora_get_pub_nwk_mode(void)
 {
@@ -2160,6 +2263,39 @@ int32_t service_lora_set_rx1dl(uint32_t rx1dl, bool commit)
 uint32_t service_lora_get_rx2dl(void)
 {
     return service_nvm_get_rx2dl_from_nvm();
+}
+
+int32_t service_lora_set_rx2dl(uint32_t rx2dl, bool commit)
+{
+    MibRequestConfirm_t mibReq;
+    int32_t ret;
+
+    mibReq.Type = MIB_RECEIVE_DELAY_2;
+    mibReq.Param.ReceiveDelay2 = rx2dl;
+    if (LoRaMacMibSetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
+    {
+        return -UDRV_INTERNAL_ERR;
+    }
+
+    mibReq.Type = MIB_RECEIVE_DELAY_1;
+    mibReq.Param.ReceiveDelay1 = rx2dl - 1000;
+    if (LoRaMacMibSetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
+    {
+        return -UDRV_INTERNAL_ERR;
+    }
+
+    if (commit)
+    {
+        if ((ret = service_nvm_set_rx1dl_to_nvm(rx2dl - 1000)) != UDRV_RETURN_OK)
+        {
+            return ret;
+        }
+        return service_nvm_set_rx2dl_to_nvm(rx2dl);
+    }
+    else
+    {
+        return UDRV_RETURN_OK;
+    }
 }
 
 uint8_t service_lora_get_txpower(void)
@@ -2250,8 +2386,8 @@ int32_t service_lora_get_local_time(char *local_time)
 
     UnixEpoch.Seconds -= 18; /*removing leap seconds*/
     SysTimeLocalTime(UnixEpoch.Seconds, &localtime);
-    sprintf(local_time, "%02dh%02dm%02ds %02d-%02d-%04d", localtime.tm_hour, localtime.tm_min, localtime.tm_sec,
-            localtime.tm_mday, localtime.tm_mon + 1, localtime.tm_year + 1900);
+    sprintf(local_time, "%02dh%02dm%02ds on %02d/%02d/%04d", localtime.tm_hour, localtime.tm_min, localtime.tm_sec,
+            localtime.tm_mon + 1, localtime.tm_mday, localtime.tm_year + 1900);
 
     return UDRV_RETURN_OK;
 }
@@ -2271,6 +2407,36 @@ uint32_t service_lora_get_rx2freq(void)
         return -UDRV_INTERNAL_ERR;
     }
     return mibReq.Param.Rx2Channel.Frequency;
+}
+
+uint32_t service_lora_set_rx2freq(uint32_t freq,bool commit)
+{
+    MibRequestConfirm_t mibReq;
+
+    mibReq.Type = MIB_RX2_CHANNEL;
+    if (LoRaMacMibGetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
+    {
+        return -UDRV_INTERNAL_ERR;
+    }
+    
+    mibReq.Param.Rx2Channel.Frequency = freq;
+    if (LoRaMacMibSetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
+    {
+        return -UDRV_WRONG_ARG;
+    }
+    else
+    {
+        if (commit)
+        {
+            return service_nvm_set_rx2fq_to_nvm(freq);
+        }
+        else
+        {
+            return UDRV_RETURN_OK;
+        }
+    }
+
+
 }
 
 uint32_t service_lora_set_rx2dr(SERVICE_LORA_DATA_RATE datarate, bool commit)
@@ -2316,7 +2482,14 @@ uint32_t service_lora_set_rx2dr(SERVICE_LORA_DATA_RATE datarate, bool commit)
 
 SERVICE_LORA_DATA_RATE service_lora_get_rx2dr(void)
 {
-    return service_nvm_get_rx2dr_from_nvm();
+    MibRequestConfirm_t mibReq;
+    mibReq.Type = MIB_RX2_CHANNEL;
+    if (LoRaMacMibGetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
+    {
+        return -UDRV_INTERNAL_ERR;
+    }
+    return mibReq.Param.Rx2Channel.Datarate;
+    //return service_nvm_get_rx2dr_from_nvm();
 }
 
 uint8_t service_lora_get_linkcheck(void)
@@ -2393,145 +2566,145 @@ int32_t service_lora_get_last_recv(uint8_t *port, uint8_t *buff, uint32_t len)
     return actual_len;
 }
 
-int32_t service_lora_get_che(void)
-{
-    SERVICE_LORA_BAND band = service_lora_get_band();
-    uint16_t mask, sub_band;
+// int32_t service_lora_get_che(void)
+// {
+//     SERVICE_LORA_BAND band = service_lora_get_band();
+//     uint16_t mask, sub_band;
 
-    if ((band != SERVICE_LORA_AU915) && (band != SERVICE_LORA_US915) && (band != SERVICE_LORA_CN470))
-        return -UDRV_WRONG_ARG;
-    service_lora_get_mask(&mask);
-    switch (band)
-    {
-    case SERVICE_LORA_AU915:
-    case SERVICE_LORA_US915:
-        switch (mask)
-        {
-        case SERVICE_LORA_CHANNEL_ALL:
-        case SERVICE_LORA_CHANNEL_0_63:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_0;
-            break;
-        case SERVICE_LORA_CHANNEL_0_7:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_1;
-            break;
-        case SERVICE_LORA_CHANNEL_8_15:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_2;
-            break;
-        case SERVICE_LORA_CHANNEL_16_23:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_3;
-            break;
-        case SERVICE_LORA_CHANNEL_24_31:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_4;
-            break;
-        case SERVICE_LORA_CHANNEL_32_39:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_5;
-            break;
-        case SERVICE_LORA_CHANNEL_40_47:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_6;
-            break;
-        case SERVICE_LORA_CHANNEL_48_55:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_7;
-            break;
-        case SERVICE_LORA_CHANNEL_56_63:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_8;
-            break;
-        default:
-            return -UDRV_INTERNAL_ERR;
-            break;
-        }
+//     if ((band != SERVICE_LORA_AU915) && (band != SERVICE_LORA_US915) && (band != SERVICE_LORA_CN470))
+//         return -UDRV_WRONG_ARG;
+//     service_lora_get_mask(&mask);
+//     switch (band)
+//     {
+//     case SERVICE_LORA_AU915:
+//     case SERVICE_LORA_US915:
+//         switch (mask)
+//         {
+//         case SERVICE_LORA_CHANNEL_ALL:
+//         case SERVICE_LORA_CHANNEL_0_63:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_0;
+//             break;
+//         case SERVICE_LORA_CHANNEL_0_7:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_1;
+//             break;
+//         case SERVICE_LORA_CHANNEL_8_15:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_2;
+//             break;
+//         case SERVICE_LORA_CHANNEL_16_23:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_3;
+//             break;
+//         case SERVICE_LORA_CHANNEL_24_31:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_4;
+//             break;
+//         case SERVICE_LORA_CHANNEL_32_39:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_5;
+//             break;
+//         case SERVICE_LORA_CHANNEL_40_47:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_6;
+//             break;
+//         case SERVICE_LORA_CHANNEL_48_55:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_7;
+//             break;
+//         case SERVICE_LORA_CHANNEL_56_63:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_8;
+//             break;
+//         default:
+//             return -UDRV_INTERNAL_ERR;
+//             break;
+//         }
 
-        break;
-    case SERVICE_LORA_CN470:
+//         break;
+//     case SERVICE_LORA_CN470:
 
-        switch (mask)
-        {
-        case 0x0fff:
-        case SERVICE_LORA_CHANNEL_ALL:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_0;
-            break;
-        case SERVICE_LORA_CHANNEL_80_87:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_1;
-            break;
-        case SERVICE_LORA_CHANNEL_88_95:
-            sub_band = SERVICE_LORA_CH_EIGHT_MODE_2;
-            break;
-        default:
-            return -UDRV_WRONG_ARG;
+//         switch (mask)
+//         {
+//         case 0x0fff:
+//         case SERVICE_LORA_CHANNEL_ALL:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_0;
+//             break;
+//         case SERVICE_LORA_CHANNEL_80_87:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_1;
+//             break;
+//         case SERVICE_LORA_CHANNEL_88_95:
+//             sub_band = SERVICE_LORA_CH_EIGHT_MODE_2;
+//             break;
+//         default:
+//             return -UDRV_WRONG_ARG;
 
-            break;
-        }
+//             break;
+//         }
 
-        break;
-    default:
+//         break;
+//     default:
 
-        break;
-    }
-    return sub_band;
-}
+//         break;
+//     }
+//     return sub_band;
+// }
 
-int32_t service_lora_set_che(uint8_t sub_band)
-{
-    SERVICE_LORA_BAND band = service_lora_get_band();
-    uint16_t mask;
-    if ((band != SERVICE_LORA_AU915) && (band != SERVICE_LORA_US915) && (band != SERVICE_LORA_CN470))
-        return -UDRV_WRONG_ARG;
+// int32_t service_lora_set_che(uint8_t sub_band)
+// {
+//     SERVICE_LORA_BAND band = service_lora_get_band();
+//     uint16_t mask;
+//     if ((band != SERVICE_LORA_AU915) && (band != SERVICE_LORA_US915) && (band != SERVICE_LORA_CN470))
+//         return -UDRV_WRONG_ARG;
 
-    switch (band)
-    {
-    case SERVICE_LORA_US915:
-    case SERVICE_LORA_AU915:
-        switch (sub_band)
-        {
-        case SERVICE_LORA_CH_EIGHT_MODE_0:
-            mask = SERVICE_LORA_CHANNEL_0_63;
-            break;
-        case SERVICE_LORA_CH_EIGHT_MODE_1:
-            mask = SERVICE_LORA_CHANNEL_0_7;
-            break;
-        case SERVICE_LORA_CH_EIGHT_MODE_2:
-            mask = SERVICE_LORA_CHANNEL_8_15;
-            break;
-        case SERVICE_LORA_CH_EIGHT_MODE_3:
-            mask = SERVICE_LORA_CHANNEL_16_23;
-            break;
-        case SERVICE_LORA_CH_EIGHT_MODE_4:
-            mask = SERVICE_LORA_CHANNEL_24_31;
-            break;
-        case SERVICE_LORA_CH_EIGHT_MODE_5:
-            mask = SERVICE_LORA_CHANNEL_32_39;
-            break;
-        case SERVICE_LORA_CH_EIGHT_MODE_6:
-            mask = SERVICE_LORA_CHANNEL_40_47;
-            break;
-        case SERVICE_LORA_CH_EIGHT_MODE_7:
-            mask = SERVICE_LORA_CHANNEL_48_55;
-            break;
-        case SERVICE_LORA_CH_EIGHT_MODE_8:
-            mask = SERVICE_LORA_CHANNEL_56_63;
-            break;
-        default:
-            return -UDRV_WRONG_ARG;
-        }
-        break;
+//     switch (band)
+//     {
+//     case SERVICE_LORA_US915:
+//     case SERVICE_LORA_AU915:
+//         switch (sub_band)
+//         {
+//         case SERVICE_LORA_CH_EIGHT_MODE_0:
+//             mask = SERVICE_LORA_CHANNEL_0_63;
+//             break;
+//         case SERVICE_LORA_CH_EIGHT_MODE_1:
+//             mask = SERVICE_LORA_CHANNEL_0_7;
+//             break;
+//         case SERVICE_LORA_CH_EIGHT_MODE_2:
+//             mask = SERVICE_LORA_CHANNEL_8_15;
+//             break;
+//         case SERVICE_LORA_CH_EIGHT_MODE_3:
+//             mask = SERVICE_LORA_CHANNEL_16_23;
+//             break;
+//         case SERVICE_LORA_CH_EIGHT_MODE_4:
+//             mask = SERVICE_LORA_CHANNEL_24_31;
+//             break;
+//         case SERVICE_LORA_CH_EIGHT_MODE_5:
+//             mask = SERVICE_LORA_CHANNEL_32_39;
+//             break;
+//         case SERVICE_LORA_CH_EIGHT_MODE_6:
+//             mask = SERVICE_LORA_CHANNEL_40_47;
+//             break;
+//         case SERVICE_LORA_CH_EIGHT_MODE_7:
+//             mask = SERVICE_LORA_CHANNEL_48_55;
+//             break;
+//         case SERVICE_LORA_CH_EIGHT_MODE_8:
+//             mask = SERVICE_LORA_CHANNEL_56_63;
+//             break;
+//         default:
+//             return -UDRV_WRONG_ARG;
+//         }
+//         break;
 
-    case SERVICE_LORA_CN470:
-        if (sub_band == 0)
-            mask = SERVICE_LORA_CHANNEL_ALL;
-        else if (sub_band == 1)
-            mask = SERVICE_LORA_CHANNEL_80_87;
-        else if (sub_band == 2)
-            mask = SERVICE_LORA_CHANNEL_88_95;
-        else
-            return -UDRV_WRONG_ARG;
-        break;
+//     case SERVICE_LORA_CN470:
+//         if (sub_band == 0)
+//             mask = SERVICE_LORA_CHANNEL_ALL;
+//         else if (sub_band == 1)
+//             mask = SERVICE_LORA_CHANNEL_80_87;
+//         else if (sub_band == 2)
+//             mask = SERVICE_LORA_CHANNEL_88_95;
+//         else
+//             return -UDRV_WRONG_ARG;
+//         break;
 
-    default:
-        return -UDRV_WRONG_ARG;
-        break;
-    }
+//     default:
+//         return -UDRV_WRONG_ARG;
+//         break;
+//     }
 
-    return service_lora_set_mask(&mask, 1);
-}
+//     return service_lora_set_mask(&mask, 1);
+// }
 
 beacon_bgw_t service_lora_get_beacon_gwspecific(void)
 {
@@ -2630,7 +2803,7 @@ void service_lora_linkcheck_callback(void)
         {
             // Check DemodMargin
             // Check NbGateways
-            udrv_serial_log_printf("+EVT: LINKCHECK : 0,%d,%d,%d,%d\r\n", DemodMargin, NbGateways, rssi, snr);
+            udrv_serial_log_printf("+EVT:LINKCHECK:0,%d,%d,%d,%d\r\n", DemodMargin, NbGateways, rssi, snr);
         }
     }
 }
@@ -2656,4 +2829,37 @@ int32_t service_lora_register_send_cb(service_lora_send_cb callback)
 SERVICE_LORA_CLASS_B_STATE service_lora_get_class_b_state(void)
 {
     return class_b_state;
+}
+
+
+int32_t service_lora_delay_send_process(void)
+{
+    SERVICE_LORA_SEND_INFO info;
+    if(delay_send.flag)
+    {
+        delay_send.flag=0;
+        info.confirm_valid = false;
+        info.retry_valid = false;
+        /*  If it is a viscous Mac, but the server has never sent the downlink data, and it will never send uplift.
+        There will be a case that has been sending a space package. */
+        /*
+        MOTE_MAC_DL_CHANNEL_ANS
+        MOTE_MAC_RX_PARAM_SETUP_ANS
+        MOTE_MAC_RX_TIMING_SETUP_ANS
+        MOTE_MAC_TX_PARAM_SETUP_ANS
+        */
+        service_lora_send(delay_send.buffer,delay_send.len,info,false);
+    }
+}
+
+
+int32_t service_lora_query_txPossible(int16_t len)
+{
+    int16_t CurrentPossiblePayloadSize=0;
+    LoRaMacStatus_t status;
+    LoRaMacTxInfo_t txInfo;
+    status = LoRaMacQueryTxPossible(len, &txInfo);
+    LORA_TEST_DEBUG("service_lora_query_txPossible CurrentPossiblePayloadSize %d MaxPossibleApplicationDataSize %d",
+    txInfo.CurrentPossiblePayloadSize,txInfo.MaxPossibleApplicationDataSize);
+    return txInfo.MaxPossibleApplicationDataSize;
 }

@@ -102,6 +102,33 @@ void log_init(void)
 void rui_event_handler_func(void *data, uint16_t size) {
     udrv_system_event_t *event = (udrv_system_event_t *)data;
     switch (event->request) {
+        case UDRV_SYS_EVT_OP_SERIAL_FALLBACK:
+        {
+            SERIAL_PORT port = (SERIAL_PORT)event->p_context;
+            SERVICE_MODE_TYPE mode = service_nvm_get_mode_type_from_nvm(port);
+
+            /* escape now immediately */
+            switch (mode)
+            {
+                case SERVICE_MODE_TYPE_TRANSPARENT:
+                {
+                    service_mode_transparent_deinit(port);
+                    break;
+                }
+                case SERVICE_MODE_TYPE_PROTOCOL:
+                {
+                    service_mode_proto_deinit(port);
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
+            }
+            service_mode_cli_init(port);
+            service_nvm_set_mode_type_to_nvm(port, SERVICE_MODE_TYPE_CLI);
+            break;
+        }
         case UDRV_SYS_EVT_OP_SERIAL_UART:
         {
             if (service_nvm_get_mode_type_from_nvm(SERIAL_UART1) != SERVICE_MODE_TYPE_CUSTOM) {
@@ -256,88 +283,15 @@ void rui_event_handler_func(void *data, uint16_t size) {
 #endif
             break;
         }
-        case UDRV_SYS_EVT_OP_LORAWAN_AUTO_JOIN:
-        {
-#ifdef SUPPORT_LORA
-            service_lora_join(1, -1, -1, -1);
-#endif
-            break;
-        }
-        case UDRV_SYS_EVT_OP_LORAWAN_SEND_HELLO:
-        {
-#ifdef SUPPORT_LORA
-            SERVICE_LORA_SEND_INFO info;
-            int32_t ret;
-            MlmeReq_t mlmeReq;
-            LoRaMacStatus_t status;
-
-            if (class_b_state == SERVICE_LORA_CLASS_B_S0) {
-                mlmeReq.Type = MLME_DEVICE_TIME;
-                status = LoRaMacMlmeRequest(&mlmeReq);
-            } else if (class_b_state == SERVICE_LORA_CLASS_B_S2) {
-                mlmeReq.Type = MLME_PING_SLOT_INFO;
-                mlmeReq.Req.PingSlotInfo.PingSlot.Fields.Periodicity = service_lora_get_ping_slot_periodicity();
-                mlmeReq.Req.PingSlotInfo.PingSlot.Fields.RFU = 0;
-
-                status = LoRaMacMlmeRequest(&mlmeReq);
-            } else {
-                status = LORAMAC_STATUS_OK;
-            }
-
-            if (status == LORAMAC_STATUS_OK)
-            {
-                info.port = 2;
-                info.retry_valid = true;
-                info.retry = 8;
-                info.confirm_valid = false;
-
-                if ((ret = service_lora_send("hello", 5, info, false)) == UDRV_RETURN_OK)
-                {
-                    //udrv_serial_log_printf("Send Hello Success\r\n");
-                }
-                else
-                {
-                    //udrv_serial_log_printf("Send Hello Fail\r\n");
-                    //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
-
-                    udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
-                }
-            }
-            else
-            {
-                LORA_TEST_DEBUG("status=%d", status);
-                //udrv_serial_log_printf("Send Hello Fail\r\n");
-                //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
-
-                //udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
-            }
-#endif
-            break;
-        }
-        case UDRV_SYS_EVT_OP_LORAWAN_BEACON_ACQUIRE:
-        {
-#ifdef SUPPORT_LORA
-            LoRaMacStatus_t status;
-            MlmeReq_t mlmeReq;
-            mlmeReq.Type = MLME_BEACON_ACQUISITION;
-
-            status = LoRaMacMlmeRequest(&mlmeReq);
-
-            if (status == LORAMAC_STATUS_OK)
-            {
-                //udrv_serial_log_printf("Acquire Beacon Success\r\n");
-            }
-            else
-            {
-                //udrv_serial_log_printf("Acquire Beacon Fail\r\n");
-                udrv_serial_log_printf("+BC: ONGOING\r\n");
-            }
-#endif
-            break;
-        }
         case UDRV_SYS_EVT_OP_USER_APP:
         {
             run_user_app = true;
+            break;
+        }
+        case UDRV_SYS_EVT_OP_USER_TIMER:
+        case UDRV_SYS_EVT_OP_SYS_TIMER:
+        {
+            udrv_system_timer_handler_handler(event->p_context);
             break;
         }
         default:
@@ -371,7 +325,7 @@ void rui_init(void)
 
     NRF_POWER->DCDCEN = 1;
 
-    udrv_gpio_init();
+    //udrv_gpio_init();
 
     log_init();
     NRF_LOG_INFO("RUI Version: %s", sw_version);
@@ -442,9 +396,6 @@ void main(void)
 {
     //system init 
     rui_init();
-
-    //delay some time for USB enumeration
-    udrv_delay_ms(1000);
 
     //user init
     rui_setup();

@@ -72,7 +72,10 @@ int At_Addmulc(SERIAL_PORT port, char *cmd, stParam *param)
         {
             McSession.Frequency = 0;
             McSession.Datarate = 0;
-            McSession.Periodicity = 4;
+            if(McSession.Devclass == 1)
+                McSession.Periodicity = 0;
+            else
+                McSession.Periodicity = 0;
         }
 
         //Frequency point and DR must be set at the same time 
@@ -152,46 +155,45 @@ int At_Lstmulc(SERIAL_PORT port, char *cmd, stParam *param)
     {
         return AT_MODE_NO_SUPPORT;
     }
-    McSession_t McSession;
+    McSession_t McSession ;
+
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        uint8_t i;
+        uint8_t i=1;
         while (service_lora_lstmulc(&McSession) == -UDRV_CONTINUE) {
-            atcmd_printf("%s=", cmd);
-            atcmd_printf("MC%d,", i);
+            atcmd_printf("MC%d:", i);
             if(McSession.Address==0)
             {
-                atcmd_printf("0,");
+                atcmd_printf("0:");
             }
             else
             {
                 if (McSession.Devclass == 1)
                 {
-                    atcmd_printf("B,");
+                    atcmd_printf("ClassB:");
                 }
                 else 
                 {
-                    atcmd_printf("C,");
+                    atcmd_printf("ClassC:");
                 }
             }
-            atcmd_printf("%08X,", McSession.Address);
+            atcmd_printf("%08X:", McSession.Address);
 
             for (int j = 0; j < 16; j++)
             {
                 atcmd_printf("%02X", McSession.McNwkSKey[j]);
             }
-            atcmd_printf(",");
+            atcmd_printf(":");
 
             for (int j = 0; j < 16; j++)
             {
                 atcmd_printf("%02X", McSession.McAppSKey[j]);
             }
-            atcmd_printf(",");
+            atcmd_printf(":");
 
-            atcmd_printf("%09d,", McSession.Frequency);
-            atcmd_printf("%02d,", McSession.Datarate);
+            atcmd_printf("%09d:", McSession.Frequency);
+            atcmd_printf("%02d:", McSession.Datarate);
             atcmd_printf("%d\r\n", McSession.Periodicity);
-
             i++;
         }
 

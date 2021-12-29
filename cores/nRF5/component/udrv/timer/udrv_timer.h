@@ -8,21 +8,19 @@ extern "C" {
 #include <stdint.h>
 
 typedef enum {
-        TIMER_0,
-        TIMER_1,
-        TIMER_2,
-        TIMER_3,
-        TIMER_4,
-        TIMER_ID_MIN = TIMER_0,
-        TIMER_ID_MAX = TIMER_4,
+        TIMER_0 = 0,
+        TIMER_1 = 1,
+        TIMER_2 = 2,
+        TIMER_3 = 3,
+        TIMER_4 = 4,
+        TIMER_ID_MAX = 5,
 } TimerID_E;
 
 typedef enum {
-        SYSTIMER_LORAWAN,
-        SYSTIMER_TRANSPARENT_MODE,
-        SYSTIMER_PROTOCOL_MODE,
-        SYSTIMER_ID_MIN = SYSTIMER_LORAWAN,
-        SYSTIMER_ID_MAX = SYSTIMER_PROTOCOL_MODE,
+        SYSTIMER_LORAWAN = 0,
+        SYSTIMER_TRANSPARENT_MODE = 1,
+        SYSTIMER_PROTOCOL_MODE = 2,
+        SYSTIMER_ID_MAX = 3,
 } SysTimerID_E;
 
 typedef enum hwtmr_op_mode {
@@ -48,6 +46,8 @@ int32_t udrv_timer_stop (TimerID_E timer_id);
 int32_t udrv_system_timer_create (SysTimerID_E timer_id, timer_handler tmr_handler, TimerMode_E mode);
 int32_t udrv_system_timer_start (SysTimerID_E timer_id, uint32_t count, void *m_data);
 int32_t udrv_system_timer_stop (SysTimerID_E timer_id);
+
+void udrv_system_timer_handler_handler (void *pdata);
 
 #ifdef __cplusplus
 }

@@ -4,6 +4,7 @@
 #include "udrv_delay.h"
 #include "udrv_rtc.h"
 #include "udrv_adc.h"
+#include "udrv_pwm.h"
 #include "pin_define.h"
 #include "variant.h"
 
@@ -570,8 +571,8 @@ int analogRead(uint8_t pin);
  *	analogReference(type);
  * @param	type		which type of reference to use\n
  * 				Type List:\n
- * 				REFERENCE_INTERNAL\n
- * 				REFERENCE_VDD_DIVIDED_BY_4
+ * 				RAK_ADC_REFERENCE_INTERNAL\n
+ * 				RAK_ADC_REFERENCE_VDD_DIVIDED_BY_4
  *
  * @return	void
  */
@@ -978,5 +979,23 @@ void yield(void);
 #include "Wire.h"
 #include "SPI.h"
 
+typedef enum{
+    RAK_ADC_RESOLUTION_8BIT = UDRV_ADC_RESOLUTION_8BIT,  //< 8 bit resolution.
+    RAK_ADC_RESOLUTION_10BIT = UDRV_ADC_RESOLUTION_10BIT,  //< 10 bit resolution.
+    RAK_ADC_RESOLUTION_12BIT = UDRV_ADC_RESOLUTION_12BIT,  //< 12 bit resolution.
+    RAK_ADC_RESOLUTION_14BIT = UDRV_ADC_RESOLUTION_14BIT,  //< 14 bit resolution.
+} RAK_ADC_RESOLUTION ;
+
+typedef enum{
+    RAK_ADC_REFERENCE_INTERNAL = UDRV_ADC_REFERENCE_INTERNAL,
+    RAK_ADC_REFERENCE_VDD_DIVIDED_BY_4 = UDRV_ADC_REFERENCE_VDD_DIVIDED_BY_4,
+} RAK_ADC_REF;
+
+typedef enum{
+    RAK_PWM_RESOLUTION_8BIT = UDRV_PWM_RESOLUTION_8BIT,  //< 8 bit resolution.
+    RAK_PWM_RESOLUTION_10BIT = UDRV_PWM_RESOLUTION_10BIT,  //< 10 bit resolution.
+    RAK_PWM_RESOLUTION_12BIT = UDRV_PWM_RESOLUTION_12BIT,  //< 12 bit resolution.
+    RAK_PWM_RESOLUTION_14BIT = UDRV_PWM_RESOLUTION_14BIT,  //< 14 bit resolution.
+} RAK_PWM_RESOLUTION ;
 
 #endif

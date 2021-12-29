@@ -155,8 +155,12 @@ void lora_send_subcontract(void)
     SERVICE_LORA_SEND_INFO info;
 
     info.port = AppPort;
-    info.confirm_valid = false;
-    info.confirm = lp_state.confirm_status;
+    info.confirm_valid = true;
+    if (lp_state.confirm_status) {
+        info.confirm = SERVICE_LORA_ACK;
+    } else {
+        info.confirm = SERVICE_LORA_NO_ACK;
+    }
     info.retry_valid = false;
 
     service_lora_send(AppData, AppLen, info, false);

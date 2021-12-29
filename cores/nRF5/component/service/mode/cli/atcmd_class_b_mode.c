@@ -13,7 +13,7 @@ int At_PingSlot(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_ping_slot_periodicity());
+        atcmd_printf("%u\r\n", service_lora_get_ping_slot_periodicity());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -59,7 +59,7 @@ int At_BeaconFreq(SERIAL_PORT port, char *cmd, stParam *param)
    
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%s=BCON:%d,%d.%d\r\n",cmd,dr,freq/1000000,(freq%1000000)/1000);
+        atcmd_printf("BCON:%d,%d.%d\r\n", dr, freq/1000000, (freq%1000000)/1000);
         return AT_OK;
     }
     else
@@ -76,7 +76,7 @@ int At_BeaconTime(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%s=BTIME:%u\r\n", cmd, service_lora_get_beacon_time());
+        atcmd_printf("BTIME:%u\r\n", service_lora_get_beacon_time());
         return AT_OK;
     }
     else
@@ -94,7 +94,7 @@ int At_BGW(SERIAL_PORT port, char *cmd, stParam *param)
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
         beacon_bgw_t beacon_bgw = service_lora_get_beacon_gwspecific();
-        atcmd_printf("%s=BGW:%d,%d,%d,%d,%d\r\n", cmd, beacon_bgw.GPS_coordinate, beacon_bgw.net_ID, beacon_bgw.gateway_ID,
+        atcmd_printf("BGW:%d,%d,%d,%d,%d\r\n", beacon_bgw.GPS_coordinate, beacon_bgw.net_ID, beacon_bgw.gateway_ID,
                      beacon_bgw.latitude, beacon_bgw.longitude);
         return AT_OK;
     }
@@ -115,7 +115,7 @@ int At_LocalTime(SERIAL_PORT port, char *cmd, stParam *param)
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
         service_lora_get_local_time(local_time);
-        atcmd_printf("%s=LTIME: %s\r\n", cmd, local_time);
+        atcmd_printf("LTIME:%s\r\n", local_time);
         return AT_OK;
     }
     else

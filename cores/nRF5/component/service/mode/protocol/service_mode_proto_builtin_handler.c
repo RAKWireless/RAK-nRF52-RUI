@@ -996,8 +996,7 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
                 }
 
                 info.port = fport;
-                info.retry_valid = true;
-                info.retry = 8;
+                info.retry_valid = false;
                 info.confirm_valid = false;
                 ret = service_lora_send(arg+1, payload_len-1, info, false);
                 if (ret == UDRV_RETURN_OK)
@@ -1312,32 +1311,37 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
                 uint32_t jn1dl;
 
-                if (payload_len != 1) {
+                if (payload_len != 4) {
                     nRet = AT_PARAM_ERROR;
                     goto out;
                 }
 
-                jn1dl = (uint32_t)(*arg);
+                jn1dl = __builtin_bswap32(*(uint32_t *)arg);
 
-                if (jn1dl == 0 || jn1dl > 15) {//unit is second
+                if (jn1dl == 0 || jn1dl > 15000) {//unit is milli-second
                     nRet = AT_PARAM_ERROR;
                     goto out;
                 }
 
-                if (service_lora_set_jn1dl(jn1dl*1000, true) == UDRV_RETURN_OK) {//change unit from s to ms
+                if (jn1dl >= service_lora_get_jn2dl()) {
+                    ret = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                if (service_lora_set_jn1dl(jn1dl, true) == UDRV_RETURN_OK) {//change unit from s to ms
                     nRet = AT_OK;
                 } else {
                     nRet = AT_ERROR;
                 }
             } else {
                 memset(buff, 0, 256);
-                *(buff+sizeof(header)) = (uint8_t)(service_nvm_get_jn1dl_from_nvm()/1000);
-                header.length = __builtin_bswap16(1);
+                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_jn1dl_from_nvm());
+                header.length = __builtin_bswap16(4);
                 header.flag = PROTO_ATCMD_FLAG_RESPONSE;
                 header.atcmd_id = atcmd_id;
                 memcpy(buff, &header, sizeof(header));
 
-                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+1, NULL);
+                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+4, NULL);
                 nRet = AT_OK;
             }
             break;
@@ -1351,16 +1355,39 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             }
 
             if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
-                nRet = AT_PARAM_ERROR;
+                uint32_t jn2dl;
+
+                if (payload_len != 4) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                jn2dl = __builtin_bswap32(*(uint32_t *)arg);
+
+                if (jn2dl == 0 || jn2dl > 15000) {//unit is milli-second
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                if (jn2dl <= service_lora_get_jn1dl()) {
+                    ret = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                if (service_lora_set_jn2dl(jn2dl, true) == UDRV_RETURN_OK) {//change unit from s to ms
+                    nRet = AT_OK;
+                } else {
+                    nRet = AT_ERROR;
+                }
             } else {
                 memset(buff, 0, 256);
-                *(buff+sizeof(header)) = (uint8_t)(service_nvm_get_jn2dl_from_nvm()/1000);
-                header.length = __builtin_bswap16(1);
+                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_jn2dl_from_nvm());
+                header.length = __builtin_bswap16(4);
                 header.flag = PROTO_ATCMD_FLAG_RESPONSE;
                 header.atcmd_id = atcmd_id;
                 memcpy(buff, &header, sizeof(header));
 
-                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+1, NULL);
+                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+4, NULL);
                 nRet = AT_OK;
             }
             break;
@@ -1417,32 +1444,37 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
                 uint32_t rx1dl;
 
-                if (payload_len != 1) {
+                if (payload_len != 4) {
                     nRet = AT_PARAM_ERROR;
                     goto out;
                 }
 
-                rx1dl = (uint32_t)*arg;
+                rx1dl = __builtin_bswap32(*(uint32_t *)arg);
 
-                if (rx1dl == 0 || rx1dl > 15) {//unit is second
+                if (rx1dl == 0 || rx1dl > 15000) {//unit is milli-second
                     nRet = AT_PARAM_ERROR;
                     goto out;
                 }
 
-                if (service_lora_set_rx1dl(rx1dl*1000, true) == UDRV_RETURN_OK) {//change unit from s to ms
+                if (rx1dl >= service_lora_get_rx2dl()) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                if (service_lora_set_rx1dl(rx1dl, true) == UDRV_RETURN_OK) {//change unit from s to ms
                     nRet = AT_OK;
                 } else {
                     nRet = AT_ERROR;
                 }
             } else {
                 memset(buff, 0, 256);
-                *(buff+sizeof(header)) = (uint8_t)(service_nvm_get_rx1dl_from_nvm()/1000);
-                header.length = __builtin_bswap16(1);
+                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_rx1dl_from_nvm());
+                header.length = __builtin_bswap16(4);
                 header.flag = PROTO_ATCMD_FLAG_RESPONSE;
                 header.atcmd_id = atcmd_id;
                 memcpy(buff, &header, sizeof(header));
 
-                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+1, NULL);
+                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+4, NULL);
                 nRet = AT_OK;
             }
             break;
@@ -1456,16 +1488,39 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             }
 
             if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
-                nRet = AT_PARAM_ERROR;
+                uint32_t rx2dl;
+
+                if (payload_len != 4) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                rx2dl = __builtin_bswap32(*(uint32_t *)arg);
+
+                if (rx2dl == 0 || rx2dl > 15000) {//unit is milli-second
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                if (rx2dl <= service_lora_get_rx1dl()) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                if (service_lora_set_rx2dl(rx2dl, true) == UDRV_RETURN_OK) {//change unit from s to ms
+                    nRet = AT_OK;
+                } else {
+                    nRet = AT_ERROR;
+                }
             } else {
                 memset(buff, 0, 256);
-                *(buff+sizeof(header)) = (uint8_t)(service_nvm_get_rx2dl_from_nvm()/1000);
-                header.length = __builtin_bswap16(1);
+                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_rx2dl_from_nvm());
+                header.length = __builtin_bswap16(4);
                 header.flag = PROTO_ATCMD_FLAG_RESPONSE;
                 header.atcmd_id = atcmd_id;
                 memcpy(buff, &header, sizeof(header));
 
-                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+1, NULL);
+                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+4, NULL);
                 nRet = AT_OK;
             }
             break;
@@ -1515,7 +1570,20 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             }
 
             if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
-                nRet = AT_PARAM_ERROR;
+                uint32_t rx2fq;
+
+                if (payload_len != 4) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                rx2fq = __builtin_bswap32(*(uint32_t *)arg);
+
+                if (service_lora_set_rx2freq(rx2fq, true) == UDRV_RETURN_OK) {//change unit from s to ms
+                    nRet = AT_OK;
+                } else {
+                    nRet = AT_ERROR;
+                }
             } else {
                 memset(buff, 0, 256);
                 *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_lora_get_rx2freq());
@@ -2241,6 +2309,16 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
 
                 preamble_length = __builtin_bswap16(*(uint16_t *)arg);
 
+                if (preamble_length < 5) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                if (preamble_length > 65535) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
                 ret = service_lora_p2p_set_preamlen(preamble_length);
                 if (ret == UDRV_RETURN_OK) {
                     nRet = AT_OK;
@@ -2515,37 +2593,8 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             uint8_t rbuff[18];
 
             if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
-                if (payload_len < 1 || payload_len > 18) {
-                    nRet = AT_PARAM_ERROR;
-                    goto out;
-                }
-
-                if (service_nvm_get_sn_from_nvm(rbuff, 18) != UDRV_RETURN_OK) {
-                    nRet = AT_ERROR;
-                    goto out;
-                } else {
-                    for (int i = 0 ; i < 18 ; i++) {
-                        if (rbuff[i] != 0) {
-                            nRet = AT_ERROR;
-                            goto out;
-                        }
-                    }
-                }
-
-                for (int i = 0 ; i < payload_len ; i++) {
-                    if (!(arg[i] >= 0x30 && arg[i] <= 0x39) &&
-	        		    !(arg[i] >= 0x41 && arg[i] <= 0x5A) &&
-	        		    !(arg[i] >= 0x61 && arg[i] <= 0x7A)) {
-                        nRet = AT_PARAM_ERROR;
-                        goto out;
-                    }
-                }
-
-                if (service_nvm_set_sn_to_nvm(arg, payload_len) == UDRV_RETURN_OK) {
-                    nRet = AT_OK;
-                } else {
-                    nRet = AT_ERROR;
-                }
+                nRet = AT_PARAM_ERROR;
+                goto out;
             } else {
                 if (service_nvm_get_sn_from_nvm(rbuff, 18) != UDRV_RETURN_OK) {
                     nRet = AT_ERROR;

@@ -37,6 +37,13 @@ extern "C"
 #define SERVICE_LORA_CHANNEL_80_87 (1 << 10)
 #define SERVICE_LORA_CHANNEL_88_95 (1 << 11)
 
+    typedef enum _SERVICE_LORA_MAC_CMD
+    {
+        SERVICE_LORA_MAC_CMD_NONE,
+        SERVICE_LORA_MAC_CMD_DEVICE_TIME,
+        SERVICE_LORA_MAC_CMD_PING_SLOT_INFO,
+    } SERVICE_LORA_MAC_CMD;
+
     typedef enum _SERVICE_LORA_CLASS_B_STATE
     {
         SERVICE_LORA_CLASS_B_S0,
@@ -114,6 +121,13 @@ extern "C"
         uint32_t gateway_ID;
     } beacon_bgw_t;
 
+    typedef struct sdelay_send
+    {
+        uint8_t buffer[256];
+        uint16_t len;
+        uint8_t flag;
+    }delay_send_t;
+
     typedef enum _SERVICE_LORA_WORK_MODE
     {
         SERVICE_LORA_P2P = 0,
@@ -179,7 +193,7 @@ extern "C"
         bool retry_valid;
         uint8_t retry;
         bool confirm_valid;
-        uint8_t confirm;
+        SERVICE_LORA_CONFIRM_MODE confirm;
     } SERVICE_LORA_SEND_INFO;
 
     typedef enum _SERVICE_LORA_CLASS
@@ -332,6 +346,8 @@ extern "C"
 
     uint32_t service_lora_get_jn2dl(void);
 
+    int32_t service_lora_set_jn2dl(uint32_t jn2dl, bool commit);
+
     bool service_lora_get_pub_nwk_mode(void);
 
     int32_t service_lora_set_pub_nwk_mode(bool pnm, bool commit);
@@ -341,6 +357,8 @@ extern "C"
     int32_t service_lora_set_rx1dl(uint32_t rx1dl, bool commit);
 
     uint32_t service_lora_get_rx2dl(void);
+
+    int32_t service_lora_set_rx2dl(uint32_t rx2dl, bool commit);
 
     uint8_t service_lora_get_txpower(void);
 
@@ -363,6 +381,8 @@ extern "C"
     uint32_t service_lora_get_lorawan_version(char **version);
 
     uint32_t service_lora_get_rx2freq(void);
+
+    uint32_t service_lora_set_rx2freq(uint32_t freq,bool commit);
 
     uint32_t service_lora_set_rx2dr(SERVICE_LORA_DATA_RATE datarate, bool commit);
 
@@ -413,6 +433,8 @@ extern "C"
     uint32_t service_lora_get_beacon_dr(void);
 
     SERVICE_LORA_CLASS_B_STATE service_lora_get_class_b_state(void);
+
+    int32_t service_lora_query_txPossible(int16_t len);
 #ifdef __cplusplus
 }
 #endif

@@ -85,9 +85,10 @@ static void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr)
         memcpy(lora_p2p_buf, payload, size);
 
     if (SERVICE_LORA_P2P == service_lora_get_nwm())
-        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT: RX_P2P RSSI %d, SNR %d\r\n", rssi, snr);
+        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXP2P, RSSI %d, SNR %d\r\n", rssi, snr);
     else
-        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT: RX_FSK RSSI %d, SNR %d\r\n", rssi, snr);
+        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXFSK, RSSI %d, SNR %d\r\n", rssi, snr);
+    udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:");
     printf_hex(lora_p2p_buf, size);
     udrv_serial_log_printf("\r\n");
 
@@ -129,9 +130,9 @@ static void OnRxTimeout(void)
     else
     {
         if (SERVICE_LORA_P2P == service_lora_get_nwm())
-            udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT: RX_P2P RECEIVE TIMEOUT\r\n");
+            udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXP2P RECEIVE TIMEOUT\r\n");
         else
-            udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT: RX_FSK RECEIVE TIMEOUT\r\n");
+            udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXFSK RECEIVE TIMEOUT\r\n");
     }
     if((*service_lora_p2p_recv_callback)!=NULL)
     {
@@ -148,9 +149,9 @@ static void OnRxError(void)
     lora_p2p_status.isRadioBusy = false;
 
     if (SERVICE_LORA_P2P == service_lora_get_nwm())
-        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT: RX_P2P RECEIVE ERROR\r\n");
+        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXP2P RECEIVE ERROR\r\n");
     else
-        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT: RX_FSK RECEIVE ERROR\r\n");
+        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXFSK RECEIVE ERROR\r\n");
 
     LORA_P2P_DEBUG("%s\r\n", __func__);
     

@@ -104,6 +104,7 @@ typedef struct {
     uint32_t jn2dl;
     uint32_t rx1dl;
     uint32_t rx2dl;
+    uint32_t rx2fq;
     bool pub_nwk_mode;
     uint8_t linkcheck_mode;
     uint8_t ping_slot_periodicity;
@@ -151,6 +152,7 @@ typedef struct {
     rtc_delta_t g_rtc_delta_t;
     SERVICE_MODE_TYPE mode_type[SERIAL_MAX];
     uint32_t baudrate;
+    uint8_t atcmd_echo;
     uint8_t serial_passwd[9];
     uint32_t auto_sleep_time;
     uint8_t sn[18];

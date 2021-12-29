@@ -21,6 +21,7 @@
 #include "timer.h"
 #include "string.h"
 #include "udrv_serial.h"
+#include "service_lora_test.h"
 
 #define LORAMAC_MAX_MC_CTX 4
 
@@ -198,7 +199,7 @@ int32_t service_lora_addmulc(McSession_t McSession)
                 return -UDRV_WRONG_ARG;
             }
 
-            memcpy(&McSession_group[i], &McSession, sizeof(McSession_t));
+            memcpy(&McSession_group[i], &McSession, sizeof(McSession_t));   
             if(service_nvm_set_multicast_to_nvm(McSession_group)!=UDRV_RETURN_OK)
             {
                 return -UDRV_INTERNAL_ERR;
@@ -245,17 +246,32 @@ int32_t service_lora_rmvmulc(uint32_t devaddr)
 
 int32_t service_lora_lstmulc(McSession_t *iterator)
 {
-    for (int i = 0 ; i < LORAMAC_MAX_MC_CTX ; i++) {
-        if (!memcmp(iterator, &McSession_group[i], sizeof(McSession_t))) {
-            if (i == (LORAMAC_MAX_MC_CTX-1)) {//This is the last call
+    for (int i = 1 ; i <= LORAMAC_MAX_MC_CTX ; i++)
+    {
+        McSession_group[i].entry = i;
+    }
+
+    for (int i = 0 ; i < LORAMAC_MAX_MC_CTX ; i++)     
+    {
+        if (!memcmp(iterator, &McSession_group[i], sizeof(McSession_t)))   
+        {
+            if (i == (LORAMAC_MAX_MC_CTX-1)) 
+            {//This is the last call
                 return UDRV_RETURN_OK;
-            } else {
-                memcpy(iterator, &McSession_group[i+1], sizeof(McSession_t));
+            } 
+            else 
+            {
+                memcpy(iterator, &McSession_group[i+1], sizeof(McSession_t));  
+                LORA_TEST_DEBUG("i=%d",i);
                 return -UDRV_CONTINUE;
             }
         }
+        else //
+        {
+            LORA_TEST_DEBUG("i=%d",i);
+            
+        }
     }
-
     //This is the first call
     memcpy(iterator, &McSession_group[0], sizeof(McSession_t));
     return -UDRV_CONTINUE;
@@ -275,18 +291,13 @@ int32_t service_lora_setup_multicast(void)
     pMcSession = service_nvm_get_multicast_from_nvm();
     memcpy(McSession_group_temp,pMcSession,4*sizeof(McSession_t));
 
-    for (i = 1 ; i <= LORAMAC_MAX_MC_CTX ; i++)
-    {
-        McSession_group[i].entry = i;
-    }
-
     for (i = 0 ; i < LORAMAC_MAX_MC_CTX ; i++)
     {
         if(McSession_group_temp[i].Address == 0)
         continue;
         if(service_lora_addmulc(McSession_group_temp[i])!=UDRV_RETURN_OK)
         {  
-             return -UDRV_INTERNAL_ERR;       
+            return -UDRV_INTERNAL_ERR;       
         }
     }
     return UDRV_RETURN_OK;

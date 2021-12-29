@@ -141,7 +141,7 @@ int At_Retry(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_retry());
+        atcmd_printf("%u\r\n", service_lora_get_retry());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -165,7 +165,7 @@ int At_CfMode(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_cfm());
+        atcmd_printf("%u\r\n", service_lora_get_cfm());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -209,7 +209,7 @@ int At_CfStatus(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_cfs());
+        atcmd_printf("%u\r\n", service_lora_get_cfs());
         return AT_OK;
     }
     else
@@ -233,7 +233,7 @@ int At_Join(SERIAL_PORT port, char *cmd, stParam *param)
         val[1] = service_lora_get_auto_join();
         val[2] = service_lora_get_auto_join_period();
         val[3] = service_lora_get_auto_join_max_cnt();
-        atcmd_printf("%s=%d,%d,%d,%d\r\n", cmd, val[0], val[1], val[2], val[3]);
+        atcmd_printf("%d,%d,%d,%d\r\n", val[0], val[1], val[2], val[3]);
         return AT_OK;
     }
     else if (param->argc <= 4)
@@ -307,7 +307,7 @@ int At_NwkJoinMode(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_njm());
+        atcmd_printf("%u\r\n", service_lora_get_njm());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -351,7 +351,7 @@ int At_NwkJoinStatus(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_njs());
+        atcmd_printf("%u\r\n", service_lora_get_njs());
         return AT_OK;
     }
     else
@@ -372,7 +372,7 @@ int At_Recv(SERIAL_PORT port, char *cmd, stParam *param)
         int32_t len;
 
         len = service_lora_get_last_recv(&port, buff, SERVICE_LORA_DLINK_BUFF_SIZE);
-        atcmd_printf("%s=%u:", cmd, port);
+        atcmd_printf("%u:", port);
         dump_hex2str(buff, len);
         return AT_OK;
     }
@@ -390,74 +390,67 @@ int At_Send(SERIAL_PORT port, char *cmd, stParam *param)
     }
     int32_t ret;
 
-    if (param->argc == 1)
+    if (param->argc == 2)
     {
         SERVICE_LORA_SEND_INFO info;
-        uint8_t *strp, buff[4], port, data[CLI_BUFFER_SIZE];
         uint32_t digit;
+        uint8_t buff[4], port, data[CLI_BUFFER_SIZE];
         char hex_num[3] = {0};
 
-        if ((strp = strchr(param->argv[0], ':')) == NULL)
+        digit = strlen(param->argv[0]);
+        for (int i = 0 ; i < digit ; i++)
         {
-            return AT_PARAM_ERROR;
-        }
-        else
-        {
-            digit = (uint32_t)strp - (uint32_t)param->argv[0];
-            if (digit > 3)
+            if (!isdigit(*(param->argv[0] + i)))
             {
                 return AT_PARAM_ERROR;
             }
-            else
-            {
-                for (int i = 0; i < digit; i++)
-                {
-                    if (!isdigit(*(param->argv[0] + i)))
-                    {
-                        return AT_PARAM_ERROR;
-                    }
-                }
-                strncpy(buff, param->argv[0], digit);
-                buff[digit] = '\0';
-                port = atoi(buff);
+        }
 
-                if (port < 1 || port > 223)
-                {
-                    return AT_PARAM_ERROR;
-                }
-            }
+        port = atoi(param->argv[0]);
+
+        if (port < 1 || port > 223)
+        {
+            return AT_PARAM_ERROR;
         }
 
         info.port = port;
         info.retry = 8;
 
-        digit = strlen(strp + 1);
+        digit = strlen(param->argv[1]);
         if (digit % 2 != 0)
         {
             return AT_PARAM_ERROR;
-        }
-
-        for (int i = 0; i < digit; i++)
-        {
-            if (!isxdigit(*(strp + 1 + i)))
-            {
-                return AT_PARAM_ERROR;
-            }
         }
 
         if (digit == 0 || digit > 500) {
             return AT_PARAM_ERROR;
         }
 
+        for (int i = 0 ; i < digit ; i++)
+        {
+            if (!isxdigit(*(param->argv[1] + i)))
+            {
+                return AT_PARAM_ERROR;
+            }
+        }
+
         for (int i = 0; i < (digit / 2); i++)
         {
-            memcpy(hex_num, strp + 1 + i * 2, 2);
+            memcpy(hex_num, param->argv[1] + i * 2, 2);
             data[i] = strtoul(hex_num, NULL, 16);
         }
 
         info.confirm_valid = false;
         info.retry_valid = false;
-        
+
+        // uint8_t CurrentPossiblePayloadSize = service_lora_query_txPossible( digit / 2);
+        // atcmd_printf("(MaxAppSize %d)\r\n", CurrentPossiblePayloadSize);
+        // if( CurrentPossiblePayloadSize < (digit / 2) )
+        // {
+        //     atcmd_printf("(MaxPayloadSize %d)\r\n", CurrentPossiblePayloadSize);
+        //     return AT_PARAM_ERROR;
+        // }
+              
         ret = service_lora_send(data, digit / 2, info, false);
         if (ret == UDRV_RETURN_OK)
         {
@@ -470,6 +463,10 @@ int At_Send(SERIAL_PORT port, char *cmd, stParam *param)
         else if (ret == -UDRV_BUSY)
         {
             return AT_BUSY_ERROR;
+        }
+        else if(ret == -UDRV_WRONG_ARG )
+        {
+            return AT_PARAM_ERROR;
         }
         else
         {

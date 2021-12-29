@@ -38,18 +38,6 @@ typedef enum{
 }UDRV_ADC_CHANNEL;
 
 typedef enum{
-    UDRV_ADC_PIN_0 = 0,
-    UDRV_ADC_PIN_1 = 1,
-    UDRV_ADC_PIN_2 = 2,
-    UDRV_ADC_PIN_3 = 3,
-    UDRV_ADC_PIN_4 = 4,
-    UDRV_ADC_PIN_5 = 5,
-    UDRV_ADC_PIN_6 = 6,
-    UDRV_ADC_PIN_7 = 7,
-    UDRV_ADC_PIN_MAX = 8,
-}UDRV_ADC_PIN;
-
-typedef enum{
     UDRV_ADC_REFERENCE_INTERNAL,
     UDRV_ADC_REFERENCE_VDD_DIVIDED_BY_4,
 } UDRV_ADC_REF;
@@ -74,7 +62,7 @@ void udrv_adc_set_resolution (UDRV_ADC_RESOLUTION resolution);
  *
  */
 
-void udrv_adc_enable_channel (UDRV_ADC_CHANNEL chan, UDRV_ADC_PIN pin, UDRV_ADC_REF ref);
+void udrv_adc_enable_channel (UDRV_ADC_CHANNEL chan, uint32_t pin, UDRV_ADC_REF ref);
 
 /**
  * Deinitialize the ADC channel.

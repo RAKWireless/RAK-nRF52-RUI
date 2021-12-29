@@ -44,6 +44,10 @@ uint32_t service_nvm_get_baudrate_from_nvm(void);
 
 int32_t service_nvm_set_baudrate_to_nvm(uint32_t baudrate);
 
+uint8_t service_nvm_get_atcmd_echo_from_nvm(void);
+
+int32_t service_nvm_set_atcmd_echo_to_nvm(uint8_t atcmd_echo);
+
 int32_t service_nvm_get_serial_passwd_from_nvm(uint8_t *passwd, uint32_t len);
 
 int32_t service_nvm_set_serial_passwd_to_nvm(uint8_t *passwd, uint32_t len);
@@ -252,6 +256,10 @@ uint8_t service_nvm_get_dcs_from_nvm(void);
 int32_t service_nvm_get_sn_from_nvm (uint8_t *buff, uint32_t len);
 
 int32_t service_nvm_set_sn_to_nvm (uint8_t *buff, uint32_t len);
+
+uint32_t service_nvm_set_rx2fq_to_nvm(uint32_t freq);
+
+uint32_t service_nvm_get_rx2fq_from_nvm(void);
 
 #endif
 

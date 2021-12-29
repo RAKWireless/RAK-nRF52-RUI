@@ -12,7 +12,7 @@ int At_Rssi (SERIAL_PORT port, char *cmd, stParam *param) {
         return AT_MODE_NO_SUPPORT;
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=%d\r\n", cmd, service_lora_get_rssi());
+        atcmd_printf("%d\r\n", service_lora_get_rssi());
         return AT_OK;
     } else {
         return AT_PARAM_ERROR;
@@ -30,7 +30,7 @@ int At_Arssi(SERIAL_PORT port, char *cmd, stParam *param)
         chan_rssi iterator;
         while (service_lora_get_arssi(&iterator) == -UDRV_CONTINUE) {
             if (iterator.mask) {
-                atcmd_printf("%s=%d:%d\r\n", cmd, iterator.chan, iterator.rssi);
+                atcmd_printf("%d:%d\r\n", iterator.chan, iterator.rssi);
             }
         }
         return AT_OK;
@@ -48,7 +48,7 @@ int At_Snr (SERIAL_PORT port, char *cmd, stParam *param) {
         return AT_MODE_NO_SUPPORT;
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=%d\r\n", cmd, service_lora_get_snr());
+        atcmd_printf("%d\r\n", service_lora_get_snr());
         return AT_OK;
     } else {
         return AT_PARAM_ERROR;

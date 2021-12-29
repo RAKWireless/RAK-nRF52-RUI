@@ -3,20 +3,22 @@
 #include "atcmd.h"
 #include "atcmd_misc.h"
 #include "udrv_errno.h"
-#ifdef RUI_BOOTLOADER
+#ifndef RUI_BOOTLOADER
 #include "service_nvm.h"
 #endif
 
 #ifdef RUI_BOOTLOADER
 int At_Bootstatus (SERIAL_PORT port, char *cmd, stParam *param) {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s=DFU mode\r\n", cmd);
+        atcmd_printf("DFU mode\r\n");
         return AT_OK;
     } else {
         return AT_PARAM_ERROR;
     }
 }
+#endif
 
+#ifndef RUI_BOOTLOADER
 int At_Factory (SERIAL_PORT port, char *cmd, stParam *param) {
     if (param->argc == 0) {
         uint8_t buff[4096];

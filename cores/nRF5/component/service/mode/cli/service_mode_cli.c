@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include "service_mode_cli.h"
 #include "udrv_serial.h"
+#include "service_nvm.h"
 #ifdef RUI_BOOTLOADER
 #include "app_uart.h"
 #endif
@@ -28,7 +29,7 @@ static char gCmdHistoryIdx;
 static char gCmdHistoryCnt;
 
 #ifdef RUI_BOOTLOADER
-static __attribute__((section(".bootloader_new"))) inline void __put_char(SERIAL_PORT port, char c) {
+static inline void __put_char(SERIAL_PORT port, char c) {
     while (app_uart_put(c) != NRF_SUCCESS);
 }
 #else
@@ -37,11 +38,7 @@ static inline void __put_char(SERIAL_PORT port, char c) {
 }
 #endif
 
-#ifdef RUI_BOOTLOADER
-static __attribute__((section(".bootloader_new"))) void Cli_EraseCmdInScreen(SERIAL_PORT port)
-#else
 static void Cli_EraseCmdInScreen(SERIAL_PORT port)
-#endif
 {
     uint32_t i;
     for(i= 0;i < (strlen(sgCmdBuffer)+strlen(CLI_PROMPT));i++)
@@ -106,6 +103,9 @@ static void Cli_MovetoPrevHistoryCmdBuf(SERIAL_PORT port)
     uint8_t CmdIdx = gCmdHistoryIdx;
     uint8_t NewCmdIdx = Cli_GetPrevHistoryIdx();
     
+    if(!service_nvm_get_atcmd_echo_from_nvm()) 
+        return;
+    
     if(CmdIdx == NewCmdIdx)
         return;
 
@@ -121,10 +121,11 @@ static void Cli_MovetoNextHistoryCmdBuf(SERIAL_PORT port)
     uint8_t CmdIdx = gCmdHistoryIdx;
     uint8_t NewCmdIdx = Cli_GetNextHistoryIdx();
 
-    if(CmdIdx == NewCmdIdx)
-    {
+    if(!service_nvm_get_atcmd_echo_from_nvm()) 
         return;
-    }
+    
+    if(CmdIdx == NewCmdIdx)
+        return;
 
     Cli_EraseCmdInScreen(port);
     Cli_StoreCmdBufToHistory(CmdIdx);
@@ -165,11 +166,7 @@ static void Cli_RecordInHistoryCmdBuf()
 }
 #endif
 
-#ifdef RUI_BOOTLOADER
-__attribute__((section(".bootloader_new"))) void service_mode_cli_handler(SERIAL_PORT port, uint8_t ch) {
-#else
 void service_mode_cli_handler(SERIAL_PORT port, uint8_t ch) {
-#endif
     switch (ch)
     {
         case 0x1b: /* Special Key, read again for real data */
@@ -194,18 +191,17 @@ void service_mode_cli_handler(SERIAL_PORT port, uint8_t ch) {
 #endif
             if(strlen(sgCmdBuffer) > 0) {
                 //atcmd_printf("\r\n^sgCmdBuffer=%s^,len=%d, buf_len=%d\r\n",sgCmdBuffer,strlen(sgCmdBuffer), CLI_BUFFER_SIZE);
-                __put_char(port, 0x0a);
-                __put_char(port, 0x0d);
-                if(At_Parser(port, sgCmdBuffer,strlen(sgCmdBuffer)) == AT_OK) {
-                    goto cmd_exit;
+                if(service_nvm_get_atcmd_echo_from_nvm()) {
+                    __put_char(port, 0x0a);
+                    __put_char(port, 0x0d);
                 }
+                At_Parser(port, sgCmdBuffer,strlen(sgCmdBuffer));
+                atcmd_printf("\r\n%s", CLI_PROMPT);
             }
 
             //if ( 0 !=sgCurPos ) {
             //    atcmd_printf("\r\nCommand not found!!\r\n");
             //}
-cmd_exit:
-            atcmd_printf("\r\n%s", CLI_PROMPT);
 
             memset(sgCmdBuffer, 0x00, sizeof(sgCmdBuffer));
             sgCurPos = 0;
@@ -229,18 +225,16 @@ cmd_exit:
                 if ( (CLI_BUFFER_SIZE-1) > sgCurPos ) {
                     sgCmdBuffer[sgCurPos++] = ch;
                     sgCmdBuffer[sgCurPos] = 0x00;
-                    __put_char(port, ch);
+                    if(service_nvm_get_atcmd_echo_from_nvm()) {
+                        __put_char(port, ch);
+                    }
                 }
 	    }
             break;
     }
 }
 
-#ifdef RUI_BOOTLOADER
-__attribute__((section(".bootloader_new"))) void service_mode_cli_init(SERIAL_PORT port) {
-#else
 void service_mode_cli_init(SERIAL_PORT port) {
-#endif
     atcmd_printf("\r\n%s", CLI_PROMPT);
 
     memset( (void *)sgArgV, 0, sizeof(uint8_t *)*5 );
@@ -249,13 +243,8 @@ void service_mode_cli_init(SERIAL_PORT port) {
     sgArgC = 0;
 }
 
-#ifdef RUI_BOOTLOADER
-__attribute__((section(".bootloader_new"))) void service_mode_cli_deinit(SERIAL_PORT port) {
-}
-#else
 void service_mode_cli_deinit(SERIAL_PORT port) {
 }
-#endif
 
 #ifndef RUI_BOOTLOADER
 bool service_mode_cli_register(const char *cmd, const char *title, PF_handle handle, uint8_t maxargu, const char *usage) {
