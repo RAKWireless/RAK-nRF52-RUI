@@ -4,13 +4,16 @@
 #include "udrv_ble.h"
 #include "AString.h"
 
-/**
- * @ingroup	BLE_Setting
+/**@addtogroup	RUI_Ble_Data_Type
+ * @{
  */
+
 typedef enum
 {
     RAK_BLE_BEACON_MODE = 1	///< Switch to beacon mode
 } RAK_BLE_SERVICE_MODE;
+
+/**@}*/
 
 class RAKBleSettings {
   public:

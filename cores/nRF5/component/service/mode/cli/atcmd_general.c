@@ -4,6 +4,7 @@
 #include "atcmd_general.h"
 #include "udrv_errno.h"
 #include "udrv_system.h"
+#include "mcu_basic.h"
 #ifdef RUI_BOOTLOADER
 #include "uhal_flash.h"
 #include "service_nvm.h"
@@ -53,9 +54,13 @@ int At_Restore(SERIAL_PORT port, char *cmd, stParam *param)
         return AT_PARAM_ERROR;
 
 #ifdef RUI_BOOTLOADER
-    ret = uhal_flash_erase(SERVICE_NVM_CONFIG_NVM_ADDR, 4096);
+    ret = uhal_flash_erase(MCU_SYS_CONFIG_NVM_ADDR, uhal_flash_get_page_size());
 #else
+#ifdef SUPPORT_LORA
     ret = service_lora_set_lora_default();
+#else
+    ret = service_nvm_set_default_config_to_nvm();
+#endif
 #endif
     if (ret == UDRV_RETURN_OK)
     {
@@ -110,6 +115,7 @@ int At_FSn (SERIAL_PORT port, char *cmd, stParam *param)
         if (service_nvm_get_sn_from_nvm(rbuff, 18) != UDRV_RETURN_OK) {
             return AT_ERROR;
         }
+        atcmd_printf("%s=",cmd);
         for (int i = 0 ; i < 18 ; i++) {
             atcmd_printf("%c", rbuff[i]);
         }
@@ -162,6 +168,7 @@ int At_Sn (SERIAL_PORT port, char *cmd, stParam *param)
         if (service_nvm_get_sn_from_nvm(rbuff, 18) != UDRV_RETURN_OK) {
             return AT_ERROR;
         }
+        atcmd_printf("%s=",cmd);
         for (int i = 0 ; i < 18 ; i++) {
             atcmd_printf("%c", rbuff[i]);
         }
@@ -178,7 +185,7 @@ int At_GetBat (SERIAL_PORT port, char *cmd, stParam *param)
         float bat_lvl;
 
         service_battery_get_batt_level(&bat_lvl);
-        atcmd_printf("%f\r\n", bat_lvl);
+        atcmd_printf("%s=%f\r\n", cmd, bat_lvl);
         return AT_OK;
     } else {
         return AT_PARAM_ERROR;
@@ -188,7 +195,7 @@ int At_GetBat (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetFwBuildTime (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s-%s\r\n", build_date, build_time);
+        atcmd_printf("%s=%s-%s\r\n", cmd, build_date, build_time);
 
         return AT_OK;
     } else {
@@ -199,7 +206,7 @@ int At_GetFwBuildTime (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetFwRepoInfo (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s\r\n", repo_info);
+        atcmd_printf("%s=%s\r\n", cmd, repo_info);
 
         return AT_OK;
     } else {
@@ -210,7 +217,7 @@ int At_GetFwRepoInfo (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetFwVersion (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s\r\n", sw_version);
+        atcmd_printf("%s=%s\r\n", cmd, sw_version);
 
         return AT_OK;
     } else {
@@ -221,7 +228,7 @@ int At_GetFwVersion (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetCliVersion (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s\r\n", cli_version);
+        atcmd_printf("%s=%s\r\n", cmd, cli_version);
 
         return AT_OK;
     } else {
@@ -232,7 +239,7 @@ int At_GetCliVersion (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetApiVersion (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s\r\n", api_version);
+        atcmd_printf("%s=%s\r\n", cmd, api_version);
 
         return AT_OK;
     } else {
@@ -243,7 +250,7 @@ int At_GetApiVersion (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetHwModel (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s\r\n", model_id);
+        atcmd_printf("%s=%s\r\n", cmd, model_id);
         return AT_OK;
     } else {
         return AT_PARAM_ERROR;
@@ -253,7 +260,57 @@ int At_GetHwModel (SERIAL_PORT port, char *cmd, stParam *param)
 int At_GetHwID (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%s\r\n", chip_id);
+        atcmd_printf("%s=%s\r\n", cmd, chip_id);
+        return AT_OK;
+    } else {
+        return AT_PARAM_ERROR;
+    }
+}
+
+int At_Alias (SERIAL_PORT port, char *cmd, stParam *param)
+{
+    uint8_t rbuff[16];
+
+    if (param->argc == 1 && !strcmp(param->argv[0], "?")) 
+    {
+        if (service_nvm_get_atcmd_alias_from_nvm(rbuff, 16) != UDRV_RETURN_OK) 
+            return AT_ERROR;
+        atcmd_printf("%s=", cmd);
+        for (int i = 0 ; i < 16 ; i++)
+            atcmd_printf("%c", rbuff[i]);
+        atcmd_printf("\r\n");
+        return AT_OK;
+    } 
+    else if (param->argc == 1) 
+    {
+        int32_t ret;
+        if (strlen(param->argv[0]) < 1 || strlen(param->argv[0]) > 16) 
+            return AT_PARAM_ERROR;
+        if (service_nvm_get_atcmd_alias_from_nvm(rbuff, 16) != UDRV_RETURN_OK)
+            return AT_ERROR;
+        for (int i = 0 ; i < strlen(param->argv[0]) ; i++) {
+            if (param->argv[0][i] < 0x20 || param->argv[0][i] > 0x7E) {
+                return AT_PARAM_ERROR;
+            }
+        } 
+        ret = service_nvm_set_atcmd_alias_to_nvm(param->argv[0], strlen(param->argv[0]));
+        if (ret == UDRV_RETURN_OK)
+            return AT_OK;
+        else
+            return AT_ERROR;
+    } 
+    else 
+        return AT_PARAM_ERROR;
+}
+#endif
+
+#ifdef rak3172
+int At_GetUid (SERIAL_PORT port, char *cmd, stParam *param)
+{
+    if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
+        uint32_t uid0, uid1, uid2;
+	uhal_sys_get_uid(&uid0, &uid1, &uid2);
+        atcmd_printf("%s=%08x%08x%08x\r\n", cmd, uid2, uid1, uid0);
         return AT_OK;
     } else {
         return AT_PARAM_ERROR;

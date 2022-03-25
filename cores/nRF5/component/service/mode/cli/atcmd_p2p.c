@@ -1,3 +1,4 @@
+#ifdef SUPPORT_LORA
 #include <string.h>
 
 #include "atcmd.h"
@@ -19,7 +20,7 @@ int At_NwkWorkMode(SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_get_nwm());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_nwm());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -55,7 +56,7 @@ int At_P2pFreq(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_p2p_get_freq());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_p2p_get_freq());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -90,7 +91,7 @@ int At_P2pSF(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_p2p_get_sf());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_p2p_get_sf());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -100,7 +101,7 @@ int At_P2pSF(SERIAL_PORT port, char *cmd, stParam *param)
         if (0 != at_check_digital_uint32_t(param->argv[0], &spreading_factor))
             return AT_PARAM_ERROR;
 
-        if ((spreading_factor < 5) || (spreading_factor > 12))
+        if ((spreading_factor < 6) || (spreading_factor > 12))
             return AT_PARAM_ERROR;
 
         if (service_lora_p2p_set_sf((uint8_t)spreading_factor) != UDRV_RETURN_OK)
@@ -118,6 +119,7 @@ int At_P2pSF(SERIAL_PORT port, char *cmd, stParam *param)
 
 int At_P2pBW(SERIAL_PORT port, char *cmd, stParam *param)
 {
+    
     if (SERVICE_LORAWAN == service_lora_get_nwm())
     {
         return AT_MODE_NO_SUPPORT;
@@ -125,7 +127,7 @@ int At_P2pBW(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_p2p_get_bandwidth());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_p2p_get_bandwidth());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -134,6 +136,18 @@ int At_P2pBW(SERIAL_PORT port, char *cmd, stParam *param)
 
         if (0 != at_check_digital_uint32_t(param->argv[0], &bandwidth))
             return AT_PARAM_ERROR;
+        
+        if (SERVICE_LORA_FSK == service_lora_get_nwm())
+        {
+           if(bandwidth < 4800 || bandwidth > 467000 )
+           return AT_PARAM_ERROR;
+        }
+        else
+        {
+            if(bandwidth > 500 )
+            return AT_PARAM_ERROR;
+        }
+
         if (service_lora_p2p_set_bandwidth(bandwidth) != UDRV_RETURN_OK)
         {
             return AT_ERROR;
@@ -156,7 +170,7 @@ int At_P2pCR(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_p2p_get_codingrate());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_p2p_get_codingrate());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -188,7 +202,7 @@ int At_P2pPL(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_p2p_get_preamlen());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_p2p_get_preamlen());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -226,7 +240,7 @@ int At_P2pTP(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_p2p_get_powerdbm());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_p2p_get_powerdbm());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -325,7 +339,7 @@ int At_P2pCrypt(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_p2p_get_crypto_enable());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_p2p_get_crypto_enable());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -365,6 +379,7 @@ int At_P2pKey(SERIAL_PORT port, char *cmd, stParam *param)
         {
             return AT_ERROR;
         }
+        atcmd_printf("%s=", cmd);
         dump_hex2str(rbuff, 8);
         return AT_OK;
     }
@@ -400,11 +415,12 @@ int At_P2p(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u,", service_lora_p2p_get_freq());
-        atcmd_printf("%u,", service_lora_p2p_get_sf());
-        atcmd_printf("%u,", service_lora_p2p_get_bandwidth());  
-        atcmd_printf("%u,", service_lora_p2p_get_codingrate());
-        atcmd_printf("%u,", service_lora_p2p_get_preamlen());
+        atcmd_printf("%s=", cmd);
+        atcmd_printf("%u:", service_lora_p2p_get_freq());
+        atcmd_printf("%u:", service_lora_p2p_get_sf());
+        atcmd_printf("%u:", service_lora_p2p_get_bandwidth());  
+        atcmd_printf("%u:", service_lora_p2p_get_codingrate());
+        atcmd_printf("%u:", service_lora_p2p_get_preamlen());
         atcmd_printf("%u\r\n",service_lora_p2p_get_powerdbm());
         return AT_OK;
     }
@@ -483,7 +499,7 @@ int At_Pbr(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_p2p_get_bitrate());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_p2p_get_bitrate());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -492,6 +508,12 @@ int At_Pbr(SERIAL_PORT port, char *cmd, stParam *param)
 
         if (0 != at_check_digital_uint32_t(param->argv[0], &bitrate))
             return AT_PARAM_ERROR;
+
+        if(bitrate < 600 || bitrate > 300000)
+        {
+            return AT_PARAM_ERROR;
+        }
+        
         if (service_lora_p2p_set_bitrate(bitrate) != UDRV_RETURN_OK)
         {
             return AT_ERROR;
@@ -513,7 +535,7 @@ int At_Pfdev(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_p2p_get_fdev());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_p2p_get_fdev());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -521,9 +543,10 @@ int At_Pfdev(SERIAL_PORT port, char *cmd, stParam *param)
         uint32_t fdev;
 
         if (0 != at_check_digital_uint32_t(param->argv[0], &fdev))
+        {
             return AT_PARAM_ERROR;
-
-        if( fdev<=4800 || fdev>=467000)
+        }
+        if( fdev < 600 || fdev > 200000)
             return AT_PARAM_ERROR;
 
         if (service_lora_p2p_set_fdev(fdev) != UDRV_RETURN_OK)
@@ -537,4 +560,5 @@ int At_Pfdev(SERIAL_PORT port, char *cmd, stParam *param)
         return AT_PARAM_ERROR;
     }
 }
+#endif
 

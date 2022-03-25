@@ -1,5 +1,5 @@
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -477,14 +477,13 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_IO_SPI_PORT 1
-#define ATCMD_IO_SERIAL_PORT 4
-#define SUPPORT_EXTRA_ATCMD_OVER_BLE 1
+#define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
-#define UART_RX_INTERRUPT_MODE 1
 #define WAN_TYPE 0
-#define RAK4631 1
+#define LORA_STACK_VER 0x040407
+#define RAK4631_V2 .0+RAK5005-O_V1.0 1
+#define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
 #define WDT_SUPPORT 1
@@ -522,8 +521,11 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
-# 26 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+#define SUPPORT_USB 1
+#define SUPPORT_BLE 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 1 3
 
 
@@ -2076,7 +2078,7 @@ extern long double _strtold_r (struct _reent *, const char *restrict, char **res
 extern long double strtold (const char *restrict, char **restrict);
 # 339 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
 
-# 27 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
+# 27 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 1 3 4
 # 9 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 3 4
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 1 3 4
@@ -2456,64 +2458,29 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define __UTILITIES_H__ 
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
+#define SUCCESS 1
 
 
 
-
-
-
-
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
-# 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
-#define _STDBOOL_H 
-
-
-
-#define bool _Bool
-#define true 1
-#define false 0
-# 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
-#define __bool_true_false_are_defined 1
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h" 2
-
-
-
-
-
-#define SUCCESS 0
-
-
-
-#define FAIL 1
-# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-#define DUartPrint 
-
-
-
-
-
-
-# 65 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-typedef enum LmnStatus_e
-{
-  LMN_STATUS_ERROR = 0,
-  LMN_STATUS_OK = !LMN_STATUS_ERROR
-} LmnStatus_t;
-# 79 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+#define FAIL 0
+# 52 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define MIN(a,b) ( ( ( a ) < ( b ) ) ? ( a ) : ( b ) )
-# 90 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 63 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define MAX(a,b) ( ( ( a ) > ( b ) ) ? ( a ) : ( b ) )
-# 99 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 72 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define POW2(n) ( 1 << n )
 
 
 
 
+
+# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 typedef union Version_u
 {
     struct Version_s
@@ -2532,13 +2499,13 @@ typedef union Version_u
 
 
 void srand1( uint32_t seed );
-# 130 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 103 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 int32_t randr( int32_t min, int32_t max );
-# 141 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 114 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memcpy1( uint8_t *dst, const uint8_t *src, uint16_t size );
-# 150 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 123 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memcpyr( uint8_t *dst, const uint8_t *src, uint16_t size );
-# 161 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 134 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memset1( uint8_t *dst, uint8_t value, uint16_t size );
 
 
@@ -2548,7 +2515,7 @@ void memset1( uint8_t *dst, uint8_t value, uint16_t size );
 
 
 int8_t Nibble2HexChar( uint8_t a );
-# 179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 152 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32( uint8_t *buffer, uint16_t length );
 
 
@@ -2558,12 +2525,10 @@ uint32_t Crc32( uint8_t *buffer, uint16_t length );
 
 
 uint32_t Crc32Init( void );
-# 198 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 171 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32Update( uint32_t crcInit, uint8_t *buffer, uint16_t length );
-# 207 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 180 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32Finalize( uint32_t crc );
-# 218 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-uint16_t crc_calc(uint16_t crc, uint8_t *start, uint8_t *end);
 
 
 
@@ -2574,7 +2539,7 @@ uint16_t crc_calc(uint16_t crc, uint8_t *start, uint8_t *end);
 
 
 #define CRITICAL_SECTION_END() BoardCriticalSectionEnd( &mask )
-# 241 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 203 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void BoardCriticalSectionBegin( uint32_t *mask );
 
 
@@ -2583,16 +2548,16 @@ void BoardCriticalSectionBegin( uint32_t *mask );
 
 
 void BoardCriticalSectionEnd( uint32_t *mask );
-# 30 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/aes.h" 1
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/aes.h"
+# 30 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/aes.h" 1
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/aes.h"
 #define AES_H 
-# 41 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/aes.h"
+# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/aes.h"
 #define AES_ENC_PREKEYED 
 
 
 #define AES_DEC_PREKEYED 
-# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/aes.h"
+# 59 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/aes.h"
 #define N_ROW 4
 #define N_COL 4
 #define N_BLOCK (N_ROW * N_COL)
@@ -2610,7 +2575,7 @@ typedef struct
 { uint8_t ksch[(14 + 1) * (4 * 4)];
     uint8_t rnd;
 } aes_context;
-# 87 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/aes.h"
+# 87 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/aes.h"
 return_type aes_set_key( const uint8_t key[],
                          length_type keylen,
                          aes_context ctx[1] );
@@ -2640,9 +2605,9 @@ return_type aes_cbc_decrypt( const uint8_t *in,
                          int32_t n_block,
                          uint8_t iv[(4 * 4)],
                          const aes_context ctx[1] );
-# 31 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/cmac.h" 1
-# 37 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/cmac.h"
+# 31 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/cmac.h" 1
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/cmac.h"
 #define _CMAC_H_ 
 
 
@@ -2669,12 +2634,12 @@ void AES_CMAC_SetKey(AES_CMAC_CTX * ctx, const uint8_t key[16]);
 void AES_CMAC_Update(AES_CMAC_CTX * ctx, const uint8_t * data, uint32_t len);
 
 void AES_CMAC_Final(uint8_t digest[16], AES_CMAC_CTX * ctx);
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h" 1
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h" 1
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
 #define __LORAMAC_HEADER_TYPES_H__ 
-# 48 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
+# 48 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
 #define LORAMAC_MHDR_FIELD_SIZE 1
 
 
@@ -2740,19 +2705,19 @@ void AES_CMAC_Final(uint8_t digest[16], AES_CMAC_CTX * ctx);
 
 
 #define LORAMAC_JOIN_REQ_MSG_SIZE ( LORAMAC_MHDR_FIELD_SIZE + LORAMAC_JOIN_EUI_FIELD_SIZE + LORAMAC_DEV_EUI_FIELD_SIZE + LORAMAC_DEV_NONCE_FIELD_SIZE + LORAMAC_MIC_FIELD_SIZE )
-# 121 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
+# 121 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
 #define LORAMAC_RE_JOIN_1_MSG_SIZE ( LORAMAC_MHDR_FIELD_SIZE + LORAMAC_JOIN_TYPE_FIELD_SIZE + LORAMAC_JOIN_EUI_FIELD_SIZE + LORAMAC_DEV_EUI_FIELD_SIZE + LORAMAC_RJCOUNT_1_FIELD_SIZE + LORAMAC_MIC_FIELD_SIZE )
-# 131 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
+# 131 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
 #define LORAMAC_RE_JOIN_0_2_MSG_SIZE ( LORAMAC_MHDR_FIELD_SIZE + LORAMAC_JOIN_TYPE_FIELD_SIZE + LORAMAC_NET_ID_FIELD_SIZE + LORAMAC_DEV_EUI_FIELD_SIZE + LORAMAC_RJCOUNT_0_FIELD_SIZE + LORAMAC_MIC_FIELD_SIZE )
-# 141 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
+# 141 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
 #define LORAMAC_JOIN_ACCEPT_FRAME_MIN_SIZE ( LORAMAC_MHDR_FIELD_SIZE + LORAMAC_JOIN_NONCE_FIELD_SIZE + LORAMAC_NET_ID_FIELD_SIZE + LORAMAC_DEV_ADDR_FIELD_SIZE + LORAMAC_DL_SETTINGS_FIELD_SIZE + LORAMAC_RX_DELAY_FIELD_SIZE + LORAMAC_MIC_FIELD_SIZE )
-# 151 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
+# 151 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
 #define LORAMAC_JOIN_ACCEPT_FRAME_MAX_SIZE ( LORAMAC_MHDR_FIELD_SIZE + LORAMAC_JOIN_NONCE_FIELD_SIZE + LORAMAC_NET_ID_FIELD_SIZE + LORAMAC_DEV_ADDR_FIELD_SIZE + LORAMAC_DL_SETTINGS_FIELD_SIZE + LORAMAC_RX_DELAY_FIELD_SIZE + LORAMAC_CF_LIST_FIELD_SIZE + LORAMAC_MIC_FIELD_SIZE )
-# 160 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
+# 160 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
 #define JOIN_ACCEPT_MIC_COMPUTATION_OFFSET ( LORAMAC_MHDR_FIELD_SIZE + LORAMAC_JOIN_TYPE_FIELD_SIZE + LORAMAC_JOIN_EUI_FIELD_SIZE + LORAMAC_DEV_NONCE_FIELD_SIZE )
-# 173 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
+# 173 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
 #define LORAMAC_FRAME_PAYLOAD_OVERHEAD_SIZE ( LORAMAC_MHDR_FIELD_SIZE + ( LORAMAC_FHDR_DEV_ADDR_FIELD_SIZE + LORAMAC_FHDR_F_CTRL_FIELD_SIZE + LORAMAC_FHDR_F_CNT_FIELD_SIZE ) + LORAMAC_F_PORT_FIELD_SIZE + LORAMAC_MIC_FIELD_SIZE )
-# 182 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
+# 182 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
 #define LORAMAC_FRAME_PAYLOAD_MIN_SIZE ( LORAMAC_MHDR_FIELD_SIZE + ( LORAMAC_FHDR_DEV_ADDR_FIELD_SIZE + LORAMAC_FHDR_F_CTRL_FIELD_SIZE + LORAMAC_FHDR_F_CNT_FIELD_SIZE ) + LORAMAC_MIC_FIELD_SIZE )
 
 
@@ -2762,7 +2727,7 @@ void AES_CMAC_Final(uint8_t digest[16], AES_CMAC_CTX * ctx);
 
 
 #define LORAMAC_FRAME_PAYLOAD_MAX_SIZE ( LORAMAC_MHDR_FIELD_SIZE + ( LORAMAC_FHDR_DEV_ADDR_FIELD_SIZE + LORAMAC_FHDR_F_CTRL_FIELD_SIZE + LORAMAC_FHDR_F_CNT_FIELD_SIZE ) + LORAMAC_F_PORT_FIELD_SIZE + LORAMAC_MAC_PAYLOAD_FIELD_MAX_SIZE + LORAMAC_MIC_FIELD_SIZE )
-# 200 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
+# 200 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h"
 typedef union uLoRaMacDLSettings
 {
 
@@ -2883,10 +2848,10 @@ typedef struct sLoRaMacFrameHeader
 
     uint8_t FOpts[15];
 }LoRaMacFrameHeader_t;
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h" 1
-# 39 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h" 1
+# 39 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
 #define __SECURE_ELEMENT_H__ 
 
 
@@ -2895,16 +2860,29 @@ typedef struct sLoRaMacFrameHeader
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 1
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 1
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 #define __LORAMAC_CRYPTO_H__ 
-# 49 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 1
-# 36 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 47 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
+# 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
+#define _STDBOOL_H 
+
+
+
+#define bool _Bool
+#define true 1
+#define false 0
+# 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
+#define __bool_true_false_are_defined 1
+# 48 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 2
+
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 1
+# 36 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define __LORAMAC_TYPES_H__ 
-# 45 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 45 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 #define __TIMER_H__ 
 
 
@@ -2913,7 +2891,7 @@ typedef struct sLoRaMacFrameHeader
 
 
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 2
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 2
 
 
 
@@ -2925,14 +2903,14 @@ typedef struct TimerEvent_s
     uint32_t Timestamp;
     uint32_t ReloadValue;
     
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
    _Bool 
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
         IsStarted;
     
-# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
    _Bool 
-# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
         IsNext2Expire;
     void ( *Callback )( void* context );
     void *Context;
@@ -2945,7 +2923,7 @@ typedef struct TimerEvent_s
 
 typedef uint32_t TimerTime_t;
 #define TIMERTIME_T_MAX ( ( uint32_t )~0 )
-# 66 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 66 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 void TimerInit( TimerEvent_t *obj, void ( *callback )( void *context ) );
 
 
@@ -2967,11 +2945,11 @@ void TimerIrqHandler( void );
 
 
 void TimerStart( TimerEvent_t *obj );
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
 _Bool 
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
     TimerIsStarted( TimerEvent_t *obj );
 
 
@@ -3002,18 +2980,18 @@ void TimerSetValue( TimerEvent_t *obj, uint32_t value );
 
 
 TimerTime_t TimerGetCurrentTime( void );
-# 135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 135 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 TimerTime_t TimerGetElapsedTime( TimerTime_t past );
-# 146 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 146 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 TimerTime_t TimerTempCompensation( TimerTime_t period, float temperature );
 
 
 
 
 void TimerProcess( void );
-# 46 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h" 1
-# 26 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 46 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h" 1
+# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 #define __SYS_TIME_H__ 
 
 
@@ -3349,7 +3327,7 @@ __tzinfo_type *__gettzinfo (void);
 
 
 #define CLOCK_REALTIME ((clockid_t) 1)
-# 35 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h" 2
+# 35 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h" 2
 
 
 
@@ -3399,15 +3377,15 @@ __tzinfo_type *__gettzinfo (void);
 
 
 
-# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 typedef struct SysTime_s
 {
     uint32_t Seconds;
     int16_t SubSeconds;
 }SysTime_t;
-# 97 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 97 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 SysTime_t SysTimeAdd( SysTime_t a, SysTime_t b );
-# 107 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 107 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 SysTime_t SysTimeSub( SysTime_t a, SysTime_t b );
 
 
@@ -3430,9 +3408,9 @@ SysTime_t SysTimeGet( void );
 
 
 SysTime_t SysTimeGetMcuTime( void );
-# 137 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 137 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 uint32_t SysTimeToMs( SysTime_t sysTime );
-# 146 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 146 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 SysTime_t SysTimeFromMs( uint32_t timeMs );
 
 
@@ -3442,9 +3420,9 @@ SysTime_t SysTimeFromMs( uint32_t timeMs );
 
 
 uint32_t SysTimeMkTime( const struct tm* localtime );
-# 163 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 163 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 void SysTimeLocalTime( const uint32_t timestamp, struct tm *localtime );
-# 47 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 2
+# 47 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 2
 
 
 
@@ -3460,67 +3438,67 @@ void SysTimeLocalTime( const uint32_t timestamp, struct tm *localtime );
 
 
 #define LORAMAC_MAX_MC_CTX 4
-# 77 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_0 0
-# 93 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 93 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_1 1
-# 109 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 109 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_2 2
-# 125 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 125 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_3 3
-# 141 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 141 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_4 4
-# 157 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 157 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_5 5
-# 173 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 173 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_6 6
-# 189 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 189 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_7 7
-# 205 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 205 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_8 8
-# 221 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 221 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_9 9
-# 237 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 237 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_10 10
-# 253 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 253 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_11 11
-# 269 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 269 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_12 12
-# 285 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 285 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_13 13
-# 301 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 301 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_14 14
-# 317 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 317 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define DR_15 15
-# 335 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 335 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_0 0
-# 351 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 351 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_1 1
-# 367 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 367 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_2 2
-# 383 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 383 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_3 3
-# 399 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 399 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_4 4
-# 415 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 415 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_5 5
-# 431 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 431 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_6 6
-# 447 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 447 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_7 7
-# 463 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 463 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_8 8
-# 479 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 479 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_9 9
-# 495 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_10 10
-# 511 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 511 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_11 11
-# 527 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 527 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_12 12
-# 543 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 543 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_13 13
-# 559 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 559 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
 #define TX_POWER_14 14
 
 
@@ -3805,9 +3783,9 @@ typedef struct sMcChannelParams
 
 
     
-# 842 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 3 4
+# 842 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 3 4
    _Bool 
-# 842 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 842 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
         IsRemotelySetup;
 
 
@@ -3817,9 +3795,9 @@ typedef struct sMcChannelParams
 
 
     
-# 850 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 3 4
+# 850 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 3 4
    _Bool 
-# 850 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 850 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
         IsEnabled;
 
 
@@ -3881,7 +3859,7 @@ typedef struct sMulticastCtx
 
 
     uint32_t* DownLinkCounter;
-# 920 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 920 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
     uint8_t PingNb;
 
 
@@ -4089,9 +4067,9 @@ typedef struct sBand
 
 
     
-# 1126 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 3 4
+# 1126 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h" 3 4
    _Bool 
-# 1126 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
+# 1126 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacTypes.h"
         ReadyForTransmission;
 }Band_t;
 
@@ -4210,9 +4188,9 @@ typedef enum eLoRaMacBatteryLevel
 
     BAT_LEVEL_NO_MEASURE = 0xFF,
 }LoRaMacBatteryLevel_t;
-# 50 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacMessageTypes.h" 1
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacMessageTypes.h"
+# 50 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacMessageTypes.h" 1
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacMessageTypes.h"
 #define __LORAMAC_MESSAGE_TYPES_H__ 
 
 
@@ -4221,8 +4199,8 @@ typedef enum eLoRaMacBatteryLevel
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h" 1
-# 47 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacMessageTypes.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h" 1
+# 47 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacMessageTypes.h" 2
 
 
 
@@ -4471,11 +4449,11 @@ typedef struct sLoRaMacMessage
         LoRaMacMessageData_t Data;
     }Message;
 }LoRaMacMessage_t;
-# 51 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCryptoNvm.h" 1
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCryptoNvm.h"
+# 51 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCryptoNvm.h" 1
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCryptoNvm.h"
 #define __LORAMAC_CRYPTO_NVM_H__ 
-# 49 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCryptoNvm.h"
+# 49 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCryptoNvm.h"
 typedef struct sFCntList
 {
 
@@ -4544,7 +4522,7 @@ typedef struct sLoRaMacCryptoNvmData
 
     uint32_t Crc32;
 }LoRaMacCryptoNvmData_t;
-# 52 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 2
+# 52 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 2
 
 
 
@@ -4660,11 +4638,11 @@ typedef enum eLoRaMacCryptoStatus
 
 
 typedef void ( *LoRaMacCryptoNvmEvent )( void );
-# 176 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 176 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoInit( LoRaMacCryptoNvmData_t* nvm );
-# 187 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 187 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoSetLrWanVersion( Version_t version );
-# 198 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 198 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoGetFCntDown( FCntIdentifier_t fCntID, uint16_t maxFCntGap, uint32_t frameFcnt, uint32_t* currentDown );
 
 
@@ -4674,33 +4652,33 @@ LoRaMacCryptoStatus_t LoRaMacCryptoGetFCntDown( FCntIdentifier_t fCntID, uint16_
 
 
 LoRaMacCryptoStatus_t LoRaMacCryptoGetFCntUp( uint32_t* currentUp );
-# 215 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 215 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoSetMulticastReference( MulticastCtx_t* multicastList );
-# 224 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 224 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoSetKey( KeyIdentifier_t keyID, uint8_t* key );
-# 233 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 233 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoPrepareJoinRequest( LoRaMacMessageJoinRequest_t* macMsg );
-# 242 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 242 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoPrepareReJoinType1( LoRaMacMessageReJoinType1_t* macMsg );
-# 251 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 251 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoPrepareReJoinType0or2( LoRaMacMessageReJoinType0or2_t* macMsg );
-# 262 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 262 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoHandleJoinAccept( JoinReqIdentifier_t joinReqType, uint8_t* joinEUI, LoRaMacMessageJoinAccept_t* macMsg );
-# 273 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 273 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoSecureMessage( uint32_t fCntUp, uint8_t txDr, uint8_t txCh, LoRaMacMessageData_t* macMsg );
-# 285 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 285 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoUnsecureMessage( AddressIdentifier_t addrID, uint32_t address, FCntIdentifier_t fCntID, uint32_t fCntDown, LoRaMacMessageData_t* macMsg );
-# 300 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 300 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoDeriveMcRootKey( uint8_t versionMinor, KeyIdentifier_t keyID );
-# 310 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 310 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoDeriveMcKEKey( KeyIdentifier_t keyID );
-# 322 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+# 322 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
 LoRaMacCryptoStatus_t LoRaMacCryptoDeriveMcSessionKeyPair( AddressIdentifier_t addrID, uint32_t mcAddr );
-# 48 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element-nvm.h" 1
-# 35 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element-nvm.h"
+# 48 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element-nvm.h" 1
+# 35 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element-nvm.h"
 #define __SECURE_ELEMENT_NVM_H__ 
-# 48 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element-nvm.h"
+# 48 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element-nvm.h"
 #define SE_KEY_SIZE 16
 
 
@@ -4761,7 +4739,7 @@ typedef struct sSecureElementNvCtx
 
     uint32_t Crc32;
 } SecureElementNvmData_t;
-# 49 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h" 2
+# 49 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h" 2
 
 
 
@@ -4801,19 +4779,19 @@ typedef enum eSecureElementStatus
 
     SECURE_ELEMENT_FAIL_ENCRYPT,
 }SecureElementStatus_t;
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
 SecureElementStatus_t SecureElementInit( SecureElementNvmData_t* nvm );
-# 105 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+# 105 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
 SecureElementStatus_t SecureElementSetKey( KeyIdentifier_t keyID, uint8_t* key );
-# 117 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+# 117 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
 SecureElementStatus_t SecureElementComputeAesCmac( uint8_t* micBxBuffer, uint8_t* buffer, uint16_t size, KeyIdentifier_t keyID, uint32_t* cmac );
-# 128 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+# 128 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
 SecureElementStatus_t SecureElementVerifyAesCmac( uint8_t* buffer, uint16_t size, uint32_t expectedCmac, KeyIdentifier_t keyID );
-# 139 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+# 139 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
 SecureElementStatus_t SecureElementAesEncrypt( uint8_t* buffer, uint16_t size, KeyIdentifier_t keyID, uint8_t* encBuffer );
-# 149 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+# 149 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
 SecureElementStatus_t SecureElementDeriveAndStoreKey( uint8_t* input, KeyIdentifier_t rootKeyID, KeyIdentifier_t targetKeyID );
-# 162 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+# 162 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
 SecureElementStatus_t SecureElementProcessJoinAccept( JoinReqIdentifier_t joinReqType, uint8_t* joinEui,
                                                       uint16_t devNonce, uint8_t* encJoinAccept,
                                                       uint8_t encJoinAcceptSize, uint8_t* decJoinAccept,
@@ -4871,13 +4849,13 @@ SecureElementStatus_t SecureElementSetPin( uint8_t* pin );
 
 
 uint8_t* SecureElementGetPin( void );
-# 36 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element-nvm.h" 1
-# 37 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/se-identity.h" 1
-# 27 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/se-identity.h"
+# 36 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element-nvm.h" 1
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/se-identity.h" 1
+# 27 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/se-identity.h"
 #define __SOFT_SE_IDENTITY_H__ 
-# 69 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/se-identity.h"
+# 69 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/se-identity.h"
 #define STATIC_DEVICE_EUI 0
 
 
@@ -4908,18 +4886,18 @@ uint8_t* SecureElementGetPin( void );
 #define LORAWAN_DEVICE_ADDRESS ( uint32_t )0x00000000
 
 #define SOFT_SE_KEY_LIST { { .KeyID = APP_KEY, .KeyValue = { 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C }, }, { .KeyID = NWK_KEY, .KeyValue = { 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C }, }, { .KeyID = J_S_INT_KEY, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = J_S_ENC_KEY, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = F_NWK_S_INT_KEY, .KeyValue = { 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C }, }, { .KeyID = S_NWK_S_INT_KEY, .KeyValue = { 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C }, }, { .KeyID = NWK_S_ENC_KEY, .KeyValue = { 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C }, }, { .KeyID = APP_S_KEY, .KeyValue = { 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C }, }, { .KeyID = MC_ROOT_KEY, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_KE_KEY, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_KEY_0, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_APP_S_KEY_0, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_NWK_S_KEY_0, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_KEY_1, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_APP_S_KEY_1, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_NWK_S_KEY_1, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_KEY_2, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_APP_S_KEY_2, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_NWK_S_KEY_2, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_KEY_3, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_APP_S_KEY_3, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = MC_NWK_S_KEY_3, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, { .KeyID = SLOT_RAND_ZERO_KEY, .KeyValue = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }, }, },
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se-hal.h" 1
-# 27 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se-hal.h"
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se-hal.h" 1
+# 27 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se-hal.h"
 #define __SOFT_SE_HAL_H__ 
-# 41 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se-hal.h"
+# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se-hal.h"
 void SoftSeHalGetUniqueId( uint8_t *id );
-# 50 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se-hal.h"
+# 50 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se-hal.h"
 uint32_t SoftSeHalGetRandomNumber( void );
-# 39 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
+# 39 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 2
 
 static SecureElementNvmData_t* SeNvm;
-# 53 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 53 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
 static SecureElementStatus_t GetKeyByID( KeyIdentifier_t keyID, Key_t** keyItem )
 {
     for( uint8_t i = 0; i < 23; i++ )
@@ -4932,18 +4910,18 @@ static SecureElementStatus_t GetKeyByID( KeyIdentifier_t keyID, Key_t** keyItem 
     }
     return SECURE_ELEMENT_ERROR_INVALID_KEY_ID;
 }
-# 78 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 78 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
 static SecureElementStatus_t ComputeCmac( uint8_t* micBxBuffer, uint8_t* buffer, uint16_t size, KeyIdentifier_t keyID,
                                           uint32_t* cmac )
 {
     if( ( buffer == 
-# 81 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 81 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                    ((void *)0) 
-# 81 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 81 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                         ) || ( cmac == 
-# 81 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 81 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                                        ((void *)0) 
-# 81 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 81 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                                             ) )
     {
         return SECURE_ELEMENT_ERROR_NPE;
@@ -4962,9 +4940,9 @@ static SecureElementStatus_t ComputeCmac( uint8_t* micBxBuffer, uint8_t* buffer,
         AES_CMAC_SetKey( aesCmacCtx, keyItem->KeyValue );
 
         if( micBxBuffer != 
-# 98 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 98 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                           ((void *)0) 
-# 98 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 98 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                                )
         {
             AES_CMAC_Update( aesCmacCtx, micBxBuffer, 16 );
@@ -5013,9 +4991,9 @@ SecureElementStatus_t SecureElementInit( SecureElementNvmData_t* nvm )
 
 
     if( nvm == 
-# 145 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 145 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
               ((void *)0) 
-# 145 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 145 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                    )
     {
         return SECURE_ELEMENT_ERROR_NPE;
@@ -5039,9 +5017,9 @@ SecureElementStatus_t SecureElementInit( SecureElementNvmData_t* nvm )
 SecureElementStatus_t SecureElementSetKey( KeyIdentifier_t keyID, uint8_t* key )
 {
     if( key == 
-# 167 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 167 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
               ((void *)0) 
-# 167 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 167 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                    )
     {
         return SECURE_ELEMENT_ERROR_NPE;
@@ -5088,9 +5066,9 @@ SecureElementStatus_t SecureElementVerifyAesCmac( uint8_t* buffer, uint16_t size
                                                   KeyIdentifier_t keyID )
 {
     if( buffer == 
-# 212 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 212 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                  ((void *)0) 
-# 212 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 212 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                       )
     {
         return SECURE_ELEMENT_ERROR_NPE;
@@ -5099,9 +5077,9 @@ SecureElementStatus_t SecureElementVerifyAesCmac( uint8_t* buffer, uint16_t size
     SecureElementStatus_t retval = SECURE_ELEMENT_ERROR;
     uint32_t compCmac = 0;
     retval = ComputeCmac( 
-# 219 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 219 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                                                  ((void *)0)
-# 219 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 219 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                                                      , buffer, size, keyID, &compCmac );
     if( retval != SECURE_ELEMENT_SUCCESS )
     {
@@ -5120,13 +5098,13 @@ SecureElementStatus_t SecureElementAesEncrypt( uint8_t* buffer, uint16_t size, K
                                                uint8_t* encBuffer )
 {
     if( buffer == 
-# 236 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 236 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                  ((void *)0) 
-# 236 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 236 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                       || encBuffer == 
-# 236 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 236 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                                       ((void *)0) 
-# 236 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 236 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                                            )
     {
         return SECURE_ELEMENT_ERROR_NPE;
@@ -5164,9 +5142,9 @@ SecureElementStatus_t SecureElementDeriveAndStoreKey( uint8_t* input, KeyIdentif
                                                       KeyIdentifier_t targetKeyID )
 {
     if( input == 
-# 272 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 272 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                 ((void *)0) 
-# 272 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 272 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                      )
     {
         return SECURE_ELEMENT_ERROR_NPE;
@@ -5207,17 +5185,17 @@ SecureElementStatus_t SecureElementProcessJoinAccept( JoinReqIdentifier_t joinRe
                                                       uint8_t* versionMinor )
 {
     if( ( encJoinAccept == 
-# 311 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 311 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                           ((void *)0) 
-# 311 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 311 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                                ) || ( decJoinAccept == 
-# 311 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 311 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                                                        ((void *)0) 
-# 311 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 311 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                                                             ) || ( versionMinor == 
-# 311 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 311 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                                                                                    ((void *)0) 
-# 311 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 311 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                                                                                         ) )
     {
         return SECURE_ELEMENT_ERROR_NPE;
@@ -5271,7 +5249,7 @@ SecureElementStatus_t SecureElementProcessJoinAccept( JoinReqIdentifier_t joinRe
             return SECURE_ELEMENT_FAIL_CMAC;
         }
     }
-# 396 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 396 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
     else
     {
         return SECURE_ELEMENT_ERROR_INVALID_LORAWAM_SPEC_VERSION;
@@ -5283,9 +5261,9 @@ SecureElementStatus_t SecureElementProcessJoinAccept( JoinReqIdentifier_t joinRe
 SecureElementStatus_t SecureElementRandomNumber( uint32_t* randomNum )
 {
     if( randomNum == 
-# 406 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 406 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                     ((void *)0) 
-# 406 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 406 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                          )
     {
         return SECURE_ELEMENT_ERROR_NPE;
@@ -5297,9 +5275,9 @@ SecureElementStatus_t SecureElementRandomNumber( uint32_t* randomNum )
 SecureElementStatus_t SecureElementSetDevEui( uint8_t* devEui )
 {
     if( devEui == 
-# 416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 416 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                  ((void *)0) 
-# 416 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 416 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                       )
     {
         return SECURE_ELEMENT_ERROR_NPE;
@@ -5316,9 +5294,9 @@ uint8_t* SecureElementGetDevEui( void )
 SecureElementStatus_t SecureElementSetJoinEui( uint8_t* joinEui )
 {
     if( joinEui == 
-# 431 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 431 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
                   ((void *)0) 
-# 431 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 431 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                        )
     {
         return SECURE_ELEMENT_ERROR_NPE;
@@ -5335,9 +5313,9 @@ uint8_t* SecureElementGetJoinEui( void )
 SecureElementStatus_t SecureElementSetPin( uint8_t* pin )
 {
     if( pin == 
-# 446 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
+# 446 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c" 3 4
               ((void *)0) 
-# 446 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
+# 446 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/soft-se.c"
                    )
     {
         return SECURE_ELEMENT_ERROR_NPE;

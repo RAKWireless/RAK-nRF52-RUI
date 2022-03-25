@@ -1,5 +1,5 @@
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -477,14 +477,13 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_IO_SPI_PORT 1
-#define ATCMD_IO_SERIAL_PORT 4
-#define SUPPORT_EXTRA_ATCMD_OVER_BLE 1
+#define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
-#define UART_RX_INTERRUPT_MODE 1
 #define WAN_TYPE 0
-#define RAK4631 1
+#define LORA_STACK_VER 0x040407
+#define RAK4631_V2 .0+RAK5005-O_V1.0 1
+#define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
 #define WDT_SUPPORT 1
@@ -522,22 +521,25 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
+#define SUPPORT_USB 1
+#define SUPPORT_BLE 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
 #define _POSIX_C_SOURCE 200112L
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h" 1
-# 30 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h" 1
+# 30 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_CONFIG_H 
-# 61 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 61 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_HAVE_ASM 
-# 135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 135 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_HAVE_TIME 
-# 156 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 156 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_HAVE_TIME_DATE 
-# 613 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 613 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_CIPHER_MODE_CBC 
 
 
@@ -567,16 +569,16 @@
 
 
 #define MBEDTLS_CIPHER_MODE_XTS 
-# 687 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 687 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_CIPHER_PADDING_PKCS7 
 #define MBEDTLS_CIPHER_PADDING_ONE_AND_ZEROS 
 #define MBEDTLS_CIPHER_PADDING_ZEROS_AND_LEN 
 #define MBEDTLS_CIPHER_PADDING_ZEROS 
-# 728 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 728 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_REMOVE_ARC4_CIPHERSUITES 
-# 748 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 748 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_REMOVE_3DES_CIPHERSUITES 
-# 758 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 758 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ECP_DP_SECP192R1_ENABLED 
 #define MBEDTLS_ECP_DP_SECP224R1_ENABLED 
 #define MBEDTLS_ECP_DP_SECP256R1_ENABLED 
@@ -590,35 +592,35 @@
 #define MBEDTLS_ECP_DP_BP512R1_ENABLED 
 #define MBEDTLS_ECP_DP_CURVE25519_ENABLED 
 #define MBEDTLS_ECP_DP_CURVE448_ENABLED 
-# 781 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 781 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ECP_NIST_OPTIM 
-# 819 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 819 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ECDSA_DETERMINISTIC 
-# 841 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 841 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_KEY_EXCHANGE_PSK_ENABLED 
-# 872 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 872 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_KEY_EXCHANGE_DHE_PSK_ENABLED 
-# 892 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 892 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_KEY_EXCHANGE_ECDHE_PSK_ENABLED 
-# 917 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 917 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_KEY_EXCHANGE_RSA_PSK_ENABLED 
-# 945 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 945 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_KEY_EXCHANGE_RSA_ENABLED 
-# 978 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 978 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_KEY_EXCHANGE_DHE_RSA_ENABLED 
-# 1003 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1003 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_KEY_EXCHANGE_ECDHE_RSA_ENABLED 
-# 1027 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1027 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED 
-# 1051 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1051 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA_ENABLED 
-# 1075 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1075 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_KEY_EXCHANGE_ECDH_RSA_ENABLED 
-# 1108 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1108 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PK_PARSE_EC_EXTENDED 
-# 1123 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1123 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ERROR_STRERROR_DUMMY 
-# 1132 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1132 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_GENPRIME 
 
 
@@ -627,189 +629,189 @@
 
 
 #define MBEDTLS_FS_IO 
-# 1241 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1241 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PK_RSA_ALT_SUPPORT 
-# 1252 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1252 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PKCS1_V15 
-# 1263 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1263 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PKCS1_V21 
-# 1281 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1281 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SELF_TEST 
-# 1311 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1311 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_ALL_ALERT_MESSAGES 
-# 1356 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1356 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_ENCRYPT_THEN_MAC 
-# 1374 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1374 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_EXTENDED_MASTER_SECRET 
-# 1391 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1391 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_FALLBACK_SCSV 
-# 1413 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1413 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_CBC_RECORD_SPLITTING 
-# 1435 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1435 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_RENEGOTIATION 
-# 1464 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1464 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_MAX_FRAGMENT_LENGTH 
-# 1488 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1488 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_PROTO_TLS1 
-# 1500 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1500 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_PROTO_TLS1_1 
-# 1512 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1512 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_PROTO_TLS1_2 
-# 1527 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1527 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_PROTO_DTLS 
-# 1536 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1536 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_ALPN 
-# 1551 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1551 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_DTLS_ANTI_REPLAY 
-# 1569 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1569 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_DTLS_HELLO_VERIFY 
-# 1585 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1585 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_DTLS_CLIENT_PORT_REUSE 
-# 1596 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1596 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_DTLS_BADMAC_LIMIT 
-# 1610 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1610 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_SESSION_TICKETS 
-# 1620 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1620 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_EXPORT_KEYS 
-# 1631 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1631 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_SERVER_NAME_INDICATION 
-# 1640 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1640 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_TRUNCATED_HMAC 
-# 1699 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1699 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_VERSION_FEATURES 
-# 1735 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1735 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_X509_CHECK_KEY_USAGE 
-# 1748 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1748 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_X509_CHECK_EXTENDED_KEY_USAGE 
-# 1758 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1758 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_X509_RSASSA_PSS_SUPPORT 
-# 1805 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1805 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_AESNI_C 
-# 1880 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1880 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_AES_C 
-# 1908 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1908 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ARC4_C 
-# 1922 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1922 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ASN1_PARSE_C 
-# 1936 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1936 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ASN1_WRITE_C 
-# 1948 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1948 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_BASE64_C 
-# 1965 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1965 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_BIGNUM_C 
-# 1974 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1974 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_BLOWFISH_C 
-# 2029 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2029 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_CAMELLIA_C 
-# 2095 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2095 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_CCM_C 
-# 2107 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2107 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_CERTS_C 
-# 2116 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2116 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_CHACHA20_C 
-# 2127 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2127 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_CHACHAPOLY_C 
-# 2139 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2139 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_CIPHER_C 
-# 2172 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2172 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_CTR_DRBG_C 
-# 2186 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2186 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_DEBUG_C 
-# 2215 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2215 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_DES_C 
-# 2236 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2236 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_DHM_C 
-# 2252 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2252 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ECDH_C 
-# 2267 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2267 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ECDSA_C 
-# 2300 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2300 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ECP_C 
-# 2314 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2314 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ENTROPY_C 
-# 2326 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2326 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_ERROR_C 
-# 2340 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2340 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_GCM_C 
-# 2378 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2378 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_HKDF_C 
-# 2392 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2392 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_HMAC_DRBG_C 
-# 2417 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2417 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_MD_C 
-# 2473 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2473 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_MD5_C 
-# 2508 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2508 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_NET_C 
-# 2531 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2531 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_OID_C 
-# 2545 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2545 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PADLOCK_C 
-# 2563 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2563 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PEM_PARSE_C 
-# 2579 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2579 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PEM_WRITE_C 
-# 2595 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2595 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PK_C 
-# 2610 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2610 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PK_PARSE_C 
-# 2624 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2624 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PK_WRITE_C 
-# 2637 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2637 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PKCS5_C 
-# 2668 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2668 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PKCS12_C 
-# 2688 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2688 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_PLATFORM_C 
-# 2698 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2698 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_POLY1305_C 
-# 2709 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2709 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_RIPEMD160_C 
-# 2728 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2728 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_RSA_C 
-# 2750 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2750 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SHA1_C 
-# 2767 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2767 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SHA256_C 
-# 2782 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2782 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SHA512_C 
-# 2794 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2794 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_CACHE_C 
-# 2804 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2804 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_COOKIE_C 
-# 2816 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2816 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_TICKET_C 
-# 2830 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2830 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_CLI_C 
-# 2844 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2844 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_SRV_C 
-# 2860 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2860 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_SSL_TLS_C 
-# 2905 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2905 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_TIMING_C 
-# 2916 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2916 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_VERSION_C 
-# 2933 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2933 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_X509_USE_C 
-# 2949 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2949 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_X509_CRT_PARSE_C 
-# 2963 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2963 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_X509_CRL_PARSE_C 
-# 2977 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2977 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_X509_CSR_PARSE_C 
-# 2990 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 2990 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_X509_CREATE_C 
-# 3003 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 3003 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_X509_CRT_WRITE_C 
-# 3016 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 3016 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_X509_CSR_WRITE_C 
-# 3026 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 3026 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_XTEA_C 
-# 3290 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 3290 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
 #define MBEDTLS_TLS_DEFAULT_ALLOW_SHA1_IN_KEY_EXCHANGE 
-# 3342 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h" 1
-# 31 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h"
+# 3342 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h" 1
+# 31 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h"
 #define MBEDTLS_CHECK_CONFIG_H 
 
 
@@ -1651,37 +1653,37 @@ typedef unsigned int wchar_t;
 
 #undef ULLONG_MAX
 #define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL)
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h" 2
-# 654 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h"
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h" 2
+# 654 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h"
 #undef MBEDTLS_THREADING_IMPL
-# 706 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h"
+# 706 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h"
 
-# 706 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h"
+# 706 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/check_config.h"
 typedef int mbedtls_iso_c_forbids_empty_translation_units;
-# 3343 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h" 2
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
+# 3343 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h" 2
+# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
 
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h" 1
-# 26 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h" 1
+# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h"
 #define MBEDTLS_PLATFORM_UTIL_H 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h" 1
-# 30 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/config.h" 1
+# 30 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h" 2
 
 
 
 
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 35 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h" 2
+# 35 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h" 2
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h" 1
-# 25 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h" 1
+# 25 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h"
 #define MBEDTLS_PLATFORM_TIME_H 
-# 52 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h"
+# 52 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h"
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/time.h" 1 3
 
 
@@ -2828,32 +2830,32 @@ extern char *_tzname[2];
 
 
 #define CLOCK_REALTIME ((clockid_t) 1)
-# 53 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h" 2
+# 53 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h" 2
 
-# 53 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h"
+# 53 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h"
 typedef time_t mbedtls_time_t;
-# 74 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h"
+# 74 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_time.h"
 #define mbedtls_time time
-# 37 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h" 2
-# 111 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h"
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h" 2
+# 111 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h"
 #define MBEDTLS_INTERNAL_VALIDATE_RET(cond,ret) do { } while( 0 )
 #define MBEDTLS_INTERNAL_VALIDATE(cond) do { } while( 0 )
-# 132 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h"
+# 132 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h"
 #define MBEDTLS_DEPRECATED_STRING_CONSTANT(VAL) VAL
 #define MBEDTLS_DEPRECATED_NUMERIC_CONSTANT(VAL) VAL
-# 159 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h"
+# 159 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h"
 void mbedtls_platform_zeroize( void *buf, size_t len );
-# 188 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h"
+# 188 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform_util.h"
 struct tm *mbedtls_platform_gmtime_r( const mbedtls_time_t *tt,
                                       struct tm *tm_buf );
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h" 1
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h" 1
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 #define MBEDTLS_PLATFORM_H 
-# 46 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 46 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 #define MBEDTLS_ERR_PLATFORM_HW_ACCEL_FAILED -0x0070
 #define MBEDTLS_ERR_PLATFORM_FEATURE_UNSUPPORTED -0x0072
-# 62 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 62 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 1 3
 # 27 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
 #define _STDIO_H_ 
@@ -3326,7 +3328,7 @@ _putchar_unlocked(int _c)
 #define L_ctermid 16
 # 797 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
 
-# 63 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h" 2
+# 63 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h" 2
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 1 3
 
 
@@ -3563,7 +3565,7 @@ extern long double _strtold_r (struct _reent *, const char *restrict, char **res
 extern long double strtold (const char *restrict, char **restrict);
 # 339 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
 
-# 64 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h" 2
+# 64 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h" 2
 
 
 
@@ -3605,16 +3607,16 @@ extern long double strtold (const char *restrict, char **restrict);
 
 
 #define MBEDTLS_PLATFORM_STD_NV_SEED_FILE "seedfile"
-# 143 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 143 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 #define mbedtls_free free
 #define mbedtls_calloc calloc
-# 170 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 170 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 #define mbedtls_fprintf fprintf
-# 194 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 194 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 #define mbedtls_printf printf
-# 229 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 229 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 #define mbedtls_snprintf MBEDTLS_PLATFORM_STD_SNPRINTF
-# 253 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 253 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 #define mbedtls_exit exit
 
 
@@ -3629,31 +3631,31 @@ extern long double strtold (const char *restrict, char **restrict);
 
 
 #define MBEDTLS_EXIT_FAILURE MBEDTLS_PLATFORM_STD_EXIT_FAILURE
-# 321 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 321 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 
-# 321 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 321 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 typedef struct mbedtls_platform_context
 {
     char dummy;
 }
 mbedtls_platform_context;
-# 346 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 346 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 int mbedtls_platform_setup( mbedtls_platform_context *ctx );
-# 361 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
+# 361 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/platform.h"
 void mbedtls_platform_teardown( mbedtls_platform_context *ctx );
-# 39 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/threading.h" 1
-# 25 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/threading.h"
+# 39 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/threading.h" 1
+# 25 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/threading.h"
 #define MBEDTLS_THREADING_H 
-# 41 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/threading.h"
+# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/include/mbedtls/threading.h"
 #define MBEDTLS_ERR_THREADING_FEATURE_UNAVAILABLE -0x001A
 
 #define MBEDTLS_ERR_THREADING_BAD_INPUT_DATA -0x001C
 #define MBEDTLS_ERR_THREADING_MUTEX_ERROR -0x001E
-# 40 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
+# 40 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
 
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 1 3
 
 
@@ -3768,10 +3770,10 @@ char *strsignal (int __signo);
 # 176 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
 
 
-# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
-# 71 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
+# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 2
+# 71 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
 
-# 71 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
+# 71 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
 static void * (* const volatile memset_func)( void *, int, size_t ) = memset;
 
 void mbedtls_platform_zeroize( void *buf, size_t len )
@@ -3781,7 +3783,7 @@ void mbedtls_platform_zeroize( void *buf, size_t len )
     if( len > 0 )
         memset_func( buf, 0, len );
 }
-# 102 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
+# 102 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
 #define PLATFORM_UTIL_USE_GMTIME 
 
 
@@ -3807,9 +3809,9 @@ struct tm *mbedtls_platform_gmtime_r( const mbedtls_time_t *tt,
     lt = gmtime( tt );
 
     if( lt != 
-# 126 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 3 4
+# 126 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 3 4
              ((void *)0) 
-# 126 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
+# 126 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
                   )
     {
         memcpy( tm_buf, lt, sizeof( struct tm ) );
@@ -3821,13 +3823,13 @@ struct tm *mbedtls_platform_gmtime_r( const mbedtls_time_t *tt,
 
 
     return( ( lt == 
-# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 3 4
+# 136 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 3 4
                    ((void *)0) 
-# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
+# 136 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
                         ) ? 
-# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 3 4
+# 136 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c" 3 4
                             ((void *)0) 
-# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
+# 136 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/mbedtls/library/platform_util.c"
                                  : tm_buf );
 
 }

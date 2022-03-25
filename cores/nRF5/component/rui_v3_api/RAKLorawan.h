@@ -1,7 +1,7 @@
-#ifndef __LORAWAN_H__
-#define __LORAWAN_H__
+#ifndef __RAK_LORAWAN_H__
+#define __RAK_LORAWAN_H__
 
-#if WAN_TYPE == 0
+#ifdef SUPPORT_LORA
 
 #include <cstdint>
 #include <string>
@@ -17,14 +17,14 @@
 
 using namespace std;
 
-/**@addtogroup	LoRaWan_Data_Type
+/**@addtogroup	RUI_Lorawan_Data_Type
  * @{
  */
 
 /**@par	Description
  * 	The regions of LoRa
  */
-typedef enum _RAK_LORA_BAND
+typedef enum
 {
   RAK_REGION_EU433 = 0, ///< EU433
   RAK_REGION_CN470 = 1, ///< CN470 ~ 510
@@ -40,16 +40,16 @@ typedef enum _RAK_LORA_BAND
 /**@par	Description
  *	The LoRaWan network join modes	
  */
-typedef enum _RAK_LORA_JOIN_MODE
+typedef enum
 {
   RAK_LORA_ABP = 0, ///< activation by personalization
   RAK_LORA_OTAA = 1 ///< over-the-air activation
 } RAK_LORA_JOIN_MODE;
 
 /**@par	Description
- * 	The LoRaWan woring modes
+ * 	The LoRaWan working modes
  */
-typedef enum _RAK_LORA_WORK_MODE
+typedef enum
 {
   RAK_LORA_P2P = 0, ///< Switch to P2P mode
   RAK_LORAWAN = 1,  ///< Switch to LoRaWan mode
@@ -59,7 +59,7 @@ typedef enum _RAK_LORA_WORK_MODE
 /**@par	Description
  * 	The status of confirm mode
  */
-typedef enum _RAK_LORA_CONFIRM_MODE
+typedef enum
 {
   RAK_LORA_NO_ACK = 0, ///< The device will not get received data from network
   RAL_LORA_ACK = 1,    ///< The device will get received data from network
@@ -68,7 +68,7 @@ typedef enum _RAK_LORA_CONFIRM_MODE
 /**@par	Description
  * 	The LoRaWan classes
  */
-typedef enum _RAK_LORA_CLASS
+typedef enum
 {
   RAK_LORA_CLASS_A = 0, ///< The LoRaWan will work in Class A
   RAK_LORA_CLASS_B = 1, ///< The LoRaWan will work in Class B
@@ -78,7 +78,7 @@ typedef enum _RAK_LORA_CLASS
 /**@par	Description
  * 	The structure of a multicast group
  */
-typedef struct _RAK_LORA_McSession
+typedef struct
 {
   uint8_t McDevclass;     ///< The device class of a multicast group
   uint32_t McAddress;     ///< The address of a multicast group
@@ -94,7 +94,7 @@ typedef struct _RAK_LORA_McSession
 /**@par	Description
  *	The structure of a rssi data
  */
-typedef struct RAK_LORA_chan_rssi_t
+typedef struct
 {
   uint32_t chan; ///< The channel of a rssi
   uint16_t mask; ///< The mask of a rssi
@@ -223,7 +223,7 @@ public:
 
   /**@par	Description
      * 		This api gets or sets the times of retransmission of Confirm packet data
-     * @ingroup		Generic_LoRaWAN_Instructions
+     * @ingroup		Joining_and_Sending
      */
   class rety
   {
@@ -289,7 +289,7 @@ public:
   /**@par	Description
      *      	This api provides a way to send long packet(1024 bytes) text data
      *
-     * @ingroup	Generic_LoRaWAN_Instructions
+     * @ingroup	Joining_and_Sending
      * @par	Syntax
      *      	api.lorawan.lpsend(port, ack, payload, length)
      * @param	port	application port to be transmitted
@@ -1780,7 +1780,7 @@ public:
        {
            Serial.begin(115200);
 
-           Serial.printf("Set device class to Class_A  %s\r\n", api.lorawan.adr.deviceClass(0) ? "Success" : "Fail");
+           Serial.printf("Set device class to Class_A  %s\r\n", api.lorawan.deviceClass.set(0) ? "Success" : "Fail");
        }
 
        void loop()
@@ -1790,10 +1790,10 @@ public:
                    Serial.println("Device is in Class A");      
                    break;
                case 1:
-                   Serial.println("Device is in Class A");      
+                   Serial.println("Device is in Class B");
                    break;
                case 2:
-                   Serial.println("Device is in Class A");      
+                   Serial.println("Device is in Class C");
                    break;
            }
 
@@ -1821,7 +1821,7 @@ public:
        {
            Serial.begin(115200);
 
-           Serial.printf("Set device class to Class_A  %s\r\n", api.lorawan.adr.deviceClass(0) ? "Success" : "Fail");
+           Serial.printf("Set device class to Class_A  %s\r\n", api.lorawan.deviceClass.set(0) ? "Success" : "Fail");
        }
 
        void loop()
@@ -1831,10 +1831,10 @@ public:
                    Serial.println("Device is in Class A");
                    break;
                case 1:
-                   Serial.println("Device is in Class A");
+                   Serial.println("Device is in Class B");
                    break;
                case 2:
-                   Serial.println("Device is in Class A");
+                   Serial.println("Device is in Class C");
                    break;
            }
 
@@ -2969,246 +2969,9 @@ public:
   };
 
   /**@par	Description
-     *		
-     * @ingruop		RF_Test
-     */
-  class trssi
-  {
-  public:
-    /**@par	Description
-	 *      
-	 *
-	 * @par	Syntax
-	 *	api.lorawan.trssi.start();
-   * @return	bool
-	 * @retval	TRUE fot success
-	 * @retval	FALSE for failure
-	 */
-    bool start();
-  };
-
-  /**@par	Description
-     *
-     * @ingroup		RF_Test
-     */
-  class ttone
-  {
-  public:
-    /**@par	Description
-	 *      
-	 *
-	 * @par	Syntax
-	 *	api.lorawan.ttone.start();
-   * @return	bool
-	 * @retval	TRUE fot success
-	 * @retval	FALSE for failure
-	 */
-    bool start();
-  };
-
-  /**@par	Description
-     *
-     * @ingroup		RF_Test
-     */
-  class ttx
-  {
-  public:
-    /**@par	Description
-	 *      
-	 *
-	 * @par	Syntax
-	 *	api.lorawan.ttx.start(value);
-	 * @param	value
-   * @return	bool
-	 * @retval	TRUE fot success
-	 * @retval	FALSE for failu
-	 */
-    bool start(uint8_t value);
-  };
-
-  /**@par	Description
-     *
-     * @ingroup		RF_Test
-     */
-  class trx
-  {
-  public:
-    /**@par	Description
-	 *      
-	 *
-	 * @par	Syntax
-	 *	api.lorawan.trx.start(value);
-	 * @param	value
-   * @return	bool
-	 * @retval	TRUE fot success
-	 * @retval	FALSE for failu
-	 */
-    bool start(uint8_t value);
-  };
-
-  /**@par	Description
-     *
-     * @ingroup		RF_Test
-     */
-  class tconf
-  {
-  public:
-    class freq
-    {
-    public:
-      bool set(long value);
-    };
-
-    class power
-    {
-    public:
-      bool set(uint8_t value);
-    };
-
-    class dr
-    {
-    public:
-      bool set(uint8_t value);
-    };
-
-    class cr
-    {
-    public:
-      bool set(uint8_t value);
-    };
-
-    class lna
-    {
-    public:
-      bool set(bool value);
-    };
-
-    class boost
-    {
-    public:
-      bool set(bool value);
-    };
-
-    class modulation
-    {
-    public:
-      bool set(uint8_t value);
-    };
-
-    class payloadLength
-    {
-    public:
-      bool set(uint8_t value);
-    };
-
-    class fskDeviation
-    {
-    public:
-      bool set(int, int);
-    };
-
-    class lowDrOpt
-    {
-    public:
-      bool set(uint8_t value);
-    };
-
-    class BTProduct
-    {
-    public:
-      bool set(uint8_t value);
-    };
-    //instance of tconf
-    freq freq;
-    power power;
-    dr dr;
-    cr cr;
-    lna lna;
-    boost boost;
-    modulation modulation;
-    payloadLength payloadLength;
-    fskDeviation fskDeviation;
-    lowDrOpt lowDrOpt;
-    BTProduct BTProduct;
-  };
-
-  /**@par	Description
-     *
-     * @ingroup		RF_Test
-     */
-  class tth
-  {
-  public:
-    bool start();
-
-    class freqStart
-    {
-    public:
-      bool set(long value);
-    };
-
-    class freqStop
-    {
-    public:
-      bool set(long value);
-    };
-
-    class freqDelta
-    {
-    public:
-      bool set(long value);
-    };
-
-    class packetNb
-    {
-    public:
-      bool set(uint8_t value);
-    };
-    //instance of tth
-    freqStart freqStart;
-    freqStop freqStop;
-    freqDelta freqDelt;
-    packetNb packetNb;
-  };
-
-  /**@par	Description
-     *
-     * @ingroup		RF_Test
-     */
-  class toff
-  {
-  public:
-    /**@par	Description
-	 *      
-	 *
-	 * @par	Syntax
-	 *	api.lorawan.toff.stop();
-	 * @return
-	 */
-    bool stop();
-  };
-
-  /**@par	Description
-     *
-     * @ingroup		RF_Test
-     */
-  class certif
-  {
-  public:
-    /**@par	Description
-	 *      
-	 *
-	 * @par	Syntax
-	 *	api.lorawan.certif.start();
-	 * @return
-	 */
-    bool start();
-  };
-
-  /**@par	Description
      *		This api configures the channel of the device by setting the hexadecimal 
 channel mask
-     * @ingroup		Generic_LoRaWAN_Instructions
+     * @ingroup		Supplement
      */
   class mask
   {
@@ -3286,7 +3049,7 @@ channel mask
 
   /**@par	Description
      *		This api set number corresponding to active regions
-     * @ingroup		Generic_LoRaWAN_Instructions
+     * @ingroup		Supplement
      * @note		0: EU433\n
      *                  1: CN470\n 
      *                  2: RU864\n 
@@ -3369,7 +3132,7 @@ channel mask
 
   /**@par	Description
      *		This api allows the user to Verify Network Link Status
-     * @ingroup		Generic_LoRaWAN_Instructions
+     * @ingroup		Network
      */
   class linkcheck
   {
@@ -3975,14 +3738,6 @@ channel mask
   snr snr;
   ltime ltime;
   ver ver;
-  trssi trssi;
-  ttone ttone;
-  ttx ttx;
-  trx trx;
-  tconf tconf;
-  tth tth;
-  toff toff;
-  certif certif;
   mask mask;
   band band;
   linkcheck linkcheck;

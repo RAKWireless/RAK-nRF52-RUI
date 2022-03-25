@@ -48,12 +48,11 @@ typedef enum _SERIAL_EVENT{
 
 #define SERIAL_NO_TIMEOUT UINT32_MAX
 
-typedef enum _SERIAL_IE_E {
-    SERIAL_RX_DATA_READY_IE         = 0x0,  ///< Receiver Data Ready or Time out Interrupt Enable.
-    SERIAL_THR_EMPTY_IE             = 0x1,  ///< Transmitter Holding Register Empty Interrupt Enable.
-    SERIAL_RX_LINE_STATUS_IE        = 0x2,  ///< Receiver Line Status Interrupt Enable.
-    SERIAL_MODEM_STATUS_IE          = 0x3   ///< Modem Status Interrupt Enable.
-} SERIAL_IE_E;
+typedef enum _SERIAL_WIRE_MODE_E {
+    SERIAL_TWO_WIRE_NORMAL_MODE         = 0x0,
+    SERIAL_ONE_WIRE_TX_PIN_MODE         = 0x1,
+    SERIAL_ONE_WIRE_RX_PIN_MODE         = 0x2,
+} SERIAL_WIRE_MODE_E;
 
 typedef enum _SERIAL_WORD_LEN_E {
     SERIAL_WORD_LEN_5                 = 0x0,  ///< Character's Word Length 5 bits.
@@ -77,14 +76,19 @@ typedef enum _SERIAL_PARITY_E {
 
 typedef enum _SERIAL_PORT
 {
-    SERIAL_UART0     = 0,   // Use UART0 for I/O
-    SERIAL_UART1     = 1,   // Use UART1 for I/O
-    SERIAL_UART2     = 2,   // Use UART2 for I/O
-    SERIAL_UART_MAX  = 3,
-    SERIAL_USB0      = 4,   // Use USB0 for I/O
-    SERIAL_USB_MAX   = 5,
-    SERIAL_BLE0      = 6,   // Use BLE for I/O
-    SERIAL_MAX       = 7,
+    SERIAL_UART0 = 0,       // Use UART0 for I/O
+    SERIAL_UART1,           // Use UART1 for I/O
+    SERIAL_UART2,           // Use UART2 for I/O
+#ifdef SUPPORT_USB
+    SERIAL_USB0,            // Use USB0 for I/O
+#endif
+#ifdef SUPPORT_BLE
+    SERIAL_BLE0,            // Use BLE for I/O
+#endif
+#ifdef SUPPORT_NFC
+    SERIAL_NFC,             // Use NFC for I/O
+#endif
+    SERIAL_MAX,
 } SERIAL_PORT;
 
 typedef enum _SERIAL_WLOCK_STATE
@@ -98,30 +102,23 @@ typedef void (*SERIAL_CLI_HANDLER) (SERIAL_PORT, void *);
 
 //The structure of serial function 
 struct udrv_serial_api {
-    void (*SERIAL_INIT) (SERIAL_PORT Port, uint32_t BaudRate, SERIAL_WORD_LEN_E DataBits, SERIAL_STOP_BIT_E StopBits, SERIAL_PARITY_E Parity);
+    void (*SERIAL_INIT) (SERIAL_PORT Port, uint32_t BaudRate, SERIAL_WORD_LEN_E DataBits, SERIAL_STOP_BIT_E StopBits, SERIAL_PARITY_E Parity, SERIAL_WIRE_MODE_E WireMode);
     void (*SERIAL_DEINIT) (SERIAL_PORT Port);
     int32_t (*SERIAL_WRITE) (SERIAL_PORT Port, uint8_t const *Buffer, int32_t NumberOfBytes, uint32_t Timeout);
     int32_t (*SERIAL_READ) (SERIAL_PORT Port, uint8_t *Buffer, int32_t NumberOfBytes, uint32_t Timeout);
     int32_t (*SERIAL_PEEK) (SERIAL_PORT Port);
     void (*SERIAL_FLUSH) (SERIAL_PORT Port, uint32_t Timeout);
-    size_t (*SERIAL_READ_AVAIL) (SERIAL_PORT Port);
+    int32_t (*SERIAL_READ_AVAIL) (SERIAL_PORT Port);
     //void (*SERIAL_SUSPEND) (void);
     //void (*SERIAL_RESUME) (void);
 };
 
 /**
- * @brief       This API is used to register a serial lock handler.
+ * @brief       This API is used to register a one-wire handler.
  * @retval      void
  * @param       SERIAL_CLI_HANDLER handler: the handler function to handle the received characters
  */
-void udrv_serial_register_lock_handler (SERIAL_CLI_HANDLER handler);
-
-/**
- * @brief       This API is used to register a wakeup handler.
- * @retval      void
- * @param       SERIAL_CLI_HANDLER handler: the handler function to handle the received characters
- */
-void udrv_serial_register_wakeup_handler (SERIAL_CLI_HANDLER handler);
+void udrv_serial_register_onewire_handler (SERIAL_CLI_HANDLER handler);
 
 /**
  * @brief       This API is used to check if a specified serial port is initialized.
@@ -138,8 +135,9 @@ bool is_udrv_serial_initialized(SERIAL_PORT Port);
  * @param       SERIAL_WORD_LEN_E DataBits: the initialized value of data bits setting
  * @param       SERIAL_STOP_BIT_E StopBits: the initialized value of stop bits setting
  * @param       SERIAL_PARITY_E Parity: the initialized value of parity bits setting
+ * @param       SERIAL_WIRE_MODE_E WireMode: the initialized value of wire mode
  */
-void udrv_serial_init (SERIAL_PORT Port, uint32_t BaudRate, SERIAL_WORD_LEN_E DataBits, SERIAL_STOP_BIT_E StopBits, SERIAL_PARITY_E Parity);
+void udrv_serial_init (SERIAL_PORT Port, uint32_t BaudRate, SERIAL_WORD_LEN_E DataBits, SERIAL_STOP_BIT_E StopBits, SERIAL_PARITY_E Parity, SERIAL_WIRE_MODE_E WireMode);
 
 /**
  * @brief       This API is used to deinitialize a specified serial port.
@@ -207,16 +205,14 @@ void udrv_serial_flush (SERIAL_PORT Port);
 /**
  * @brief       This API is used to lock a specified serial port.
  * @retval      void
- * @param       SERIAL_PORT Port: the specified serial port
  */
-void udrv_serial_lock (SERIAL_PORT Port);
+void udrv_serial_lock (void);
 
 /**
  * @brief       This API is used to maunually unlock a specified serial port.
  * @retval      void
- * @param       SERIAL_PORT Port: the specified serial port
  */
-void udrv_serial_unlock (SERIAL_PORT Port);
+void udrv_serial_unlock (void);
 
 /**
  * @brief       This API is used to get the unlock password for a specified serial port.
@@ -258,11 +254,11 @@ void udrv_serial_enable (SERIAL_PORT Port);
 /**
  * @brief       This API is used to get the number of bytes available for reading from
  *              the specified serial port.
- * @retval      size_t
+ * @retval      int32_t
  * @return      the number of bytes available for reading from the specified serial port
  * @param       SERIAL_PORT Port: the specified serial port
  */
-size_t udrv_serial_read_available(SERIAL_PORT Port);
+int32_t udrv_serial_read_available(SERIAL_PORT Port);
 
 /**
  * @brief       This API is used to get the timeout value for read/write/flush API.

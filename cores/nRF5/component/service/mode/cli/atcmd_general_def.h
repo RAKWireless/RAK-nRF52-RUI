@@ -146,6 +146,17 @@
  * | AT+HWID=?          | --                 | <string>                                                          | OK                 |
  * | Example<br>AT+HWID=?| --                | nrf52840                                                          | OK                 |
  *
+ * @subsection ATCMD_general_16 AT+ALIAS: alias name of the device
+ *
+ * This command allows the user to set an alias name for device.
+ *
+ * | Command            | Input parameter    | Return value                                                      | Return code        |
+ * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
+ * | AT+ALIAS?           | --                 | AT+ALIAS: add an alias name to the device                        | OK                 |
+ * | AT+ALIAS=?          | --                 | <string, 16 char>                                                | OK                 |
+ * | AT+ALIAS=\<Input\>  | <string,16 char>   | --                                                               | OK / AT_PARAM_ERROR|
+ * | Example<br>AT+ALIAS=  | mydevice         | --                                                               | OK                 |
+ * | Example<br>AT+ALIAS=?| --                | mydevice                                                         | OK                 |
  *
  */
 
@@ -167,5 +178,9 @@
 #define ATCMD_APIVER                "AT+APIVER"
 #define ATCMD_HWMODEL               "AT+HWMODEL"
 #define ATCMD_HWID                  "AT+HWID"
+#define ATCMD_ALIAS                 "AT+ALIAS"
+#ifdef rak3172
+#define ATCMD_UID                   "AT+UID"
+#endif
 
 #endif //_ATCMD_GENERAL_DEF_H_

@@ -17,7 +17,12 @@
 
 using namespace std;
 class Stream : public Print
-{
+{ 
+  protected:
+    unsigned long timeOut;
+    unsigned long startTime;
+
+    int timedRead();
   public:
     virtual void flush() = 0;
     virtual int peek() = 0;
@@ -92,7 +97,7 @@ class Stream : public Print
    * @par     Example
    * @verbatim
      void setup() {
-       Serial.begin(11500, CUSTOM_MODE);
+       Serial.begin(11500, RAK_CUSTOM_MODE);
      }
 
      void loop() {
@@ -138,7 +143,7 @@ class Stream : public Print
    * @par     Example
    * @verbatim
      void setup() {
-       Serial.begin(11500, CUSTOM_MODE);
+       Serial.begin(11500, RAK_CUSTOM_MODE);
      }
 
      void loop() {
@@ -175,17 +180,17 @@ class Stream : public Print
    * @par	Syntax
    *      	Serial.readString()
    *
-   * @return	A String read from a Stream(Type: string)
+   * @return	A String read from a Stream(Type: String)
    * @par     Example
    * @verbatim
      void setup() {
-       Serial.begin(11500, CUSTOM_MODE);
+       Serial.begin(115200, RAK_CUSTOM_MODE);
      }
 
      void loop() {
-       string returnString = "";
+       String returnString = "";
 
-       if (Serial.available > 0) {
+       if (Serial.available() > 0) {
 
          //Read 5 characters in 1 second
          returnString = Serial.readString();
@@ -202,7 +207,7 @@ class Stream : public Print
      }
      @endverbatim
    */
-  string readString();
+  String readString();
 
   /**@par	Description
    *      	readStringUntil() reads characters from the serial buffer into a String. The function terminates if it times out (see setTimeout())
@@ -210,15 +215,15 @@ class Stream : public Print
    * @ingroup	Serial
    * @par	Syntax
    *      	Serial.readStringUntil(terminator);
-   * @return	The entire String read from the serial buffer, up to the terminator character(Type: string)
+   * @return	The entire String read from the serial buffer, up to the terminator character(Type: String)
    * @par     Example
    * @verbatim
      void setup() {
-       Serial.begin(11500, CUSTOM_MODE);
+       Serial.begin(115200, RAK_CUSTOM_MODE);
      }
 
      void loop() {
-       string returnString = "";
+       String returnString = "";
 
        if (Serial.available > 0) {
 
@@ -238,7 +243,7 @@ class Stream : public Print
      @endverbatim
 
    */
-  string readStringUntil(char terminator);
+  String readStringUntil(char terminator);
 
 };
 

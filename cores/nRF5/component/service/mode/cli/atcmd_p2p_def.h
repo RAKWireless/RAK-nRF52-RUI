@@ -147,24 +147,24 @@
  * Preamble Length: 2-65535<br>
  * TX Power = 5-22<br>
  *
- * @subsection ATCMD_p2p_13 AT+PBR: get or set the P2P FSK modem bitrate (600b/s-307200b/s)
+ * @subsection ATCMD_p2p_13 AT+PBR: get or set the P2P FSK modem bitrate (600b/s-300000b/s)
  *
- * This command allows the user to get or set the P2P FSK modem bitrate (600b/s-307200b/s)
+ * This command allows the user to get or set the P2P FSK modem bitrate (600b/s-300000b/s)
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+PBR?            | --                 | AT+PBR: get or set the P2P FSK modem bitrate (600b/s-307200b/s)   | OK                 |
+ * | AT+PBR?            | --                 | AT+PBR: get or set the P2P FSK modem bitrate (600-300000 b/s)     | OK                 |
  * | AT+PBR=?           | --                 | <fbitrate>                                                        | OK                 |
  * | AT+PBR=\<Param\>   | <bitrate>          | --                                                                | OK / AT_PARAM_ERROR|
  * | Example<br>AT+PBR=?| --                 | 4915                                                              | OK                 |
  *
  * @subsection ATCMD_p2p_14 AT+PFDEV: get or set the P2P FSK modem frequency deviation
  *
- * This command allows the user to get or set the P2P FSK modem frequency deviation.
+ * This command allows the user to get or set the P2P FSK modem frequency deviation (600-200000 hz)
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+PFDEV?          | --                 | AT+PFDEV: get or set the P2P FSK modem frequency deviation (4800-467000)        | OK                 |
+ * | AT+PFDEV?          | --                 | AT+PFDEV: get or set the P2P FSK modem frequency deviation (600-200000 hz)        | OK                 |
  * | AT+PFDEV=?         | --                 | <frequency deviation>                                             | OK                 |
  * | AT+PFDEV=\<Param\> | <frequency deviation> | --                                                             | OK / AT_PARAM_ERROR|
  * | Example<br>AT+PFDEV=?| --               | 5000                                                              | OK                 |

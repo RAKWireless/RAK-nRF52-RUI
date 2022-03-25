@@ -42,13 +42,24 @@ using namespace std;
 #define SERIAL_7O2 0x3C
 #define SERIAL_8O2 0x3E
 
-typedef enum _UART_MODE
+/**@addtogroup	RUI_Arduino_Data_Type
+ * @{
+ */
+
+typedef enum
 {
-    AT_MODE,
-    API_MODE,
-    PASS_MODE,
-    CUSTOM_MODE,
-} UART_MODE;
+    RAK_AT_MODE,             ///< AT command mode
+    RAK_API_MODE,            ///< API mode
+#ifdef SUPPORT_LORA
+#ifdef SUPPORT_PASSTHRU
+    RAK_PASS_MODE,           ///< Pass-through mode
+#endif
+#endif
+    RAK_CUSTOM_MODE,         ///< Custom mode
+    RAK_DEFAULT_MODE,        ///< Default mode which depends on platform
+} RAK_SERIAL_MODE;
+
+/**@}*/
 
 class HardwareSerial : public Stream
 {
@@ -65,7 +76,7 @@ class HardwareSerial : public Stream
     	return is_udrv_serial_initialized(serialPort);
     }
 
-    void begin(uint32_t baud, uint8_t config, UART_MODE mode = AT_MODE); 
+    void begin(uint32_t baud, uint8_t config, RAK_SERIAL_MODE mode = RAK_DEFAULT_MODE); 
     bool password(string new_passwd);
     size_t write(uint8_t n) {return write(&n, 1);}
 
@@ -73,34 +84,65 @@ class HardwareSerial : public Stream
      * @{
      */
 
+#if defined(SUPPORT_LORA) && defined(SUPPORT_PASSTHRU)
     /**@par	Description
-     *      	Sets the data rate in bits per second (baud) for serial data transmission	
+     *      	Sets the data rate in bits per second (baud) for serial data transmission
      *
      * @par	Syntax
      *      	Serial.begin(baud);\n
      * 		Serial.begin(baud, mode);
-     * 		
+     *
      * @param	baud		The baudrate to set for the Serial
-     * @param   mode(optinal)   The mode that use UART in different way(default is AT_MODE) \n
-     *				List:\n 
-     *				AT_MODE\n 
-     *				API_MODE\n
-     *				PASS_MODE\n
-     *				CUSTOM_MODE
+     * @param   mode(optinal)   The mode that use UART in different way (if not assigned, RAK_DEFAULT_MODE is chosen) \n
+     *				List:\n
+     *				RAK_AT_MODE\n
+     *				RAK_API_MODE\n
+     *				RAK_PASS_MODE\n
+     *				RAK_CUSTOM_MODE\n
+     *				RAK_DEFAULT_MODE
      *
      * @return	void
      * @par	Example
      * @verbatim
      void setup() {
        Serial.begin(115200);
-       Serial1.begin(9600, CUSTOM_MODE);
+       Serial1.begin(9600, RAK_CUSTOM_MODE);
      }
-     
+
      void loop() {
-     } 
+     }
      @endverbatim
      */
-    void begin(uint32_t baud, UART_MODE mode = AT_MODE) { begin(baud, SERIAL_8N1, mode);}
+#else
+    /**@par	Description
+     *      	Sets the data rate in bits per second (baud) for serial data transmission
+     *
+     * @par	Syntax
+     *      	Serial.begin(baud);\n
+     * 		Serial.begin(baud, mode);
+     *
+     * @param	baud		The baudrate to set for the Serial
+     * @param   mode(optinal)   The mode that use UART in different way (if not assigned, RAK_DEFAULT_MODE is chosen) \n
+     *				List:\n
+     *				RAK_AT_MODE\n
+     *				RAK_API_MODE\n
+     *				RAK_CUSTOM_MODE\n
+     *				RAK_DEFAULT_MODE
+     *
+     * @return	void
+     * @par	Example
+     * @verbatim
+     void setup() {
+       Serial.begin(115200);
+       Serial1.begin(9600, RAK_CUSTOM_MODE);
+     }
+
+     void loop() {
+     }
+     @endverbatim
+     */
+#endif
+    void begin(uint32_t baud, RAK_SERIAL_MODE mode = RAK_DEFAULT_MODE) { begin(baud, SERIAL_8N1, mode);}
 
     /**@par	Description
      *      	End connection of the Serial with flushing all data.
@@ -123,7 +165,11 @@ class HardwareSerial : public Stream
 
     /**@par	Description
      *      	To lock the Serial port of the device.
-     * @note	If you never set a password successfully, the default password will be 00000000
+     * @note	1.If you never set a password successfully, the default password will be 00000000
+     * @note    2.Serial.lock can only lock the Serial Which is in AT Command mode.
+     * @note    3.Serial.lock will lock all Serial that is on AT Command mode.
+     * @note    4.Due that Serial lock and unlock is system-wise operation for all Serial ports in AT Command mode, the Serial could be unlocked from either one or more Serial ports which are in AT Command mode.
+     *
      * @par	Syntax
      *      	Serial.lock(locked);
      *
@@ -217,7 +263,7 @@ class HardwareSerial : public Stream
      * @par	Example
      * @verbatim
      void setup() {
-       Serial.begin(115200, CUSTOM_MODE);
+       Serial.begin(115200, RAK_CUSTOM_MODE);
      }
 
      void loop() {
@@ -243,7 +289,7 @@ class HardwareSerial : public Stream
      * @par	Example
      * @verbatim
      void setup() {
-       Serial.begin(115200, CUSTOM_MODE);
+       Serial.begin(115200, RAK_CUSTOM_MODE);
      }
 
      void loop() {
@@ -266,7 +312,7 @@ class HardwareSerial : public Stream
      * @par	Example
      * @verbatim
      void setup() {
-       Serial.begin(115200, CUSTOM_MODE);
+       Serial.begin(115200, RAK_CUSTOM_MODE);
      }
 
      void loop() {

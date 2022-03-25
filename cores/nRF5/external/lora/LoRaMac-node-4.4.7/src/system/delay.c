@@ -1,5 +1,5 @@
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -477,14 +477,13 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_IO_SPI_PORT 1
-#define ATCMD_IO_SERIAL_PORT 4
-#define SUPPORT_EXTRA_ATCMD_OVER_BLE 1
+#define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
-#define UART_RX_INTERRUPT_MODE 1
 #define WAN_TYPE 0
-#define RAK4631 1
+#define LORA_STACK_VER 0x040407
+#define RAK4631_V2 .0+RAK5005-O_V1.0 1
+#define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
 #define WDT_SUPPORT 1
@@ -522,10 +521,13 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c"
-# 23 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/delay-board.h" 1
-# 26 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/delay-board.h"
+#define SUPPORT_USB 1
+#define SUPPORT_BLE 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c"
+# 23 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/delay-board.h" 1
+# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/delay-board.h"
 #define __DELAY_BOARD_H__ 
 
 
@@ -1122,7 +1124,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/delay-board.h" 2
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/delay-board.h" 2
 
 
 
@@ -1130,20 +1132,20 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
-# 40 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/delay-board.h"
+# 40 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/delay-board.h"
 void DelayMsMcu( uint32_t ms );
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h"
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h"
 #define __DELAY_H__ 
-# 36 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h"
+# 36 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h"
 void Delay( float s );
 
 
 
 
 void DelayMs( uint32_t ms );
-# 25 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c" 2
+# 25 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c" 2
 
 void Delay( float s )
 {

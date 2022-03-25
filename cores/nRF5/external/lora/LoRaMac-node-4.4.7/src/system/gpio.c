@@ -1,5 +1,5 @@
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -477,14 +477,13 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_IO_SPI_PORT 1
-#define ATCMD_IO_SERIAL_PORT 4
-#define SUPPORT_EXTRA_ATCMD_OVER_BLE 1
+#define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
-#define UART_RX_INTERRUPT_MODE 1
 #define WAN_TYPE 0
-#define RAK4631 1
+#define LORA_STACK_VER 0x040407
+#define RAK4631_V2 .0+RAK5005-O_V1.0 1
+#define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
 #define WDT_SUPPORT 1
@@ -522,10 +521,13 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.c"
-# 27 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/gpio-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/gpio-board.h"
+#define SUPPORT_USB 1
+#define SUPPORT_BLE 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.c"
+# 27 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/gpio-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/gpio-board.h"
 #define __GPIO_BOARD_H__ 
 
 
@@ -533,8 +535,8 @@
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 #define __GPIO_H__ 
 
 
@@ -1131,29 +1133,29 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 36 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-board.h"
+# 36 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-board.h"
 #define __PIN_NAME_BOARD_H__ 
 
 
 
 
 #define MCU_PINS P0, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, P33, P34, P35, P36, P37, P38, P39, P40, P41, P42, P43, P44, P45, P46, P47
-# 37 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-ioe.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-ioe.h"
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-ioe.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-ioe.h"
 #define __PIN_NAME_IOE_H__ 
 
 
 #define IOE_PINS IOE_0, IOE_1, IOE_2, IOE_3, IOE_4, IOE_5, IOE_6, IOE_7, IOE_8, IOE_9, IOE_10, IOE_11, IOE_12, IOE_13, IOE_14, IOE_15
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
 
 
 
 
 
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 typedef enum
 {
     P0, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, P33, P34, P35, P36, P37, P38, P39, P40, P41, P42, P43, P44, P45, P46, P47,
@@ -1234,7 +1236,7 @@ typedef struct
     void* Context;
     GpioIrqHandler* IrqHandler;
 }Gpio_t;
-# 134 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 134 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 void GpioInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinTypes type, uint32_t value );
 
 
@@ -1244,7 +1246,7 @@ void GpioInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinT
 
 
 void GpioSetContext( Gpio_t *obj, void* context );
-# 155 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 155 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 void GpioSetInterrupt( Gpio_t *obj, IrqModes irqMode, IrqPriorities irqPriority, GpioIrqHandler *irqHandler );
 
 
@@ -1276,8 +1278,8 @@ void GpioToggle( Gpio_t *obj );
 
 
 uint32_t GpioRead( Gpio_t *obj );
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/gpio-board.h" 2
-# 44 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/gpio-board.h"
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/gpio-board.h" 2
+# 44 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/gpio-board.h"
 void GpioMcuInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinTypes type, uint32_t value );
 
 
@@ -1287,7 +1289,7 @@ void GpioMcuInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, P
 
 
 void GpioMcuSetContext( Gpio_t *obj, void* context );
-# 65 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/gpio-board.h"
+# 65 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/gpio-board.h"
 void GpioMcuSetInterrupt( Gpio_t *obj, IrqModes irqMode, IrqPriorities irqPriority, GpioIrqHandler *irqHandler );
 
 
@@ -1319,7 +1321,7 @@ void GpioMcuToggle( Gpio_t *obj );
 
 
 uint32_t GpioMcuRead( Gpio_t *obj );
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.c" 2
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.c" 2
 
 void GpioInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinTypes type, uint32_t value )
 {

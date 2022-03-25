@@ -26,59 +26,59 @@ typedef enum{
 }UDRV_ADC_RESOLUTION ;
 
 typedef enum{
-    UDRV_ADC_CHANNEL_0 = 0,
-    UDRV_ADC_CHANNEL_1 = 1,
-    UDRV_ADC_CHANNEL_2 = 2,
-    UDRV_ADC_CHANNEL_3 = 3,
-    UDRV_ADC_CHANNEL_4 = 4,
-    UDRV_ADC_CHANNEL_5 = 5,
-    UDRV_ADC_CHANNEL_6 = 6,
-    UDRV_ADC_CHANNEL_7 = 7,
-    UDRV_ADC_CHANNEL_MAX = 8,
-}UDRV_ADC_CHANNEL;
-
-typedef enum{
-    UDRV_ADC_REFERENCE_INTERNAL,
-    UDRV_ADC_REFERENCE_VDD_DIVIDED_BY_4,
-} UDRV_ADC_REF;
+    UDRV_ADC_MODE_DEFAULT = (0UL),  //default range
+    UDRV_ADC_MODE_3_0     = (1UL),  // 0 - 3 V
+    UDRV_ADC_MODE_2_4     = (2UL),  // 0 - 2.4 V
+    UDRV_ADC_MODE_1_8     = (3UL),  // 0 - 1.8 V
+    UDRV_ADC_MODE_1_2     = (4UL),  // 0 - 1.2 V
+} UDRV_ADC_MODE;
 
 /**
- *  Set resolutions.
- * @param  resolution              The resolution to be set.
- * 0 - 8 bit resolution.
- * 1 - 10 bit resolution.
- * 2 - 12 bit resolution.
- * 3 - 14 bit resolution.
+ *  Set ADC resolutions.
+ * @param  resolution              The resolution to be set
+ * UDRV_ADC_RESOLUTION_8BIT - 8 bit resolution.
+ * UDRV_ADC_RESOLUTION_10BIT - 10 bit resolution.
+ * UDRV_ADC_RESOLUTION_12BIT - 12 bit resolution.
+ * UDRV_ADC_RESOLUTION_14BIT - 14 bit resolution.
  *
  */
 
 void udrv_adc_set_resolution (UDRV_ADC_RESOLUTION resolution);
 
 /**
- * Initialize the ADC channel.
- * @param  chan                     The ADC channel to be initialized.
- * @param  pin                      The analog input pin.
- * @param  ref                      The reference voltage.
+ *  Get ADC resolutions.
  *
  */
 
-void udrv_adc_enable_channel (UDRV_ADC_CHANNEL chan, uint32_t pin, UDRV_ADC_REF ref);
+UDRV_ADC_RESOLUTION udrv_adc_get_resolution (void);
 
 /**
- * Deinitialize the ADC channel.
- * @param  chann                    The ADC channel to be deinitialized.
+ *  Set ADC mode.
+ * @param  mode               The ADC mode to be set
+ * UDRV_ADC_MODE_DEFAULT : default range
+ * UDRV_ADC_MODE_3_0 : 0 - 3.0 V
+ * UDRV_ADC_MODE_2_4 : 0 - 2.4 V
+ * UDRV_ADC_MODE_1_8 : 0 - 1.8 V
+ * UDRV_ADC_MODE_1_2 : 0 - 1.2 V
  *
  */
 
-void udrv_adc_disable_channel (UDRV_ADC_CHANNEL chann);
+void udrv_adc_set_mode (UDRV_ADC_MODE mode);
+
+/**
+ *  Get ADC mode.
+ *
+ */
+
+UDRV_ADC_MODE udrv_adc_get_mode (void);
 
 /**
  * Read out the ADC value.
- * @param  chann                    The ADC channel to be read.
+ * @param  pin                      The analog input pin
  * @param  value                    The read out value
  */
 
-int32_t udrv_adc_read (UDRV_ADC_CHANNEL chann, uint16_t *value);
+int32_t udrv_adc_read (uint32_t pin, int16_t *value);
 
 /**
  * Disable and save all the active ADC channel for power saving

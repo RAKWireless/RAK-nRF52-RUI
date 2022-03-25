@@ -9,7 +9,7 @@ int At_Chs(SERIAL_PORT port, char *cmd, stParam *param);
 int At_Che(SERIAL_PORT port, char *cmd, stParam *param);
 #endif
 int At_Band (SERIAL_PORT port, char *cmd, stParam *param);
-int At_DelBLEBonds (SERIAL_PORT port, char *cmd, stParam *param);
+//int At_DelBLEBonds (SERIAL_PORT port, char *cmd, stParam *param);
 
 int At_Trssi(SERIAL_PORT port, char *cmd, stParam *param);
 int At_Ttone(SERIAL_PORT port, char *cmd, stParam *param);

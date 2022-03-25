@@ -3,7 +3,7 @@ int i;
 
 void setup()
 {
-    delay(5000);
+
     Serial.println("RAKwireless System General Example");
     Serial.println("------------------------------------------------------");
     api.system.restoreDefault();

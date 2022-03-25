@@ -1,5 +1,5 @@
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -477,14 +477,13 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_IO_SPI_PORT 1
-#define ATCMD_IO_SERIAL_PORT 4
-#define SUPPORT_EXTRA_ATCMD_OVER_BLE 1
+#define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
-#define UART_RX_INTERRUPT_MODE 1
 #define WAN_TYPE 0
-#define RAK4631 1
+#define LORA_STACK_VER 0x040407
+#define RAK4631_V2 .0+RAK5005-O_V1.0 1
+#define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
 #define WDT_SUPPORT 1
@@ -522,8 +521,11 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c"
-# 25 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c"
+#define SUPPORT_USB 1
+#define SUPPORT_BLE 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c"
+# 25 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c"
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 1 3
 # 27 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
 #define _STDIO_H_ 
@@ -2496,9 +2498,9 @@ _putchar_unlocked(int _c)
 }
 # 797 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
 
-# 26 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h"
+# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h"
 #define __RTC_BOARD_H__ 
 
 
@@ -2817,7 +2819,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h" 2
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h" 2
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
 # 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
 #define _STDBOOL_H 
@@ -2829,9 +2831,9 @@ typedef __uint_least64_t uint_least64_t;
 #define false 0
 # 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 #define __TIMER_H__ 
 
 
@@ -2840,7 +2842,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 2
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 2
 
 
 
@@ -2848,20 +2850,20 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 typedef struct TimerEvent_s
 {
     uint32_t Timestamp;
     uint32_t ReloadValue;
     
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
    _Bool 
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
         IsStarted;
     
-# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
    _Bool 
-# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
         IsNext2Expire;
     void ( *Callback )( void* context );
     void *Context;
@@ -2874,7 +2876,7 @@ typedef struct TimerEvent_s
 
 typedef uint32_t TimerTime_t;
 #define TIMERTIME_T_MAX ( ( uint32_t )~0 )
-# 66 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 66 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 void TimerInit( TimerEvent_t *obj, void ( *callback )( void *context ) );
 
 
@@ -2896,11 +2898,11 @@ void TimerIrqHandler( void );
 
 
 void TimerStart( TimerEvent_t *obj );
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
 _Bool 
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
     TimerIsStarted( TimerEvent_t *obj );
 
 
@@ -2931,16 +2933,16 @@ void TimerSetValue( TimerEvent_t *obj, uint32_t value );
 
 
 TimerTime_t TimerGetCurrentTime( void );
-# 135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 135 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 TimerTime_t TimerGetElapsedTime( TimerTime_t past );
-# 146 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 146 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 TimerTime_t TimerTempCompensation( TimerTime_t period, float temperature );
 
 
 
 
 void TimerProcess( void );
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h" 2
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h" 2
 
 
 
@@ -3012,14 +3014,14 @@ void RtcSetMcuWakeUpTime( void );
 
 
 int16_t RtcGetMcuWakeUpTime( void );
-# 113 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h"
+# 113 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h"
 void RtcSetAlarm( uint32_t timeout );
 
 
 
 
 void RtcStopAlarm( void );
-# 127 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h"
+# 127 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h"
 void RtcStartAlarm( uint32_t timeout );
 
 
@@ -3078,11 +3080,11 @@ void RtcBkupRead( uint32_t* data0, uint32_t* data1 );
 
 
 void RtcProcess( void );
-# 195 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h"
+# 195 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h"
 TimerTime_t RtcTempCompensation( TimerTime_t period, float temperature );
-# 27 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h" 1
-# 26 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 27 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h" 1
+# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 #define __SYS_TIME_H__ 
 
 
@@ -3277,7 +3279,7 @@ __tzinfo_type *__gettzinfo (void);
 
 
 #define CLOCK_REALTIME ((clockid_t) 1)
-# 35 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h" 2
+# 35 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h" 2
 
 
 
@@ -3327,15 +3329,15 @@ __tzinfo_type *__gettzinfo (void);
 
 
 
-# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 typedef struct SysTime_s
 {
     uint32_t Seconds;
     int16_t SubSeconds;
 }SysTime_t;
-# 97 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 97 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 SysTime_t SysTimeAdd( SysTime_t a, SysTime_t b );
-# 107 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 107 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 SysTime_t SysTimeSub( SysTime_t a, SysTime_t b );
 
 
@@ -3358,9 +3360,9 @@ SysTime_t SysTimeGet( void );
 
 
 SysTime_t SysTimeGetMcuTime( void );
-# 137 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 137 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 uint32_t SysTimeToMs( SysTime_t sysTime );
-# 146 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 146 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 SysTime_t SysTimeFromMs( uint32_t timeMs );
 
 
@@ -3370,9 +3372,9 @@ SysTime_t SysTimeFromMs( uint32_t timeMs );
 
 
 uint32_t SysTimeMkTime( const struct tm* localtime );
-# 163 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
+# 163 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"
 void SysTimeLocalTime( const uint32_t timestamp, struct tm *localtime );
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c" 2
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c" 2
 
 #define END_OF_FEBRUARY_LEAP 60
 #define END_OF_JULY_LEAP 213

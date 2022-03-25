@@ -9,6 +9,7 @@
 #include "Region.h"
 #include "radio.h"
 #include "delay.h"
+#include "udrv_timer.h"
 
 #define TX_TEST_TONE (1 << 0)
 #define RX_TEST_RSSI (1 << 1)
@@ -74,10 +75,12 @@ static testParameter_t testParam = {MODEM_LORA, LORA_BANDWIDTH, LORA_SPREADING_F
                                     0, 0, 868000000, 868500000,
                                     100000, 6}; //Set a default value
 
-static __IO int16_t last_rx_rssi = 0;
-static __IO int8_t last_rx_snr = 0;
-static __IO uint32_t packet = 0;
-static __IO uint8_t hop_flag = 0;
+static testCwParameter_t cwParam = {868000000,14,5}; //Set a default value                        
+
+static volatile int16_t last_rx_rssi = 0;
+static volatile int8_t last_rx_snr = 0;
+static volatile uint32_t packet = 0;
+static volatile uint8_t hop_flag = 0;
 static TimerEvent_t TxTimer;
 static uint8_t payload[256] = {0};
 static uint32_t Rx_count_RxKo;
@@ -85,33 +88,69 @@ static uint32_t Rx_count_RxOk;
 static uint32_t freq_start_back;
 static uint32_t packet_back;
 
-uint32_t service_lora_ttone(void)
-{
-  if ((TestState & TX_TEST_TONE) != TX_TEST_TONE)
-  {
-    TestState |= TX_TEST_TONE;
-    Radio.SetTxContinuousWave(testParam.frequency, testParam.power, 0xFFFF);
-    return UDRV_RETURN_OK;
-  }
-  else
-  {
-    return -UDRV_INTERNAL_ERR;
-  }
+static uint32_t service_lora_test_full_wlock_cnt;
+
+static void service_lora_test_full_wake_lock(void) {
+    udrv_powersave_wake_lock();
+    service_lora_test_full_wlock_cnt++;
 }
 
-uint32_t service_lora_toff(void)
+static void service_lora_test_full_wake_unlock(void) {
+    if (service_lora_test_full_wlock_cnt > 0) {
+        udrv_powersave_wake_unlock();
+        service_lora_test_full_wlock_cnt--;
+    }
+}
+
+static void service_lora_test_full_wake_unlock_all(void) {
+    while (service_lora_test_full_wlock_cnt > 0) {
+        udrv_powersave_wake_unlock();
+        service_lora_test_full_wlock_cnt--;
+    }
+}
+
+// static void service_lora_test_wake_unlock(void *m_data)
+// {
+//     service_lora_test_full_wake_unlock();
+// }
+
+int32_t service_lora_ttone(void)
+{
+    if ((TestState & TX_TEST_TONE) != TX_TEST_TONE)
+    {
+        service_lora_test_full_wake_lock();
+        TestState |= TX_TEST_TONE;
+        Radio.SetTxContinuousWave(testParam.frequency, testParam.power, 0xFFFF);
+        // udrv_system_timer_stop(SYSTIMER_LORAWAN);
+        // if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_test_wake_unlock, HTMR_ONESHOT) == UDRV_RETURN_OK)
+        // {
+        //     udrv_system_timer_start(SYSTIMER_LORAWAN, 0xFFFF, NULL);
+        // }
+        // else
+        // {
+        //     return -UDRV_INTERNAL_ERR;
+        // }
+        return UDRV_RETURN_OK;
+    }
+    else
+    {
+        return -UDRV_BUSY;
+    }
+}
+
+void service_lora_toff(void)
 {
   TestState = 0;
   TimerStop(&TxTimer);
   TimerStop(&CertifiTimer);
   Radio.Sleep();
-  return UDRV_RETURN_OK;
+  service_lora_test_full_wake_unlock_all();
+  return;
 }
 
-int16_t service_lora_trssi(void)
+int32_t service_lora_trssi(int16_t *rssiVal)
 {
   uint32_t timeout = 0;
-  int16_t rssiVal = 0;
   /* Test with LNA */
   /* check that test is not already started*/
   if ((TestState & RX_TEST_RSSI) != RX_TEST_RSSI)
@@ -130,20 +169,22 @@ int16_t service_lora_trssi(void)
     {
       Radio.RxBoosted(timeout);
     }
-    DelayMs(50); /* Wait for 100ms */
-    rssiVal = Radio.Rssi(MODEM_FSK);
+    udrv_delay_ms(50); /* Wait for 100ms */
+    *rssiVal = Radio.Rssi(MODEM_FSK);
     Radio.Sleep();
     TestState &= ~RX_TEST_RSSI;
     return rssiVal;
   }
   else
   {
-    return -UDRV_INTERNAL_ERR;
+    return -UDRV_BUSY;
   }
 }
 
 int32_t service_lora_set_tconf(testParameter_t *Param)
 {
+  service_lora_test_full_wake_lock();
+
   if (Param->frequency < 150000000 || Param->frequency > 960000000)
   {
     return -UDRV_WRONG_ARG;
@@ -218,6 +259,8 @@ int32_t service_lora_ttx(int32_t nb_packet)
 
   if ((TestState & TX_TEST_LORA) != TX_TEST_LORA)
   {
+    service_lora_test_full_wake_lock();
+
     TestState |= TX_TEST_LORA;
     udrv_serial_log_printf("Tx Test\r\n");
     /* Radio initialization */
@@ -253,11 +296,12 @@ int32_t service_lora_ttx(int32_t nb_packet)
     TimerInit(&TxTimer, OnTxTimerEvent);
     TimerSetValue(&TxTimer, 500);
     TimerStart(&TxTimer);
+
     return UDRV_RETURN_OK;
   }
   else
   {
-    return -UDRV_INTERNAL_ERR;
+    return -UDRV_BUSY;
   }
 }
 
@@ -266,6 +310,8 @@ int32_t service_lora_trx(int32_t nb_packet)
   /* init of PER counter */
   if (((TestState & RX_TEST_LORA) != RX_TEST_LORA) && (nb_packet > 0))
   {
+    service_lora_test_full_wake_lock();
+
     TestState |= RX_TEST_LORA;
     /* Radio initialization */
     RadioEvents.TxDone = OnTxDone;
@@ -289,11 +335,12 @@ int32_t service_lora_trx(int32_t nb_packet)
     Radio.SetRxConfig(testParam.modem, testParam.bandwidth, testParam.datarate, testParam.coderate, testParam.bandwidthAfc, testParam.preambleLen,
                       testParam.symbTimeout, testParam.fixLen, testParam.payloadLen, testParam.crcOn, testParam.FreqHopOn, testParam.HopPeriod, testParam.iqInverted, testParam.rxContinuous);
     Radio.Rx(RX_TIMEOUT_VALUE);
+
     return UDRV_RETURN_OK;
   }
   else
   {
-    return -UDRV_INTERNAL_ERR;
+    return -UDRV_BUSY;
   }
 }
 
@@ -301,6 +348,8 @@ int32_t service_lora_tth(const testParameter_t *param)
 {
   if ((TestState & TX_TEST_LORA) != TX_TEST_LORA)
   {
+    service_lora_test_full_wake_lock();
+
     TestState |= TX_TEST_LORA;
     hop_flag = 1;
     /* Radio initialization */
@@ -331,20 +380,22 @@ int32_t service_lora_tth(const testParameter_t *param)
     TimerInit(&TxTimer, OnTxTimerEvent);
     TimerSetValue(&TxTimer, 500);
     TimerStart(&TxTimer);
+
+    return UDRV_RETURN_OK;
   }
   else
   {
-    return -UDRV_INTERNAL_ERR;
+    return -UDRV_BUSY;
   }
-
-  return UDRV_RETURN_OK;
 }
 
 void OnTxDone(void)
 {
+  if (packet==0||testParam.nb_tx==0)
+  {
+    service_lora_test_full_wake_unlock();
+  }
   udrv_serial_log_printf("OnTxDone\r\n");
-  Radio.Sleep();
-  LORA_TEST_DEBUG();
 }
 
 void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr)
@@ -357,7 +408,9 @@ void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr)
 
 void OnTxTimeout(void)
 {
+  Radio.Standby();
   LORA_TEST_DEBUG();
+  service_lora_test_full_wake_unlock();
 }
 
 void OnRxTimeout(void)
@@ -416,6 +469,7 @@ static void OnTxTimerEvent(void)
       TestState &= ~TX_TEST_LORA;
       TimerStop(&TxTimer);
       hop_flag = 0;
+      //service_lora_test_full_wake_unlock();
     }
   }
   else
@@ -431,12 +485,11 @@ static void OnTxTimerEvent(void)
     {
       TestState &= ~TX_TEST_LORA;
       TimerStop(&TxTimer);
+      //service_lora_test_full_wake_unlock();
     }
   }
   
 }
-
-
 
 static void Recv_Enent(void)
 {
@@ -453,6 +506,39 @@ static void Recv_Enent(void)
     TestState &= ~RX_TEST_LORA;
     Rx_count_RxKo=0;
     Rx_count_RxOk=0;
-    Radio.Sleep();
+    Radio.Standby();
   }
+}
+
+int32_t service_lora_get_cw(testCwParameter_t *param)
+{
+  memcpy1(param, &cwParam, sizeof(testCwParameter_t));
+  return UDRV_RETURN_OK;
+}
+
+int32_t service_lora_set_cw(testCwParameter_t *param)
+{
+  service_lora_test_full_wake_lock();
+
+  cwParam.txTimeout = param->txTimeout;  //It's in seconds
+  cwParam.frequency = param->frequency;
+  cwParam.txpower =  param->txpower;
+
+  LORA_TEST_DEBUG("cwParam.txpower %d cwParam.frequency %d cwParam.txpower %d\r\n",
+  cwParam.txTimeout,cwParam.frequency,cwParam.txpower);
+
+  RadioEvents.TxTimeout = OnTxTimeout;
+  Radio.Init(&RadioEvents);
+
+  Radio.SetTxContinuousWave( cwParam.frequency, cwParam.txpower, cwParam.txTimeout);
+  // udrv_system_timer_stop(SYSTIMER_LORAWAN);
+  // if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_test_wake_unlock, HTMR_ONESHOT) == UDRV_RETURN_OK)
+  // {
+  //     udrv_system_timer_start(SYSTIMER_LORAWAN, param->txTimeout*1000, NULL);
+  // }
+  // else
+  // {
+  //     return -UDRV_INTERNAL_ERR;
+  // }
+  return UDRV_RETURN_OK;
 }

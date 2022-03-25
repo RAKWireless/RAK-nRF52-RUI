@@ -11,9 +11,10 @@
 
 #include "udrv_ble.h"
 
-/**
- * @ingroup	BLE_Uart
+/**@addtogroup	RUI_Ble_Data_Type
+ * @{
  */
+
 typedef enum
 {
     RAK_SET_OPEN = 1, 		///< Set sec_mode pointed to by ptr to require no protection, open link
@@ -21,14 +22,13 @@ typedef enum
     RAK_SET_ENC_WITH_MITM = 3	///< Set sec_mode pointed to by ptr to require encryption and MITM protection
 } RAK_CHARS_SECURITY_REQ;
 
-/**
- * @ingroup	BLE_Uart
- */
 typedef enum
 {
     RAK_CHR_PROPS_READ = 2,	///< Set the charactristic property to be Read
     RAK_CHR_PROPS_NOTIFY = 16,	///< Set the charactristic property to be Notify
 } RAK_CHARS_PROPERTIES;
+
+/**@}*/
 
 class RAKBleUart {
   public:

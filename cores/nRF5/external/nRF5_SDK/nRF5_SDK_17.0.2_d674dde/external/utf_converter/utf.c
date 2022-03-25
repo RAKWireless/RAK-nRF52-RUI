@@ -1,5 +1,5 @@
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -477,14 +477,13 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_IO_SPI_PORT 1
-#define ATCMD_IO_SERIAL_PORT 4
-#define SUPPORT_EXTRA_ATCMD_OVER_BLE 1
+#define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
-#define UART_RX_INTERRUPT_MODE 1
 #define WAN_TYPE 0
-#define RAK4631 1
+#define LORA_STACK_VER 0x040407
+#define RAK4631_V2 .0+RAK5005-O_V1.0 1
+#define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
 #define WDT_SUPPORT 1
@@ -522,10 +521,13 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.c"
+#define SUPPORT_USB 1
+#define SUPPORT_BLE 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.c"
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.h" 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.h" 1
 
 
 
@@ -629,7 +631,7 @@ typedef unsigned int wchar_t;
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 9 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.h" 2
+# 9 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.h" 2
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 1 3 4
 # 9 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 3 4
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 1 3 4
@@ -1217,13 +1219,13 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 10 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.h" 2
+# 10 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.h" 2
 
 
 
 
 
-# 14 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.h"
+# 14 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.h"
 extern size_t utf8EncodeRune(uint32_t rune, char *encoded);
 extern const char *utf8DecodeRune(const char *s, size_t nElem, uint32_t *rune);
 extern size_t utf16EncodeRune(uint32_t rune, uint16_t *encoded);
@@ -1233,7 +1235,7 @@ extern size_t utf8RuneCount(const char *s, size_t nElem);
 extern size_t utf8UTF16Count(const char *s, size_t nElem);
 extern size_t utf16RuneCount(const uint16_t *s, size_t nElem);
 extern size_t utf16UTF8Count(const uint16_t *s, size_t nElem);
-# 4 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.c" 2
+# 4 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/utf_converter/utf.c" 2
 
 
 

@@ -24,9 +24,11 @@ static SPECIAL_KEY_STATUS_E gSpecialKey = NoAnyKeyReceived;
 extern at_cmd_cust_info atcmd_cust_tbl[ATCMD_CUST_TABLE_SIZE];
 #endif
 
+#ifdef SUPPORT_ATCMD_HISTORY
 static char gCmdHistoryBuffer[CLI_HISTORY_NUM][CLI_BUFFER_SIZE+1];
 static char gCmdHistoryIdx;
 static char gCmdHistoryCnt;
+#endif
 
 #ifdef RUI_BOOTLOADER
 static inline void __put_char(SERIAL_PORT port, char c) {
@@ -49,6 +51,7 @@ static void Cli_EraseCmdInScreen(SERIAL_PORT port)
     }
 }
 
+#ifdef SUPPORT_ATCMD_HISTORY
 #ifndef RUI_BOOTLOADER
 static void Cli_PrintCmdInScreen(SERIAL_PORT port)
 {
@@ -165,6 +168,7 @@ static void Cli_RecordInHistoryCmdBuf()
     gCmdHistoryIdx = 0;
 }
 #endif
+#endif
 
 void service_mode_cli_handler(SERIAL_PORT port, uint8_t ch) {
     switch (ch)
@@ -186,8 +190,10 @@ void service_mode_cli_handler(SERIAL_PORT port, uint8_t ch) {
 	case 0x0a: /* Enter */
         case 0x0d: /* Enter */
             gSpecialKey = NoAnyKeyReceived;
+#ifdef SUPPORT_ATCMD_HISTORY
 #ifndef RUI_BOOTLOADER
             Cli_RecordInHistoryCmdBuf();
+#endif
 #endif
             if(strlen(sgCmdBuffer) > 0) {
                 //atcmd_printf("\r\n^sgCmdBuffer=%s^,len=%d, buf_len=%d\r\n",sgCmdBuffer,strlen(sgCmdBuffer), CLI_BUFFER_SIZE);
@@ -212,13 +218,17 @@ void service_mode_cli_handler(SERIAL_PORT port, uint8_t ch) {
                 gSpecialKey = Key5bReceived;
             } else if (gSpecialKey == Key5bReceived && ch == 0x41) {//up arrow key
                 gSpecialKey = NoAnyKeyReceived;
+#ifdef SUPPORT_ATCMD_HISTORY
 #ifndef RUI_BOOTLOADER
                 Cli_MovetoNextHistoryCmdBuf(port);
 #endif
+#endif
             } else if (gSpecialKey == Key5bReceived && ch == 0x42) {//down arrow key
                 gSpecialKey = NoAnyKeyReceived;
+#ifdef SUPPORT_ATCMD_HISTORY
 #ifndef RUI_BOOTLOADER
                 Cli_MovetoPrevHistoryCmdBuf(port);
+#endif
 #endif
 	    } else {
                 gSpecialKey = NoAnyKeyReceived;
@@ -241,14 +251,15 @@ void service_mode_cli_init(SERIAL_PORT port) {
     memset(sgCmdBuffer, 0x00, sizeof(sgCmdBuffer));
     sgCurPos = 0;
     sgArgC = 0;
+    update_permisssion();
 }
 
 void service_mode_cli_deinit(SERIAL_PORT port) {
 }
 
 #ifndef RUI_BOOTLOADER
-bool service_mode_cli_register(const char *cmd, const char *title, PF_handle handle, uint8_t maxargu, const char *usage) {
-    if (cmd == NULL || title == NULL || handle == NULL || usage == NULL) {
+bool service_mode_cli_register(const char *cmd, const char *title, PF_handle handle, uint8_t maxargu, const char *usage, uint8_t perm) {
+    if (cmd == NULL || title == NULL || handle == NULL || usage == NULL || perm == NULL) {
         return false;
     }
 
@@ -259,6 +270,7 @@ bool service_mode_cli_register(const char *cmd, const char *title, PF_handle han
             atcmd_cust_tbl[i].pfHandle = handle;
             atcmd_cust_tbl[i].maxargu = maxargu;
             atcmd_cust_tbl[i].CmdUsage = usage;
+            atcmd_cust_tbl[i].permission = perm;
             return true;
         }
     }

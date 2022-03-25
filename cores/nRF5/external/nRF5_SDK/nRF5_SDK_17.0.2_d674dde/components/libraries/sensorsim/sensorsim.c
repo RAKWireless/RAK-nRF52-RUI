@@ -1,5 +1,5 @@
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -477,14 +477,13 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_IO_SPI_PORT 1
-#define ATCMD_IO_SERIAL_PORT 4
-#define SUPPORT_EXTRA_ATCMD_OVER_BLE 1
+#define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
-#define UART_RX_INTERRUPT_MODE 1
 #define WAN_TYPE 0
-#define RAK4631 1
+#define LORA_STACK_VER 0x040407
+#define RAK4631_V2 .0+RAK5005-O_V1.0 1
+#define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
 #define WDT_SUPPORT 1
@@ -522,10 +521,13 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
-# 40 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h" 1
-# 51 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
+#define SUPPORT_USB 1
+#define SUPPORT_BLE 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
+# 40 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h" 1
+# 51 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
 #define SENSORSIM_H__ 
 
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 1 3 4
@@ -1117,7 +1119,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 54 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h" 2
+# 54 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h" 2
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
 # 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
 #define _STDBOOL_H 
@@ -1129,7 +1131,7 @@ typedef __uint_least64_t uint_least64_t;
 #define false 0
 # 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
-# 55 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h" 2
+# 55 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h" 2
 
 
 
@@ -1137,16 +1139,16 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
-# 61 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
+# 61 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
 typedef struct
 {
     uint32_t min;
     uint32_t max;
     uint32_t incr;
     
-# 66 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h" 3 4
+# 66 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h" 3 4
    _Bool 
-# 66 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
+# 66 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
             start_at_max;
 } sensorsim_cfg_t;
 
@@ -1155,9 +1157,9 @@ typedef struct
 {
     uint32_t current_val;
     
-# 73 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h" 3 4
+# 73 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h" 3 4
    _Bool 
-# 73 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
+# 73 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
             is_increasing;
 } sensorsim_state_t;
 
@@ -1168,16 +1170,16 @@ typedef struct
 
 void sensorsim_init(sensorsim_state_t * p_state,
                         const sensorsim_cfg_t * p_cfg);
-# 91 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
+# 91 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
 uint32_t sensorsim_measure(sensorsim_state_t * p_state,
                                const sensorsim_cfg_t * p_cfg);
-# 101 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
+# 101 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
 void sensorsim_increment(sensorsim_state_t * p_state,
                          const sensorsim_cfg_t * p_cfg);
-# 111 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
+# 111 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.h"
 void sensorsim_decrement(sensorsim_state_t * p_state,
                          const sensorsim_cfg_t * p_cfg);
-# 41 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c" 2
+# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c" 2
 
 
 void sensorsim_init(sensorsim_state_t * p_state,
@@ -1187,18 +1189,18 @@ void sensorsim_init(sensorsim_state_t * p_state,
     {
         p_state->current_val = p_cfg->max;
         p_state->is_increasing = 
-# 49 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c" 3 4
+# 49 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c" 3 4
                                 0
-# 49 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
+# 49 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
                                      ;
     }
     else
     {
         p_state->current_val = p_cfg->min;
         p_state->is_increasing = 
-# 54 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c" 3 4
+# 54 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c" 3 4
                                 1
-# 54 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
+# 54 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
                                     ;
     }
 }
@@ -1229,9 +1231,9 @@ void sensorsim_increment(sensorsim_state_t * p_state,
     {
         p_state->current_val = p_cfg->max;
         p_state->is_increasing = 
-# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c" 3 4
+# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c" 3 4
                                 0
-# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
+# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
                                      ;
     }
 }
@@ -1248,9 +1250,9 @@ void sensorsim_decrement(sensorsim_state_t * p_state,
     {
         p_state->current_val = p_cfg->min;
         p_state->is_increasing = 
-# 98 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c" 3 4
+# 98 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c" 3 4
                                 1
-# 98 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
+# 98 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/sensorsim/sensorsim.c"
                                     ;
     }
 }

@@ -21,7 +21,7 @@ extern "C" {
 
 #define PROTO_USE_POPCOUNT_CHKSUM
 
-typedef void (*SERVICE_MODE_PROTOCOL_HANDLER) (SERIAL_PORT, uint8_t *, uint16_t);
+typedef void (*SERVICE_MODE_PROTOCOL_HANDLER) (int, uint8_t *, uint16_t);
 
 typedef struct _proto_upper_layer_info
 {

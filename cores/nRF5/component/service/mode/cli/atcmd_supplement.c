@@ -1,3 +1,4 @@
+#ifdef SUPPORT_LORA
 #include <string.h>
 
 #include "atcmd.h"
@@ -5,8 +6,6 @@
 #include "udrv_errno.h"
 #include "service_lora.h"
 #include "service_nvm.h"
-#include "udrv_ble.h"
-#include "service_lora_test.h"
 #include "udrv_powersave.h"
 
 #if defined(REGION_CN470) || defined(REGION_US915) || \
@@ -27,7 +26,7 @@ int At_Mask(SERIAL_PORT port, char *cmd, stParam *param)
 
         if (UDRV_RETURN_OK == service_lora_get_mask(&ch_mask))
         {
-            atcmd_printf("%04X", ch_mask);
+            atcmd_printf("%s=%04X", cmd, ch_mask);
             if ((freq = service_lora_get_chs()) > 0) {
                 atcmd_printf("(single channel mode: %d)", freq);
             }
@@ -89,11 +88,11 @@ int At_Che(SERIAL_PORT port, char *cmd, stParam *param)
         if (UDRV_RETURN_OK == service_lora_get_mask(&ch_mask))
         {
             uint32_t i = 1, j = 1;
-
+            atcmd_printf("%s=", cmd);
             do {
                 if (ch_mask & 1) {
                     if (j != 1) {
-                        atcmd_printf(",");
+                        atcmd_printf(":");
                     }
                     atcmd_printf("%u", i);
                     j++;
@@ -243,6 +242,7 @@ int At_Band(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
+        atcmd_printf("%s=", cmd);
         switch (service_lora_get_band())
         {
         case SERVICE_LORA_EU433:
@@ -367,7 +367,7 @@ int At_Chs(SERIAL_PORT port, char *cmd, stParam *param)
         if((freq = service_lora_get_chs()) < 0) {
             return AT_ERROR;
         }
-        atcmd_printf("%d\r\n", service_lora_get_chs());
+        atcmd_printf("%s=%d\r\n", cmd, service_lora_get_chs());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -390,247 +390,18 @@ int At_Chs(SERIAL_PORT port, char *cmd, stParam *param)
         return AT_PARAM_ERROR;
     }
 }
+#endif
 
-int At_DelBLEBonds(SERIAL_PORT port, char *cmd, stParam *param)
-{
-    if (param->argc == 0)
-    {
-        udrv_ble_delete_bonds();
-        udrv_system_reboot();
-        return AT_OK;
-    }
-    else
-    {
-        return AT_PARAM_ERROR;
-    }
-}
-
-int At_Trssi(SERIAL_PORT port, char *cmd, stParam *param)
-{
-    int16_t rssiVal = 0;
-
-    if (param->argc == 1 && !strcmp(param->argv[0], "?"))
-    {
-        rssiVal = service_lora_trssi();
-        atcmd_printf("Rx FSK Test\r\n");
-        atcmd_printf("RSSI Value %d dBm\r\n",rssiVal);
-
-        return AT_OK;
-    }
-    else 
-    {
-        return AT_ERROR;
-    }
-}
-
-int At_Ttone(SERIAL_PORT port, char *cmd, stParam *param)
-{
-    if (param->argc == 1 && !strcmp(param->argv[0], "?"))
-    {
-        return AT_ERROR;
-    }
-    else 
-    {
-        service_lora_ttone();
-        atcmd_printf("Tx tone");
-        return AT_OK;
-    }  
-}
-
-int At_Ttx(SERIAL_PORT port, char *cmd, stParam *param)
-{
-    uint32_t nb_packet;
-    if (param->argc == 1 && !strcmp(param->argv[0], "?"))
-    {
-        return AT_ERROR;
-    }
-    else
-    {   
-        if (0 != at_check_digital_uint32_t(param->argv[0],&nb_packet))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-        return service_lora_ttx( nb_packet);
-    }
-}
-
-int At_Trx(SERIAL_PORT port, char *cmd, stParam *param)
-{
-    uint32_t nb_packet;
-    if (param->argc == 1 && !strcmp(param->argv[0], "?"))
-    {
-        return AT_ERROR;
-    }
-    else
-    {   
-        if (0 != at_check_digital_uint32_t(param->argv[0],&nb_packet))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-        return service_lora_trx( nb_packet);
-    }
-}
-
-int At_Tconf(SERIAL_PORT port, char *cmd, stParam *param)
-{
-    testParameter_t Param;
-
-    if (param->argc == 1 && !strcmp(param->argv[0], "?"))
-    {
-        service_lora_get_tconf(&Param);
-        atcmd_printf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\r\n", Param.frequency, Param.power, Param.bandwidth, Param.datarate, Param.coderate, Param.lna,
-                     Param.paBoost, Param.modem, Param.payloadLen, Param.fdev, Param.lowDrOpt, Param.BTproduct);
-        return AT_OK;
-    }
-    else
-    {
-        if (0 != at_check_digital_uint32_t(param->argv[0], &Param.frequency))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-        if (0 != at_check_digital_uint32_t(param->argv[1],&Param.power))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[2], &Param.bandwidth))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[3], &Param.datarate))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[4], &Param.coderate))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[5], &Param.lna))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[6], &Param.paBoost))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[7], &Param.modem))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[8], &Param.payloadLen))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[9], &Param.fdev))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[10], &Param.lowDrOpt))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[11], &Param.BTproduct))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-        service_lora_set_tconf(&Param);
-        return AT_OK;
-    }
-}
-
-int At_Tth(SERIAL_PORT port, char *cmd, stParam *param)
-{
-    testParameter_t Param;
-    uint32_t freq_start;
-    uint32_t freq_stop;
-    uint32_t hp_step;
-    uint32_t nb_tx;
-
-    if (param->argc == 1 && !strcmp(param->argv[0], "?"))
-    {
-        service_lora_get_tconf(&Param);
-        atcmd_printf("%d,%d,%d,%d\r\n", Param.freq_start,Param.freq_stop,Param.hp_step,Param.nb_tx);
-        return AT_OK;
-    }
-    else
-    {
-        if (0 != at_check_digital_uint32_t(param->argv[0], &Param.freq_start))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-        if (0 != at_check_digital_uint32_t(param->argv[1],&Param.freq_stop))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[2], &Param.hp_step))
-        {
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-
-        if (0 != at_check_digital_uint32_t(param->argv[3], &Param.nb_tx))
-        { 
-            LORA_TEST_DEBUG();
-            return AT_PARAM_ERROR;
-        }
-        
-        if(Param.freq_start > Param.freq_stop)
-        {
-            return AT_PARAM_ERROR;
-        }
-
-        return service_lora_tth(&Param);
-    }
-}
-
-int At_Toff(SERIAL_PORT port, char *cmd, stParam *param)
-{
-    if (param->argc > 1)
-    {
-        return AT_ERROR;
-    }
-    else 
-    {
-        return service_lora_toff();
-    }   
-}
-
-
-int At_Certif(SERIAL_PORT port, char *cmd, stParam *param)
-{
-    uint8_t mode = 1;
-    if (param->argc > 1)
-    {
-        return AT_ERROR;
-    }
-    else 
-    {
-        return  service_lora_certification(mode);
-    }   
-}
+//int At_DelBLEBonds(SERIAL_PORT port, char *cmd, stParam *param)
+//{
+//    if (param->argc == 0)
+//    {
+//        udrv_ble_delete_bonds();
+//        udrv_system_reboot();
+//        return AT_OK;
+//    }
+//    else
+//    {
+//        return AT_PARAM_ERROR;
+//    }
+//}

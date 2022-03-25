@@ -7,9 +7,10 @@ extern "C" {
 
 #include <stdio.h>
 #include <udrv_serial.h>
+#include "atcmd_queue.h"
+#include "atcmd_permission.h"
 #ifdef RUI_BOOTLOADER
 #include "app_uart.h"
-
 extern int is_dfu_mode;
 #endif
 
@@ -31,6 +32,15 @@ static void atcmd_printf(const char *fmt, ...) {
 
 #define MAX_CMD_LEN (32)
 #define MAX_ARGUMENT 25
+/* ATCMD PERMISSION */
+typedef enum AT_PERM_{
+    ATCMD_PERM_READ = 1 << 0,
+    ATCMD_PERM_WRITE = 1 << 1,
+    ATCMD_PERM_WRITEONCEREAD = 1 << 2,
+    ATCMD_PERM_ISWRITE = 1 << 3,
+    ATCMD_PERM_DISABLE = 1 << 4,
+}AT_PERMISSION;
+
 
 /* Error code definition */
 typedef enum AT_ERRNO_E_{
@@ -58,6 +68,7 @@ typedef struct _at_cmd_info
     PF_handle          pfHandle;
     uint8_t            maxargu;
     const char         *CmdUsage;
+    uint8_t            permission;
 } at_cmd_info;
 
 typedef struct _at_cmd_cust_info
@@ -67,6 +78,7 @@ typedef struct _at_cmd_cust_info
     PF_handle          pfHandle;
     uint8_t            maxargu;
     const char         *CmdUsage;
+    uint8_t            permission;
 } at_cmd_cust_info;
 
 uint32_t At_CmdGetTotalNum (void);
@@ -79,7 +91,7 @@ uint8_t at_check_alphanumeric_param(const char *p_str, uint32_t str_len);
 uint8_t at_check_hex_uint16(const char *p_str, uint16_t *value);
 uint8_t at_check_hex_uint32(const char *p_str, uint32_t *value);
 uint8_t at_check_digital_uint32_t(const char *p_str, uint32_t *value);
-
+void update_permission();
 #ifdef __cplusplus
 }
 #endif

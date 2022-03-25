@@ -1,5 +1,5 @@
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -477,14 +477,13 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_IO_SPI_PORT 1
-#define ATCMD_IO_SERIAL_PORT 4
-#define SUPPORT_EXTRA_ATCMD_OVER_BLE 1
+#define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
-#define UART_RX_INTERRUPT_MODE 1
 #define WAN_TYPE 0
-#define RAK4631 1
+#define LORA_STACK_VER 0x040407
+#define RAK4631_V2 .0+RAK5005-O_V1.0 1
+#define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
 #define WDT_SUPPORT 1
@@ -522,8 +521,11 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
-# 23 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+#define SUPPORT_USB 1
+#define SUPPORT_BLE 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 23 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
 # 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
 #define _STDBOOL_H 
@@ -535,9 +537,9 @@
 #define false 0
 # 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define __UTILITIES_H__ 
 
 
@@ -1134,42 +1136,29 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h" 2
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h" 2
 
 
 
 
 
-
-#define SUCCESS 0
-
-
-
-#define FAIL 1
-# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-#define DUartPrint 
+#define SUCCESS 1
 
 
 
-
-
-
-# 65 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-typedef enum LmnStatus_e
-{
-  LMN_STATUS_ERROR = 0,
-  LMN_STATUS_OK = !LMN_STATUS_ERROR
-} LmnStatus_t;
-# 79 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+#define FAIL 0
+# 52 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define MIN(a,b) ( ( ( a ) < ( b ) ) ? ( a ) : ( b ) )
-# 90 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 63 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define MAX(a,b) ( ( ( a ) > ( b ) ) ? ( a ) : ( b ) )
-# 99 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 72 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define POW2(n) ( 1 << n )
 
 
 
 
+
+# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 typedef union Version_u
 {
     struct Version_s
@@ -1188,13 +1177,13 @@ typedef union Version_u
 
 
 void srand1( uint32_t seed );
-# 130 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 103 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 int32_t randr( int32_t min, int32_t max );
-# 141 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 114 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memcpy1( uint8_t *dst, const uint8_t *src, uint16_t size );
-# 150 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 123 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memcpyr( uint8_t *dst, const uint8_t *src, uint16_t size );
-# 161 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 134 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memset1( uint8_t *dst, uint8_t value, uint16_t size );
 
 
@@ -1204,7 +1193,7 @@ void memset1( uint8_t *dst, uint8_t value, uint16_t size );
 
 
 int8_t Nibble2HexChar( uint8_t a );
-# 179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 152 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32( uint8_t *buffer, uint16_t length );
 
 
@@ -1214,12 +1203,10 @@ uint32_t Crc32( uint8_t *buffer, uint16_t length );
 
 
 uint32_t Crc32Init( void );
-# 198 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 171 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32Update( uint32_t crcInit, uint8_t *buffer, uint16_t length );
-# 207 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 180 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32Finalize( uint32_t crc );
-# 218 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-uint16_t crc_calc(uint16_t crc, uint8_t *start, uint8_t *end);
 
 
 
@@ -1230,7 +1217,7 @@ uint16_t crc_calc(uint16_t crc, uint8_t *start, uint8_t *end);
 
 
 #define CRITICAL_SECTION_END() BoardCriticalSectionEnd( &mask )
-# 241 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 203 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void BoardCriticalSectionBegin( uint32_t *mask );
 
 
@@ -1239,13 +1226,13 @@ void BoardCriticalSectionBegin( uint32_t *mask );
 
 
 void BoardCriticalSectionEnd( uint32_t *mask );
-# 25 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h"
+# 25 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h"
 #define __I2C_BOARD_H__ 
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
+# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
 #define __I2C_H__ 
 
 
@@ -1253,8 +1240,8 @@ void BoardCriticalSectionEnd( uint32_t *mask );
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 #define __GPIO_H__ 
 
 
@@ -1263,22 +1250,22 @@ void BoardCriticalSectionEnd( uint32_t *mask );
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-board.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-board.h"
 #define __PIN_NAME_BOARD_H__ 
 
 
 
 
 #define MCU_PINS P0, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, P33, P34, P35, P36, P37, P38, P39, P40, P41, P42, P43, P44, P45, P46, P47
-# 37 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-ioe.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-ioe.h"
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-ioe.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-ioe.h"
 #define __PIN_NAME_IOE_H__ 
 
 
 #define IOE_PINS IOE_0, IOE_1, IOE_2, IOE_3, IOE_4, IOE_5, IOE_6, IOE_7, IOE_8, IOE_9, IOE_10, IOE_11, IOE_12, IOE_13, IOE_14, IOE_15
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
 
 
 
@@ -1363,7 +1350,7 @@ typedef struct
     void* Context;
     GpioIrqHandler* IrqHandler;
 }Gpio_t;
-# 134 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 134 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 void GpioInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinTypes type, uint32_t value );
 
 
@@ -1373,7 +1360,7 @@ void GpioInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinT
 
 
 void GpioSetContext( Gpio_t *obj, void* context );
-# 155 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 155 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 void GpioSetInterrupt( Gpio_t *obj, IrqModes irqMode, IrqPriorities irqPriority, GpioIrqHandler *irqHandler );
 
 
@@ -1405,7 +1392,7 @@ void GpioToggle( Gpio_t *obj );
 
 
 uint32_t GpioRead( Gpio_t *obj );
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h" 2
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h" 2
 
 
 
@@ -1425,7 +1412,7 @@ typedef struct
     Gpio_t Scl;
     Gpio_t Sda;
 }I2c_t;
-# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
+# 59 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
 void I2cInit( I2c_t *obj, I2cId_t i2cId, PinNames scl, PinNames sda );
 
 
@@ -1441,23 +1428,23 @@ void I2cDeInit( I2c_t *obj );
 
 
 void I2cResetBus( I2c_t *obj );
-# 82 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
+# 82 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
 uint8_t I2cWrite( I2c_t *obj, uint8_t deviceAddr, uint8_t data );
-# 92 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
+# 92 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
 uint8_t I2cWriteBuffer( I2c_t *obj, uint8_t deviceAddr, uint8_t *buffer, uint16_t size );
-# 102 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
+# 102 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
 uint8_t I2cWriteMem( I2c_t *obj, uint8_t deviceAddr, uint16_t addr, uint8_t data );
-# 113 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
+# 113 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
 uint8_t I2cWriteMemBuffer( I2c_t *obj, uint8_t deviceAddr, uint16_t addr, uint8_t *buffer, uint16_t size );
-# 122 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
+# 122 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
 uint8_t I2cRead( I2c_t *obj, uint8_t deviceAddr, uint8_t *data );
-# 132 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
+# 132 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
 uint8_t I2cReadBuffer( I2c_t *obj, uint8_t deviceAddr, uint8_t *buffer, uint16_t size );
-# 142 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
+# 142 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
 uint8_t I2cReadMem( I2c_t *obj, uint8_t deviceAddr, uint16_t addr, uint8_t *data );
-# 153 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
+# 153 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.h"
 uint8_t I2cReadMemBuffer( I2c_t *obj, uint8_t deviceAddr, uint16_t addr, uint8_t *buffer, uint16_t size );
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h" 2
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h" 2
 
 
 
@@ -1495,13 +1482,13 @@ typedef enum
     I2C_ADDR_SIZE_8 = 0,
     I2C_ADDR_SIZE_16,
 }I2cAddrSize;
-# 79 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h"
+# 79 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h"
 void I2cMcuInit( I2c_t *obj, I2cId_t i2cId, PinNames scl, PinNames sda );
-# 91 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h"
+# 91 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h"
 void I2cMcuFormat( I2c_t *obj, I2cMode mode, I2cDutyCycle dutyCycle, 
-# 91 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h" 3 4
+# 91 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h" 3 4
                                                                     _Bool 
-# 91 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h"
+# 91 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h"
                                                                          I2cAckEnable, I2cAckAddrMode AckAddrMode, uint32_t I2cFrequency );
 
 
@@ -1517,13 +1504,13 @@ void I2cMcuDeInit( I2c_t *obj );
 
 
 void I2cMcuResetBus( I2c_t *obj );
-# 115 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h"
+# 115 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h"
 uint8_t I2cMcuWriteBuffer( I2c_t *obj, uint8_t deviceAddr, uint8_t *buffer, uint16_t size );
-# 125 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h"
+# 125 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h"
 uint8_t I2cMcuReadBuffer( I2c_t *obj, uint8_t deviceAddr, uint8_t *buffer, uint16_t size );
-# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h"
+# 136 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h"
 uint8_t I2cMcuWriteMemBuffer( I2c_t *obj, uint8_t deviceAddr, uint16_t addr, uint8_t *buffer, uint16_t size );
-# 147 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/i2c-board.h"
+# 147 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/i2c-board.h"
 uint8_t I2cMcuReadMemBuffer( I2c_t *obj, uint8_t deviceAddr, uint16_t addr, uint8_t *buffer, uint16_t size );
 
 
@@ -1541,40 +1528,40 @@ uint8_t I2cMcuWaitStandbyState( I2c_t *obj, uint8_t deviceAddr );
 
 
 void I2cSetAddrSize( I2c_t *obj, I2cAddrSize addrSize );
-# 26 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 2
+# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 2
 
 
 
 
 static 
-# 30 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 30 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
       _Bool 
-# 30 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 30 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
            I2cInitialized = 
-# 30 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 30 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                             0
-# 30 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 30 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                                  ;
 
 void I2cInit( I2c_t *obj, I2cId_t i2cId, PinNames scl, PinNames sda )
 {
     if( I2cInitialized == 
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                          0 
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                                )
     {
         I2cInitialized = 
-# 36 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 36 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                         1
-# 36 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 36 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                             ;
 
         I2cMcuInit( obj, i2cId, scl, sda );
         I2cMcuFormat( obj, MODE_I2C, I2C_DUTY_CYCLE_2, 
-# 39 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 39 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                                                       1
-# 39 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 39 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                                                           , I2C_ACK_ADD_7_BIT, 400000 );
     }
 }
@@ -1582,9 +1569,9 @@ void I2cInit( I2c_t *obj, I2cId_t i2cId, PinNames scl, PinNames sda )
 void I2cDeInit( I2c_t *obj )
 {
     I2cInitialized = 
-# 45 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 45 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                     0
-# 45 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 45 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                          ;
     I2cMcuDeInit( obj );
 }
@@ -1597,187 +1584,187 @@ void I2cResetBus( I2c_t *obj )
 uint8_t I2cWrite( I2c_t *obj, uint8_t deviceAddr, uint8_t data )
 {
     if( I2cInitialized == 
-# 56 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 56 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                          1 
-# 56 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 56 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                               )
     {
-        if( I2cMcuWriteBuffer( obj, deviceAddr, &data, 1 ) == 1 )
+        if( I2cMcuWriteBuffer( obj, deviceAddr, &data, 1 ) == 0 )
         {
 
-            if( I2cMcuWriteBuffer( obj, deviceAddr, &data, 1 ) == 1 )
+            if( I2cMcuWriteBuffer( obj, deviceAddr, &data, 1 ) == 0 )
             {
-                return 1;
+                return 0;
             }
             else
             {
-                return 0;
+                return 1;
             }
         }
         else
         {
-            return 0;
+            return 1;
         }
     }
     else
     {
-        return 1;
+        return 0;
     }
 }
 
 uint8_t I2cWriteBuffer( I2c_t *obj, uint8_t deviceAddr, uint8_t *buffer, uint16_t size )
 {
     if( I2cInitialized == 
-# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                          1 
-# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                               )
     {
-        if( I2cMcuWriteBuffer( obj, deviceAddr, buffer, size ) == 1 )
+        if( I2cMcuWriteBuffer( obj, deviceAddr, buffer, size ) == 0 )
         {
 
-            if( I2cMcuWriteBuffer( obj, deviceAddr, buffer, size ) == 1 )
+            if( I2cMcuWriteBuffer( obj, deviceAddr, buffer, size ) == 0 )
             {
-                return 1;
+                return 0;
             }
             else
             {
-                return 0;
+                return 1;
             }
         }
         else
         {
-            return 0;
+            return 1;
         }
     }
     else
     {
-        return 1;
+        return 0;
     }
 }
 
 uint8_t I2cWriteMem( I2c_t *obj, uint8_t deviceAddr, uint16_t addr, uint8_t data )
 {
     if( I2cInitialized == 
-# 110 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 110 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                          1 
-# 110 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 110 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                               )
     {
-        if( I2cMcuWriteMemBuffer( obj, deviceAddr, addr, &data, 1 ) == 1 )
+        if( I2cMcuWriteMemBuffer( obj, deviceAddr, addr, &data, 1 ) == 0 )
         {
 
-            if( I2cMcuWriteMemBuffer( obj, deviceAddr, addr, &data, 1 ) == 1 )
+            if( I2cMcuWriteMemBuffer( obj, deviceAddr, addr, &data, 1 ) == 0 )
             {
-                return 1;
+                return 0;
             }
             else
             {
-                return 0;
+                return 1;
             }
         }
         else
         {
-            return 0;
+            return 1;
         }
     }
     else
     {
-        return 1;
+        return 0;
     }
 }
 
 uint8_t I2cWriteMemBuffer( I2c_t *obj, uint8_t deviceAddr, uint16_t addr, uint8_t *buffer, uint16_t size )
 {
     if( I2cInitialized == 
-# 137 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 137 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                          1 
-# 137 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 137 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                               )
     {
-        if( I2cMcuWriteMemBuffer( obj, deviceAddr, addr, buffer, size ) == 1 )
+        if( I2cMcuWriteMemBuffer( obj, deviceAddr, addr, buffer, size ) == 0 )
         {
 
-            if( I2cMcuWriteMemBuffer( obj, deviceAddr, addr, buffer, size ) == 1 )
+            if( I2cMcuWriteMemBuffer( obj, deviceAddr, addr, buffer, size ) == 0 )
             {
-                return 1;
+                return 0;
             }
             else
             {
-                return 0;
+                return 1;
             }
         }
         else
         {
-            return 0;
+            return 1;
         }
     }
     else
     {
-        return 1;
+        return 0;
     }
 }
 
 uint8_t I2cRead( I2c_t *obj, uint8_t deviceAddr, uint8_t *data )
 {
     if( I2cInitialized == 
-# 164 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 164 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                          1 
-# 164 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 164 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                               )
     {
         return( I2cMcuReadBuffer( obj, deviceAddr, data, 1 ) );
     }
     else
     {
-        return 1;
+        return 0;
     }
 }
 
 uint8_t I2cReadBuffer( I2c_t *obj, uint8_t deviceAddr, uint8_t *buffer, uint16_t size )
 {
     if( I2cInitialized == 
-# 176 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 176 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                          1 
-# 176 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 176 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                               )
     {
         return( I2cMcuReadBuffer( obj, deviceAddr, buffer, size ) );
     }
     else
     {
-        return 1;
+        return 0;
     }
 }
 
 uint8_t I2cReadMem( I2c_t *obj, uint8_t deviceAddr, uint16_t addr, uint8_t *data )
 {
     if( I2cInitialized == 
-# 188 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 188 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                          1 
-# 188 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 188 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                               )
     {
         return( I2cMcuReadMemBuffer( obj, deviceAddr, addr, data, 1 ) );
     }
     else
     {
-        return 1;
+        return 0;
     }
 }
 
 uint8_t I2cReadMemBuffer( I2c_t *obj, uint8_t deviceAddr, uint16_t addr, uint8_t *buffer, uint16_t size )
 {
     if( I2cInitialized == 
-# 200 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
+# 200 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c" 3 4
                          1 
-# 200 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
+# 200 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/i2c.c"
                               )
     {
         return( I2cMcuReadMemBuffer( obj, deviceAddr, addr, buffer, size ) );
     }
     else
     {
-        return 1;
+        return 0;
     }
 }

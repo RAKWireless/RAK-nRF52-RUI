@@ -21,8 +21,8 @@ void send_cb(int32_t status)
 
 void setup()
 {
-  Serial.begin(115200);
-  delay(5000);
+  Serial.begin(115200, RAK_AT_MODE);
+
   Serial.println("RAKwireless LoRaWan ABP Example");
   Serial.println("------------------------------------------------------");
   // ABP Device Address

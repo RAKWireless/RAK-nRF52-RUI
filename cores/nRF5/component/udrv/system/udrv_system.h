@@ -13,19 +13,33 @@ extern "C" {
 #define SEED_LENGTH   4
 #endif
 
+#define EVENT_QUEUE_SIZE                     (32)
+#define EVENT_DATA_SIZE                      (8)//(sizeof(udrv_system_event_t))
+
 /**
  * @brief event operation.
  */
 typedef enum
 {
     UDRV_SYS_EVT_OP_SERIAL_UART            = 0x00,     //operating mode parser - UART0/UART1
-    UDRV_SYS_EVT_OP_SERIAL_USB             = 0x01,     //operating mode parser - USB0
-    UDRV_SYS_EVT_OP_SERIAL_BLE             = 0x02,     //operating mode parser - BLE
-    UDRV_SYS_EVT_OP_LORAWAN                = 0x03,     //LoRaWAN RX process
-    UDRV_SYS_EVT_OP_USER_APP               = 0x04,     //user application
-    UDRV_SYS_EVT_OP_USER_TIMER             = 0x05,     //user timer
-    UDRV_SYS_EVT_OP_SYS_TIMER              = 0x06,     //system timer
-    UDRV_SYS_EVT_OP_SERIAL_FALLBACK        = 0x08,     //serial fallback to AT mode 
+#ifdef SUPPORT_USB
+    UDRV_SYS_EVT_OP_SERIAL_USB,                        //operating mode parser - USB0
+#endif
+#ifdef SUPPORT_BLE
+    UDRV_SYS_EVT_OP_SERIAL_BLE,                        //operating mode parser - BLE
+#endif
+#ifdef SUPPORT_LORA
+    UDRV_SYS_EVT_OP_LORAWAN,                           //LoRaWAN RX process
+#endif
+    UDRV_SYS_EVT_OP_USER_APP,                          //user application
+    UDRV_SYS_EVT_OP_USER_TIMER,                        //user timer
+    UDRV_SYS_EVT_OP_SYS_TIMER,                         //system timer
+#ifdef SUPPORT_NFC
+    UDRV_SYS_EVT_OP_SERIAL_NFC,                        //operating mode parsr - NFC
+#endif
+    UDRV_SYS_EVT_OP_SERIAL_FALLBACK,                   //serial fallback to AT mode 
+    UDRV_SYS_EVT_OP_RTC,                               //RTC
+    UDRV_SYS_EVT_OP_GPIO_INTERRUPT,                    //Interrupt from GPIO
 } udrv_system_event_op_t;
 
 typedef struct

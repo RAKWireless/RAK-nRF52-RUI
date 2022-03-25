@@ -10,6 +10,8 @@
 #include "radio.h"
 #include "delay.h"
 #include "timer.h"
+#include "udrv_timer.h"
+#include "LmhPackage.h"
 
 #define LORAWAN_APP_DATA_MAX_SIZE                           242
 
@@ -47,20 +49,30 @@ struct ComplianceTest_s
     uint8_t NbGateways;
 }ComplianceTest;
 
+extern LmhPackage_t LmhpCompliancePackage;
+
 TimerEvent_t CertifiTimer;
 
 uint8_t AppDataSize;
 
 int32_t service_lora_certification(int32_t mode)
-{  
-    //g_rui_cfg_t.g_lora_cfg_t.join_mode = mode;
-    service_lora_join(1, -1, -1, -1);
+{
+    if (mode != 0) {
+        service_lora_join(1, -1, -1, -1);
 
-    LoRaMacTestSetDutyCycleOn( false );
+        LoRaMacTestSetDutyCycleOn( false );
 
-    TimerInit( &CertifiTimer, CertifiTimerEvent );
-    TimerSetValue( &CertifiTimer, 6000 );
-    TimerStart( &CertifiTimer );
+        if (udrv_system_timer_create(SYSTIMER_LCT, CertifiTimerEvent, HTMR_PERIODIC) == UDRV_RETURN_OK)
+        {
+            udrv_system_timer_start(SYSTIMER_LCT, 6000, NULL);
+        }
+        else
+        {
+            udrv_serial_log_printf("FAILED(%d)\r\n", __LINE__);
+        }
+    } else {
+        udrv_system_timer_stop(SYSTIMER_LCT);
+    }
 
     return UDRV_RETURN_OK;
 }
@@ -73,12 +85,11 @@ static void CertifiTimerEvent( void* context )
     {
         service_lora_join(1, -1, -1, -1);
     }
-    else
+    else if (LmhpCompliancePackage.IsRunning() == false)
+    {
         Certifi_Send(LORAWAN_APP_PORT);
-
-    TimerStart( &CertifiTimer );
+    }
 }
-
 
 uint32_t Certifi_Send(uint8_t port)
 {
@@ -122,7 +133,6 @@ uint32_t Certifi_Send(uint8_t port)
     SendFrame();
 }
 
-
 static bool SendFrame( void )
 {
     McpsReq_t mcpsReq;
@@ -153,7 +163,13 @@ static bool SendFrame( void )
             mcpsReq.Req.Confirmed.fPort = AppPort;
             mcpsReq.Req.Confirmed.fBuffer = AppDataBuffer;
             mcpsReq.Req.Confirmed.fBufferSize = AppDataSize;
+#if LORA_STACK_VER == 0x040407
             mcpsReq.Req.Confirmed.NbTrials = 8;
+#elif LORA_STACK_VER == 0x040502
+            //mcpsReq.Req.Confirmed.NbTrials = 8;
+#else
+            mcpsReq.Req.Confirmed.NbTrials = 8;
+#endif
             mcpsReq.Req.Confirmed.Datarate = LORAWAN_DEFAULT_DATARATE;
         }
     }
@@ -161,161 +177,11 @@ static bool SendFrame( void )
     // Update global variable
     status = LoRaMacMcpsRequest( &mcpsReq );
     
-    if( status == LORAMAC_STATUS_OK )
+    if( status != LORAMAC_STATUS_OK )
     {
+        LORA_TEST_DEBUG("status=%d", status);
         return -UDRV_INTERNAL_ERR;
     }
     return UDRV_RETURN_OK;
 }
 
-
-int32_t service_lora_Certifi_Callback(McpsIndication_t *mcpsIndication)
-{
-    if( ComplianceTest.Running == true )
-    {
-        ComplianceTest.DownLinkCounter++;
-    }
-
-    if( mcpsIndication->RxData == true )
-    {
-        switch( mcpsIndication->Port )
-        {
-        case 1: // The application LED can be controlled on port 1 or 2
-        case 2:
-            break;
-        case 224:
-            if( ComplianceTest.Running == false )
-            {
-                // Check compliance test enable command (i)
-                if( ( mcpsIndication->BufferSize == 4 ) &&
-                    ( mcpsIndication->Buffer[0] == 0x01 ) &&
-                    ( mcpsIndication->Buffer[1] == 0x01 ) &&
-                    ( mcpsIndication->Buffer[2] == 0x01 ) &&
-                    ( mcpsIndication->Buffer[3] == 0x01 ) )
-                {
-                    IsTxConfirmed = false;
-                    AppPort = 224;
-                    //AppDataSizeBackup = AppDataSize;
-                    AppDataSize = 2;
-                    ComplianceTest.DownLinkCounter = 0;
-                    ComplianceTest.LinkCheck = false;
-                    ComplianceTest.DemodMargin = 0;
-                    ComplianceTest.NbGateways = 0;
-                    ComplianceTest.Running = true;
-                    ComplianceTest.State = 1;
-
-                    MibRequestConfirm_t mibReq;
-                    mibReq.Type = MIB_ADR;
-                    mibReq.Param.AdrEnable = true;
-                    LoRaMacMibSetRequestConfirm( &mibReq );
-                    LoRaMacTestSetDutyCycleOn( false );
-
-                }
-            }
-            else
-            {
-                ComplianceTest.State = mcpsIndication->Buffer[0];
-                switch( ComplianceTest.State )
-                {
-                case 0: // Check compliance test disable command (ii)
-                    IsTxConfirmed = LORAWAN_CONFIRMED_MSG_ON;
-                    AppPort = LORAWAN_APP_PORT;
-                    AppDataSize = 1;
-                    ComplianceTest.DownLinkCounter = 0;
-                    ComplianceTest.Running = false;
-
-                    MibRequestConfirm_t mibReq;
-                    mibReq.Type = MIB_ADR;
-                    mibReq.Param.AdrEnable = LORAWAN_ADR_ON;
-                    LoRaMacMibSetRequestConfirm( &mibReq );
-
-                    break;
-                case 1: // (iii, iv)
-                    AppDataSize = 2;
-                    break;
-                case 2: // Enable confirmed messages (v)
-                    IsTxConfirmed = true;
-                    ComplianceTest.State = 1;
-                    break;
-                case 3:  // Disable confirmed messages (vi)
-                    IsTxConfirmed = false;
-                    ComplianceTest.State = 1;
-                    break;
-                case 4: // (vii)
-                    AppDataSize = mcpsIndication->BufferSize;
-
-                    AppDataBuffer[0] = 4;
-                    for( uint8_t i = 1; i < MIN( AppDataSize, LORAWAN_APP_DATA_MAX_SIZE ); i++ )
-                    {
-                        AppDataBuffer[i] = mcpsIndication->Buffer[i] + 1;
-                    }
-                    break;
-                case 5: // (viii)
-                    {
-                        MlmeReq_t mlmeReq;
-                        mlmeReq.Type = MLME_LINK_CHECK;
-                        LoRaMacStatus_t status = LoRaMacMlmeRequest( &mlmeReq );
-                       
-                    }
-                    break;
-                case 6: // (ix)
-                    {
-                        // Disable TestMode and revert back to normal operation
-                        IsTxConfirmed = LORAWAN_CONFIRMED_MSG_ON;
-                        AppPort = LORAWAN_APP_PORT;
-                        AppDataSize = 1;
-                        ComplianceTest.DownLinkCounter = 0;
-                        ComplianceTest.Running = false;
-
-                        MibRequestConfirm_t mibReq;
-                        mibReq.Type = MIB_ADR;
-                        mibReq.Param.AdrEnable = LORAWAN_ADR_ON;
-                        LoRaMacMibSetRequestConfirm( &mibReq );
-
-                        service_lora_join(1, -1, -1, -1);
-                    }
-                    break;
-                case 7: // (x)
-                    {
-                        if( mcpsIndication->BufferSize == 3 )
-                        {
-                            MlmeReq_t mlmeReq;
-                            mlmeReq.Type = MLME_TXCW;
-                            mlmeReq.Req.TxCw.Timeout = ( uint16_t )( ( mcpsIndication->Buffer[1] << 8 ) | mcpsIndication->Buffer[2] );
-                            LoRaMacStatus_t status = LoRaMacMlmeRequest( &mlmeReq );
-                        
-                        }
-                        else if( mcpsIndication->BufferSize == 7 )
-                        {
-                            MlmeReq_t mlmeReq;
-                            mlmeReq.Type = MLME_TXCW_1;
-                            mlmeReq.Req.TxCw.Timeout = ( uint16_t )( ( mcpsIndication->Buffer[1] << 8 ) | mcpsIndication->Buffer[2] );
-                            mlmeReq.Req.TxCw.Frequency = ( uint32_t )( ( mcpsIndication->Buffer[3] << 16 ) | ( mcpsIndication->Buffer[4] << 8 ) | mcpsIndication->Buffer[5] ) * 100;
-                            mlmeReq.Req.TxCw.Power = mcpsIndication->Buffer[6];
-                            LoRaMacStatus_t status = LoRaMacMlmeRequest( &mlmeReq );
-                            
-                        }
-                        ComplianceTest.State = 1;
-                    }
-                    break;
-                case 8: // Send DeviceTimeReq
-                    {
-                        MlmeReq_t mlmeReq;
-
-                        mlmeReq.Type = MLME_DEVICE_TIME;
-
-                        LoRaMacStatus_t status = LoRaMacMlmeRequest( &mlmeReq );
-                        
-                    }
-                    break;
-                default:
-                    break;
-                }
-            }
-            break;
-        default:
-            break;
-        }
-    }
-
-}

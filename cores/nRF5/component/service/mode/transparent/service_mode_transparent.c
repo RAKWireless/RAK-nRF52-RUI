@@ -1,3 +1,4 @@
+#if defined(SUPPORT_LORA) && defined(SUPPORT_PASSTHRU)
 #include <stdint.h>
 #include "service_mode_transparent.h"
 #include "udrv_errno.h"
@@ -142,3 +143,4 @@ void service_mode_transparent_deinit(SERIAL_PORT port) {
         udrv_system_timer_stop(SYSTIMER_TRANSPARENT_MODE);
     }
 }
+#endif

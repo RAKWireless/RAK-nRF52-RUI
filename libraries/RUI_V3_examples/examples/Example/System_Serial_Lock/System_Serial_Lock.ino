@@ -4,9 +4,9 @@ bool locked;
 
 void setup()
 {
-    Serial.begin(115200, AT_MODE);
+    Serial.begin(115200, RAK_AT_MODE);
     /* Wait 5s for USB to be plugged in, or the log messages will be gone */
-    delay(5000);
+
     Serial.println("RAKwireless System Serial Lock Example");
     Serial.println("------------------------------------------------------");
     /* Lock serial port with password => 12345678 */

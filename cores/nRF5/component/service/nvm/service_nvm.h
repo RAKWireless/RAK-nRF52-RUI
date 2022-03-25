@@ -16,8 +16,9 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 #include "pin_define.h"
+#include "mcu_basic.h"
 #ifndef RUI_BOOTLOADER
-#if WAN_TYPE == 0
+#ifdef SUPPORT_LORA
 #include "service_lora.h"
 #include "service_lora_multicast.h"
 #endif
@@ -25,12 +26,14 @@ extern "C" {
 #endif
 #include "udrv_serial.h"
 
-#define SERVICE_NVM_CONFIG_NVM_ADDR	0x000D0000
-#define USER_DATA_NVM_ADDR		0x000B0000
-#define FACTORY_DEFAULT_NVM_ADDR	0x000AF000
+#define SERVICE_NVM_RUI_CONFIG_NVM_ADDR         MCU_SYS_CONFIG_NVM_ADDR
+#define SERVICE_NVM_USER_DATA_NVM_ADDR          MCU_USER_DATA_NVM_ADDR
+#define SERVICE_NVM_FACTORY_DEFAULT_NVM_ADDR    MCU_FACTORY_DEFAULT_NVM_ADDR
 
 #ifndef RUI_BOOTLOADER
 void service_nvm_init_config(void);
+
+int32_t service_nvm_set_default_config_to_nvm(void);
 
 /***********************************************************/
 /* RUI Mode                                                */
@@ -39,6 +42,10 @@ void service_nvm_init_config(void);
 SERVICE_MODE_TYPE service_nvm_get_mode_type_from_nvm(SERIAL_PORT port);
 
 int32_t service_nvm_set_mode_type_to_nvm(SERIAL_PORT port, SERVICE_MODE_TYPE mode_type);
+
+SERIAL_WLOCK_STATE service_nvm_get_lock_status_from_nvm(SERIAL_PORT Port);
+
+int32_t service_nvm_set_lock_status_to_nvm(SERIAL_PORT Port, SERIAL_WLOCK_STATE wlock_state);
 
 uint32_t service_nvm_get_baudrate_from_nvm(void);
 
@@ -55,6 +62,10 @@ int32_t service_nvm_set_serial_passwd_to_nvm(uint8_t *passwd, uint32_t len);
 uint32_t service_nvm_get_auto_sleep_time_from_nvm(void);
 
 int32_t service_nvm_set_auto_sleep_time_to_nvm(uint32_t time);
+
+int32_t service_nvm_get_atcmd_alias_from_nvm(uint8_t *buff, uint32_t len);
+
+int32_t service_nvm_set_atcmd_alias_to_nvm(uint8_t *buff, uint32_t len);
 
 /***********************************************************/
 /* User Data                                               */
@@ -76,7 +87,7 @@ uint32_t service_nvm_get_delta_subsec_from_nvm (void);
 
 int32_t service_nvm_set_delta_subsec_to_nvm (uint32_t subsec);
 
-#if WAN_TYPE == 0
+#ifdef SUPPORT_LORA
 /***********************************************************/
 /* LoRa                                                    */
 /***********************************************************/
@@ -118,8 +129,6 @@ int32_t service_nvm_set_net_id_to_nvm (uint8_t *buff, uint32_t len);
 int32_t service_nvm_get_nwk_skey_from_nvm (uint8_t *buff, uint32_t len);
 
 int32_t service_nvm_set_nwk_skey_to_nvm (uint8_t *buff, uint32_t len);
-
-int32_t service_nvm_set_default_config_to_nvm(void);
 
 uint8_t service_nvm_get_retry_from_nvm (void);
 

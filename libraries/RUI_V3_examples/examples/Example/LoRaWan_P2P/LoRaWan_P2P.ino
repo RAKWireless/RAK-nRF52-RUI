@@ -4,7 +4,7 @@ long startTime;
 void setup()
 {
   Serial.begin(115200);
-  delay(5000);
+
   Serial.println("RAKwireless LoRaWan P2P Example");
   Serial.println("------------------------------------------------------");
   delay(2000);

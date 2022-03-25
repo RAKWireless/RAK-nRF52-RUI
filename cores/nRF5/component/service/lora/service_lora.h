@@ -19,6 +19,7 @@ extern "C"
 #include "pin_define.h"
 #include "LoRaMac.h"
 #include "LoRaMacTypes.h"
+#include "LmHandlerTypes.h"
 
 #define SERVICE_LORA_DLINK_BUFF_SIZE 256
 
@@ -257,6 +258,11 @@ extern "C"
 #endif
     } SERVICE_LORA_BAND;
 
+    LmHandlerErrorStatus_t LmHandlerPackageRegister( uint8_t id, void *params );
+    bool LmHandlerPackageIsInitialized( uint8_t id );
+    bool LmHandlerPackageIsRunning( uint8_t id );
+    void LmHandlerPackagesProcess( void );
+
     int32_t service_lora_init(SERVICE_LORA_BAND band);
 
     SERVICE_LORA_BAND service_lora_get_band(void);
@@ -329,6 +335,8 @@ extern "C"
     int32_t service_lora_set_adr(bool adr, bool commit);
 
     SERVICE_LORA_CLASS service_lora_get_class(void);
+
+    SERVICE_LORA_CLASS service_lora_get_real_class_from_stack(void);
 
     int32_t service_lora_set_class(SERVICE_LORA_CLASS device_class, bool commit);
 
@@ -435,6 +443,10 @@ extern "C"
     SERVICE_LORA_CLASS_B_STATE service_lora_get_class_b_state(void);
 
     int32_t service_lora_query_txPossible(int16_t len);
+
+    void service_lora_suspend(void);
+
+    void service_lora_resume(void);
 #ifdef __cplusplus
 }
 #endif

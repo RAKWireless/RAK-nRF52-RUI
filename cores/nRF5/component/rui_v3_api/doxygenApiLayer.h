@@ -1,14 +1,14 @@
 /**@defgroup	ruiapi	Arduino Api 
  */
 
+        /**@defgroup	RUI_Arduino_Data_Type	RUI Arduino Data Type
+	 * @ingroup	ruiapi
+         */
+
 	/**@defgroup	Serial		Serial
 	 * @ingroup	ruiapi
 	 */
 	
-		/**@defgroup	Api_Mode	API Mode
-		 * @ingroup	Serial
-		 */
-
 	/**@defgroup	Wire		Wire
 	 * @ingroup	ruiapi
 	 */
@@ -52,6 +52,10 @@
 /**@defgroup	System	System
  */
 
+        /**@defgroup	RUI_System_Data_Type	RUI System Data Type
+	 * @ingroup	System
+         */
+
 	/**@defgroup	Device_Information	Device Information
 	 * @ingroup	System
 	 */
@@ -80,13 +84,15 @@
 		 * @ingroup	Device_Information
 		 */
 
+#ifdef SUPPORT_FS
 	/**@defgroup	File_System	File System	
 	 * @ingroup	System
 	 */
-
-		/**@defgroup	File_System_Data_Type	File System Data Type
-		 * @ingroup		File_System
-		 */
+#else
+	/**@defgroup	Flash	Flash
+	 * @ingroup	System
+	 */
+#endif
 
 	/**@defgroup	Powersave	Powersave
 	 * @ingroup	System
@@ -96,13 +102,24 @@
 	 * @ingroup	System
 	 */
 
+        /**@defgroup    System_Pword  pword
+         * @ingroup System_Serial
+         */
+
 	/**@defgroup	System_Misc	Misc
 	 * @ingroup	System
 	 */
-
+    
+        /**@defgroup    System_Alias  alias
+         * @ingroup System_Misc
+         */
 
 /**@defgroup    lorawan  Lorawan
  */
+
+        /**@defgroup	RUI_Lorawan_Data_Type	RUI Lorawan Data Type
+	 * @ingroup	lorawan
+         */
 
 	/**@defgroup	Keys_IDs_and_EUI_Management	Keys, IDs, and EUIs Management
 	 * @ingroup	lorawan
@@ -124,28 +141,24 @@
 	 * @ingroup	lorawan
 	 */
 
-	/**@defgroup	General_Instructions	General Instructions
-	 * @ingroup	lorawan
-	 */
-	
-		/**@defgroup	Generic_LoRaWAN_Instructions	Generic LoRaWAN Instructions
-		 * @ingroup	General_Instructions
-		 */
-
-		/**@defgroup	P2P	P2P Instructions
-		 * @ingroup	General_Instructions
-		 */
-
-		/**@defgroup	Multicast	Multicast Group Command
-		 * @ingroup	General_Instructions
-		 */
-	
-	/**@defgroup	LoRaWan_Data_Type	LoRaWan Data Type
+	/**@defgroup	Supplement	Supplement
 	 * @ingroup	lorawan
 	 */
 
+	/**@defgroup	P2P	P2P Instructions
+	 * @ingroup	lorawan
+	 */
+
+	/**@defgroup	Multicast	Multicast Group Command
+	 * @ingroup	lorawan
+	 */
+	
 /**@defgroup	ble	Ble
  */
+
+        /**@defgroup	RUI_Ble_Data_Type	RUI Ble Data Type
+	 * @ingroup	ble
+         */
 
 	/**@defgroup	BLE_Uart BLE UART
 	 * @ingroup	ble
@@ -191,6 +204,13 @@
 	 * @ingroup	ble
 	 */
 
-	/**@defgroup	BLE_Data_Type		BLE Data Type
-	 * @ingroup	ble
-	 */
+#ifdef SUPPORT_NFC
+/**@defgroup	NFC	Nfc
+ */
+#endif
+
+/**@defgroup    One_Wire_Serial  One Wire Serial
+ */
+
+/**@defgroup	Api_Mode	API Mode
+ */

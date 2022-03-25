@@ -1,5 +1,5 @@
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -477,14 +477,13 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_IO_SPI_PORT 1
-#define ATCMD_IO_SERIAL_PORT 4
-#define SUPPORT_EXTRA_ATCMD_OVER_BLE 1
+#define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
-#define UART_RX_INTERRUPT_MODE 1
 #define WAN_TYPE 0
-#define RAK4631 1
+#define LORA_STACK_VER 0x040407
+#define RAK4631_V2 .0+RAK5005-O_V1.0 1
+#define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
 #define WDT_SUPPORT 1
@@ -522,10 +521,13 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
-# 23 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/uart-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/uart-board.h"
+#define SUPPORT_USB 1
+#define SUPPORT_BLE 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
+# 23 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/uart-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/uart-board.h"
 #define __UART_BOARD_H__ 
 
 
@@ -1122,9 +1124,9 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/uart-board.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/uart-board.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 #define __UART_H__ 
 
 
@@ -1132,8 +1134,8 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
 #define __FIFO_H__ 
 
 
@@ -1152,14 +1154,14 @@ typedef __uint_least64_t uint_least64_t;
 #define false 0
 # 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 2
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 2
 
 
 
 
 
 
-# 37 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
 typedef struct Fifo_s
 {
     uint16_t Begin;
@@ -1167,7 +1169,7 @@ typedef struct Fifo_s
     uint8_t *Data;
     uint16_t Size;
 }Fifo_t;
-# 52 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
+# 52 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
 void FifoInit( Fifo_t *fifo, uint8_t *buffer, uint16_t size );
 
 
@@ -1200,9 +1202,9 @@ void FifoFlush( Fifo_t *fifo );
 
 
 
-# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 3 4
+# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 3 4
 _Bool 
-# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
+# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
     IsFifoEmpty( Fifo_t *fifo );
 
 
@@ -1212,13 +1214,13 @@ _Bool
 
 
 
-# 91 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 3 4
+# 91 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 3 4
 _Bool 
-# 91 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
+# 91 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
     IsFifoFull( Fifo_t *fifo );
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 #define __GPIO_H__ 
 
 
@@ -1227,22 +1229,22 @@ _Bool
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-board.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-board.h"
 #define __PIN_NAME_BOARD_H__ 
 
 
 
 
 #define MCU_PINS P0, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, P33, P34, P35, P36, P37, P38, P39, P40, P41, P42, P43, P44, P45, P46, P47
-# 37 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-ioe.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-ioe.h"
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-ioe.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-ioe.h"
 #define __PIN_NAME_IOE_H__ 
 
 
 #define IOE_PINS IOE_0, IOE_1, IOE_2, IOE_3, IOE_4, IOE_5, IOE_6, IOE_7, IOE_8, IOE_9, IOE_10, IOE_11, IOE_12, IOE_13, IOE_14, IOE_15
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
 
 
 
@@ -1327,7 +1329,7 @@ typedef struct
     void* Context;
     GpioIrqHandler* IrqHandler;
 }Gpio_t;
-# 134 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 134 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 void GpioInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinTypes type, uint32_t value );
 
 
@@ -1337,7 +1339,7 @@ void GpioInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinT
 
 
 void GpioSetContext( Gpio_t *obj, void* context );
-# 155 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 155 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 void GpioSetInterrupt( Gpio_t *obj, IrqModes irqMode, IrqPriorities irqPriority, GpioIrqHandler *irqHandler );
 
 
@@ -1369,7 +1371,7 @@ void GpioToggle( Gpio_t *obj );
 
 
 uint32_t GpioRead( Gpio_t *obj );
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 2
+# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 2
 
 
 
@@ -1397,9 +1399,9 @@ typedef struct
 {
     UartId_t UartId;
     
-# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 3 4
+# 59 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 3 4
    _Bool 
-# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 59 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
         IsInitialized;
     Gpio_t Tx;
     Gpio_t Rx;
@@ -1461,9 +1463,9 @@ typedef enum
     CTS_FLOW_CTRL,
     RTS_CTS_FLOW_CTRL
 }FlowCtrl_t;
-# 128 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 128 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 void UartInit( Uart_t *obj, UartId_t uartId, PinNames tx, PinNames rx );
-# 143 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 143 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 void UartConfig( Uart_t *obj, UartMode_t mode, uint32_t baudrate, WordLength_t wordLength, StopBits_t stopBits, Parity_t parity, FlowCtrl_t flowCtrl );
 
 
@@ -1472,18 +1474,18 @@ void UartConfig( Uart_t *obj, UartMode_t mode, uint32_t baudrate, WordLength_t w
 
 
 void UartDeInit( Uart_t *obj );
-# 159 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 159 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 uint8_t UartPutChar( Uart_t *obj, uint8_t data );
-# 169 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 169 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 uint8_t UartPutBuffer( Uart_t *obj, uint8_t *buffer, uint16_t size );
-# 178 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 178 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 uint8_t UartGetChar( Uart_t *obj, uint8_t *data );
-# 189 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 189 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 uint8_t UartGetBuffer( Uart_t *obj, uint8_t *buffer, uint16_t size, uint16_t *nbReadBytes );
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/uart-board.h" 2
-# 41 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/uart-board.h"
+# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/uart-board.h" 2
+# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/uart-board.h"
 void UartMcuInit( Uart_t *obj, UartId_t uartId, PinNames tx, PinNames rx );
-# 56 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/uart-board.h"
+# 56 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/uart-board.h"
 void UartMcuConfig( Uart_t *obj, UartMode_t mode, uint32_t baudrate, WordLength_t wordLength, StopBits_t stopBits, Parity_t parity, FlowCtrl_t flowCtrl );
 
 
@@ -1492,30 +1494,30 @@ void UartMcuConfig( Uart_t *obj, UartMode_t mode, uint32_t baudrate, WordLength_
 
 
 void UartMcuDeInit( Uart_t *obj );
-# 72 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/uart-board.h"
+# 72 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/uart-board.h"
 uint8_t UartMcuPutChar( Uart_t *obj, uint8_t data );
-# 82 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/uart-board.h"
+# 82 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/uart-board.h"
 uint8_t UartMcuPutBuffer( Uart_t *obj, uint8_t *buffer, uint16_t size );
-# 91 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/uart-board.h"
+# 91 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/uart-board.h"
 uint8_t UartMcuGetChar( Uart_t *obj, uint8_t *data );
-# 102 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/uart-board.h"
+# 102 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/uart-board.h"
 uint8_t UartMcuGetBuffer( Uart_t *obj, uint8_t *buffer, uint16_t size, uint16_t *nbReadBytes );
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 1
-# 25 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c" 2
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 1
+# 25 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c" 2
 
 void UartInit( Uart_t *obj, UartId_t uartId, PinNames tx, PinNames rx )
 {
     if( obj->IsInitialized == 
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c" 3 4
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c" 3 4
                              0 
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
                                    )
     {
         obj->IsInitialized = 
-# 30 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c" 3 4
+# 30 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c" 3 4
                             1
-# 30 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
+# 30 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
                                 ;
         UartMcuInit( obj, uartId, tx, rx );
     }
@@ -1529,9 +1531,9 @@ void UartConfig( Uart_t *obj, UartMode_t mode, uint32_t baudrate, WordLength_t w
 void UartDeInit( Uart_t *obj )
 {
     obj->IsInitialized = 
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c" 3 4
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c" 3 4
                         0
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
                              ;
     UartMcuDeInit( obj );
 }

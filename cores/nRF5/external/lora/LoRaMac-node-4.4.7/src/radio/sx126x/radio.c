@@ -1,5 +1,5 @@
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -477,14 +477,13 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_IO_SPI_PORT 1
-#define ATCMD_IO_SERIAL_PORT 4
-#define SUPPORT_EXTRA_ATCMD_OVER_BLE 1
+#define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
-#define UART_RX_INTERRUPT_MODE 1
 #define WAN_TYPE 0
-#define RAK4631 1
+#define LORA_STACK_VER 0x040407
+#define RAK4631_V2 .0+RAK5005-O_V1.0 1
+#define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
 #define WDT_SUPPORT 1
@@ -522,8 +521,11 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
-# 23 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+#define SUPPORT_USB 1
+#define SUPPORT_BLE 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 23 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/math.h" 1 3
 
 
@@ -2186,7 +2188,7 @@ extern long double erfl (long double);
 extern long double erfcl (long double);
 # 623 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/math.h" 3
 
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 1 3
 
 
@@ -2272,9 +2274,9 @@ char *strsignal (int __signo);
 # 176 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
 
 
-# 25 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 25 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define __UTILITIES_H__ 
 
 
@@ -2661,53 +2663,29 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h" 2
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
-# 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
-#define _STDBOOL_H 
-
-
-
-#define bool _Bool
-#define true 1
-#define false 0
-# 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
-#define __bool_true_false_are_defined 1
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h" 2
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h" 2
 
 
 
 
 
-#define SUCCESS 0
+#define SUCCESS 1
 
 
 
-#define FAIL 1
-# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-#define DUartPrint 
-
-
-
-
-
-
-# 65 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-typedef enum LmnStatus_e
-{
-  LMN_STATUS_ERROR = 0,
-  LMN_STATUS_OK = !LMN_STATUS_ERROR
-} LmnStatus_t;
-# 79 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+#define FAIL 0
+# 52 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define MIN(a,b) ( ( ( a ) < ( b ) ) ? ( a ) : ( b ) )
-# 90 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 63 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define MAX(a,b) ( ( ( a ) > ( b ) ) ? ( a ) : ( b ) )
-# 99 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 72 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define POW2(n) ( 1 << n )
 
 
 
 
+
+# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 typedef union Version_u
 {
     struct Version_s
@@ -2726,13 +2704,13 @@ typedef union Version_u
 
 
 void srand1( uint32_t seed );
-# 130 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 103 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 int32_t randr( int32_t min, int32_t max );
-# 141 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 114 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memcpy1( uint8_t *dst, const uint8_t *src, uint16_t size );
-# 150 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 123 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memcpyr( uint8_t *dst, const uint8_t *src, uint16_t size );
-# 161 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 134 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memset1( uint8_t *dst, uint8_t value, uint16_t size );
 
 
@@ -2742,7 +2720,7 @@ void memset1( uint8_t *dst, uint8_t value, uint16_t size );
 
 
 int8_t Nibble2HexChar( uint8_t a );
-# 179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 152 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32( uint8_t *buffer, uint16_t length );
 
 
@@ -2752,12 +2730,10 @@ uint32_t Crc32( uint8_t *buffer, uint16_t length );
 
 
 uint32_t Crc32Init( void );
-# 198 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 171 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32Update( uint32_t crcInit, uint8_t *buffer, uint16_t length );
-# 207 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 180 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32Finalize( uint32_t crc );
-# 218 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-uint16_t crc_calc(uint16_t crc, uint8_t *start, uint8_t *end);
 
 
 
@@ -2768,7 +2744,7 @@ uint16_t crc_calc(uint16_t crc, uint8_t *start, uint8_t *end);
 
 
 #define CRITICAL_SECTION_END() BoardCriticalSectionEnd( &mask )
-# 241 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 203 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void BoardCriticalSectionBegin( uint32_t *mask );
 
 
@@ -2777,9 +2753,9 @@ void BoardCriticalSectionBegin( uint32_t *mask );
 
 
 void BoardCriticalSectionEnd( uint32_t *mask );
-# 26 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 #define __TIMER_H__ 
 
 
@@ -2788,8 +2764,19 @@ void BoardCriticalSectionEnd( uint32_t *mask );
 
 
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 2
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 2
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
+# 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
+#define _STDBOOL_H 
 
+
+
+#define bool _Bool
+#define true 1
+#define false 0
+# 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
+#define __bool_true_false_are_defined 1
+# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 2
 
 
 
@@ -2800,14 +2787,14 @@ typedef struct TimerEvent_s
     uint32_t Timestamp;
     uint32_t ReloadValue;
     
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
    _Bool 
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
         IsStarted;
     
-# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
    _Bool 
-# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
         IsNext2Expire;
     void ( *Callback )( void* context );
     void *Context;
@@ -2820,7 +2807,7 @@ typedef struct TimerEvent_s
 
 typedef uint32_t TimerTime_t;
 #define TIMERTIME_T_MAX ( ( uint32_t )~0 )
-# 66 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 66 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 void TimerInit( TimerEvent_t *obj, void ( *callback )( void *context ) );
 
 
@@ -2842,11 +2829,11 @@ void TimerIrqHandler( void );
 
 
 void TimerStart( TimerEvent_t *obj );
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
 _Bool 
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
     TimerIsStarted( TimerEvent_t *obj );
 
 
@@ -2877,31 +2864,31 @@ void TimerSetValue( TimerEvent_t *obj, uint32_t value );
 
 
 TimerTime_t TimerGetCurrentTime( void );
-# 135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 135 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 TimerTime_t TimerGetElapsedTime( TimerTime_t past );
-# 146 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 146 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 TimerTime_t TimerTempCompensation( TimerTime_t period, float temperature );
 
 
 
 
 void TimerProcess( void );
-# 27 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h"
+# 27 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h"
 #define __DELAY_H__ 
-# 36 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h"
+# 36 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.h"
 void Delay( float s );
 
 
 
 
 void DelayMs( uint32_t ms );
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
 #define __RADIO_H__ 
-# 37 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
 typedef enum
 {
     MODEM_FSK = 0,
@@ -2932,7 +2919,7 @@ typedef struct
 
 
     void ( *TxTimeout )( void );
-# 77 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
     void ( *RxDone )( uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr );
 
 
@@ -2955,9 +2942,9 @@ typedef struct
 
 
     void ( *CadDone ) ( 
-# 98 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 98 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                        _Bool 
-# 98 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 98 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                             channelActivityDetected );
 
 
@@ -3000,63 +2987,63 @@ struct Radio_s
 
 
     void ( *SetChannel )( uint32_t freq );
-# 152 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 152 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
     
-# 152 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 152 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
    _Bool 
-# 152 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 152 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
            ( *IsChannelFree )( uint32_t freq, uint32_t rxBandwidth, int16_t rssiThresh, uint32_t maxCarrierSenseTime );
-# 163 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 163 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
     uint32_t ( *Random )( void );
-# 203 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 203 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
     void ( *SetRxConfig )( RadioModems_t modem, uint32_t bandwidth,
                               uint32_t datarate, uint8_t coderate,
                               uint32_t bandwidthAfc, uint16_t preambleLen,
                               uint16_t symbTimeout, 
-# 206 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 206 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                                                    _Bool 
-# 206 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 206 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                                         fixLen,
                               uint8_t payloadLen,
                               
-# 208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                              _Bool 
-# 208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                   crcOn, 
-# 208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                                          _Bool 
-# 208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                               freqHopOn, uint8_t hopPeriod,
                               
-# 209 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 209 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                              _Bool 
-# 209 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 209 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                   iqInverted, 
-# 209 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 209 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                                               _Bool 
-# 209 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 209 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                                    rxContinuous );
-# 245 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 245 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
     void ( *SetTxConfig )( RadioModems_t modem, int8_t power, uint32_t fdev,
                               uint32_t bandwidth, uint32_t datarate,
                               uint8_t coderate, uint16_t preambleLen,
                               
-# 248 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 248 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                              _Bool 
-# 248 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 248 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                   fixLen, 
-# 248 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 248 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                                           _Bool 
-# 248 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 248 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                                crcOn, 
-# 248 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 248 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                                                       _Bool 
-# 248 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 248 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                                            freqHopOn,
                               uint8_t hopPeriod, 
-# 249 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 249 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                                                 _Bool 
-# 249 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 249 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                                      iqInverted, uint32_t timeout );
 
 
@@ -3065,22 +3052,22 @@ struct Radio_s
 
 
     
-# 256 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 256 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
    _Bool 
-# 256 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 256 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
            ( *CheckRfFrequency )( uint32_t frequency );
-# 283 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 283 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
     uint32_t ( *TimeOnAir )( RadioModems_t modem, uint32_t bandwidth,
                               uint32_t datarate, uint8_t coderate,
                               uint16_t preambleLen, 
-# 285 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 285 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                                                    _Bool 
-# 285 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 285 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                                         fixLen, uint8_t payloadLen,
                               
-# 286 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 286 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                              _Bool 
-# 286 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 286 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                   crcOn );
 
 
@@ -3167,9 +3154,9 @@ struct Radio_s
 
 
     void ( *SetPublicNetwork )( 
-# 371 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
+# 371 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 3 4
                                   _Bool 
-# 371 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 371 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
                                        enable );
 
 
@@ -3181,9 +3168,9 @@ struct Radio_s
 
 
     void ( *IrqProcess )( void );
-# 393 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 393 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
     void ( *RxBoosted )( uint32_t timeout );
-# 402 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
+# 402 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h"
     void ( *SetRxDutyCycle ) ( uint32_t rxTime, uint32_t sleepTime );
 };
 
@@ -3194,13 +3181,13 @@ struct Radio_s
 
 
 extern const struct Radio_s Radio;
-# 29 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 29 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 #define __SX126x_H__ 
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 #define __GPIO_H__ 
 
 
@@ -3209,22 +3196,22 @@ extern const struct Radio_s Radio;
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-board.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-board.h"
 #define __PIN_NAME_BOARD_H__ 
 
 
 
 
 #define MCU_PINS P0, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, P33, P34, P35, P36, P37, P38, P39, P40, P41, P42, P43, P44, P45, P46, P47
-# 37 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-ioe.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-ioe.h"
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-ioe.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-ioe.h"
 #define __PIN_NAME_IOE_H__ 
 
 
 #define IOE_PINS IOE_0, IOE_1, IOE_2, IOE_3, IOE_4, IOE_5, IOE_6, IOE_7, IOE_8, IOE_9, IOE_10, IOE_11, IOE_12, IOE_13, IOE_14, IOE_15
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
 
 
 
@@ -3309,7 +3296,7 @@ typedef struct
     void* Context;
     GpioIrqHandler* IrqHandler;
 }Gpio_t;
-# 134 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 134 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 void GpioInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinTypes type, uint32_t value );
 
 
@@ -3319,7 +3306,7 @@ void GpioInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinT
 
 
 void GpioSetContext( Gpio_t *obj, void* context );
-# 155 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 155 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 void GpioSetInterrupt( Gpio_t *obj, IrqModes irqMode, IrqPriorities irqPriority, GpioIrqHandler *irqHandler );
 
 
@@ -3351,9 +3338,9 @@ void GpioToggle( Gpio_t *obj );
 
 
 uint32_t GpioRead( Gpio_t *obj );
-# 35 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h"
+# 35 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h"
 #define __SPI__H__ 
 
 
@@ -3361,8 +3348,8 @@ uint32_t GpioRead( Gpio_t *obj );
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h" 2
 
 
 
@@ -3384,7 +3371,7 @@ typedef struct Spi_s
     Gpio_t Sclk;
     Gpio_t Nss;
 }Spi_t;
-# 66 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h"
+# 66 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h"
 void SpiInit( Spi_t *obj, SpiId_t spiId, PinNames mosi, PinNames miso, PinNames sclk, PinNames nss );
 
 
@@ -3393,7 +3380,7 @@ void SpiInit( Spi_t *obj, SpiId_t spiId, PinNames mosi, PinNames miso, PinNames 
 
 
 void SpiDeInit( Spi_t *obj );
-# 86 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h"
+# 86 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h"
 void SpiFormat( Spi_t *obj, int8_t bits, int8_t cpol, int8_t cpha, int8_t slave );
 
 
@@ -3403,9 +3390,9 @@ void SpiFormat( Spi_t *obj, int8_t bits, int8_t cpol, int8_t cpha, int8_t slave 
 
 
 void SpiFrequency( Spi_t *obj, uint32_t hz );
-# 103 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h"
+# 103 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/spi_.h"
 uint16_t SpiInOut( Spi_t *obj, uint16_t outData );
-# 36 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 2
+# 36 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 2
 
 
 #define SX1261 1
@@ -4064,7 +4051,7 @@ typedef struct SX126x_s
 
 
 typedef void ( DioIrqHandler )( void* context );
-# 703 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 703 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 typedef struct
 {
     void ( *txDone )( void );
@@ -4072,20 +4059,20 @@ typedef struct
     void ( *rxPreambleDetect )( void );
     void ( *rxSyncWordDone )( void );
     void ( *rxHeaderDone )( 
-# 709 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 3 4
+# 709 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 3 4
                            _Bool 
-# 709 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 709 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
                                 isOk );
     void ( *txTimeout )( void );
     void ( *rxTimeout )( void );
     void ( *rxError )( IrqErrorCode_t errCode );
     void ( *cadDone )( 
-# 713 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 3 4
+# 713 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 3 4
                       _Bool 
-# 713 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 713 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
                            cadFlag );
 }SX126xCallbacks_t;
-# 725 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 725 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 void SX126xInit( DioIrqHandler dioIrq );
 
 
@@ -4100,11 +4087,11 @@ void SX126xCheckDeviceReady( void );
 
 
 void SX126xSetPayload( uint8_t *payload, uint8_t size );
-# 748 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 748 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 uint8_t SX126xGetPayload( uint8_t *payload, uint8_t *size, uint8_t maxSize );
-# 757 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 757 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 void SX126xSendPayload( uint8_t *payload, uint8_t size, uint32_t timeout );
-# 766 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 766 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 uint8_t SX126xSetSyncWord( uint8_t *syncWord );
 
 
@@ -4129,7 +4116,7 @@ void SX126xSetCrcPolynomial( uint16_t polynomial );
 
 
 void SX126xSetWhiteningSeed( uint16_t seed );
-# 808 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 808 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 uint32_t SX126xGetRandom( void );
 
 
@@ -4203,9 +4190,9 @@ void SX126xSetTxInfinitePreamble( void );
 
 
 void SX126xSetStopRxTimerOnPreambleDetect( 
-# 880 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 3 4
+# 880 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 3 4
                                           _Bool 
-# 880 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 880 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
                                                enable );
 
 
@@ -4242,7 +4229,7 @@ void SX126xCalibrateImage( uint32_t freq );
 
 
 void SX126xSetLongPreamble( uint8_t enable );
-# 925 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 925 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 void SX126xSetPaConfig( uint8_t paDutyCycle, uint8_t hpMax, uint8_t deviceSel, uint8_t paLut );
 
 
@@ -4251,15 +4238,15 @@ void SX126xSetPaConfig( uint8_t paDutyCycle, uint8_t hpMax, uint8_t deviceSel, u
 
 
 void SX126xSetRxTxFallbackMode( uint8_t fallbackMode );
-# 941 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 941 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 void SX126xWriteRegisters( uint16_t address, uint8_t *buffer, uint16_t size );
-# 950 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 950 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 void SX126xReadRegisters( uint16_t address, uint8_t *buffer, uint16_t size );
-# 959 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 959 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 void SX126xWriteBuffer( uint8_t offset, uint8_t *buffer, uint8_t size );
-# 968 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 968 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 void SX126xReadBuffer( uint8_t offset, uint8_t *buffer, uint8_t size );
-# 978 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 978 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 void SX126xSetDioIrqParams( uint16_t irqMask, uint16_t dio1Mask, uint16_t dio2Mask, uint16_t dio3Mask );
 
 
@@ -4290,7 +4277,7 @@ void SX126xSetDio3AsTcxoCtrl( RadioTcxoCtrlVoltage_t tcxoVoltage, uint32_t timeo
 
 
 void SX126xSetRfFrequency( uint32_t frequency );
-# 1017 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 1017 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 void SX126xSetPacketType( RadioPacketTypes_t packetType );
 
 
@@ -4321,7 +4308,7 @@ void SX126xSetModulationParams( ModulationParams_t *modParams );
 
 
 void SX126xSetPacketParams( PacketParams_t *packetParams );
-# 1061 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
+# 1061 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h"
 void SX126xSetCadParams( RadioLoRaCadSymbols_t cadSymbolNum, uint8_t cadDetPeak, uint8_t cadDetMin, RadioCadExitModes_t cadExitMode, uint32_t cadTimeout );
 
 
@@ -4379,13 +4366,13 @@ void SX126xClearDeviceErrors( void );
 
 
 void SX126xClearIrqStatus( uint16_t irq );
-# 30 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sx126x-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sx126x-board.h"
+# 30 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sx126x-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sx126x-board.h"
 #define __SX126x_BOARD_H__ 
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sx126x-board.h"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 1
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sx126x-board.h" 2
+# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sx126x-board.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/sx126x.h" 1
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sx126x-board.h" 2
 
 
 
@@ -4435,9 +4422,9 @@ void SX126xWaitOnBusy( void );
 
 
 void SX126xWakeup( void );
-# 91 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sx126x-board.h"
+# 91 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sx126x-board.h"
 void SX126xWriteCommand( RadioCommands_t opcode, uint8_t *buffer, uint16_t size );
-# 102 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sx126x-board.h"
+# 102 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sx126x-board.h"
 uint8_t SX126xReadCommand( RadioCommands_t opcode, uint8_t *buffer, uint16_t size );
 
 
@@ -4447,7 +4434,7 @@ uint8_t SX126xReadCommand( RadioCommands_t opcode, uint8_t *buffer, uint16_t siz
 
 
 void SX126xWriteRegister( uint16_t address, uint8_t value );
-# 119 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sx126x-board.h"
+# 119 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sx126x-board.h"
 uint8_t SX126xReadRegister( uint16_t address );
 
 
@@ -4483,9 +4470,9 @@ void SX126xAntSwOff( void );
 
 
 
-# 153 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sx126x-board.h" 3 4
+# 153 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sx126x-board.h" 3 4
 _Bool 
-# 153 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sx126x-board.h"
+# 153 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sx126x-board.h"
     SX126xCheckRfFrequency( uint32_t frequency );
 
 
@@ -4508,18 +4495,18 @@ uint32_t SX126xGetDio1PinState( void );
 
 
 RadioOperatingModes_t SX126xGetOperatingMode( void );
-# 184 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/sx126x-board.h"
+# 184 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sx126x-board.h"
 void SX126xSetOperatingMode( RadioOperatingModes_t mode );
 
 
 
 
 extern SX126x_t SX126x;
-# 31 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/board.h"
+# 31 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/board.h"
 #define __BOARD_H__ 
-# 36 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/board.h"
+# 36 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/board.h"
 enum BoardPowerSources
 {
     USB_POWER = 0,
@@ -4560,7 +4547,7 @@ uint8_t BoardGetPotiLevel( void );
 
 
 uint32_t BoardGetBatteryVoltage( void );
-# 86 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/board.h"
+# 86 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/board.h"
 uint8_t BoardGetBatteryLevel( void );
 
 
@@ -4595,8 +4582,8 @@ uint8_t GetBoardPowerSource( void );
 
 
 Version_t BoardGetVersion( void );
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/udrv/system/udrv_system.h" 1
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/udrv/system/udrv_system.h" 1
 
 #define _UDRV_SYSTEM_H_ 
 
@@ -4606,7 +4593,7 @@ Version_t BoardGetVersion( void );
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/udrv/timer/udrv_timer.h" 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/udrv/timer/udrv_timer.h" 1
 
 #define _UDRV_TIMER_H_ 
 
@@ -4629,7 +4616,9 @@ typedef enum {
         SYSTIMER_LORAWAN = 0,
         SYSTIMER_TRANSPARENT_MODE = 1,
         SYSTIMER_PROTOCOL_MODE = 2,
-        SYSTIMER_ID_MAX = 3,
+        SYSTIMER_LED = 3,
+        SYSTIMER_LCT = 4,
+        SYSTIMER_ID_MAX = 5,
 } SysTimerID_E;
 
 typedef enum hwtmr_op_mode {
@@ -4657,11 +4646,14 @@ int32_t udrv_system_timer_start (SysTimerID_E timer_id, uint32_t count, void *m_
 int32_t udrv_system_timer_stop (SysTimerID_E timer_id);
 
 void udrv_system_timer_handler_handler (void *pdata);
-# 11 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/udrv/system/udrv_system.h" 2
+# 11 "/home/jenkins/workspace/RUI_Release/rui-v3/component/udrv/system/udrv_system.h" 2
 
 #define RANDOM_LENGTH 4
 #define SEED_LENGTH 4
 
+
+#define EVENT_QUEUE_SIZE (32)
+#define EVENT_DATA_SIZE (8)
 
 
 
@@ -4669,13 +4661,24 @@ void udrv_system_timer_handler_handler (void *pdata);
 typedef enum
 {
     UDRV_SYS_EVT_OP_SERIAL_UART = 0x00,
-    UDRV_SYS_EVT_OP_SERIAL_USB = 0x01,
-    UDRV_SYS_EVT_OP_SERIAL_BLE = 0x02,
-    UDRV_SYS_EVT_OP_LORAWAN = 0x03,
-    UDRV_SYS_EVT_OP_USER_APP = 0x04,
-    UDRV_SYS_EVT_OP_USER_TIMER = 0x05,
-    UDRV_SYS_EVT_OP_SYS_TIMER = 0x06,
-    UDRV_SYS_EVT_OP_SERIAL_FALLBACK = 0x08,
+
+    UDRV_SYS_EVT_OP_SERIAL_USB,
+
+
+    UDRV_SYS_EVT_OP_SERIAL_BLE,
+
+
+    UDRV_SYS_EVT_OP_LORAWAN,
+
+    UDRV_SYS_EVT_OP_USER_APP,
+    UDRV_SYS_EVT_OP_USER_TIMER,
+    UDRV_SYS_EVT_OP_SYS_TIMER,
+
+
+
+    UDRV_SYS_EVT_OP_SERIAL_FALLBACK,
+    UDRV_SYS_EVT_OP_RTC,
+    UDRV_SYS_EVT_OP_GPIO_INTERRUPT,
 } udrv_system_event_op_t;
 
 typedef struct
@@ -4706,17 +4709,17 @@ int32_t udrv_system_user_app_timer_create (timer_handler tmr_handler, TimerMode_
 int32_t udrv_system_user_app_timer_start (uint32_t count, void *m_data);
 
 int32_t udrv_system_user_app_timer_stop (void);
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
+# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
 
 extern 
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
       _Bool 
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
            udrv_powersave_in_sleep;
 static udrv_system_event_t rui_lora_event = {.request = UDRV_SYS_EVT_OP_LORAWAN, .p_context = 
-# 35 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 35 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                                                              ((void *)0)
-# 35 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 35 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                                                  };
 
 
@@ -4746,63 +4749,63 @@ void RadioSetModem( RadioModems_t modem );
 
 
 void RadioSetChannel( uint32_t freq );
-# 77 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 
-# 77 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
 _Bool 
-# 77 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
     RadioIsChannelFree( uint32_t freq, uint32_t rxBandwidth, int16_t rssiThresh, uint32_t maxCarrierSenseTime );
-# 89 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 89 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 uint32_t RadioRandom( void );
-# 130 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 130 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 void RadioSetRxConfig( RadioModems_t modem, uint32_t bandwidth,
                           uint32_t datarate, uint8_t coderate,
                           uint32_t bandwidthAfc, uint16_t preambleLen,
                           uint16_t symbTimeout, 
-# 133 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 133 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                _Bool 
-# 133 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 133 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                     fixLen,
                           uint8_t payloadLen,
                           
-# 135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 135 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                          _Bool 
-# 135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 135 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                               crcOn, 
-# 135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 135 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                      _Bool 
-# 135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 135 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                           FreqHopOn, uint8_t HopPeriod,
                           
-# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 136 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                          _Bool 
-# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 136 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                               iqInverted, 
-# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 136 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                           _Bool 
-# 136 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 136 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                rxContinuous );
-# 173 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 173 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 void RadioSetTxConfig( RadioModems_t modem, int8_t power, uint32_t fdev,
                           uint32_t bandwidth, uint32_t datarate,
                           uint8_t coderate, uint16_t preambleLen,
                           
-# 176 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 176 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                          _Bool 
-# 176 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 176 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                               fixLen, 
-# 176 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 176 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                       _Bool 
-# 176 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 176 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                            crcOn, 
-# 176 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 176 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                   _Bool 
-# 176 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 176 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                        FreqHopOn,
                           uint8_t HopPeriod, 
-# 177 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 177 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                             _Bool 
-# 177 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 177 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                  iqInverted, uint32_t timeout );
 
 
@@ -4812,24 +4815,24 @@ void RadioSetTxConfig( RadioModems_t modem, int8_t power, uint32_t fdev,
 
 
 
-# 185 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 185 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
 _Bool 
-# 185 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 185 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
     RadioCheckRfFrequency( uint32_t frequency );
-# 213 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 213 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 uint32_t RadioTimeOnAir( RadioModems_t modem, uint32_t bandwidth,
                               uint32_t datarate, uint8_t coderate,
                               uint16_t preambleLen, 
-# 215 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 215 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                    _Bool 
-# 215 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 215 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                         fixLen, uint8_t payloadLen,
                               
-# 216 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 216 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                              _Bool 
-# 216 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 216 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                   crcOn );
-# 225 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 225 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 void RadioSend( uint8_t *buffer, uint8_t size );
 
 
@@ -4853,7 +4856,7 @@ void RadioRx( uint32_t timeout );
 
 
 void RadioStartCad( void );
-# 256 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 256 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 void RadioSetTxContinuousWave( uint32_t freq, int8_t power, uint16_t time );
 
 
@@ -4878,9 +4881,9 @@ void RadioWrite( uint32_t addr, uint8_t data );
 
 
 uint8_t RadioRead( uint32_t addr );
-# 288 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 288 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 void RadioWriteBuffer( uint32_t addr, uint8_t *buffer, uint8_t size );
-# 297 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 297 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 void RadioReadBuffer( uint32_t addr, uint8_t *buffer, uint8_t size );
 
 
@@ -4890,11 +4893,11 @@ void RadioReadBuffer( uint32_t addr, uint8_t *buffer, uint8_t size );
 
 
 void RadioSetMaxPayloadLength( RadioModems_t modem, uint8_t max );
-# 314 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 314 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 void RadioSetPublicNetwork( 
-# 314 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 314 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                            _Bool 
-# 314 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 314 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                 enable );
 
 
@@ -4958,7 +4961,7 @@ const struct Radio_s Radio =
     RadioRxBoosted,
     RadioSetRxDutyCycle
 };
-# 386 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 386 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 typedef struct
 {
     uint32_t bandwidth;
@@ -5002,13 +5005,13 @@ uint32_t TxTimeout = 0;
 uint32_t RxTimeout = 0;
 
 
-# 428 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 428 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
 _Bool 
-# 428 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 428 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
     RxContinuous = 
-# 428 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 428 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                    0
-# 428 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 428 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                         ;
 
 
@@ -5016,15 +5019,15 @@ PacketStatus_t RadioPktStatus;
 uint8_t RadioRxPayload[255];
 
 
-# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 434 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
 _Bool 
-# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 434 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
     IrqFired = 
-# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 434 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                0
-# 434 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 434 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                     ;
-# 443 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 443 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 void RadioOnDioIrq( void* context );
 
 
@@ -5036,32 +5039,32 @@ void RadioOnTxTimeoutIrq( void* context );
 
 
 void RadioOnRxTimeoutIrq( void* context );
-# 463 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 463 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 typedef struct
 {
     
-# 465 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 465 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
    _Bool 
-# 465 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 465 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
         Previous;
     
-# 466 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 466 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
    _Bool 
-# 466 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 466 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
         Current;
 }RadioPublicNetwork_t;
 
 static RadioPublicNetwork_t RadioPublicNetwork = { 
-# 469 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 469 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                   0 
-# 469 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 469 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                         };
 
 
 
 
 static RadioEvents_t* RadioEvents;
-# 483 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 483 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 SX126x_t SX126x;
 
 
@@ -5113,9 +5116,9 @@ void RadioInit( RadioEvents_t *events )
     TimerInit( &RxTimeoutTimer, RadioOnRxTimeoutIrq );
 
     IrqFired = 
-# 533 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 533 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
               0
-# 533 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 533 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                    ;
 }
 
@@ -5144,9 +5147,9 @@ void RadioSetModem( RadioModems_t modem )
 
 
         RadioPublicNetwork.Current = 
-# 560 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 560 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                     0
-# 560 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 560 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                          ;
         break;
     case MODEM_LORA:
@@ -5167,19 +5170,19 @@ void RadioSetChannel( uint32_t freq )
 }
 
 
-# 579 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 579 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
 _Bool 
-# 579 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 579 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
     RadioIsChannelFree( uint32_t freq, uint32_t rxBandwidth, int16_t rssiThresh, uint32_t maxCarrierSenseTime )
 {
     
-# 581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 581 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
    _Bool 
-# 581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 581 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
             status = 
-# 581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 581 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                1
-# 581 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 581 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                    ;
     int16_t rssi = 0;
     uint32_t carrierSenseTime = 0;
@@ -5190,22 +5193,22 @@ _Bool
 
 
     RadioSetRxConfig( MODEM_FSK, rxBandwidth, 600, 0, rxBandwidth, 3, 0, 
-# 590 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 590 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                                         0
-# 590 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 590 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                              ,
                       0, 
-# 591 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 591 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                         0
-# 591 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 591 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                              , 0, 0, 
-# 591 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 591 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                      0
-# 591 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 591 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                           , 
-# 591 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 591 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                             1 
-# 591 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 591 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                  );
     RadioRx( 0 );
 
@@ -5221,9 +5224,9 @@ _Bool
         if( rssi > rssiThresh )
         {
             status = 
-# 605 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 605 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                     0
-# 605 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 605 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                          ;
             break;
         }
@@ -5254,44 +5257,44 @@ void RadioSetRxConfig( RadioModems_t modem, uint32_t bandwidth,
                          uint32_t datarate, uint8_t coderate,
                          uint32_t bandwidthAfc, uint16_t preambleLen,
                          uint16_t symbTimeout, 
-# 634 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 634 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                               _Bool 
-# 634 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 634 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                    fixLen,
                          uint8_t payloadLen,
                          
-# 636 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 636 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                         _Bool 
-# 636 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 636 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                              crcOn, 
-# 636 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 636 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                     _Bool 
-# 636 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 636 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                          freqHopOn, uint8_t hopPeriod,
                          
-# 637 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 637 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                         _Bool 
-# 637 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 637 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                              iqInverted, 
-# 637 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 637 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                          _Bool 
-# 637 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 637 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                               rxContinuous )
 {
 
     RxContinuous = rxContinuous;
     if( rxContinuous == 
-# 641 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 641 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                        1 
-# 641 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 641 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                             )
     {
         symbTimeout = 0;
     }
     if( fixLen == 
-# 645 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 645 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                  1 
-# 645 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 645 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                       )
     {
         MaxPayloadLength = payloadLen;
@@ -5305,9 +5308,9 @@ void RadioSetRxConfig( RadioModems_t modem, uint32_t bandwidth,
     {
         case MODEM_FSK:
             SX126xSetStopRxTimerOnPreambleDetect( 
-# 657 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 657 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                  0 
-# 657 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 657 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                        );
             SX126x.ModulationParams.PacketType = PACKET_TYPE_GFSK;
 
@@ -5321,15 +5324,15 @@ void RadioSetRxConfig( RadioModems_t modem, uint32_t bandwidth,
             SX126x.PacketParams.Params.Gfsk.SyncWordLength = 3 << 3;
             SX126x.PacketParams.Params.Gfsk.AddrComp = RADIO_ADDRESSCOMP_FILT_OFF;
             SX126x.PacketParams.Params.Gfsk.HeaderType = ( fixLen == 
-# 669 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 669 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                                     1 
-# 669 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 669 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                          ) ? RADIO_PACKET_FIXED_LENGTH : RADIO_PACKET_VARIABLE_LENGTH;
             SX126x.PacketParams.Params.Gfsk.PayloadLength = MaxPayloadLength;
             if( crcOn == 
-# 671 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 671 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                         1 
-# 671 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 671 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                              )
             {
                 SX126x.PacketParams.Params.Gfsk.CrcLength = RADIO_CRC_2_BYTES_CCIT;
@@ -5352,9 +5355,9 @@ void RadioSetRxConfig( RadioModems_t modem, uint32_t bandwidth,
 
         case MODEM_LORA:
             SX126xSetStopRxTimerOnPreambleDetect( 
-# 692 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 692 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                  0 
-# 692 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 692 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                        );
             SX126x.ModulationParams.PacketType = PACKET_TYPE_LORA;
             SX126x.ModulationParams.Params.LoRa.SpreadingFactor = ( RadioLoRaSpreadingFactors_t )datarate;
@@ -5426,22 +5429,22 @@ void RadioSetTxConfig( RadioModems_t modem, int8_t power, uint32_t fdev,
                         uint32_t bandwidth, uint32_t datarate,
                         uint8_t coderate, uint16_t preambleLen,
                         
-# 762 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 762 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                        _Bool 
-# 762 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 762 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                             fixLen, 
-# 762 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 762 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                     _Bool 
-# 762 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 762 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                          crcOn, 
-# 762 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 762 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                 _Bool 
-# 762 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 762 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                      freqHopOn,
                         uint8_t hopPeriod, 
-# 763 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 763 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                           _Bool 
-# 763 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 763 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                iqInverted, uint32_t timeout )
 {
 
@@ -5461,15 +5464,15 @@ void RadioSetTxConfig( RadioModems_t modem, int8_t power, uint32_t fdev,
             SX126x.PacketParams.Params.Gfsk.SyncWordLength = 3 << 3 ;
             SX126x.PacketParams.Params.Gfsk.AddrComp = RADIO_ADDRESSCOMP_FILT_OFF;
             SX126x.PacketParams.Params.Gfsk.HeaderType = ( fixLen == 
-# 781 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 781 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                                     1 
-# 781 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 781 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                          ) ? RADIO_PACKET_FIXED_LENGTH : RADIO_PACKET_VARIABLE_LENGTH;
 
             if( crcOn == 
-# 783 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 783 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                         1 
-# 783 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 783 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                              )
             {
                 SX126x.PacketParams.Params.Gfsk.CrcLength = RADIO_CRC_2_BYTES_CCIT;
@@ -5553,15 +5556,15 @@ void RadioSetTxConfig( RadioModems_t modem, int8_t power, uint32_t fdev,
 }
 
 
-# 865 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 865 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
 _Bool 
-# 865 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 865 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
     RadioCheckRfFrequency( uint32_t frequency )
 {
     return 
-# 867 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 867 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
           1
-# 867 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 867 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
               ;
 }
 
@@ -5608,14 +5611,14 @@ static uint32_t RadioGetLoRaBandwidthInHz( RadioLoRaBandwidths_t bw )
 
 static uint32_t RadioGetGfskTimeOnAirNumerator( uint32_t datarate, uint8_t coderate,
                               uint16_t preambleLen, 
-# 912 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 912 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                    _Bool 
-# 912 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 912 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                         fixLen, uint8_t payloadLen,
                               
-# 913 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 913 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                              _Bool 
-# 913 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 913 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                   crcOn )
 {
     const RadioAddressComp_t addrComp = RADIO_ADDRESSCOMP_FILT_OFF;
@@ -5623,17 +5626,17 @@ static uint32_t RadioGetGfskTimeOnAirNumerator( uint32_t datarate, uint8_t coder
 
     return ( preambleLen << 3 ) +
            ( ( fixLen == 
-# 919 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 919 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                         0 
-# 919 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 919 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                               ) ? 8 : 0 ) +
              ( syncWordLength << 3 ) +
              ( ( payloadLen +
                ( addrComp == RADIO_ADDRESSCOMP_FILT_OFF ? 0 : 1 ) +
                ( ( crcOn == 
-# 923 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 923 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                            1 
-# 923 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 923 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                 ) ? 2 : 0 )
                ) << 3
              );
@@ -5642,25 +5645,25 @@ static uint32_t RadioGetGfskTimeOnAirNumerator( uint32_t datarate, uint8_t coder
 static uint32_t RadioGetLoRaTimeOnAirNumerator( uint32_t bandwidth,
                               uint32_t datarate, uint8_t coderate,
                               uint16_t preambleLen, 
-# 930 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 930 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                    _Bool 
-# 930 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 930 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                         fixLen, uint8_t payloadLen,
                               
-# 931 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 931 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                              _Bool 
-# 931 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 931 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                   crcOn )
 {
     int32_t crDenom = coderate + 4;
     
-# 934 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 934 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
    _Bool 
-# 934 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 934 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
            lowDatareOptimize = 
-# 934 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 934 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                0
-# 934 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 934 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                     ;
 
 
@@ -5677,9 +5680,9 @@ static uint32_t RadioGetLoRaTimeOnAirNumerator( uint32_t bandwidth,
         ( ( bandwidth == 1 ) && ( datarate == 12 ) ) )
     {
         lowDatareOptimize = 
-# 949 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 949 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                            1
-# 949 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 949 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                ;
     }
 
@@ -5698,9 +5701,9 @@ static uint32_t RadioGetLoRaTimeOnAirNumerator( uint32_t bandwidth,
         ceilNumerator += 8;
 
         if( lowDatareOptimize == 
-# 966 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 966 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                 1 
-# 966 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 966 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                      )
         {
             ceilDenominator = 4 * ( datarate - 2 );
@@ -5731,14 +5734,14 @@ static uint32_t RadioGetLoRaTimeOnAirNumerator( uint32_t bandwidth,
 uint32_t RadioTimeOnAir( RadioModems_t modem, uint32_t bandwidth,
                               uint32_t datarate, uint8_t coderate,
                               uint16_t preambleLen, 
-# 995 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 995 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                    _Bool 
-# 995 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 995 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                         fixLen, uint8_t payloadLen,
                               
-# 996 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 996 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                              _Bool 
-# 996 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 996 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                   crcOn )
 {
     uint32_t numerator = 0;
@@ -5818,9 +5821,9 @@ void RadioRx( uint32_t timeout )
     }
 
     if( RxContinuous == 
-# 1074 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1074 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                        1 
-# 1074 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1074 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                             )
     {
         SX126xSetRx( 0xFFFFFF );
@@ -5845,9 +5848,9 @@ void RadioRxBoosted( uint32_t timeout )
     }
 
     if( RxContinuous == 
-# 1097 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1097 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                        1 
-# 1097 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1097 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                             )
     {
         SX126xSetRxBoosted( 0xFFFFFF );
@@ -5924,18 +5927,18 @@ void RadioSetMaxPayloadLength( RadioModems_t modem, uint8_t max )
 }
 
 void RadioSetPublicNetwork( 
-# 1172 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1172 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                            _Bool 
-# 1172 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1172 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                 enable )
 {
     RadioPublicNetwork.Current = RadioPublicNetwork.Previous = enable;
 
     RadioSetModem( MODEM_LORA );
     if( enable == 
-# 1177 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1177 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                  1 
-# 1177 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1177 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                       )
     {
 
@@ -5958,21 +5961,21 @@ uint32_t RadioGetWakeupTime( void )
 void RadioOnTxTimeoutIrq( void* context )
 {
     if( ( RadioEvents != 
-# 1198 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1198 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                         ((void *)0) 
-# 1198 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1198 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                              ) && ( RadioEvents->TxTimeout != 
-# 1198 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1198 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                               ((void *)0) 
-# 1198 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1198 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                    ) )
     {
         RadioEvents->TxTimeout( );
         udrv_system_event_produce(&rui_lora_event);
         udrv_powersave_in_sleep = 
-# 1202 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1202 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                  0
-# 1202 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1202 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                       ;
     }
 }
@@ -5980,21 +5983,21 @@ void RadioOnTxTimeoutIrq( void* context )
 void RadioOnRxTimeoutIrq( void* context )
 {
     if( ( RadioEvents != 
-# 1208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                         ((void *)0) 
-# 1208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                              ) && ( RadioEvents->RxTimeout != 
-# 1208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                               ((void *)0) 
-# 1208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                    ) )
     {
         RadioEvents->RxTimeout( );
         udrv_system_event_produce(&rui_lora_event);
         udrv_powersave_in_sleep = 
-# 1212 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1212 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                  0
-# 1212 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1212 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                       ;
     }
 }
@@ -6002,32 +6005,32 @@ void RadioOnRxTimeoutIrq( void* context )
 void RadioOnDioIrq( void* context )
 {
     IrqFired = 
-# 1218 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1218 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
               1
-# 1218 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1218 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                   ;
     udrv_system_event_produce(&rui_lora_event);
     udrv_powersave_in_sleep = 
-# 1220 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1220 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                              0
-# 1220 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1220 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                   ;
 }
 
 void RadioIrqProcess( void )
 {
     if( IrqFired == 
-# 1225 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1225 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                    1 
-# 1225 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1225 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                         )
     {
         uint32_t mask; BoardCriticalSectionBegin( &mask );
 
         IrqFired = 
-# 1229 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1229 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                   0
-# 1229 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1229 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                        ;
         BoardCriticalSectionEnd( &mask );
 
@@ -6040,13 +6043,13 @@ void RadioIrqProcess( void )
 
             SX126xSetOperatingMode( MODE_STDBY_RC );
             if( ( RadioEvents != 
-# 1240 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1240 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                 ((void *)0) 
-# 1240 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1240 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                      ) && ( RadioEvents->TxDone != 
-# 1240 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1240 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                                    ((void *)0) 
-# 1240 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1240 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                         ) )
             {
                 RadioEvents->TxDone( );
@@ -6058,18 +6061,18 @@ void RadioIrqProcess( void )
             if( ( irqRegs & IRQ_CRC_ERROR ) == IRQ_CRC_ERROR )
             {
                 if( RxContinuous == 
-# 1250 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1250 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                    0 
-# 1250 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1250 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                          )
                 {
 
                     SX126xSetOperatingMode( MODE_STDBY_RC );
                 }
                 if( ( RadioEvents != 
-# 1255 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1255 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                     ((void *)0) 
-# 1255 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1255 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                          ) && ( RadioEvents->RxError ) )
                 {
                     RadioEvents->RxError( );
@@ -6081,9 +6084,9 @@ void RadioIrqProcess( void )
 
                 TimerStop( &RxTimeoutTimer );
                 if( RxContinuous == 
-# 1265 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1265 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                    0 
-# 1265 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1265 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                          )
                 {
 
@@ -6099,13 +6102,13 @@ void RadioIrqProcess( void )
                 SX126xGetPayload( RadioRxPayload, &size , 255 );
                 SX126xGetPacketStatus( &RadioPktStatus );
                 if( ( RadioEvents != 
-# 1279 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1279 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                     ((void *)0) 
-# 1279 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1279 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                          ) && ( RadioEvents->RxDone != 
-# 1279 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1279 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                                        ((void *)0) 
-# 1279 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1279 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                             ) )
                 {
                     RadioEvents->RxDone( RadioRxPayload, size, RadioPktStatus.Params.LoRa.RssiPkt, RadioPktStatus.Params.LoRa.SnrPkt );
@@ -6118,13 +6121,13 @@ void RadioIrqProcess( void )
 
             SX126xSetOperatingMode( MODE_STDBY_RC );
             if( ( RadioEvents != 
-# 1290 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1290 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                 ((void *)0) 
-# 1290 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1290 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                      ) && ( RadioEvents->CadDone != 
-# 1290 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1290 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                                     ((void *)0) 
-# 1290 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1290 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                          ) )
             {
                 RadioEvents->CadDone( ( ( irqRegs & IRQ_CAD_ACTIVITY_DETECTED ) == IRQ_CAD_ACTIVITY_DETECTED ) );
@@ -6139,13 +6142,13 @@ void RadioIrqProcess( void )
 
                 SX126xSetOperatingMode( MODE_STDBY_RC );
                 if( ( RadioEvents != 
-# 1303 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1303 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                     ((void *)0) 
-# 1303 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1303 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                          ) && ( RadioEvents->TxTimeout != 
-# 1303 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1303 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                                           ((void *)0) 
-# 1303 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1303 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                                ) )
                 {
                     RadioEvents->TxTimeout( );
@@ -6157,13 +6160,13 @@ void RadioIrqProcess( void )
 
                 SX126xSetOperatingMode( MODE_STDBY_RC );
                 if( ( RadioEvents != 
-# 1313 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1313 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                     ((void *)0) 
-# 1313 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1313 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                          ) && ( RadioEvents->RxTimeout != 
-# 1313 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1313 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                                           ((void *)0) 
-# 1313 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1313 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                                ) )
                 {
                     RadioEvents->RxTimeout( );
@@ -6190,22 +6193,22 @@ void RadioIrqProcess( void )
         {
             TimerStop( &RxTimeoutTimer );
             if( RxContinuous == 
-# 1338 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1338 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                0 
-# 1338 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1338 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                      )
             {
 
                 SX126xSetOperatingMode( MODE_STDBY_RC );
             }
             if( ( RadioEvents != 
-# 1343 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1343 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                 ((void *)0) 
-# 1343 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1343 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                      ) && ( RadioEvents->RxTimeout != 
-# 1343 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
+# 1343 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 3 4
                                                                       ((void *)0) 
-# 1343 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
+# 1343 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
                                                                            ) )
             {
                 RadioEvents->RxTimeout( );

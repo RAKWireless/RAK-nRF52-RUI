@@ -20,7 +20,9 @@ typedef enum {
         SYSTIMER_LORAWAN = 0,
         SYSTIMER_TRANSPARENT_MODE = 1,
         SYSTIMER_PROTOCOL_MODE = 2,
-        SYSTIMER_ID_MAX = 3,
+        SYSTIMER_LED = 3,
+        SYSTIMER_LCT = 4,
+        SYSTIMER_ID_MAX = 5,
 } SysTimerID_E;
 
 typedef enum hwtmr_op_mode {

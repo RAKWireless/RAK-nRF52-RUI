@@ -14,7 +14,7 @@ int At_Lock (SERIAL_PORT port, char *cmd, stParam *param)
 
         return AT_OK;
     } else if (param->argc == 0) {
-        udrv_serial_lock(port);
+        udrv_serial_lock();
 
         return AT_OK;
     } else {
@@ -29,6 +29,7 @@ int At_Pword (SERIAL_PORT port, char *cmd, stParam *param)
         int32_t len;
 
         if ((len = udrv_serial_get_passwd(passwd, 9)) > 0) {
+            atcmd_printf("%s=", cmd);
             for(uint8_t i = 0 ; i < len ; i++) {
                 atcmd_printf("%c", passwd[i]);
             }
@@ -40,12 +41,16 @@ int At_Pword (SERIAL_PORT port, char *cmd, stParam *param)
 	}
         
     } else if (param->argc == 1) {
+        int32_t ret;
+
 	if (strlen(param->argv[0]) == 0 || strlen(param->argv[0]) > 8) {
             return AT_PARAM_ERROR;
 	}
 
-        if (udrv_serial_set_passwd(param->argv[0], strlen(param->argv[0])) == UDRV_RETURN_OK) {
+        if ((ret = udrv_serial_set_passwd(param->argv[0], strlen(param->argv[0]))) == UDRV_RETURN_OK) {
             return AT_OK;
+	} else if (ret == -UDRV_WRONG_ARG) {
+            return AT_PARAM_ERROR;
 	} else {
             return AT_ERROR;
 	}
@@ -59,7 +64,7 @@ int At_Baud (SERIAL_PORT port, char *cmd, stParam *param)
     int32_t ret;
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%u\r\n", service_nvm_get_baudrate_from_nvm());
+        atcmd_printf("%s=%u\r\n", cmd, service_nvm_get_baudrate_from_nvm());
         return AT_OK;
     } else if (param->argc == 1) {
         uint32_t baud;
@@ -72,7 +77,7 @@ int At_Baud (SERIAL_PORT port, char *cmd, stParam *param)
 
         baud = strtoul(param->argv[0], NULL, 10);
 
-        udrv_serial_init(port, baud, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE);
+        udrv_serial_init(port, baud, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 
 	ret = service_nvm_set_baudrate_to_nvm(baud);
         if (ret == UDRV_RETURN_OK) {
@@ -94,6 +99,7 @@ int At_AtCmdMode(SERIAL_PORT port, char *cmd, stParam *param)
     {
         if ((old_mode = service_nvm_get_mode_type_from_nvm(port)) != SERVICE_MODE_TYPE_CLI)
         {
+            atcmd_printf("OK\r\n");
             if ((ret = service_nvm_set_mode_type_to_nvm(port, SERVICE_MODE_TYPE_CLI)) != UDRV_RETURN_OK)
             {
                 return AT_ERROR;
@@ -101,11 +107,15 @@ int At_AtCmdMode(SERIAL_PORT port, char *cmd, stParam *param)
 
             switch (old_mode)
             {
+#ifdef SUPPORT_LORA
+#ifdef SUPPORT_PASSTHRU
                 case SERVICE_MODE_TYPE_TRANSPARENT:
                 {
                     service_mode_transparent_deinit(port);
                     break;
                 }
+#endif
+#endif
                 case SERVICE_MODE_TYPE_PROTOCOL:
                 {
                     service_mode_proto_deinit(port);
@@ -136,11 +146,11 @@ int At_ApiMode(SERIAL_PORT port, char *cmd, stParam *param)
     {
         if ((old_mode = service_nvm_get_mode_type_from_nvm(port)) != SERVICE_MODE_TYPE_PROTOCOL)
         {
+            atcmd_printf("OK\r\n");
             if ((ret = service_nvm_set_mode_type_to_nvm(port, SERVICE_MODE_TYPE_PROTOCOL)) != UDRV_RETURN_OK)
             {
                 return AT_ERROR;
             }
-
             switch (old_mode)
             {
                 case SERVICE_MODE_TYPE_CLI:
@@ -148,11 +158,15 @@ int At_ApiMode(SERIAL_PORT port, char *cmd, stParam *param)
                     service_mode_cli_deinit(port);
                     break;
                 }
+#ifdef SUPPORT_LORA
+#ifdef SUPPORT_PASSTHRU
                 case SERVICE_MODE_TYPE_TRANSPARENT:
                 {
                     service_mode_transparent_deinit(port);
                     break;
                 }
+#endif
+#endif
                 default:
                 {
                     break;
@@ -169,6 +183,7 @@ int At_ApiMode(SERIAL_PORT port, char *cmd, stParam *param)
     }
 }
 
+#ifdef SUPPORT_PASSTHRU
 int At_TransparentMode(SERIAL_PORT port, char *cmd, stParam *param)
 {
     int32_t ret;
@@ -176,7 +191,7 @@ int At_TransparentMode(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_nvm_get_tp_port_from_nvm(port));
+        atcmd_printf("%s=%u\r\n", cmd, service_nvm_get_tp_port_from_nvm(port));
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -217,11 +232,11 @@ int At_TransparentMode(SERIAL_PORT port, char *cmd, stParam *param)
 
         if ((old_mode = service_nvm_get_mode_type_from_nvm(port)) != SERVICE_MODE_TYPE_TRANSPARENT)
         {
+            atcmd_printf("OK\r\n");
             if ((ret = service_nvm_set_mode_type_to_nvm(port, SERVICE_MODE_TYPE_TRANSPARENT)) != UDRV_RETURN_OK)
             {
                 return AT_ERROR;
             }
-
             switch (old_mode)
             {
                 case SERVICE_MODE_TYPE_CLI:
@@ -249,4 +264,5 @@ int At_TransparentMode(SERIAL_PORT port, char *cmd, stParam *param)
         return AT_PARAM_ERROR;
     }
 }
+#endif
 

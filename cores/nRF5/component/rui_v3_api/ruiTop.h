@@ -164,9 +164,6 @@ unsigned long micros();
 #define INPUT_PULLUP 0x2
 #define INPUT_PULLDOWN 0x3 //FIXME
 
-#define REFERENCE_INTERNAL 0
-#define REFERENCE_VDD_DIVIDED_BY_4 1
-
 #define LED_BUILTIN GREEN_LED
 
 /**@addtogroup	Bit_and_Byte
@@ -571,8 +568,11 @@ int analogRead(uint8_t pin);
  *	analogReference(type);
  * @param	type		which type of reference to use\n
  * 				Type List:\n
- * 				RAK_ADC_REFERENCE_INTERNAL\n
- * 				RAK_ADC_REFERENCE_VDD_DIVIDED_BY_4
+ * 				RAK_ADC_MODE_DEFAULT\n
+ * 				RAK_ADC_MODE_3_0\n
+ * 				RAK_ADC_MODE_2_4\n
+ * 				RAK_ADC_MODE_1_8\n
+ * 				RAK_ADC_MODE_1_2\n
  *
  * @return	void
  */
@@ -979,23 +979,32 @@ void yield(void);
 #include "Wire.h"
 #include "SPI.h"
 
-typedef enum{
-    RAK_ADC_RESOLUTION_8BIT = UDRV_ADC_RESOLUTION_8BIT,  //< 8 bit resolution.
-    RAK_ADC_RESOLUTION_10BIT = UDRV_ADC_RESOLUTION_10BIT,  //< 10 bit resolution.
-    RAK_ADC_RESOLUTION_12BIT = UDRV_ADC_RESOLUTION_12BIT,  //< 12 bit resolution.
-    RAK_ADC_RESOLUTION_14BIT = UDRV_ADC_RESOLUTION_14BIT,  //< 14 bit resolution.
-} RAK_ADC_RESOLUTION ;
+/**@addtogroup	RUI_Arduino_Data_Type
+ * @{
+ */
 
 typedef enum{
-    RAK_ADC_REFERENCE_INTERNAL = UDRV_ADC_REFERENCE_INTERNAL,
-    RAK_ADC_REFERENCE_VDD_DIVIDED_BY_4 = UDRV_ADC_REFERENCE_VDD_DIVIDED_BY_4,
-} RAK_ADC_REF;
+    RAK_ADC_RESOLUTION_8BIT = UDRV_ADC_RESOLUTION_8BIT,    ///< 8 bit resolution
+    RAK_ADC_RESOLUTION_10BIT = UDRV_ADC_RESOLUTION_10BIT,  ///< 10 bit resolution
+    RAK_ADC_RESOLUTION_12BIT = UDRV_ADC_RESOLUTION_12BIT,  ///< 12 bit resolution
+    RAK_ADC_RESOLUTION_14BIT = UDRV_ADC_RESOLUTION_14BIT,  ///< 14 bit resolution
+} RAK_ADC_RESOLUTION;
 
 typedef enum{
-    RAK_PWM_RESOLUTION_8BIT = UDRV_PWM_RESOLUTION_8BIT,  //< 8 bit resolution.
-    RAK_PWM_RESOLUTION_10BIT = UDRV_PWM_RESOLUTION_10BIT,  //< 10 bit resolution.
-    RAK_PWM_RESOLUTION_12BIT = UDRV_PWM_RESOLUTION_12BIT,  //< 12 bit resolution.
-    RAK_PWM_RESOLUTION_14BIT = UDRV_PWM_RESOLUTION_14BIT,  //< 14 bit resolution.
-} RAK_PWM_RESOLUTION ;
+    RAK_ADC_MODE_DEFAULT = UDRV_ADC_MODE_DEFAULT,  ///< default range which depends on platform
+    RAK_ADC_MODE_3_0 = UDRV_ADC_MODE_3_0,          ///< maximum 3.0V
+    RAK_ADC_MODE_2_4 = UDRV_ADC_MODE_2_4,          ///< maximum 2.4V
+    RAK_ADC_MODE_1_8 = UDRV_ADC_MODE_1_8,          ///< maximum 1.8V
+    RAK_ADC_MODE_1_2 = UDRV_ADC_MODE_1_2,          ///< maximum 1.2V
+} RAK_ADC_MODE;
+
+typedef enum{
+    RAK_PWM_RESOLUTION_8BIT = UDRV_PWM_RESOLUTION_8BIT,    ///< 8 bit resolution
+    RAK_PWM_RESOLUTION_10BIT = UDRV_PWM_RESOLUTION_10BIT,  ///< 10 bit resolution
+    RAK_PWM_RESOLUTION_12BIT = UDRV_PWM_RESOLUTION_12BIT,  ///< 12 bit resolution
+    RAK_PWM_RESOLUTION_14BIT = UDRV_PWM_RESOLUTION_14BIT,  ///< 14 bit resolution
+} RAK_PWM_RESOLUTION;
+
+/**@}*/
 
 #endif

@@ -1,4 +1,4 @@
-/**@ifle	dataConvector.h
+/**@file	dataConversion.h
  *
  * @brief	
  * @author	RAKwireless
@@ -6,8 +6,8 @@
  * @date	2021.5
  */
 
-#ifndef __DATA_CONVECTOR_H__
-#define __DATA_CONVECTOR_H__
+#ifndef __DATA_CONVERSION_H__
+#define __DATA_CONVERSION_H__
 
 #include <stdio.h>
 #include "ruiTop.h"

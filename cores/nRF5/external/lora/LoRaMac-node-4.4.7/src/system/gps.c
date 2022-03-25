@@ -1,5 +1,5 @@
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3//"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -477,14 +477,13 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_IO_SPI_PORT 1
-#define ATCMD_IO_SERIAL_PORT 4
-#define SUPPORT_EXTRA_ATCMD_OVER_BLE 1
+#define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
-#define UART_RX_INTERRUPT_MODE 1
 #define WAN_TYPE 0
-#define RAK4631 1
+#define LORA_STACK_VER 0x040407
+#define RAK4631_V2 .0+RAK5005-O_V1.0 1
+#define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
 #define WDT_SUPPORT 1
@@ -522,8 +521,11 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
-# 23 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+#define SUPPORT_USB 1
+#define SUPPORT_BLE 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 23 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 1 3 4
 # 9 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 3 4
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 1 3 4
@@ -1113,7 +1115,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 1 3
 
 
@@ -2462,7 +2464,7 @@ extern long double _strtold_r (struct _reent *, const char *restrict, char **res
 extern long double strtold (const char *restrict, char **restrict);
 # 339 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
 
-# 25 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
+# 25 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/math.h" 1 3
 
 
@@ -2787,7 +2789,7 @@ extern long double erfl (long double);
 extern long double erfcl (long double);
 # 623 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/math.h" 3
 
-# 26 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
+# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 1 3
 # 27 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
 #define _STDIO_H_ 
@@ -3361,7 +3363,7 @@ _putchar_unlocked(int _c)
 }
 # 797 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
 
-# 27 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
+# 27 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 1 3
 
 
@@ -3447,63 +3449,28 @@ char *strsignal (int __signo);
 # 176 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
 
 
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define __UTILITIES_H__ 
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
+#define SUCCESS 1
 
 
 
-
-
-
-
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
-# 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
-#define _STDBOOL_H 
-
-
-
-#define bool _Bool
-#define true 1
-#define false 0
-# 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
-#define __bool_true_false_are_defined 1
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h" 2
-
-
-
-
-
-#define SUCCESS 0
-
-
-
-#define FAIL 1
-# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-#define DUartPrint 
-
-
-
-
-
-
-# 65 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-typedef enum LmnStatus_e
-{
-  LMN_STATUS_ERROR = 0,
-  LMN_STATUS_OK = !LMN_STATUS_ERROR
-} LmnStatus_t;
-# 79 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+#define FAIL 0
+# 52 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define MIN(a,b) ( ( ( a ) < ( b ) ) ? ( a ) : ( b ) )
-# 90 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 63 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define MAX(a,b) ( ( ( a ) > ( b ) ) ? ( a ) : ( b ) )
-# 99 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 72 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 #define POW2(n) ( 1 << n )
 
 
 
 
+
+# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 typedef union Version_u
 {
     struct Version_s
@@ -3522,13 +3489,13 @@ typedef union Version_u
 
 
 void srand1( uint32_t seed );
-# 130 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 103 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 int32_t randr( int32_t min, int32_t max );
-# 141 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 114 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memcpy1( uint8_t *dst, const uint8_t *src, uint16_t size );
-# 150 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 123 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memcpyr( uint8_t *dst, const uint8_t *src, uint16_t size );
-# 161 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 134 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void memset1( uint8_t *dst, uint8_t value, uint16_t size );
 
 
@@ -3538,7 +3505,7 @@ void memset1( uint8_t *dst, uint8_t value, uint16_t size );
 
 
 int8_t Nibble2HexChar( uint8_t a );
-# 179 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 152 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32( uint8_t *buffer, uint16_t length );
 
 
@@ -3548,12 +3515,10 @@ uint32_t Crc32( uint8_t *buffer, uint16_t length );
 
 
 uint32_t Crc32Init( void );
-# 198 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 171 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32Update( uint32_t crcInit, uint8_t *buffer, uint16_t length );
-# 207 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 180 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 uint32_t Crc32Finalize( uint32_t crc );
-# 218 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
-uint16_t crc_calc(uint16_t crc, uint8_t *start, uint8_t *end);
 
 
 
@@ -3564,7 +3529,7 @@ uint16_t crc_calc(uint16_t crc, uint8_t *start, uint8_t *end);
 
 
 #define CRITICAL_SECTION_END() BoardCriticalSectionEnd( &mask )
-# 241 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/helper/utilities.h"
+# 203 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h"
 void BoardCriticalSectionBegin( uint32_t *mask );
 
 
@@ -3573,11 +3538,11 @@ void BoardCriticalSectionBegin( uint32_t *mask );
 
 
 void BoardCriticalSectionEnd( uint32_t *mask );
-# 29 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/board.h"
+# 29 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/board.h"
 #define __BOARD_H__ 
-# 36 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/board.h"
+# 36 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/board.h"
 enum BoardPowerSources
 {
     USB_POWER = 0,
@@ -3618,7 +3583,7 @@ uint8_t BoardGetPotiLevel( void );
 
 
 uint32_t BoardGetBatteryVoltage( void );
-# 86 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/board.h"
+# 86 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/board.h"
 uint8_t BoardGetBatteryLevel( void );
 
 
@@ -3653,13 +3618,31 @@ uint8_t GetBoardPowerSource( void );
 
 
 Version_t BoardGetVersion( void );
-# 30 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h"
+# 30 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h"
 #define __RTC_BOARD_H__ 
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h"
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+
+
+
+
+
+
+
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
+# 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
+#define _STDBOOL_H 
+
+
+
+#define bool _Bool
+#define true 1
+#define false 0
+# 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
+#define __bool_true_false_are_defined 1
+# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 #define __TIMER_H__ 
 
 
@@ -3668,7 +3651,7 @@ Version_t BoardGetVersion( void );
 
 
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 2
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 2
 
 
 
@@ -3680,14 +3663,14 @@ typedef struct TimerEvent_s
     uint32_t Timestamp;
     uint32_t ReloadValue;
     
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
    _Bool 
-# 42 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 42 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
         IsStarted;
     
-# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
    _Bool 
-# 43 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
         IsNext2Expire;
     void ( *Callback )( void* context );
     void *Context;
@@ -3700,7 +3683,7 @@ typedef struct TimerEvent_s
 
 typedef uint32_t TimerTime_t;
 #define TIMERTIME_T_MAX ( ( uint32_t )~0 )
-# 66 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 66 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 void TimerInit( TimerEvent_t *obj, void ( *callback )( void *context ) );
 
 
@@ -3722,11 +3705,11 @@ void TimerIrqHandler( void );
 
 
 void TimerStart( TimerEvent_t *obj );
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h" 3 4
 _Bool 
-# 96 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
     TimerIsStarted( TimerEvent_t *obj );
 
 
@@ -3757,16 +3740,16 @@ void TimerSetValue( TimerEvent_t *obj, uint32_t value );
 
 
 TimerTime_t TimerGetCurrentTime( void );
-# 135 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 135 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 TimerTime_t TimerGetElapsedTime( TimerTime_t past );
-# 146 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
+# 146 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/timer.h"
 TimerTime_t TimerTempCompensation( TimerTime_t period, float temperature );
 
 
 
 
 void TimerProcess( void );
-# 34 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h" 2
+# 34 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h" 2
 
 
 
@@ -3838,14 +3821,14 @@ void RtcSetMcuWakeUpTime( void );
 
 
 int16_t RtcGetMcuWakeUpTime( void );
-# 113 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h"
+# 113 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h"
 void RtcSetAlarm( uint32_t timeout );
 
 
 
 
 void RtcStopAlarm( void );
-# 127 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h"
+# 127 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h"
 void RtcStartAlarm( uint32_t timeout );
 
 
@@ -3904,11 +3887,11 @@ void RtcBkupRead( uint32_t* data0, uint32_t* data1 );
 
 
 void RtcProcess( void );
-# 195 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/rtc-board.h"
+# 195 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h"
 TimerTime_t RtcTempCompensation( TimerTime_t period, float temperature );
-# 31 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/gps-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/gps-board.h"
+# 31 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/gps-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/gps-board.h"
 #define __GPS_BOARD_H__ 
 
 
@@ -3916,8 +3899,8 @@ TimerTime_t RtcTempCompensation( TimerTime_t period, float temperature );
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 #define __UART_H__ 
 
 
@@ -3925,10 +3908,10 @@ TimerTime_t RtcTempCompensation( TimerTime_t period, float temperature );
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
 #define __FIFO_H__ 
-# 37 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
 typedef struct Fifo_s
 {
     uint16_t Begin;
@@ -3936,7 +3919,7 @@ typedef struct Fifo_s
     uint8_t *Data;
     uint16_t Size;
 }Fifo_t;
-# 52 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
+# 52 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
 void FifoInit( Fifo_t *fifo, uint8_t *buffer, uint16_t size );
 
 
@@ -3969,9 +3952,9 @@ void FifoFlush( Fifo_t *fifo );
 
 
 
-# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 3 4
+# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 3 4
 _Bool 
-# 83 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
+# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
     IsFifoEmpty( Fifo_t *fifo );
 
 
@@ -3981,13 +3964,13 @@ _Bool
 
 
 
-# 91 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 3 4
+# 91 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h" 3 4
 _Bool 
-# 91 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
+# 91 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/fifo.h"
     IsFifoFull( Fifo_t *fifo );
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
-# 28 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 1
+# 28 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 #define __GPIO_H__ 
 
 
@@ -3996,22 +3979,22 @@ _Bool
 
 
 
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-board.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-board.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-board.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-board.h"
 #define __PIN_NAME_BOARD_H__ 
 
 
 
 
 #define MCU_PINS P0, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, P33, P34, P35, P36, P37, P38, P39, P40, P41, P42, P43, P44, P45, P46, P47
-# 37 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-ioe.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/pinName-ioe.h"
+# 37 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-ioe.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pinName-ioe.h"
 #define __PIN_NAME_IOE_H__ 
 
 
 #define IOE_PINS IOE_0, IOE_1, IOE_2, IOE_3, IOE_4, IOE_5, IOE_6, IOE_7, IOE_8, IOE_9, IOE_10, IOE_11, IOE_12, IOE_13, IOE_14, IOE_15
-# 38 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h" 2
 
 
 
@@ -4096,7 +4079,7 @@ typedef struct
     void* Context;
     GpioIrqHandler* IrqHandler;
 }Gpio_t;
-# 134 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 134 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 void GpioInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinTypes type, uint32_t value );
 
 
@@ -4106,7 +4089,7 @@ void GpioInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinT
 
 
 void GpioSetContext( Gpio_t *obj, void* context );
-# 155 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
+# 155 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gpio.h"
 void GpioSetInterrupt( Gpio_t *obj, IrqModes irqMode, IrqPriorities irqPriority, GpioIrqHandler *irqHandler );
 
 
@@ -4138,7 +4121,7 @@ void GpioToggle( Gpio_t *obj );
 
 
 uint32_t GpioRead( Gpio_t *obj );
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 2
+# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 2
 
 
 
@@ -4166,9 +4149,9 @@ typedef struct
 {
     UartId_t UartId;
     
-# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 3 4
+# 59 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h" 3 4
    _Bool 
-# 59 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 59 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
         IsInitialized;
     Gpio_t Tx;
     Gpio_t Rx;
@@ -4230,9 +4213,9 @@ typedef enum
     CTS_FLOW_CTRL,
     RTS_CTS_FLOW_CTRL
 }FlowCtrl_t;
-# 128 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 128 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 void UartInit( Uart_t *obj, UartId_t uartId, PinNames tx, PinNames rx );
-# 143 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 143 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 void UartConfig( Uart_t *obj, UartMode_t mode, uint32_t baudrate, WordLength_t wordLength, StopBits_t stopBits, Parity_t parity, FlowCtrl_t flowCtrl );
 
 
@@ -4241,15 +4224,15 @@ void UartConfig( Uart_t *obj, UartMode_t mode, uint32_t baudrate, WordLength_t w
 
 
 void UartDeInit( Uart_t *obj );
-# 159 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 159 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 uint8_t UartPutChar( Uart_t *obj, uint8_t data );
-# 169 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 169 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 uint8_t UartPutBuffer( Uart_t *obj, uint8_t *buffer, uint16_t size );
-# 178 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 178 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 uint8_t UartGetChar( Uart_t *obj, uint8_t *data );
-# 189 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
+# 189 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.h"
 uint8_t UartGetBuffer( Uart_t *obj, uint8_t *buffer, uint16_t size, uint16_t *nbReadBytes );
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/component/core/board/rak4631/gps-board.h" 2
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/gps-board.h" 2
 
 
 
@@ -4296,11 +4279,11 @@ void GpsMcuProcess( void );
 
 
 void GpsMcuIrqNotify( UartNotifyId_t id );
-# 32 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
-# 1 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h" 1
-# 24 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
+# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h" 1
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
 #define __GPS_H__ 
-# 35 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
+# 35 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
 typedef struct
 {
     char NmeaDataType[6];
@@ -4346,9 +4329,9 @@ void GpsProcess( void );
 
 
 void GpsPpsHandler( 
-# 79 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h" 3 4
+# 79 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h" 3 4
                    _Bool 
-# 79 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
+# 79 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
                         *parseData );
 
 
@@ -4357,9 +4340,9 @@ void GpsPpsHandler(
 
 
 
-# 86 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h" 3 4
+# 86 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h" 3 4
 _Bool 
-# 86 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
+# 86 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
     GpsGetPpsDetectedState( void );
 
 
@@ -4368,9 +4351,9 @@ _Bool
 
 
 
-# 93 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h" 3 4
+# 93 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h" 3 4
 _Bool 
-# 93 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
+# 93 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
     GpsHasFix( void );
 
 
@@ -4384,11 +4367,11 @@ void GpsConvertPositionIntoBinary( void );
 
 
 void GpsConvertPositionFromStringToNumerical( void );
-# 116 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
+# 116 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
 uint8_t GpsGetLatestGpsPositionDouble ( double *lati, double *longi );
-# 127 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
+# 127 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
 uint8_t GpsGetLatestGpsPositionBinary ( int32_t *latiBin, int32_t *longiBin );
-# 139 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
+# 139 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.h"
 uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize );
 
 
@@ -4407,7 +4390,7 @@ void GpsFormatGpsData( void );
 
 
 void GpsResetPosition( void );
-# 33 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
+# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 2
 
 #define TRIGGER_GPS_CNT 10
 
@@ -4426,9 +4409,9 @@ const int32_t MaxWestPosition = 8388608;
 NmeaGpsData_t NmeaGpsData;
 
 static double HasFix = 
-# 50 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 50 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                       0
-# 50 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 50 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                            ;
 static double Latitude = 0;
 static double Longitude = 0;
@@ -4441,40 +4424,40 @@ static int16_t Altitude = ( int16_t )0xFFFF;
 static uint32_t PpsCnt = 0;
 
 
-# 61 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 61 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
 _Bool 
-# 61 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 61 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
     PpsDetected = 
-# 61 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 61 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                   0
-# 61 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 61 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                        ;
 
 void GpsPpsHandler( 
-# 63 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 63 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                    _Bool 
-# 63 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 63 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                         *parseData )
 {
     PpsDetected = 
-# 65 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 65 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                  1
-# 65 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 65 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                      ;
     PpsCnt++;
     *parseData = 
-# 67 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 67 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                 0
-# 67 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 67 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                      ;
 
     if( PpsCnt >= 10 )
     {
         PpsCnt = 0;
         *parseData = 
-# 72 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 72 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                     1
-# 72 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 72 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                         ;
     }
 }
@@ -4482,9 +4465,9 @@ void GpsPpsHandler(
 void GpsInit( void )
 {
     PpsDetected = 
-# 78 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 78 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                  0
-# 78 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 78 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                       ;
     GpsMcuInit( );
 }
@@ -4505,36 +4488,36 @@ void GpsProcess( void )
 }
 
 
-# 97 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 97 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
 _Bool 
-# 97 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 97 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
     GpsGetPpsDetectedState( void )
 {
     
-# 99 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 99 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
    _Bool 
-# 99 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 99 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
         state = 
-# 99 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 99 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                 0
-# 99 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 99 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                      ;
 
     uint32_t mask; BoardCriticalSectionBegin( &mask );
     state = PpsDetected;
     PpsDetected = 
-# 103 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 103 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                  0
-# 103 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 103 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                       ;
     BoardCriticalSectionEnd( &mask );
     return state;
 }
 
 
-# 108 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 108 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
 _Bool 
-# 108 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 108 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
     GpsHasFix( void )
 {
     return HasFix;
@@ -4616,14 +4599,14 @@ void GpsConvertPositionFromStringToNumerical( void )
 
 uint8_t GpsGetLatestGpsPositionDouble( double *lati, double *longi )
 {
-    uint8_t status = 1;
+    uint8_t status = 0;
     if( HasFix == 
-# 190 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 190 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                  1 
-# 190 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 190 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                       )
     {
-        status = 0;
+        status = 1;
     }
     else
     {
@@ -4636,16 +4619,16 @@ uint8_t GpsGetLatestGpsPositionDouble( double *lati, double *longi )
 
 uint8_t GpsGetLatestGpsPositionBinary( int32_t *latiBin, int32_t *longiBin )
 {
-    uint8_t status = 1;
+    uint8_t status = 0;
 
     uint32_t mask; BoardCriticalSectionBegin( &mask );
     if( HasFix == 
-# 208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                  1 
-# 208 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                       )
     {
-        status = 0;
+        status = 1;
     }
     else
     {
@@ -4661,9 +4644,9 @@ int16_t GpsGetLatestGpsAltitude( void )
 {
     uint32_t mask; BoardCriticalSectionBegin( &mask );
     if( HasFix == 
-# 225 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 225 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                  1 
-# 225 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 225 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                       )
     {
         Altitude = atoi( NmeaGpsData.NmeaAltitude );
@@ -4676,7 +4659,7 @@ int16_t GpsGetLatestGpsAltitude( void )
 
     return Altitude;
 }
-# 246 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 246 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
 int32_t GpsNmeaChecksum( int8_t *nmeaStr, int32_t nmeaStrSize, int8_t * checksum )
 {
     int i = 0;
@@ -4684,13 +4667,13 @@ int32_t GpsNmeaChecksum( int8_t *nmeaStr, int32_t nmeaStrSize, int8_t * checksum
 
 
     if( ( nmeaStr == 
-# 252 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 252 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                     ((void *)0) 
-# 252 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 252 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                          ) || ( checksum == 
-# 252 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 252 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                                             ((void *)0) 
-# 252 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 252 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                                                  ) || ( nmeaStrSize <= 1 ) )
     {
         return -1;
@@ -4726,9 +4709,9 @@ int32_t GpsNmeaChecksum( int8_t *nmeaStr, int32_t nmeaStrSize, int8_t * checksum
 
 
 static 
-# 286 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 286 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
       _Bool 
-# 286 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 286 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
            GpsNmeaValidateChecksum( int8_t *serialBuff, int32_t buffSize )
 {
     int32_t checksumIndex;
@@ -4740,9 +4723,9 @@ static
     if( checksumIndex < 0 )
     {
         return 
-# 296 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 296 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
               0
-# 296 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 296 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                    ;
     }
 
@@ -4750,9 +4733,9 @@ static
     if( checksumIndex >= ( buffSize - 2 ) )
     {
         return 
-# 302 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 302 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
               0
-# 302 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 302 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                    ;
     }
 
@@ -4760,17 +4743,17 @@ static
     if( ( serialBuff[checksumIndex] == checksum[0] ) && ( serialBuff[checksumIndex + 1] == checksum[1] ) )
     {
         return 
-# 308 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 308 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
               1
-# 308 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 308 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                   ;
     }
     else
     {
         return 
-# 312 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 312 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
               0
-# 312 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 312 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                    ;
     }
 }
@@ -4784,16 +4767,16 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
     if( rxBuffer[0] != '$' )
     {
         GpsMcuInvertPpsTrigger( );
-        return 1;
+        return 0;
     }
 
     if( GpsNmeaValidateChecksum( rxBuffer, rxBufferSize ) == 
-# 328 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 328 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                                                             0 
-# 328 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 328 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                                                                   )
     {
-        return 1;
+        return 0;
     }
 
     fieldSize = 0;
@@ -4801,7 +4784,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
     {
         if( fieldSize > 6 )
         {
-            return 1;
+            return 0;
         }
     }
     for( j = 0; j < fieldSize; j++, i++ )
@@ -4817,7 +4800,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 11 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4830,7 +4813,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 10 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4843,7 +4826,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 2 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4856,7 +4839,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 11 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4869,7 +4852,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 2 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4882,7 +4865,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 2 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4895,7 +4878,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 3 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4908,7 +4891,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 6 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4921,7 +4904,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 8 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4934,7 +4917,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 2 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4947,7 +4930,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 8 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4960,7 +4943,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 2 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4969,7 +4952,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         }
 
         GpsFormatGpsData( );
-        return 0;
+        return 1;
     }
     else if ( strncmp( ( const char* )NmeaGpsData.NmeaDataType, ( const char* )NmeaDataTypeGPRMC, 5 ) == 0 )
     {
@@ -4979,7 +4962,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 11 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -4992,7 +4975,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 2 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -5005,7 +4988,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 10 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -5018,7 +5001,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 2 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -5031,7 +5014,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 11 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -5044,7 +5027,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 2 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -5057,7 +5040,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 8 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -5070,7 +5053,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 8 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -5083,7 +5066,7 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         {
             if( fieldSize > 8 )
             {
-                return 1;
+                return 0;
             }
         }
         for( j = 0; j < fieldSize; j++, i++ )
@@ -5092,11 +5075,11 @@ uint8_t GpsParseGpsData( int8_t *rxBuffer, int32_t rxBufferSize )
         }
 
         GpsFormatGpsData( );
-        return 0;
+        return 1;
     }
     else
     {
-        return 1;
+        return 0;
     }
 }
 
@@ -5105,25 +5088,25 @@ void GpsFormatGpsData( void )
     if( strncmp( ( const char* )NmeaGpsData.NmeaDataType, ( const char* )NmeaDataTypeGPGGA, 5 ) == 0 )
     {
         HasFix = ( NmeaGpsData.NmeaFixQuality[0] > 0x30 ) ? 
-# 641 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 641 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                                                            1 
-# 641 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 641 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                                                                 : 
-# 641 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 641 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                                                                   0
-# 641 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 641 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                                                                        ;
     }
     else if ( strncmp( ( const char* )NmeaGpsData.NmeaDataType, ( const char* )NmeaDataTypeGPRMC, 5 ) == 0 )
     {
         HasFix = ( NmeaGpsData.NmeaDataStatus[0] == 0x41 ) ? 
-# 645 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 645 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                                                             1 
-# 645 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 645 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                                                                  : 
-# 645 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
+# 645 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c" 3 4
                                                                    0
-# 645 "/home/jenkins/workspace/RUI_RAK4631_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
+# 645 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/gps.c"
                                                                         ;
     }
     GpsConvertPositionFromStringToNumerical( );

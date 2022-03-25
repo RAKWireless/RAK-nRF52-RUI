@@ -1,3 +1,4 @@
+#ifdef SUPPORT_LORA
 #include <string.h>
 
 #include "atcmd.h"
@@ -25,6 +26,7 @@ int At_AppEui (SERIAL_PORT port, char *cmd, stParam *param)
         if (service_lora_get_app_eui(rbuff, 8) != UDRV_RETURN_OK) {
             return AT_ERROR;
         }
+        atcmd_printf("%s=", cmd);
         dump_hex2str(rbuff, 8);
         return AT_OK;
     } else if (param->argc == 1) {
@@ -76,6 +78,7 @@ int At_AppKey (SERIAL_PORT port, char *cmd, stParam *param)
         if (service_lora_get_app_key(rbuff, 16) != UDRV_RETURN_OK) {
             return AT_ERROR;
         }
+        atcmd_printf("%s=", cmd);
         dump_hex2str(rbuff, 16);
         return AT_OK;
     } else if (param->argc == 1) {
@@ -127,6 +130,7 @@ int At_AppSKey (SERIAL_PORT port, char *cmd, stParam *param)
         if (service_lora_get_app_skey(rbuff, 16) != UDRV_RETURN_OK) {
             return AT_ERROR;
         }
+        atcmd_printf("%s=", cmd);
         dump_hex2str(rbuff, 16);
         return AT_OK;
     } else if (param->argc == 1) {
@@ -178,6 +182,7 @@ int At_DevAddr (SERIAL_PORT port, char *cmd, stParam *param)
         if (service_lora_get_dev_addr(rbuff, 4) != UDRV_RETURN_OK) {
             return AT_ERROR;
         }
+        atcmd_printf("%s=", cmd);
         for (int i = 0 ; i < 4 ; i++) {
             atcmd_printf("%02X", rbuff[i]);
         }
@@ -232,6 +237,7 @@ int At_DevEui (SERIAL_PORT port, char *cmd, stParam *param)
         if (service_lora_get_dev_eui(rbuff, 8) != UDRV_RETURN_OK) {
             return AT_ERROR;
         }
+        atcmd_printf("%s=", cmd);
         dump_hex2str(rbuff, 8);
         return AT_OK;
     } else if (param->argc == 1) {
@@ -284,6 +290,7 @@ int At_NetId (SERIAL_PORT port, char *cmd, stParam *param)
             return AT_ERROR;
         }
         //XXX: These 3 bytes are MSB first!
+        atcmd_printf("%s=", cmd);
         for(int i = 2 ; i >= 0 ; i--) {
             atcmd_printf("%02X", rbuff[i]);
         }
@@ -330,6 +337,7 @@ int At_NwkSKey (SERIAL_PORT port, char *cmd, stParam *param)
         if (service_lora_get_nwk_skey(rbuff, 16) != UDRV_RETURN_OK) {
             return AT_ERROR;
         }
+        atcmd_printf("%s=", cmd);
         dump_hex2str(rbuff, 16);
         return AT_OK;
     } else if (param->argc == 1) {
@@ -369,4 +377,5 @@ int At_NwkSKey (SERIAL_PORT port, char *cmd, stParam *param)
         return AT_PARAM_ERROR;
     }
 }
+#endif
 

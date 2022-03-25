@@ -23,7 +23,7 @@ class sleep {
   public:
   sleep();
 
-  void cpu(uint32_t ms_time = POWERSAVE_NO_TIMEOUT);
+  void cpu(uint32_t ms_time);
 
   /**@par	Description
    *    	Sleep the cpu with default no timeout
@@ -46,7 +46,7 @@ class sleep {
    */
   void cpu(int ms_time = POWERSAVE_NO_TIMEOUT);
 
-  void lora(uint32_t ms_time = POWERSAVE_NO_TIMEOUT);
+  void lora(uint32_t ms_time);
 
   /**@par	Description
    *    	Sleep lora with default no timeout.
@@ -69,7 +69,7 @@ class sleep {
    */
   void lora(int ms_time = POWERSAVE_NO_TIMEOUT);
 
-  void all(uint32_t ms_time = POWERSAVE_NO_TIMEOUT);
+  void all(uint32_t ms_time);
 
   /**@par	Description
    *      	Sleep all component with default no timeout.
@@ -98,7 +98,7 @@ class sleep {
    * @par	Syntax
    *      	api.system.sleep.setup(mode);
    * @param  	mode 		This decide to use Rising or Falling trigger mode
-   * @param  	pin(optional)	The default pin to sleep
+   * @param  	pin		This is the pin to be chosen as the wakeup source
    *
    * @retval void
    * @par       Example
@@ -114,6 +114,6 @@ class sleep {
      }
      @endverbatim
    */
-  void setup(RUI_WAKEUP_TRIGGER_MODE mode, uint32_t pin = UDRV_GPIO_DEFAULT_PIN);
+  void setup(RUI_WAKEUP_TRIGGER_MODE mode, uint32_t pin);
 };
 #endif

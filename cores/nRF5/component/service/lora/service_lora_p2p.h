@@ -35,6 +35,7 @@ extern "C" {
 typedef struct {
     bool isRxCancel;
     bool isRadioBusy;
+    bool isContinue;
 }LORA_P2P_STATUS_ST;
 
 typedef struct rui_lora_p2p_revc

@@ -15,6 +15,7 @@ extern "C" {
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "board_basic.h"
 
 typedef enum  {
     UDRV_SPIMST_0 = 0x0,

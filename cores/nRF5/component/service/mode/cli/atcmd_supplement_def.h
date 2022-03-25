@@ -70,15 +70,6 @@
 #endif
 #define ATCMD_BAND             "AT+BAND"
 
-#define ATCMD_DELBONDS         "AT+DELBONDS"
-
-#define ATCMD_TRSSI            "AT+TRSSI"
-#define ATCMD_TTONE            "AT+TTONE"
-#define ATCMD_TTX              "AT+TTX"
-#define ATCMD_TRX              "AT+TRX"
-#define ATCMD_TCONF            "AT+TCONF"
-#define ATCMD_TTH              "AT+TTH"
-#define ATCMD_TOFF             "AT+TOFF"
-#define ATCMD_CERTIF           "AT+CERTIF"
+//#define ATCMD_DELBONDS         "AT+DELBONDS"
 
 #endif //_ATCMD_SUPPLE_DEF_H_

@@ -16,8 +16,6 @@ extern "C" {
 #include <stdint.h>
 #include "pin_define.h"
 
-#define UDRV_GPIO_DEFAULT_PIN UINT32_MAX//Default UART RX pin
-
 typedef void (*gpio_isr_func) (uint32_t irq_num);
 
 typedef enum
@@ -57,10 +55,15 @@ typedef enum
 } gpio_intc_trigger_mode_t;
 
 /**
- * @brief   Initialize GPIO hardware to operate in correct voltage level.
+ * @brief   Initialize a GPIO pin.
+ *
+ * @param   pin                             GPIO pin number.
+ * @param   dir                             The GPIO direction(in or out).
+ * @param   pull                            GPIO pull up or down.
+ * @param   logic                           GPIO logic high or low.
  *
  */
-void udrv_gpio_init();
+void udrv_gpio_init(uint32_t pin, gpio_dir_t dir, gpio_pull_t pull, gpio_logic_t logic);
 
 /**
  * @brief   Set GPIO direction.
@@ -125,7 +128,7 @@ void udrv_gpio_intc_trigger_mode(uint32_t pin, gpio_intc_trigger_mode_t mode);
  * @return  -1                              The operation error.
  * @return   0                              The operation completed successfully.         
  */
-int8_t udrv_gpio_register_isr(uint32_t pin, gpio_isr_func handler);
+int32_t udrv_gpio_register_isr(uint32_t pin, gpio_isr_func handler);
 
 /**
  * @brief   clear the interrupt trigger.
@@ -176,6 +179,8 @@ void udrv_gpio_suspend();
  *
  */
 void udrv_gpio_resume();
+
+void udrv_gpio_handler_handler (void *pdata);
 
 #ifdef __cplusplus
 }

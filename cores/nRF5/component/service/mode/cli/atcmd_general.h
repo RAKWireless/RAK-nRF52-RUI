@@ -19,6 +19,10 @@ int At_GetCliVersion (SERIAL_PORT port, char *cmd, stParam *param);
 int At_GetApiVersion (SERIAL_PORT port, char *cmd, stParam *param);
 int At_GetHwModel (SERIAL_PORT port, char *cmd, stParam *param);
 int At_GetHwID (SERIAL_PORT port, char *cmd, stParam *param);
+int At_Alias (SERIAL_PORT port, char *cmd, stParam *param);
+#endif
+#ifdef rak3172
+int At_GetUid (SERIAL_PORT port, char *cmd, stParam *param);
 #endif
 
 #endif //_ATCMD_GENERAL_H_

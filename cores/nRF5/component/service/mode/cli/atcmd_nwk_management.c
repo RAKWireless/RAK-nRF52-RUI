@@ -1,3 +1,4 @@
+#ifdef SUPPORT_LORA
 #include <string.h>
 
 #include "atcmd.h"
@@ -6,12 +7,15 @@
 #include "service_lora.h"
 
 int At_ADR (SERIAL_PORT port, char *cmd, stParam *param) {
+
+    UDRV_RETURN_CODE status;
+
     if(SERVICE_LORAWAN != service_lora_get_nwm())
     {
         return AT_MODE_NO_SUPPORT;
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%d\r\n", service_lora_get_adr());
+        atcmd_printf("%s=%d\r\n", cmd, service_lora_get_adr());
         return AT_OK;
     } else if (param->argc == 1) {
         uint32_t adr;
@@ -27,11 +31,24 @@ int At_ADR (SERIAL_PORT port, char *cmd, stParam *param) {
             return AT_PARAM_ERROR;
         }
 
-        if (service_lora_set_adr((bool)adr, true) != UDRV_RETURN_OK) {
+        status = service_lora_set_adr((bool)adr, true);
+
+        if (status == UDRV_RETURN_OK)
+        {
+            return AT_OK;
+        }
+        else if (status == -UDRV_BUSY) 
+        {
+            return AT_BUSY_ERROR;
+        }
+        else if (status == -UDRV_WRONG_ARG)
+        {
+            return AT_PARAM_ERROR;
+        }
+        else
+        {
             return AT_ERROR;
         }
-
-        return AT_OK;
     } else {
         return AT_PARAM_ERROR;
     }
@@ -45,30 +62,30 @@ int At_Class (SERIAL_PORT port, char *cmd, stParam *param) {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
         switch (service_lora_get_class()) {
             case SERVICE_LORA_CLASS_A:
-                atcmd_printf("A\r\n");
+                atcmd_printf("%s=A\r\n", cmd);
                 break;
             case SERVICE_LORA_CLASS_B:
                 switch (service_lora_get_class_b_state()) {
                     case SERVICE_LORA_CLASS_B_S0:
-                        atcmd_printf("B,S0\r\n");
+                        atcmd_printf("%s=B:S0\r\n", cmd);
                         break;
                     case SERVICE_LORA_CLASS_B_S1:
-                        atcmd_printf("B,S1\r\n");
+                        atcmd_printf("%s=B:S1\r\n", cmd);
                         break;
                     case SERVICE_LORA_CLASS_B_S2:
-                        atcmd_printf("B,S2\r\n");
+                        atcmd_printf("%s=B:S2\r\n", cmd);
                         break;
                     case SERVICE_LORA_CLASS_B_S3:
-                        atcmd_printf("B,S3\r\n");
+                        atcmd_printf("%s=B:S3\r\n", cmd);
                         break;
                     case SERVICE_LORA_CLASS_B_COMPLETED:
                     default:
-                        atcmd_printf("B\r\n");
+                        atcmd_printf("%s=B\r\n", cmd);
                         break;
                 }
                 break;
             case SERVICE_LORA_CLASS_C:
-                atcmd_printf("C\r\n");
+                atcmd_printf("%s=C\r\n", cmd);
                 break;
             default:
                 return AT_ERROR;
@@ -105,7 +122,7 @@ int At_DCS (SERIAL_PORT port, char *cmd, stParam *param) {
         return AT_MODE_NO_SUPPORT;
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%d\r\n", service_lora_get_dcs());
+        atcmd_printf("%s=%d\r\n", cmd, service_lora_get_dcs());
         return AT_OK;
     } else {
         uint8_t dcs;
@@ -132,7 +149,7 @@ int At_DataRate (SERIAL_PORT port, char *cmd, stParam *param)
     int32_t ret;
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%u\r\n", service_lora_get_dr());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_dr());
         return AT_OK;
     } else if (param->argc == 1) {
         uint32_t dr;
@@ -167,7 +184,7 @@ int At_RxWin1JoinDelay (SERIAL_PORT port, char *cmd, stParam *param) {
         return AT_MODE_NO_SUPPORT;
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%u\r\n", service_lora_get_jn1dl());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_jn1dl()/1000);//change unit from ms to s
         return AT_OK;
     } else if (param->argc == 1) {
         uint32_t jn1dl;
@@ -179,15 +196,15 @@ int At_RxWin1JoinDelay (SERIAL_PORT port, char *cmd, stParam *param) {
         }
 
         jn1dl = strtoul(param->argv[0], NULL, 10);
-        if (jn1dl == 0 || jn1dl > 15000) {//unit is milli-second
+        if (jn1dl < 1 || jn1dl > 14) {//unit is second
             return AT_PARAM_ERROR;
         }
 
-        if (jn1dl >= service_lora_get_jn2dl()) {
+        if (jn1dl >= service_lora_get_jn2dl()/1000) {//change unit from ms to s
             return AT_PARAM_ERROR;
         }
 
-        if (service_lora_set_jn1dl(jn1dl, true) != UDRV_RETURN_OK) {//change unit from s to ms
+        if (service_lora_set_jn1dl(jn1dl*1000, true) != UDRV_RETURN_OK) {//change unit from s to ms
             return AT_ERROR;
         }
 
@@ -203,7 +220,7 @@ int At_RxWin2JoinDelay (SERIAL_PORT port, char *cmd, stParam *param) {
         return AT_MODE_NO_SUPPORT;
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%u\r\n", service_lora_get_jn2dl());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_jn2dl()/1000);//change unit from ms to s
         return AT_OK;
     } else if (param->argc == 1) {
         uint32_t jn2dl;
@@ -215,15 +232,15 @@ int At_RxWin2JoinDelay (SERIAL_PORT port, char *cmd, stParam *param) {
         }
         
         jn2dl = strtoul(param->argv[0], NULL, 10);
-        if (jn2dl == 0 || jn2dl > 15000) {//unit is milli-second
+        if (jn2dl < 2 || jn2dl > 15) {//unit is Second
             return AT_PARAM_ERROR;
         }
 
-        if (jn2dl <= service_lora_get_jn1dl()) {
+        if (jn2dl <= service_lora_get_jn1dl()/1000) {//change unit from ms to s
             return AT_PARAM_ERROR;
         }
 
-        if (service_lora_set_jn2dl(jn2dl, true) != UDRV_RETURN_OK) {//change unit from s to ms
+        if (service_lora_set_jn2dl(jn2dl*1000, true) != UDRV_RETURN_OK) {//change unit from s to ms
             return AT_ERROR;
         }
 
@@ -239,7 +256,7 @@ int At_PubNwkMode (SERIAL_PORT port, char *cmd, stParam *param) {
         return AT_MODE_NO_SUPPORT;
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%d\r\n", service_lora_get_pub_nwk_mode());
+        atcmd_printf("%s=%d\r\n", cmd, service_lora_get_pub_nwk_mode());
         return AT_OK;
     } else if (param->argc == 1) {
         uint32_t pnm;
@@ -271,7 +288,7 @@ int At_RxWin1Delay (SERIAL_PORT port, char *cmd, stParam *param) {
         return AT_MODE_NO_SUPPORT;
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%u\r\n", service_lora_get_rx1dl());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_rx1dl()/1000);//change unit from ms to s
         return AT_OK;
     } else if (param->argc == 1) {
         uint32_t rx1dl;
@@ -283,15 +300,11 @@ int At_RxWin1Delay (SERIAL_PORT port, char *cmd, stParam *param) {
         }
 
         rx1dl = strtoul(param->argv[0], NULL, 10);
-        if (rx1dl == 0 || rx1dl > 15000) {//unit is milli-second
+        if (rx1dl < 1 || rx1dl > 15) {//unit is second
             return AT_PARAM_ERROR;
         }
 
-        if (rx1dl >= service_lora_get_rx2dl()) {
-            return AT_PARAM_ERROR;
-        }
-
-        if (service_lora_set_rx1dl(rx1dl, true) != UDRV_RETURN_OK) {//change unit from s to ms
+        if (service_lora_set_rx1dl(rx1dl*1000, true) != UDRV_RETURN_OK) {//change unit from s to ms
             return AT_ERROR;
         }
 
@@ -307,7 +320,7 @@ int At_RxWin2Delay (SERIAL_PORT port, char *cmd, stParam *param) {
         return AT_MODE_NO_SUPPORT;
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%u\r\n", service_lora_get_rx2dl());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_rx2dl()/1000);//change unit from ms to s
         return AT_OK;
     } else if (param-> argc == 1) {
         uint32_t rx2dl;
@@ -319,15 +332,11 @@ int At_RxWin2Delay (SERIAL_PORT port, char *cmd, stParam *param) {
         }
 
         rx2dl = strtoul(param->argv[0], NULL, 10);
-        if (rx2dl == 0 || rx2dl > 15000) {//unit is milli-second
+        if (rx2dl < 2 || rx2dl > 16) {//unit is second
             return AT_PARAM_ERROR;
         }
 
-        if (rx2dl <= service_lora_get_rx1dl()) {
-            return AT_PARAM_ERROR;
-        }
-
-        if (service_lora_set_rx2dl(rx2dl, true) != UDRV_RETURN_OK) {//change unit from s to ms
+        if (service_lora_set_rx2dl(rx2dl*1000, true) != UDRV_RETURN_OK) {//change unit from s to ms
             return AT_ERROR;
         }
 
@@ -345,7 +354,7 @@ int At_RxWin2DataRate (SERIAL_PORT port, char *cmd, stParam *param) {
     int32_t ret;
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%u\r\n", service_lora_get_rx2dr());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_rx2dr());
         return AT_OK;
     } else if (param->argc == 1) {
         uint32_t dr;
@@ -385,7 +394,7 @@ int At_RxWin2Freq (SERIAL_PORT port, char *cmd, stParam *param)
 
     if(param->argc == 1 && !strcmp(param->argv[0], "?")) 
     {
-        atcmd_printf("%u\r\n", service_lora_get_rx2freq());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_rx2freq());
         return AT_OK;
     } 
     else if(param->argc == 1)
@@ -426,7 +435,7 @@ int At_TxPower (SERIAL_PORT port, char *cmd, stParam *param) {
     int32_t ret;
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
-        atcmd_printf("%u\r\n", service_lora_get_txpower());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_txpower());
         return AT_OK;
     } else if (param->argc == 1) {
         uint8_t txp;
@@ -465,7 +474,7 @@ int At_LinkCheck(SERIAL_PORT port, char *cmd, stParam *param)
 
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%d\r\n", service_lora_get_linkcheck());
+        atcmd_printf("%s=%d\r\n", cmd, service_lora_get_linkcheck());
         return AT_OK;
     }
     else
@@ -486,4 +495,4 @@ int At_LinkCheck(SERIAL_PORT port, char *cmd, stParam *param)
         return service_lora_set_linkcheck(linkcheck_mode);
     }
 }
-
+#endif

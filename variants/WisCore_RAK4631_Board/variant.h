@@ -1,73 +1,107 @@
-/*
-  Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
-  Copyright (c) 2016 Sandeep Mistry All right reserved.
-  Copyright (c) 2018, Adafruit Industries (adafruit.com)
-
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU Lesser General Public License for more details.
-  You should have received a copy of the GNU Lesser General Public
-  License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
 #ifndef _VARIANT_RAK4630_
 #define _VARIANT_RAK4630_
 
-#define RAK4630
+/*----------------------------------------------------------------------------
+ *        Definitions
+ *----------------------------------------------------------------------------*/
 
-/** Master clock frequency */
-#define VARIANT_MCK (64000000ul)
-
-#define USE_LFXO // Board uses 32khz crystal for LF
-// define USE_LFRC    // Board uses RC for LF
+//TODO
 
 /*----------------------------------------------------------------------------
  *        Headers
  *----------------------------------------------------------------------------*/
-
-#include "WVariant.h"
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif // __cplusplus
 
-	/*
+/*----------------------------------------------------------------------------
+ *        Pins
+ *----------------------------------------------------------------------------*/
+
+#define PINS_COUNT           (37u)
+#define NUM_DIGITAL_PINS     (35u)
+#define NUM_ANALOG_INPUTS    (2u)
+#define NUM_ANALOG_OUTPUTS   (0u)
+
+#define P0_00                0//XL1(RAK4630 internal)
+#define P0_01                1//XL2(RAK4630 internal)
+#define P0_02                2//QSPI_DIO3
+#define P0_03                3//QSPI_CLK
+#define P0_04                4//IO4
+#define P0_05                5//AIN0
+#define P0_09                9//IO5_NFC1
+#define P0_10                10//IO6_NFC2
+#define P0_13                13//I2C1_SDA
+#define P0_14                14//I2C1_SCL
+#define P0_15                15//UART2_RX
+#define P0_16                16//UART2_TX
+#define P0_17                17//UART2_DE
+#define P0_18                18//RST
+#define P0_19                19//UART1_RX
+#define P0_20                20//UART1_TX
+#define P0_21                21//UART1_DE
+#define P0_24                24//I2C2_SDA
+#define P0_25                25//I2C2_SCL
+#define P0_26                26//QSPI_CS
+#define P0_28                28//QSPI_DIO2
+#define P0_29                29//QSPI_DIO1
+#define P0_30                30//QSPI_DIO0
+#define P0_31                31//AIN1
+#define P1_01                33//SW1
+#define P1_02                34//SW2
+#define P1_03                35//LED1
+#define P1_04                36//LED2
+#define P1_05                37//ANT_SW(RAK4630 internal)
+#define P1_06                38//NRESET(RAK4630 internal)
+#define P1_07                39//DIO2(RAK4630 internal)
+#define P1_10                42//SPI_NSS(RAK4630 internal)
+#define P1_11                43//SPI_CLK(RAK4630 internal)
+#define P1_12                44//SPI_MOSI(RAK4630 internal)
+#define P1_13                45//SPI_MISO(RAK4630 internal)
+#define P1_14                46//BUSY(RAK4630 internal)
+#define P1_15                47//DIO1(RAK4630 internal)
+
+/*
  * WisBlock Base GPIO definitions
  */
-	static const uint8_t WB_IO1 = 17;	   // SLOT_A SLOT_B
-	static const uint8_t WB_IO2 = 34;	   // SLOT_A SLOT_B
-	static const uint8_t WB_IO3 = 21;	   // SLOT_C
-	static const uint8_t WB_IO4 = 4;	   // SLOT_C
-	static const uint8_t WB_IO5 = 9;	   // SLOT_D
-	static const uint8_t WB_IO6 = 10;	   // SLOT_D
-	static const uint8_t WB_SW1 = 33;	   // IO_SLOT
-	static const uint8_t WB_A0 = 5;		   // IO_SLOT
-	static const uint8_t WB_A1 = 31;	   // IO_SLOT
-	static const uint8_t WB_I2C1_SDA = 13; // SENSOR_SLOT IO_SLOT
-	static const uint8_t WB_I2C1_SCL = 14; // SENSOR_SLOT IO_SLOT
-	static const uint8_t WB_I2C2_SDA = 24; // IO_SLOT
-	static const uint8_t WB_I2C2_SCL = 25; // IO_SLOT
-	static const uint8_t WB_SPI_CS = 26;   // IO_SLOT
-	static const uint8_t WB_SPI_CLK = 3;   // IO_SLOT
-	static const uint8_t WB_SPI_MISO = 29; // IO_SLOT
-	static const uint8_t WB_SPI_MOSI = 30; // IO_SLOT
 
-// Number of pins defined in PinDescription array
-#define PINS_COUNT (48)
-#define NUM_DIGITAL_PINS (48)
-#define NUM_ANALOG_INPUTS (6)
-#define NUM_ANALOG_OUTPUTS (0)
+#define WB_IO1                 P0_17//17          // SLOT_A SLOT_B IO_SLOT
+#define WB_IO2                 P1_02//34          // SLOT_A SLOT_B IO_SLOT
+#define WB_IO3                 P0_21//21          // SLOT_C IO_SLOT
+#define WB_IO4                 P0_04//4           // SLOT_C IO_SLOT
+#define WB_IO5                 P0_09//9           // SLOT_D IO_SLOT
+#define WB_IO6                 P0_10//10          // SLOT_D IO_SLOT
+#define WB_SW1                 P1_01//33          // IO_SLOT
+#define WB_A0                  P0_05//5           // IO_SLOT
+#define WB_A1                  P0_31//31          // IO_SLOT
+#define WB_I2C1_SDA            P0_13//13          // SLOT_A SLOT_B SLOT_C SLOT_D IO_SLOT
+#define WB_I2C1_SCL            P0_14//14          // SLOT_A SLOT_B SLOT_C SLOT_D IO_SLOT
+#define WB_I2C2_SDA            P0_24//24          // IO_SLOT
+#define WB_I2C2_SCL            P0_25//25          // IO_SLOT
+#define WB_SPI_CS              P0_26//26          // SLOT_A SLOT_B SLOT_C SLOT_D IO_SLOT
+#define WB_SPI_CLK             P0_03//3           // SLOT_A SLOT_B SLOT_C SLOT_D IO_SLOT
+#define WB_SPI_MISO            P0_29//29          // SLOT_A SLOT_B SLOT_C SLOT_D IO_SLOT
+#define WB_SPI_MOSI            P0_30//30          // SLOT_A SLOT_B SLOT_C SLOT_D IO_SLOT
+#define WB_RXD0                P0_19//19          // IO_SLOT
+#define WB_TXD0                P0_20//20          // IO_SLOT
+#define WB_RXD1                P0_15//15          // SLOT_A IO_SLOT
+#define WB_TXD1                P0_16//16          // SLOT_A IO_SLOT
+#define WB_LED1                P1_03//35          // IO_SLOT
+#define WB_LED2                P1_04//36          // IO_SLOT
+#define WB_RST                 P0_18//18          // IO_SLOT
+#define WB_QSPI_SCLK           P0_03//3           // IO_SLOT
+#define WB_QSPI_CE             P0_26//26          // IO_SLOT
+#define WB_QSPI_DIO0           P0_30//30          // IO_SLOT
+#define WB_QSPI_DIO1           P0_29//29          // IO_SLOT
+#define WB_QSPI_DIO2           P0_28//28          // IO_SLOT
+#define WB_QSPI_DIO3           P0_02//2           // IO_SLOT
 
 // LEDs
-#define PIN_LED1 (35)
-#define PIN_LED2 (36)
+#define PIN_LED1 WB_LED1//35
+#define PIN_LED2 WB_LED2//36
 
 #define LED_BUILTIN PIN_LED1
 #define LED_CONN PIN_LED2
@@ -75,95 +109,57 @@ extern "C"
 #define LED_GREEN PIN_LED1
 #define LED_BLUE PIN_LED2
 
-#define LED_STATE_ON 1 // State when LED is litted
-
-/*
- * Buttons
- */
-#define PIN_BUTTON1 11
-#define PIN_BUTTON2 12
-#define PIN_BUTTON3 24
-#define PIN_BUTTON4 25
+#define LED_STATE_ON 1
 
 /*
  * Analog pins
  */
-#define PIN_A0 (5)	//(3)
-#define PIN_A1 (31) //(4)
-#define PIN_A2 (28)
-#define PIN_A3 (29)
-#define PIN_A4 (30)
-#define PIN_A5 (31)
-#define PIN_A6 (0xff)
-#define PIN_A7 (0xff)
+#define PIN_A0 WB_A0
+#define PIN_A1 WB_A1
 
-	static const uint8_t A0 = PIN_A0;
-	static const uint8_t A1 = PIN_A1;
-	static const uint8_t A2 = PIN_A2;
-	static const uint8_t A3 = PIN_A3;
-	static const uint8_t A4 = PIN_A4;
-	static const uint8_t A5 = PIN_A5;
-	static const uint8_t A6 = PIN_A6;
-	static const uint8_t A7 = PIN_A7;
-#define ADC_RESOLUTION 14
+#define A0 PIN_A0
+#define A1 PIN_A1
 
 // Other pins
-#define PIN_AREF (2)
-#define PIN_NFC1 (9)
-#define PIN_NFC2 (10)
-
-	static const uint8_t AREF = PIN_AREF;
+#define PIN_NFC1 WB_IO5
+#define PIN_NFC2 WB_IO6
 
 /*
  * Serial interfaces
  */
-#define PIN_SERIAL1_RX (15)
-#define PIN_SERIAL1_TX (16)
+#define PIN_SERIAL0_RX WB_RXD0//19
+#define PIN_SERIAL0_TX WB_TXD0//20
 
-// Connected to Jlink CDC
-#define PIN_SERIAL2_RX (8)
-#define PIN_SERIAL2_TX (6)
+#define PIN_SERIAL1_RX WB_RXD1//15
+#define PIN_SERIAL1_TX WB_TXD1//16
 
 /*
  * SPI Interfaces
  */
 #define SPI_INTERFACES_COUNT 1
 
-#define PIN_SPI_MISO (29)
-#define PIN_SPI_MOSI (30)
-#define PIN_SPI_SCK (3)
-
-	static const uint8_t SS = 26;
-	static const uint8_t MOSI = PIN_SPI_MOSI;
-	static const uint8_t MISO = PIN_SPI_MISO;
-	static const uint8_t SCK = PIN_SPI_SCK;
+#define PIN_SPI_MISO WB_SPI_MISO
+#define PIN_SPI_MOSI WB_SPI_MOSI
+#define PIN_SPI_SCK  WB_SPI_CLK
 
 /*
  * Wire Interfaces
  */
 #define WIRE_INTERFACES_COUNT 1
 
-#define PIN_WIRE_SDA (13)
-#define PIN_WIRE_SCL (14)
+#define PIN_WIRE_SDA WB_I2C1_SDA
+#define PIN_WIRE_SCL WB_I2C1_SCL
 
 // QSPI Pins
-#define PIN_QSPI_SCK 3	// 19
-#define PIN_QSPI_CS 26	// 17
-#define PIN_QSPI_IO0 30 // 20
-#define PIN_QSPI_IO1 29 // 21
-#define PIN_QSPI_IO2 28 // 22
-#define PIN_QSPI_IO3 2	// 23
-
-// On-board QSPI Flash
-#define EXTERNAL_FLASH_DEVICES IS25LP080D
-#define EXTERNAL_FLASH_USE_QSPI
+#define PIN_QSPI_SCK   P0_03//3
+#define PIN_QSPI_CS    WB_QSPI_CE//26
+#define PIN_QSPI_IO0   WB_QSPI_DIO0//30
+#define PIN_QSPI_IO1   WB_QSPI_DIO1//29
+#define PIN_QSPI_IO2   WB_QSPI_DIO2//28
+#define PIN_QSPI_IO3   WB_QSPI_DIO3//2
 
 #ifdef __cplusplus
 }
 #endif
-
-/*----------------------------------------------------------------------------
- *        Arduino objects - C++ only
- *----------------------------------------------------------------------------*/
 
 #endif

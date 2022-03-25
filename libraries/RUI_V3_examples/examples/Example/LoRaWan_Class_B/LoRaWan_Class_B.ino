@@ -4,7 +4,7 @@ bool ret;
 void setup()
 {
   Serial.begin(115200);
-  delay(5000);
+
   Serial.println("RAKwireless LoRaWan Ckass B Example");
   Serial.println("------------------------------------------------------");
   // OTAA Device EUI MSB

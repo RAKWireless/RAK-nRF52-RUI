@@ -55,7 +55,10 @@
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
  * | AT+APM?            | --                 | AT+APM: switch to API mode                                        | OK                 |
  * | AT+APM             | --                 |                                                                   | OK                 |
- * 
+ *
+ */
+#if defined(SUPPORT_LORA) && defined(SUPPORT_PASSTHRU)
+/**
  * @subsection ATCMD_serial_port_6 ATD: pass through mode
  *
  * This command provides a way to switch to pass through mode
@@ -76,6 +79,7 @@
  * 
  *
  */
+#endif
 
 #ifndef _ATCMD_SERIAL_PORT_DEF_H_
 #define _ATCMD_SERIAL_PORT_DEF_H_
@@ -85,5 +89,7 @@
 #define ATCMD_BAUD                  "AT+BAUD"
 #define ATCMD_ATM                   "AT+ATM"
 #define ATCMD_APM                   "AT+APM"
+#if defined(SUPPORT_LORA) && defined(SUPPORT_PASSTHRU)
 #define ATCMD_PAM                   "ATD"
+#endif
 #endif //_ATCMD_SERIAL_PORT_DEF_H_

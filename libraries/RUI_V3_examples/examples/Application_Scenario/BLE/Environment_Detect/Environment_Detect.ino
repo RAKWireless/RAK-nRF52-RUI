@@ -60,7 +60,7 @@ void cccd_callback(uint16_t chars_uuid, uint8_t *cccd_value)
 void setup()
 {
     Serial.begin(115200);
-    delay(5000);
+
     Serial.println("RAKwireless Environment Detect Example");
     Serial.println("------------------------------------------------------");
 

@@ -221,8 +221,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define SPIS2_EASYDMA_MAXCNT_SIZE 16
 
 /* Two Wire Interface Master */
-#define TWI_PRESENT
-#define TWI_COUNT 2
+//#define TWI_PRESENT
+//#define TWI_COUNT 2
 
 /* Two Wire Interface Master with DMA */
 #define TWIM_PRESENT

@@ -1,5 +1,5 @@
-#ifndef __SYSTEM_H__
-#define __STSTEM_H__
+#ifndef __RAK_SYSTEM_H__
+#define __RAK_STSTEM_H__
 
 #include <string>
 #include <sstream>
@@ -13,11 +13,54 @@
 #include "service_mode_cli.h"
 #include "service_battery.h"
 #include "service_nvm.h"
+#ifdef SUPPORT_FS
 #include "service_fs.h"
+#endif
 
 using namespace std;
 
-/**@addtogroup	File_System_Data_Type
+/** @def CHANGE_ATCMD_PERM(ATCMD,ATCMD_PERMISSIONS);
+     * @ingroup System_Misc
+     * @brief change AT command permission
+
+        PERMISSION LEVEL:\n
+            ATCMD_PERM_READ,\n
+            ATCMD_PERM_WRITE,\n
+            ATCMD_PERM_WRITEONCEREAD,\n
+            ATCMD_PERM_DISABLE\n
+        AT commands' default permission are ATCMD_PERM_READ | ATCMD_PERM_WRITE
+     * @par		Example
+     * @verbatim
+       CHANGE_ATCMD_PERM("AT+APPKEY",ATCMD_PERM_READ);
+       CHANGE_ATCMD_PERM("AT+APPSKEY",ATCMD_PERM_WRITE);
+       CHANGE_ATCMD_PERM("AT+DEVADDR",ATCMD_PERM_WRITEONCEREAD);
+       CHANGE_ATCMD_PERM("AT+APPEUI",ATCMD_PERM_DISABLE);
+       CHANGE_ATCMD_PERM("AT+NETID",ATCMD_PERM_READ | ATCMD_PERM_WRITE);
+       CHANGE_ATCMD_PERM("AT+ALIAS",ATCMD_PERM_READ | ATCMD_PERM_WRITE);
+       CHANGE_ATCMD_PERM("AT+HWID",ATCMD_PERM_READ | ATCMD_PERM_WRITE);
+
+       void setup()
+       {
+       }
+
+       void loop()
+       {
+       }
+       @endverbatim
+    */
+
+
+
+#define CHANGE_ATCMD_PERM(_atcmd_name,_atcmd_perm)                 \
+    ATCMD_ITEM(atcmd_queue, atcmd_permission_item UNIQUE_NAME(permissions)) =   \
+    {                                       \
+    .atcmd_id = _atcmd_name,                \
+    .permission = _atcmd_perm,              \
+    }
+
+
+#ifdef SUPPORT_FS
+/**@addtogroup	RUI_System_Data_Type
  * @{
  */
 
@@ -68,6 +111,7 @@ using namespace std;
 #define RAK_FS_ERR_CONTINUE                SERVICE_FS_ERR_CONTINUE             ///< FS_ERR CONTINUE
 
 /**@}*/
+#endif
 
 class RAKSystem {
   public:
@@ -285,7 +329,7 @@ class RAKSystem {
       public:
 	/**@par		Description
 	 *		This api allow user to set a 1~8 digits password to lock the default serial
-	 * @ingroup	System_Serial
+	 * @ingroup	System_Pword
 	 * @par		Syntax
 	 * 		api.system.pword.set(passwd_Str)\n
 	 * 		api.system.pword.set(passwd_Char, len)
@@ -323,7 +367,7 @@ class RAKSystem {
 	/**@par		Description
 	 *		This api allow user to lock the default serial with the pass set in api.system.pword.set()	
 	 * @note	If you never set a password successfully, the default password will be 00000000
-	 * @ingroup	System_Serial
+	 * @ingroup	System_Pword
 	 * @par		Syntax
 	 * 		api.system.pword.lock()
 	 * @return	void
@@ -354,7 +398,7 @@ class RAKSystem {
 
 	/**@par		Description
 	 *		This api allow user to unlock the default serial without password when it'locked
-	 * @ingroup	System_Serial
+	 * @ingroup System_Pword
 	 * @par		Syntax
 	 * 		api.system.pword.unlock()
 	 * @return	void
@@ -417,11 +461,12 @@ class RAKSystem {
 	/**@par		Description
 	 *		Provide developers to create AT CMD.
 	 * @par		Syntax
-	 * 		api.system.atMode.add(cmd, usage, title, handle)
+	 * 		api.system.atMode.add(cmd, usage, title, handle, perm)
 	 * @param	cmd  	the cmd to define cmd name
 	 * @param	usage	the cmd usage
 	 * @param	title	the cmd title
 	 * @param	handle	the handler that this command will execute
+     * @param   perm    the cmd execution permission
 	 *
 	 * @return
 	 * @par		Example
@@ -458,7 +503,7 @@ class RAKSystem {
       
       void setup()
       {
-          api.system.atMode.add("LED", "This controls both green and blue LEDs.", "LED", led_handle);
+          api.system.atMode.add("LED", "This controls both green and blue LEDs.", "LED", led_handle, ATCMD_PERM_WRITE | ATCMD_PERM_READ);
       }
       
       void loop()
@@ -466,9 +511,10 @@ class RAKSystem {
       }
 	   @endverbatim
 	 */
-        bool add(char *cmd, char *usage, char *title, PF_handle handle);
+        bool add(char *cmd, char *usage, char *title, PF_handle handle,unsigned int perm = ATCMD_PERM_WRITE | ATCMD_PERM_READ);
     };
 
+#ifdef SUPPORT_FS
     class fs {
       public:
 
@@ -807,12 +853,101 @@ class RAKSystem {
 	 */
         int32_t                ftell(SERVICE_FS fs, SERVICE_FS_FILE file);
     };
-
+#else
+    class flash {
+      public:
+        /**@par     Description
+         *      Read a range of data from user flash partition.
+         * @ingroup Flash
+         * @par     Syntax
+         *  api.system.flash.get(offset, buf, len)
+         * @param   offset the offset to the start of user flash partition
+         * @param   buf the buffer for reading the data
+         * @param   len the length of data
+         * @return  bool
+         * @retval  TRUE for reading data successfully
+         * @retval  FALSE for reading data failure
+         */
+        bool get(uint32_t offset, uint8_t *buf, uint32_t len);
+        /**@par     Description
+         *      Write a range of data from user flash partition.
+         * @ingroup Flash
+         * @par     Syntax
+         *  api.system.flash.set(offset, buf, len)
+         * @param   offset the offset to the start of user flash partition
+         * @param   buf the buffer for writing the data
+         * @param   len the length of data
+         * @return  bool
+         * @retval  TRUE for writing data successfully
+         * @retval  FALSE for writing data failure
+         */
+        bool set(uint32_t offset, uint8_t *buf, uint32_t len);
+    };
+#endif
+    class alias {
+      public :
+    /**@par     Description
+     *      Set the alias name for device.
+     * @ingroup System_Alias
+     * @par     Syntax
+     *  api.system.alias.set(buf, len)
+     * @param   buf the buffer to set alias name
+     * @param   len the length of alias name( <= 16 bytes)
+     * @return  bool
+     * @retval  TRUE for setting alias name successfully
+     * @retval  FALSE for setting alias name failure
+     * @par         Example
+         * @verbatim
+            void setup()
+            {
+                Serial.begin(115200);
+                api.system.alias.set("my device",16);
+                char buf[16];
+                Serial.println(api.system.alias.get(buf,16));
+                Serial.println(buf);
+            }
+            void loop()
+            {
+            }
+           @endverbatim
+     */
+        bool    set(char *,uint32_t);
+    /**@par     Description
+     *      Set the alias name for device.
+     * @ingroup System_Alias
+     * @par     Syntax
+     *  api.system.alias.get(buf, len)
+     * @param   buf the buffer to get alias name
+     * @param   len the length of alias name( <= 16 bytes)
+     * @return  bool
+     * @retval  TRUE for getting alias name successfully
+     * @retval  FALSE for getting alias name failure
+     * @par         Example
+         * @verbatim
+            void setup()
+            {
+                Serial.begin(115200);
+                api.system.alias.set("my device",16);
+                char buf[16];
+                Serial.println(api.system.alias.get(buf,16));
+                Serial.println(buf);
+            }
+            void loop()
+            {
+            }
+           @endverbatim
+     */
+        bool    get(char *,uint32_t);
+    };
     pword pword;
     bat bat;
     atMode atMode;
+#ifdef SUPPORT_FS
     fs fs;
-
+#else
+    flash flash;
+#endif
+    alias alias;
 
 };
 

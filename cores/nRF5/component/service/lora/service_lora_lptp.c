@@ -175,6 +175,9 @@ int32_t service_lora_lptp_send(uint8_t port, bool ack, uint8_t *p_data, uint16_t
     if ((port == 0) || (port > 223))
         return -UDRV_WRONG_ARG;
 
+    if( ack > 1)
+        return -UDRV_WRONG_ARG;
+
     if (len > LPTP_DATA_BUFFER_MAX_SIZE)
         return -UDRV_WRONG_ARG;
 

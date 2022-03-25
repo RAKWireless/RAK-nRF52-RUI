@@ -29,6 +29,8 @@ uint64_t udrv_rtc_get_elapsed_time (RtcID_E timer_id, uint64_t savedTime);
 void udrv_rtc_suspend (void);
 void udrv_rtc_resume (void);
 
+void udrv_rtc_timer_handler_handler (void *pdata);
+
 #ifdef __cplusplus
 }
 #endif

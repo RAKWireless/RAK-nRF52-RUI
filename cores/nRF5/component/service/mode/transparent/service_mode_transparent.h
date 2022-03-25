@@ -12,7 +12,7 @@ extern "C" {
 #include <stdbool.h>
 #include "udrv_serial.h"
 
-#define TP_BUFFER_SIZE   (2048)
+#define TP_BUFFER_SIZE   (512)
 
 #define TP_ESCAPE_CHAR '+'
 

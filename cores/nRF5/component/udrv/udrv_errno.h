@@ -30,6 +30,7 @@ typedef enum _UDRV_RETURN_CODE
     UDRV_NO_WAN_CONNECTION,
     UDRV_FORBIDDEN,
     UDRV_CONTINUE,
+    UDRV_NOT_FOUND,
 } UDRV_RETURN_CODE;
 
 #ifdef __cplusplus

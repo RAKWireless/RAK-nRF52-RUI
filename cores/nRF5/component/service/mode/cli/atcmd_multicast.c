@@ -1,3 +1,4 @@
+#ifdef SUPPORT_LORA
 #include "atcmd_multicast.h"
 #include "udrv_errno.h"
 #include "service_lora.h"
@@ -161,7 +162,11 @@ int At_Lstmulc(SERIAL_PORT port, char *cmd, stParam *param)
     {
         uint8_t i=1;
         while (service_lora_lstmulc(&McSession) == -UDRV_CONTINUE) {
-            atcmd_printf("MC%d:", i);
+            if(i>1)
+            {
+                atcmd_printf(",");
+            }
+            //atcmd_printf("MC%d:", i);
             if(McSession.Address==0)
             {
                 atcmd_printf("0:");
@@ -170,11 +175,11 @@ int At_Lstmulc(SERIAL_PORT port, char *cmd, stParam *param)
             {
                 if (McSession.Devclass == 1)
                 {
-                    atcmd_printf("ClassB:");
+                    atcmd_printf("B:");
                 }
                 else 
                 {
-                    atcmd_printf("ClassC:");
+                    atcmd_printf("C:");
                 }
             }
             atcmd_printf("%08X:", McSession.Address);
@@ -193,10 +198,10 @@ int At_Lstmulc(SERIAL_PORT port, char *cmd, stParam *param)
 
             atcmd_printf("%09d:", McSession.Frequency);
             atcmd_printf("%02d:", McSession.Datarate);
-            atcmd_printf("%d\r\n", McSession.Periodicity);
+            atcmd_printf("%d", McSession.Periodicity);
             i++;
         }
-
+        atcmd_printf("\r\n");
         return AT_OK;
     }
     else /* This command can only be queried, not set */
@@ -204,3 +209,4 @@ int At_Lstmulc(SERIAL_PORT port, char *cmd, stParam *param)
         return AT_PARAM_ERROR;
     }
 }
+#endif

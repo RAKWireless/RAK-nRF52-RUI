@@ -11,7 +11,7 @@
 #include "utilities.h"
 #include "radio.h"
 #include "service_lora_test.h"
-#include "../../external/lora/LoRaMac-node-4.4.7/src/peripherals/soft-se/aes.h"
+#include "soft-se/aes.h"
 
 static int PKCS7Cutting(char *p, int plen);
 static int PKCS7Padding(char *p, int plen);
@@ -29,6 +29,7 @@ static RadioEvents_t RadioEvents;
 LORA_P2P_STATUS_ST lora_p2p_status = {
     .isRxCancel = false,
     .isRadioBusy = false,
+    .isContinue = false
 };
 
 static uint8_t lora_p2p_buf[255];
@@ -45,8 +46,6 @@ void send_cllback(void)
 
 static void OnTxDone(void)
 {
-    Radio.Sleep();
-
     lora_p2p_status.isRadioBusy = false;
 
     LORA_P2P_DEBUG("%s\r\n", __func__);
@@ -62,9 +61,8 @@ static void OnTxDone(void)
 
 static void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr)
 {
-    Radio.Sleep();
-
     lora_p2p_status.isRadioBusy = false;
+    lora_p2p_status.isContinue = false;
 
     LORA_P2P_DEBUG("%s\r\n", __func__);
 
@@ -85,10 +83,9 @@ static void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr)
         memcpy(lora_p2p_buf, payload, size);
 
     if (SERVICE_LORA_P2P == service_lora_get_nwm())
-        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXP2P, RSSI %d, SNR %d\r\n", rssi, snr);
+        udrv_serial_log_printf("+EVT:RXP2P:%d:%d:", rssi, snr);
     else
-        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXFSK, RSSI %d, SNR %d\r\n", rssi, snr);
-    udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:");
+        udrv_serial_log_printf("+EVT:RXFSK:%d:%d:", rssi, snr);
     printf_hex(lora_p2p_buf, size);
     udrv_serial_log_printf("\r\n");
 
@@ -101,57 +98,52 @@ static void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr)
     {
         (*service_lora_p2p_recv_callback)(recv_data_pkg);
     }
+
+    Radio.Standby();
     udrv_powersave_wake_unlock();
 }
 
 static void OnTxTimeout(void)
 {
-    //Radio.Sleep();
-
-    //lora_p2p_status.isRadioBusy = false;
-    
+    lora_p2p_status.isRadioBusy = false;
     LORA_P2P_DEBUG("%s\r\n", __func__);
-
-    //udrv_powersave_wake_unlock ();
 }
 
 static void OnRxTimeout(void)
 {
     LORA_P2P_DEBUG("%s\r\n", __func__);
 
-    Radio.Sleep();
-
     lora_p2p_status.isRadioBusy = false;
 
-    if (lora_p2p_status.isRxCancel)
+    if(lora_p2p_status.isContinue)
     {
-        lora_p2p_status.isRxCancel = false;
+        LORA_TEST_DEBUG();
+        return;
     }
+
+    
+    if (SERVICE_LORA_P2P == service_lora_get_nwm())
+        udrv_serial_log_printf("+EVT:RXP2P RECEIVE TIMEOUT\r\n");
     else
-    {
-        if (SERVICE_LORA_P2P == service_lora_get_nwm())
-            udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXP2P RECEIVE TIMEOUT\r\n");
-        else
-            udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXFSK RECEIVE TIMEOUT\r\n");
-    }
+        udrv_serial_log_printf("+EVT:RXFSK RECEIVE TIMEOUT\r\n");
+    
     if((*service_lora_p2p_recv_callback)!=NULL)
     {
         (*service_lora_p2p_recv_callback)(recv_data_pkg);
     }
-
+    Radio.Standby();
     udrv_powersave_wake_unlock();
 }
 
 static void OnRxError(void)
 {
-    Radio.Sleep();
-
     lora_p2p_status.isRadioBusy = false;
+    lora_p2p_status.isContinue = false;
 
     if (SERVICE_LORA_P2P == service_lora_get_nwm())
-        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXP2P RECEIVE ERROR\r\n");
+        udrv_serial_log_printf("+EVT:RXP2P RECEIVE ERROR\r\n");
     else
-        udrv_serial_printf(ATCMD_IO_SERIAL_PORT, "+EVT:RXFSK RECEIVE ERROR\r\n");
+        udrv_serial_log_printf("+EVT:RXFSK RECEIVE ERROR\r\n");
 
     LORA_P2P_DEBUG("%s\r\n", __func__);
     
@@ -159,6 +151,7 @@ static void OnRxError(void)
     {
         (*service_lora_p2p_recv_callback)(recv_data_pkg);
     }
+    Radio.Standby();
     udrv_powersave_wake_unlock();
 }
 
@@ -271,9 +264,9 @@ int32_t service_lora_p2p_send(uint8_t *p_data, uint8_t len)
 
     lora_p2p_status.isRadioBusy = true;
 
-    // udrv_serial_printf(ATCMD_IO_SERIAL_PORT,"LoRa P2P send data len is %d\r\n", len);
+    // udrv_serial_log_printf("LoRa P2P send data len is %d\r\n", len);
     // printf_hex(lora_p2p_buf, len);
-    // udrv_serial_printf(ATCMD_IO_SERIAL_PORT,"\r\n");
+    // udrv_serial_log_printf("\r\n");
 
     return UDRV_RETURN_OK;
 }
@@ -302,18 +295,17 @@ int32_t service_lora_p2p_recv(uint32_t timeout)
 
     if (timeout == 0)
     {
-        LORA_P2P_DEBUG("Radio sleep.\r\n");
-
-        lora_p2p_status.isRxCancel = true;
-
+        LORA_P2P_DEBUG("Radio Standby.\r\n");
+        lora_p2p_status.isContinue = false;
+        lora_p2p_status.isRadioBusy = false;
         Radio.Standby();
-        //Radio.Rx(10);
     }
     else if (timeout == 65535)
     {
+        lora_p2p_status.isContinue = true;
         LORA_P2P_DEBUG("Radio rx continue.\r\n");
         Radio.Standby();
-        Radio.Rx(0);
+        Radio.Rx(0);     
     }
     else
     {
@@ -362,7 +354,6 @@ uint32_t service_lora_p2p_get_bandwidth(void)
 
 int32_t service_lora_p2p_set_bandwidth(uint32_t bandwidth)
 {
-
     if (SERVICE_LORA_P2P == service_lora_get_nwm())
     {
         if ((bandwidth != 125) && (bandwidth != 250) && (bandwidth != 500))
@@ -378,11 +369,8 @@ int32_t service_lora_p2p_set_bandwidth(uint32_t bandwidth)
         }
     }
 
-    service_nvm_set_bandwidth_to_nvm(bandwidth);
-
     service_lora_p2p_config();
-
-    return UDRV_RETURN_OK;
+    return service_nvm_set_bandwidth_to_nvm(bandwidth);
 }
 
 uint8_t service_lora_p2p_get_codingrate(void)
@@ -521,18 +509,20 @@ uint32_t service_lora_p2p_get_fdev(void)
 
 int32_t service_lora_p2p_set_fdev(uint32_t fdev)
 {
-    service_nvm_set_fdev_to_nvm(fdev);
+    if ((fdev < 600) || (fdev > 200000))
+        return -UDRV_WRONG_ARG;
+
     service_lora_p2p_config();
-    return UDRV_RETURN_OK;
+    return service_nvm_set_fdev_to_nvm(fdev);
 }
 
 int32_t service_lora_p2p_set_bitrate(uint32_t bitrate)
 {
-    if ((bitrate < 600) || (bitrate > 307200))
+    if ((bitrate < 600) || (bitrate > 300000))
         return -UDRV_WRONG_ARG;
-    service_nvm_set_bitrate_to_nvm(bitrate);
+   
     service_lora_p2p_config();
-    return UDRV_RETURN_OK;
+    return service_nvm_set_bitrate_to_nvm(bitrate);;
 }
 
 int PKCS7Padding(char *p, int plen)

@@ -96,16 +96,29 @@ typedef struct
 }testParameter_t;
 
 
-uint32_t service_lora_tone_test(void);
-uint32_t service_lora_toff(void);
-int16_t service_lora_trssi(void);
+typedef struct
+{
+  uint32_t frequency;
+  uint32_t txpower;
+  uint32_t txTimeout;
+}testCwParameter_t;
+
+
+int32_t service_lora_trssi(int16_t *rssiVal);
+int32_t service_lora_ttone(void);
+
+void service_lora_toff(void);
+int32_t service_lora_trssi(int16_t *rssiVal);
 
 int32_t service_lora_trx(int32_t nb_packet);
 int32_t service_lora_ttx(int32_t nb_packet);
 
-int32_t  service_lora_set_tconf(testParameter_t *Param);
-int32_t  service_lora_get_tconf(testParameter_t *Param);
+int32_t service_lora_set_tconf(testParameter_t *Param);
+int32_t service_lora_get_tconf(testParameter_t *Param);
 int32_t service_lora_tth(const testParameter_t *param);
+
+int32_t service_lora_get_cw(testCwParameter_t *param);
+int32_t service_lora_set_cw(testCwParameter_t *param);
 
 #ifdef __cplusplus
 }

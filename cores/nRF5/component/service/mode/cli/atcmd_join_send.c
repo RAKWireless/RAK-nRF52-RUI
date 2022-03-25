@@ -1,3 +1,4 @@
+#ifdef SUPPORT_LORA
 #include <string.h>
 
 #include "service_mode_cli.h"
@@ -141,7 +142,7 @@ int At_Retry(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_get_retry());
+        atcmd_printf("%s=%u\r\n", cmd,service_lora_get_retry());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -149,6 +150,10 @@ int At_Retry(SERIAL_PORT port, char *cmd, stParam *param)
         uint8_t retry_times ;
         if (0 != at_check_digital_uint32_t(param->argv[0], &retry_times))
             return AT_PARAM_ERROR;
+
+        if(retry_times>7)
+            return AT_PARAM_ERROR;
+
         return service_lora_set_retry(retry_times);
     }
     else
@@ -165,7 +170,7 @@ int At_CfMode(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_get_cfm());
+        atcmd_printf("%s=%u\r\n", cmd,service_lora_get_cfm());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -209,7 +214,7 @@ int At_CfStatus(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_get_cfs());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_cfs());
         return AT_OK;
     }
     else
@@ -233,7 +238,7 @@ int At_Join(SERIAL_PORT port, char *cmd, stParam *param)
         val[1] = service_lora_get_auto_join();
         val[2] = service_lora_get_auto_join_period();
         val[3] = service_lora_get_auto_join_max_cnt();
-        atcmd_printf("%d,%d,%d,%d\r\n", val[0], val[1], val[2], val[3]);
+        atcmd_printf("%s=%d:%d:%d:%d\r\n", cmd, val[0], val[1], val[2], val[3]);
         return AT_OK;
     }
     else if (param->argc <= 4)
@@ -307,7 +312,7 @@ int At_NwkJoinMode(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_get_njm());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_njm());
         return AT_OK;
     }
     else if (param->argc == 1)
@@ -351,7 +356,7 @@ int At_NwkJoinStatus(SERIAL_PORT port, char *cmd, stParam *param)
     }
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
     {
-        atcmd_printf("%u\r\n", service_lora_get_njs());
+        atcmd_printf("%s=%u\r\n", cmd, service_lora_get_njs());
         return AT_OK;
     }
     else
@@ -372,7 +377,7 @@ int At_Recv(SERIAL_PORT port, char *cmd, stParam *param)
         int32_t len;
 
         len = service_lora_get_last_recv(&port, buff, SERVICE_LORA_DLINK_BUFF_SIZE);
-        atcmd_printf("%u:", port);
+        atcmd_printf("%s=%u:", cmd, port);
         dump_hex2str(buff, len);
         return AT_OK;
     }
@@ -481,7 +486,7 @@ int At_Send(SERIAL_PORT port, char *cmd, stParam *param)
 
 int At_Lpsend(SERIAL_PORT port, char *cmd, stParam *param)
 {
-    uint8_t lp_port,lp_ack;
+    uint16_t lp_port,lp_ack;
     uint16_t lp_len;
     uint8_t lp_buffer[1024];
     if (param->argc == 1 && !strcmp(param->argv[0], "?"))
@@ -517,10 +522,21 @@ int At_Lpsend(SERIAL_PORT port, char *cmd, stParam *param)
             }
         }
 
+        if(strlen(param->argv[0]) > 3 || strlen(param->argv[1]) > 1 )
+        {
+             return AT_PARAM_ERROR;
+        }
+
         lp_port = strtoul(param->argv[0], NULL, 10);
         lp_ack = strtoul(param->argv[1], NULL, 10);
         lp_len = strlen(param->argv[2]);
         if ((lp_len % 2) || (lp_len > 2 * 1024))
+            return AT_PARAM_ERROR;
+
+        if (lp_ack > 1)
+            return AT_PARAM_ERROR;
+
+        if (lp_port > 223)
             return AT_PARAM_ERROR;
 
         if (0 != at_check_hex_param(param->argv[2], lp_len, lp_buffer))
@@ -530,3 +546,4 @@ int At_Lpsend(SERIAL_PORT port, char *cmd, stParam *param)
         return AT_OK;
     }   
 }
+#endif

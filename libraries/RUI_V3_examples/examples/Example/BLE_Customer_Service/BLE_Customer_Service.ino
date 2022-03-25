@@ -58,7 +58,7 @@ void setup()
     uint8_t base_uuid[]={0xB3, 0x20, 0xF8, 0xFA, 0x5A, 0xFC, 0x4C, 0x1B, 0xB9, 0x6F, 0x16, 0x24, 0x7D, 0x91, 0x2D, 0x0A};
 
     Serial.begin(115200);
-    delay(5000);
+
     Serial.println("RAKwireless BLE Customer Services Example");
     Serial.println("------------------------------------------------------");
     api.ble.customer.init();

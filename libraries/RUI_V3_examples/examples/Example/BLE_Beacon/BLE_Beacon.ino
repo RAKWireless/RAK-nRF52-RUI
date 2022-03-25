@@ -3,7 +3,7 @@ int i;
 void setup()
 {
     api.ble.settings.blemode(RAK_BLE_BEACON_MODE);
-    delay(5000);
+
     i = 0;
     Serial.println("RAKwireless BLE Beacon Example");
     Serial.println("------------------------------------------------------");

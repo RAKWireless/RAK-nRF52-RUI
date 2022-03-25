@@ -62,8 +62,8 @@
  * | AT+JN1DL?          | --                 | AT+JN1DL: get or set the join accept delay between the end of TX and the join Rx window 1 in second       | OK                 |
  * | AT+JN1DL=?         | --                 | <integer>                                                         | OK / AT_BUSY_ERROR                 |
  * | AT+JN1DL=\<Input\>    | <integer>       | --                                                                | OK / AT_PARAM_ERROR / AT_BUSY_ERROR |
- * | Example<br>AT+JN1DL=? | --              | 5000                                                              | OK                 |
- * | Example<br>AT+JN1DL=  | 10000           | --                                                                | OK                 |
+ * | Example<br>AT+JN1DL=? | --              | 5                                                                 | OK                 |
+ * | Example<br>AT+JN1DL=  | 10              | --                                                                | OK                 |
  *
  * @subsection ATCMD_nwk_mng_6 AT+JN2DL: join delay on RX window 2
  *
@@ -73,7 +73,7 @@
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
  * | AT+JN2DL?          | --                 | AT+JN2DL: get the join accept delay between the end of TX and the join Rx window 2 in second       | OK                 |
  * | AT+JN2DL=?         | --                 | <integer>                                                         | OK / AT_BUSY_ERROR                 |
- * | Example<br>AT+JN2DL=? | --              | 6000                                                              | OK                 |
+ * | Example<br>AT+JN2DL=? | --              | 6                                                                 | OK                 |
  *
  * @subsection ATCMD_nwk_mng_7 AT+PNM: public network mode
  *
@@ -94,11 +94,11 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+RX1DL?          | --                 | AT+RX1DL: get or set the delay between the end of TX and the Rx window 1 in second       | OK                 |
+ * | AT+RX1DL?          | --                 | AT+RX1DL: get or set the delay between the end of TX and the RX window 1 in second (1-15)       | OK                 |
  * | AT+RX1DL=?         | --                 | <integer>                                                         | OK / AT_BUSY_ERROR                 |
  * | AT+RX1DL=\<Input\>    | <integer>       | --                                                                | OK / AT_PARAM_ERROR / AT_BUSY_ERROR |
- * | Example<br>AT+RX1DL=? | --              | 1000                                                              | OK                 |
- * | Example<br>AT+RX1DL=  | 1500            | --                                                                | OK                 |
+ * | Example<br>AT+RX1DL=? | --              | 1                                                                 | OK                 |
+ * | Example<br>AT+RX1DL=  | 1               | --                                                                | OK                 |
  *
  * @subsection ATCMD_nwk_mng_9 AT+RX2DL: delay of the received window 2
  *
@@ -106,9 +106,9 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+RX2DL?          | --                 | AT+RX2DL: get the delay between the end of TX and the Rx window 2 in second       | OK                 |
+ * | AT+RX2DL?          | --                 | AT+RX2DL: get or set the delay between the end of TX and the RX window 2 in second (2-16)       | OK                 |
  * | AT+RX2DL=?         | --                 | <integer>                                                         | OK / AT_BUSY_ERROR                 |
- * | Example<br>AT+RX2DL=? | --              | 2000                                                              | OK                 |
+ * | Example<br>AT+RX2DL=? | --              | 2                                                                 | OK                 |
  *
  * @subsection ATCMD_nwk_mng_10 AT+RX2DR: data rate of the received window 2
  *

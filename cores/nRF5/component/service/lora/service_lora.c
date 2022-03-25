@@ -4,6 +4,7 @@
 #include "udrv_serial.h"
 #include "udrv_system.h"
 #include "udrv_rtc.h"
+#include "udrv_gpio.h"
 #include "board_basic.h"
 #include "service_nvm.h"
 #include "service_lora.h"
@@ -15,6 +16,61 @@
 #include "RegionNvm.h"
 #include "service_lora_arssi.h"
 #include "service_lora_test.h"
+#include "LmhPackage.h"
+#include "LmhpCompliance.h"
+#include "RegionCommon.h"
+
+typedef enum PackageNotifyTypes_e
+{
+    PACKAGE_MCPS_CONFIRM,
+    PACKAGE_MCPS_INDICATION,
+    PACKAGE_MLME_CONFIRM,
+    PACKAGE_MLME_INDICATION,
+}PackageNotifyTypes_t;
+
+static void LmHandlerPackagesNotify( PackageNotifyTypes_t notifyType, void *params );
+static uint32_t IsSingleChannelAU915Callback(void);
+static uint8_t AlternateDrAU915Callback(void);
+static uint32_t IsSingleChannelUS915Callback(void);
+static uint8_t AlternateDrUS915Callback(void);
+
+static LmhPackage_t *LmHandlerPackages[PKG_MAX_NUMBER];
+
+static LmhpComplianceParams_t LmhpComplianceParams;
+
+#define LORAWAN_APP_DATA_BUFFER_MAX_SIZE            242
+static uint8_t AppDataBuffer[LORAWAN_APP_DATA_BUFFER_MAX_SIZE];
+
+/*!
+ * MAC status strings
+ */
+static const char* MacStatusStrings[] =
+{
+    "OK",                            // LORAMAC_STATUS_OK
+    "Busy",                          // LORAMAC_STATUS_BUSY
+    "Service unknown",               // LORAMAC_STATUS_SERVICE_UNKNOWN
+    "Parameter invalid",             // LORAMAC_STATUS_PARAMETER_INVALID
+    "Frequency invalid",             // LORAMAC_STATUS_FREQUENCY_INVALID
+    "Datarate invalid",              // LORAMAC_STATUS_DATARATE_INVALID
+    "Frequency or datarate invalid", // LORAMAC_STATUS_FREQ_AND_DR_INVALID
+    "No network joined",             // LORAMAC_STATUS_NO_NETWORK_JOINED
+    "Length error",                  // LORAMAC_STATUS_LENGTH_ERROR
+    "Region not supported",          // LORAMAC_STATUS_REGION_NOT_SUPPORTED
+    "Skipped APP data",              // LORAMAC_STATUS_SKIPPED_APP_DATA
+    "Duty-cycle restricted",         // LORAMAC_STATUS_DUTYCYCLE_RESTRICTED
+    "No channel found",              // LORAMAC_STATUS_NO_CHANNEL_FOUND
+    "No free channel found",         // LORAMAC_STATUS_NO_FREE_CHANNEL_FOUND
+    "Busy beacon reserved time",     // LORAMAC_STATUS_BUSY_BEACON_RESERVED_TIME
+    "Busy ping-slot window time",    // LORAMAC_STATUS_BUSY_PING_SLOT_WINDOW_TIME
+    "Busy uplink collision",         // LORAMAC_STATUS_BUSY_UPLINK_COLLISION
+    "Crypto error",                  // LORAMAC_STATUS_CRYPTO_ERROR
+    "FCnt handler error",            // LORAMAC_STATUS_FCNT_HANDLER_ERROR
+    "MAC command error",             // LORAMAC_STATUS_MAC_COMMAD_ERROR
+    "ClassB error",                  // LORAMAC_STATUS_CLASS_B_ERROR
+    "Confirm queue error",           // LORAMAC_STATUS_CONFIRM_QUEUE_ERROR
+    "Multicast group undefined",     // LORAMAC_STATUS_MC_GROUP_UNDEFINED
+    "Unknown error",                 // LORAMAC_STATUS_ERROR
+};
 
 static bool last_ack;
 static uint8_t last_dlink_data[SERVICE_LORA_DLINK_BUFF_SIZE];
@@ -24,7 +80,7 @@ static SysTime_t btime;
 static int16_t rssi;
 static int8_t snr;
 static uint32_t auto_join_retry_cnt;
-static const char *slotStrings[] = {"1", "2", "C", "C Multicast", "B Ping-Slot", "B Multicast Ping-Slot"};
+static const char *slotStrings[] = {"1", "2", "C", "C", "B", "B"};
 static beacon_bgw_t beacon_bgw;
 static char *lorawan_ver = LORAWAN_VERSION;
 static uint8_t linkcheck_flag;
@@ -43,48 +99,69 @@ static service_lora_send_cb service_lora_send_callback;
 
 extern bool udrv_powersave_in_sleep;
 
-static uint32_t service_lora_wlock_cnt;
+static SingleChannel_t SingleChannelAU915 =
+{
+    .IsSingleChannel = IsSingleChannelAU915Callback,
+    .AlternateDr = AlternateDrAU915Callback
+};
 
-static void service_lora_wake_lock (void) {
+static SingleChannel_t SingleChannelUS915 =
+{
+    .IsSingleChannel = IsSingleChannelUS915Callback,
+    .AlternateDr = AlternateDrUS915Callback
+};
+
+static uint32_t service_lora_full_wlock_cnt;
+static uint32_t service_lora_radio_wlock_cnt;
+
+static void service_lora_full_wake_lock(void) {
     udrv_powersave_wake_lock();
-    service_lora_wlock_cnt++;
+    service_lora_full_wlock_cnt++;
 }
 
-static void service_lora_wake_unlock (void) {
-    if (service_lora_wlock_cnt > 0) {
+static void service_lora_full_wake_unlock(void) {
+    if (service_lora_full_wlock_cnt > 0) {
         udrv_powersave_wake_unlock();
-        service_lora_wlock_cnt--;
+        service_lora_full_wlock_cnt--;
     }
 }
 
-static void service_lora_wake_unlock_all (void) {
-    while (service_lora_wlock_cnt > 0) {
+static void service_lora_full_wake_unlock_all(void) {
+    while (service_lora_full_wlock_cnt > 0) {
         udrv_powersave_wake_unlock();
-        service_lora_wlock_cnt--;
+        service_lora_full_wlock_cnt--;
     }
 }
 
-static void service_lora_sleep(void) {
+static void service_lora_radio_wake_lock(void) {
+    udrv_powersave_lora_wake_lock();
+    service_lora_radio_wlock_cnt++;
+}
+
+static void service_lora_radio_wake_unlock(void) {
+    if (service_lora_radio_wlock_cnt > 0) {
+        udrv_powersave_lora_wake_unlock();
+        service_lora_radio_wlock_cnt--;
+    }
+}
+
+static void service_lora_radio_wake_unlock_all(void) {
+    while (service_lora_radio_wlock_cnt > 0) {
+        udrv_powersave_lora_wake_unlock();
+        service_lora_radio_wlock_cnt--;
+    }
+}
+
+void service_lora_suspend(void) {
     Radio.Sleep();
 }
 
-static int32_t service_lora_send_ping_slot_periodicity(uint8_t periodicity)
-{
-    LoRaMacStatus_t status;
-    MlmeReq_t mlmeReq;
-
-    mlmeReq.Type = MLME_PING_SLOT_INFO;
-    mlmeReq.Req.PingSlotInfo.PingSlot.Fields.Periodicity = periodicity;
-    mlmeReq.Req.PingSlotInfo.PingSlot.Fields.RFU = 0;
-
-    status = LoRaMacMlmeRequest(&mlmeReq);
-
-    if (status != LORAMAC_STATUS_OK)
-    {
-        return -UDRV_INTERNAL_ERR;
-    }
-
-    return UDRV_RETURN_OK;
+void service_lora_resume(void) {
+//FIXME
+#ifdef rak4630
+    udrv_gpio_set_logic((uint32_t)42/*NSS*/, GPIO_LOGIC_LOW);
+    udrv_gpio_set_logic((uint32_t)42/*NSS*/, GPIO_LOGIC_HIGH);
+#endif
 }
 
 static void service_lora_auto_join(void *m_data)
@@ -117,7 +194,7 @@ static int32_t service_lora_start(void)
         }
         else
         {
-            udrv_serial_log_printf("+EVT:JOIN FAILED(%d)\r\n", __LINE__);
+            udrv_serial_log_printf("+EVT:JOIN_FAILED_%d\r\n", __LINE__);
         }
     }
 
@@ -156,7 +233,7 @@ static void service_lora_beacon_acquisition(void *m_data)
     else
     {
         //udrv_serial_log_printf("Acquire Beacon Fail\r\n");
-        LORA_TEST_DEBUG("+BC: ONGOING\r\n");
+        LORA_TEST_DEBUG("+BC:ONGOING\r\n");
     }
 }
 
@@ -196,7 +273,7 @@ static void service_lora_send_null(void *m_data)
         info.retry_valid = true;
         info.retry = 0;
         info.confirm_valid = true;
-        info.confirm == SERVICE_LORA_NO_ACK;
+        info.confirm = SERVICE_LORA_NO_ACK;
 
         if ((ret = service_lora_send("", 0, info, false)) == UDRV_RETURN_OK)
         {
@@ -204,24 +281,21 @@ static void service_lora_send_null(void *m_data)
         }
         else
         {
+            LORA_TEST_DEBUG("ret=%d", ret);
             LORA_TEST_DEBUG("Send Null Fail\r\n");
-            //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
-
-            udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
         }
     }
     else
     {
         LORA_TEST_DEBUG("status=%d", status);
         LORA_TEST_DEBUG("Send Null Fail\r\n");
-        //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
-
-        udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
     }
 }
 
 static void McpsConfirm(McpsConfirm_t *mcpsConfirm)
 {
+    service_lora_radio_wake_unlock();
+
     if (mcpsConfirm->Status == LORAMAC_EVENT_INFO_STATUS_OK)
     {
         last_ack = mcpsConfirm->AckReceived;
@@ -237,14 +311,14 @@ static void McpsConfirm(McpsConfirm_t *mcpsConfirm)
     if( mcpsConfirm->McpsRequest == MCPS_CONFIRMED)
     {
         if(mcpsConfirm->AckReceived)
-        udrv_serial_log_printf("+EVT:SEND CONFIRMED OK\r\n");
+        udrv_serial_log_printf("+EVT:SEND_CONFIRMED_OK\r\n");
         else
-        udrv_serial_log_printf("+EVT:SEND CONFIRMED FAILED\r\n");
+        udrv_serial_log_printf("+EVT:SEND_CONFIRMED_FAILED\r\n");
     }
 
     service_lora_lptp_send_callback(0);
 
-    service_lora_wake_unlock();
+    LmHandlerPackagesNotify( PACKAGE_MCPS_CONFIRM, mcpsConfirm );
 }
 
 static void McpsIndication(McpsIndication_t *mcpsIndication)
@@ -257,12 +331,16 @@ static void McpsIndication(McpsIndication_t *mcpsIndication)
 
         if (mcpsIndication->BufferSize > 0)
         {
-            udrv_serial_log_printf("+EVT:RX_%s, RSSI %d, SNR %d\r\n", slotStrings[mcpsIndication->RxSlot], rssi, snr);
+            udrv_serial_log_printf("+EVT:RX_%s:%d:%d", slotStrings[mcpsIndication->RxSlot], rssi, snr);
             if (mcpsIndication->Multicast == 1)
-                MulticastMcpsIndication(mcpsIndication);
+            {
+                udrv_serial_log_printf(":MULTICAST");
+            }
             else
-                udrv_serial_log_printf("+EVT:UNICAST\r\n");
-            udrv_serial_log_printf("+EVT:%d:", mcpsIndication->Port);
+            {
+                udrv_serial_log_printf(":UNICAST");
+            }
+            udrv_serial_log_printf(":%d:", mcpsIndication->Port);
             for (int i = 0 ; i < SERIAL_MAX ; i++)
             {
                 SERVICE_MODE_TYPE mode = service_nvm_get_mode_type_from_nvm((SERIAL_PORT)i);
@@ -272,13 +350,16 @@ static void McpsIndication(McpsIndication_t *mcpsIndication)
                         udrv_serial_printf((SERIAL_PORT)i, "%02x", mcpsIndication->Buffer[j]);
                     }
                     udrv_serial_printf((SERIAL_PORT)i, "\r\n");
-                } else if (mode == SERVICE_MODE_TYPE_TRANSPARENT) 
+                }
+#ifdef SUPPORT_PASSTHRU
+                else if (mode == SERVICE_MODE_TYPE_TRANSPARENT)
                 {
                     if (mcpsIndication->Port == service_nvm_get_tp_port_from_nvm((SERIAL_PORT)i))
                     {
                         udrv_serial_write((SERIAL_PORT)i, mcpsIndication->Buffer, mcpsIndication->BufferSize);
                     }
                 }
+#endif
             }
             if (mcpsIndication->BufferSize > SERVICE_LORA_DLINK_BUFF_SIZE)
             {
@@ -292,38 +373,45 @@ static void McpsIndication(McpsIndication_t *mcpsIndication)
             }
             last_dlink_port = mcpsIndication->Port;
         }
-    }
-    
-    service_lora_linkcheck_callback();
 
-    //FramePending or Confirmed downlink
-    if(((mcpsIndication->FramePending == true) && (service_lora_get_class() == SERVICE_LORA_CLASS_A)) || (mcpsIndication->McpsIndication == MCPS_CONFIRMED))
-    {
-        service_lora_send_null(SERVICE_LORA_MAC_CMD_NONE);
-    }
-
-    if(( mcpsIndication->Port ) !=224)
-    {
-        if (service_lora_recv_callback != NULL) {
-            recv_data_pkg.Port = mcpsIndication->Port ;
-            recv_data_pkg.RxDatarate = mcpsIndication->RxDatarate;
-            recv_data_pkg.Buffer = mcpsIndication->Buffer;
-            recv_data_pkg.BufferSize = mcpsIndication->BufferSize;
-            recv_data_pkg.Rssi = mcpsIndication->Rssi;
-            recv_data_pkg.Snr = mcpsIndication->Snr;
-            recv_data_pkg.DownLinkCounter = mcpsIndication->DownLinkCounter;
-            service_lora_recv_callback(&recv_data_pkg);
+         //FramePending or Confirmed downlink
+        if(((mcpsIndication->FramePending == true) && (service_lora_get_class() == SERVICE_LORA_CLASS_A)) || (mcpsIndication->McpsIndication == MCPS_CONFIRMED))
+        {
+            service_lora_send_null(SERVICE_LORA_MAC_CMD_NONE);
         }
-    }
-    service_lora_Certifi_Callback(mcpsIndication);
-    service_lora_delay_send_process();
+
+        service_lora_linkcheck_callback();
+
+        if(( mcpsIndication->Port ) !=224)
+        {
+            if (service_lora_recv_callback != NULL) 
+            {
+                recv_data_pkg.Port = mcpsIndication->Port ;
+                recv_data_pkg.RxDatarate = mcpsIndication->RxDatarate;
+                recv_data_pkg.Buffer = mcpsIndication->Buffer;
+                recv_data_pkg.BufferSize = mcpsIndication->BufferSize;
+                recv_data_pkg.Rssi = mcpsIndication->Rssi;
+                recv_data_pkg.Snr = mcpsIndication->Snr;
+                recv_data_pkg.DownLinkCounter = mcpsIndication->DownLinkCounter;
+                service_lora_recv_callback(&recv_data_pkg);
+            }
+        }
+
+        LmHandlerPackagesNotify( PACKAGE_MCPS_INDICATION, mcpsIndication );
+
+        service_lora_delay_send_process();
+    }  
 }
 
 static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
 {
+    LmHandlerPackagesNotify( PACKAGE_MLME_CONFIRM, mlmeConfirm );
+
     switch (mlmeConfirm->MlmeRequest)
     {
     case MLME_JOIN:
+        service_lora_full_wake_unlock();
+
         if (mlmeConfirm->Status == LORAMAC_EVENT_INFO_STATUS_OK)
         {
             LoRaMacStatus_t status;
@@ -344,7 +432,7 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
                 mibReq.Param.Class = CLASS_C;
                 if (LoRaMacMibSetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
                 {
-                    udrv_serial_log_printf("+EVT:SWITCH FAILED\r\n");
+                    udrv_serial_log_printf("+EVT:SWITCH_FAILED\r\n");
                 }
             }
 
@@ -357,17 +445,18 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
             switch (mlmeConfirm->Status) {
                 case LORAMAC_EVENT_INFO_STATUS_TX_TIMEOUT:
                 {
-                    udrv_serial_log_printf("+EVT:JOIN FAILED(TX timeout)\r\n");
+                    udrv_serial_log_printf("+EVT:JOIN_FAILED_TX_TIMEOUT\r\n");
                     break;
                 }
+                case LORAMAC_EVENT_INFO_STATUS_RX1_TIMEOUT:
                 case LORAMAC_EVENT_INFO_STATUS_RX2_TIMEOUT:
                 {
-                    udrv_serial_log_printf("+EVT:JOIN FAILED(RX timeout)\r\n");
+                    udrv_serial_log_printf("+EVT:JOIN_FAILED_RX_TIMEOUT\r\n");
                     break;
                 }
                 default:
                 {
-                    udrv_serial_log_printf("+EVT:JOIN FAILED(%d)\r\n", mlmeConfirm->Status);
+                    udrv_serial_log_printf("+EVT:JOIN_FAILED_%d\r\n", mlmeConfirm->Status);
                     break;
                 }
             }
@@ -388,7 +477,7 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
                     }
                     else
                     {
-                        udrv_serial_log_printf("+EVT:JOIN FAILED(%d)\r\n", __LINE__);
+                        udrv_serial_log_printf("+EVT:JOIN_FAILED_%d\r\n", __LINE__);
                     }
                 }
             }
@@ -397,12 +486,11 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
                 service_lora_join_callback(mlmeConfirm->Status);
             }
 
-            service_lora_sleep();
+            service_lora_suspend();
         }
 
         if (service_lora_get_class() != SERVICE_LORA_CLASS_B)
         {
-            service_lora_wake_unlock();
         }
         break;
     case MLME_DEVICE_TIME:
@@ -416,7 +504,23 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
                 if (class_b_state != SERVICE_LORA_CLASS_B_COMPLETED) {
                     class_b_state = SERVICE_LORA_CLASS_B_S1;//Beacon searching
 
+//FIXME: Why can't directly sending NULL uplink work?
+#if 0
                     service_lora_beacon_acquisition(NULL);
+#else
+                    udrv_system_timer_stop(SYSTIMER_LORAWAN);
+                    if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_beacon_acquisition, HTMR_ONESHOT) == UDRV_RETURN_OK)
+                    {
+                        uint32_t ran = random()%128+1;
+                        LORA_TEST_DEBUG("random backoff %u seconds\r\n", ran);
+                        udrv_system_timer_start(SYSTIMER_LORAWAN, ran*1000, NULL);
+                    }
+                    else
+                    {
+                        udrv_serial_log_printf("+BC:FAILED_%d\r\n", __LINE__);
+                        udrv_system_timer_stop(SYSTIMER_LORAWAN);
+                    }
+#endif
                 }
             }
         }
@@ -439,25 +543,23 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
                 mibReq.Param.Class = CLASS_B;
                 if ((status = LoRaMacMibSetRequestConfirm(&mibReq)) == LORAMAC_STATUS_OK)
                 {
-                    udrv_serial_log_printf("+BC: DONE\r\n");
+                    udrv_serial_log_printf("+BC:DONE\r\n");
                 }
                 else
                 {
                     //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
 
                     LORA_TEST_DEBUG("status=%d",status);
-                    udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+                    udrv_serial_log_printf("+BC:FAILED_%d\r\n", __LINE__);
                 }
             }
-
-            service_lora_wake_unlock();
         }
         else
         {
             //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
 
             LORA_TEST_DEBUG("mlmeConfirm->Status=%d",mlmeConfirm->Status);
-            udrv_serial_log_printf("+BC:FAILED(%d)\r\n", __LINE__);
+            udrv_serial_log_printf("+BC:FAILED_%d\r\n", __LINE__);
         }
         break;
     }
@@ -469,7 +571,7 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
         linkcheck_state = mlmeConfirm->Status;
         if(linkcheck_state!= LORAMAC_EVENT_INFO_STATUS_OK)
         {
-            udrv_serial_log_printf("+EVT:LINKCHECK:1,0,0,0,0\r\n");
+            udrv_serial_log_printf("+EVT:LINKCHECK:1:0:0:0:0\r\n");
         }
         break;
     }
@@ -480,11 +582,13 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
 
 static void MlmeIndication(MlmeIndication_t *mlmeIndication)
 {
+    LmHandlerPackagesNotify( PACKAGE_MLME_INDICATION, mlmeIndication );
+
     switch (mlmeIndication->MlmeIndication)
     {
     case MLME_BEACON_LOST:
     {
-        udrv_serial_log_printf("+BC:LOST(given up)\r\n");
+        udrv_serial_log_printf("+BC:LOST_GIVEN_UP\r\n");
 
         class_b_state = SERVICE_LORA_CLASS_B_S1;//Beacon searching
 
@@ -497,7 +601,7 @@ static void MlmeIndication(MlmeIndication_t *mlmeIndication)
         }
         else
         {
-            udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+            udrv_serial_log_printf("+BC:FAILED_%d\r\n", __LINE__);
             udrv_system_timer_stop(SYSTIMER_LORAWAN);
         }
     }
@@ -522,7 +626,7 @@ static void MlmeIndication(MlmeIndication_t *mlmeIndication)
                 }
                 else
                 {
-                    udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+                    udrv_serial_log_printf("+BC:FAILED_%d\r\n", __LINE__);
                     udrv_system_timer_stop(SYSTIMER_LORAWAN);
                 }
             }
@@ -576,7 +680,7 @@ static void MlmeIndication(MlmeIndication_t *mlmeIndication)
             MlmeReq_t mlmeReq;
             LoRaMacStatus_t status;
 
-            udrv_serial_log_printf("+BC:LOST(temporarily)\r\n");
+            udrv_serial_log_printf("+BC:LOST_TEMPORARILY\r\n");
 
             udrv_system_timer_stop(SYSTIMER_LORAWAN);
             if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_send_null, HTMR_ONESHOT) == UDRV_RETURN_OK)
@@ -587,7 +691,7 @@ static void MlmeIndication(MlmeIndication_t *mlmeIndication)
             }
             else
             {
-                udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+                udrv_serial_log_printf("+BC:FAILED_%d\r\n", __LINE__);
                 udrv_system_timer_stop(SYSTIMER_LORAWAN);
             }
         }
@@ -595,7 +699,7 @@ static void MlmeIndication(MlmeIndication_t *mlmeIndication)
         {
             //class_b_state = SERVICE_LORA_CLASS_B_S3;//Class B failed
 
-            udrv_serial_log_printf("+BC:FAILED(%d)\r\n", __LINE__);
+            udrv_serial_log_printf("+BC:FAILED_%d\r\n", __LINE__);
         }
         btime = mlmeIndication->BeaconInfo.Time;
         break;
@@ -698,6 +802,18 @@ int32_t service_lora_init(SERVICE_LORA_BAND band)
             }
         }
 
+        /* Set CHS function of EU868 */
+        if(band == SERVICE_LORA_EU868)
+        {
+            if (service_lora_get_chs() != 0)
+            {
+                if ((ret = service_lora_set_chs(service_lora_get_chs())) != UDRV_RETURN_OK)
+                {
+                    goto out;
+                }
+            }
+        }
+
         if ((ret = service_lora_set_njm(service_nvm_get_njm_from_nvm(), false)) != UDRV_RETURN_OK)
         {
             goto out;
@@ -753,7 +869,10 @@ int32_t service_lora_init(SERVICE_LORA_BAND band)
         {
             goto out;
         }
-       
+
+        /* Single channel register function */
+        AU915_SingleChannelRegisterCallback(&SingleChannelAU915);
+        US915_SingleChannelRegisterCallback(&SingleChannelUS915);
  
         /**************************************************************************************
      *
@@ -773,10 +892,23 @@ int32_t service_lora_init(SERVICE_LORA_BAND band)
         goto out;
     }
 
+//FIXME: Why does srandom() need USB enabled?
+#ifdef SUPPORT_USB
     srandom(udrv_rtc_get_timestamp((RtcID_E)SYS_RTC_COUNTER_PORT));
+#endif
+
+    /*The LoRa-Alliance Compliance protocol package should always be initialized and activated.*/
+    if (LmHandlerPackageRegister(PACKAGE_ID_COMPLIANCE, &LmhpComplianceParams) != LORAMAC_HANDLER_SUCCESS)
+    {
+        LORA_TEST_DEBUG("LORAMAC register compliance protocol FAILED!\r\n");
+        ret = -UDRV_INTERNAL_ERR;
+        goto out;
+    }
 
 out:
-    service_lora_sleep();
+    /* ABP + classC Automatically open Rx_C */
+    if((service_lora_get_class()!=SERVICE_LORA_CLASS_C)&& (service_lora_get_njm()!=SERVICE_LORA_ABP))
+    service_lora_suspend();
     return ret;
 }
 
@@ -1484,6 +1616,7 @@ int32_t service_lora_join(int32_t param1, int32_t param2, int32_t param3, int32_
 
         mlmeReq.Req.Join.Datarate = service_lora_get_dr();
 
+        service_lora_full_wake_lock();
         status = LoRaMacMlmeRequest(&mlmeReq);
         LORA_TEST_DEBUG("status=%d", status);
 
@@ -1494,21 +1627,22 @@ int32_t service_lora_join(int32_t param1, int32_t param2, int32_t param3, int32_
                 class_b_state = SERVICE_LORA_CLASS_B_S0;//Initial state
             }
 
-            service_lora_wake_unlock_all();
-            service_lora_wake_lock();
             return UDRV_RETURN_OK;
         }
         else if (status == LORAMAC_STATUS_BUSY)
         {
+            service_lora_radio_wake_unlock();
             return -UDRV_BUSY;
         }
         else if (status == LORAMAC_STATUS_DUTYCYCLE_RESTRICTED)
         {
-            udrv_serial_log_printf("Restricted(wait %d ms)\r\n", mlmeReq.ReqReturn.DutyCycleWaitTime);
+            udrv_serial_log_printf("Restricted_Wait_%d_ms\r\n", mlmeReq.ReqReturn.DutyCycleWaitTime);
+            service_lora_radio_wake_unlock();
             return -UDRV_BUSY;
         }
         else
         {
+            service_lora_radio_wake_unlock();
             return -UDRV_INTERNAL_ERR;
         }
     }
@@ -1531,7 +1665,6 @@ int32_t service_lora_join(int32_t param1, int32_t param2, int32_t param3, int32_
             LoRaMacMibSetRequestConfirm(&mibReq);
         } else if (service_lora_get_class() == SERVICE_LORA_CLASS_B)
         {
-            service_lora_wake_lock();
         }
     }
     else
@@ -1567,7 +1700,7 @@ int32_t service_lora_set_lora_default(void)
 
     if (service_nvm_set_default_config_to_nvm() != UDRV_RETURN_OK)
     {
-        udrv_serial_log_printf("%s(): Fail\r\n", __func__);
+        udrv_serial_log_printf("%s():Fail\r\n", __func__);
         return -UDRV_INTERNAL_ERR;
     }
 
@@ -1822,7 +1955,7 @@ int32_t service_lora_send(uint8_t *buff, uint32_t len, SERVICE_LORA_SEND_INFO in
                 }
                 else
                 {
-                    udrv_serial_log_printf("+BC: FAILED (%d)\r\n", __LINE__);
+                    udrv_serial_log_printf("+BC:FAILED_%d\r\n", __LINE__);
                     udrv_system_timer_stop(SYSTIMER_LORAWAN);
                 }
                 break;
@@ -1874,10 +2007,24 @@ int32_t service_lora_send(uint8_t *buff, uint32_t len, SERVICE_LORA_SEND_INFO in
 
         // Set the retry times
         if (true == info.retry_valid)
+        {
+#if LORA_STACK_VER == 0x040407
             mcpsReq.Req.Confirmed.NbTrials = info.retry;
+#elif LORA_STACK_VER == 0x040502
+            //mcpsReq.Req.Confirmed.NbTrials = info.retry;
+#else
+            mcpsReq.Req.Confirmed.NbTrials = info.retry;
+#endif
+        }
         else
         {
+#if LORA_STACK_VER == 0x040407
             mcpsReq.Req.Confirmed.NbTrials = service_nvm_get_retry_from_nvm()+1;
+#elif LORA_STACK_VER == 0x040502
+            //mcpsReq.Req.Confirmed.NbTrials = service_nvm_get_retry_from_nvm()+1;
+#else
+            mcpsReq.Req.Confirmed.NbTrials = service_nvm_get_retry_from_nvm()+1;
+#endif
         }
         // Set the packet type
         if (true == info.confirm_valid)
@@ -1901,6 +2048,8 @@ int32_t service_lora_send(uint8_t *buff, uint32_t len, SERVICE_LORA_SEND_INFO in
         last_ack = false;
     }
 
+    service_lora_radio_wake_lock();
+
     status = LoRaMacMcpsRequest(&mcpsReq);
     LORA_TEST_DEBUG("status %d",status);
     LORA_TEST_DEBUG("DutyCycleWaitTime  %d",mcpsReq.ReqReturn.DutyCycleWaitTime);
@@ -1909,10 +2058,10 @@ int32_t service_lora_send(uint8_t *buff, uint32_t len, SERVICE_LORA_SEND_INFO in
     {
         if (tx_possible == false)
         {
+            service_lora_radio_wake_unlock();
             return -UDRV_WRONG_ARG;
         }
 
-        service_lora_wake_lock();
         if (blocking) {
 #if 0
             udrv_app_delay_ms(service_lora_get_rx2dl());
@@ -1922,15 +2071,23 @@ int32_t service_lora_send(uint8_t *buff, uint32_t len, SERVICE_LORA_SEND_INFO in
     }
     else if (status == LORAMAC_STATUS_BUSY_PING_SLOT_WINDOW_TIME)
     {
+        service_lora_radio_wake_unlock();
+        return -UDRV_BUSY;
+    }
+    else if (status == LORAMAC_STATUS_BUSY_BEACON_RESERVED_TIME)
+    {
+        service_lora_radio_wake_unlock();
         return -UDRV_BUSY;
     }
     else if (status == LORAMAC_STATUS_DUTYCYCLE_RESTRICTED)
     {
-        udrv_serial_log_printf("Restricted(wait %d ms)\r\n", mcpsReq.ReqReturn.DutyCycleWaitTime);
+        udrv_serial_log_printf("Restricted_Wait_%d_ms\r\n", mcpsReq.ReqReturn.DutyCycleWaitTime);
+        service_lora_radio_wake_unlock();
         return -UDRV_BUSY;
     }
     else
     {
+        service_lora_radio_wake_unlock();
         return -UDRV_INTERNAL_ERR;
     }
 }
@@ -1942,15 +2099,19 @@ bool service_lora_get_adr(void)
 
 int32_t service_lora_set_adr(bool adr, bool commit)
 {
+    LoRaMacStatus_t status;
     MibRequestConfirm_t mibReq;
 
     mibReq.Type = MIB_ADR;
     mibReq.Param.AdrEnable = adr;
-    if (LoRaMacMibSetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
-    {
-        return -UDRV_INTERNAL_ERR;
-    }
+    status = LoRaMacMibSetRequestConfirm(&mibReq);
 
+    if(status == LORAMAC_STATUS_PARAMETER_INVALID) {
+        return -UDRV_WRONG_ARG;
+    } else if(status == LORAMAC_STATUS_BUSY) {
+        return -UDRV_BUSY;
+    }
+    
     if (commit)
     {
         return service_nvm_set_adr_to_nvm(adr);
@@ -1958,6 +2119,32 @@ int32_t service_lora_set_adr(bool adr, bool commit)
     else
     {
         return UDRV_RETURN_OK;
+    }
+}
+
+SERVICE_LORA_CLASS service_lora_get_real_class_from_stack(void)
+{
+    MibRequestConfirm_t mibReq;
+    LoRaMacStatus_t status;
+
+    mibReq.Type = MIB_DEVICE_CLASS;
+    if ((status = LoRaMacMibGetRequestConfirm(&mibReq)) != LORAMAC_STATUS_OK)
+    {
+        return -UDRV_INTERNAL_ERR;
+    }
+    else
+    {
+        switch (mibReq.Param.Class)
+        {
+        case CLASS_A:
+            return SERVICE_LORA_CLASS_A;
+        case CLASS_B:
+            return SERVICE_LORA_CLASS_B;
+        case CLASS_C:
+            return SERVICE_LORA_CLASS_C;
+        default:
+            return -UDRV_INTERNAL_ERR;
+        }
     }
 }
 
@@ -1971,13 +2158,7 @@ int32_t service_lora_set_class(SERVICE_LORA_CLASS device_class, bool commit)
     MibRequestConfirm_t mibReq;
     MlmeReq_t mlmeReq;
     LoRaMacStatus_t status;
-
-    if (service_lora_get_class() == device_class)
-    {
-        //Do nothing.
-        return UDRV_RETURN_OK;
-    }
-
+    
     if (service_lora_get_njs() == true)
     {
         mibReq.Type = MIB_DEVICE_CLASS;
@@ -2720,12 +2901,14 @@ int32_t service_lora_set_chs(uint32_t frequency)
     SERVICE_LORA_BAND band = service_lora_get_band();
     MibRequestConfirm_t mibReq;
 
-    if ((band != SERVICE_LORA_AU915) && (band != SERVICE_LORA_US915) && (band != SERVICE_LORA_CN470))
+    if ((band != SERVICE_LORA_AU915) && (band != SERVICE_LORA_US915) && (band != SERVICE_LORA_CN470)&& (band != SERVICE_LORA_EU868))
     {
         return -UDRV_INTERNAL_ERR;
     }
     else
     {
+        if((band == SERVICE_LORA_AU915)||(band == SERVICE_LORA_US915)||(band == SERVICE_LORA_CN470))
+        {
         if (frequency == 0)
         {
             uint16_t lora_service_channel_mask = 0;
@@ -2779,6 +2962,50 @@ int32_t service_lora_set_chs(uint32_t frequency)
         if (i == max_nb_ch)
         {
             return -UDRV_WRONG_ARG;
+            }
+        }
+        else if(band == SERVICE_LORA_EU868)
+        {
+            //Restore default mask
+            if(frequency==0)
+            {
+                channel_mask[0] = LC( 1 ) + LC( 2 ) + LC( 3 );
+            }
+            else
+            {
+                //Check whether the frequency meets the requirements
+                mibReq.Type = MIB_CHANNELS;
+                LoRaMacMibGetRequestConfirm(&mibReq);
+
+                for(i=0;i<4;i++)
+                {
+                    if(frequency == mibReq.Param.ChannelList[i].Frequency)
+                    {
+                        channel_mask[0]=LC( i+1 );
+                        break;
+                    }
+                    if(i==3)
+                    {
+                        return -UDRV_WRONG_ARG;
+                    }
+                }
+            }
+            
+            mibReq.Type = MIB_CHANNELS_MASK;
+            mibReq.Param.ChannelsMask = channel_mask;
+            if (LoRaMacMibSetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
+             {
+                return -UDRV_INTERNAL_ERR;
+            }
+
+            mibReq.Type = MIB_CHANNELS_DEFAULT_MASK;
+            mibReq.Param.ChannelsMask = channel_mask;
+            if (LoRaMacMibSetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
+            {
+                return -UDRV_INTERNAL_ERR;
+            }
+            return service_rui_set_chs_to_nvm(frequency);
+
         }
     }
     return UDRV_RETURN_OK;
@@ -2787,7 +3014,7 @@ int32_t service_lora_set_chs(uint32_t frequency)
 int32_t service_lora_get_chs(void)
 {
     SERVICE_LORA_BAND band = service_lora_get_band();
-    if ((band != SERVICE_LORA_AU915) && (band != SERVICE_LORA_US915) && (band != SERVICE_LORA_CN470))
+    if ((band != SERVICE_LORA_AU915) && (band != SERVICE_LORA_US915) && (band != SERVICE_LORA_CN470) &&  (band != SERVICE_LORA_EU868))
     {
         return -UDRV_INTERNAL_ERR;
     }
@@ -2803,7 +3030,7 @@ void service_lora_linkcheck_callback(void)
         {
             // Check DemodMargin
             // Check NbGateways
-            udrv_serial_log_printf("+EVT:LINKCHECK:0,%d,%d,%d,%d\r\n", DemodMargin, NbGateways, rssi, snr);
+            udrv_serial_log_printf("+EVT:LINKCHECK:0:%d:%d:%d:%d\r\n", DemodMargin, NbGateways, rssi, snr);
         }
     }
 }
@@ -2862,4 +3089,348 @@ int32_t service_lora_query_txPossible(int16_t len)
     LORA_TEST_DEBUG("service_lora_query_txPossible CurrentPossiblePayloadSize %d MaxPossibleApplicationDataSize %d",
     txInfo.CurrentPossiblePayloadSize,txInfo.MaxPossibleApplicationDataSize);
     return txInfo.MaxPossibleApplicationDataSize;
+}
+
+static void DisplayMacMcpsRequestUpdate( LoRaMacStatus_t status, McpsReq_t *mcpsReq, TimerTime_t nextTxIn )
+{
+    LORA_TEST_DEBUG("\r\n");
+    switch( mcpsReq->Type )
+    {
+        case MCPS_CONFIRMED:
+        {
+            udrv_serial_log_printf( "\n###### =========== MCPS-Request ============ ######\n" );
+            udrv_serial_log_printf( "######            MCPS_CONFIRMED             ######\n");
+            udrv_serial_log_printf( "###### ===================================== ######\n");
+            break;
+        }
+        case MCPS_UNCONFIRMED:
+        {
+            udrv_serial_log_printf( "\n###### =========== MCPS-Request ============ ######\n" );
+            udrv_serial_log_printf( "######           MCPS_UNCONFIRMED            ######\n");
+            udrv_serial_log_printf( "###### ===================================== ######\n");
+            break;
+        }
+        case MCPS_PROPRIETARY:
+        {
+            udrv_serial_log_printf( "\n###### =========== MCPS-Request ============ ######\n" );
+            udrv_serial_log_printf( "######           MCPS_PROPRIETARY            ######\n");
+            udrv_serial_log_printf( "###### ===================================== ######\n");
+            break;
+        }
+        default:
+        {
+            udrv_serial_log_printf( "\n###### =========== MCPS-Request ============ ######\n" );
+            udrv_serial_log_printf( "######                MCPS_ERROR             ######\n");
+            udrv_serial_log_printf( "###### ===================================== ######\n");
+            break;
+        }
+    }
+    udrv_serial_log_printf( "STATUS      : %s\n", MacStatusStrings[status] );
+    if( status == LORAMAC_STATUS_DUTYCYCLE_RESTRICTED )
+    {
+        udrv_serial_log_printf( "Next Tx in  : %lu [ms]\n", nextTxIn );
+    }
+}
+
+static void DisplayMacMlmeRequestUpdate( LoRaMacStatus_t status, MlmeReq_t *mlmeReq, TimerTime_t nextTxIn )
+{
+    LORA_TEST_DEBUG("\r\n");
+    switch( mlmeReq->Type )
+    {
+        case MLME_JOIN:
+        {
+            udrv_serial_log_printf( "\n###### =========== MLME-Request ============ ######\n" );
+            udrv_serial_log_printf( "######               MLME_JOIN               ######\n");
+            udrv_serial_log_printf( "###### ===================================== ######\n");
+            break;
+        }
+        case MLME_LINK_CHECK:
+        {
+            udrv_serial_log_printf( "\n###### =========== MLME-Request ============ ######\n" );
+            udrv_serial_log_printf( "######            MLME_LINK_CHECK            ######\n");
+            udrv_serial_log_printf( "###### ===================================== ######\n");
+            break;
+        }
+        case MLME_DEVICE_TIME:
+        {
+            udrv_serial_log_printf( "\n###### =========== MLME-Request ============ ######\n" );
+            udrv_serial_log_printf( "######            MLME_DEVICE_TIME           ######\n");
+            udrv_serial_log_printf( "###### ===================================== ######\n");
+            break;
+        }
+        case MLME_TXCW:
+        {
+            udrv_serial_log_printf( "\n###### =========== MLME-Request ============ ######\n" );
+            udrv_serial_log_printf( "######               MLME_TXCW               ######\n");
+            udrv_serial_log_printf( "###### ===================================== ######\n");
+            break;
+        }
+        case MLME_TXCW_1:
+        {
+            udrv_serial_log_printf( "\n###### =========== MLME-Request ============ ######\n" );
+            udrv_serial_log_printf( "######               MLME_TXCW_1             ######\n");
+            udrv_serial_log_printf( "###### ===================================== ######\n");
+            break;
+        }
+        default:
+        {
+            udrv_serial_log_printf( "\n###### =========== MLME-Request ============ ######\n" );
+            udrv_serial_log_printf( "######              MLME_UNKNOWN             ######\n");
+            udrv_serial_log_printf( "###### ===================================== ######\n");
+            break;
+        }
+    }
+    udrv_serial_log_printf( "STATUS      : %s\n", MacStatusStrings[status] );
+    if( status == LORAMAC_STATUS_DUTYCYCLE_RESTRICTED )
+    {
+        udrv_serial_log_printf( "Next Tx in  : %lu [ms]\n", nextTxIn );
+    }
+}
+
+static void OnMacMcpsRequest( LoRaMacStatus_t status, McpsReq_t *mcpsReq, TimerTime_t nextTxIn )
+{
+    LORA_TEST_DEBUG("\r\n");
+    DisplayMacMcpsRequestUpdate( status, mcpsReq, nextTxIn );
+}
+
+static void OnMacMlmeRequest( LoRaMacStatus_t status, MlmeReq_t *mlmeReq, TimerTime_t nextTxIn )
+{
+    LORA_TEST_DEBUG("\r\n");
+    DisplayMacMlmeRequestUpdate( status, mlmeReq, nextTxIn );
+}
+
+static void LmHandlerJoinRequest( bool isOtaa )
+{
+    LORA_TEST_DEBUG("isOtaa=%d\r\n", isOtaa);
+    if( isOtaa == true )
+    {
+        //XXX
+        service_lora_set_njm(SERVICE_LORA_OTAA, true);
+        service_lora_join(1, -1, -1, -1);
+    }
+    else
+    {
+        //XXX
+        service_lora_set_njm(SERVICE_LORA_OTAA, true);
+        service_lora_join(1, -1, -1, -1);
+    }
+}
+
+LmHandlerErrorStatus_t LmHandlerSend( LmHandlerAppData_t *appData, LmHandlerMsgTypes_t isTxConfirmed )
+{
+    int32_t ret;
+    SERVICE_LORA_SEND_INFO info;
+    LORA_TEST_DEBUG("port=%d\r\n", appData->Port);
+
+    info.port = appData->Port;
+
+    info.retry_valid = true;
+    info.retry = 2;
+
+    info.confirm_valid = true;
+    if (isTxConfirmed == LORAMAC_HANDLER_CONFIRMED_MSG) {
+        info.confirm = SERVICE_LORA_ACK;
+    } else if (isTxConfirmed == LORAMAC_HANDLER_UNCONFIRMED_MSG) {
+        info.confirm = SERVICE_LORA_NO_ACK;
+    }
+
+    if ((ret = service_lora_send(appData->Buffer, appData->BufferSize, info, false)) == UDRV_RETURN_OK)
+    {
+        LORA_TEST_DEBUG("Send LCT Packet Success\r\n");
+    }
+    else
+    {
+        LORA_TEST_DEBUG("Send LCT Packet Fail\r\n");
+        return LORAMAC_HANDLER_ERROR;
+    }
+
+    return LORAMAC_HANDLER_SUCCESS;
+}
+
+LmHandlerErrorStatus_t LmHandlerPackageRegister( uint8_t id, void *params )
+{
+    LmhPackage_t *package = NULL;
+    LORA_TEST_DEBUG("id=%u\r\n", id);
+    switch( id )
+    {
+        case PACKAGE_ID_COMPLIANCE:
+        {
+            package = LmphCompliancePackageFactory( );
+            break;
+        }
+#if 0
+        case PACKAGE_ID_CLOCK_SYNC:
+        {
+            package = LmphClockSyncPackageFactory( );
+            break;
+        }
+        case PACKAGE_ID_REMOTE_MCAST_SETUP:
+        {
+            package = LmhpRemoteMcastSetupPackageFactory( );
+            break;
+        }
+        case PACKAGE_ID_FRAGMENTATION:
+        {
+            package = LmhpFragmentationPackageFactory( );
+            break;
+        }
+#endif
+    }
+    if( package != NULL )
+    {
+        LmHandlerPackages[id] = package;
+        LmHandlerPackages[id]->OnMacMcpsRequest = OnMacMcpsRequest;
+        LmHandlerPackages[id]->OnMacMlmeRequest = OnMacMlmeRequest;
+        LmHandlerPackages[id]->OnJoinRequest = LmHandlerJoinRequest;
+        LmHandlerPackages[id]->OnSendRequest = LmHandlerSend;
+        LmHandlerPackages[id]->OnDeviceTimeRequest = NULL;
+        LmHandlerPackages[id]->OnSysTimeUpdate = NULL;
+        LmHandlerPackages[id]->Init( params, AppDataBuffer, LORAWAN_APP_DATA_BUFFER_MAX_SIZE );
+
+        return LORAMAC_HANDLER_SUCCESS;
+    }
+    else
+    {
+        return LORAMAC_HANDLER_ERROR;
+    }
+}
+
+bool LmHandlerPackageIsInitialized( uint8_t id )
+{
+    //LORA_TEST_DEBUG("id=%u\r\n", id);
+    if( LmHandlerPackages[id]->IsInitialized != NULL )
+    {
+        return LmHandlerPackages[id]->IsInitialized( );
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool LmHandlerPackageIsRunning( uint8_t id )
+{
+    LORA_TEST_DEBUG("id=%u\r\n", id);
+    if( LmHandlerPackages[id]->IsRunning != NULL )
+    {
+        return LmHandlerPackages[id]->IsRunning( );
+    }
+    else
+    {
+        return false;
+    }
+}
+
+static void LmHandlerPackagesNotify( PackageNotifyTypes_t notifyType, void *params )
+{
+    LORA_TEST_DEBUG("notifyType=%d\r\n", notifyType);
+    for( int8_t i = 0; i < PKG_MAX_NUMBER; i++ )
+    {
+        if( LmHandlerPackages[i] != NULL )
+        {
+            switch( notifyType )
+            {
+                case PACKAGE_MCPS_CONFIRM:
+                {
+                    if( LmHandlerPackages[i]->OnMcpsConfirmProcess != NULL )
+                    {
+                        LmHandlerPackages[i]->OnMcpsConfirmProcess( ( McpsConfirm_t* ) params );
+                    }
+                    break;
+                }
+                case PACKAGE_MCPS_INDICATION:
+                {
+                    if( ( LmHandlerPackages[i]->OnMcpsIndicationProcess != NULL ) &&
+                        ( LmHandlerPackages[i]->Port == ( ( McpsIndication_t* )params )->Port ) )
+                    {
+                        LmHandlerPackages[i]->OnMcpsIndicationProcess( ( McpsIndication_t* )params );
+                    }
+                    break;
+                }
+                case PACKAGE_MLME_CONFIRM:
+                {
+                    if( LmHandlerPackages[i]->OnMlmeConfirmProcess != NULL )
+                    {
+                        LmHandlerPackages[i]->OnMlmeConfirmProcess( ( MlmeConfirm_t* )params );
+                    }
+                    break;
+                }
+                case PACKAGE_MLME_INDICATION:
+                {
+                    if( LmHandlerPackages[i]->OnMlmeIndicationProcess != NULL )
+                    {
+                        LmHandlerPackages[i]->OnMlmeIndicationProcess( params );
+                    }
+                    break;
+                }
+            }
+        }
+    }
+}
+
+void LmHandlerPackagesProcess( void )
+{
+    //LORA_TEST_DEBUG("\r\n");
+    for( int8_t i = 0; i < PKG_MAX_NUMBER; i++ )
+    {
+        if( ( LmHandlerPackages[i] != NULL ) &&
+            ( LmHandlerPackages[i]->Process != NULL ) &&
+            ( LmHandlerPackageIsInitialized( i ) != false ) )
+        {
+            LmHandlerPackages[i]->Process( );
+        }
+    }
+}
+
+
+static uint32_t IsSingleChannelAU915Callback()
+{
+    //LORA_TEST_DEBUG("IsSingleChannelAU915Callback");
+    uint32_t frequency = service_lora_get_chs();
+    return frequency;
+}
+static uint8_t AlternateDrAU915Callback()
+{
+    uint8_t CurrentDr=0;
+    //LORA_TEST_DEBUG("AlternateDrAU915Callback");
+    uint32_t step = 1600000,base = 915900000;
+    uint32_t frequency = service_lora_get_chs();
+    if(frequency)
+    {
+        for(uint8_t i=0;i < 8;i++)
+        {
+            if(frequency == base)
+            {
+                LORA_TEST_DEBUG();
+                CurrentDr = DR_6;
+            }
+            base += step;
+        }
+    }
+    return CurrentDr;
+}
+static uint32_t IsSingleChannelUS915Callback()
+{
+    //LORA_TEST_DEBUG("IsSingleChannelUS915Callback");
+    uint32_t frequency = service_lora_get_chs();
+    return frequency;
+}
+static uint8_t AlternateDrUS915Callback()
+{
+    uint8_t CurrentDr=0;
+    //LORA_TEST_DEBUG("AlternateDrUS915Callback");
+    uint32_t frequency = service_lora_get_chs();
+    uint32_t step = 1600000,base = 903000000;
+    if(frequency)
+    {
+        for(uint8_t i=0 ; i < 8 ; i++)
+        {
+            if(frequency == base)
+            {
+                CurrentDr = DR_4;
+            }
+            base += step;
+        }
+    }
+    return CurrentDr;
 }

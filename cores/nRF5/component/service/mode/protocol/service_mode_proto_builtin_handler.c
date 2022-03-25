@@ -1,6 +1,8 @@
 #include "atcmd.h"
 #include "udrv_errno.h"
+#ifdef SUPPORT_LORA
 #include "service_lora.h"
+#endif
 #include "service_mode.h"
 #include "service_mode_proto.h"
 #include "service_mode_proto_builtin_handler.h"
@@ -89,7 +91,11 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
         case SERVICE_MODE_PROTO_ATCMD_ATR:
         {
             if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
+#ifdef SUPPORT_LORA
                 ret = service_lora_set_lora_default();
+#else
+                ret = service_nvm_set_default_config_to_nvm();
+#endif
                 if (ret == UDRV_RETURN_OK)
                 {
                     nRet = AT_OK;
@@ -254,6 +260,38 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             }
             break;
         }
+        case SERVICE_MODE_PROTO_ATCMD_ALIAS:
+        {
+            if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) 
+            {
+                if (payload_len > 16) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+                if (service_nvm_set_atcmd_alias_to_nvm(arg, strlen(arg)) == UDRV_RETURN_OK) {
+                    nRet = AT_OK;
+                } else {
+                    nRet = AT_ERROR;
+                }
+            } else {
+                uint8_t rbuff[16];
+                if (service_nvm_get_atcmd_alias_from_nvm(rbuff, 16) != UDRV_RETURN_OK) {
+                    nRet = AT_ERROR;
+                    goto out;
+                }
+                memset(buff, 0, 256);
+                reply_len = strlen(rbuff);
+                memcpy(buff+sizeof(header), rbuff, strlen(rbuff));
+                header.length = __builtin_bswap16(reply_len);
+                header.flag = PROTO_ATCMD_FLAG_RESPONSE;
+                header.atcmd_id = atcmd_id;
+                memcpy(buff, &header, sizeof(header));
+
+                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+reply_len, NULL);
+                nRet = AT_OK;
+            }
+            break;
+        }
         case SERVICE_MODE_PROTO_ATCMD_LOCK:
         {
             //if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
@@ -312,7 +350,7 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
 
                 baud = __builtin_bswap32(*(uint32_t *)arg);
 
-                udrv_serial_init(port, baud, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE);
+                udrv_serial_init(port, baud, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 
                 ret = service_nvm_set_baudrate_to_nvm(baud);
                 if (ret == UDRV_RETURN_OK) {
@@ -353,11 +391,15 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
 
                     switch (old_mode)
                     {
+#ifdef SUPPORT_LORA
+#ifdef SUPPORT_PASSTHRU
                         case SERVICE_MODE_TYPE_TRANSPARENT:
                         {
                             service_mode_transparent_deinit(port);
                             break;
                         }
+#endif
+#endif
                         case SERVICE_MODE_TYPE_PROTOCOL:
                         {
                             service_mode_proto_deinit(port);
@@ -399,11 +441,15 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
                                 service_mode_cli_deinit(port);
                                 break;
                             }
+#ifdef SUPPORT_LORA
+#ifdef SUPPORT_PASSTHRU
                             case SERVICE_MODE_TYPE_TRANSPARENT:
                             {
                                 service_mode_transparent_deinit(port);
                                 break;
                             }
+#endif
+#endif
                             default:
                             {
                                 break;
@@ -421,6 +467,8 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             }
             break;
         }
+#ifdef SUPPORT_LORA
+#ifdef SUPPORT_PASSTHRU
         case SERVICE_MODE_PROTO_ATCMD_PAM:
         {
             if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
@@ -496,6 +544,7 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             }
             break;
         }
+#endif
         case SERVICE_MODE_PROTO_ATCMD_APPEUI:
         {
             if (SERVICE_LORAWAN != service_lora_get_nwm())
@@ -1318,24 +1367,24 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
 
                 jn1dl = __builtin_bswap32(*(uint32_t *)arg);
 
-                if (jn1dl == 0 || jn1dl > 15000) {//unit is milli-second
+                if (jn1dl < 1 || jn1dl > 14) {//unit is second
                     nRet = AT_PARAM_ERROR;
                     goto out;
                 }
 
-                if (jn1dl >= service_lora_get_jn2dl()) {
+                if (jn1dl >= service_lora_get_jn2dl()/1000) {
                     ret = AT_PARAM_ERROR;
                     goto out;
                 }
 
-                if (service_lora_set_jn1dl(jn1dl, true) == UDRV_RETURN_OK) {//change unit from s to ms
+                if (service_lora_set_jn1dl(jn1dl*1000, true) == UDRV_RETURN_OK) {//change unit from s to ms
                     nRet = AT_OK;
                 } else {
                     nRet = AT_ERROR;
                 }
             } else {
                 memset(buff, 0, 256);
-                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_jn1dl_from_nvm());
+                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_jn1dl_from_nvm()/1000);//change unit from ms to s
                 header.length = __builtin_bswap16(4);
                 header.flag = PROTO_ATCMD_FLAG_RESPONSE;
                 header.atcmd_id = atcmd_id;
@@ -1364,24 +1413,24 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
 
                 jn2dl = __builtin_bswap32(*(uint32_t *)arg);
 
-                if (jn2dl == 0 || jn2dl > 15000) {//unit is milli-second
+                if (jn2dl < 2 || jn2dl > 15) {//unit is second
                     nRet = AT_PARAM_ERROR;
                     goto out;
                 }
 
-                if (jn2dl <= service_lora_get_jn1dl()) {
+                if (jn2dl <= service_lora_get_jn1dl()/1000) {//change unit from ms to s
                     ret = AT_PARAM_ERROR;
                     goto out;
                 }
 
-                if (service_lora_set_jn2dl(jn2dl, true) == UDRV_RETURN_OK) {//change unit from s to ms
+                if (service_lora_set_jn2dl(jn2dl*1000, true) == UDRV_RETURN_OK) {//change unit from s to ms
                     nRet = AT_OK;
                 } else {
                     nRet = AT_ERROR;
                 }
             } else {
                 memset(buff, 0, 256);
-                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_jn2dl_from_nvm());
+                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_jn2dl_from_nvm()/1000);
                 header.length = __builtin_bswap16(4);
                 header.flag = PROTO_ATCMD_FLAG_RESPONSE;
                 header.atcmd_id = atcmd_id;
@@ -1451,24 +1500,19 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
 
                 rx1dl = __builtin_bswap32(*(uint32_t *)arg);
 
-                if (rx1dl == 0 || rx1dl > 15000) {//unit is milli-second
+                if (rx1dl < 1 || rx1dl > 15) {//unit is second
                     nRet = AT_PARAM_ERROR;
                     goto out;
                 }
 
-                if (rx1dl >= service_lora_get_rx2dl()) {
-                    nRet = AT_PARAM_ERROR;
-                    goto out;
-                }
-
-                if (service_lora_set_rx1dl(rx1dl, true) == UDRV_RETURN_OK) {//change unit from s to ms
+                if (service_lora_set_rx1dl(rx1dl*1000, true) == UDRV_RETURN_OK) {//change unit from s to ms
                     nRet = AT_OK;
                 } else {
                     nRet = AT_ERROR;
                 }
             } else {
                 memset(buff, 0, 256);
-                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_rx1dl_from_nvm());
+                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_rx1dl_from_nvm()/1000);
                 header.length = __builtin_bswap16(4);
                 header.flag = PROTO_ATCMD_FLAG_RESPONSE;
                 header.atcmd_id = atcmd_id;
@@ -1497,24 +1541,19 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
 
                 rx2dl = __builtin_bswap32(*(uint32_t *)arg);
 
-                if (rx2dl == 0 || rx2dl > 15000) {//unit is milli-second
+                if (rx2dl < 2 || rx2dl > 16) {//unit is second
                     nRet = AT_PARAM_ERROR;
                     goto out;
                 }
 
-                if (rx2dl <= service_lora_get_rx1dl()) {
-                    nRet = AT_PARAM_ERROR;
-                    goto out;
-                }
-
-                if (service_lora_set_rx2dl(rx2dl, true) == UDRV_RETURN_OK) {//change unit from s to ms
+                if (service_lora_set_rx2dl(rx2dl*1000, true) == UDRV_RETURN_OK) {//change unit from s to ms
                     nRet = AT_OK;
                 } else {
                     nRet = AT_ERROR;
                 }
             } else {
                 memset(buff, 0, 256);
-                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_rx2dl_from_nvm());
+                *(uint32_t *)(buff+sizeof(header)) = __builtin_bswap32(service_nvm_get_rx2dl_from_nvm()/1000);//change unit from ms to s
                 header.length = __builtin_bswap16(4);
                 header.flag = PROTO_ATCMD_FLAG_RESPONSE;
                 header.atcmd_id = atcmd_id;
@@ -2404,6 +2443,12 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
         }
         case SERVICE_MODE_PROTO_ATCMD_PRECV:
         {
+            if (SERVICE_LORAWAN == service_lora_get_nwm())
+            {
+                nRet = AT_MODE_NO_SUPPORT;
+                goto out;
+            }
+
             if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
                 uint32_t timeout;
 
@@ -2517,6 +2562,12 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
 
                 bitrate = __builtin_bswap32(*(uint32_t *)arg);
 
+                if(bitrate < 600 || bitrate > 300000)
+                {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
                 ret = service_lora_p2p_set_bitrate(bitrate);
                 if (ret == UDRV_RETURN_OK) {
                     nRet = AT_OK;
@@ -2553,6 +2604,11 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
                 }
 
                 fdev = __builtin_bswap32(*(uint32_t *)arg);
+
+                if( fdev < 600 || fdev > 200000) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
 
                 ret = service_lora_p2p_set_fdev(fdev);
                 if (ret == UDRV_RETURN_OK) {
@@ -2637,6 +2693,7 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             nRet = AT_MODE_NO_SUPPORT;
             break;
         }
+#endif
         //case SERVICE_MODE_PROTO_ATCMD_DELBONDS:
         //case SERVICE_MODE_PROTO_ATCMD_AUTOSLEEP:
         default:
