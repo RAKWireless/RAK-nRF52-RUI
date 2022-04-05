@@ -96,7 +96,7 @@ void loop()
     if (th_sensor.update())
     {
         Serial.println("--------------------");
-        Serial.print("Tmeperature : ");
+        Serial.print("Temperature : ");
         Serial.println(th_sensor.temperature());
         Serial.println("--------------------");
 
