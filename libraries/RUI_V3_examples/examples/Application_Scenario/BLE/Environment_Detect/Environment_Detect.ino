@@ -2,7 +2,7 @@
 * This use case will demonstrate the use of the BLE customer API
   * to create a application scenario case.
   *
-  * Theapplication is made with AK4631 and RAK1901
+  * Theapplication is made with RAK4631 and RAK1901
   * (WisBlock Temperature and Humidity Sensor).
   * This use case is used to demonstrate measuring the working environment temperature of the factory
   * To achieve the purpose of remote monitoring in high temperature working environment
