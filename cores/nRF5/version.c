@@ -2,7 +2,7 @@
 #define MODEL_ID "rak4630"
 #define CHIP_ID "nrf52840"
 #define BUILD_DATE "20220411"
-#define BUILD_TIME "021818"
+#define BUILD_TIME "135527"
 #define REPO_INFO "713fbcca:6ecbb45f:e198f620:b43f5395:4a6defb9:c9438443:5ccb8eec:70e5bb3f"
 #define CLI_REVISION "1.5.2"
 #define API_REVISION "3.0.0"
