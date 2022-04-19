@@ -24,8 +24,7 @@ void scan_callback(int8_t rssi_value, uint8_t * device_mac,
   sprintf(mac_addr, "%02x:%02x:%02x:%02x:%02x:%02x",
 	  device_mac[5], device_mac[4], device_mac[3],
 	  device_mac[2], device_mac[1], device_mac[0]);
-  Serial.
-      println
+  Serial.println
       ("\r\n____________________________________________________________________");
   Serial.print(mac_addr);
   Serial.print("\t");
@@ -61,8 +60,7 @@ void setup()
   Serial.println("------------------------------------------------------");
   api.ble.scanner.start(0);
   if (!(ret = api.ble.scanner.setInterval(1000, 500))) {
-    Serial.
-	printf
+    Serial.printf
 	("BLE Configuration - set broadcast name is incorrect! \r\n");
     return;
   }
