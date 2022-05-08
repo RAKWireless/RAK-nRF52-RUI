@@ -44,11 +44,7 @@ WisCoreRAK4631Board.build.core=nRF5
 WisCoreRAK4631Board.build.variant=WisCore_RAK4631_Board
 WisCoreRAK4631Board.build.usb_manufacturer="RAKwireless"
 WisCoreRAK4631Board.build.usb_product="WisCore RAK4631 Board"
-<<<<<<< HEAD:conf/boards_nrf52.txt
 WisCoreRAK4631Board.build.extra_flags=-DNRF52840_XXAA -DRAK4631_V2.0+RAK5005-O_V1.0 -Drak4630 -DWISBLOCK_BASE_5005_O {build.flags.usb}
-=======
-WisCoreRAK4631Board.build.extra_flags=-DNRF52840_XXAA -DRAK4631_V2.0+RAK5005-O_V1.0 -Drak4630 {build.flags.usb}
->>>>>>> move sdk platform flags to boards.txt:conf/boards_rak4630.txt
 WisCoreRAK4631Board.build.ldscript=flash_nrf52840.ld
 WisCoreRAK4631Board.build.vid=0x239A
 WisCoreRAK4631Board.build.pid=0x8029
