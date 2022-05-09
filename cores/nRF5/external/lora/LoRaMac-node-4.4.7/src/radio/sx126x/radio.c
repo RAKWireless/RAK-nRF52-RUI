@@ -522,7 +522,7 @@
 #define WISBLOCK_BASE_5005_O 1
 #define SUPPORT_USB 1
 #define SUPPORT_BLE 1
-#define SUPPORT_NFC 1
+#define CONFIG_NFCT_PINS_AS_GPIOS 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 # 23 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/math.h" 1 3
@@ -4673,7 +4673,7 @@ typedef enum
     UDRV_SYS_EVT_OP_USER_TIMER,
     UDRV_SYS_EVT_OP_SYS_TIMER,
 
-    UDRV_SYS_EVT_OP_SERIAL_NFC,
+
 
     UDRV_SYS_EVT_OP_SERIAL_FALLBACK,
     UDRV_SYS_EVT_OP_RTC,

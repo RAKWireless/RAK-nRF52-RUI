@@ -67,8 +67,8 @@ WisCoreRAK4631Board.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
 WisCoreRAK4631Board.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
 
 # Support NFC Menu
-WisCoreRAK4631Board.menu.supportnfc.1= Disable
-WisCoreRAK4631Board.menu.supportnfc.1.build.nfc_flag=-DCONFIG_NFCT_PINS_AS_GPIOS -USUPPORT_NFC
-WisCoreRAK4631Board.menu.supportnfc.2= Enable
-WisCoreRAK4631Board.menu.supportnfc.2.build.nfc_flag=-DSUPPORT_NFC -UCONFIG_NFCT_PINS_AS_GPIOS
+#WisCoreRAK4631Board.menu.supportnfc.1= Disable
+#WisCoreRAK4631Board.menu.supportnfc.1.build.nfc_flag=-DCONFIG_NFCT_PINS_AS_GPIOS -USUPPORT_NFC
+#WisCoreRAK4631Board.menu.supportnfc.2= Enable
+#WisCoreRAK4631Board.menu.supportnfc.2.build.nfc_flag=-DSUPPORT_NFC -UCONFIG_NFCT_PINS_AS_GPIOS
 
