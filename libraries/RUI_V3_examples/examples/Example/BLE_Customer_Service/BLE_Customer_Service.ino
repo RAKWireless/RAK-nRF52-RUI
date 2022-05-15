@@ -57,9 +57,9 @@ void setup()
 
   Serial.begin(115200);
 
-  Serial.println("RAKwireless BLE Customer Services Example");
+  Serial.println("RAKwireless BLE Custom Services Example");
   Serial.println("------------------------------------------------------");
-  api.ble.customer.init();
+  api.ble.custom.init();
   RAKBleService hrms = RAKBleService(base_uuid);
   RAKBleCharacteristic bslc =
       RAKBleCharacteristic(UUID16_CHR_BODY_SENSOR_LOCATION);
@@ -91,7 +91,7 @@ void setup()
   delay(1000);
   uint8_t sensor_location[1] = { '2' };
   bslc.write(sensor_location);	// Set the characteristic to 'Wrist' (2)
-  api.ble.customer.start();
+  api.ble.custom.start();
 }
 
 void loop()

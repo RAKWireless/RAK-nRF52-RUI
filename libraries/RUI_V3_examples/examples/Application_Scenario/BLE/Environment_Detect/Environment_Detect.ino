@@ -1,5 +1,5 @@
 /******************************************************************************************************
-* This use case will demonstrate the use of the BLE customer API
+* This use case will demonstrate the use of the BLE custom API
   * to create a application scenario case.
   *
   * Theapplication is made with AK4631 and RAK1901
@@ -83,7 +83,7 @@ void setup()
       { 0x00, 0x00, 0x18, 0x09, 0x00, 0x00, 0x10, 0x00, 0x80, 0x00, 0x00,
     0x80, 0x5F, 0x9B, 0x34, 0xFB
   };
-  api.ble.customer.init();
+  api.ble.custom.init();
   RAKBleService hts = RAKBleService(base_uuid);
   hts.begin();
 
@@ -94,7 +94,7 @@ void setup()
   htsc.begin();
   delay(1000);
 
-  api.ble.customer.start();
+  api.ble.custom.start();
 }
 
 void loop()
