@@ -486,7 +486,6 @@
 #define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
-#define WDT_SUPPORT 1
 #define APP_TIMER_V2 1
 #define APP_TIMER_V2_RTC1_ENABLED 1
 #define BOARD_PCA10056 1
@@ -523,7 +522,7 @@
 #define WISBLOCK_BASE_5005_O 1
 #define SUPPORT_USB 1
 #define SUPPORT_BLE 1
-#define CONFIG_NFCT_PINS_AS_GPIOS 1
+#define SUPPORT_NFC 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionUS915.c"
 # 31 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionUS915.c"
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 1
@@ -42559,7 +42558,29 @@ static inline
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/variant.h" 1
 
 #define _VARIANT_RAK4630_ 
-# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/variant.h"
+# 20 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/variant.h"
+extern const uint32_t g_ADigitalPinMap[];
+#define pgm_read_byte(addr) (*(const unsigned char *)(addr))
+
+#define portOutputRegister(port) ( &(port->OUT) )
+#define portInputRegister(port) ( (volatile uint32_t*) &(port->IN) )
+#define portModeRegister(port) ( &(port->DIR) )
+#define digitalPinHasPWM(P) ( g_ADigitalPinMap[P] > 1 )
+#define digitalPinToBitMask(P) ( 1UL << ( g_ADigitalPinMap[P] < 32 ? g_ADigitalPinMap[P] : (g_ADigitalPinMap[P]-32) ) )
+#define digitalPinToPinName(P) g_ADigitalPinMap[P]
+
+
+#define digitalPinToPort(P) ( (g_ADigitalPinMap[P] < 32) ? NRF_P0 : NRF_P1 )
+
+
+
+
+
+#define digitalPinToInterrupt(P) ( P )
+
+
+
+
 #define PINS_COUNT (37u)
 #define NUM_DIGITAL_PINS (35u)
 #define NUM_ANALOG_INPUTS (2u)
@@ -42653,15 +42674,41 @@ static inline
 
 
 
+#define PIN_BUTTON1 11
+#define PIN_BUTTON2 12
+#define PIN_BUTTON3 24
+#define PIN_BUTTON4 25
+
+
+
+
+
+
 #define PIN_A0 WB_A0
 #define PIN_A1 WB_A1
+#define PIN_A2 (28)
+#define PIN_A3 (29)
+#define PIN_A4 (30)
+#define PIN_A5 (31)
+#define PIN_A6 (0xff)
+#define PIN_A7 (0xff)
 
-#define A0 PIN_A0
-#define A1 PIN_A1
+static const uint8_t A0 = 5;
+static const uint8_t A1 = 31;
+static const uint8_t A2 = (28);
+static const uint8_t A3 = (29);
+static const uint8_t A4 = (30);
+static const uint8_t A5 = (31);
+static const uint8_t A6 = (0xff);
+static const uint8_t A7 = (0xff);
 
+#define ADC_RESOLUTION 14
 
+#define PIN_AREF (2)
 #define PIN_NFC1 WB_IO5
 #define PIN_NFC2 WB_IO6
+
+static const uint8_t AREF = (2);
 
 
 
@@ -42677,10 +42724,15 @@ static inline
 
 #define SPI_INTERFACES_COUNT 1
 
+#define PIN_SPI_CS WB_SPI_CS
 #define PIN_SPI_MISO WB_SPI_MISO
 #define PIN_SPI_MOSI WB_SPI_MOSI
 #define PIN_SPI_SCK WB_SPI_CLK
 
+static const uint8_t SS = 26;
+static const uint8_t MOSI = 30;
+static const uint8_t MISO = 29;
+static const uint8_t SCK = 3;
 
 
 

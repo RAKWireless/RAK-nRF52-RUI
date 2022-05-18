@@ -486,7 +486,6 @@
 #define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
-#define WDT_SUPPORT 1
 #define APP_TIMER_V2 1
 #define APP_TIMER_V2_RTC1_ENABLED 1
 #define BOARD_PCA10056 1
@@ -523,7 +522,7 @@
 #define WISBLOCK_BASE_5005_O 1
 #define SUPPORT_USB 1
 #define SUPPORT_BLE 1
-#define CONFIG_NFCT_PINS_AS_GPIOS 1
+#define SUPPORT_NFC 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/Region.c"
 # 31 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/Region.c"
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMac.h" 1
@@ -8070,6 +8069,12 @@ uint8_t RegionAS923ApplyDrOffset( uint8_t downlinkDwellTime, int8_t dr, int8_t d
 
 
  void RegionAS923RxBeaconSetup( RxBeaconSetup_t* rxBeaconSetup, uint8_t* outDr );
+
+
+
+void RegionAS923SubBandSet(uint8_t band);
+
+uint8_t RegionAS923SubBandGet();
 # 36 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/Region.c" 2
 #define AS923_CASE case LORAMAC_REGION_AS923:
 #define AS923_IS_ACTIVE() AS923_CASE { return true; }

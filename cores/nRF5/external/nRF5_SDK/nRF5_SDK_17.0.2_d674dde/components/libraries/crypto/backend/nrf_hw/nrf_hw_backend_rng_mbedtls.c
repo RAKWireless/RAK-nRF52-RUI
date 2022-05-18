@@ -486,7 +486,6 @@
 #define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
-#define WDT_SUPPORT 1
 #define APP_TIMER_V2 1
 #define APP_TIMER_V2_RTC1_ENABLED 1
 #define BOARD_PCA10056 1
@@ -523,7 +522,7 @@
 #define WISBLOCK_BASE_5005_O 1
 #define SUPPORT_USB 1
 #define SUPPORT_BLE 1
-#define CONFIG_NFCT_PINS_AS_GPIOS 1
+#define SUPPORT_NFC 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_rng_mbedtls.c"
 # 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/backend/nrf_hw/nrf_hw_backend_rng_mbedtls.c"
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 1

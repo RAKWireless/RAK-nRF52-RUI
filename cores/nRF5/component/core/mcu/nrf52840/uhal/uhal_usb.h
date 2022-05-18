@@ -19,6 +19,8 @@ void uhal_usb_register_cli_handler (SERIAL_CLI_HANDLER handler);
 
 void uhal_usb_init (SERIAL_PORT Port, uint32_t BaudRate, SERIAL_WORD_LEN_E DataBits, SERIAL_STOP_BIT_E StopBits, SERIAL_PARITY_E Parity, SERIAL_WIRE_MODE_E WireMode);
 
+void uhal_usb_enable(SERIAL_PORT Port);
+
 void uhal_usb_deinit (SERIAL_PORT Port);
 
 int32_t uhal_usb_write (SERIAL_PORT Port, uint8_t const *Buffer, int32_t NumberOfBytes, uint32_t Timeout);

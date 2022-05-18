@@ -486,7 +486,6 @@
 #define rak4630 1
 #define BATTERY_LEVEL_SUPPORT 1
 #define BLE_CENTRAL_SUPPORT 1
-#define WDT_SUPPORT 1
 #define APP_TIMER_V2 1
 #define APP_TIMER_V2_RTC1_ENABLED 1
 #define BOARD_PCA10056 1
@@ -523,7 +522,7 @@
 #define WISBLOCK_BASE_5005_O 1
 #define SUPPORT_USB 1
 #define SUPPORT_BLE 1
-#define CONFIG_NFCT_PINS_AS_GPIOS 1
+#define SUPPORT_NFC 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMac.c"
 # 33 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMac.c"
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/boards/utilities.h" 1
@@ -9741,12 +9740,13 @@ typedef enum
 
 
     UDRV_SYS_EVT_OP_LORAWAN,
+    UDRV_SYS_EVT_OP_LORAWAN_JOIN_CB,
 
     UDRV_SYS_EVT_OP_USER_APP,
     UDRV_SYS_EVT_OP_USER_TIMER,
     UDRV_SYS_EVT_OP_SYS_TIMER,
 
-
+    UDRV_SYS_EVT_OP_SERIAL_NFC,
 
     UDRV_SYS_EVT_OP_SERIAL_FALLBACK,
     UDRV_SYS_EVT_OP_RTC,
