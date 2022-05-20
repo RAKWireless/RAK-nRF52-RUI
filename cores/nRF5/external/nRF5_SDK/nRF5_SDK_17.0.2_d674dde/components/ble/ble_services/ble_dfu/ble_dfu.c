@@ -523,6 +523,7 @@
 #define SUPPORT_USB 1
 #define SUPPORT_BLE 1
 #define SUPPORT_NFC 1
+#define SUPPORT_SPI 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_dfu/ble_dfu.c"
 # 45 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_dfu/ble_dfu.c"
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/ble/ble_services/ble_dfu/ble_dfu.h" 1

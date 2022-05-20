@@ -523,6 +523,7 @@
 #define SUPPORT_USB 1
 #define SUPPORT_BLE 1
 #define SUPPORT_NFC 1
+#define SUPPORT_SPI 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.c"
 # 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.c"
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 1 3

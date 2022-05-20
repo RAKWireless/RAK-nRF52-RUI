@@ -523,6 +523,7 @@
 #define SUPPORT_USB 1
 #define SUPPORT_BLE 1
 #define SUPPORT_NFC 1
+#define SUPPORT_SPI 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/nfc/ndef/generic/record/nfc_ndef_record.c"
 # 40 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/nfc/ndef/generic/record/nfc_ndef_record.c"
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h" 1

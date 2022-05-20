@@ -523,6 +523,7 @@
 #define SUPPORT_USB 1
 #define SUPPORT_BLE 1
 #define SUPPORT_NFC 1
+#define SUPPORT_SPI 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
 # 23 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/uart.c"
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/uart-board.h" 1

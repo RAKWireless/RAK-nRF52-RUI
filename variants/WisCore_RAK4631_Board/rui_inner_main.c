@@ -390,7 +390,8 @@ void rui_init(void)
 {
     SERVICE_MODE_TYPE mode;
     uint32_t baudrate;
-
+    uint8_t set_dev_name[30];
+    uint8_t rbuff[8] = {0};
     NRF_POWER->DCDCEN = 1;
 
     //udrv_gpio_init();
@@ -409,7 +410,7 @@ void rui_init(void)
     udrv_ble_services_start();
 #endif
 #ifdef SUPPORT_USB
-    udrv_serial_usb_enable(SERIAL_USB0);
+    uhal_usb_enable(SERIAL_USB0);
 #endif
 
 
@@ -420,6 +421,11 @@ void rui_init(void)
     udrv_serial_init(SERIAL_UART0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
     udrv_serial_init(SERIAL_UART1, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 #ifdef SUPPORT_BLE
+#ifdef SUPPORT_LORA
+    service_lora_get_dev_eui(rbuff, 8);
+    sprintf(set_dev_name,"RAK.%02X%02X%02X",rbuff[5],rbuff[6],rbuff[7]);
+    udrv_ble_set_device_name(set_dev_name,strlen(set_dev_name));
+#endif
     udrv_ble_advertising_start(APP_ADV_TIMEOUT_IN_SECONDS);
     udrv_serial_init(SERIAL_BLE0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 #endif
