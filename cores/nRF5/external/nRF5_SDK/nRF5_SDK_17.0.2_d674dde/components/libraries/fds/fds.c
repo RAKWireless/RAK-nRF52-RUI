@@ -1,13 +1,13 @@
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3//"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
 #define __STDC_HOSTED__ 1
 #define __GNUC__ 10
-#define __GNUC_MINOR__ 2
+#define __GNUC_MINOR__ 3
 #define __GNUC_PATCHLEVEL__ 1
-#define __VERSION__ "10.2.1 20201103 (release)"
+#define __VERSION__ "10.3.1 20210824 (release)"
 #define __ATOMIC_RELAXED 0
 #define __ATOMIC_SEQ_CST 5
 #define __ATOMIC_ACQUIRE 2
@@ -524,19 +524,19 @@
 #define SUPPORT_BLE 1
 #define SUPPORT_NFC 1
 #define SUPPORT_SPI 1
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
-# 40 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 1
-# 51 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 40 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 1
+# 51 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h"
 #define SDK_COMMON_H__ 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 1 3 4
-# 9 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 3 4
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 1 3 4
-# 10 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h" 1 3 4
+# 9 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 1 3 4
+# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define _STDINT_H 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 1 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 1 3 4
 
 
 
@@ -544,25 +544,25 @@
 
 #define _MACHINE__DEFAULT_TYPES_H 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 1 3 4
-# 22 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 1 3 4
+# 22 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 3 4
 #define _SYS_FEATURES_H 
 
 
 
 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_newlib_version.h" 1 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h" 1 3 4
 
 
 
 #define _NEWLIB_VERSION_H__ 1
 
-#define _NEWLIB_VERSION "3.3.0"
-#define __NEWLIB__ 3
-#define __NEWLIB_MINOR__ 3
+#define _NEWLIB_VERSION "4.1.0"
+#define __NEWLIB__ 4
+#define __NEWLIB_MINOR__ 1
 #define __NEWLIB_PATCHLEVEL__ 0
-# 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 2 3 4
+# 29 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 2 3 4
 
 
 
@@ -575,7 +575,7 @@
 
 
 #define __GNUC_PREREQ__(ma,mi) __GNUC_PREREQ(ma, mi)
-# 249 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3 4
+# 249 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 3 4
 #define __ATFILE_VISIBLE 0
 
 
@@ -611,7 +611,7 @@
 
 
 #define __MISC_VISIBLE 0
-# 299 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3 4
+# 299 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 3 4
 #define __POSIX_VISIBLE 0
 
 
@@ -619,11 +619,11 @@
 
 
 #define __SVID_VISIBLE 0
-# 319 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3 4
+# 319 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 3 4
 #define __XSI_VISIBLE 0
-# 330 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3 4
+# 330 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 3 4
 #define __SSP_FORTIFY_LEVEL 0
-# 9 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 2 3 4
+# 9 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 2 3 4
 
 
 
@@ -631,7 +631,7 @@
 
 
 #define __EXP(x) __ ##x ##__
-# 26 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 26 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3 4
 #define __have_longlong64 1
 
 
@@ -648,7 +648,7 @@
 
 
 
-# 41 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 41 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef signed char __int8_t;
 
 typedef unsigned char __uint8_t;
@@ -670,7 +670,7 @@ typedef short unsigned int __uint16_t;
 
 
 #define ___int16_t_defined 1
-# 77 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 77 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef long int __int32_t;
 
 typedef long unsigned int __uint32_t;
@@ -678,7 +678,7 @@ typedef long unsigned int __uint32_t;
 
 
 #define ___int32_t_defined 1
-# 103 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 103 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef long long int __int64_t;
 
 typedef long long unsigned int __uint64_t;
@@ -686,7 +686,7 @@ typedef long long unsigned int __uint64_t;
 
 
 #define ___int64_t_defined 1
-# 134 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 134 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef signed char __int_least8_t;
 
 typedef unsigned char __uint_least8_t;
@@ -694,7 +694,7 @@ typedef unsigned char __uint_least8_t;
 
 
 #define ___int_least8_t_defined 1
-# 160 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 160 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef short int __int_least16_t;
 
 typedef short unsigned int __uint_least16_t;
@@ -702,7 +702,7 @@ typedef short unsigned int __uint_least16_t;
 
 
 #define ___int_least16_t_defined 1
-# 182 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 182 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef long int __int_least32_t;
 
 typedef long unsigned int __uint_least32_t;
@@ -710,7 +710,7 @@ typedef long unsigned int __uint_least32_t;
 
 
 #define ___int_least32_t_defined 1
-# 200 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 200 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3 4
 typedef long long int __int_least64_t;
 
 typedef long long unsigned int __uint_least64_t;
@@ -744,11 +744,11 @@ typedef long long unsigned int __uintmax_t;
 typedef int __intptr_t;
 
 typedef unsigned int __uintptr_t;
-# 244 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3 4
+# 244 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3 4
 #undef __EXP
-# 13 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 2 3 4
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 1 3 4
-# 10 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 13 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 2 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 1 3 4
+# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define _SYS__INTSUP_H 
 
 
@@ -756,7 +756,7 @@ typedef unsigned int __uintptr_t;
 
 
 #define __STDINT_EXP(x) __ ##x ##__
-# 35 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 35 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
        
        
        
@@ -781,7 +781,7 @@ typedef unsigned int __uintptr_t;
 #define __int20__ +2
 #define int +2
 #define long +4
-# 67 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 67 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define _INTPTR_EQ_INT 
 
 
@@ -798,11 +798,11 @@ typedef unsigned int __uintptr_t;
 
 
 #define __INT8 "hh"
-# 93 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 93 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __INT16 "h"
-# 104 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 104 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __INT32 "l"
-# 113 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 113 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __INT64 "ll"
 
 
@@ -811,7 +811,7 @@ typedef unsigned int __uintptr_t;
 
 
 #define __FAST8 
-# 129 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 129 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __FAST16 
 
 
@@ -820,17 +820,17 @@ typedef unsigned int __uintptr_t;
 
 
 #define __FAST32 
-# 147 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 147 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __FAST64 "ll"
 
 
 
 #define __LEAST8 "hh"
-# 162 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 162 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __LEAST16 "h"
-# 173 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 173 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __LEAST32 "l"
-# 182 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 182 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __LEAST64 "ll"
 
 #undef signed
@@ -844,18 +844,18 @@ typedef unsigned int __uintptr_t;
        
        
        
-# 194 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 194 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #undef __int20
        
-# 195 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 195 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
 #undef __int20__
        
        
-# 14 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 2 3 4
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h" 1 3 4
-# 10 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h" 3 4
+# 14 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 2 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h" 1 3 4
+# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h" 3 4
 #define _SYS__STDINT_H 
-# 20 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h" 3 4
+# 20 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h" 3 4
 typedef __int8_t int8_t ;
 #define _INT8_T_DECLARED 
 
@@ -920,7 +920,7 @@ typedef __intptr_t intptr_t;
 
 typedef __uintptr_t uintptr_t;
 #define _UINTPTR_T_DECLARED 
-# 15 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 2 3 4
+# 15 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 2 3 4
 
 
 
@@ -948,7 +948,7 @@ typedef __uint_least32_t uint_least32_t;
 typedef __int_least64_t int_least64_t;
 typedef __uint_least64_t uint_least64_t;
 #define __int_least64_t_defined 1
-# 51 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 51 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
   typedef int int_fast8_t;
   typedef unsigned int uint_fast8_t;
 #define __int_fast8_t_defined 1
@@ -982,11 +982,11 @@ typedef __uint_least64_t uint_least64_t;
   typedef long long int int_fast64_t;
   typedef long long unsigned int uint_fast64_t;
 #define __int_fast64_t_defined 1
-# 128 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 128 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INTPTR_MIN (-__INTPTR_MAX__ - 1)
 #define INTPTR_MAX (__INTPTR_MAX__)
 #define UINTPTR_MAX (__UINTPTR_MAX__)
-# 152 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 152 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT8_MIN (-__INT8_MAX__ - 1)
 #define INT8_MAX (__INT8_MAX__)
 #define UINT8_MAX (__UINT8_MAX__)
@@ -1000,7 +1000,7 @@ typedef __uint_least64_t uint_least64_t;
 #define INT_LEAST8_MIN (-__INT_LEAST8_MAX__ - 1)
 #define INT_LEAST8_MAX (__INT_LEAST8_MAX__)
 #define UINT_LEAST8_MAX (__UINT_LEAST8_MAX__)
-# 174 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 174 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT16_MIN (-__INT16_MAX__ - 1)
 #define INT16_MAX (__INT16_MAX__)
 #define UINT16_MAX (__UINT16_MAX__)
@@ -1014,39 +1014,39 @@ typedef __uint_least64_t uint_least64_t;
 #define INT_LEAST16_MIN (-__INT_LEAST16_MAX__ - 1)
 #define INT_LEAST16_MAX (__INT_LEAST16_MAX__)
 #define UINT_LEAST16_MAX (__UINT_LEAST16_MAX__)
-# 196 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 196 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT32_MIN (-__INT32_MAX__ - 1)
 #define INT32_MAX (__INT32_MAX__)
 #define UINT32_MAX (__UINT32_MAX__)
-# 212 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 212 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT_LEAST32_MIN (-__INT_LEAST32_MAX__ - 1)
 #define INT_LEAST32_MAX (__INT_LEAST32_MAX__)
 #define UINT_LEAST32_MAX (__UINT_LEAST32_MAX__)
-# 230 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 230 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT64_MIN (-__INT64_MAX__ - 1)
 #define INT64_MAX (__INT64_MAX__)
 #define UINT64_MAX (__UINT64_MAX__)
-# 246 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 246 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT_LEAST64_MIN (-__INT_LEAST64_MAX__ - 1)
 #define INT_LEAST64_MAX (__INT_LEAST64_MAX__)
 #define UINT_LEAST64_MAX (__UINT_LEAST64_MAX__)
-# 262 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 262 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST8_MIN (-__INT_FAST8_MAX__ - 1)
 #define INT_FAST8_MAX (__INT_FAST8_MAX__)
 #define UINT_FAST8_MAX (__UINT_FAST8_MAX__)
-# 278 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 278 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST16_MIN (-__INT_FAST16_MAX__ - 1)
 #define INT_FAST16_MAX (__INT_FAST16_MAX__)
 #define UINT_FAST16_MAX (__UINT_FAST16_MAX__)
-# 294 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 294 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST32_MIN (-__INT_FAST32_MAX__ - 1)
 #define INT_FAST32_MAX (__INT_FAST32_MAX__)
 #define UINT_FAST32_MAX (__UINT_FAST32_MAX__)
-# 310 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 310 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST64_MIN (-__INT_FAST64_MAX__ - 1)
 #define INT_FAST64_MAX (__INT_FAST64_MAX__)
 #define UINT_FAST64_MAX (__UINT_FAST64_MAX__)
-# 326 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 326 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INTMAX_MAX (__INTMAX_MAX__)
 #define INTMAX_MIN (-INTMAX_MAX - 1)
 
@@ -1085,9 +1085,9 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define WCHAR_MIN (__WCHAR_MIN__)
-# 374 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 374 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define WCHAR_MAX (__WCHAR_MAX__)
-# 384 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 384 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define WINT_MAX (__WINT_MAX__)
 
 
@@ -1102,26 +1102,26 @@ typedef __uint_least64_t uint_least64_t;
 
 #define INT8_C(x) __INT8_C(x)
 #define UINT8_C(x) __UINT8_C(x)
-# 408 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 408 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT16_C(x) __INT16_C(x)
 #define UINT16_C(x) __UINT16_C(x)
-# 420 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 420 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT32_C(x) __INT32_C(x)
 #define UINT32_C(x) __UINT32_C(x)
-# 433 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 433 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INT64_C(x) __INT64_C(x)
 #define UINT64_C(x) __UINT64_C(x)
-# 449 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
+# 449 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
 #define INTMAX_C(x) __INTMAX_C(x)
 #define UINTMAX_C(x) __UINTMAX_C(x)
-# 10 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 2 3 4
+# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h" 2 3 4
 
 
 
 #define _GCC_WRAP_STDINT_H 
-# 54 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
-# 29 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
+# 54 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h" 1 3 4
+# 29 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h" 3 4
 #define _STDBOOL_H 
 
 
@@ -1129,10 +1129,10 @@ typedef __uint_least64_t uint_least64_t;
 #define bool _Bool
 #define true 1
 #define false 0
-# 52 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
+# 52 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
-# 55 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 1 3
+# 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 1 3
 
 
 
@@ -1142,7 +1142,7 @@ typedef __uint_least64_t uint_least64_t;
 
 #define _STRING_H_ 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 1 3
 
 
 
@@ -1152,7 +1152,7 @@ typedef __uint_least64_t uint_least64_t;
 
 #define _ANSIDECL_H_ 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h" 1 3
 
 
 
@@ -1161,7 +1161,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define __NEWLIB_H__ 1
-# 18 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 3
+# 18 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h" 3
 #define _WANT_IO_C99_FORMATS 1
 
 
@@ -1169,7 +1169,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _WANT_REGISTER_FINI 1
-# 37 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 3
+# 37 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h" 3
 #define _REENT_CHECK_VERIFY 1
 
 
@@ -1177,7 +1177,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _MB_LEN_MAX 1
-# 53 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 3
+# 53 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h" 3
 #define HAVE_INITFINI_ARRAY 1
 
 
@@ -1204,23 +1204,25 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _UNBUF_STREAM_OPT 1
-# 95 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 3
+# 95 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h" 3
 #define _RETARGETABLE_LOCKING 1
-# 11 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 2 3
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 1 3
+# 11 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h" 1 3
 
 #define __SYS_CONFIG_H__ 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h" 1 3
-# 77 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h" 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h" 1 3
+# 77 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h" 3
 #define __IEEE_LITTLE_ENDIAN 
-# 473 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h" 3
+# 91 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h" 3
+#define _SUPPORTS_ERREXCEPT 
+# 496 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h" 3
 #define __OBSOLETE_MATH_DEFAULT 1
 
 
 #define __OBSOLETE_MATH __OBSOLETE_MATH_DEFAULT
-# 5 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 2 3
-# 224 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 3
+# 5 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h" 2 3
+# 224 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h" 3
 #define _POINTER_INT long
 
 
@@ -1232,7 +1234,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define __RAND_MAX 0x7fffffff
-# 250 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 3
+# 250 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h" 3
 #define __EXPORT 
 
 
@@ -1251,8 +1253,8 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _READ_WRITE_BUFSIZE_TYPE int
-# 12 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 2 3
-# 31 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 3
+# 12 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 2 3
+# 31 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 3
 #define _BEGIN_STD_C 
 #define _END_STD_C 
 #define _NOTHROW 
@@ -1266,27 +1268,27 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _ATTRIBUTE(attrs) __attribute__ (attrs)
-# 69 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 3
+# 69 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 3
 #define _ELIDABLE_INLINE static __inline__
 
 
 
 #define _NOINLINE __attribute__ ((__noinline__))
 #define _NOINLINE_STATIC _NOINLINE static
-# 11 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 1 3
-# 11 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 11 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 1 3
+# 11 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
 #define _SYS_REENT_H_ 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 1 3
-# 14 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 39 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 1 3
+# 14 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
+# 39 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #define _STDDEF_H 
 #define _STDDEF_H_ 
 
 #define _ANSI_STDDEF_H 
-# 131 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 131 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #define _PTRDIFF_T 
 #define _T_PTRDIFF_ 
 #define _T_PTRDIFF 
@@ -1300,9 +1302,9 @@ typedef __uint_least64_t uint_least64_t;
 
 
 typedef int ptrdiff_t;
-# 155 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_ptrdiff_t
-# 181 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 181 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #define __size_t__ 
 #define __SIZE_T__ 
 #define _SIZE_T 
@@ -1332,9 +1334,9 @@ typedef int ptrdiff_t;
 
 
 typedef unsigned int size_t;
-# 231 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_size_t
-# 260 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 260 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #define __wchar_t__ 
 #define __WCHAR_T__ 
 #define _WCHAR_T 
@@ -1350,13 +1352,13 @@ typedef unsigned int size_t;
 #define __INT_WCHAR_T_H 
 #define _GCC_WCHAR_T 
 #define _WCHAR_T_DECLARED 
-# 287 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 287 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef _BSD_WCHAR_T_
-# 321 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 321 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 typedef unsigned int wchar_t;
-# 340 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_wchar_t
-# 390 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef NULL
 
 
@@ -1374,19 +1376,19 @@ typedef unsigned int wchar_t;
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 15 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 1 3
-# 20 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
+# 15 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 1 3
+# 20 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 3
 #define _SYS__TYPES_H 
 
 #define __need_size_t 
 #define __need_wint_t 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 155 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
+# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_ptrdiff_t
-# 231 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_size_t
-# 340 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_wchar_t
 
 
@@ -1400,7 +1402,7 @@ typedef unsigned int wchar_t;
 typedef unsigned int wint_t;
 
 #undef __need_wint_t
-# 390 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef NULL
 
 
@@ -1418,17 +1420,17 @@ typedef unsigned int wint_t;
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 25 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 2 3
+# 25 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 2 3
 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_types.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h" 1 3
 
 
 
 
 
 #define _MACHINE__TYPES_H 
-# 28 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 2 3
+# 28 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 2 3
 
 
 typedef long __blkcnt_t;
@@ -1477,7 +1479,7 @@ typedef __uint32_t __id_t;
 
 
 typedef unsigned short __ino_t;
-# 90 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
+# 90 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 3
 typedef __uint32_t __mode_t;
 
 
@@ -1505,17 +1507,17 @@ typedef long __key_t;
 
 
 typedef long _fpos_t;
-# 127 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
+# 127 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 3
 #undef __size_t
 
 
 
 typedef unsigned int __size_t;
-# 146 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
+# 146 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 3
 #define unsigned signed
 typedef signed int _ssize_t;
 #undef unsigned
-# 158 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
+# 158 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 3
 typedef _ssize_t __ssize_t;
 
 
@@ -1578,7 +1580,7 @@ typedef unsigned long __useconds_t;
 
 
 typedef __builtin_va_list __va_list;
-# 16 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
+# 16 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 2 3
 
 #define _NULL 0
 
@@ -1586,11 +1588,11 @@ typedef __builtin_va_list __va_list;
 
 #define __Long long
 typedef unsigned long __ULong;
-# 34 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/lock.h" 1 3
+# 34 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h" 1 3
 
 #define __SYS_LOCK_H__ 
-# 33 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/lock.h" 3
+# 33 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h" 3
 struct __lock;
 typedef struct __lock * _LOCK_T;
 #define _LOCK_RECURSIVE_T _LOCK_T
@@ -1620,7 +1622,7 @@ extern void __retarget_lock_release(_LOCK_T lock);
 #define __lock_release(lock) __retarget_lock_release(lock)
 extern void __retarget_lock_release_recursive(_LOCK_T lock);
 #define __lock_release_recursive(lock) __retarget_lock_release_recursive(lock)
-# 35 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
+# 35 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 2 3
 typedef _LOCK_T _flock_t;
 
 
@@ -1674,7 +1676,7 @@ struct _on_exit_args {
 
  __ULong _is_cxa;
 };
-# 98 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 98 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
 struct _atexit {
  struct _atexit *_next;
  int _ind;
@@ -1689,12 +1691,12 @@ struct _atexit {
 
 
 #define _REENT_INIT_ATEXIT _NULL, _ATEXIT_INIT,
-# 122 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 122 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
 struct __sbuf {
  unsigned char *_base;
  int _size;
 };
-# 183 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 183 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT_SMALL_CHECK_INIT(ptr) 
 
 
@@ -1748,7 +1750,7 @@ struct __sFILE {
   _mbstate_t _mbstate;
   int _flags2;
 };
-# 292 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 292 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
 typedef struct __sFILE __FILE;
 
 
@@ -1759,7 +1761,7 @@ struct _glue
   int _niobs;
   __FILE *_iobs;
 };
-# 317 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 317 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
 #define _RAND48_SEED_0 (0x330e)
 #define _RAND48_SEED_1 (0xabcd)
 #define _RAND48_SEED_2 (0x1234)
@@ -1781,7 +1783,7 @@ struct _rand48 {
 #define _REENT_EMERGENCY_SIZE 25
 #define _REENT_ASCTIME_SIZE 26
 #define _REENT_SIGNAL_SIZE 24
-# 613 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 613 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
 struct _reent
 {
   int _errno;
@@ -1873,9 +1875,9 @@ struct _reent
 
 
 #define _REENT_INIT(var) { 0, _REENT_STDIO_STREAM(&(var), 0), _REENT_STDIO_STREAM(&(var), 1), _REENT_STDIO_STREAM(&(var), 2), 0, "", 0, _NULL, 0, _NULL, _NULL, 0, _NULL, _NULL, 0, _NULL, { { 0, _NULL, "", {0, 0, 0, 0, 0, 0, 0, 0, 0}, 0, 1, { {_RAND48_SEED_0, _RAND48_SEED_1, _RAND48_SEED_2}, {_RAND48_MULT_0, _RAND48_MULT_1, _RAND48_MULT_2}, _RAND48_ADD }, {0, {0}}, {0, {0}}, {0, {0}}, "", "", 0, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}} } }, _REENT_INIT_ATEXIT _NULL, {_NULL, 0, _NULL} }
-# 751 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 751 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT_INIT_PTR_ZEROED(var) { (var)->_stdin = _REENT_STDIO_STREAM(var, 0); (var)->_stdout = _REENT_STDIO_STREAM(var, 1); (var)->_stderr = _REENT_STDIO_STREAM(var, 2); (var)->_new._reent._rand_next = 1; (var)->_new._reent._r48._seed[0] = _RAND48_SEED_0; (var)->_new._reent._r48._seed[1] = _RAND48_SEED_1; (var)->_new._reent._r48._seed[2] = _RAND48_SEED_2; (var)->_new._reent._r48._mult[0] = _RAND48_MULT_0; (var)->_new._reent._r48._mult[1] = _RAND48_MULT_1; (var)->_new._reent._r48._mult[2] = _RAND48_MULT_2; (var)->_new._reent._r48._add = _RAND48_ADD; }
-# 765 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 765 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT_CHECK_RAND48(ptr) 
 #define _REENT_CHECK_MP(ptr) 
 #define _REENT_CHECK_TM(ptr) 
@@ -1934,7 +1936,7 @@ extern struct _reent *_impure_ptr ;
 extern struct _reent *const _global_impure_ptr ;
 
 void _reclaim_reent (struct _reent *);
-# 832 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 832 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT _impure_ptr
 
 
@@ -1945,15 +1947,15 @@ void _reclaim_reent (struct _reent *);
 
 
 #define _GLOBAL_ATEXIT (_GLOBAL_REENT->_atexit)
-# 12 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 1 3
-# 43 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 12 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 1 3
+# 43 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define _SYS_CDEFS_H_ 
 
 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 48 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
+# 48 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 2 3
 
 #define __PMT(args) args
 #define __DOTS , ...
@@ -1975,15 +1977,15 @@ void _reclaim_reent (struct _reent *);
 #define __bounded 
 #define __unbounded 
 #define __ptrvalue 
-# 78 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 78 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __has_extension __has_feature
 
 
 #define __has_feature(x) 0
-# 94 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 94 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __BEGIN_DECLS 
 #define __END_DECLS 
-# 107 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 107 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __GNUCLIKE_ASM 3
 #define __GNUCLIKE_MATH_BUILTIN_CONSTANTS 
 
@@ -2038,7 +2040,7 @@ void _reclaim_reent (struct _reent *);
 #define __CC_SUPPORTS_VARADIC_XXX 1
 
 #define __CC_SUPPORTS_DYNAMIC_ARRAY_INIT 1
-# 177 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 177 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __P(protos) protos
 #define __CONCAT1(x,y) x ## y
 #define __CONCAT(x,y) __CONCAT1(x,y)
@@ -2048,9 +2050,9 @@ void _reclaim_reent (struct _reent *);
 #define __const const
 #define __signed signed
 #define __volatile volatile
-# 230 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 230 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __weak_symbol __attribute__((__weak__))
-# 243 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 243 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __dead2 __attribute__((__noreturn__))
 #define __pure2 __attribute__((__const__))
 #define __unused __attribute__((__unused__))
@@ -2068,7 +2070,7 @@ void _reclaim_reent (struct _reent *);
 
 
 #define __alloc_align(x) __attribute__((__alloc_align__(x)))
-# 280 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 280 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define _Alignas(x) __aligned(x)
 
 
@@ -2077,19 +2079,13 @@ void _reclaim_reent (struct _reent *);
 
 
 #define _Alignof(x) __alignof(x)
-# 296 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
-#define _Atomic(T) struct { T volatile __val; }
-
-
-
-
-
+# 302 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define _Noreturn __dead2
-# 331 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 331 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define _Thread_local __thread
-# 351 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 351 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __generic(expr,t,yes,no) __builtin_choose_expr( __builtin_types_compatible_p(__typeof(expr), t), yes, no)
-# 366 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 366 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __min_size(x) static (x)
 
 
@@ -2139,9 +2135,9 @@ void _reclaim_reent (struct _reent *);
 
 
 #define __unreachable() __builtin_unreachable()
-# 434 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 434 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __restrict restrict
-# 467 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 467 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __predict_true(exp) __builtin_expect((exp), 1)
 #define __predict_false(exp) __builtin_expect((exp), 0)
 
@@ -2155,12 +2151,12 @@ void _reclaim_reent (struct _reent *);
 
 
 #define __hidden __attribute__((__visibility__("hidden")))
-# 489 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 489 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __offsetof(type,field) offsetof(type, field)
 #define __rangeof(type,start,end) (__offsetof(type, end) - __offsetof(type, start))
-# 500 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 500 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __containerof(x,s,m) ({ const volatile __typeof(((s *)0)->m) *__x = (x); __DEQUALIFY(s *, (const volatile char *)__x - __offsetof(s, m));})
-# 522 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 522 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __printflike(fmtarg,firstvararg) __attribute__((__format__ (__printf__, fmtarg, firstvararg)))
 
 #define __scanflike(fmtarg,firstvararg) __attribute__((__format__ (__scanf__, fmtarg, firstvararg)))
@@ -2169,7 +2165,7 @@ void _reclaim_reent (struct _reent *);
 #define __strfmonlike(fmtarg,firstvararg) __attribute__((__format__ (__strfmon__, fmtarg, firstvararg)))
 
 #define __strftimelike(fmtarg,firstvararg) __attribute__((__format__ (__strftime__, fmtarg, firstvararg)))
-# 539 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 539 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __printf0like(fmtarg,firstvararg) 
 
 
@@ -2190,7 +2186,7 @@ void _reclaim_reent (struct _reent *);
 #define __sym_compat(sym,impl,verid) __asm__(".symver " #impl ", " #sym "@" #verid)
 
 #define __sym_default(sym,impl,verid) __asm__(".symver " #impl ", " #sym "@@" #verid)
-# 593 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 593 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __FBSDID(s) struct __hack
 
 
@@ -2231,10 +2227,10 @@ void _reclaim_reent (struct _reent *);
 #define _Null_unspecified 
 #define __NULLABILITY_PRAGMA_PUSH 
 #define __NULLABILITY_PRAGMA_POP 
-# 653 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 653 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __arg_type_tag(arg_kind,arg_idx,type_tag_idx) 
 #define __datatype_type_tag(kind,type) 
-# 672 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+# 672 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
 #define __lock_annotate(x) 
 
 
@@ -2274,23 +2270,27 @@ void _reclaim_reent (struct _reent *);
 
 
 #define __no_lock_analysis __lock_annotate(no_thread_safety_analysis)
+# 721 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+#define __nosanitizeaddress 
+#define __nosanitizethread 
+
 
 
 #define __guarded_by(x) __lock_annotate(guarded_by(x))
 #define __pt_guarded_by(x) __lock_annotate(pt_guarded_by(x))
-# 13 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
+# 13 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 2 3
 
 
 #define __need_size_t 
 #define __need_NULL 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 155 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
+# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_ptrdiff_t
-# 231 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_size_t
-# 340 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_wchar_t
-# 390 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef NULL
 
 
@@ -2308,8 +2308,8 @@ void _reclaim_reent (struct _reent *);
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 18 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
-# 27 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
+# 18 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 2 3
+# 27 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 3
 
 
 void * memchr (const void *, int, size_t);
@@ -2336,35 +2336,35 @@ char *strstr (const char *, const char *);
 char *strtok (char *restrict, const char *restrict);
 
 size_t strxfrm (char *restrict, const char *restrict, size_t);
-# 86 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
+# 86 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 3
 char *_strdup_r (struct _reent *, const char *);
 
 
 
 char *_strndup_r (struct _reent *, const char *, size_t);
-# 112 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
+# 112 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 3
 char * _strerror_r (struct _reent *, int, int, int *);
-# 134 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
+# 134 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 3
 char *strsignal (int __signo);
-# 175 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/string.h" 1 3
-# 176 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
+# 175 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h" 1 3
+# 176 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 2 3
 
 
-# 56 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h" 1
-# 44 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 56 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h" 1
+# 44 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SDK_CONFIG_H 
-# 63 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 63 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BL_FW_COPY_PROGRESS_STORE_STEP 8
 
 
 
 
 #define NRF_DFU_SETTINGS_VERSION 1
-# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 77 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BSP_BTN_BLE_ENABLED 1
-# 90 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 90 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_ADVERTISING_ENABLED 1
 
 
@@ -2423,7 +2423,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_RADIO_ANTENNA_COUNT 12
-# 156 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 156 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_RACP_ENABLED 0
 
 
@@ -2444,7 +2444,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLE_CONN_PARAMS_MAX_SUPERVISION_TIMEOUT_DEVIATION 65535
-# 184 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 184 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLE_GATT_ENABLED 1
 
 
@@ -2545,7 +2545,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLE_SCAN_SUPERVISION_TIMEOUT 4000
-# 295 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 295 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLE_SCAN_SCAN_PHY 1
 
 
@@ -2577,7 +2577,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLE_SCAN_APPEARANCE_CNT 0
-# 335 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 335 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PEER_MANAGER_ENABLED 1
 
 
@@ -2590,11 +2590,11 @@ char *strsignal (int __signo);
 
 
 #define PM_FLASH_BUFFERS 4
-# 355 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 355 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PM_CENTRAL_ENABLED 1
-# 365 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 365 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PM_SERVICE_CHANGED_ENABLED 1
-# 374 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 374 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PM_PEER_RANKS_ENABLED 1
 
 
@@ -2631,9 +2631,9 @@ char *strsignal (int __signo);
 
 
 #define PM_RA_PROTECTION_REWARD_PERIOD 10000
-# 418 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 418 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PM_HANDLER_SEC_DELAY_MS 0
-# 434 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 434 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_ANCS_C_ENABLED 0
 
 
@@ -2660,13 +2660,13 @@ char *strsignal (int __signo);
 
 
 #define BLE_BAS_CONFIG_LOG_ENABLED 0
-# 470 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 470 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_BAS_CONFIG_LOG_LEVEL 4
-# 486 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 486 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_BAS_CONFIG_INFO_COLOR 0
-# 502 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 502 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_BAS_CONFIG_DEBUG_COLOR 0
-# 513 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 513 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_CSCS_ENABLED 0
 
 
@@ -2735,13 +2735,13 @@ char *strsignal (int __signo);
 
 
 #define BLE_IAS_CONFIG_LOG_ENABLED 0
-# 591 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 591 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_IAS_CONFIG_LOG_LEVEL 3
-# 607 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 607 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_IAS_CONFIG_INFO_COLOR 0
-# 623 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 623 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_IAS_CONFIG_DEBUG_COLOR 0
-# 634 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 634 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_LBS_C_ENABLED 0
 
 
@@ -2775,13 +2775,13 @@ char *strsignal (int __signo);
 
 
 #define BLE_NUS_CONFIG_LOG_ENABLED 0
-# 677 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 677 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_NUS_CONFIG_LOG_LEVEL 3
-# 693 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 693 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_NUS_CONFIG_INFO_COLOR 0
-# 709 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 709 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_NUS_CONFIG_DEBUG_COLOR 0
-# 720 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 720 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_RCS_C_ENABLED 1
 
 
@@ -2804,7 +2804,7 @@ char *strsignal (int __signo);
 
 
 #define BLE_TPS_ENABLED 0
-# 753 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 753 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MPU_ENABLED 0
 
 
@@ -2820,11 +2820,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_STACK_GUARD_ENABLED 0
-# 781 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 781 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_STACK_GUARD_CONFIG_SIZE 7
-# 795 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 795 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_ENABLED 1
-# 808 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 808 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_ALLOCATOR 0
 
 
@@ -2847,11 +2847,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_CC310_BL_ECC_SECP256R1_ENABLED 1
-# 838 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 838 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_BL_HASH_SHA256_ENABLED 1
-# 847 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 847 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_BL_HASH_LITTLE_ENDIAN_DIGEST_ENABLED 0
-# 856 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 856 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_BL_HASH_AUTOMATIC_RAM_BUFFER_ENABLED 0
 
 
@@ -2860,11 +2860,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_CC310_BL_HASH_AUTOMATIC_RAM_BUFFER_SIZE 4096
-# 872 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 872 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_BL_ECC_LITTLE_ENDIAN_ENABLED 0
-# 881 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 881 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_BL_INTERRUPTS_ENABLED 1
-# 890 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 890 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_ENABLED 1
 
 
@@ -3013,13 +3013,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_CC310_ECC_ED25519_ENABLED 1
-# 1046 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1046 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_HASH_SHA256_ENABLED 1
-# 1055 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1055 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_HASH_SHA512_ENABLED 1
-# 1064 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1064 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_HMAC_SHA256_ENABLED 1
-# 1073 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1073 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_HMAC_SHA512_ENABLED 1
 
 
@@ -3028,9 +3028,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_CC310_RNG_ENABLED 1
-# 1090 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1090 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CC310_INTERRUPTS_ENABLED 1
-# 1100 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1100 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_CIFRA_ENABLED 0
 
 
@@ -3101,37 +3101,37 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_MBEDTLS_AES_GCM_ENABLED 1
-# 1178 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1178 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP192R1_ENABLED 1
-# 1187 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1187 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP224R1_ENABLED 1
-# 1196 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1196 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP256R1_ENABLED 1
-# 1205 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1205 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP384R1_ENABLED 1
-# 1214 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1214 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP521R1_ENABLED 1
-# 1223 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1223 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP192K1_ENABLED 1
-# 1232 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1232 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP224K1_ENABLED 1
-# 1241 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1241 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_SECP256K1_ENABLED 1
-# 1250 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1250 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_BP256R1_ENABLED 1
-# 1259 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1259 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_BP384R1_ENABLED 1
-# 1268 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1268 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_BP512R1_ENABLED 1
-# 1277 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1277 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_ECC_CURVE25519_ENABLED 1
-# 1286 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1286 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_HASH_SHA256_ENABLED 1
-# 1295 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1295 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_HASH_SHA512_ENABLED 1
-# 1304 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1304 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_HMAC_SHA256_ENABLED 1
-# 1313 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1313 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MBEDTLS_HMAC_SHA512_ENABLED 1
 
 
@@ -3149,13 +3149,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_MICRO_ECC_ECC_SECP192R1_ENABLED 1
-# 1338 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1338 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MICRO_ECC_ECC_SECP224R1_ENABLED 1
-# 1347 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1347 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MICRO_ECC_ECC_SECP256R1_ENABLED 1
-# 1356 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1356 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_MICRO_ECC_ECC_SECP256K1_ENABLED 1
-# 1367 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1367 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_NRF_HW_RNG_ENABLED 0
 
 
@@ -3165,7 +3165,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_NRF_HW_RNG_MBEDTLS_CTR_DRBG_ENABLED 1
-# 1385 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1385 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_NRF_SW_ENABLED 0
 
 
@@ -3175,7 +3175,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_NRF_SW_HASH_SHA256_ENABLED 1
-# 1402 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1402 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_ENABLED 0
 
 
@@ -3183,21 +3183,21 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_OBERON_CHACHA_POLY_ENABLED 1
-# 1417 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1417 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_ECC_SECP256R1_ENABLED 1
-# 1426 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1426 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_ECC_CURVE25519_ENABLED 1
-# 1435 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1435 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_ECC_ED25519_ENABLED 1
-# 1444 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1444 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_HASH_SHA256_ENABLED 1
-# 1453 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1453 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_HASH_SHA512_ENABLED 1
-# 1462 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1462 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_HMAC_SHA256_ENABLED 1
-# 1471 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1471 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OBERON_HMAC_SHA512_ENABLED 1
-# 1480 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1480 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OPTIGA_ENABLED 0
 
 
@@ -3207,15 +3207,15 @@ char *strsignal (int __signo);
 
 
 #define NRF_CRYPTO_BACKEND_OPTIGA_RNG_ENABLED 0
-# 1497 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1497 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_BACKEND_OPTIGA_ECC_SECP256R1_ENABLED 1
-# 1508 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1508 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_CURVE25519_BIG_ENDIAN_ENABLED 0
-# 1522 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1522 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_RNG_STATIC_MEMORY_BUFFERS_ENABLED 1
-# 1531 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1531 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CRYPTO_RNG_AUTO_INIT_ENABLED 1
-# 1551 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1551 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_DFU_ENABLED 1
 
 
@@ -3224,23 +3224,23 @@ char *strsignal (int __signo);
 
 
 #define NRF_DFU_BLE_BUTTONLESS_SUPPORTS_BONDS 0
-# 1592 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1592 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_ENABLED 0
-# 1603 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1603 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_REF 1
-# 1612 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1612 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_MAIN_MODE 0
-# 1622 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1622 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_SPEED_MODE 2
-# 1631 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1631 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_HYST 0
-# 1642 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1642 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_ISOURCE 0
-# 1657 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1657 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_INPUT 0
-# 1674 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1674 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_IRQ_PRIORITY 6
-# 1683 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1683 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define EGU_ENABLED 0
 
 
@@ -3252,7 +3252,7 @@ char *strsignal (int __signo);
 
 
 #define GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS 4
-# 1710 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1710 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define GPIOTE_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3294,21 +3294,21 @@ char *strsignal (int __signo);
 
 
 #define I2S_CONFIG_SDIN_PIN 28
-# 1759 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1759 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define I2S_CONFIG_MASTER 0
-# 1768 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1768 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define I2S_CONFIG_FORMAT 0
-# 1777 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1777 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define I2S_CONFIG_ALIGN 0
-# 1787 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1787 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define I2S_CONFIG_SWIDTH 1
-# 1797 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1797 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define I2S_CONFIG_CHANNELS 1
-# 1823 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1823 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define I2S_CONFIG_MCK_SETUP 536870912
-# 1839 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1839 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define I2S_CONFIG_RATIO 2000
-# 1856 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1856 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define I2S_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3316,19 +3316,19 @@ char *strsignal (int __signo);
 
 
 #define I2S_CONFIG_LOG_ENABLED 0
-# 1873 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1873 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define I2S_CONFIG_LOG_LEVEL 3
-# 1889 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1889 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define I2S_CONFIG_INFO_COLOR 0
-# 1905 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1905 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define I2S_CONFIG_DEBUG_COLOR 0
-# 1915 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1915 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LPCOMP_ENABLED 0
-# 1938 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1938 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LPCOMP_CONFIG_REFERENCE 3
-# 1948 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1948 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LPCOMP_CONFIG_DETECTION 2
-# 1963 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1963 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LPCOMP_CONFIG_INPUT 0
 
 
@@ -3337,7 +3337,7 @@ char *strsignal (int __signo);
 
 
 #define LPCOMP_CONFIG_HYST 0
-# 1987 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 1987 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LPCOMP_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3347,9 +3347,9 @@ char *strsignal (int __signo);
 
 
 #define NRFX_CLOCK_ENABLED 1
-# 2004 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2004 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_CLOCK_CONFIG_LF_SRC 1
-# 2019 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2019 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_CLOCK_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3357,27 +3357,27 @@ char *strsignal (int __signo);
 
 
 #define NRFX_CLOCK_CONFIG_LOG_ENABLED 0
-# 2036 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2036 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_CLOCK_CONFIG_LOG_LEVEL 3
-# 2052 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2052 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_CLOCK_CONFIG_INFO_COLOR 0
-# 2068 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2068 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_CLOCK_CONFIG_DEBUG_COLOR 0
-# 2078 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2078 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_COMP_ENABLED 0
-# 2089 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2089 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_COMP_CONFIG_REF 1
-# 2098 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2098 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_COMP_CONFIG_MAIN_MODE 0
-# 2108 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2108 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_COMP_CONFIG_SPEED_MODE 2
-# 2117 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2117 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_COMP_CONFIG_HYST 0
-# 2128 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2128 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_COMP_CONFIG_ISOURCE 0
-# 2143 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2143 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_COMP_CONFIG_INPUT 0
-# 2158 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2158 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_COMP_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3385,19 +3385,19 @@ char *strsignal (int __signo);
 
 
 #define NRFX_COMP_CONFIG_LOG_ENABLED 0
-# 2175 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2175 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_COMP_CONFIG_LOG_LEVEL 3
-# 2191 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2191 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_COMP_CONFIG_INFO_COLOR 0
-# 2207 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2207 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_COMP_CONFIG_DEBUG_COLOR 0
-# 2217 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2217 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_GPIOTE_ENABLED 1
 
 
 
 #define NRFX_GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS 1
-# 2236 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2236 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_GPIOTE_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3405,13 +3405,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_GPIOTE_CONFIG_LOG_ENABLED 0
-# 2253 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2253 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_GPIOTE_CONFIG_LOG_LEVEL 3
-# 2269 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2269 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_GPIOTE_CONFIG_INFO_COLOR 0
-# 2285 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2285 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_GPIOTE_CONFIG_DEBUG_COLOR 0
-# 2295 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2295 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_ENABLED 0
 
 
@@ -3445,21 +3445,21 @@ char *strsignal (int __signo);
 
 
 #define NRFX_I2S_CONFIG_SDIN_PIN 28
-# 2336 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2336 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_CONFIG_MASTER 0
-# 2345 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2345 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_CONFIG_FORMAT 0
-# 2354 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2354 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_CONFIG_ALIGN 0
-# 2364 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2364 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_CONFIG_SWIDTH 1
-# 2374 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2374 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_CONFIG_CHANNELS 1
-# 2400 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2400 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_CONFIG_MCK_SETUP 536870912
-# 2416 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2416 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_CONFIG_RATIO 2000
-# 2431 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2431 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3467,19 +3467,19 @@ char *strsignal (int __signo);
 
 
 #define NRFX_I2S_CONFIG_LOG_ENABLED 0
-# 2448 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2448 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_CONFIG_LOG_LEVEL 3
-# 2464 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2464 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_CONFIG_INFO_COLOR 0
-# 2480 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2480 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_I2S_CONFIG_DEBUG_COLOR 0
-# 2490 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2490 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_LPCOMP_ENABLED 0
-# 2513 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2513 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_REFERENCE 3
-# 2523 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2523 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_DETECTION 2
-# 2538 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2538 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_INPUT 0
 
 
@@ -3488,7 +3488,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_LPCOMP_CONFIG_HYST 0
-# 2560 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2560 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3496,15 +3496,15 @@ char *strsignal (int __signo);
 
 
 #define NRFX_LPCOMP_CONFIG_LOG_ENABLED 0
-# 2577 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2577 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_LOG_LEVEL 3
-# 2593 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2593 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_INFO_COLOR 0
-# 2609 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2609 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_LPCOMP_CONFIG_DEBUG_COLOR 0
-# 2619 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2619 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_NFCT_ENABLED 1
-# 2633 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2633 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_NFCT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3512,13 +3512,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_NFCT_CONFIG_LOG_ENABLED 0
-# 2650 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2650 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_NFCT_CONFIG_LOG_LEVEL 3
-# 2666 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2666 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_NFCT_CONFIG_INFO_COLOR 0
-# 2682 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2682 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_NFCT_CONFIG_DEBUG_COLOR 0
-# 2692 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2692 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PDM_ENABLED 0
 
 
@@ -3528,11 +3528,11 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PDM_CONFIG_MODE 1
-# 2709 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2709 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PDM_CONFIG_EDGE 0
-# 2719 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2719 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PDM_CONFIG_CLOCK_FREQ 138412032
-# 2734 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2734 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PDM_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3540,19 +3540,19 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PDM_CONFIG_LOG_ENABLED 0
-# 2751 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2751 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PDM_CONFIG_LOG_LEVEL 3
-# 2767 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2767 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PDM_CONFIG_INFO_COLOR 0
-# 2783 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2783 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PDM_CONFIG_DEBUG_COLOR 0
-# 2793 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2793 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_POWER_ENABLED 1
-# 2807 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2807 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_POWER_CONFIG_IRQ_PRIORITY 6
-# 2816 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2816 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_POWER_CONFIG_DEFAULT_DCDCEN 0
-# 2825 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2825 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_POWER_CONFIG_DEFAULT_DCDCENHV 0
 
 
@@ -3567,13 +3567,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PPI_CONFIG_LOG_ENABLED 0
-# 2849 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2849 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PPI_CONFIG_LOG_LEVEL 3
-# 2865 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2865 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PPI_CONFIG_INFO_COLOR 0
-# 2881 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2881 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PPI_CONFIG_DEBUG_COLOR 0
-# 2891 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2891 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PRS_ENABLED 1
 
 
@@ -3615,13 +3615,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PRS_CONFIG_LOG_ENABLED 0
-# 2942 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2942 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PRS_CONFIG_LOG_LEVEL 3
-# 2958 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2958 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PRS_CONFIG_INFO_COLOR 0
-# 2974 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2974 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PRS_CONFIG_DEBUG_COLOR 0
-# 2984 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 2984 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PWM_ENABLED 0
 
 
@@ -3671,20 +3671,20 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PWM_DEFAULT_CONFIG_OUT3_PIN 31
-# 3047 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3047 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PWM_DEFAULT_CONFIG_BASE_CLOCK 4
-# 3056 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3056 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PWM_DEFAULT_CONFIG_COUNT_MODE 0
 
 
 
 
 #define NRFX_PWM_DEFAULT_CONFIG_TOP_VALUE 1000
-# 3072 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3072 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PWM_DEFAULT_CONFIG_LOAD_MODE 0
-# 3081 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3081 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PWM_DEFAULT_CONFIG_STEP_MODE 0
-# 3096 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3096 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PWM_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3692,21 +3692,21 @@ char *strsignal (int __signo);
 
 
 #define NRFX_PWM_CONFIG_LOG_ENABLED 0
-# 3113 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3113 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PWM_CONFIG_LOG_LEVEL 3
-# 3129 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3129 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PWM_CONFIG_INFO_COLOR 0
-# 3145 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3145 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PWM_CONFIG_DEBUG_COLOR 0
-# 3161 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3161 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PWM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
-# 3173 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3173 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_PWM_NRF52_ANOMALY_109_EGU_INSTANCE 5
-# 3183 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3183 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QDEC_ENABLED 0
-# 3197 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3197 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QDEC_CONFIG_REPORTPER 0
-# 3212 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3212 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QDEC_CONFIG_SAMPLEPER 7
 
 
@@ -3734,7 +3734,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_QDEC_CONFIG_LEDPRE 511
-# 3247 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3247 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QDEC_CONFIG_LEDPOL 1
 
 
@@ -3750,7 +3750,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_QDEC_CONFIG_SAMPLE_INTEN 0
-# 3276 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3276 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QDEC_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3758,13 +3758,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_QDEC_CONFIG_LOG_ENABLED 0
-# 3293 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3293 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QDEC_CONFIG_LOG_LEVEL 3
-# 3309 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3309 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QDEC_CONFIG_INFO_COLOR 0
-# 3325 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3325 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QDEC_CONFIG_DEBUG_COLOR 0
-# 3335 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3335 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QSPI_ENABLED 0
 
 
@@ -3777,15 +3777,15 @@ char *strsignal (int __signo);
 
 
 #define NRFX_QSPI_CONFIG_XIP_OFFSET 0
-# 3358 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3358 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QSPI_CONFIG_READOC 0
-# 3369 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3369 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QSPI_CONFIG_WRITEOC 0
-# 3378 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3378 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QSPI_CONFIG_ADDRMODE 0
-# 3387 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3387 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QSPI_CONFIG_MODE 0
-# 3410 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3410 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QSPI_CONFIG_FREQUENCY 15
 
 
@@ -3817,7 +3817,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_QSPI_PIN_IO3 NRF_QSPI_PIN_NOT_CONNECTED
-# 3455 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3455 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_QSPI_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3833,7 +3833,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_RNG_CONFIG_ERROR_CORRECTION 1
-# 3484 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3484 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RNG_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3841,13 +3841,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_RNG_CONFIG_LOG_ENABLED 0
-# 3501 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3501 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RNG_CONFIG_LOG_LEVEL 3
-# 3517 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3517 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RNG_CONFIG_INFO_COLOR 0
-# 3533 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3533 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RNG_CONFIG_DEBUG_COLOR 0
-# 3543 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3543 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RTC_ENABLED 0
 
 
@@ -3888,7 +3888,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_RTC_DEFAULT_CONFIG_RELIABLE 0
-# 3597 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3597 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RTC_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3896,17 +3896,17 @@ char *strsignal (int __signo);
 
 
 #define NRFX_RTC_CONFIG_LOG_ENABLED 0
-# 3614 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3614 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RTC_CONFIG_LOG_LEVEL 3
-# 3630 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3630 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RTC_CONFIG_INFO_COLOR 0
-# 3646 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3646 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RTC_CONFIG_DEBUG_COLOR 0
-# 3656 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3656 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_ENABLED 1
-# 3666 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3666 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_RESOLUTION 1
-# 3682 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3682 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_OVERSAMPLE 0
 
 
@@ -3915,7 +3915,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SAADC_CONFIG_LP_MODE 0
-# 3704 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3704 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3923,13 +3923,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SAADC_CONFIG_LOG_ENABLED 0
-# 3721 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3721 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_LOG_LEVEL 3
-# 3737 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3737 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_INFO_COLOR 0
-# 3753 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3753 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_DEBUG_COLOR 0
-# 3763 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3763 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_ENABLED 1
 
 
@@ -3956,11 +3956,11 @@ char *strsignal (int __signo);
 
 #define NRFX_SPIM3_ENABLED 1
 #define SPI3_ENABLED 1
-#define NRFX_SPIM_EXTENDED_ENABLED 1
+#define NRFX_SPIM_EXTENDED_ENABLED 0
 #define NRFX_SPIM3_NRF52840_ANOMALY_198_WORKAROUND_ENABLED 0
-# 3801 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3801 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_MISO_PULL_CFG 1
-# 3816 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3816 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -3968,13 +3968,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SPIM_CONFIG_LOG_ENABLED 0
-# 3833 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3833 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_CONFIG_LOG_LEVEL 3
-# 3849 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3849 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_CONFIG_INFO_COLOR 0
-# 3865 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3865 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_CONFIG_DEBUG_COLOR 0
-# 3881 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3881 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -4004,7 +4004,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SPIS2_ENABLED 0
-# 3924 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3924 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4026,13 +4026,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SPIS_CONFIG_LOG_ENABLED 0
-# 3955 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3955 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIS_CONFIG_LOG_LEVEL 3
-# 3971 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3971 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIS_CONFIG_INFO_COLOR 0
-# 3987 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3987 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIS_CONFIG_DEBUG_COLOR 0
-# 4003 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4003 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIS_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -4062,9 +4062,9 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SPI2_ENABLED 1
-# 4041 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4041 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPI_MISO_PULL_CFG 1
-# 4056 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4056 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPI_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4072,13 +4072,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SPI_CONFIG_LOG_ENABLED 0
-# 4073 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4073 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPI_CONFIG_LOG_LEVEL 3
-# 4089 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4089 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPI_CONFIG_INFO_COLOR 0
-# 4105 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4105 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPI_CONFIG_DEBUG_COLOR 0
-# 4115 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4115 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SWI_ENABLED 0
 
 
@@ -4134,13 +4134,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_SWI_CONFIG_LOG_ENABLED 0
-# 4180 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4180 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SWI_CONFIG_LOG_LEVEL 3
-# 4196 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4196 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SWI_CONFIG_INFO_COLOR 0
-# 4212 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4212 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SWI_CONFIG_DEBUG_COLOR 0
-# 4222 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4222 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_ENABLED 1
 
 
@@ -4181,13 +4181,13 @@ char *strsignal (int __signo);
 
 
 #define TIMER4_ENABLED 1
-# 4278 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4278 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_FREQUENCY 0
-# 4287 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4287 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_MODE 0
-# 4298 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4298 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH 0
-# 4313 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4313 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4195,13 +4195,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TIMER_CONFIG_LOG_ENABLED 0
-# 4330 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4330 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_CONFIG_LOG_LEVEL 3
-# 4346 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4346 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_CONFIG_INFO_COLOR 0
-# 4362 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4362 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_CONFIG_DEBUG_COLOR 0
-# 4372 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4372 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_ENABLED 1
 
 
@@ -4216,7 +4216,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIM1_ENABLED 1
-# 4395 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4395 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_DEFAULT_CONFIG_FREQUENCY 26738688
 
 
@@ -4225,7 +4225,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIM_DEFAULT_CONFIG_HOLD_BUS_UNINIT 0
-# 4417 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4417 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4233,13 +4233,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIM_CONFIG_LOG_ENABLED 0
-# 4434 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4434 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_CONFIG_LOG_LEVEL 3
-# 4450 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4450 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_CONFIG_INFO_COLOR 0
-# 4466 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4466 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_CONFIG_DEBUG_COLOR 0
-# 4481 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4481 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -4262,9 +4262,9 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIS1_ENABLED 0
-# 4511 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4511 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_ASSUME_INIT_AFTER_RESET_ONLY 0
-# 4520 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4520 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_NO_SYNC_MODE 0
 
 
@@ -4276,11 +4276,11 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIS_DEFAULT_CONFIG_ADDR1 0
-# 4540 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4540 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_DEFAULT_CONFIG_SCL_PULL 0
-# 4550 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4550 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_DEFAULT_CONFIG_SDA_PULL 0
-# 4565 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4565 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4288,13 +4288,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWIS_CONFIG_LOG_ENABLED 0
-# 4582 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4582 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_CONFIG_LOG_LEVEL 3
-# 4598 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4598 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_CONFIG_INFO_COLOR 0
-# 4614 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4614 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_CONFIG_DEBUG_COLOR 0
-# 4624 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4624 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_ENABLED 1
 
 
@@ -4309,7 +4309,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWI1_ENABLED 0
-# 4647 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4647 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_DEFAULT_CONFIG_FREQUENCY 26738688
 
 
@@ -4318,7 +4318,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWI_DEFAULT_CONFIG_HOLD_BUS_UNINIT 0
-# 4669 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4669 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4326,13 +4326,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_TWI_CONFIG_LOG_ENABLED 0
-# 4686 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4686 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_CONFIG_LOG_LEVEL 3
-# 4702 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4702 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_CONFIG_INFO_COLOR 0
-# 4718 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4718 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_CONFIG_DEBUG_COLOR 0
-# 4728 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4728 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_ENABLED 1
 
 
@@ -4343,13 +4343,13 @@ char *strsignal (int __signo);
 
 
 #define NRFX_UARTE1_ENABLED 1
-# 4746 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4746 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_HWFC 0
-# 4755 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4755 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_PARITY 0
-# 4780 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4780 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_BAUDRATE 30801920
-# 4795 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4795 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4357,25 +4357,25 @@ char *strsignal (int __signo);
 
 
 #define NRFX_UARTE_CONFIG_LOG_ENABLED 0
-# 4812 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4812 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_CONFIG_LOG_LEVEL 3
-# 4828 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4828 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_CONFIG_INFO_COLOR 0
-# 4844 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4844 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_CONFIG_DEBUG_COLOR 0
-# 4854 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4854 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_ENABLED 1
 
 
 
 #define NRFX_UART0_ENABLED 0
-# 4867 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4867 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_HWFC 0
-# 4876 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4876 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_PARITY 0
-# 4901 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4901 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_BAUDRATE 30924800
-# 4916 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4916 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4383,23 +4383,23 @@ char *strsignal (int __signo);
 
 
 #define NRFX_UART_CONFIG_LOG_ENABLED 0
-# 4933 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4933 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_CONFIG_LOG_LEVEL 3
-# 4949 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4949 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_CONFIG_INFO_COLOR 0
-# 4965 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4965 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_CONFIG_DEBUG_COLOR 0
-# 4975 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4975 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_ENABLED 1
-# 4989 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4989 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_IRQ_PRIORITY 3
-# 4998 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4998 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_DMASCHEDULER_MODE 0
-# 5011 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5011 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_DMASCHEDULER_ISO_BOOST 1
-# 5021 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5021 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_ISO_IN_ZLP 0
-# 5032 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5032 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_USE_WORKAROUND_FOR_ANOMALY_211 0
 
 
@@ -4409,7 +4409,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_WDT_ENABLED 0
-# 5050 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5050 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_WDT_CONFIG_BEHAVIOUR 1
 
 
@@ -4418,7 +4418,7 @@ char *strsignal (int __signo);
 
 
 #define NRFX_WDT_CONFIG_RELOAD_VALUE 2000
-# 5072 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5072 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_WDT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4426,15 +4426,15 @@ char *strsignal (int __signo);
 
 
 #define NRFX_WDT_CONFIG_LOG_ENABLED 0
-# 5089 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5089 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_WDT_CONFIG_LOG_LEVEL 3
-# 5105 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5105 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_WDT_CONFIG_INFO_COLOR 0
-# 5121 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5121 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_WDT_CONFIG_DEBUG_COLOR 0
-# 5131 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5131 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLOCK_ENABLED 1
-# 5142 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5142 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_LF_SRC 1
 
 
@@ -4443,7 +4443,7 @@ char *strsignal (int __signo);
 
 
 #define CLOCK_CONFIG_LF_CAL_ENABLED 0
-# 5166 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5166 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4461,11 +4461,11 @@ char *strsignal (int __signo);
 
 
 #define PDM_CONFIG_MODE 1
-# 5191 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5191 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_EDGE 0
-# 5201 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5201 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_CLOCK_FREQ 138412032
-# 5218 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5218 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4475,13 +4475,13 @@ char *strsignal (int __signo);
 
 
 #define POWER_ENABLED 1
-# 5242 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5242 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define POWER_CONFIG_IRQ_PRIORITY 6
-# 5251 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5251 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define POWER_CONFIG_DEFAULT_DCDCEN 1
-# 5260 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5260 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define POWER_CONFIG_DEFAULT_DCDCENHV 0
-# 5269 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5269 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PPI_ENABLED 1
 
 
@@ -4516,20 +4516,20 @@ char *strsignal (int __signo);
 
 
 #define PWM_DEFAULT_CONFIG_OUT3_PIN 31
-# 5317 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5317 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_BASE_CLOCK 4
-# 5326 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5326 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_COUNT_MODE 0
 
 
 
 
 #define PWM_DEFAULT_CONFIG_TOP_VALUE 1000
-# 5342 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5342 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_LOAD_MODE 0
-# 5351 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5351 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_STEP_MODE 0
-# 5368 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5368 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4552,15 +4552,15 @@ char *strsignal (int __signo);
 
 
 #define PWM2_ENABLED 0
-# 5403 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5403 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
-# 5415 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5415 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_NRF52_ANOMALY_109_EGU_INSTANCE 5
-# 5425 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5425 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_ENABLED 0
-# 5439 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5439 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_REPORTPER 0
-# 5454 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5454 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_SAMPLEPER 7
 
 
@@ -4588,7 +4588,7 @@ char *strsignal (int __signo);
 
 
 #define QDEC_CONFIG_LEDPRE 511
-# 5489 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5489 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_LEDPOL 1
 
 
@@ -4604,7 +4604,7 @@ char *strsignal (int __signo);
 
 
 #define QDEC_CONFIG_SAMPLE_INTEN 0
-# 5520 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5520 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4625,15 +4625,15 @@ char *strsignal (int __signo);
 
 
 #define QSPI_CONFIG_XIP_OFFSET 0
-# 5551 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5551 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_READOC 0
-# 5562 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5562 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_WRITEOC 0
-# 5571 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5571 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_ADDRMODE 0
-# 5580 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5580 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_MODE 0
-# 5603 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5603 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_FREQUENCY 15
 
 
@@ -4665,7 +4665,7 @@ char *strsignal (int __signo);
 
 
 #define QSPI_PIN_IO3 NRF_QSPI_PIN_NOT_CONNECTED
-# 5650 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5650 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4686,7 +4686,7 @@ char *strsignal (int __signo);
 
 
 #define RNG_CONFIG_POOL_SIZE 64
-# 5686 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5686 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RNG_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4709,7 +4709,7 @@ char *strsignal (int __signo);
 
 
 #define RTC_DEFAULT_CONFIG_RELIABLE 0
-# 5724 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5724 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RTC_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4745,9 +4745,9 @@ char *strsignal (int __signo);
 
 
 #define SAADC_ENABLED 1
-# 5768 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5768 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_RESOLUTION 1
-# 5784 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5784 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_OVERSAMPLE 0
 
 
@@ -4756,7 +4756,7 @@ char *strsignal (int __signo);
 
 
 #define SAADC_CONFIG_LP_MODE 0
-# 5808 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5808 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4766,11 +4766,11 @@ char *strsignal (int __signo);
 
 
 #define SPIS_ENABLED 0
-# 5832 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5832 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
-# 5843 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5843 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_DEFAULT_MODE 0
-# 5852 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5852 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_DEFAULT_BIT_ORDER 0
 
 
@@ -4807,7 +4807,7 @@ char *strsignal (int __signo);
 
 
 #define SPIS2_ENABLED 0
-# 5901 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5901 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -4817,9 +4817,9 @@ char *strsignal (int __signo);
 
 
 #define SPI_ENABLED 1
-# 5925 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5925 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPI_DEFAULT_CONFIG_IRQ_PRIORITY 6
-# 5935 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5935 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SPI_DRV_MISO_PULLUP_CFG 1
 
 
@@ -4861,7 +4861,7 @@ char *strsignal (int __signo);
 
 
 #define SPI2_USE_EASY_DMA 0
-# 5991 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5991 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -4871,13 +4871,13 @@ char *strsignal (int __signo);
 
 
 #define TIMER_ENABLED 1
-# 6015 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6015 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_FREQUENCY 0
-# 6024 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6024 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_MODE 0
-# 6035 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6035 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_BIT_WIDTH 0
-# 6052 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6052 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4907,7 +4907,7 @@ char *strsignal (int __signo);
 
 
 #define TIMER3_ENABLED 1
-# 6095 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6095 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_ENABLED 0
 
 
@@ -4922,9 +4922,9 @@ char *strsignal (int __signo);
 
 
 #define TWIS1_ENABLED 0
-# 6117 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6117 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_ASSUME_INIT_AFTER_RESET_ONLY 0
-# 6126 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6126 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_NO_SYNC_MODE 0
 
 
@@ -4936,11 +4936,11 @@ char *strsignal (int __signo);
 
 
 #define TWIS_DEFAULT_CONFIG_ADDR1 0
-# 6146 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6146 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_DEFAULT_CONFIG_SCL_PULL 0
-# 6156 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6156 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_DEFAULT_CONFIG_SDA_PULL 0
-# 6173 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6173 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4950,7 +4950,7 @@ char *strsignal (int __signo);
 
 
 #define TWI_ENABLED 1
-# 6190 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6190 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWI_DEFAULT_CONFIG_FREQUENCY 26738688
 
 
@@ -4966,7 +4966,7 @@ char *strsignal (int __signo);
 
 
 #define TWI_DEFAULT_CONFIG_HOLD_BUS_UNINIT 0
-# 6221 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6221 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWI_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -4994,7 +4994,7 @@ char *strsignal (int __signo);
 
 
 #define TWI1_USE_EASY_DMA 0
-# 6262 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6262 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -5012,11 +5012,11 @@ char *strsignal (int __signo);
 
 
 #define UART_DEFAULT_CONFIG_HWFC 0
-# 6287 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6287 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_DEFAULT_CONFIG_PARITY 0
-# 6310 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6310 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_DEFAULT_CONFIG_BAUDRATE 30801920
-# 6327 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6327 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -5052,15 +5052,15 @@ char *strsignal (int __signo);
 
 
 #define UART1_ENABLED 1
-# 6370 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6370 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_ENABLED 1
-# 6386 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6386 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_IRQ_PRIORITY 2
-# 6395 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6395 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_DMASCHEDULER_MODE 0
-# 6408 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6408 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_DMASCHEDULER_ISO_BOOST 1
-# 6419 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6419 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_ISO_IN_ZLP 0
 
 
@@ -5070,7 +5070,7 @@ char *strsignal (int __signo);
 
 
 #define WDT_ENABLED 1
-# 6437 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6437 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define WDT_CONFIG_BEHAVIOUR 9
 
 
@@ -5079,11 +5079,11 @@ char *strsignal (int __signo);
 
 
 #define WDT_CONFIG_RELOAD_VALUE 100000
-# 6461 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6461 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define WDT_CONFIG_IRQ_PRIORITY 6
-# 6482 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6482 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_TWI_SENSOR_ENABLED 0
-# 6495 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6495 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_FIFO_ENABLED 1
 
 
@@ -5126,11 +5126,11 @@ char *strsignal (int __signo);
 
 
 #define APP_SDCARD_ENABLED 0
-# 6545 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6545 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_SDCARD_SPI_INSTANCE 0
-# 6559 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6559 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_SDCARD_FREQ_INIT 67108864
-# 6573 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6573 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_SDCARD_FREQ_DATA 1073741824
 
 
@@ -5140,11 +5140,11 @@ char *strsignal (int __signo);
 
 
 #define APP_TIMER_ENABLED 1
-# 6593 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6593 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_RTC_FREQUENCY 0
-# 6610 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6610 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_IRQ_PRIORITY 6
-# 6620 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6620 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_OP_QUEUE_SIZE 50
 
 
@@ -5153,11 +5153,11 @@ char *strsignal (int __signo);
 
 
 #define APP_TIMER_CONFIG_USE_SCHEDULER 0
-# 6637 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6637 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_KEEPS_RTC_ACTIVE 0
-# 6648 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6648 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_SAFE_WINDOW_MS 300000
-# 6658 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6658 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_WITH_PROFILER 0
 
 
@@ -5166,7 +5166,7 @@ char *strsignal (int __signo);
 
 
 #define APP_TIMER_CONFIG_SWI_NUMBER 0
-# 6676 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6676 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_UART_ENABLED 1
 
 
@@ -5176,7 +5176,7 @@ char *strsignal (int __signo);
 
 
 #define APP_UART_DRIVER_INSTANCE 1
-# 6696 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6696 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_AUDIO_ENABLED 0
 
 
@@ -5184,15 +5184,15 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_ENABLED 1
-# 6711 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6711 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_VID 0x1915
-# 6721 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6721 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_PID 0x521F
-# 6730 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6730 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DEVICE_VER_MAJOR 1
-# 6739 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6739 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DEVICE_VER_MINOR 0
-# 6748 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6748 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DEVICE_VER_SUB 0
 
 
@@ -5208,9 +5208,9 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_CONFIG_MAX_POWER 100
-# 6771 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6771 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_POWER_EVENTS_PROCESS 1
-# 6782 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6782 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_EVENT_QUEUE_ENABLE 0
 
 
@@ -5220,13 +5220,13 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_CONFIG_EVENT_QUEUE_SIZE 32
-# 6805 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6805 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_SOF_HANDLING_MODE 2
-# 6820 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6820 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_SOF_TIMESTAMP_PROVIDE 0
-# 6830 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6830 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_DESC_STRING_SIZE 31
-# 6839 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6839 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_DESC_STRING_UTF_ENABLED 0
 
 
@@ -5250,9 +5250,9 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_STRINGS_MANUFACTURER_EXTERN 0
-# 6875 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6875 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_STRINGS_MANUFACTURER APP_USBD_STRING_DESC("Nordic Semiconductor")
-# 6885 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6885 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_STRING_ID_PRODUCT 2
 
 
@@ -5268,7 +5268,7 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_STRINGS_PRODUCT APP_USBD_STRING_DESC("Rak4631 Serial COM")
-# 6909 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6909 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_STRING_ID_SERIAL 3
 
 
@@ -5284,7 +5284,7 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_STRING_SERIAL g_extern_serial_number
-# 6933 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6933 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_STRING_ID_CONFIGURATION 4
 
 
@@ -5300,7 +5300,7 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_STRINGS_CONFIGURATION APP_USBD_STRING_DESC("Default configuration")
-# 6968 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6968 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_STRINGS_USER X(APP_USER_1, , APP_USBD_STRING_DESC("User 1"))
 
 
@@ -5318,9 +5318,9 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_HID_DEFAULT_IDLE_RATE 0
-# 6993 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6993 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_HID_REPORT_IDLE_TABLE_SIZE 4
-# 7002 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7002 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_HID_GENERIC_ENABLED 0
 
 
@@ -5370,25 +5370,25 @@ char *strsignal (int __signo);
 
 
 #define FDS_ENABLED 1
-# 7062 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7062 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_VIRTUAL_PAGES 3
-# 7075 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7075 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_VIRTUAL_PAGE_SIZE 1024
-# 7084 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7084 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_VIRTUAL_PAGES_RESERVED 4
-# 7103 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7103 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_BACKEND 2
-# 7116 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7116 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_OP_QUEUE_SIZE 4
-# 7132 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7132 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_CRC_CHECK_ON_READ 0
-# 7143 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7143 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_CRC_CHECK_ON_WRITE 0
-# 7156 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7156 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_MAX_USERS 4
-# 7167 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7167 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define HARDFAULT_HANDLER_ENABLED 1
-# 7181 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7181 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define HARDFAULT_HANDLER_GDB_PSP_BACKTRACE 1
 
 
@@ -5420,9 +5420,9 @@ char *strsignal (int __signo);
 
 
 #define HCI_SLIP_ENABLED 0
-# 7233 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7233 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define HCI_UART_BAUDRATE 30801920
-# 7242 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7242 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define HCI_UART_FLOW_CONTROL 0
 
 
@@ -5456,7 +5456,7 @@ char *strsignal (int __signo);
 
 
 #define HCI_MAX_PACKET_SIZE_IN_BITS 8000
-# 7283 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7283 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LED_SOFTBLINK_ENABLED 0
 
 
@@ -5574,13 +5574,13 @@ char *strsignal (int __signo);
 
 
 #define MEM_MANAGER_CONFIG_LOG_ENABLED 0
-# 7410 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7410 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MEM_MANAGER_CONFIG_LOG_LEVEL 3
-# 7426 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7426 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MEM_MANAGER_CONFIG_INFO_COLOR 0
-# 7442 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7442 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MEM_MANAGER_CONFIG_DEBUG_COLOR 0
-# 7451 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7451 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MEM_MANAGER_DISABLE_API_PARAM_CHECK 0
 
 
@@ -5636,7 +5636,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_BALLOC_CLI_CMDS 0
-# 7515 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7515 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CSENSE_ENABLED 0
 
 
@@ -5693,9 +5693,9 @@ char *strsignal (int __signo);
 
 
 #define TIMER1_FOR_CSENSE 2
-# 7579 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7579 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MEASUREMENT_PERIOD 20
-# 7590 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7590 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_FPRINTF_ENABLED 1
 
 
@@ -5709,7 +5709,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_QUEUE_CLI_CMDS 0
-# 7611 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7611 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SERIAL_ENABLED 1
 
 
@@ -5717,9 +5717,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_FSTORAGE_ENABLED 1
-# 7631 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7631 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_FSTORAGE_PARAM_CHECK_DISABLED 0
-# 7645 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7645 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_FSTORAGE_SD_QUEUE_SIZE 4
 
 
@@ -5729,9 +5729,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_FSTORAGE_SD_MAX_RETRIES 8
-# 7663 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7663 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_FSTORAGE_SD_MAX_WRITE_SIZE 4096
-# 7675 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7675 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_GFX_ENABLED 0
 
 
@@ -5753,9 +5753,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_PWR_MGMT_CONFIG_DEBUG_PIN_ENABLED 0
-# 7734 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7734 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_SLEEP_DEBUG_PIN 31
-# 7745 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7745 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_CPU_USAGE_MONITOR_ENABLED 0
 
 
@@ -5769,7 +5769,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_PWR_MGMT_CONFIG_STANDBY_TIMEOUT_S 3
-# 7766 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7766 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_FPU_SUPPORT_ENABLED 1
 
 
@@ -5792,7 +5792,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_PWR_MGMT_CONFIG_HANDLER_PRIORITY_COUNT 3
-# 7810 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7810 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SECTION_ITER_ENABLED 1
 
 
@@ -5865,9 +5865,9 @@ char *strsignal (int __signo);
 
 
 #define TASK_MANAGER_CONFIG_STACK_PROFILER_ENABLED 1
-# 7894 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7894 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TASK_MANAGER_CONFIG_STACK_GUARD 7
-# 7906 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7906 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BUTTON_ENABLED 1
 
 
@@ -5876,11 +5876,11 @@ char *strsignal (int __signo);
 
 
 #define BUTTON_HIGH_ACCURACY_ENABLED 0
-# 7926 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7926 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CDC_ACM_ENABLED 1
-# 7936 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7936 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CDC_ACM_ZLP_ON_EPSIZE_WRITE 1
-# 7949 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7949 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_ENABLED 0
 
 
@@ -5933,7 +5933,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_CLI_HISTORY_ELEMENT_COUNT 8
-# 8009 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8009 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_VT100_COLORS_ENABLED 1
 
 
@@ -5967,24 +5967,24 @@ char *strsignal (int __signo);
 
 
 #define NRF_LOG_BACKEND_UART_TX_PIN 29
-# 8064 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8064 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BACKEND_UART_BAUDRATE 30801920
-# 8074 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8074 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BACKEND_UART_TEMP_BUFFER_SIZE 256
-# 8089 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8089 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BACKEND_RTT_ENABLED 1
-# 8099 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8099 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BACKEND_RTT_TEMP_BUFFER_SIZE 128
 
 
 
 
 #define NRF_LOG_BACKEND_RTT_TX_RETRY_DELAY_MS 1
-# 8115 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8115 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BACKEND_RTT_TX_RETRY_CNT 3
-# 8124 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8124 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_STR_FORMATTER_TIMESTAMP_FORMAT_ENABLED 1
-# 8134 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8134 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_ENABLED 1
 
 
@@ -5992,21 +5992,21 @@ char *strsignal (int __signo);
 
 
 #define NRF_LOG_USES_COLORS 1
-# 8155 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8155 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_COLOR_DEFAULT 3
-# 8171 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8171 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_ERROR_COLOR 2
-# 8187 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8187 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_WARNING_COLOR 7
-# 8201 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8201 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_DEFAULT_LEVEL 4
-# 8210 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8210 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_DEFERRED 0
-# 8228 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8228 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BUFSIZE 1024
-# 8242 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8242 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_STR_PUSH_BUFFER_SIZE 128
-# 8251 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8251 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_ALLOW_OVERFLOW 1
 
 
@@ -6020,7 +6020,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_LOG_TIMESTAMP_DEFAULT_FREQUENCY 0
-# 8272 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8272 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_FILTERS_ENABLED 0
 
 
@@ -6029,17 +6029,17 @@ char *strsignal (int __signo);
 
 
 #define NRF_LOG_CLI_CMDS 0
-# 8292 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8292 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_MSGPOOL_ELEMENT_SIZE 20
-# 8302 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8302 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_MSGPOOL_ELEMENT_COUNT 8
-# 8319 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8319 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MPU_CONFIG_LOG_ENABLED 0
-# 8330 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8330 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MPU_CONFIG_LOG_LEVEL 3
-# 8346 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8346 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MPU_CONFIG_INFO_COLOR 0
-# 8362 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8362 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MPU_CONFIG_DEBUG_COLOR 0
 
 
@@ -6049,11 +6049,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_STACK_GUARD_CONFIG_LOG_ENABLED 0
-# 8381 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8381 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_STACK_GUARD_CONFIG_LOG_LEVEL 3
-# 8397 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8397 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_STACK_GUARD_CONFIG_INFO_COLOR 0
-# 8413 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8413 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_STACK_GUARD_CONFIG_DEBUG_COLOR 0
 
 
@@ -6063,19 +6063,19 @@ char *strsignal (int __signo);
 
 
 #define TASK_MANAGER_CONFIG_LOG_ENABLED 0
-# 8432 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8432 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TASK_MANAGER_CONFIG_LOG_LEVEL 3
-# 8448 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8448 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TASK_MANAGER_CONFIG_INFO_COLOR 0
-# 8464 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8464 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TASK_MANAGER_CONFIG_DEBUG_COLOR 0
-# 8478 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8478 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_LOG_ENABLED 0
-# 8489 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8489 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_LOG_LEVEL 3
-# 8505 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8505 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_INFO_COLOR 0
-# 8521 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8521 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_DEBUG_COLOR 0
 
 
@@ -6085,11 +6085,11 @@ char *strsignal (int __signo);
 
 
 #define COMP_CONFIG_LOG_ENABLED 0
-# 8540 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8540 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_LOG_LEVEL 3
-# 8556 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8556 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_INFO_COLOR 0
-# 8572 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8572 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_DEBUG_COLOR 0
 
 
@@ -6099,11 +6099,11 @@ char *strsignal (int __signo);
 
 
 #define GPIOTE_CONFIG_LOG_ENABLED 0
-# 8591 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8591 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define GPIOTE_CONFIG_LOG_LEVEL 3
-# 8607 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8607 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define GPIOTE_CONFIG_INFO_COLOR 0
-# 8623 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8623 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define GPIOTE_CONFIG_DEBUG_COLOR 0
 
 
@@ -6113,11 +6113,11 @@ char *strsignal (int __signo);
 
 
 #define LPCOMP_CONFIG_LOG_ENABLED 0
-# 8642 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8642 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LPCOMP_CONFIG_LOG_LEVEL 3
-# 8658 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8658 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LPCOMP_CONFIG_INFO_COLOR 0
-# 8674 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8674 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LPCOMP_CONFIG_DEBUG_COLOR 0
 
 
@@ -6127,11 +6127,11 @@ char *strsignal (int __signo);
 
 
 #define MAX3421E_HOST_CONFIG_LOG_ENABLED 0
-# 8693 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8693 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MAX3421E_HOST_CONFIG_LOG_LEVEL 3
-# 8709 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8709 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MAX3421E_HOST_CONFIG_INFO_COLOR 0
-# 8725 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8725 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MAX3421E_HOST_CONFIG_DEBUG_COLOR 0
 
 
@@ -6141,11 +6141,11 @@ char *strsignal (int __signo);
 
 
 #define NRFX_USBD_CONFIG_LOG_ENABLED 0
-# 8744 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8744 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_LOG_LEVEL 3
-# 8760 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8760 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_INFO_COLOR 0
-# 8776 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8776 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_DEBUG_COLOR 0
 
 
@@ -6155,11 +6155,11 @@ char *strsignal (int __signo);
 
 
 #define PDM_CONFIG_LOG_ENABLED 0
-# 8795 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8795 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_LOG_LEVEL 3
-# 8811 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8811 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_INFO_COLOR 0
-# 8827 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8827 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_DEBUG_COLOR 0
 
 
@@ -6169,11 +6169,11 @@ char *strsignal (int __signo);
 
 
 #define PPI_CONFIG_LOG_ENABLED 0
-# 8846 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8846 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PPI_CONFIG_LOG_LEVEL 3
-# 8862 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8862 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PPI_CONFIG_INFO_COLOR 0
-# 8878 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8878 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PPI_CONFIG_DEBUG_COLOR 0
 
 
@@ -6183,11 +6183,11 @@ char *strsignal (int __signo);
 
 
 #define PWM_CONFIG_LOG_ENABLED 0
-# 8897 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8897 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_CONFIG_LOG_LEVEL 3
-# 8913 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8913 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_CONFIG_INFO_COLOR 0
-# 8929 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8929 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_CONFIG_DEBUG_COLOR 0
 
 
@@ -6197,11 +6197,11 @@ char *strsignal (int __signo);
 
 
 #define QDEC_CONFIG_LOG_ENABLED 0
-# 8948 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8948 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_LOG_LEVEL 3
-# 8964 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8964 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_INFO_COLOR 0
-# 8980 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8980 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_DEBUG_COLOR 0
 
 
@@ -6211,11 +6211,11 @@ char *strsignal (int __signo);
 
 
 #define RNG_CONFIG_LOG_ENABLED 0
-# 8999 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8999 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RNG_CONFIG_LOG_LEVEL 3
-# 9015 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9015 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RNG_CONFIG_INFO_COLOR 0
-# 9031 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9031 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RNG_CONFIG_DEBUG_COLOR 0
 
 
@@ -6232,11 +6232,11 @@ char *strsignal (int __signo);
 
 
 #define RTC_CONFIG_LOG_ENABLED 0
-# 9057 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9057 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RTC_CONFIG_LOG_LEVEL 3
-# 9073 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9073 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RTC_CONFIG_INFO_COLOR 0
-# 9089 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9089 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RTC_CONFIG_DEBUG_COLOR 0
 
 
@@ -6246,11 +6246,11 @@ char *strsignal (int __signo);
 
 
 #define SAADC_CONFIG_LOG_ENABLED 0
-# 9108 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9108 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_LOG_LEVEL 3
-# 9124 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9124 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_INFO_COLOR 0
-# 9140 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9140 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_DEBUG_COLOR 0
 
 
@@ -6260,11 +6260,11 @@ char *strsignal (int __signo);
 
 
 #define SPIS_CONFIG_LOG_ENABLED 0
-# 9159 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9159 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_CONFIG_LOG_LEVEL 3
-# 9175 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9175 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_CONFIG_INFO_COLOR 0
-# 9191 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9191 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_CONFIG_DEBUG_COLOR 0
 
 
@@ -6274,11 +6274,11 @@ char *strsignal (int __signo);
 
 
 #define SPI_CONFIG_LOG_ENABLED 0
-# 9210 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9210 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPI_CONFIG_LOG_LEVEL 3
-# 9226 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9226 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPI_CONFIG_INFO_COLOR 0
-# 9242 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9242 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPI_CONFIG_DEBUG_COLOR 0
 
 
@@ -6288,11 +6288,11 @@ char *strsignal (int __signo);
 
 
 #define TIMER_CONFIG_LOG_ENABLED 0
-# 9261 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9261 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_CONFIG_LOG_LEVEL 3
-# 9277 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9277 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_CONFIG_INFO_COLOR 0
-# 9293 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9293 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_CONFIG_DEBUG_COLOR 0
 
 
@@ -6302,11 +6302,11 @@ char *strsignal (int __signo);
 
 
 #define TWIS_CONFIG_LOG_ENABLED 0
-# 9312 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9312 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_CONFIG_LOG_LEVEL 3
-# 9328 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9328 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_CONFIG_INFO_COLOR 0
-# 9344 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9344 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_CONFIG_DEBUG_COLOR 0
 
 
@@ -6316,11 +6316,11 @@ char *strsignal (int __signo);
 
 
 #define TWI_CONFIG_LOG_ENABLED 0
-# 9363 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9363 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWI_CONFIG_LOG_LEVEL 3
-# 9379 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9379 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWI_CONFIG_INFO_COLOR 0
-# 9395 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9395 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWI_CONFIG_DEBUG_COLOR 0
 
 
@@ -6330,11 +6330,11 @@ char *strsignal (int __signo);
 
 
 #define UART_CONFIG_LOG_ENABLED 0
-# 9414 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9414 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_CONFIG_LOG_LEVEL 3
-# 9430 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9430 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_CONFIG_INFO_COLOR 0
-# 9446 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9446 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_CONFIG_DEBUG_COLOR 0
 
 
@@ -6344,11 +6344,11 @@ char *strsignal (int __signo);
 
 
 #define USBD_CONFIG_LOG_ENABLED 0
-# 9465 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9465 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_LOG_LEVEL 3
-# 9481 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9481 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_INFO_COLOR 0
-# 9497 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9497 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_DEBUG_COLOR 0
 
 
@@ -6358,21 +6358,21 @@ char *strsignal (int __signo);
 
 
 #define WDT_CONFIG_LOG_ENABLED 0
-# 9516 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9516 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define WDT_CONFIG_LOG_LEVEL 3
-# 9532 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9532 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define WDT_CONFIG_INFO_COLOR 0
-# 9548 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9548 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define WDT_CONFIG_DEBUG_COLOR 0
-# 9562 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9562 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_LOG_ENABLED 0
-# 9573 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9573 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_LOG_LEVEL 3
-# 9589 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9589 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_INITIAL_LOG_LEVEL 3
-# 9605 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9605 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_INFO_COLOR 0
-# 9621 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9621 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_DEBUG_COLOR 0
 
 
@@ -6382,11 +6382,11 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_CDC_ACM_CONFIG_LOG_ENABLED 0
-# 9640 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9640 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CDC_ACM_CONFIG_LOG_LEVEL 3
-# 9656 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9656 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CDC_ACM_CONFIG_INFO_COLOR 0
-# 9672 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9672 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CDC_ACM_CONFIG_DEBUG_COLOR 0
 
 
@@ -6396,11 +6396,11 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_CONFIG_LOG_ENABLED 0
-# 9691 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9691 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_LOG_LEVEL 3
-# 9707 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9707 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_INFO_COLOR 0
-# 9723 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9723 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_DEBUG_COLOR 0
 
 
@@ -6410,11 +6410,11 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_DUMMY_CONFIG_LOG_ENABLED 0
-# 9742 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9742 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DUMMY_CONFIG_LOG_LEVEL 3
-# 9758 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9758 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DUMMY_CONFIG_INFO_COLOR 0
-# 9774 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9774 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DUMMY_CONFIG_DEBUG_COLOR 0
 
 
@@ -6424,11 +6424,11 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_MSC_CONFIG_LOG_ENABLED 0
-# 9793 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9793 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_MSC_CONFIG_LOG_LEVEL 3
-# 9809 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9809 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_MSC_CONFIG_INFO_COLOR 0
-# 9825 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9825 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_MSC_CONFIG_DEBUG_COLOR 0
 
 
@@ -6438,11 +6438,11 @@ char *strsignal (int __signo);
 
 
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_LOG_ENABLED 0
-# 9844 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9844 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_LOG_LEVEL 3
-# 9860 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9860 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_INFO_COLOR 0
-# 9876 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9876 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_DEBUG_COLOR 0
 
 
@@ -6452,13 +6452,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_ATFIFO_CONFIG_LOG_ENABLED 0
-# 9895 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9895 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_LOG_LEVEL 3
-# 9907 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9907 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 9923 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9923 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_INFO_COLOR 0
-# 9939 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9939 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_DEBUG_COLOR 0
 
 
@@ -6468,13 +6468,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_BALLOC_CONFIG_LOG_ENABLED 0
-# 9958 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9958 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BALLOC_CONFIG_LOG_LEVEL 3
-# 9974 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9974 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BALLOC_CONFIG_INITIAL_LOG_LEVEL 3
-# 9990 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9990 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BALLOC_CONFIG_INFO_COLOR 0
-# 10006 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10006 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BALLOC_CONFIG_DEBUG_COLOR 0
 
 
@@ -6484,13 +6484,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_LOG_ENABLED 0
-# 10025 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10025 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_LOG_LEVEL 3
-# 10037 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10037 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10053 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10053 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_INFO_COLOR 0
-# 10069 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10069 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_DEBUG_COLOR 0
 
 
@@ -6500,13 +6500,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLOCK_DEV_QSPI_CONFIG_LOG_ENABLED 0
-# 10088 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10088 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_LOG_LEVEL 3
-# 10100 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10100 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10116 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10116 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_INFO_COLOR 0
-# 10132 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10132 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_DEBUG_COLOR 0
 
 
@@ -6516,13 +6516,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_BLOCK_DEV_RAM_CONFIG_LOG_ENABLED 0
-# 10151 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10151 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_LOG_LEVEL 3
-# 10163 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10163 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10179 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10179 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_INFO_COLOR 0
-# 10195 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10195 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_DEBUG_COLOR 0
 
 
@@ -6532,11 +6532,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_CLI_BLE_UART_CONFIG_LOG_ENABLED 0
-# 10214 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10214 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_BLE_UART_CONFIG_LOG_LEVEL 3
-# 10230 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10230 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_BLE_UART_CONFIG_INFO_COLOR 0
-# 10246 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10246 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_BLE_UART_CONFIG_DEBUG_COLOR 0
 
 
@@ -6546,11 +6546,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_CLI_LIBUARTE_CONFIG_LOG_ENABLED 0
-# 10265 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10265 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_LIBUARTE_CONFIG_LOG_LEVEL 3
-# 10281 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10281 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_LIBUARTE_CONFIG_INFO_COLOR 0
-# 10297 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10297 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_LIBUARTE_CONFIG_DEBUG_COLOR 0
 
 
@@ -6560,11 +6560,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_CLI_UART_CONFIG_LOG_ENABLED 0
-# 10316 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10316 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_UART_CONFIG_LOG_LEVEL 3
-# 10332 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10332 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_UART_CONFIG_INFO_COLOR 0
-# 10348 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10348 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_UART_CONFIG_DEBUG_COLOR 0
 
 
@@ -6574,11 +6574,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_LIBUARTE_CONFIG_LOG_ENABLED 0
-# 10367 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10367 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LIBUARTE_CONFIG_LOG_LEVEL 3
-# 10383 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10383 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LIBUARTE_CONFIG_INFO_COLOR 0
-# 10399 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10399 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LIBUARTE_CONFIG_DEBUG_COLOR 0
 
 
@@ -6588,11 +6588,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_MEMOBJ_CONFIG_LOG_ENABLED 0
-# 10418 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10418 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MEMOBJ_CONFIG_LOG_LEVEL 3
-# 10434 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10434 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MEMOBJ_CONFIG_INFO_COLOR 0
-# 10450 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10450 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MEMOBJ_CONFIG_DEBUG_COLOR 0
 
 
@@ -6602,11 +6602,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_PWR_MGMT_CONFIG_LOG_ENABLED 0
-# 10469 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10469 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_LOG_LEVEL 3
-# 10485 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10485 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_INFO_COLOR 0
-# 10501 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10501 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_DEBUG_COLOR 0
 
 
@@ -6616,13 +6616,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_QUEUE_CONFIG_LOG_ENABLED 0
-# 10520 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10520 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_QUEUE_CONFIG_LOG_LEVEL 3
-# 10532 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10532 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_QUEUE_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10548 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10548 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_QUEUE_CONFIG_INFO_COLOR 0
-# 10564 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10564 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_QUEUE_CONFIG_DEBUG_COLOR 0
 
 
@@ -6632,11 +6632,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_ANT_LOG_ENABLED 0
-# 10583 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10583 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_ANT_LOG_LEVEL 3
-# 10599 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10599 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_ANT_INFO_COLOR 0
-# 10615 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10615 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_ANT_DEBUG_COLOR 0
 
 
@@ -6646,11 +6646,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_BLE_LOG_ENABLED 1
-# 10634 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10634 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_LOG_LEVEL 3
-# 10650 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10650 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_INFO_COLOR 0
-# 10666 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10666 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_DEBUG_COLOR 0
 
 
@@ -6660,11 +6660,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_LOG_ENABLED 1
-# 10685 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10685 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_LOG_LEVEL 3
-# 10701 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10701 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_INFO_COLOR 0
-# 10717 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10717 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_DEBUG_COLOR 0
 
 
@@ -6674,11 +6674,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_SOC_LOG_ENABLED 1
-# 10736 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10736 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_LOG_LEVEL 3
-# 10752 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10752 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_INFO_COLOR 0
-# 10768 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10768 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_DEBUG_COLOR 0
 
 
@@ -6688,11 +6688,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SORTLIST_CONFIG_LOG_ENABLED 0
-# 10787 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10787 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SORTLIST_CONFIG_LOG_LEVEL 3
-# 10803 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10803 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SORTLIST_CONFIG_INFO_COLOR 0
-# 10819 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10819 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SORTLIST_CONFIG_DEBUG_COLOR 0
 
 
@@ -6702,11 +6702,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_TWI_SENSOR_CONFIG_LOG_ENABLED 0
-# 10838 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10838 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_TWI_SENSOR_CONFIG_LOG_LEVEL 3
-# 10854 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10854 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_TWI_SENSOR_CONFIG_INFO_COLOR 0
-# 10870 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10870 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_TWI_SENSOR_CONFIG_DEBUG_COLOR 0
 
 
@@ -6716,21 +6716,21 @@ char *strsignal (int __signo);
 
 
 #define PM_LOG_ENABLED 1
-# 10889 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10889 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PM_LOG_LEVEL 3
-# 10905 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10905 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PM_LOG_INFO_COLOR 0
-# 10921 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10921 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PM_LOG_DEBUG_COLOR 0
-# 10935 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10935 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_LOG_ENABLED 0
-# 10946 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10946 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_LOG_LEVEL 3
-# 10962 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10962 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_INFO_COLOR 0
-# 10978 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10978 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_DEBUG_COLOR 0
-# 11002 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11002 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_AC_REC_ENABLED 0
 
 
@@ -6753,7 +6753,7 @@ char *strsignal (int __signo);
 
 
 #define ADVANCED_ADVDATA_SUPPORT 0
-# 11032 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11032 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_BLE_OOB_ADVDATA_PARSER_ENABLED 0
 
 
@@ -6766,13 +6766,13 @@ char *strsignal (int __signo);
 
 
 #define NFC_BLE_PAIR_LIB_LOG_ENABLED 0
-# 11054 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11054 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_BLE_PAIR_LIB_LOG_LEVEL 3
-# 11070 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11070 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_BLE_PAIR_LIB_INFO_COLOR 0
-# 11086 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11086 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_BLE_PAIR_LIB_DEBUG_COLOR 0
-# 11099 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11099 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_NFC_SEC_PARAM_BOND 1
 
 
@@ -6801,11 +6801,11 @@ char *strsignal (int __signo);
 
 
 #define BLE_NFC_SEC_PARAM_KDIST_PEER_ID 1
-# 11145 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11145 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_NFC_SEC_PARAM_MIN_KEY_SIZE 7
-# 11162 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11162 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_NFC_SEC_PARAM_MAX_KEY_SIZE 16
-# 11174 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11174 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_BLE_PAIR_MSG_ENABLED 0
 
 
@@ -6883,11 +6883,11 @@ char *strsignal (int __signo);
 
 
 #define NFC_NDEF_MSG_PARSER_LOG_ENABLED 0
-# 11261 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11261 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_MSG_PARSER_LOG_LEVEL 3
-# 11277 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11277 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_MSG_PARSER_INFO_COLOR 0
-# 11288 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11288 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_RECORD_ENABLED 1
 
 
@@ -6900,11 +6900,11 @@ char *strsignal (int __signo);
 
 
 #define NFC_NDEF_RECORD_PARSER_LOG_ENABLED 0
-# 11310 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11310 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_RECORD_PARSER_LOG_LEVEL 3
-# 11326 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11326 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_RECORD_PARSER_INFO_COLOR 0
-# 11337 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11337 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_TEXT_RECORD_ENABLED 1
 
 
@@ -6931,55 +6931,55 @@ char *strsignal (int __signo);
 
 
 #define NFC_PLATFORM_LOG_ENABLED 4
-# 11373 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11373 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_PLATFORM_LOG_LEVEL 3
-# 11389 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11389 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_PLATFORM_INFO_COLOR 0
-# 11405 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11405 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_PLATFORM_DEBUG_COLOR 0
-# 11415 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11415 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T2T_PARSER_ENABLED 0
 
 
 
 
 #define NFC_T2T_PARSER_LOG_ENABLED 0
-# 11431 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11431 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T2T_PARSER_LOG_LEVEL 3
-# 11447 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11447 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T2T_PARSER_INFO_COLOR 0
-# 11457 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11457 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_APDU_ENABLED 0
 
 
 
 
 #define NFC_T4T_APDU_LOG_ENABLED 0
-# 11473 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11473 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_APDU_LOG_LEVEL 3
-# 11489 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11489 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_APDU_LOG_COLOR 0
-# 11499 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11499 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_CC_FILE_PARSER_ENABLED 0
 
 
 
 
 #define NFC_T4T_CC_FILE_PARSER_LOG_ENABLED 0
-# 11515 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11515 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_CC_FILE_PARSER_LOG_LEVEL 3
-# 11531 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11531 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_CC_FILE_PARSER_INFO_COLOR 0
-# 11541 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11541 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_HL_DETECTION_PROCEDURES_ENABLED 0
 
 
 
 
 #define NFC_T4T_HL_DETECTION_PROCEDURES_LOG_ENABLED 0
-# 11557 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11557 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_HL_DETECTION_PROCEDURES_LOG_LEVEL 3
-# 11573 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11573 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_HL_DETECTION_PROCEDURES_INFO_COLOR 0
 
 
@@ -7006,11 +7006,11 @@ char *strsignal (int __signo);
 
 
 #define NFC_T4T_TLV_BLOCK_PARSER_LOG_ENABLED 0
-# 11609 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11609 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_TLV_BLOCK_PARSER_LOG_LEVEL 3
-# 11625 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11625 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_TLV_BLOCK_PARSER_INFO_COLOR 0
-# 11646 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11646 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SEGGER_RTT_CONFIG_BUFFER_SIZE_UP 512
 
 
@@ -7027,11 +7027,11 @@ char *strsignal (int __signo);
 
 
 #define SEGGER_RTT_CONFIG_MAX_NUM_DOWN_BUFFERS 2
-# 11676 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11676 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SEGGER_RTT_CONFIG_DEFAULT_MODE 0
-# 11691 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11691 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_ENABLED 1
-# 11704 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11704 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_GAP_DATA_LENGTH 27
 
 
@@ -7074,11 +7074,11 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_BLE_VS_UUID_COUNT 3
-# 11765 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11765 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_SERVICE_CHANGED 0
-# 11779 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11779 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_OBSERVER_PRIO_LEVELS 4
-# 11789 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11789 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_ADV_BLE_OBSERVER_PRIO 1
 
 
@@ -7318,7 +7318,7 @@ char *strsignal (int __signo);
 
 
 #define NFC_BLE_PAIR_LIB_BLE_OBSERVER_PRIO 1
-# 12174 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12174 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLE_BMS_BLE_OBSERVER_PRIO 2
 
 
@@ -7367,11 +7367,11 @@ char *strsignal (int __signo);
 
 
 #define PM_BLE_OBSERVER_PRIO 1
-# 12236 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12236 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_ENABLED 1
-# 12253 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12253 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_DISPATCH_MODEL 0
-# 12269 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12269 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_CLOCK_LF_SRC 1
 
 
@@ -7386,9 +7386,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_CLOCK_LF_RC_TEMP_CTIV 0
-# 12301 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12301 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_CLOCK_LF_ACCURACY 7
-# 12315 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12315 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_REQ_OBSERVER_PRIO_LEVELS 2
 
 
@@ -7406,7 +7406,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_SDH_STACK_OBSERVER_PRIO_LEVELS 2
-# 12342 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12342 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_STATE_OBSERVER_PRIO 0
 
 
@@ -7422,17 +7422,17 @@ char *strsignal (int __signo);
 
 
 #define RNG_CONFIG_STATE_OBSERVER_PRIO 0
-# 12371 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12371 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_ANT_STACK_OBSERVER_PRIO 0
-# 12380 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12380 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_STACK_OBSERVER_PRIO 0
-# 12389 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12389 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_STACK_OBSERVER_PRIO 0
-# 12404 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12404 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_ENABLED 1
-# 12414 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12414 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_OBSERVER_PRIO_LEVELS 2
-# 12424 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12424 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_ADV_SOC_OBSERVER_PRIO 1
 
 
@@ -7459,13 +7459,13 @@ char *strsignal (int __signo);
 
 
 #define NRF_BL_SETTINGS_PAGE_PROTECT 1
-# 12460 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12460 "/home/eddieho/tmp/phase2_release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NDEF_FILE_SIZE 1024
-# 57 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h" 1
-# 45 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
+# 57 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h" 1
+# 45 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
 #define NORDIC_COMMON_H__ 
-# 80 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
+# 80 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
 #define NRF_MODULE_ENABLED(module) ((defined(module ## _ENABLED) && (module ## _ENABLED)) ? 1 : 0)
 
 
@@ -7487,11 +7487,11 @@ char *strsignal (int __signo);
 
 
 #define MAX(a,b) ((a) < (b) ? (b) : (a))
-# 116 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
+# 116 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
 #define CONCAT_2(p1,p2) CONCAT_2_(p1, p2)
 
 #define CONCAT_2_(p1,p2) p1 ##p2
-# 135 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
+# 135 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
 #define CONCAT_3(p1,p2,p3) CONCAT_3_(p1, p2, p3)
 
 #define CONCAT_3_(p1,p2,p3) p1 ##p2 ##p3
@@ -7519,7 +7519,7 @@ char *strsignal (int __signo);
 
 
 #define CLR_BIT(W,B) ((W) &= (~(uint32_t)(1U << (B))))
-# 172 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
+# 172 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h"
 #define IS_SET(W,B) (((W) >> (B)) & 1)
 
 #define BIT_0 0x01
@@ -7558,9 +7558,9 @@ char *strsignal (int __signo);
 #define UNUSED_VARIABLE(X) ((void)(X))
 #define UNUSED_PARAMETER(X) UNUSED_VARIABLE(X)
 #define UNUSED_RETURN_VALUE(X) UNUSED_VARIABLE(X)
-# 58 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h" 1
-# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
+# 58 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h" 1
+# 43 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
 #define _COMPILER_ABSTRACTION_H 
 
 
@@ -7570,7 +7570,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_STRING_CONCATENATE(lhs,rhs) NRF_STRING_CONCATENATE_IMPL(lhs, rhs)
-# 160 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
+# 160 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
 #define __ASM __asm
 
 
@@ -7597,7 +7597,7 @@ char *strsignal (int __signo);
 #define GET_SP() gcc_current_sp()
 
     
-# 185 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
+# 185 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
    static inline unsigned int gcc_current_sp(void)
     {
         unsigned int stack_pointer = 0;
@@ -7607,7 +7607,7 @@ char *strsignal (int __signo);
 
 
 #define NRF_STATIC_ASSERT(cond,msg) _Static_assert(cond, msg)
-# 231 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
+# 231 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h"
 #define NRF_MDK_VERSION_ASSERT_AT_LEAST(major,minor,micro) NRF_STATIC_ASSERT( ( (major < MDK_MAJOR_VERSION) || (major == MDK_MAJOR_VERSION && minor < MDK_MINOR_VERSION) || (major == MDK_MAJOR_VERSION && minor == MDK_MINOR_VERSION && micro < MDK_MICRO_VERSION) ), "MDK version mismatch.")
 
 
@@ -7617,9 +7617,9 @@ char *strsignal (int __signo);
 
 
 #define NRF_MDK_VERSION_ASSERT_EXACT(major,minor,micro) NRF_STATIC_ASSERT( ( (major != MDK_MAJOR_VERSION) || (major != MDK_MAJOR_VERSION) || (major != MDK_MAJOR_VERSION) ), "MDK version mismatch.")
-# 59 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_os.h" 1
-# 53 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_os.h"
+# 59 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_os.h" 1
+# 53 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_os.h"
 #define SDK_OS_H__ 
 
 
@@ -7630,14 +7630,14 @@ char *strsignal (int __signo);
 #define SDK_MUTEX_INIT(X) 
 #define SDK_MUTEX_LOCK(X) 
 #define SDK_MUTEX_UNLOCK(X) 
-# 60 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 1
-# 70 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
+# 60 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 1
+# 70 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
 #define SDK_ERRORS_H__ 
 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h" 1
-# 48 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h" 1
+# 48 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h"
 #define NRF_ERROR_H__ 
 
 
@@ -7672,8 +7672,8 @@ char *strsignal (int __signo);
 #define NRF_ERROR_BUSY (NRF_ERROR_BASE_NUM + 17)
 #define NRF_ERROR_CONN_COUNT (NRF_ERROR_BASE_NUM + 18)
 #define NRF_ERROR_RESOURCES (NRF_ERROR_BASE_NUM + 19)
-# 74 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 2
-# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
+# 74 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 2
+# 83 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
 #define NRF_ERROR_SDK_ERROR_BASE (NRF_ERROR_BASE_NUM + 0x8000)
 #define NRF_ERROR_SDK_COMMON_ERROR_BASE (NRF_ERROR_BASE_NUM + 0x0080)
 
@@ -7724,39 +7724,39 @@ char *strsignal (int __signo);
 #define NRF_ERROR_DRV_TWI_ERR_OVERRUN (NRF_ERROR_PERIPH_DRIVERS_ERR_BASE + 0x0000)
 #define NRF_ERROR_DRV_TWI_ERR_ANACK (NRF_ERROR_PERIPH_DRIVERS_ERR_BASE + 0x0001)
 #define NRF_ERROR_DRV_TWI_ERR_DNACK (NRF_ERROR_PERIPH_DRIVERS_ERR_BASE + 0x0002)
-# 141 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
+# 141 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
 #define NRF_ERROR_BLE_IPSP_RX_PKT_TRUNCATED (NRF_ERROR_BLE_IPSP_ERR_BASE + 0x0000)
 #define NRF_ERROR_BLE_IPSP_CHANNEL_ALREADY_EXISTS (NRF_ERROR_BLE_IPSP_ERR_BASE + 0x0001)
 #define NRF_ERROR_BLE_IPSP_LINK_DISCONNECTED (NRF_ERROR_BLE_IPSP_ERR_BASE + 0x0002)
 #define NRF_ERROR_BLE_IPSP_PEER_REJECTED (NRF_ERROR_BLE_IPSP_ERR_BASE + 0x0003)
-# 159 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
+# 159 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h"
 typedef uint32_t ret_code_t;
-# 61 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 1
-# 50 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 61 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 1
+# 50 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define APP_UTIL_H__ 
 
 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 55 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
+# 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 1
-# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 1
+# 43 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
 #define NRF_H 
 
 
 #define MDK_MAJOR_VERSION 8
 #define MDK_MINOR_VERSION 35
 #define MDK_MICRO_VERSION 0
-# 79 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
+# 79 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
 #define NRF52_SERIES 
-# 169 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 1
-# 61 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 169 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 1
+# 61 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 #define NRF52840_H 
-# 78 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 78 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef enum {
 
   Reset_IRQn = -15,
@@ -7816,7 +7816,7 @@ typedef enum {
   PWM3_IRQn = 45,
   SPIM3_IRQn = 47
 } IRQn_Type;
-# 145 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 145 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 #define __CM4_REV 0x0001U
 #define __DSP_PRESENT 1
 #define __VTOR_PRESENT 1
@@ -7828,19 +7828,19 @@ typedef enum {
 
 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 1
-# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 1
+# 32 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define __CORE_CM4_H_GENERIC 
-# 63 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_version.h" 1
-# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_version.h"
+# 63 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_version.h" 1
+# 32 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_version.h"
 #define __CMSIS_VERSION_H 
 
 
 #define __CM_CMSIS_VERSION_MAIN ( 5U)
 #define __CM_CMSIS_VERSION_SUB ( 3U)
 #define __CM_CMSIS_VERSION ((__CM_CMSIS_VERSION_MAIN << 16U) | __CM_CMSIS_VERSION_SUB )
-# 64 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
+# 64 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
 
 
 #define __CM4_CMSIS_VERSION_MAIN (__CM_CMSIS_VERSION_MAIN)
@@ -7849,15 +7849,15 @@ typedef enum {
 
 
 #define __CORTEX_M (4U)
-# 103 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 103 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define __FPU_USED 1U
-# 162 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h" 1
-# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h"
+# 162 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h" 1
+# 26 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h"
 #define __CMSIS_COMPILER_H 
-# 54 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h"
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h" 1
-# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 54 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h" 1
+# 26 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __CMSIS_GCC_H 
 
 
@@ -7865,7 +7865,7 @@ typedef enum {
 #pragma GCC diagnostic ignored "-Wsign-conversion"
 #pragma GCC diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
-# 47 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 47 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __STATIC_INLINE static inline
 
 
@@ -7876,7 +7876,7 @@ typedef enum {
 
 
 #define __USED __attribute__((used))
-# 65 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 65 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __PACKED_STRUCT struct __attribute__((packed, aligned(1)))
 
 
@@ -7930,7 +7930,7 @@ typedef enum {
 
 
 #define __COMPILER_BARRIER() __ASM volatile("":::"memory")
-# 131 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 131 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline __attribute__((__noreturn__)) void __cmsis_start(void)
 {
   extern void _start(void) __attribute__((__noreturn__));
@@ -7983,7 +7983,7 @@ __attribute__((always_inline)) static inline __attribute__((__noreturn__)) void 
 
 
 #define __VECTOR_TABLE_ATTRIBUTE __attribute((used, section(".vectors")))
-# 196 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 196 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __enable_irq(void)
 {
   __asm volatile ("cpsie i" : : : "memory");
@@ -8013,12 +8013,12 @@ __attribute__((always_inline)) static inline uint32_t __get_CONTROL(void)
   __asm volatile ("MRS %0, control" : "=r" (result) );
   return(result);
 }
-# 248 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 248 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_CONTROL(uint32_t control)
 {
   __asm volatile ("MSR control, %0" : : "r" (control) : "memory");
 }
-# 272 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 272 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_IPSR(void)
 {
   uint32_t result;
@@ -8068,12 +8068,12 @@ __attribute__((always_inline)) static inline uint32_t __get_PSP(void)
   __asm volatile ("MRS %0, psp" : "=r" (result) );
   return(result);
 }
-# 344 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 344 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_PSP(uint32_t topOfProcStack)
 {
   __asm volatile ("MSR psp, %0" : : "r" (topOfProcStack) : );
 }
-# 368 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 368 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_MSP(void)
 {
   uint32_t result;
@@ -8081,12 +8081,12 @@ __attribute__((always_inline)) static inline uint32_t __get_MSP(void)
   __asm volatile ("MRS %0, msp" : "=r" (result) );
   return(result);
 }
-# 398 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 398 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_MSP(uint32_t topOfMainStack)
 {
   __asm volatile ("MSR msp, %0" : : "r" (topOfMainStack) : );
 }
-# 449 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 449 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_PRIMASK(void)
 {
   uint32_t result;
@@ -8094,12 +8094,12 @@ __attribute__((always_inline)) static inline uint32_t __get_PRIMASK(void)
   __asm volatile ("MRS %0, primask" : "=r" (result) :: "memory");
   return(result);
 }
-# 479 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 479 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_PRIMASK(uint32_t priMask)
 {
   __asm volatile ("MSR primask, %0" : : "r" (priMask) : "memory");
 }
-# 506 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 506 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __enable_fault_irq(void)
 {
   __asm volatile ("cpsie f" : : : "memory");
@@ -8129,12 +8129,12 @@ __attribute__((always_inline)) static inline uint32_t __get_BASEPRI(void)
   __asm volatile ("MRS %0, basepri" : "=r" (result) );
   return(result);
 }
-# 558 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 558 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_BASEPRI(uint32_t basePri)
 {
   __asm volatile ("MSR basepri, %0" : : "r" (basePri) : "memory");
 }
-# 583 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 583 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_BASEPRI_MAX(uint32_t basePri)
 {
   __asm volatile ("MSR basepri_max, %0" : : "r" (basePri) : "memory");
@@ -8153,12 +8153,12 @@ __attribute__((always_inline)) static inline uint32_t __get_FAULTMASK(void)
   __asm volatile ("MRS %0, faultmask" : "=r" (result) );
   return(result);
 }
-# 624 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 624 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __set_FAULTMASK(uint32_t faultMask)
 {
   __asm volatile ("MSR faultmask, %0" : : "r" (faultMask) : "memory");
 }
-# 833 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 833 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __get_FPSCR(void)
 {
 
@@ -8168,7 +8168,7 @@ __attribute__((always_inline)) static inline uint32_t __get_FPSCR(void)
 
 
   return __builtin_arm_get_fpscr();
-# 851 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 851 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 }
 
 
@@ -8193,7 +8193,7 @@ __attribute__((always_inline)) static inline void __set_FPSCR(uint32_t fpscr)
 
 
 }
-# 894 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 894 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __CMSIS_GCC_OUT_REG(r) "=r" (r)
 #define __CMSIS_GCC_RW_REG(r) "+r" (r)
 #define __CMSIS_GCC_USE_REG(r) "r" (r)
@@ -8225,7 +8225,7 @@ __attribute__((always_inline)) static inline void __set_FPSCR(uint32_t fpscr)
 
 
 #define __SEV() __ASM volatile ("sev")
-# 933 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 933 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __ISB(void)
 {
   __asm volatile ("isb 0xF":::"memory");
@@ -8252,7 +8252,7 @@ __attribute__((always_inline)) static inline void __DMB(void)
 {
   __asm volatile ("dmb 0xF":::"memory");
 }
-# 967 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 967 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __REV(uint32_t value)
 {
 
@@ -8264,7 +8264,7 @@ __attribute__((always_inline)) static inline uint32_t __REV(uint32_t value)
 
 
 }
-# 986 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 986 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __REV16(uint32_t value)
 {
   uint32_t result;
@@ -8272,7 +8272,7 @@ __attribute__((always_inline)) static inline uint32_t __REV16(uint32_t value)
   __asm volatile ("rev16 %0, %1" : "=r" (result) : "r" (value) );
   return result;
 }
-# 1001 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1001 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline int16_t __REVSH(int16_t value)
 {
 
@@ -8284,7 +8284,7 @@ __attribute__((always_inline)) static inline int16_t __REVSH(int16_t value)
 
 
 }
-# 1021 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1021 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __ROR(uint32_t op1, uint32_t op2)
 {
   op2 %= 32U;
@@ -8294,9 +8294,9 @@ __attribute__((always_inline)) static inline uint32_t __ROR(uint32_t op1, uint32
   }
   return (op1 >> op2) | (op1 << (32U - op2));
 }
-# 1039 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1039 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __BKPT(value) __ASM volatile ("bkpt "#value)
-# 1048 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1048 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __RBIT(uint32_t value)
 {
   uint32_t result;
@@ -8305,20 +8305,20 @@ __attribute__((always_inline)) static inline uint32_t __RBIT(uint32_t value)
 
 
    __asm volatile ("rbit %0, %1" : "=r" (result) : "r" (value) );
-# 1068 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1068 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
   return result;
 }
-# 1078 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1078 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __CLZ(uint32_t value)
 {
-# 1089 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1089 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
   if (value == 0U)
   {
     return 32U;
   }
   return __builtin_clz(value);
 }
-# 1107 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1107 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __LDREXB(volatile uint8_t *addr)
 {
     uint32_t result;
@@ -8333,7 +8333,7 @@ __attribute__((always_inline)) static inline uint8_t __LDREXB(volatile uint8_t *
 
    return ((uint8_t) result);
 }
-# 1129 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1129 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint16_t __LDREXH(volatile uint16_t *addr)
 {
     uint32_t result;
@@ -8348,7 +8348,7 @@ __attribute__((always_inline)) static inline uint16_t __LDREXH(volatile uint16_t
 
    return ((uint16_t) result);
 }
-# 1151 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1151 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __LDREXW(volatile uint32_t *addr)
 {
     uint32_t result;
@@ -8356,7 +8356,7 @@ __attribute__((always_inline)) static inline uint32_t __LDREXW(volatile uint32_t
    __asm volatile ("ldrex %0, %1" : "=r" (result) : "Q" (*addr) );
    return(result);
 }
-# 1168 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1168 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXB(uint8_t value, volatile uint8_t *addr)
 {
    uint32_t result;
@@ -8364,7 +8364,7 @@ __attribute__((always_inline)) static inline uint32_t __STREXB(uint8_t value, vo
    __asm volatile ("strexb %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
    return(result);
 }
-# 1185 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1185 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
 {
    uint32_t result;
@@ -8372,7 +8372,7 @@ __attribute__((always_inline)) static inline uint32_t __STREXH(uint16_t value, v
    __asm volatile ("strexh %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
    return(result);
 }
-# 1202 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1202 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __STREXW(uint32_t value, volatile uint32_t *addr)
 {
    uint32_t result;
@@ -8390,11 +8390,11 @@ __attribute__((always_inline)) static inline void __CLREX(void)
 {
   __asm volatile ("clrex" ::: "memory");
 }
-# 1236 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1236 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __SSAT(ARG1,ARG2) __extension__ ({ int32_t __RES, __ARG1 = (ARG1); __ASM ("ssat %0, %1, %2" : "=r" (__RES) : "I" (ARG2), "r" (__ARG1) ); __RES; })
-# 1252 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1252 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __USAT(ARG1,ARG2) __extension__ ({ uint32_t __RES, __ARG1 = (ARG1); __ASM ("usat %0, %1, %2" : "=r" (__RES) : "I" (ARG2), "r" (__ARG1) ); __RES; })
-# 1268 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1268 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __RRX(uint32_t value)
 {
   uint32_t result;
@@ -8402,7 +8402,7 @@ __attribute__((always_inline)) static inline uint32_t __RRX(uint32_t value)
   __asm volatile ("rrx %0, %1" : "=r" (result) : "r" (value) );
   return(result);
 }
-# 1283 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1283 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint8_t __LDRBT(volatile uint8_t *ptr)
 {
     uint32_t result;
@@ -8417,7 +8417,7 @@ __attribute__((always_inline)) static inline uint8_t __LDRBT(volatile uint8_t *p
 
    return ((uint8_t) result);
 }
-# 1305 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1305 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint16_t __LDRHT(volatile uint16_t *ptr)
 {
     uint32_t result;
@@ -8432,7 +8432,7 @@ __attribute__((always_inline)) static inline uint16_t __LDRHT(volatile uint16_t 
 
    return ((uint16_t) result);
 }
-# 1327 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1327 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __LDRT(volatile uint32_t *ptr)
 {
     uint32_t result;
@@ -8440,22 +8440,22 @@ __attribute__((always_inline)) static inline uint32_t __LDRT(volatile uint32_t *
    __asm volatile ("ldrt %0, %1" : "=r" (result) : "Q" (*ptr) );
    return(result);
 }
-# 1342 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1342 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRBT(uint8_t value, volatile uint8_t *ptr)
 {
    __asm volatile ("strbt %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
 }
-# 1354 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1354 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRHT(uint16_t value, volatile uint16_t *ptr)
 {
    __asm volatile ("strht %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
 }
-# 1366 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1366 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline void __STRT(uint32_t value, volatile uint32_t *ptr)
 {
    __asm volatile ("strt %1, %0" : "=Q" (*ptr) : "r" (value) );
 }
-# 1621 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 1621 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 __attribute__((always_inline)) static inline uint32_t __SADD8(uint32_t op1, uint32_t op2)
 {
   uint32_t result;
@@ -8963,7 +8963,7 @@ __attribute__((always_inline)) static inline int32_t __QSUB( int32_t op1, int32_
   __asm volatile ("qsub %0, %1, %2" : "=r" (result) : "r" (op1), "r" (op2) );
   return(result);
 }
-# 2148 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
+# 2148 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_gcc.h"
 #define __PKHBT(ARG1,ARG2,ARG3) ( ((((uint32_t)(ARG1)) ) & 0x0000FFFFUL) | ((((uint32_t)(ARG2)) << (ARG3)) & 0xFFFF0000UL) )
 
 
@@ -8983,11 +8983,11 @@ __attribute__((always_inline)) static inline int32_t __SMMLA (int32_t op1, int32
 
 
 #pragma GCC diagnostic pop
-# 55 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h" 2
-# 163 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
-# 174 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/cmsis_compiler.h" 2
+# 163 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
+# 174 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define __CORE_CM4_H_DEPENDANT 
-# 219 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 219 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define __I volatile const
 
 #define __O volatile
@@ -8997,7 +8997,7 @@ __attribute__((always_inline)) static inline int32_t __SMMLA (int32_t op1, int32
 #define __IM volatile const
 #define __OM volatile
 #define __IOM volatile
-# 259 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 259 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef union
 {
   struct
@@ -9131,7 +9131,7 @@ typedef union
 
 #define CONTROL_nPRIV_Pos 0U
 #define CONTROL_nPRIV_Msk (1UL )
-# 406 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 406 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile uint32_t ISER[8U];
@@ -9152,7 +9152,7 @@ typedef struct
 
 #define NVIC_STIR_INTID_Pos 0U
 #define NVIC_STIR_INTID_Msk (0x1FFUL )
-# 440 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 440 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile const uint32_t CPUID;
@@ -9418,7 +9418,7 @@ typedef struct
 
 #define SCB_DFSR_HALTED_Pos 0U
 #define SCB_DFSR_HALTED_Msk (1UL )
-# 719 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 719 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
         uint32_t RESERVED0[1U];
@@ -9445,7 +9445,7 @@ typedef struct
 
 #define SCnSCB_ACTLR_DISMCYCINT_Pos 0U
 #define SCnSCB_ACTLR_DISMCYCINT_Msk (1UL )
-# 759 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 759 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile uint32_t CTRL;
@@ -9484,7 +9484,7 @@ typedef struct
 
 #define SysTick_CALIB_TENMS_Pos 0U
 #define SysTick_CALIB_TENMS_Msk (0xFFFFFFUL )
-# 811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile union
@@ -9559,7 +9559,7 @@ typedef struct
 
 #define ITM_LSR_Present_Pos 0U
 #define ITM_LSR_Present_Msk (1UL )
-# 899 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 899 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile uint32_t CTRL;
@@ -9693,7 +9693,7 @@ typedef struct
 
 #define DWT_FUNCTION_FUNCTION_Pos 0U
 #define DWT_FUNCTION_FUNCTION_Msk (0xFUL )
-# 1046 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1046 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile const uint32_t SSPSR;
@@ -9841,7 +9841,7 @@ typedef struct
 
 #define TPI_DEVTYPE_MajorType_Pos 0U
 #define TPI_DEVTYPE_MajorType_Msk (0xFUL << TPI_DEVTYPE_MajorType_Pos)
-# 1208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1208 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile const uint32_t TYPE;
@@ -9923,7 +9923,7 @@ typedef struct
 
 #define MPU_RASR_ENABLE_Pos 0U
 #define MPU_RASR_ENABLE_Msk (1UL )
-# 1304 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1304 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
         uint32_t RESERVED0[1U];
@@ -10022,7 +10022,7 @@ typedef struct
 
 #define FPU_MVFR2_VFP_Misc_Pos 4U
 #define FPU_MVFR2_VFP_Misc_Msk (0xFUL << FPU_MVFR2_VFP_Misc_Pos)
-# 1416 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1416 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 typedef struct
 {
   volatile uint32_t DHCSR;
@@ -10114,7 +10114,7 @@ typedef struct
 
 #define CoreDebug_DEMCR_VC_CORERESET_Pos 0U
 #define CoreDebug_DEMCR_VC_CORERESET_Msk (1UL )
-# 1524 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1524 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define _VAL2FLD(field,value) (((uint32_t)(value) << field ## _Pos) & field ## _Msk)
 
 
@@ -10124,7 +10124,7 @@ typedef struct
 
 
 #define _FLD2VAL(field,value) (((uint32_t)(value) & field ## _Msk) >> field ## _Pos)
-# 1545 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1545 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define SCS_BASE (0xE000E000UL)
 #define ITM_BASE (0xE0000000UL)
 #define DWT_BASE (0xE0001000UL)
@@ -10150,7 +10150,7 @@ typedef struct
 
 #define FPU_BASE (SCS_BASE + 0x0F30UL)
 #define FPU ((FPU_Type *) FPU_BASE )
-# 1603 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1603 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define NVIC_SetPriorityGrouping __NVIC_SetPriorityGrouping
 #define NVIC_GetPriorityGrouping __NVIC_GetPriorityGrouping
 #define NVIC_EnableIRQ __NVIC_EnableIRQ
@@ -10163,7 +10163,7 @@ typedef struct
 #define NVIC_SetPriority __NVIC_SetPriority
 #define NVIC_GetPriority __NVIC_GetPriority
 #define NVIC_SystemReset __NVIC_SystemReset
-# 1623 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1623 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 #define NVIC_SetVector __NVIC_SetVector
 #define NVIC_GetVector __NVIC_GetVector
 
@@ -10178,7 +10178,7 @@ typedef struct
 #define EXC_RETURN_HANDLER_FPU (0xFFFFFFE1UL)
 #define EXC_RETURN_THREAD_MSP_FPU (0xFFFFFFE9UL)
 #define EXC_RETURN_THREAD_PSP_FPU (0xFFFFFFEDUL)
-# 1648 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1648 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_SetPriorityGrouping(uint32_t PriorityGroup)
 {
   uint32_t reg_value;
@@ -10202,7 +10202,7 @@ static inline uint32_t __NVIC_GetPriorityGrouping(void)
 {
   return ((uint32_t)((((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->AIRCR & (7UL << 8U)) >> 8U));
 }
-# 1679 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1679 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_EnableIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10212,7 +10212,7 @@ static inline void __NVIC_EnableIRQ(IRQn_Type IRQn)
     __asm volatile("":::"memory");
   }
 }
-# 1698 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1698 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t __NVIC_GetEnableIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10224,7 +10224,7 @@ static inline uint32_t __NVIC_GetEnableIRQ(IRQn_Type IRQn)
     return(0U);
   }
 }
-# 1717 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1717 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_DisableIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10234,7 +10234,7 @@ static inline void __NVIC_DisableIRQ(IRQn_Type IRQn)
     __ISB();
   }
 }
-# 1736 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1736 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10246,7 +10246,7 @@ static inline uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
     return(0U);
   }
 }
-# 1755 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1755 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10254,7 +10254,7 @@ static inline void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
     ((NVIC_Type *) ((0xE000E000UL) + 0x0100UL) )->ISPR[(((uint32_t)IRQn) >> 5UL)] = (uint32_t)(1UL << (((uint32_t)IRQn) & 0x1FUL));
   }
 }
-# 1770 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1770 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10262,7 +10262,7 @@ static inline void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
     ((NVIC_Type *) ((0xE000E000UL) + 0x0100UL) )->ICPR[(((uint32_t)IRQn) >> 5UL)] = (uint32_t)(1UL << (((uint32_t)IRQn) & 0x1FUL));
   }
 }
-# 1787 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1787 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t __NVIC_GetActive(IRQn_Type IRQn)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10274,7 +10274,7 @@ static inline uint32_t __NVIC_GetActive(IRQn_Type IRQn)
     return(0U);
   }
 }
-# 1809 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1809 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
 {
   if ((int32_t)(IRQn) >= 0)
@@ -10286,7 +10286,7 @@ static inline void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
     ((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->SHP[(((uint32_t)IRQn) & 0xFUL)-4UL] = (uint8_t)((priority << (8U - 3)) & (uint32_t)0xFFUL);
   }
 }
-# 1831 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1831 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t __NVIC_GetPriority(IRQn_Type IRQn)
 {
 
@@ -10299,7 +10299,7 @@ static inline uint32_t __NVIC_GetPriority(IRQn_Type IRQn)
     return(((uint32_t)((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->SHP[(((uint32_t)IRQn) & 0xFUL)-4UL] >> (8U - 3)));
   }
 }
-# 1856 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1856 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t PreemptPriority, uint32_t SubPriority)
 {
   uint32_t PriorityGroupTmp = (PriorityGroup & (uint32_t)0x07UL);
@@ -10314,7 +10314,7 @@ static inline uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t Pre
            ((SubPriority & (uint32_t)((1UL << (SubPriorityBits )) - 1UL)))
          );
 }
-# 1883 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1883 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void NVIC_DecodePriority (uint32_t Priority, uint32_t PriorityGroup, uint32_t* const pPreemptPriority, uint32_t* const pSubPriority)
 {
   uint32_t PriorityGroupTmp = (PriorityGroup & (uint32_t)0x07UL);
@@ -10327,14 +10327,14 @@ static inline void NVIC_DecodePriority (uint32_t Priority, uint32_t PriorityGrou
   *pPreemptPriority = (Priority >> SubPriorityBits) & (uint32_t)((1UL << (PreemptPriorityBits)) - 1UL);
   *pSubPriority = (Priority ) & (uint32_t)((1UL << (SubPriorityBits )) - 1UL);
 }
-# 1906 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1906 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline void __NVIC_SetVector(IRQn_Type IRQn, uint32_t vector)
 {
   uint32_t vectors = (uint32_t )((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->VTOR;
   (* (int *) (vectors + ((int32_t)IRQn + 16) * 4)) = vector;
 
 }
-# 1922 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1922 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t __NVIC_GetVector(IRQn_Type IRQn)
 {
   uint32_t vectors = (uint32_t )((SCB_Type *) ((0xE000E000UL) + 0x0D00UL) )->VTOR;
@@ -10360,9 +10360,9 @@ __attribute__((__noreturn__)) static inline void __NVIC_SystemReset(void)
     __asm volatile ("nop");
   }
 }
-# 1955 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h" 1
-# 32 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 1955 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h" 1
+# 32 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_ARMV7_H 
 
 #define ARM_MPU_REGION_SIZE_32B ((uint8_t)0x04U)
@@ -10407,17 +10407,17 @@ __attribute__((__noreturn__)) static inline void __NVIC_SystemReset(void)
 
 
 #define ARM_MPU_RBAR(Region,BaseAddress) (((BaseAddress) & MPU_RBAR_ADDR_Msk) | ((Region) & MPU_RBAR_REGION_Msk) | (MPU_RBAR_VALID_Msk))
-# 88 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 88 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_ACCESS_(TypeExtField,IsShareable,IsCacheable,IsBufferable) ((((TypeExtField) << MPU_RASR_TEX_Pos) & MPU_RASR_TEX_Msk) | (((IsShareable) << MPU_RASR_S_Pos) & MPU_RASR_S_Msk) | (((IsCacheable) << MPU_RASR_C_Pos) & MPU_RASR_C_Msk) | (((IsBufferable) << MPU_RASR_B_Pos) & MPU_RASR_B_Msk))
-# 103 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 103 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_RASR_EX(DisableExec,AccessPermission,AccessAttributes,SubRegionDisable,Size) ((((DisableExec) << MPU_RASR_XN_Pos) & MPU_RASR_XN_Msk) | (((AccessPermission) << MPU_RASR_AP_Pos) & MPU_RASR_AP_Msk) | (((AccessAttributes) & (MPU_RASR_TEX_Msk | MPU_RASR_S_Msk | MPU_RASR_C_Msk | MPU_RASR_B_Msk))) | (((SubRegionDisable) << MPU_RASR_SRD_Pos) & MPU_RASR_SRD_Msk) | (((Size) << MPU_RASR_SIZE_Pos) & MPU_RASR_SIZE_Msk) | (((MPU_RASR_ENABLE_Msk))))
-# 123 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 123 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_RASR(DisableExec,AccessPermission,TypeExtField,IsShareable,IsCacheable,IsBufferable,SubRegionDisable,Size) ARM_MPU_RASR_EX(DisableExec, AccessPermission, ARM_MPU_ACCESS_(TypeExtField, IsShareable, IsCacheable, IsBufferable), SubRegionDisable, Size)
-# 133 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 133 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_ACCESS_ORDERED ARM_MPU_ACCESS_(0U, 1U, 0U, 0U)
-# 144 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 144 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_ACCESS_DEVICE(IsShareable) ((IsShareable) ? ARM_MPU_ACCESS_(0U, 1U, 0U, 1U) : ARM_MPU_ACCESS_(2U, 0U, 0U, 0U))
-# 157 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 157 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
 #define ARM_MPU_ACCESS_NORMAL(OuterCp,InnerCp,IsShareable) ARM_MPU_ACCESS_((4U | (OuterCp)), IsShareable, ((InnerCp) & 2U), ((InnerCp) & 1U))
 
 
@@ -10510,9 +10510,9 @@ static inline void ARM_MPU_SetRegionEx(uint32_t rnr, uint32_t rbar, uint32_t ras
 
 
 static inline void ARM_MPU_OrderedMemcpy(volatile uint32_t* dst, const uint32_t* 
-# 248 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h" 3
+# 248 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h" 3
                                                                                   restrict 
-# 248 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
+# 248 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/mpu_armv7.h"
                                                                                              src, uint32_t len)
 {
   uint32_t i;
@@ -10536,8 +10536,8 @@ static inline void ARM_MPU_Load(ARM_MPU_Region_t const* table, uint32_t cnt)
   }
   ARM_MPU_OrderedMemcpy(&(((MPU_Type *) ((0xE000E000UL) + 0x0D90UL) )->RBAR), &(table->RBAR), cnt*rowWordSize);
 }
-# 1956 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
-# 1976 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 1956 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h" 2
+# 1976 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t SCB_GetFPUType(void)
 {
   uint32_t mvfr0;
@@ -10552,7 +10552,7 @@ static inline uint32_t SCB_GetFPUType(void)
     return 0U;
   }
 }
-# 2017 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 2017 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t SysTick_Config(uint32_t ticks)
 {
   if ((ticks - 1UL) > (0xFFFFFFUL ))
@@ -10568,10 +10568,10 @@ static inline uint32_t SysTick_Config(uint32_t ticks)
                    (1UL );
   return (0UL);
 }
-# 2047 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 2047 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 extern volatile int32_t ITM_RxBuffer;
 #define ITM_RXBUFFER_EMPTY ((int32_t)0x5AA55AA5U)
-# 2059 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 2059 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline uint32_t ITM_SendChar (uint32_t ch)
 {
   if (((((ITM_Type *) (0xE0000000UL) )->TCR & (1UL )) != 0UL) &&
@@ -10585,7 +10585,7 @@ static inline uint32_t ITM_SendChar (uint32_t ch)
   }
   return (ch);
 }
-# 2080 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 2080 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline int32_t ITM_ReceiveChar (void)
 {
   int32_t ch = -1;
@@ -10598,7 +10598,7 @@ static inline int32_t ITM_ReceiveChar (void)
 
   return (ch);
 }
-# 2100 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
+# 2100 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/toolchain/cmsis/include/core_cm4.h"
 static inline int32_t ITM_CheckChar (void)
 {
 
@@ -10611,18 +10611,18 @@ static inline int32_t ITM_CheckChar (void)
     return (1);
   }
 }
-# 157 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h" 1
-# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
+# 157 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h" 1
+# 24 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
 #define SYSTEM_NRF52840_H 
-# 33 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
+# 33 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
 extern uint32_t SystemCoreClock;
-# 44 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
+# 44 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
 extern void SystemInit (void);
-# 55 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
+# 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/system_nrf52840.h"
 extern void SystemCoreClockUpdate (void);
-# 158 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 2
-# 208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 158 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h" 2
+# 208 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t PART;
   volatile const uint32_t VARIANT;
@@ -11287,7 +11287,7 @@ typedef struct {
   volatile uint32_t IO2;
   volatile uint32_t IO3;
 } QSPI_PSEL_Type;
-# 897 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 897 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[4];
   volatile const uint32_t CODEPAGESIZE;
@@ -11313,7 +11313,7 @@ typedef struct {
   volatile const uint32_t RESERVED7[488];
   volatile FICR_TRNG90B_Type TRNG90B;
 } NRF_FICR_Type;
-# 934 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 934 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[5];
   volatile uint32_t NRFFW[13];
@@ -11333,7 +11333,7 @@ typedef struct {
   volatile uint32_t REGOUT0;
 
 } NRF_UICR_Type;
-# 965 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 965 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_HFCLKSTART;
   volatile uint32_t TASKS_HFCLKSTOP;
@@ -11378,7 +11378,7 @@ typedef struct {
   volatile const uint32_t RESERVED10[21];
   volatile uint32_t LFRCMODE;
 } NRF_CLOCK_Type;
-# 1021 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1021 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[30];
   volatile uint32_t TASKS_CONSTLAT;
@@ -11416,7 +11416,7 @@ typedef struct {
   volatile const uint32_t RESERVED13[175];
   volatile POWER_RAM_Type RAM[9];
 } NRF_POWER_Type;
-# 1070 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1070 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[321];
   volatile uint32_t OUT;
@@ -11435,7 +11435,7 @@ typedef struct {
   volatile uint32_t PIN_CNF[32];
 
 } NRF_GPIO_Type;
-# 1100 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1100 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_TXEN;
   volatile uint32_t TASKS_RXEN;
@@ -11543,7 +11543,7 @@ typedef struct {
   volatile const uint32_t RESERVED15[611];
   volatile uint32_t POWER;
 } NRF_RADIO_Type;
-# 1219 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1219 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_STARTRX;
   volatile uint32_t TASKS_STOPRX;
@@ -11580,7 +11580,7 @@ typedef struct {
   volatile const uint32_t RESERVED11[17];
   volatile uint32_t CONFIG;
 } NRF_UART_Type;
-# 1267 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1267 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_STARTRX;
   volatile uint32_t TASKS_STOPRX;
@@ -11629,7 +11629,7 @@ typedef struct {
   volatile const uint32_t RESERVED15[7];
   volatile uint32_t CONFIG;
 } NRF_UARTE_Type;
-# 1327 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1327 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[66];
   volatile uint32_t EVENTS_READY;
@@ -11649,7 +11649,7 @@ typedef struct {
   volatile const uint32_t RESERVED6[11];
   volatile uint32_t CONFIG;
 } NRF_SPI_Type;
-# 1358 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1358 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[4];
   volatile uint32_t TASKS_START;
@@ -11698,7 +11698,7 @@ typedef struct {
 
 
 } NRF_SPIM_Type;
-# 1418 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1418 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[9];
   volatile uint32_t TASKS_ACQUIRE;
@@ -11733,7 +11733,7 @@ typedef struct {
   volatile const uint32_t RESERVED12[24];
   volatile uint32_t ORC;
 } NRF_SPIS_Type;
-# 1464 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1464 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_STARTRX;
   volatile const uint32_t RESERVED;
@@ -11775,7 +11775,7 @@ typedef struct {
   volatile const uint32_t RESERVED15[24];
   volatile uint32_t ADDRESS;
 } NRF_TWI_Type;
-# 1517 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1517 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_STARTRX;
   volatile const uint32_t RESERVED;
@@ -11821,7 +11821,7 @@ typedef struct {
   volatile const uint32_t RESERVED14[13];
   volatile uint32_t ADDRESS;
 } NRF_TWIM_Type;
-# 1574 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1574 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[5];
   volatile uint32_t TASKS_STOP;
@@ -11867,7 +11867,7 @@ typedef struct {
   volatile uint32_t ORC;
 
 } NRF_TWIS_Type;
-# 1631 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1631 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_ACTIVATE;
 
@@ -11946,7 +11946,7 @@ typedef struct {
   volatile uint32_t SENSRES;
   volatile uint32_t SELRES;
 } NRF_NFCT_Type;
-# 1721 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1721 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_OUT[8];
 
@@ -11972,7 +11972,7 @@ typedef struct {
   volatile uint32_t CONFIG[8];
 
 } NRF_GPIOTE_Type;
-# 1758 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1758 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
 
@@ -12010,7 +12010,7 @@ typedef struct {
   volatile const uint32_t RESERVED6[12];
   volatile SAADC_RESULT_Type RESULT;
 } NRF_SAADC_Type;
-# 1807 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1807 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12037,7 +12037,7 @@ typedef struct {
   volatile uint32_t CC[6];
 
 } NRF_TIMER_Type;
-# 1845 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1845 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12063,7 +12063,7 @@ typedef struct {
   volatile const uint32_t RESERVED5[13];
   volatile uint32_t CC[4];
 } NRF_RTC_Type;
-# 1882 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1882 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12095,7 +12095,7 @@ typedef struct {
   volatile uint32_t T3;
   volatile uint32_t T4;
 } NRF_TEMP_Type;
-# 1925 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1925 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12111,7 +12111,7 @@ typedef struct {
   volatile uint32_t CONFIG;
   volatile const uint32_t VALUE;
 } NRF_RNG_Type;
-# 1952 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1952 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_STARTECB;
   volatile uint32_t TASKS_STOPECB;
@@ -12125,7 +12125,7 @@ typedef struct {
   volatile const uint32_t RESERVED2[126];
   volatile uint32_t ECBDATAPTR;
 } NRF_ECB_Type;
-# 1977 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 1977 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
 
@@ -12148,7 +12148,7 @@ typedef struct {
   volatile uint32_t ADDRPTR;
   volatile uint32_t SCRATCHPTR;
 } NRF_AAR_Type;
-# 2011 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2011 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_KSGEN;
 
@@ -12181,7 +12181,7 @@ typedef struct {
 
   volatile uint32_t RATEOVERRIDE;
 } NRF_CCM_Type;
-# 2055 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2055 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile const uint32_t RESERVED[63];
@@ -12199,7 +12199,7 @@ typedef struct {
   volatile const uint32_t RESERVED4[60];
   volatile uint32_t RR[8];
 } NRF_WDT_Type;
-# 2084 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2084 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12237,7 +12237,7 @@ typedef struct {
   volatile const uint32_t ACCDBLREAD;
 
 } NRF_QDEC_Type;
-# 2133 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2133 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12265,7 +12265,7 @@ typedef struct {
   volatile uint32_t MODE;
   volatile uint32_t HYST;
 } NRF_COMP_Type;
-# 2172 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2172 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12292,7 +12292,7 @@ typedef struct {
   volatile const uint32_t RESERVED6[5];
   volatile uint32_t HYST;
 } NRF_LPCOMP_Type;
-# 2210 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2210 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_TRIGGER[16];
 
@@ -12305,11 +12305,11 @@ typedef struct {
   volatile uint32_t INTENSET;
   volatile uint32_t INTENCLR;
 } NRF_EGU_Type;
-# 2234 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2234 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t UNUSED;
 } NRF_SWI_Type;
-# 2249 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2249 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED;
   volatile uint32_t TASKS_STOP;
@@ -12353,7 +12353,7 @@ typedef struct {
   volatile PWM_SEQ_Type SEQ[2];
   volatile PWM_PSEL_Type PSEL;
 } NRF_PWM_Type;
-# 2304 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2304 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
   volatile uint32_t TASKS_STOP;
@@ -12382,12 +12382,12 @@ typedef struct {
   volatile const uint32_t RESERVED5[6];
   volatile PDM_SAMPLE_Type SAMPLE;
 } NRF_PDM_Type;
-# 2344 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2344 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[512];
   volatile ACL_ACL_Type ACL[8];
 } NRF_ACL_Type;
-# 2360 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2360 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[256];
   volatile const uint32_t READY;
@@ -12415,7 +12415,7 @@ typedef struct {
   volatile uint32_t IHIT;
   volatile uint32_t IMISS;
 } NRF_NVMC_Type;
-# 2399 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2399 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile PPI_TASKS_CHG_Type TASKS_CHG[6];
   volatile const uint32_t RESERVED[308];
@@ -12429,7 +12429,7 @@ typedef struct {
   volatile const uint32_t RESERVED3[62];
   volatile PPI_FORK_Type FORK[32];
 } NRF_PPI_Type;
-# 2424 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2424 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[64];
   volatile MWU_EVENTS_REGION_Type EVENTS_REGION[4];
@@ -12454,7 +12454,7 @@ typedef struct {
   volatile const uint32_t RESERVED7[32];
   volatile MWU_PREGION_Type PREGION[2];
 } NRF_MWU_Type;
-# 2460 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2460 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_START;
 
@@ -12490,11 +12490,11 @@ typedef struct {
   volatile const uint32_t RESERVED7[3];
   volatile I2S_PSEL_Type PSEL;
 } NRF_I2S_Type;
-# 2507 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2507 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t UNUSED;
 } NRF_FPU_Type;
-# 2522 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2522 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED;
   volatile uint32_t TASKS_STARTEPIN[8];
@@ -12601,7 +12601,7 @@ typedef struct {
   volatile USBD_EPOUT_Type EPOUT[8];
   volatile USBD_ISOOUT_Type ISOOUT;
 } NRF_USBD_Type;
-# 2640 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2640 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile uint32_t TASKS_ACTIVATE;
   volatile uint32_t TASKS_READSTART;
@@ -12641,7 +12641,7 @@ typedef struct {
   volatile uint32_t CINSTRDAT1;
   volatile uint32_t IFTIMING;
 } NRF_QSPI_Type;
-# 2691 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2691 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[1678];
   volatile uint32_t HOST_CRYPTOKEY_SEL;
@@ -12668,12 +12668,12 @@ typedef struct {
   volatile uint32_t HOST_IOT_LCS;
 
 } NRF_CC_HOST_RGF_Type;
-# 2729 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2729 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 typedef struct {
   volatile const uint32_t RESERVED[320];
   volatile uint32_t ENABLE;
 } NRF_CRYPTOCELL_Type;
-# 2747 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2747 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 #define NRF_FICR_BASE 0x10000000UL
 #define NRF_UICR_BASE 0x10001000UL
 #define NRF_CLOCK_BASE 0x40000000UL
@@ -12747,7 +12747,7 @@ typedef struct {
 #define NRF_CRYPTOCELL_BASE 0x5002A000UL
 #define NRF_PWM3_BASE 0x4002D000UL
 #define NRF_SPIM3_BASE 0x4002F000UL
-# 2833 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
+# 2833 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840.h"
 #define NRF_FICR ((NRF_FICR_Type*) NRF_FICR_BASE)
 #define NRF_UICR ((NRF_UICR_Type*) NRF_UICR_BASE)
 #define NRF_CLOCK ((NRF_CLOCK_Type*) NRF_CLOCK_BASE)
@@ -12821,11 +12821,11 @@ typedef struct {
 #define NRF_CRYPTOCELL ((NRF_CRYPTOCELL_Type*) NRF_CRYPTOCELL_BASE)
 #define NRF_PWM3 ((NRF_PWM_Type*) NRF_PWM3_BASE)
 #define NRF_SPIM3 ((NRF_SPIM_Type*) NRF_SPIM3_BASE)
-# 170 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h" 1
-# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 170 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h" 1
+# 43 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define __NRF52840_BITS_H 
-# 54 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 54 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define AAR_TASKS_START_TASKS_START_Pos (0UL)
 #define AAR_TASKS_START_TASKS_START_Msk (0x1UL << AAR_TASKS_START_TASKS_START_Pos)
 #define AAR_TASKS_START_TASKS_START_Trigger (1UL)
@@ -12956,7 +12956,7 @@ typedef struct {
 
 #define AAR_SCRATCHPTR_SCRATCHPTR_Pos (0UL)
 #define AAR_SCRATCHPTR_SCRATCHPTR_Msk (0xFFFFFFFFUL << AAR_SCRATCHPTR_SCRATCHPTR_Pos)
-# 193 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 193 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define ACL_ACL_ADDR_ADDR_Pos (0UL)
 #define ACL_ACL_ADDR_ADDR_Msk (0xFFFFFFFFUL << ACL_ACL_ADDR_ADDR_Pos)
 
@@ -12981,7 +12981,7 @@ typedef struct {
 #define ACL_ACL_PERM_WRITE_Msk (0x1UL << ACL_ACL_PERM_WRITE_Pos)
 #define ACL_ACL_PERM_WRITE_Enable (0UL)
 #define ACL_ACL_PERM_WRITE_Disable (1UL)
-# 226 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 226 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define CCM_TASKS_KSGEN_TASKS_KSGEN_Pos (0UL)
 #define CCM_TASKS_KSGEN_TASKS_KSGEN_Msk (0x1UL << CCM_TASKS_KSGEN_TASKS_KSGEN_Pos)
 #define CCM_TASKS_KSGEN_TASKS_KSGEN_Trigger (1UL)
@@ -13181,7 +13181,7 @@ typedef struct {
 #define CCM_RATEOVERRIDE_RATEOVERRIDE_2Mbit (1UL)
 #define CCM_RATEOVERRIDE_RATEOVERRIDE_125Kbps (2UL)
 #define CCM_RATEOVERRIDE_RATEOVERRIDE_500Kbps (3UL)
-# 434 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 434 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define CC_HOST_RGF_HOST_CRYPTOKEY_SEL_HOST_CRYPTOKEY_SEL_Pos (0UL)
 #define CC_HOST_RGF_HOST_CRYPTOKEY_SEL_HOST_CRYPTOKEY_SEL_Msk (0x3UL << CC_HOST_RGF_HOST_CRYPTOKEY_SEL_HOST_CRYPTOKEY_SEL_Pos)
 #define CC_HOST_RGF_HOST_CRYPTOKEY_SEL_HOST_CRYPTOKEY_SEL_K_DR (0UL)
@@ -13239,7 +13239,7 @@ typedef struct {
 #define CC_HOST_RGF_HOST_IOT_LCS_LCS_Msk (0x7UL << CC_HOST_RGF_HOST_IOT_LCS_LCS_Pos)
 #define CC_HOST_RGF_HOST_IOT_LCS_LCS_Debug (0UL)
 #define CC_HOST_RGF_HOST_IOT_LCS_LCS_Secure (2UL)
-# 500 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 500 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define CLOCK_TASKS_HFCLKSTART_TASKS_HFCLKSTART_Pos (0UL)
 #define CLOCK_TASKS_HFCLKSTART_TASKS_HFCLKSTART_Msk (0x1UL << CLOCK_TASKS_HFCLKSTART_TASKS_HFCLKSTART_Pos)
 #define CLOCK_TASKS_HFCLKSTART_TASKS_HFCLKSTART_Trigger (1UL)
@@ -13565,7 +13565,7 @@ typedef struct {
 #define CLOCK_LFRCMODE_MODE_Msk (0x1UL << CLOCK_LFRCMODE_MODE_Pos)
 #define CLOCK_LFRCMODE_MODE_Normal (0UL)
 #define CLOCK_LFRCMODE_MODE_ULP (1UL)
-# 834 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 834 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define COMP_TASKS_START_TASKS_START_Pos (0UL)
 #define COMP_TASKS_START_TASKS_START_Msk (0x1UL << COMP_TASKS_START_TASKS_START_Pos)
 #define COMP_TASKS_START_TASKS_START_Trigger (1UL)
@@ -13839,12 +13839,12 @@ typedef struct {
 #define COMP_HYST_HYST_Msk (0x1UL << COMP_HYST_HYST_Pos)
 #define COMP_HYST_HYST_NoHyst (0UL)
 #define COMP_HYST_HYST_Hyst50mV (1UL)
-# 1116 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 1116 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define CRYPTOCELL_ENABLE_ENABLE_Pos (0UL)
 #define CRYPTOCELL_ENABLE_ENABLE_Msk (0x1UL << CRYPTOCELL_ENABLE_ENABLE_Pos)
 #define CRYPTOCELL_ENABLE_ENABLE_Disabled (0UL)
 #define CRYPTOCELL_ENABLE_ENABLE_Enabled (1UL)
-# 1129 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 1129 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define ECB_TASKS_STARTECB_TASKS_STARTECB_Pos (0UL)
 #define ECB_TASKS_STARTECB_TASKS_STARTECB_Msk (0x1UL << ECB_TASKS_STARTECB_TASKS_STARTECB_Pos)
 #define ECB_TASKS_STARTECB_TASKS_STARTECB_Trigger (1UL)
@@ -13915,7 +13915,7 @@ typedef struct {
 
 #define ECB_ECBDATAPTR_ECBDATAPTR_Pos (0UL)
 #define ECB_ECBDATAPTR_ECBDATAPTR_Msk (0xFFFFFFFFUL << ECB_ECBDATAPTR_ECBDATAPTR_Pos)
-# 1208 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 1208 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define EGU_TASKS_TRIGGER_TASKS_TRIGGER_Pos (0UL)
 #define EGU_TASKS_TRIGGER_TASKS_TRIGGER_Msk (0x1UL << EGU_TASKS_TRIGGER_TASKS_TRIGGER_Pos)
 #define EGU_TASKS_TRIGGER_TASKS_TRIGGER_Trigger (1UL)
@@ -14257,7 +14257,7 @@ typedef struct {
 #define EGU_INTENCLR_TRIGGERED0_Disabled (0UL)
 #define EGU_INTENCLR_TRIGGERED0_Enabled (1UL)
 #define EGU_INTENCLR_TRIGGERED0_Clear (1UL)
-# 1558 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 1558 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define FICR_CODEPAGESIZE_CODEPAGESIZE_Pos (0UL)
 #define FICR_CODEPAGESIZE_CODEPAGESIZE_Msk (0xFFFFFFFFUL << FICR_CODEPAGESIZE_CODEPAGESIZE_Pos)
 
@@ -14625,7 +14625,7 @@ typedef struct {
 
 #define FICR_TRNG90B_ROSC4_ROSC4_Pos (0UL)
 #define FICR_TRNG90B_ROSC4_ROSC4_Msk (0xFFFFFFFFUL << FICR_TRNG90B_ROSC4_ROSC4_Pos)
-# 1934 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 1934 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define GPIOTE_TASKS_OUT_TASKS_OUT_Pos (0UL)
 #define GPIOTE_TASKS_OUT_TASKS_OUT_Msk (0x1UL << GPIOTE_TASKS_OUT_TASKS_OUT_Pos)
 #define GPIOTE_TASKS_OUT_TASKS_OUT_Trigger (1UL)
@@ -14827,7 +14827,7 @@ typedef struct {
 #define GPIOTE_CONFIG_MODE_Disabled (0UL)
 #define GPIOTE_CONFIG_MODE_Event (1UL)
 #define GPIOTE_CONFIG_MODE_Task (3UL)
-# 2144 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 2144 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define I2S_TASKS_START_TASKS_START_Pos (0UL)
 #define I2S_TASKS_START_TASKS_START_Msk (0x1UL << I2S_TASKS_START_TASKS_START_Pos)
 #define I2S_TASKS_START_TASKS_START_Trigger (1UL)
@@ -15164,7 +15164,7 @@ typedef struct {
 
 #define I2S_PSEL_SDOUT_PIN_Pos (0UL)
 #define I2S_PSEL_SDOUT_PIN_Msk (0x1FUL << I2S_PSEL_SDOUT_PIN_Pos)
-# 2489 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 2489 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define LPCOMP_TASKS_START_TASKS_START_Pos (0UL)
 #define LPCOMP_TASKS_START_TASKS_START_Msk (0x1UL << LPCOMP_TASKS_START_TASKS_START_Pos)
 #define LPCOMP_TASKS_START_TASKS_START_Trigger (1UL)
@@ -15399,7 +15399,7 @@ typedef struct {
 #define LPCOMP_HYST_HYST_Msk (0x1UL << LPCOMP_HYST_HYST_Pos)
 #define LPCOMP_HYST_HYST_Disabled (0UL)
 #define LPCOMP_HYST_HYST_Enabled (1UL)
-# 2732 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 2732 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define MWU_EVENTS_REGION_WA_WA_Pos (0UL)
 #define MWU_EVENTS_REGION_WA_WA_Msk (0x1UL << MWU_EVENTS_REGION_WA_WA_Pos)
 #define MWU_EVENTS_REGION_WA_WA_NotGenerated (0UL)
@@ -16791,7 +16791,7 @@ typedef struct {
 #define MWU_PREGION_SUBS_SR0_Msk (0x1UL << MWU_PREGION_SUBS_SR0_Pos)
 #define MWU_PREGION_SUBS_SR0_Exclude (0UL)
 #define MWU_PREGION_SUBS_SR0_Include (1UL)
-# 4132 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 4132 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define NFCT_TASKS_ACTIVATE_TASKS_ACTIVATE_Pos (0UL)
 #define NFCT_TASKS_ACTIVATE_TASKS_ACTIVATE_Msk (0x1UL << NFCT_TASKS_ACTIVATE_TASKS_ACTIVATE_Pos)
 #define NFCT_TASKS_ACTIVATE_TASKS_ACTIVATE_Trigger (1UL)
@@ -17597,7 +17597,7 @@ typedef struct {
 
 #define NFCT_SELRES_RFU10_Pos (0UL)
 #define NFCT_SELRES_RFU10_Msk (0x3UL << NFCT_SELRES_RFU10_Pos)
-# 4946 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 4946 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define NVMC_READY_READY_Pos (0UL)
 #define NVMC_READY_READY_Msk (0x1UL << NVMC_READY_READY_Pos)
 #define NVMC_READY_READY_Busy (0UL)
@@ -17703,7 +17703,7 @@ typedef struct {
 
 #define NVMC_IMISS_MISSES_Pos (0UL)
 #define NVMC_IMISS_MISSES_Msk (0xFFFFFFFFUL << NVMC_IMISS_MISSES_Pos)
-# 5060 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 5060 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define GPIO_OUT_PIN31_Pos (31UL)
 #define GPIO_OUT_PIN31_Msk (0x1UL << GPIO_OUT_PIN31_Pos)
 #define GPIO_OUT_PIN31_Low (0UL)
@@ -19437,7 +19437,7 @@ typedef struct {
 #define GPIO_PIN_CNF_DIR_Msk (0x1UL << GPIO_PIN_CNF_DIR_Pos)
 #define GPIO_PIN_CNF_DIR_Input (0UL)
 #define GPIO_PIN_CNF_DIR_Output (1UL)
-# 6802 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 6802 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define PDM_TASKS_START_TASKS_START_Pos (0UL)
 #define PDM_TASKS_START_TASKS_START_Msk (0x1UL << PDM_TASKS_START_TASKS_START_Pos)
 #define PDM_TASKS_START_TASKS_START_Trigger (1UL)
@@ -19659,7 +19659,7 @@ typedef struct {
 
 #define PDM_SAMPLE_MAXCNT_BUFFSIZE_Pos (0UL)
 #define PDM_SAMPLE_MAXCNT_BUFFSIZE_Msk (0x7FFFUL << PDM_SAMPLE_MAXCNT_BUFFSIZE_Pos)
-# 7032 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 7032 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Pos (0UL)
 #define POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Msk (0x1UL << POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Pos)
 #define POWER_TASKS_CONSTLAT_TASKS_CONSTLAT_Trigger (1UL)
@@ -20529,7 +20529,7 @@ typedef struct {
 #define POWER_RAM_POWERCLR_S0POWER_Pos (0UL)
 #define POWER_RAM_POWERCLR_S0POWER_Msk (0x1UL << POWER_RAM_POWERCLR_S0POWER_Pos)
 #define POWER_RAM_POWERCLR_S0POWER_Off (1UL)
-# 7910 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 7910 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define PPI_TASKS_CHG_EN_EN_Pos (0UL)
 #define PPI_TASKS_CHG_EN_EN_Msk (0x1UL << PPI_TASKS_CHG_EN_EN_Pos)
 #define PPI_TASKS_CHG_EN_EN_Trigger (1UL)
@@ -21406,7 +21406,7 @@ typedef struct {
 
 #define PPI_FORK_TEP_TEP_Pos (0UL)
 #define PPI_FORK_TEP_TEP_Msk (0xFFFFFFFFUL << PPI_FORK_TEP_TEP_Pos)
-# 8795 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 8795 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define PWM_TASKS_STOP_TASKS_STOP_Pos (0UL)
 #define PWM_TASKS_STOP_TASKS_STOP_Msk (0x1UL << PWM_TASKS_STOP_TASKS_STOP_Pos)
 #define PWM_TASKS_STOP_TASKS_STOP_Trigger (1UL)
@@ -21765,7 +21765,7 @@ typedef struct {
 
 #define PWM_PSEL_OUT_PIN_Pos (0UL)
 #define PWM_PSEL_OUT_PIN_Msk (0x1FUL << PWM_PSEL_OUT_PIN_Pos)
-# 9162 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 9162 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define QDEC_TASKS_START_TASKS_START_Pos (0UL)
 #define QDEC_TASKS_START_TASKS_START_Msk (0x1UL << QDEC_TASKS_START_TASKS_START_Pos)
 #define QDEC_TASKS_START_TASKS_START_Trigger (1UL)
@@ -22121,7 +22121,7 @@ typedef struct {
 
 #define QDEC_ACCDBLREAD_ACCDBLREAD_Pos (0UL)
 #define QDEC_ACCDBLREAD_ACCDBLREAD_Msk (0xFUL << QDEC_ACCDBLREAD_ACCDBLREAD_Pos)
-# 9526 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 9526 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define QSPI_TASKS_ACTIVATE_TASKS_ACTIVATE_Pos (0UL)
 #define QSPI_TASKS_ACTIVATE_TASKS_ACTIVATE_Msk (0x1UL << QSPI_TASKS_ACTIVATE_TASKS_ACTIVATE_Pos)
 #define QSPI_TASKS_ACTIVATE_TASKS_ACTIVATE_Trigger (1UL)
@@ -22594,7 +22594,7 @@ typedef struct {
 
 #define QSPI_IFTIMING_RXDELAY_Pos (8UL)
 #define QSPI_IFTIMING_RXDELAY_Msk (0x7UL << QSPI_IFTIMING_RXDELAY_Pos)
-# 10007 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 10007 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define RADIO_TASKS_TXEN_TASKS_TXEN_Pos (0UL)
 #define RADIO_TASKS_TXEN_TASKS_TXEN_Msk (0x1UL << RADIO_TASKS_TXEN_TASKS_TXEN_Pos)
 #define RADIO_TASKS_TXEN_TASKS_TXEN_Trigger (1UL)
@@ -23884,7 +23884,7 @@ typedef struct {
 #define RADIO_POWER_POWER_Msk (0x1UL << RADIO_POWER_POWER_Pos)
 #define RADIO_POWER_POWER_Disabled (0UL)
 #define RADIO_POWER_POWER_Enabled (1UL)
-# 11305 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 11305 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define RNG_TASKS_START_TASKS_START_Pos (0UL)
 #define RNG_TASKS_START_TASKS_START_Msk (0x1UL << RNG_TASKS_START_TASKS_START_Pos)
 #define RNG_TASKS_START_TASKS_START_Trigger (1UL)
@@ -23950,7 +23950,7 @@ typedef struct {
 
 #define RNG_VALUE_VALUE_Pos (0UL)
 #define RNG_VALUE_VALUE_Msk (0xFFUL << RNG_VALUE_VALUE_Pos)
-# 11379 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 11379 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define RTC_TASKS_START_TASKS_START_Pos (0UL)
 #define RTC_TASKS_START_TASKS_START_Msk (0x1UL << RTC_TASKS_START_TASKS_START_Pos)
 #define RTC_TASKS_START_TASKS_START_Trigger (1UL)
@@ -24245,7 +24245,7 @@ typedef struct {
 
 #define RTC_CC_COMPARE_Pos (0UL)
 #define RTC_CC_COMPARE_Msk (0xFFFFFFUL << RTC_CC_COMPARE_Pos)
-# 11682 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 11682 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define SAADC_TASKS_START_TASKS_START_Pos (0UL)
 #define SAADC_TASKS_START_TASKS_START_Msk (0x1UL << SAADC_TASKS_START_TASKS_START_Pos)
 #define SAADC_TASKS_START_TASKS_START_Trigger (1UL)
@@ -24979,7 +24979,7 @@ typedef struct {
 
 #define SAADC_RESULT_AMOUNT_AMOUNT_Pos (0UL)
 #define SAADC_RESULT_AMOUNT_AMOUNT_Msk (0x7FFFUL << SAADC_RESULT_AMOUNT_AMOUNT_Pos)
-# 12424 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 12424 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define SPI_EVENTS_READY_EVENTS_READY_Pos (0UL)
 #define SPI_EVENTS_READY_EVENTS_READY_Msk (0x1UL << SPI_EVENTS_READY_EVENTS_READY_Pos)
 #define SPI_EVENTS_READY_EVENTS_READY_NotGenerated (0UL)
@@ -25113,7 +25113,7 @@ typedef struct {
 #define SPI_CONFIG_ORDER_Msk (0x1UL << SPI_CONFIG_ORDER_Pos)
 #define SPI_CONFIG_ORDER_MsbFirst (0UL)
 #define SPI_CONFIG_ORDER_LsbFirst (1UL)
-# 12566 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 12566 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define SPIM_TASKS_START_TASKS_START_Pos (0UL)
 #define SPIM_TASKS_START_TASKS_START_Msk (0x1UL << SPIM_TASKS_START_TASKS_START_Pos)
 #define SPIM_TASKS_START_TASKS_START_Trigger (1UL)
@@ -25514,7 +25514,7 @@ typedef struct {
 
 #define SPIM_ORC_ORC_Pos (0UL)
 #define SPIM_ORC_ORC_Msk (0xFFUL << SPIM_ORC_ORC_Pos)
-# 12975 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 12975 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define SPIS_TASKS_ACQUIRE_TASKS_ACQUIRE_Pos (0UL)
 #define SPIS_TASKS_ACQUIRE_TASKS_ACQUIRE_Msk (0x1UL << SPIS_TASKS_ACQUIRE_TASKS_ACQUIRE_Pos)
 #define SPIS_TASKS_ACQUIRE_TASKS_ACQUIRE_Trigger (1UL)
@@ -25810,7 +25810,7 @@ typedef struct {
 
 #define SPIS_ORC_ORC_Pos (0UL)
 #define SPIS_ORC_ORC_Msk (0xFFUL << SPIS_ORC_ORC_Pos)
-# 13279 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 13279 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define TEMP_TASKS_START_TASKS_START_Pos (0UL)
 #define TEMP_TASKS_START_TASKS_START_Msk (0x1UL << TEMP_TASKS_START_TASKS_START_Pos)
 #define TEMP_TASKS_START_TASKS_START_Trigger (1UL)
@@ -25977,7 +25977,7 @@ typedef struct {
 
 #define TEMP_T4_T4_Pos (0UL)
 #define TEMP_T4_T4_Msk (0xFFUL << TEMP_T4_T4_Pos)
-# 13454 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 13454 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define TIMER_TASKS_START_TASKS_START_Pos (0UL)
 #define TIMER_TASKS_START_TASKS_START_Msk (0x1UL << TIMER_TASKS_START_TASKS_START_Pos)
 #define TIMER_TASKS_START_TASKS_START_Trigger (1UL)
@@ -26230,7 +26230,7 @@ typedef struct {
 
 #define TIMER_CC_CC_Pos (0UL)
 #define TIMER_CC_CC_Msk (0xFFFFFFFFUL << TIMER_CC_CC_Pos)
-# 13715 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 13715 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define TWI_TASKS_STARTRX_TASKS_STARTRX_Pos (0UL)
 #define TWI_TASKS_STARTRX_TASKS_STARTRX_Msk (0x1UL << TWI_TASKS_STARTRX_TASKS_STARTRX_Pos)
 #define TWI_TASKS_STARTRX_TASKS_STARTRX_Trigger (1UL)
@@ -26520,7 +26520,7 @@ typedef struct {
 
 #define TWI_ADDRESS_ADDRESS_Pos (0UL)
 #define TWI_ADDRESS_ADDRESS_Msk (0x7FUL << TWI_ADDRESS_ADDRESS_Pos)
-# 14013 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 14013 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define TWIM_TASKS_STARTRX_TASKS_STARTRX_Pos (0UL)
 #define TWIM_TASKS_STARTRX_TASKS_STARTRX_Msk (0x1UL << TWIM_TASKS_STARTRX_TASKS_STARTRX_Pos)
 #define TWIM_TASKS_STARTRX_TASKS_STARTRX_Trigger (1UL)
@@ -26948,7 +26948,7 @@ typedef struct {
 
 #define TWIM_ADDRESS_ADDRESS_Pos (0UL)
 #define TWIM_ADDRESS_ADDRESS_Msk (0x7FUL << TWIM_ADDRESS_ADDRESS_Pos)
-# 14449 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 14449 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define TWIS_TASKS_STOP_TASKS_STOP_Pos (0UL)
 #define TWIS_TASKS_STOP_TASKS_STOP_Msk (0x1UL << TWIS_TASKS_STOP_TASKS_STOP_Pos)
 #define TWIS_TASKS_STOP_TASKS_STOP_Trigger (1UL)
@@ -27342,7 +27342,7 @@ typedef struct {
 
 #define TWIS_ORC_ORC_Pos (0UL)
 #define TWIS_ORC_ORC_Msk (0xFFUL << TWIS_ORC_ORC_Pos)
-# 14851 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 14851 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define UART_TASKS_STARTRX_TASKS_STARTRX_Pos (0UL)
 #define UART_TASKS_STARTRX_TASKS_STARTRX_Msk (0x1UL << UART_TASKS_STARTRX_TASKS_STARTRX_Pos)
 #define UART_TASKS_STARTRX_TASKS_STARTRX_Trigger (1UL)
@@ -27701,7 +27701,7 @@ typedef struct {
 #define UART_CONFIG_HWFC_Msk (0x1UL << UART_CONFIG_HWFC_Pos)
 #define UART_CONFIG_HWFC_Disabled (0UL)
 #define UART_CONFIG_HWFC_Enabled (1UL)
-# 15218 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 15218 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define UARTE_TASKS_STARTRX_TASKS_STARTRX_Pos (0UL)
 #define UARTE_TASKS_STARTRX_TASKS_STARTRX_Msk (0x1UL << UARTE_TASKS_STARTRX_TASKS_STARTRX_Pos)
 #define UARTE_TASKS_STARTRX_TASKS_STARTRX_Trigger (1UL)
@@ -28272,7 +28272,7 @@ typedef struct {
 #define UARTE_CONFIG_HWFC_Msk (0x1UL << UARTE_CONFIG_HWFC_Pos)
 #define UARTE_CONFIG_HWFC_Disabled (0UL)
 #define UARTE_CONFIG_HWFC_Enabled (1UL)
-# 15797 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 15797 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define UICR_NRFFW_NRFFW_Pos (0UL)
 #define UICR_NRFFW_NRFFW_Msk (0xFFFFFFFFUL << UICR_NRFFW_NRFFW_Pos)
 
@@ -28353,7 +28353,7 @@ typedef struct {
 #define UICR_REGOUT0_VOUT_3V0 (4UL)
 #define UICR_REGOUT0_VOUT_3V3 (5UL)
 #define UICR_REGOUT0_VOUT_DEFAULT (7UL)
-# 15886 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 15886 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define USBD_TASKS_STARTEPIN_TASKS_STARTEPIN_Pos (0UL)
 #define USBD_TASKS_STARTEPIN_TASKS_STARTEPIN_Msk (0x1UL << USBD_TASKS_STARTEPIN_TASKS_STARTEPIN_Pos)
 #define USBD_TASKS_STARTEPIN_TASKS_STARTEPIN_Trigger (1UL)
@@ -29721,7 +29721,7 @@ typedef struct {
 
 #define USBD_ISOOUT_AMOUNT_AMOUNT_Pos (0UL)
 #define USBD_ISOOUT_AMOUNT_AMOUNT_Msk (0x3FFUL << USBD_ISOOUT_AMOUNT_AMOUNT_Pos)
-# 17262 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
+# 17262 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52840_bitfields.h"
 #define WDT_TASKS_START_TASKS_START_Pos (0UL)
 #define WDT_TASKS_START_TASKS_START_Msk (0x1UL << WDT_TASKS_START_TASKS_START_Pos)
 #define WDT_TASKS_START_TASKS_START_Trigger (1UL)
@@ -29895,11 +29895,11 @@ typedef struct {
 #define WDT_RR_RR_Pos (0UL)
 #define WDT_RR_RR_Msk (0xFFFFFFFFUL << WDT_RR_RR_Pos)
 #define WDT_RR_RR_Reload (0x6E524635UL)
-# 171 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h" 1
-# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
+# 171 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h" 1
+# 43 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
 #define NRF51_TO_NRF52840_H 
-# 56 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
+# 56 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
 #define UART0_IRQHandler UARTE0_UART0_IRQHandler
 
 
@@ -30099,7 +30099,7 @@ typedef struct {
 
 
 #define PSELSDA PSEL.SDA
-# 263 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
+# 263 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf51_to_nrf52840.h"
 #define ERASEPROTECTEDPAGE ERASEPCR0
 
 
@@ -31170,16 +31170,16 @@ typedef struct {
 
 
 #define PPI_CHG3_CH0_Included PPI_CHG_CH0_Included
-# 172 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h" 1
-# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
+# 172 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h" 1
+# 43 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
 #define NRF52_TO_NRF52840_H 
-# 82 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
+# 82 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
 #define LPCOMP_HYST_HYST_NoHyst LPCOMP_HYST_HYST_Disabled
 
 
 #define LPCOMP_HYST_HYST_Hyst50mV LPCOMP_HYST_HYST_Enabled
-# 94 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
+# 94 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf52_to_nrf52840.h"
 #define I2S_ENABLE_ENABLE_DISABLE I2S_ENABLE_ENABLE_Disabled
 
 
@@ -31241,17 +31241,17 @@ typedef struct {
 
 
 #define LPCOMP_RESULT_RESULT_Bellow LPCOMP_RESULT_RESULT_Below
-# 173 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
-# 192 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h" 1
-# 193 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
-# 58 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
-# 83 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 173 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
+# 192 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/compiler_abstraction.h" 1
+# 193 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/mdk/nrf.h" 2
+# 58 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
+# 83 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 extern uint32_t __StackTop;
 extern uint32_t __StackLimit;
 #define STACK_BASE &__StackLimit
 #define STACK_TOP &__StackTop
-# 121 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 121 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 extern uint32_t __isr_vector;
 extern uint32_t __etext;
 #define CODE_START ((uint32_t)&__isr_vector)
@@ -31264,19 +31264,19 @@ extern uint32_t __etext;
 
 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h" 1
-# 48 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h" 1
+# 48 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 #define NRF_MBR_H__ 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h" 1
-# 40 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h" 1
+# 40 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h"
 #define NRF_SVC__ 
-# 69 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h"
+# 69 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h"
 #define GCC_CAST_CPP 
 
 #define SVCALL(number,return_type,signature) _Pragma("GCC diagnostic push") _Pragma("GCC diagnostic ignored \"-Wreturn-type\"") __attribute__((naked)) __attribute__((unused)) static return_type signature { __asm( "svc %0\n" "bx r14" : : "I" (GCC_CAST_CPP number) : "r0" ); } _Pragma("GCC diagnostic pop")
-# 51 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h" 2
-# 61 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 51 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h" 2
+# 61 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 #define MBR_SVC_BASE (0x18)
 
 
@@ -31297,7 +31297,7 @@ extern uint32_t __etext;
 
 
 #define MBR_UICR_PARAM_PAGE_ADDR (&(NRF_UICR->NRFFW[1]))
-# 89 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 89 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 enum NRF_MBR_SVCS
 {
   SD_MBR_COMMAND = (0x18),
@@ -31314,7 +31314,7 @@ enum NRF_MBR_COMMANDS
   SD_MBR_COMMAND_RESERVED,
   SD_MBR_COMMAND_IRQ_FORWARD_ADDRESS_SET,
 };
-# 122 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 122 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 typedef struct
 {
   uint32_t *src;
@@ -31334,18 +31334,18 @@ typedef struct
   uint32_t *ptr2;
   uint32_t len;
 } sd_mbr_command_compare_t;
-# 165 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 165 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 typedef struct
 {
   uint32_t *bl_src;
   uint32_t bl_len;
 } sd_mbr_command_copy_bl_t;
-# 193 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 193 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 typedef struct
 {
   uint32_t address;
 } sd_mbr_command_vector_table_base_set_t;
-# 205 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 205 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 typedef struct
 {
   uint32_t address;
@@ -31369,21 +31369,21 @@ typedef struct
     sd_mbr_command_irq_forward_address_set_t irq_forward_address_set;
   } params;
 } sd_mbr_command_t;
-# 257 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 
-# 257 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 #pragma GCC diagnostic push
-# 257 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 
-# 257 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 257 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_mbr_command(sd_mbr_command_t* param) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_MBR_COMMAND) : "r0" ); }
-# 257 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
 #pragma GCC diagnostic pop
-# 257 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
+# 257 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf52/nrf_mbr.h"
  ;
-# 134 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
+# 134 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
 #define BOOTLOADER_ADDRESS ((*(uint32_t *)MBR_BOOTLOADER_ADDR) == 0xFFFFFFFF ? *MBR_UICR_BOOTLOADER_ADDR : *(uint32_t *)MBR_BOOTLOADER_ADDR)
 #define MBR_PARAMS_PAGE_ADDRESS ((*(uint32_t *)MBR_PARAM_PAGE_ADDR) == 0xFFFFFFFF ? *MBR_UICR_PARAM_PAGE_ADDR : *(uint32_t *)MBR_PARAM_PAGE_ADDR)
 
@@ -31397,25 +31397,25 @@ enum
     UNIT_1_25_MS = 1250,
     UNIT_10_MS = 10000
 };
-# 159 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 159 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define VBITS(val) VBITS_32(val)
-# 179 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 179 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define VBITS_1(v) ((((v) & (0x0001U << 0)) != 0) ? 1U : 0U)
 #define VBITS_2(v) ((((v) & (0x0001U << 1)) != 0) ? VBITS_1 ((v) >> 1) + 1 : VBITS_1 (v))
 #define VBITS_4(v) ((((v) & (0x0003U << 2)) != 0) ? VBITS_2 ((v) >> 2) + 2 : VBITS_2 (v))
 #define VBITS_8(v) ((((v) & (0x000fU << 4)) != 0) ? VBITS_4 ((v) >> 4) + 4 : VBITS_4 (v))
 #define VBITS_16(v) ((((v) & (0x00ffU << 8)) != 0) ? VBITS_8 ((v) >> 8) + 8 : VBITS_8 (v))
 #define VBITS_32(v) ((((v) & (0xffffU << 16)) != 0) ? VBITS_16((v) >> 16) + 16 : VBITS_16(v))
-# 199 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 199 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define STRING_CONCATENATE_IMPL(lhs,rhs) lhs ## rhs
-# 209 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 209 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define STRING_CONCATENATE(lhs,rhs) STRING_CONCATENATE_IMPL(lhs, rhs)
-# 219 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 219 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define STATIC_ASSERT_SIMPLE(EXPR) _Static_assert(EXPR, "unspecified message")
 #define STATIC_ASSERT_MSG(EXPR,MSG) _Static_assert(EXPR, MSG)
-# 242 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 242 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define _SELECT_ASSERT_FUNC(x,EXPR,MSG,ASSERT_MACRO,...) ASSERT_MACRO
-# 256 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 256 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define STATIC_ASSERT(...) _SELECT_ASSERT_FUNC(x, ##__VA_ARGS__, STATIC_ASSERT_MSG(__VA_ARGS__), STATIC_ASSERT_SIMPLE(__VA_ARGS__))
 
 
@@ -31425,13 +31425,13 @@ enum
 
 
 #define NUM_VA_ARGS_IMPL(_0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,_21,_22,_23,_24,_25,_26,_27,_28,_29,_30,_31,_32,_33,_34,_35,_36,_37,_38,_39,_40,_41,_42,_43,_44,_45,_46,_47,_48,_49,_50,_51,_52,_53,_54,_55,_56,_57,_58,_59,_60,_61,_62,N,...) N
-# 280 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 280 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define NUM_VA_ARGS(...) NUM_VA_ARGS_IMPL(__VA_ARGS__, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
-# 289 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 289 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define NUM_VA_ARGS_LESS_1_IMPL(_ignored,_0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,_21,_22,_23,_24,_25,_26,_27,_28,_29,_30,_31,_32,_33,_34,_35,_36,_37,_38,_39,_40,_41,_42,_43,_44,_45,_46,_47,_48,_49,_50,_51,_52,_53,_54,_55,_56,_57,_58,_59,_60,_61,_62,N,...) N
-# 306 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 306 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define NUM_VA_ARGS_LESS_1(...) NUM_VA_ARGS_LESS_1_IMPL(__VA_ARGS__, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, ~)
-# 316 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 316 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 typedef uint8_t uint16_le_t[2];
 
 
@@ -31443,9 +31443,9 @@ typedef struct
     uint16_t size;
     uint8_t * p_data;
 } uint8_array_t;
-# 336 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 336 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define ROUNDED_DIV(A,B) (((A) + ((B) / 2)) / (B))
-# 346 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 346 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define IS_POWER_OF_TWO(A) ( ((A) != 0) && ((((A) - 1) & (A)) == 0) )
 
 
@@ -31455,18 +31455,18 @@ typedef struct
 
 
 #define MSEC_TO_UNITS(TIME,RESOLUTION) (((TIME) * 1000) / (RESOLUTION))
-# 367 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 367 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define CEIL_DIV(A,B) (((A) + (B) - 1) / (B))
-# 376 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 376 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define WORD_ALIGNED_MEM_BUFF(NAME,MIN_SIZE) static uint32_t NAME[CEIL_DIV(MIN_SIZE, sizeof(uint32_t))]
-# 387 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 387 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BYTES_TO_WORDS(n_bytes) (((n_bytes) + 3) >> 2)
 
 
 
 
 #define BYTES_PER_WORD (4)
-# 402 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 402 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define ALIGN_NUM(alignment,number) (((number) - 1) + (alignment) - (((number) - 1) % (alignment)))
 
 
@@ -31482,15 +31482,15 @@ typedef struct
 
 
 #define GET_ARG_2(a1,a2) a2
-# 429 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 429 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define CONTAINER_OF(ptr,type,member) (type *)((char *)ptr - offsetof(type, member))
-# 442 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 442 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_MASK(bcnt,boff) ( ((1U << (bcnt)) - 1U) << (boff) )
-# 455 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 455 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_GET(val,bcnt,boff) ( ( (val) & BF_MASK((bcnt), (boff)) ) >> (boff) )
-# 468 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 468 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_VAL(val,bcnt,boff) ( (((uint32_t)(val)) << (boff)) & BF_MASK(bcnt, boff) )
-# 477 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 477 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_BCNT_POS 0U
 
 #define BF_CX_BCNT_MASK (0xffU << BF_CX_BCNT_POS)
@@ -31498,41 +31498,41 @@ typedef struct
 #define BF_CX_BOFF_POS 8U
 
 #define BF_CX_BOFF_MASK (0xffU << BF_CX_BOFF_POS)
-# 499 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 499 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX(bcnt,boff) ( ((((uint32_t)(bcnt)) << BF_CX_BCNT_POS) & BF_CX_BCNT_MASK) | ((((uint32_t)(boff)) << BF_CX_BOFF_POS) & BF_CX_BOFF_MASK) )
-# 510 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 510 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_BCNT(bf_cx) ( ((bf_cx) & BF_CX_BCNT_MASK) >> BF_CX_BCNT_POS )
-# 521 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 521 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_BOFF(bf_cx) ( ((bf_cx) & BF_CX_BOFF_MASK) >> BF_CX_BOFF_POS )
-# 532 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 532 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_MASK(bf_cx) BF_MASK(BF_CX_BCNT(bf_cx), BF_CX_BOFF(bf_cx))
-# 548 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 548 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_GET(val,bf_cx) BF_GET(val, BF_CX_BCNT(bf_cx), BF_CX_BOFF(bf_cx))
-# 560 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 560 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BF_CX_VAL(val,bf_cx) BF_VAL(val, BF_CX_BCNT(bf_cx), BF_CX_BOFF(bf_cx))
-# 584 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 584 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define BRACKET_EXTRACT(a) BRACKET_EXTRACT_(a)
 #define BRACKET_EXTRACT_(a) BRACKET_EXTRACT__ a
 #define BRACKET_EXTRACT__(...) __VA_ARGS__
-# 600 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 600 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define NUM_VA_ARGS_IS_MORE_THAN_1(...) NUM_IS_MORE_THAN_1(NUM_VA_ARGS(__VA_ARGS__))
-# 618 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 618 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define NUM_IS_MORE_THAN_1(N) NUM_IS_MORE_THAN_1_(N)
 #define NUM_IS_MORE_THAN_1_(N) NUM_IS_MORE_THAN_1_PROBE_(NUM_IS_MORE_THAN_1_PROBE_ ## N, 1)
 #define NUM_IS_MORE_THAN_1_PROBE_(...) GET_VA_ARG_1(GET_ARGS_AFTER_1(__VA_ARGS__))
 #define NUM_IS_MORE_THAN_1_PROBE_0 ~, 0
 #define NUM_IS_MORE_THAN_1_PROBE_1 ~, 0
-# 631 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 631 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define GET_VA_ARG_1(...) GET_VA_ARG_1_(__VA_ARGS__, )
 #define GET_VA_ARG_1_(a1,...) a1
-# 641 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 641 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define GET_ARGS_AFTER_1(...) GET_ARGS_AFTER_1_(__VA_ARGS__, )
 #define GET_ARGS_AFTER_1_(a1,...) __VA_ARGS__
-# 653 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 653 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define FIELD_SIZE(struct_type,field) sizeof(((struct struct_type*)NULL)->field)
-# 666 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 666 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define FIELD_ARRAY_SIZE(struct_type,field) (FIELD_SIZE(struct_type, field) / FIELD_SIZE(struct_type, field[0]))
-# 678 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 678 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP(...) MACRO_MAP_(__VA_ARGS__)
 #define MACRO_MAP_(...) MACRO_MAP_N(NUM_VA_ARGS_LESS_1(__VA_ARGS__), __VA_ARGS__)
 
@@ -31543,7 +31543,7 @@ typedef struct
 
 #define MACRO_MAP_REC(...) MACRO_MAP_REC_(__VA_ARGS__)
 #define MACRO_MAP_REC_(...) MACRO_MAP_REC_N(NUM_VA_ARGS_LESS_1(__VA_ARGS__), __VA_ARGS__)
-# 700 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 700 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP_N(N,...) MACRO_MAP_N_(N, __VA_ARGS__)
 #define MACRO_MAP_N_(N,...) CONCAT_2(MACRO_MAP_, N)(__VA_ARGS__, )
 
@@ -31623,12 +31623,12 @@ typedef struct
 #define MACRO_MAP_REC_30(macro,a,...) macro(a) MACRO_MAP_REC_29(macro, __VA_ARGS__, )
 #define MACRO_MAP_REC_31(macro,a,...) macro(a) MACRO_MAP_REC_30(macro, __VA_ARGS__, )
 #define MACRO_MAP_REC_32(macro,a,...) macro(a) MACRO_MAP_REC_31(macro, __VA_ARGS__, )
-# 791 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 791 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP_FOR(...) MACRO_MAP_FOR_(__VA_ARGS__)
 #define MACRO_MAP_FOR_N_LIST 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32
 
 #define MACRO_MAP_FOR_(...) MACRO_MAP_FOR_N(NUM_VA_ARGS_LESS_1(__VA_ARGS__), __VA_ARGS__)
-# 808 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 808 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP_FOR_N(N,...) MACRO_MAP_FOR_N_(N, __VA_ARGS__)
 #define MACRO_MAP_FOR_N_(N,...) CONCAT_2(MACRO_MAP_FOR_, N)((MACRO_MAP_FOR_N_LIST), __VA_ARGS__, )
 
@@ -31665,10 +31665,10 @@ typedef struct
 #define MACRO_MAP_FOR_30(n_list,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list))) MACRO_MAP_FOR_29((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), macro, __VA_ARGS__, )
 #define MACRO_MAP_FOR_31(n_list,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list))) MACRO_MAP_FOR_30((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), macro, __VA_ARGS__, )
 #define MACRO_MAP_FOR_32(n_list,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list))) MACRO_MAP_FOR_31((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), macro, __VA_ARGS__, )
-# 857 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 857 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP_FOR_PARAM(param,...) MACRO_MAP_FOR_PARAM_(param, __VA_ARGS__)
 #define MACRO_MAP_FOR_PARAM_(param,...) MACRO_MAP_FOR_PARAM_N(NUM_VA_ARGS_LESS_1(__VA_ARGS__), param, __VA_ARGS__)
-# 870 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 870 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_MAP_FOR_PARAM_N(N,param,...) MACRO_MAP_FOR_PARAM_N_(N, param, __VA_ARGS__)
 #define MACRO_MAP_FOR_PARAM_N_(N,param,...) CONCAT_2(MACRO_MAP_FOR_PARAM_, N)((MACRO_MAP_FOR_N_LIST), param, __VA_ARGS__, )
 
@@ -31706,7 +31706,7 @@ typedef struct
 #define MACRO_MAP_FOR_PARAM_30(n_list,param,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list)), param) MACRO_MAP_FOR_PARAM_29((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), param, macro, __VA_ARGS__, )
 #define MACRO_MAP_FOR_PARAM_31(n_list,param,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list)), param) MACRO_MAP_FOR_PARAM_30((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), param, macro, __VA_ARGS__, )
 #define MACRO_MAP_FOR_PARAM_32(n_list,param,macro,a,...) macro(a, GET_VA_ARG_1(BRACKET_EXTRACT(n_list)), param) MACRO_MAP_FOR_PARAM_31((GET_ARGS_AFTER_1(BRACKET_EXTRACT(n_list))), param, macro, __VA_ARGS__, )
-# 919 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 919 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_REPEAT(count,macro,...) MACRO_REPEAT_(count, macro, __VA_ARGS__)
 #define MACRO_REPEAT_(count,macro,...) CONCAT_2(MACRO_REPEAT_, count)(macro, __VA_ARGS__)
 
@@ -31743,7 +31743,7 @@ typedef struct
 #define MACRO_REPEAT_30(macro,...) macro(__VA_ARGS__) MACRO_REPEAT_29(macro, __VA_ARGS__)
 #define MACRO_REPEAT_31(macro,...) macro(__VA_ARGS__) MACRO_REPEAT_30(macro, __VA_ARGS__)
 #define MACRO_REPEAT_32(macro,...) macro(__VA_ARGS__) MACRO_REPEAT_31(macro, __VA_ARGS__)
-# 969 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 969 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 #define MACRO_REPEAT_FOR(count,macro,...) MACRO_REPEAT_FOR_(count, macro, __VA_ARGS__)
 #define MACRO_REPEAT_FOR_(count,macro,...) CONCAT_2(MACRO_REPEAT_FOR_, count)((MACRO_MAP_FOR_N_LIST), macro, __VA_ARGS__)
 
@@ -31788,19 +31788,19 @@ typedef struct
 
 
 #define PARAM_CBRACE(p) { p },
-# 1023 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1023 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint64_t value_rescale(uint32_t value, uint32_t old_unit_reversal, uint16_t new_unit_reversal)
 {
     return (uint64_t)((((uint64_t)value * new_unit_reversal) + ((old_unit_reversal) / 2)) / (old_unit_reversal));
 }
-# 1035 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1035 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint16_encode(uint16_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) ((value & 0x00FF) >> 0);
     p_encoded_data[1] = (uint8_t) ((value & 0xFF00) >> 8);
     return sizeof(uint16_t);
 }
-# 1049 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1049 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint24_encode(uint32_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) ((value & 0x000000FF) >> 0);
@@ -31808,7 +31808,7 @@ static inline uint8_t uint24_encode(uint32_t value, uint8_t * p_encoded_data)
     p_encoded_data[2] = (uint8_t) ((value & 0x00FF0000) >> 16);
     return 3;
 }
-# 1064 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1064 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint32_encode(uint32_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) ((value & 0x000000FF) >> 0);
@@ -31817,7 +31817,7 @@ static inline uint8_t uint32_encode(uint32_t value, uint8_t * p_encoded_data)
     p_encoded_data[3] = (uint8_t) ((value & 0xFF000000) >> 24);
     return sizeof(uint32_t);
 }
-# 1080 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1080 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint40_encode(uint64_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) ((value & 0x00000000FF) >> 0);
@@ -31827,7 +31827,7 @@ static inline uint8_t uint40_encode(uint64_t value, uint8_t * p_encoded_data)
     p_encoded_data[4] = (uint8_t) ((value & 0xFF00000000) >> 32);
     return 5;
 }
-# 1097 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1097 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint48_encode(uint64_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) ((value & 0x0000000000FF) >> 0);
@@ -31903,7 +31903,7 @@ static inline uint32_t uint32_big_decode(const uint8_t * p_encoded_data)
              (((uint32_t)((uint8_t *)p_encoded_data)[2]) << 8) |
              (((uint32_t)((uint8_t *)p_encoded_data)[3]) << 0) );
 }
-# 1181 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1181 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint16_big_encode(uint16_t value, uint8_t * p_encoded_data)
 {
     p_encoded_data[0] = (uint8_t) (value >> 8);
@@ -31911,7 +31911,7 @@ static inline uint8_t uint16_big_encode(uint16_t value, uint8_t * p_encoded_data
 
     return sizeof(uint16_t);
 }
-# 1199 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1199 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t uint32_big_encode(uint32_t value, uint8_t * p_encoded_data)
 {
     *(uint32_t *)p_encoded_data = __REV(value);
@@ -31948,7 +31948,7 @@ static inline uint64_t uint48_decode(const uint8_t * p_encoded_data)
              (((uint64_t)((uint8_t *)p_encoded_data)[4]) << 32) |
              (((uint64_t)((uint8_t *)p_encoded_data)[5]) << 40 ));
 }
-# 1256 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1256 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline uint8_t battery_level_in_percent(const uint16_t mvolts)
 {
     uint8_t battery_level;
@@ -31988,47 +31988,47 @@ static inline uint8_t battery_level_in_percent(const uint16_t mvolts)
 
 
 static inline 
-# 1294 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
+# 1294 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
                _Bool 
-# 1294 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1294 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
                     is_word_aligned(void const* p)
 {
     return (((uintptr_t)p & 0x03) == 0);
 }
-# 1307 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1307 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
 static inline 
-# 1307 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
+# 1307 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
                _Bool 
-# 1307 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1307 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
                     is_address_from_stack(void * ptr)
 {
     if (((uint32_t)ptr >= (uint32_t)&__StackLimit) &&
         ((uint32_t)ptr < (uint32_t)&__StackTop) )
     {
         return 
-# 1312 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
+# 1312 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
               1
-# 1312 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1312 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
                   ;
     }
     else
     {
         return 
-# 1316 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
+# 1316 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 3 4
               0
-# 1316 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
+# 1316 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h"
                    ;
     }
 }
-# 62 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h" 1
-# 50 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 62 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h" 1
+# 50 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define SDK_MACROS_H__ 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h" 1
-# 45 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h" 1
+# 45 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
 #define NRF_ASSERT_H_ 
-# 75 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
+# 75 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
 void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 
@@ -32036,18 +32036,18 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 
 #define NRF_ASSERT_PRESENT 0
-# 103 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
+# 103 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h"
 #define ASSERT(expr) if (NRF_ASSERT_PRESENT) { if (expr) { } else { assert_nrf_callback((uint16_t)__LINE__, (uint8_t *)__FILE__); } }
-# 53 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h" 2
-# 78 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 53 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h" 2
+# 78 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define NRF_PARAM_CHECK(_module,_cond,_err,_printfn) do { if ((_cond)) { } else if (!(_module ## _PARAM_CHECK_DISABLED)) { _printfn("%s check failed in %s() with value 0x%x.", #_cond, __func__, _err); return (_err); } else { ASSERT((_cond)); } } while (0);
-# 106 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 106 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_TRUE(statement,err_code) do { if (!(statement)) { return err_code; } } while (0)
-# 121 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 121 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_TRUE_VOID(statement) VERIFY_TRUE((statement), )
-# 133 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 133 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_FALSE(statement,err_code) do { if ((statement)) { return err_code; } } while (0)
-# 148 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 148 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_FALSE_VOID(statement) VERIFY_FALSE((statement), )
 
 
@@ -32057,13 +32057,13 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 
 #define VERIFY_SUCCESS(statement) do { uint32_t _err_code = (uint32_t) (statement); if (_err_code != NRF_SUCCESS) { return _err_code; } } while(0)
-# 172 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 172 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_SUCCESS_VOID(err_code) VERIFY_TRUE_VOID((err_code) == NRF_SUCCESS)
-# 181 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 181 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_MODULE_INITIALIZED() VERIFY_TRUE((MODULE_INITIALIZED), NRF_ERROR_INVALID_STATE)
-# 190 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 190 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_MODULE_INITIALIZED_VOID() VERIFY_TRUE_VOID((MODULE_INITIALIZED))
-# 199 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
+# 199 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_macros.h"
 #define VERIFY_MODULE_INITIALIZED_BOOL() VERIFY_TRUE((MODULE_INITIALIZED), false)
 
 
@@ -32081,35 +32081,35 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 
 #define VERIFY_PARAM_NOT_NULL_VOID(param) VERIFY_FALSE_VOID(((param) == NULL))
-# 63 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
-# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
+# 63 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
+# 41 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 1
-# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 1
+# 41 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 #define FDS_H__ 
-# 58 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 1
-# 59 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h" 1
-# 50 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
+# 58 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_errors.h" 1
+# 59 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h" 1
+# 50 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
 #define APP_UTIL_PLATFORM_H__ 
 
 
 
 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h" 1
-# 48 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h" 1
+# 48 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #define NRF_SOC_H__ 
 
 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h" 1
-# 53 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h" 1
-# 54 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error_soc.h" 1
-# 51 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error_soc.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_svc.h" 1
+# 53 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error.h" 1
+# 54 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error_soc.h" 1
+# 51 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_error_soc.h"
 #define NRF_ERROR_SOC_H__ 
 
 
@@ -32136,8 +32136,8 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 #define NRF_ERROR_SOC_PPI_INVALID_CHANNEL (NRF_ERROR_SOC_BASE_NUM + 8)
 #define NRF_ERROR_SOC_PPI_INVALID_GROUP (NRF_ERROR_SOC_BASE_NUM + 9)
-# 55 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h" 2
-# 64 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h" 2
+# 64 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #define SOC_SVC_BASE (0x20)
 #define SOC_SVC_BASE_NOT_AVAILABLE (0x2C)
 
@@ -32177,12 +32177,12 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t *file_name);
 
 
 #define NRF_SOC_SD_PPI_CHANNELS_SD_ENABLED_MSK ((uint32_t)( (1U << 17) | (1U << 18) | (1U << 19) | (1U << 20) | (1U << 21) | (1U << 22) | (1U << 23) | (1U << 24) | (1U << 25) | (1U << 26) | (1U << 27) | (1U << 28) | (1U << 29) | (1U << 30) | (1U << 31) ))
-# 121 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 121 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #define NRF_SOC_SD_PPI_GROUPS_SD_DISABLED_MSK ((uint32_t)(0))
 
 
 #define NRF_SOC_SD_PPI_GROUPS_SD_ENABLED_MSK ((uint32_t)( (1U << 4) | (1U << 5) ))
-# 135 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 135 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 enum NRF_SOC_SVCS
 {
   SD_PPI_CHANNEL_ENABLE_GET = (0x20),
@@ -32395,7 +32395,7 @@ enum NRF_SOC_EVTS
   NRF_EVT_POWER_USB_REMOVED,
   NRF_EVT_NUMBER_OF_EVTS
 };
-# 357 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 357 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 typedef volatile uint8_t nrf_mutex_t;
 
 
@@ -32443,7 +32443,7 @@ typedef struct
     } extend;
   } params;
 } nrf_radio_signal_callback_return_param_t;
-# 417 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 417 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 typedef nrf_radio_signal_callback_return_param_t * (*nrf_radio_signal_callback_t) (uint8_t signal_type);
 
 
@@ -32467,33 +32467,33 @@ typedef struct
   soc_ecb_cleartext_t const * p_cleartext;
   soc_ecb_ciphertext_t * p_ciphertext;
 } nrf_ecb_hal_data_block_t;
-# 452 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 452 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 452 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 452 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 452 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 452 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 452 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 452 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 452 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 452 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_mutex_new(nrf_mutex_t * p_mutex) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_MUTEX_NEW) : "r0" ); }
-# 452 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 452 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 452 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 452 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 461 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 461 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 461 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 461 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 461 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 461 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 461 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 461 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 461 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 461 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_mutex_acquire(nrf_mutex_t * p_mutex) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_MUTEX_ACQUIRE) : "r0" ); }
-# 461 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 461 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 461 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 461 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
 
 
@@ -32503,17 +32503,17 @@ typedef struct
 
 
 
-# 469 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 469 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 469 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 469 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 469 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 469 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 469 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 469 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_mutex_release(nrf_mutex_t * p_mutex) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_MUTEX_RELEASE) : "r0" ); }
-# 469 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 469 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 469 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 469 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
 
 
@@ -32523,17 +32523,17 @@ typedef struct
 
 
 
-# 477 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 477 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 477 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 477 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 477 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 477 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 477 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 477 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_rand_application_pool_capacity_get(uint8_t * p_pool_capacity) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_RAND_APPLICATION_POOL_CAPACITY_GET) : "r0" ); }
-# 477 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 477 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 477 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 477 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
 
 
@@ -32543,31 +32543,31 @@ typedef struct
 
 
 
-# 485 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 485 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 485 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 485 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 485 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 485 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 485 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 485 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_rand_application_bytes_available_get(uint8_t * p_bytes_available) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_RAND_APPLICATION_BYTES_AVAILABLE_GET) : "r0" ); }
-# 485 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 485 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 485 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 485 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 495 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 495 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 495 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 495 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 495 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_rand_application_vector_get(uint8_t * p_buff, uint8_t length) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_RAND_APPLICATION_VECTOR_GET) : "r0" ); }
-# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 495 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 495 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
 
 
@@ -32577,17 +32577,17 @@ typedef struct
 
 
 
-# 503 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 503 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 503 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 503 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 503 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 503 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 503 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 503 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_reset_reason_get(uint32_t * p_reset_reason) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_RESET_REASON_GET) : "r0" ); }
-# 503 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 503 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 503 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 503 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
 
 
@@ -32597,31 +32597,31 @@ typedef struct
 
 
 
-# 511 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 511 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 511 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 511 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 511 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 511 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 511 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 511 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_reset_reason_clr(uint32_t reset_reason_clr_msk) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_RESET_REASON_CLR) : "r0" ); }
-# 511 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 511 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 511 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 511 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 520 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 520 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 520 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 520 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 520 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 520 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 520 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 520 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 520 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 520 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_mode_set(uint8_t power_mode) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_MODE_SET) : "r0" ); }
-# 520 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 520 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 520 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 520 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
 
 
@@ -32629,283 +32629,283 @@ typedef struct
 
 
 
-# 526 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 526 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 526 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 526 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 526 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 526 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 526 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 526 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_system_off(void) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_SYSTEM_OFF) : "r0" ); }
-# 526 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 526 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 526 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 526 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 537 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 537 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 537 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 537 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 537 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 537 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 537 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 537 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 537 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 537 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_pof_enable(uint8_t pof_enable) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_POF_ENABLE) : "r0" ); }
-# 537 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 537 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 537 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 537 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 550 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 550 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 550 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 550 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 550 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 550 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 550 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 550 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 550 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 550 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_usbpwrrdy_enable(uint8_t usbpwrrdy_enable) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_USBPWRRDY_ENABLE) : "r0" ); }
-# 550 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 550 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 550 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 550 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 563 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 563 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 563 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 563 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 563 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 563 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 563 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 563 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 563 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 563 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_usbdetected_enable(uint8_t usbdetected_enable) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_USBDETECTED_ENABLE) : "r0" ); }
-# 563 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 563 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 563 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 563 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 576 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 576 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 576 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 576 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 576 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 576 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 576 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 576 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 576 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 576 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_usbremoved_enable(uint8_t usbremoved_enable) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_USBREMOVED_ENABLE) : "r0" ); }
-# 576 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 576 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 576 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 576 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 586 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 586 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 586 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 586 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 586 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 586 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 586 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 586 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 586 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 586 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_usbregstatus_get(uint32_t * usbregstatus) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_USBREGSTATUS_GET) : "r0" ); }
-# 586 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 586 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 586 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 586 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 599 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 599 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 599 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 599 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 599 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 599 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 599 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 599 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 599 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 599 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_pof_threshold_set(uint8_t threshold) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_POF_THRESHOLD_SET) : "r0" ); }
-# 599 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 599 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 599 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 599 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 612 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 612 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 612 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 612 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 612 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 612 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 612 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 612 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 612 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 612 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_pof_thresholdvddh_set(uint8_t threshold) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_POF_THRESHOLDVDDH_SET) : "r0" ); }
-# 612 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 612 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 612 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 612 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 621 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 621 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 621 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 621 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 621 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 621 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 621 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 621 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 621 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 621 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_ram_power_set(uint8_t index, uint32_t ram_powerset) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_RAM_POWER_SET) : "r0" ); }
-# 621 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 621 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 621 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 621 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 630 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 630 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 630 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 630 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 630 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 630 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 630 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 630 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 630 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 630 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_ram_power_clr(uint8_t index, uint32_t ram_powerclr) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_RAM_POWER_CLR) : "r0" ); }
-# 630 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 630 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 630 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 630 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 639 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 639 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 639 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 639 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 639 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 639 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 639 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 639 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 639 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 639 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_ram_power_get(uint8_t index, uint32_t * p_ram_power) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_RAM_POWER_GET) : "r0" ); }
-# 639 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 639 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 639 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 639 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 648 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 648 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 648 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 648 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 648 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 648 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 648 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 648 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 648 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 648 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_gpregret_set(uint32_t gpregret_id, uint32_t gpregret_msk) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_GPREGRET_SET) : "r0" ); }
-# 648 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 648 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 648 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 648 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 657 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 657 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 657 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 657 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 657 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 657 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 657 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 657 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 657 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 657 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_gpregret_clr(uint32_t gpregret_id, uint32_t gpregret_msk) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_GPREGRET_CLR) : "r0" ); }
-# 657 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 657 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 657 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 657 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 666 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 666 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 666 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 666 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 666 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 666 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 666 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 666 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 666 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 666 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_gpregret_get(uint32_t gpregret_id, uint32_t *p_gpregret) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_GPREGRET_GET) : "r0" ); }
-# 666 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 666 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 666 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 666 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 675 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 675 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 675 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 675 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 675 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 675 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 675 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 675 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 675 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 675 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_dcdc_mode_set(uint8_t dcdc_mode) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_DCDC_MODE_SET) : "r0" ); }
-# 675 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 675 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 675 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 675 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 686 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 686 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 686 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 686 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 686 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 686 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 686 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 686 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 686 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 686 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_power_dcdc0_mode_set(uint8_t dcdc_mode) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_POWER_DCDC0_MODE_SET) : "r0" ); }
-# 686 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 686 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 686 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 686 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 698 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 698 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 698 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 698 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 698 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 698 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 698 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 698 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 698 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 698 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_clock_hfclk_request(void) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_CLOCK_HFCLK_REQUEST) : "r0" ); }
-# 698 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 698 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 698 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 698 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 709 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 709 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 709 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 709 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 709 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 709 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 709 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 709 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 709 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 709 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_clock_hfclk_release(void) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_CLOCK_HFCLK_RELEASE) : "r0" ); }
-# 709 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 709 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 709 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 709 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 720 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 720 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 720 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 720 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 720 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 720 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 720 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 720 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 720 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 720 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_clock_hfclk_is_running(uint32_t * p_is_running) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_CLOCK_HFCLK_IS_RUNNING) : "r0" ); }
-# 720 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 720 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 720 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 720 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 748 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 748 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 748 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 748 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 748 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 748 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 748 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 748 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 748 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 748 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_app_evt_wait(void) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_APP_EVT_WAIT) : "r0" ); }
-# 748 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 748 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 748 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 748 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
 
 
@@ -32915,17 +32915,17 @@ typedef struct
 
 
 
-# 756 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 756 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 756 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 756 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 756 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 756 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 756 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 756 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ppi_channel_enable_get(uint32_t * p_channel_enable) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_PPI_CHANNEL_ENABLE_GET) : "r0" ); }
-# 756 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 756 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 756 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 756 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
 
 
@@ -32935,17 +32935,17 @@ typedef struct
 
 
 
-# 764 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 764 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 764 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 764 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 764 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 764 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 764 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 764 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ppi_channel_enable_set(uint32_t channel_enable_set_msk) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_PPI_CHANNEL_ENABLE_SET) : "r0" ); }
-# 764 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 764 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 764 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 764 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
 
 
@@ -32955,247 +32955,247 @@ typedef struct
 
 
 
-# 772 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 772 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 772 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 772 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 772 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 772 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 772 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 772 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ppi_channel_enable_clr(uint32_t channel_enable_clr_msk) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_PPI_CHANNEL_ENABLE_CLR) : "r0" ); }
-# 772 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 772 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 772 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 772 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 783 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 783 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 783 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 783 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 783 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 783 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 783 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 783 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 783 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 783 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ppi_channel_assign(uint8_t channel_num, const volatile void * evt_endpoint, const volatile void * task_endpoint) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_PPI_CHANNEL_ASSIGN) : "r0" ); }
-# 783 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 783 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 783 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 783 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 792 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 792 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 792 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 792 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 792 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 792 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 792 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 792 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 792 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 792 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ppi_group_task_enable(uint8_t group_num) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_PPI_GROUP_TASK_ENABLE) : "r0" ); }
-# 792 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 792 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 792 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 792 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 801 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 801 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 801 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 801 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 801 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 801 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 801 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 801 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 801 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 801 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ppi_group_task_disable(uint8_t group_num) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_PPI_GROUP_TASK_DISABLE) : "r0" ); }
-# 801 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 801 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 801 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 801 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ppi_group_assign(uint8_t group_num, uint32_t channel_msk) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_PPI_GROUP_ASSIGN) : "r0" ); }
-# 811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 821 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 821 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 821 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 821 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 821 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 821 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 821 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 821 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 821 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 821 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ppi_group_get(uint8_t group_num, uint32_t * p_channel_msk) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_PPI_GROUP_GET) : "r0" ); }
-# 821 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 821 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 821 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 821 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 852 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 852 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 852 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 852 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 852 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 852 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 852 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 852 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 852 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 852 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_radio_notification_cfg_set(uint8_t type, uint8_t distance) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_RADIO_NOTIFICATION_CFG_SET) : "r0" ); }
-# 852 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 852 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 852 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 852 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 868 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 868 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 868 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 868 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 868 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 868 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 868 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 868 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 868 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 868 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ecb_block_encrypt(nrf_ecb_hal_data_t * p_ecb_data) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_ECB_BLOCK_ENCRYPT) : "r0" ); }
-# 868 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 868 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 868 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 868 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 885 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 885 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 885 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 885 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 885 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 885 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 885 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 885 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 885 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 885 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_ecb_blocks_encrypt(uint8_t block_count, nrf_ecb_hal_data_block_t * p_data_blocks) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_ECB_BLOCKS_ENCRYPT) : "r0" ); }
-# 885 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 885 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 885 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 885 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 896 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 896 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 896 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 896 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 896 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 896 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 896 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 896 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 896 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 896 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_evt_get(uint32_t * p_evt_id) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_EVT_GET) : "r0" ); }
-# 896 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 896 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 896 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 896 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 907 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 907 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 907 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 907 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 907 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 907 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 907 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 907 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 907 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 907 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_temp_get(int32_t * p_temp) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_TEMP_GET) : "r0" ); }
-# 907 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 907 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 907 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 907 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 944 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 944 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 944 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 944 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 944 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 944 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 944 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 944 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 944 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 944 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_flash_write(uint32_t * p_dst, uint32_t const * p_src, uint32_t size) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_FLASH_WRITE) : "r0" ); }
-# 944 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 944 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 944 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 944 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 976 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 976 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 976 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 976 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 976 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 976 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 976 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 976 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 976 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 976 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_flash_page_erase(uint32_t page_number) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_FLASH_PAGE_ERASE) : "r0" ); }
-# 976 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 976 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 976 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 976 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 1000 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1000 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 1000 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1000 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 1000 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1000 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 1000 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1000 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1000 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1000 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_radio_session_open(nrf_radio_signal_callback_t p_radio_signal_callback) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_RADIO_SESSION_OPEN) : "r0" ); }
-# 1000 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1000 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 1000 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1000 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 1013 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1013 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 1013 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1013 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 1013 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1013 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 1013 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1013 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1013 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1013 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_radio_session_close(void) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_RADIO_SESSION_CLOSE) : "r0" ); }
-# 1013 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1013 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 1013 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1013 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 1050 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1050 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 1050 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1050 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 1050 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1050 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 1050 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1050 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1050 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1050 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_radio_request(nrf_radio_request_t const * p_request) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_RADIO_REQUEST) : "r0" ); }
-# 1050 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1050 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 1050 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1050 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 1071 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1071 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 1071 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1071 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic push
-# 1071 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1071 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 
-# 1071 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1071 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic ignored "-Wreturn-type"
-# 1071 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1071 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  __attribute__((naked)) __attribute__((unused)) static uint32_t sd_protected_register_write(volatile uint32_t * p_register, uint32_t value) { __asm( "svc %0\n" "bx r14" : : "I" ( SD_PROTECTED_REGISTER_WRITE) : "r0" ); }
-# 1071 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1071 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
 #pragma GCC diagnostic pop
-# 1071 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
+# 1071 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h"
  ;
-# 57 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h" 1
-# 56 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 57 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h" 1
+# 56 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 #define NRF_NVIC_H__ 
-# 74 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 74 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 #define __NRF_NVIC_NVMC_IRQn (30)
 
 #define __NRF_NVIC_ISER_COUNT (2)
@@ -33212,7 +33212,7 @@ typedef struct
 
 
 #define __NRF_NVIC_SD_IRQS_0 ((uint32_t)( (1U << POWER_CLOCK_IRQn) | (1U << RADIO_IRQn) | (1U << RTC0_IRQn) | (1U << TIMER0_IRQn) | (1U << RNG_IRQn) | (1U << ECB_IRQn) | (1U << CCM_AAR_IRQn) | (1U << TEMP_IRQn) | (1U << __NRF_NVIC_NVMC_IRQn) | (1U << (uint32_t)SWI5_IRQn) ))
-# 103 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 103 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 #define __NRF_NVIC_SD_IRQS_1 ((uint32_t)0)
 
 
@@ -33220,7 +33220,7 @@ typedef struct
 
 
 #define __NRF_NVIC_APP_IRQS_1 (~__NRF_NVIC_SD_IRQS_1)
-# 119 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 119 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 typedef struct
 {
   uint32_t volatile __irq_masks[(2)];
@@ -33230,7 +33230,7 @@ typedef struct
 
 
 extern nrf_nvic_state_t nrf_nvic_state;
-# 138 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 138 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 static inline int __sd_nvic_irq_disable(void);
 
 
@@ -33250,19 +33250,19 @@ static inline uint32_t __sd_nvic_app_accessible_irq(IRQn_Type IRQn);
 
 
 static inline uint32_t __sd_nvic_is_app_accessible_priority(uint32_t priority);
-# 174 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 174 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 static inline uint32_t sd_nvic_EnableIRQ(IRQn_Type IRQn);
-# 186 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 186 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 static inline uint32_t sd_nvic_DisableIRQ(IRQn_Type IRQn);
-# 199 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 199 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 static inline uint32_t sd_nvic_GetPendingIRQ(IRQn_Type IRQn, uint32_t * p_pending_irq);
-# 211 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 211 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 static inline uint32_t sd_nvic_SetPendingIRQ(IRQn_Type IRQn);
-# 223 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 223 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 static inline uint32_t sd_nvic_ClearPendingIRQ(IRQn_Type IRQn);
-# 238 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 238 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 static inline uint32_t sd_nvic_SetPriority(IRQn_Type IRQn, uint32_t priority);
-# 251 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 251 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 static inline uint32_t sd_nvic_GetPriority(IRQn_Type IRQn, uint32_t * p_priority);
 
 
@@ -33271,9 +33271,9 @@ static inline uint32_t sd_nvic_GetPriority(IRQn_Type IRQn, uint32_t * p_priority
 
 
 static inline uint32_t sd_nvic_SystemReset(void);
-# 271 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 271 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 static inline uint32_t sd_nvic_critical_region_enter(uint8_t * p_is_nested_critical_region);
-# 282 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
+# 282 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_nvic.h"
 static inline uint32_t sd_nvic_critical_region_exit(uint8_t is_nested_critical_region);
 
 
@@ -33474,17 +33474,17 @@ static inline uint32_t sd_nvic_critical_region_exit(uint8_t is_nested_critical_r
 
   return ((0x0) + 0);
 }
-# 58 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h" 2
+# 58 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h" 2
 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h" 1
-# 50 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h" 1
+# 50 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
 #define APP_ERROR_H__ 
 
 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 1 3
-# 27 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 1 3
+# 27 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
 #define _STDIO_H_ 
 
 
@@ -33494,14 +33494,14 @@ static inline uint32_t sd_nvic_critical_region_exit(uint8_t is_nested_critical_r
 #define __need_size_t 
 #define __need_NULL 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
-# 155 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
+# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_ptrdiff_t
-# 231 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_size_t
-# 340 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef __need_wchar_t
-# 390 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
 #undef NULL
 
 
@@ -33519,12 +33519,12 @@ static inline uint32_t sd_nvic_critical_region_exit(uint8_t is_nested_critical_r
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 37 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 2 3
+# 37 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 2 3
 
 
 #define __need___va_list 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdarg.h" 1 3 4
-# 34 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdarg.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h" 1 3 4
+# 34 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h" 3 4
 #undef __need___va_list
 
 
@@ -33532,12 +33532,12 @@ static inline uint32_t sd_nvic_critical_region_exit(uint8_t is_nested_critical_r
 
 #define __GNUC_VA_LIST 
 
-# 40 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdarg.h" 3 4
+# 40 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h" 3 4
 typedef __builtin_va_list __gnuc_va_list;
-# 41 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 2 3
-# 61 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/types.h" 1 3
-# 28 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/types.h" 3
+# 41 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 2 3
+# 61 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/types.h" 1 3
+# 28 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/types.h" 3
 typedef __uint8_t u_int8_t;
 
 
@@ -33555,7 +33555,7 @@ typedef __intptr_t register_t;
 
 
 #define _SYS_TYPES_H 
-# 97 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/types.h" 3
+# 97 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/types.h" 3
 typedef __blkcnt_t blkcnt_t;
 #define _BLKCNT_T_DECLARED 
 
@@ -33600,7 +33600,7 @@ typedef __id_t id_t;
 
 typedef __ino_t ino_t;
 #define _INO_T_DECLARED 
-# 157 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/types.h" 3
+# 157 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/types.h" 3
 typedef __off_t off_t;
 #define _OFF_T_DECLARED 
 
@@ -33667,17 +33667,17 @@ typedef __suseconds_t suseconds_t;
 typedef __int64_t sbintime_t;
 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_pthreadtypes.h" 1 3
-# 19 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_pthreadtypes.h" 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_pthreadtypes.h" 1 3
+# 19 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_pthreadtypes.h" 3
 #define _SYS__PTHREADTYPES_H_ 
-# 224 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/types.h" 2 3
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/types.h" 1 3
-# 225 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/types.h" 2 3
+# 224 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/types.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/types.h" 1 3
+# 225 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/types.h" 2 3
 
 
 
 #undef __need_inttypes
-# 62 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 2 3
+# 62 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 2 3
 
 
 
@@ -33695,10 +33695,10 @@ typedef _fpos_t fpos_t;
 
 
 
-# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/stdio.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/stdio.h" 1 3
 
 #define _NEWLIB_STDIO_H 
-# 13 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/stdio.h" 3
+# 13 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/stdio.h" 3
 #define _flockfile(fp) (((fp)->_flags & __SSTR) ? 0 : __lock_acquire_recursive((fp)->_lock))
 
 
@@ -33708,7 +33708,7 @@ typedef _fpos_t fpos_t;
 
 
 #define _funlockfile(fp) (((fp)->_flags & __SSTR) ? 0 : __lock_release_recursive((fp)->_lock))
-# 80 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 2 3
+# 80 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 2 3
 
 #define __SLBF 0x0001
 #define __SNBF 0x0002
@@ -33733,7 +33733,7 @@ typedef _fpos_t fpos_t;
 
 #define __SNLK 0x0001
 #define __SWID 0x2000
-# 114 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
+# 114 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
 #define _IOFBF 0
 #define _IOLBF 1
 #define _IONBF 2
@@ -33795,7 +33795,7 @@ typedef _fpos_t fpos_t;
 
 
 #define __VALIST __gnuc_va_list
-# 186 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
+# 186 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
 FILE * tmpfile (void);
 char * tmpnam (char *);
 
@@ -33858,7 +33858,7 @@ int sprintf (char *restrict, const char *restrict, ...)
                __attribute__ ((__format__ (__printf__, 2, 3)));
 int remove (const char *);
 int rename (const char *, const char *);
-# 266 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
+# 266 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
 int snprintf (char *restrict, size_t, const char *restrict, ...)
                __attribute__ ((__format__ (__printf__, 3, 4)));
 int vsnprintf (char *restrict, size_t, const char *restrict, __gnuc_va_list)
@@ -33869,7 +33869,7 @@ int vscanf (const char *, __gnuc_va_list)
                __attribute__ ((__format__ (__scanf__, 1, 0)));
 int vsscanf (const char *restrict, const char *restrict, __gnuc_va_list)
                __attribute__ ((__format__ (__scanf__, 2, 0)));
-# 396 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
+# 396 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
 int _asiprintf_r (struct _reent *, char **, const char *, ...)
                __attribute__ ((__format__ (__printf__, 3, 4)));
 char * _asniprintf_r (struct _reent *, char *, size_t *, const char *, ...)
@@ -34007,12 +34007,12 @@ int _vsscanf_r (struct _reent *, const char *restrict, const char *restrict, __g
 int fpurge (FILE *);
 ssize_t __getdelim (char **, size_t *, int, FILE *);
 ssize_t __getline (char **, size_t *, FILE *);
-# 577 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
+# 577 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
 int __srget_r (struct _reent *, FILE *);
 int __swbuf_r (struct _reent *, int, FILE *);
-# 654 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
+# 654 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
 #define __sgetc_raw_r(__ptr,__f) (--(__f)->_r < 0 ? __srget_r(__ptr, __f) : (int)(*(__f)->_p++))
-# 683 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
+# 683 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
 #define __sgetc_r(__ptr,__p) __sgetc_raw_r(__ptr, __p)
 
 
@@ -34027,7 +34027,7 @@ static __inline__ int __sputc_r(struct _reent *_ptr, int _c, FILE *_p) {
  else
   return (__swbuf_r(_ptr, _c, _p));
 }
-# 719 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
+# 719 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
 #define __sfeof(p) ((int)(((p)->_flags & __SEOF) != 0))
 #define __sferror(p) ((int)(((p)->_flags & __SERR) != 0))
 #define __sclearerr(p) ((void)((p)->_flags &= ~(__SERR|__SEOF)))
@@ -34038,7 +34038,7 @@ static __inline__ int __sputc_r(struct _reent *_ptr, int _c, FILE *_p) {
 #define feof(p) __sfeof(p)
 #define ferror(p) __sferror(p)
 #define clearerr(p) __sclearerr(p)
-# 741 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
+# 741 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
 static __inline int
 _getchar_unlocked(void)
 {
@@ -34056,22 +34056,22 @@ _putchar_unlocked(int _c)
  _ptr = _impure_ptr;
  return (__sputc_r(_ptr, _c, ((_ptr)->_stdout)));
 }
-# 797 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h" 3
+# 797 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h" 3
 
-# 55 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h" 2
-
-
+# 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h" 2
 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error_weak.h" 1
-# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error_weak.h"
+
+
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error_weak.h" 1
+# 41 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error_weak.h"
 #define APP_ERROR_WEAK_H__ 
-# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error_weak.h"
+# 77 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error_weak.h"
 
-# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error_weak.h"
+# 77 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error_weak.h"
 void app_error_fault_handler(uint32_t id, uint32_t pc, uint32_t info);
-# 60 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h" 2
-# 70 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
+# 60 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h" 2
+# 70 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
 #define NRF_FAULT_ID_SDK_RANGE_START (0x00004000)
 
 
@@ -34104,7 +34104,7 @@ typedef struct
 #define APP_ERROR_ERROR_INFO_OFFSET_ERR_CODE (offsetof(error_info_t, err_code))
 #define APP_ERROR_ERROR_INFO_SIZE (sizeof(error_info_t))
 #define APP_ERROR_ERROR_INFO_SIZE_ALIGNED_8BYTE ALIGN_NUM(APP_ERROR_ERROR_INFO_SIZE, sizeof(uint64_t))
-# 111 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
+# 111 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
 void app_error_handler(uint32_t error_code, uint32_t line_num, const uint8_t * p_file_name);
 
 
@@ -34112,9 +34112,9 @@ void app_error_handler(uint32_t error_code, uint32_t line_num, const uint8_t * p
 
 
 void app_error_handler_bare(ret_code_t error_code);
-# 127 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
+# 127 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
 void app_error_save_and_stop(uint32_t id, uint32_t pc, uint32_t info);
-# 137 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
+# 137 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
 void app_error_log_handle(uint32_t id, uint32_t pc, uint32_t info);
 
 
@@ -34124,12 +34124,12 @@ void app_error_log_handle(uint32_t id, uint32_t pc, uint32_t info);
 
 
 #define APP_ERROR_HANDLER(ERR_CODE) do { app_error_handler((ERR_CODE), __LINE__, (uint8_t*) __FILE__); } while (0)
-# 161 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
+# 161 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
 #define APP_ERROR_CHECK(ERR_CODE) do { const uint32_t LOCAL_ERR_CODE = (ERR_CODE); if (LOCAL_ERR_CODE != NRF_SUCCESS) { APP_ERROR_HANDLER(LOCAL_ERR_CODE); } } while (0)
-# 175 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
+# 175 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_error.h"
 #define APP_ERROR_CHECK_BOOL(BOOLEAN_VALUE) do { const uint32_t LOCAL_BOOLEAN_VALUE = (BOOLEAN_VALUE); if (!LOCAL_BOOLEAN_VALUE) { APP_ERROR_HANDLER(0); } } while (0)
-# 61 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h" 2
-# 76 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
+# 61 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h" 2
+# 76 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
 #define _PRIO_SD_HIGH 0
 #define _PRIO_SD_MID 1
 #define _PRIO_APP_HIGH 2
@@ -34182,12 +34182,12 @@ typedef enum
 
 
 #define NRF_BREAKPOINT __asm__("BKPT 0");
-# 138 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
+# 138 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
 #define NRF_BREAKPOINT_COND do { if (CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) { NRF_BREAKPOINT; } }while (0)
-# 154 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
+# 154 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
 #define PACKED __attribute__((packed))
 #define PACKED_STRUCT struct PACKED
-# 165 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
+# 165 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
 #define PRAGMA_OPTIMIZATION_FORCE_START _Pragma("GCC push_options") _Pragma ("GCC optimize (\"Os\")")
 
 #define PRAGMA_OPTIMIZATION_FORCE_END _Pragma ("GCC pop_options")
@@ -34199,13 +34199,13 @@ typedef enum
 
 void app_util_critical_region_enter (uint8_t *p_nested);
 void app_util_critical_region_exit (uint8_t nested);
-# 184 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
+# 184 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
 #define CRITICAL_REGION_ENTER() { uint8_t __CR_NESTED = 0; app_util_critical_region_enter(&__CR_NESTED);
-# 199 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
+# 199 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
 #define CRITICAL_REGION_EXIT() app_util_critical_region_exit(__CR_NESTED); }
-# 223 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
+# 223 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
 #define ANON_UNIONS_ENABLE struct semicolon_swallower
-# 238 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
+# 238 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
 #define ANON_UNIONS_DISABLE struct semicolon_swallower
 
 
@@ -34215,12 +34215,12 @@ void app_util_critical_region_exit (uint8_t nested);
 
 
 #define GCC_PRAGMA(v) _Pragma(v)
-# 260 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
+# 260 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
 uint8_t current_int_priority_get(void);
-# 269 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
+# 269 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util_platform.h"
 uint8_t privilege_level_get(void);
-# 60 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 2
-# 70 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 60 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 2
+# 70 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 #define FDS_FILE_ID_INVALID (0xFFFF)
 
 
@@ -34268,16 +34268,16 @@ typedef struct
 
     uint32_t record_id;
 } fds_header_t;
-# 126 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 126 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 typedef struct
 {
     uint32_t record_id;
     uint32_t const * p_record;
     uint16_t gc_run_count;
     
-# 131 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 3 4
+# 131 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 3 4
    _Bool 
-# 131 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 131 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
                     record_is_open;
 } fds_record_desc_t;
 
@@ -34317,7 +34317,7 @@ typedef struct
     uint16_t page;
     uint16_t length_words;
 } fds_reserve_token_t;
-# 178 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 178 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 typedef struct
 {
     uint32_t const * p_addr;
@@ -34353,9 +34353,9 @@ typedef struct
             uint16_t file_id;
             uint16_t record_key;
             
-# 212 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 3 4
+# 212 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 3 4
            _Bool 
-# 212 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 212 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
                     is_record_updated;
         } write;
         struct
@@ -34395,11 +34395,11 @@ typedef struct
 
 
     uint16_t freeable_words;
-# 259 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 259 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
     
-# 259 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 3 4
+# 259 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h" 3 4
    _Bool 
-# 259 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 259 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
         corruption;
 } fds_stat_t;
 
@@ -34409,64 +34409,64 @@ typedef struct
 
 
 typedef void (*fds_cb_t)(fds_evt_t const * p_evt);
-# 280 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 280 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_register(fds_cb_t cb);
-# 296 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 296 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_init(void);
-# 335 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 335 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_record_write(fds_record_desc_t * p_desc,
                             fds_record_t const * p_record);
-# 358 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 358 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_reserve(fds_reserve_token_t * p_token, uint16_t length_words);
-# 370 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 370 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_reserve_cancel(fds_reserve_token_t * p_token);
-# 410 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 410 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_record_write_reserved(fds_record_desc_t * p_desc,
                                      fds_record_t const * p_record,
                                      fds_reserve_token_t const * p_token);
-# 434 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 434 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_record_delete(fds_record_desc_t * p_desc);
-# 456 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 456 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_file_delete(uint16_t file_id);
-# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 495 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_record_update(fds_record_desc_t * p_desc,
                              fds_record_t const * p_record);
-# 514 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 514 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_record_iterate(fds_record_desc_t * p_desc,
                               fds_find_token_t * p_token);
-# 534 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 534 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_record_find(uint16_t file_id,
                            uint16_t record_key,
                            fds_record_desc_t * p_desc,
                            fds_find_token_t * p_token);
-# 555 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 555 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_record_find_by_key(uint16_t record_key,
                                   fds_record_desc_t * p_desc,
                                   fds_find_token_t * p_token);
-# 575 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 575 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_record_find_in_file(uint16_t file_id,
                                    fds_record_desc_t * p_desc,
                                    fds_find_token_t * p_token);
-# 604 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 604 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_record_open(fds_record_desc_t * p_desc,
                            fds_flash_record_t * p_flash_record);
-# 624 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 624 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_record_close(fds_record_desc_t * p_desc);
-# 639 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 639 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_gc(void);
-# 658 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 658 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_descriptor_from_rec_id(fds_record_desc_t * p_desc,
                                       uint32_t record_id);
-# 678 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 678 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_record_id_from_desc(fds_record_desc_t const * p_desc,
                                    uint32_t * p_record_id);
-# 693 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
+# 693 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.h"
 ret_code_t fds_stat(fds_stat_t * p_stat);
-# 43 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h" 1
-# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
+# 43 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h" 1
+# 41 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
 #define FDS_INTERNAL_DEFS_H__ 
-# 55 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
+# 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
 #define FDS_PAGE_TAG_SIZE (2)
 #define FDS_PAGE_TAG_WORD_0 (0)
 #define FDS_PAGE_TAG_WORD_1 (1)
@@ -34515,7 +34515,7 @@ ret_code_t fds_stat(fds_stat_t * p_stat);
 
 
 #define FDS_PAGE_SIZE (FDS_VIRTUAL_PAGE_SIZE)
-# 114 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
+# 114 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
 typedef enum
 {
     FDS_PAGE_DATA,
@@ -34541,9 +34541,9 @@ typedef struct
     uint16_t words_reserved;
     uint32_t volatile records_open;
     
-# 138 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h" 3 4
+# 138 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h" 3 4
    _Bool 
-# 138 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
+# 138 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
                            can_gc;
 } fds_page_t;
 
@@ -34595,7 +34595,7 @@ typedef enum
     FDS_OP_DEL_FILE_FLAG_DIRTY,
     FDS_OP_DEL_DONE,
 } fds_delete_step_t;
-# 200 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
+# 200 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
 typedef struct
 {
     fds_op_code_t op_code;
@@ -34622,7 +34622,7 @@ typedef struct
         } del;
     };
 } fds_op_t;
-# 236 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
+# 236 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
 enum
 {
     PAGE_ERASED = 0x1,
@@ -34694,27 +34694,27 @@ typedef struct
     uint32_t const * p_record_src;
     uint16_t run_count;
     
-# 306 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h" 3 4
+# 306 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h" 3 4
    _Bool 
-# 306 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
+# 306 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
                     do_gc_page[(3 - 1)];
     
-# 307 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h" 3 4
+# 307 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h" 3 4
    _Bool 
-# 307 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
+# 307 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
                     resume;
 } fds_gc_data_t;
-# 319 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
+# 319 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds_internal_defs.h"
 #define CRITICAL_SECTION_ENTER() 
 #define CRITICAL_SECTION_EXIT() 
-# 44 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
+# 44 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
 
 
 
 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h" 1
-# 52 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h" 1
+# 52 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 #define NRF_ATOMIC_H__ 
 
 
@@ -34728,88 +34728,88 @@ typedef volatile uint32_t nrf_atomic_u32_t;
 
 
 typedef volatile uint32_t nrf_atomic_flag_t;
-# 80 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 80 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_store(nrf_atomic_u32_t * p_data, uint32_t value);
-# 90 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 90 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_store(nrf_atomic_u32_t * p_data, uint32_t value);
-# 100 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 100 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_or(nrf_atomic_u32_t * p_data, uint32_t value);
-# 110 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 110 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_or(nrf_atomic_u32_t * p_data, uint32_t value);
-# 120 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 120 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_and(nrf_atomic_u32_t * p_data, uint32_t value);
-# 130 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 130 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_and(nrf_atomic_u32_t * p_data, uint32_t value);
-# 140 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 140 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_xor(nrf_atomic_u32_t * p_data, uint32_t value);
-# 150 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 150 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_xor(nrf_atomic_u32_t * p_data, uint32_t value);
-# 160 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 160 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_add(nrf_atomic_u32_t * p_data, uint32_t value);
-# 170 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 170 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_add(nrf_atomic_u32_t * p_data, uint32_t value);
-# 180 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 180 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_sub(nrf_atomic_u32_t * p_data, uint32_t value);
-# 190 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 190 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_sub(nrf_atomic_u32_t * p_data, uint32_t value);
-# 206 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 206 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 
-# 206 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h" 3 4
+# 206 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h" 3 4
 _Bool 
-# 206 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 206 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
     nrf_atomic_u32_cmp_exch(nrf_atomic_u32_t * p_data,
                              uint32_t * p_expected,
                              uint32_t desired);
-# 218 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 218 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_fetch_sub_hs(nrf_atomic_u32_t * p_data, uint32_t value);
-# 228 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 228 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_u32_sub_hs(nrf_atomic_u32_t * p_data, uint32_t value);
-# 239 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 239 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_flag_set_fetch(nrf_atomic_flag_t * p_data);
-# 248 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 248 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_flag_set(nrf_atomic_flag_t * p_data);
-# 257 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 257 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_flag_clear_fetch(nrf_atomic_flag_t * p_data);
-# 266 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
+# 266 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic/nrf_atomic.h"
 uint32_t nrf_atomic_flag_clear(nrf_atomic_flag_t * p_data);
-# 50 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 1
-# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 50 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 1
+# 41 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 #define NRF_ATFIFO_H__ 
 
 
 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h" 1
-# 47 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h" 1
-# 48 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nordic_common.h" 1
+# 47 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/nrf_assert.h" 1
+# 48 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 2
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h" 1
-# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h" 1
+# 41 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
 #define NRF_LOG_INSTANCE_H 
 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h" 1
-# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h" 1
+# 41 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_H__ 
-# 73 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 73 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_START_ADDR(section_name) &CONCAT_2(__start_, section_name)
-# 89 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 89 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_END_ADDR(section_name) &CONCAT_2(__stop_, section_name)
-# 101 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 101 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_LENGTH(section_name) ((size_t)NRF_SECTION_END_ADDR(section_name) - (size_t)NRF_SECTION_START_ADDR(section_name))
-# 120 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 120 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_DEF(section_name,data_type) extern data_type * CONCAT_2(__start_, section_name); extern void * CONCAT_2(__stop_, section_name)
-# 148 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 148 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_ITEM_REGISTER(section_name,section_var) section_var __attribute__ ((section("." STRINGIFY(section_name)))) __attribute__((used))
-# 170 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 170 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_ITEM_GET(section_name,data_type,i) ((data_type*)NRF_SECTION_START_ADDR(section_name) + (i))
-# 180 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
+# 180 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/experimental_section_vars/nrf_section.h"
 #define NRF_SECTION_ITEM_COUNT(section_name,data_type) NRF_SECTION_LENGTH(section_name) / sizeof(data_type)
-# 45 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h" 2
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_types.h" 1
-# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_types.h"
+# 45 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h" 2
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_types.h" 1
+# 41 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_types.h"
 #define NRF_LOG_TYPES_H 
 
 
@@ -34861,8 +34861,8 @@ typedef struct
     nrf_log_severity_t compiled_lvl;
     nrf_log_severity_t initial_lvl;
 } nrf_log_module_const_data_t;
-# 46 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h" 2
-# 55 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
+# 46 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h" 2
+# 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
 #define NRF_LOG_DYNAMIC_SECTION_NAME(_module_name) CONCAT_2(log_dynamic_data_,_module_name)
 #define NRF_LOG_FILTER_SECTION_NAME(_module_name) CONCAT_2(log_filter_data_,_module_name)
 #define NRF_LOG_CONST_SECTION_NAME(_module_name) CONCAT_2(log_const_data_,_module_name)
@@ -34890,20 +34890,20 @@ extern nrf_log_module_const_data_t * __start_log_const_data; extern void * __sto
 
 
 #define NRF_LOG_INTERNAL_CONST_ITEM_REGISTER(_name,_str_name,_info_color,_debug_color,_initial_lvl,_compiled_lvl) NRF_SECTION_ITEM_REGISTER(NRF_LOG_CONST_SECTION_NAME(_name), _CONST nrf_log_module_const_data_t NRF_LOG_ITEM_DATA_CONST(_name)) = { .p_module_name = _str_name, .info_color_id = (_info_color), .debug_color_id = (_debug_color), .compiled_lvl = (nrf_log_severity_t)(_compiled_lvl), .initial_lvl = (nrf_log_severity_t)(_initial_lvl), }
-# 107 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
+# 107 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
 #define NRF_LOG_INTERNAL_ITEM_REGISTER(_name,_str_name,_info_color,_debug_color,_initial_lvl,_compiled_lvl) NRF_LOG_INTERNAL_CONST_ITEM_REGISTER(_name, _str_name, _info_color, _debug_color, _initial_lvl, _compiled_lvl)
-# 158 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
+# 158 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/log/nrf_log_instance.h"
 #define NRF_LOG_INSTANCE_PTR_DECLARE(_p_name) 
 #define NRF_LOG_INSTANCE_REGISTER(_module_name,_inst_name,info_color,debug_color,_initial_lvl,compiled_lvl) 
 #define NRF_LOG_INSTANCE_PTR_INIT(_p_name,_module_name,_inst_name) 
-# 50 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 2
-# 112 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 50 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 2
+# 112 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 typedef struct nrf_atfifo_postag_pos_s
 {
     uint16_t wr;
     uint16_t rd;
 }nrf_atfifo_postag_pos_t;
-# 125 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 125 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 typedef union nrf_atfifo_postag_u
 {
     uint32_t tag;
@@ -34952,52 +34952,52 @@ typedef struct nrf_atfifo_rcontext_s
 
 
 #define NRF_ATFIFO_LOG_NAME atfifo
-# 197 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 197 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 #define NRF_ATFIFO_BUF_NAME(fifo_id) CONCAT_2(fifo_id, _data)
-# 212 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 212 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 #define NRF_ATFIFO_INST_NAME(fifo_id) CONCAT_2(fifo_id, _inst)
-# 238 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 238 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 #define NRF_ATFIFO_DEF(fifo_id,storage_type,item_cnt) static storage_type NRF_ATFIFO_BUF_NAME(fifo_id)[(item_cnt)+1]; NRF_LOG_INSTANCE_REGISTER(NRF_ATFIFO_LOG_NAME, fifo_id, NRF_ATFIFO_CONFIG_INFO_COLOR, NRF_ATFIFO_CONFIG_DEBUG_COLOR, NRF_ATFIFO_CONFIG_LOG_INIT_FILTER_LEVEL, NRF_ATFIFO_CONFIG_LOG_ENABLED ? NRF_ATFIFO_CONFIG_LOG_LEVEL : NRF_LOG_SEVERITY_NONE); static nrf_atfifo_t NRF_ATFIFO_INST_NAME(fifo_id) = { .p_buf = NULL, NRF_LOG_INSTANCE_PTR_INIT(p_log, NRF_ATFIFO_LOG_NAME, fifo_id) }; static nrf_atfifo_t * const fifo_id = &NRF_ATFIFO_INST_NAME(fifo_id)
-# 264 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 264 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 #define NRF_ATFIFO_INIT(fifo_id) nrf_atfifo_init( fifo_id, NRF_ATFIFO_BUF_NAME(fifo_id), sizeof(NRF_ATFIFO_BUF_NAME(fifo_id)), sizeof(NRF_ATFIFO_BUF_NAME(fifo_id)[0]) )
-# 292 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 292 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 ret_code_t nrf_atfifo_init(nrf_atfifo_t * const p_fifo, void * p_buf, uint16_t buf_size, uint16_t item_size);
-# 320 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 320 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 ret_code_t nrf_atfifo_clear(nrf_atfifo_t * const p_fifo);
-# 343 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 343 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 ret_code_t nrf_atfifo_alloc_put(nrf_atfifo_t * const p_fifo, void const * const p_var, size_t size, 
-# 343 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 3 4
+# 343 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 3 4
                                                                                                    _Bool 
-# 343 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 343 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
                                                                                                         * const p_visible);
-# 356 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 356 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 void * nrf_atfifo_item_alloc(nrf_atfifo_t * const p_fifo, nrf_atfifo_item_put_t * p_context);
-# 372 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 372 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 
-# 372 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 3 4
+# 372 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 3 4
 _Bool 
-# 372 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 372 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
     nrf_atfifo_item_put(nrf_atfifo_t * const p_fifo, nrf_atfifo_item_put_t * p_context);
-# 388 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 388 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 ret_code_t nrf_atfifo_get_free(nrf_atfifo_t * const p_fifo, void * const p_var, size_t size, 
-# 388 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 3 4
+# 388 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 3 4
                                                                                             _Bool 
-# 388 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 388 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
                                                                                                  * p_released);
-# 400 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 400 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 void * nrf_atfifo_item_get(nrf_atfifo_t * const p_fifo, nrf_atfifo_item_get_t * p_context);
-# 415 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 415 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
 
-# 415 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 3 4
+# 415 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h" 3 4
 _Bool 
-# 415 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
+# 415 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/atomic_fifo/nrf_atfifo.h"
     nrf_atfifo_item_free(nrf_atfifo_t * const p_fifo, nrf_atfifo_item_get_t * p_context);
-# 51 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
+# 51 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 1
-# 41 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 1
+# 41 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
 #define NRF_FSTORAGE_H__ 
-# 78 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 78 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
 #define NRF_FSTORAGE_DEF(inst) NRF_SECTION_ITEM_REGISTER(fs_data, inst)
 
 
@@ -35041,21 +35041,21 @@ typedef struct
     uint32_t erase_unit;
     uint32_t program_unit;
     
-# 120 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 3 4
+# 120 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 3 4
    _Bool 
-# 120 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 120 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
             rmap;
     
-# 121 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 3 4
+# 121 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 3 4
    _Bool 
-# 121 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 121 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
             wmap;
 } const nrf_fstorage_info_t;
 
 
 
 struct nrf_fstorage_api_s;
-# 136 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 136 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
 typedef struct
 {
 
@@ -35107,55 +35107,55 @@ typedef struct nrf_fstorage_api_s
     uint8_t * (*wmap)(nrf_fstorage_t const * p_fs, uint32_t addr);
 
     
-# 186 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 3 4
+# 186 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 3 4
    _Bool 
-# 186 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 186 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
         (*is_busy)(nrf_fstorage_t const * p_fs);
 } const nrf_fstorage_api_t;
-# 200 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 200 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
 ret_code_t nrf_fstorage_init(nrf_fstorage_t * p_fs,
                              nrf_fstorage_api_t * p_api,
                              void * p_param);
-# 215 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 215 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
 ret_code_t nrf_fstorage_uninit(nrf_fstorage_t * p_fs, void * p_param);
-# 234 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 234 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
 ret_code_t nrf_fstorage_read(nrf_fstorage_t const * p_fs,
                              uint32_t addr,
                              void * p_dest,
                              uint32_t len);
-# 268 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 268 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
 ret_code_t nrf_fstorage_write(nrf_fstorage_t const * p_fs,
                               uint32_t dest,
                               void const * p_src,
                               uint32_t len,
                               void * p_param);
-# 295 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 295 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
 ret_code_t nrf_fstorage_erase(nrf_fstorage_t const * p_fs,
                               uint32_t page_addr,
                               uint32_t len,
                               void * p_param);
-# 309 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 309 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
 uint8_t const * nrf_fstorage_rmap(nrf_fstorage_t const * p_fs, uint32_t addr);
-# 320 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 320 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
 uint8_t * nrf_fstorage_wmap(nrf_fstorage_t const * p_fs, uint32_t addr);
-# 332 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 332 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
  
-# 332 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 3 4
+# 332 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 3 4
 _Bool 
-# 332 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
+# 332 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h"
      nrf_fstorage_is_busy(nrf_fstorage_t const * p_fs);
-# 53 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
+# 53 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage_sd.h" 1
-# 52 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage_sd.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage_sd.h" 1
+# 52 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage_sd.h"
 #define NRF_FSTORAGE_SD_H__ 
 
-# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 1
-# 55 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage_sd.h" 2
-# 67 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage_sd.h"
+# 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage.h" 1
+# 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage_sd.h" 2
+# 67 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fstorage/nrf_fstorage_sd.h"
 extern nrf_fstorage_api_t nrf_fstorage_sd;
-# 55 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
-# 66 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 2
+# 66 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
 static void fs_event_handler(nrf_fstorage_evt_t * evt);
 
 nrf_fstorage_t m_fs __attribute__ ((section("." "fs_data"))) __attribute__((used)) =
@@ -35168,9 +35168,9 @@ nrf_fstorage_t m_fs __attribute__ ((section("." "fs_data"))) __attribute__((used
 static struct
 {
     
-# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 77 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
    _Bool 
-# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 77 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
         volatile initialized;
     nrf_atomic_flag_t initializing;
 } m_flags;
@@ -35188,9 +35188,9 @@ static nrf_atomic_u32_t m_latest_rec_id;
 
 
 static fds_op_t m_queue_data[(4)+1]; ; static nrf_atfifo_t m_queue_inst = { .p_buf = 
-# 93 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 93 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
 ((void *)0)
-# 93 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 93 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
 , }; static nrf_atfifo_t * const m_queue = &m_queue_inst;
 
 
@@ -35206,9 +35206,9 @@ static void event_send(fds_evt_t const * const p_evt)
     for (uint32_t user = 0; user < 4; user++)
     {
         if (m_cb_table[user] != 
-# 107 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 107 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                ((void *)0)
-# 107 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 107 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                    )
         {
             m_cb_table[user](p_evt);
@@ -35267,9 +35267,9 @@ static void event_prepare(fds_op_t const * const p_op, fds_evt_t * const p_evt)
 
 
 static 
-# 164 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 164 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
       _Bool 
-# 164 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 164 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
            header_has_next(fds_header_t const * p_hdr, uint32_t const * p_page_end)
 {
     uint32_t const * const p_hdr32 = (uint32_t*)p_hdr;
@@ -35311,15 +35311,15 @@ static fds_header_status_t header_check(fds_header_t const * p_hdr, uint32_t con
 
 
 static 
-# 204 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 204 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
       _Bool 
-# 204 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 204 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
            address_is_valid(uint32_t const * const p_addr)
 {
     return ((p_addr != 
-# 206 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 206 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                       ((void *)0)
-# 206 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 206 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                           ) &&
             (p_addr >= (uint32_t*)m_fs.start_addr) &&
             (p_addr <= (uint32_t*)m_fs.end_addr) &&
@@ -35331,9 +35331,9 @@ static
 static fds_page_type_t page_identify(uint32_t const * const p_page_addr)
 {
     if ( (p_page_addr == 
-# 216 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 216 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                           ((void *)0)
-# 216 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 216 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                               )
         || (p_page_addr[(0)] != (0xDEADC0DE)))
     {
@@ -35356,19 +35356,19 @@ static fds_page_type_t page_identify(uint32_t const * const p_page_addr)
 
 
 static 
-# 237 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 237 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
       _Bool 
-# 237 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 237 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
            page_can_tag(uint32_t const * const p_page_addr)
 {
-# 247 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 247 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
     if ((p_page_addr[(0)] != (0xFFFFFFFF)) &&
         (p_page_addr[(0)] != (0xDEADC0DE)))
     {
         return 
-# 250 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 250 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
               0
-# 250 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 250 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                    ;
     }
 
@@ -35378,26 +35378,26 @@ static
         if (*(p_page_addr + i) != (0xFFFFFFFF))
         {
             return 
-# 258 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 258 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                   0
-# 258 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 258 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                        ;
         }
     }
 
     return 
-# 262 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 262 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
           1
-# 262 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 262 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
               ;
 }
 
 
 
 static 
-# 267 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 267 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
       _Bool 
-# 267 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 267 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
            page_has_space(uint16_t page, uint16_t length_words)
 {
     length_words += m_pages[page].write_offset;
@@ -35436,9 +35436,9 @@ static ret_code_t page_from_record(uint16_t * const p_page, uint32_t const * con
 static void page_scan(uint32_t const * p_addr,
                       uint16_t * const words_written,
                       
-# 304 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 304 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                      _Bool 
-# 304 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 304 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                     * const can_gc)
 {
     uint32_t const * const p_page_end = p_addr + (1024);
@@ -35463,15 +35463,15 @@ static void page_scan(uint32_t const * p_addr,
         else
         {
             if (can_gc != 
-# 327 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 327 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                          ((void *)0)
-# 327 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 327 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                              )
             {
                 *can_gc = 
-# 329 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 329 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                          1
-# 329 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 329 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                              ;
             }
 
@@ -35516,9 +35516,9 @@ static ret_code_t page_tag_write_swap(void)
 
     static uint32_t const page_tag_swap[] = {(0xDEADC0DE), (0xF11E01FF)};
     return nrf_fstorage_write(&m_fs, (uint32_t)m_swap_page.p_addr, page_tag_swap, (2) * sizeof(uint32_t), 
-# 372 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 372 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                                                                                        ((void *)0)
-# 372 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 372 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                                                                            );
 }
 
@@ -35529,9 +35529,9 @@ static ret_code_t page_tag_write_data(uint32_t const * const p_page_addr)
 
     static uint32_t const page_tag_data[] = {(0xDEADC0DE), (0xF11E01FE)};
     return nrf_fstorage_write(&m_fs, (uint32_t)p_page_addr, page_tag_data, (2) * sizeof(uint32_t), 
-# 381 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 381 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                                                                                 ((void *)0)
-# 381 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 381 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                                                                     );
 }
 
@@ -35541,13 +35541,13 @@ static ret_code_t page_tag_write_data(uint32_t const * const p_page_addr)
 static ret_code_t write_space_reserve(uint16_t length_words, uint16_t * p_page)
 {
     
-# 389 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 389 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
    _Bool 
-# 389 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 389 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                   space_reserved = 
-# 389 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 389 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                     0
-# 389 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 389 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                          ;
     uint16_t const total_len_words = length_words + (3);
 
@@ -35563,9 +35563,9 @@ static ret_code_t write_space_reserve(uint16_t length_words, uint16_t * p_page)
             (page_has_space(page, total_len_words)))
         {
             space_reserved = 
-# 403 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 403 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                             1
-# 403 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 403 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                 ;
             *p_page = page;
 
@@ -35599,9 +35599,9 @@ static uint32_t record_id_new(void)
 
 
 static 
-# 435 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 435 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
       _Bool 
-# 435 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 435 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
            record_find_next(uint16_t page, uint32_t const ** p_record)
 {
     uint32_t const * p_page_end = (m_pages[page].p_addr + (1024));
@@ -35611,9 +35611,9 @@ static
     fds_header_t const * p_header = (fds_header_t*)(*p_record);
 
     if (p_header != 
-# 443 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 443 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                    ((void *)0)
-# 443 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 443 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                        )
     {
         p_header = header_jump(p_header);
@@ -35634,9 +35634,9 @@ static
             case FDS_HEADER_VALID:
                 *p_record = (uint32_t*)p_header;
                 return 
-# 462 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 462 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                       1
-# 462 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 462 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                           ;
 
             case FDS_HEADER_DIRTY:
@@ -35647,18 +35647,18 @@ static
 
 
                 return 
-# 471 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 471 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                       0
-# 471 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 471 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                            ;
         }
     }
 
 
     return 
-# 476 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 476 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
           0
-# 476 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 476 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                ;
 }
 
@@ -35666,9 +35666,9 @@ static
 
 
 static 
-# 482 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 482 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
       _Bool 
-# 482 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 482 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
            record_find_by_desc(fds_record_desc_t * const p_desc, uint16_t * const p_page)
 {
 
@@ -35687,9 +35687,9 @@ static
     {
 
         uint32_t const * p_record = 
-# 499 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 499 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                    ((void *)0)
-# 499 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 499 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                        ;
 
         while (record_find_next(*p_page, &p_record))
@@ -35700,18 +35700,18 @@ static
                 p_desc->p_record = p_record;
                 p_desc->gc_run_count = m_gc.run_count;
                 return 
-# 508 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 508 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                       1
-# 508 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 508 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                           ;
             }
         }
     }
 
     return 
-# 513 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 513 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
           0
-# 513 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 513 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                ;
 }
 
@@ -35731,13 +35731,13 @@ static ret_code_t record_find(uint16_t const * p_file_id,
     }
 
     if (p_desc == 
-# 531 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 531 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                  ((void *)0) 
-# 531 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 531 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                       || p_token == 
-# 531 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 531 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                     ((void *)0)
-# 531 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 531 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                         )
     {
         return FDS_ERR_NULL_ARG;
@@ -35759,9 +35759,9 @@ static ret_code_t record_find(uint16_t const * p_file_id,
 
 
             if ((p_file_id != 
-# 551 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 551 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                              ((void *)0)
-# 551 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 551 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                  ) &&
                 (p_header->file_id != *p_file_id))
             {
@@ -35769,9 +35769,9 @@ static ret_code_t record_find(uint16_t const * p_file_id,
             }
 
             if ((p_record_key != 
-# 557 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 557 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                 ((void *)0)
-# 557 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 557 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                     ) &&
                 (p_header->record_key != *p_record_key))
             {
@@ -35789,9 +35789,9 @@ static ret_code_t record_find(uint16_t const * p_file_id,
 
 
         p_token->p_addr = 
-# 573 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 573 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                          ((void *)0)
-# 573 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 573 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                              ;
     }
 
@@ -35805,9 +35805,9 @@ static void records_stat(uint16_t page,
                          uint16_t * p_dirty_records,
                          uint16_t * p_freeable_words,
                          
-# 585 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 585 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                         _Bool 
-# 585 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 585 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                  * p_corruption)
 {
     fds_header_t const * p_header = (fds_header_t*)(m_pages[page].p_addr + (2));
@@ -35833,9 +35833,9 @@ static void records_stat(uint16_t page,
                 *p_dirty_records += 1;
                 *p_freeable_words += (p_page_end - (uint32_t*)p_header);
                 *p_corruption = 
-# 609 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 609 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                     1
-# 609 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 609 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                         ;
 
                 return;
@@ -35881,13 +35881,13 @@ static void queue_free(nrf_atfifo_item_get_t * p_iget_ctx)
 
 
 static 
-# 653 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 653 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
       _Bool 
-# 653 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 653 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
            queue_has_next(void)
 {
 
-    if (0) { if (m_queued_op_cnt != 0) { } else { assert_nrf_callback((uint16_t)656, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"); } };
+    if (0) { if (m_queued_op_cnt != 0) { } else { assert_nrf_callback((uint16_t)656, (uint8_t *)"/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"); } };
     return nrf_atomic_u32_sub(&m_queued_op_cnt, 1);
 }
 
@@ -35900,13 +35900,13 @@ static fds_init_opts_t pages_init(void)
     uint16_t page = 0;
     uint16_t total_pages_available = 3;
     
-# 668 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 668 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
    _Bool 
-# 668 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 668 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
             swap_set_but_not_found = 
-# 668 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 668 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                      0
-# 668 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 668 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                           ;
 
     for (uint16_t i = 0; i < 3; i++)
@@ -35921,9 +35921,9 @@ static fds_init_opts_t pages_init(void)
                 if (page_can_tag(p_page_addr))
                 {
                     if (m_swap_page.p_addr != 
-# 681 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 681 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                              ((void *)0)
-# 681 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 681 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                  )
                     {
 
@@ -35943,9 +35943,9 @@ static fds_init_opts_t pages_init(void)
                         m_swap_page.p_addr = p_page_addr;
                         m_swap_page.write_offset = (2);
                         swap_set_but_not_found = 
-# 699 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 699 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                   1
-# 699 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 699 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                       ;
                     }
 
@@ -35993,9 +35993,9 @@ static fds_init_opts_t pages_init(void)
 
 
                 page_scan(p_page_addr, &m_swap_page.write_offset, 
-# 745 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 745 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                                  ((void *)0)
-# 745 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 745 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                      );
 
                 ret |= (m_swap_page.write_offset == (2)) ?
@@ -36027,9 +36027,9 @@ static ret_code_t record_header_write_begin(fds_op_t * const p_op, uint32_t * co
 
     ret = nrf_fstorage_write(&m_fs, (uint32_t)(p_addr + (0)),
         &p_op->write.header.record_key, (1) * sizeof(uint32_t), 
-# 775 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 775 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                                               ((void *)0)
-# 775 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 775 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                                   );
 
     return (ret == ((0x0) + 0)) ? ((0x0) + 0) : FDS_ERR_BUSY;
@@ -36043,17 +36043,17 @@ static ret_code_t record_header_write_id(fds_op_t * const p_op, uint32_t * const
 
 
     p_op->write.step = (p_op->write.p_data != 
-# 787 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 787 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                              ((void *)0)
-# 787 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 787 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                  ) ?
                         FDS_OP_WRITE_DATA : FDS_OP_WRITE_HEADER_FINALIZE;
 
     ret = nrf_fstorage_write(&m_fs, (uint32_t)(p_addr + (2)),
         &p_op->write.header.record_id, (1) * sizeof(uint32_t), 
-# 791 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 791 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                                              ((void *)0)
-# 791 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 791 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                                  );
 
     return (ret == ((0x0) + 0)) ? ((0x0) + 0) : FDS_ERR_BUSY;
@@ -36071,9 +36071,9 @@ static ret_code_t record_header_write_finalize(fds_op_t * const p_op, uint32_t *
 
     ret = nrf_fstorage_write(&m_fs, (uint32_t)(p_addr + (1)),
         &p_op->write.header.file_id, (1) * sizeof(uint32_t), 
-# 807 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 807 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                                            ((void *)0)
-# 807 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 807 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                                );
 
     return (ret == ((0x0) + 0)) ? ((0x0) + 0) : FDS_ERR_BUSY;
@@ -36091,9 +36091,9 @@ static ret_code_t record_header_flag_dirty(uint32_t * const p_record, uint16_t p
 
     ret = nrf_fstorage_write(&m_fs, (uint32_t)p_record,
         &dirty_header, (1) * sizeof(uint32_t), 
-# 823 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 823 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                              ((void *)0)
-# 823 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 823 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                  );
 
     if (ret != ((0x0) + 0))
@@ -36102,9 +36102,9 @@ static ret_code_t record_header_flag_dirty(uint32_t * const p_record, uint16_t p
     }
 
     m_pages[page_to_gc].can_gc = 
-# 830 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 830 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                 1
-# 830 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 830 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                     ;
 
     return ((0x0) + 0);
@@ -36155,9 +36155,9 @@ static ret_code_t file_find_and_delete(fds_op_t * const p_op)
 
 
     ret = record_find(&p_op->del.file_id, 
-# 879 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 879 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                          ((void *)0)
-# 879 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 879 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                              , &desc, &tok);
 
     if (ret == ((0x0) + 0))
@@ -36184,22 +36184,22 @@ static ret_code_t record_write_data(fds_op_t * const p_op, uint32_t * const p_ad
 
     ret = nrf_fstorage_write(&m_fs, (uint32_t)(p_addr + (3)),
         p_op->write.p_data, p_op->write.header.length_words * sizeof(uint32_t), 
-# 904 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 904 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                                                 ((void *)0)
-# 904 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 904 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                                     );
 
     return (ret == ((0x0) + 0)) ? ((0x0) + 0) : FDS_ERR_BUSY;
 }
-# 929 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 929 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
 static void gc_init(void)
 {
     m_gc.run_count++;
     m_gc.cur_page = 0;
     m_gc.resume = 
-# 933 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 933 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                    0
-# 933 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 933 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                         ;
 
 
@@ -36214,19 +36214,19 @@ static void gc_init(void)
 
 
 static 
-# 946 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 946 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
       _Bool 
-# 946 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 946 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
            gc_page_next(uint16_t * const p_next_page)
 {
     
-# 948 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 948 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
    _Bool 
-# 948 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 948 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
         ret = 
-# 948 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 948 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
               0
-# 948 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 948 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                    ;
 
     for (uint16_t i = 0; i < (3 - 1); i++)
@@ -36235,23 +36235,23 @@ static
         {
 
             m_gc.do_gc_page[i] = 
-# 955 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 955 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                 0
-# 955 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 955 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                      ;
 
 
             if ((m_pages[i].records_open == 0) && (m_pages[i].can_gc == 
-# 958 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 958 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                                        1
-# 958 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 958 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                            ))
             {
                 *p_next_page = i;
                 ret = 
-# 961 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 961 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                      1
-# 961 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 961 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                          ;
                 break;
             }
@@ -36268,9 +36268,9 @@ static ret_code_t gc_swap_erase(void)
     m_swap_page.write_offset = (2);
 
     return nrf_fstorage_erase(&m_fs, (uint32_t)m_swap_page.p_addr, (1024 / (1024)), 
-# 976 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 976 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                                                           ((void *)0)
-# 976 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 976 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                                               );
 }
 
@@ -36287,9 +36287,9 @@ static ret_code_t gc_page_erase(void)
         m_gc.state = GC_ERASE_PAGE;
 
         ret = nrf_fstorage_erase(&m_fs, (uint32_t)m_pages[gc].p_addr, (1024 / (1024)), 
-# 991 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 991 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                                                              ((void *)0)
-# 991 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 991 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                                                  );
     }
     else
@@ -36317,9 +36317,9 @@ static ret_code_t gc_record_copy(void)
     return nrf_fstorage_write(&m_fs, (uint32_t)p_dest, m_gc.p_record_src,
                               record_len * sizeof(uint32_t),
                               
-# 1017 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1017 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                              ((void *)0)
-# 1017 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1017 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                  );
 }
 
@@ -36356,9 +36356,9 @@ static ret_code_t gc_tag_new_swap(void)
 {
     m_gc.state = GC_TAG_NEW_SWAP;
     m_gc.p_record_src = 
-# 1052 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1052 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                        ((void *)0)
-# 1052 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1052 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                            ;
     return page_tag_write_swap();
 }
@@ -36372,9 +36372,9 @@ static ret_code_t gc_next_page(void)
         m_gc.state = GC_BEGIN;
         m_gc.cur_page = 0;
         m_gc.p_record_src = 
-# 1064 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1064 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                            ((void *)0)
-# 1064 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1064 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                ;
 
         return (0x1D1D);
@@ -36409,9 +36409,9 @@ static void gc_swap_pages(void)
 
 
     m_pages[m_gc.cur_page].can_gc = 
-# 1097 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1097 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                    0
-# 1097 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1097 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                         ;
 }
 
@@ -36465,9 +36465,9 @@ static ret_code_t init_execute(uint32_t prev_ret, fds_op_t * const p_op)
     {
 
         m_flags.initializing = 
-# 1149 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1149 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                               0
-# 1149 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1149 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                    ;
         return FDS_ERR_OPERATION_TIMEOUT;
     }
@@ -36485,13 +36485,13 @@ static ret_code_t init_execute(uint32_t prev_ret, fds_op_t * const p_op)
         {
 
             
-# 1165 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1165 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
            _Bool 
-# 1165 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1165 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                 write_reqd = 
-# 1165 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1165 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                              0
-# 1165 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1165 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                   ;
             for (uint16_t i = 0; i < (3 - 1); i++)
             {
@@ -36499,9 +36499,9 @@ static ret_code_t init_execute(uint32_t prev_ret, fds_op_t * const p_op)
                 {
                     m_pages[i].page_type = FDS_PAGE_DATA;
                     write_reqd = 
-# 1171 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1171 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                           1
-# 1171 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1171 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                               ;
                     ret = page_tag_write_data(m_pages[i].p_addr);
                     break;
@@ -36510,14 +36510,14 @@ static ret_code_t init_execute(uint32_t prev_ret, fds_op_t * const p_op)
             if (!write_reqd)
             {
                 m_flags.initialized = 
-# 1178 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1178 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                       1
-# 1178 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1178 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                           ;
                 m_flags.initializing = 
-# 1179 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1179 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                       0
-# 1179 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1179 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                            ;
                 return (0x1D1D);
             }
@@ -36530,9 +36530,9 @@ static ret_code_t init_execute(uint32_t prev_ret, fds_op_t * const p_op)
             m_swap_page.write_offset = (2);
 
             ret = nrf_fstorage_erase(&m_fs, (uint32_t)m_swap_page.p_addr, (1024 / (1024)), 
-# 1190 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1190 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                                                                  ((void *)0)
-# 1190 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1190 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                                                                      );
         } break;
 
@@ -36566,9 +36566,9 @@ static ret_code_t init_execute(uint32_t prev_ret, fds_op_t * const p_op)
     {
 
         m_flags.initializing = 
-# 1222 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1222 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                               0
-# 1222 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1222 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                    ;
         return FDS_ERR_BUSY;
     }
@@ -36610,9 +36610,9 @@ static ret_code_t write_execute(uint32_t prev_ret, fds_op_t * const p_op)
 
 
             desc.p_record = 
-# 1262 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1262 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                             ((void *)0)
-# 1262 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1262 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                 ;
             desc.record_id = p_op->write.record_to_delete;
 
@@ -36647,7 +36647,7 @@ static ret_code_t write_execute(uint32_t prev_ret, fds_op_t * const p_op)
 
         case FDS_OP_WRITE_DONE:
             ret = (0x1D1D);
-# 1305 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1305 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
             break;
 
         default:
@@ -36718,9 +36718,9 @@ static ret_code_t gc_execute(uint32_t prev_ret)
     if (m_gc.resume)
     {
         m_gc.resume = 
-# 1374 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1374 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                      0
-# 1374 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1374 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                           ;
     }
     else
@@ -36771,26 +36771,26 @@ static void queue_process(ret_code_t result)
     static nrf_atfifo_item_get_t m_iget_ctx;
 
     while (
-# 1423 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1423 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
           1
-# 1423 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1423 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
               )
     {
         if (m_p_cur_op == 
-# 1425 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1425 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                          ((void *)0)
-# 1425 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1425 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                              )
         {
 
             m_p_cur_op = queue_load(&m_iget_ctx);
         }
-# 1438 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1438 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
         if (0) { if (m_p_cur_op != 
-# 1438 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1438 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
        ((void *)0)
-# 1438 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
-       ) { } else { assert_nrf_callback((uint16_t)1438, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"); } };
+# 1438 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+       ) { } else { assert_nrf_callback((uint16_t)1438, (uint8_t *)"/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"); } };
 
         switch (m_p_cur_op->op_code)
         {
@@ -36844,9 +36844,9 @@ static void queue_process(ret_code_t result)
 
 
         m_p_cur_op = 
-# 1491 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1491 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                     ((void *)0)
-# 1491 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1491 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                         ;
 
 
@@ -36899,9 +36899,9 @@ static ret_code_t write_enqueue(fds_record_desc_t * const p_desc,
     }
 
     if (p_record == 
-# 1542 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1542 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                    ((void *)0)
-# 1542 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1542 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                        )
     {
         return FDS_ERR_NULL_ARG;
@@ -36920,9 +36920,9 @@ static ret_code_t write_enqueue(fds_record_desc_t * const p_desc,
 
 
     if (p_tok == 
-# 1559 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1559 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                 ((void *)0)
-# 1559 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1559 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                     )
     {
 
@@ -36945,9 +36945,9 @@ static ret_code_t write_enqueue(fds_record_desc_t * const p_desc,
 
     p_op = queue_buf_get(&iput_ctx);
     if (p_op == 
-# 1580 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1580 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                ((void *)0)
-# 1580 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1580 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                    )
     {
         ;
@@ -36972,29 +36972,29 @@ static ret_code_t write_enqueue(fds_record_desc_t * const p_desc,
 
         p_op->write.record_to_delete = p_desc->record_id;
     }
-# 1616 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1616 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
     p_op->write.header.crc16 = crc;
 
     queue_buf_store(&iput_ctx);
 
 
     if (p_desc != 
-# 1621 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1621 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                  ((void *)0)
-# 1621 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1621 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                      )
     {
         p_desc->p_record = 
-# 1623 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1623 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                 ((void *)0)
-# 1623 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1623 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                     ;
 
         p_desc->record_id = p_op->write.header.record_id;
         p_desc->record_is_open = 
-# 1626 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1626 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                 0
-# 1626 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1626 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                      ;
         p_desc->gc_run_count = m_gc.run_count;
     }
@@ -37060,9 +37060,9 @@ static ret_code_t flash_subsystem_init(void)
 
 
         return nrf_fstorage_init(&m_fs, &nrf_fstorage_sd, 
-# 1690 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1690 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                                          ((void *)0)
-# 1690 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1690 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                              );
 
 
@@ -37125,14 +37125,14 @@ ret_code_t fds_init(void)
         {
 
             m_flags.initialized = 
-# 1751 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1751 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                   1
-# 1751 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1751 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                       ;
             m_flags.initializing = 
-# 1752 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1752 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                   0
-# 1752 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1752 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                        ;
             event_send(&evt_success);
             return ((0x0) + 0);
@@ -37148,9 +37148,9 @@ ret_code_t fds_init(void)
 
     fds_op_t * p_op = queue_buf_get(&iput_ctx);
     if (p_op == 
-# 1766 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1766 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                ((void *)0)
-# 1766 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1766 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                    )
     {
         return FDS_ERR_NO_SPACE_IN_QUEUES;
@@ -37197,13 +37197,13 @@ ret_code_t fds_record_open(fds_record_desc_t * const p_desc,
     uint16_t page;
 
     if ((p_desc == 
-# 1811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                   ((void *)0)
-# 1811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                       ) || (p_flash_rec == 
-# 1811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                            ((void *)0)
-# 1811 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1811 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                ))
     {
         return FDS_ERR_NULL_ARG;
@@ -37213,7 +37213,7 @@ ret_code_t fds_record_open(fds_record_desc_t * const p_desc,
     if (record_find_by_desc(p_desc, &page))
     {
         fds_header_t const * const p_header = (fds_header_t*)p_desc->p_record;
-# 1830 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1830 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
         (void) nrf_atomic_u32_add(&m_pages[page].records_open, 1);
 
 
@@ -37222,9 +37222,9 @@ ret_code_t fds_record_open(fds_record_desc_t * const p_desc,
 
 
         p_desc->record_is_open = 
-# 1837 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1837 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                 1
-# 1837 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1837 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                     ;
 
         return ((0x0) + 0);
@@ -37242,9 +37242,9 @@ ret_code_t fds_record_close(fds_record_desc_t * const p_desc)
     uint16_t page;
 
     if (p_desc == 
-# 1853 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1853 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                  ((void *)0)
-# 1853 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1853 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                      )
     {
         return FDS_ERR_NULL_ARG;
@@ -37258,9 +37258,9 @@ ret_code_t fds_record_close(fds_record_desc_t * const p_desc)
 
             m_pages[page].records_open--;
             p_desc->record_is_open = 
-# 1865 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1865 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                     0
-# 1865 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1865 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                          ;
 
             ret = ((0x0) + 0);
@@ -37291,9 +37291,9 @@ ret_code_t fds_reserve(fds_reserve_token_t * const p_tok, uint16_t length_words)
     }
 
     if (p_tok == 
-# 1894 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1894 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                 ((void *)0)
-# 1894 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1894 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                     )
     {
         return FDS_ERR_NULL_ARG;
@@ -37321,9 +37321,9 @@ ret_code_t fds_reserve_cancel(fds_reserve_token_t * const p_tok)
     }
 
     if (p_tok == 
-# 1920 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1920 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                 ((void *)0)
-# 1920 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1920 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                     )
     {
         return FDS_ERR_NULL_ARG;
@@ -37364,9 +37364,9 @@ ret_code_t fds_record_write(fds_record_desc_t * const p_desc,
                             fds_record_t const * const p_record)
 {
     return write_enqueue(p_desc, p_record, 
-# 1959 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1959 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                           ((void *)0)
-# 1959 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1959 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                               , FDS_OP_WRITE);
 }
 
@@ -37377,9 +37377,9 @@ ret_code_t fds_record_write_reserved(fds_record_desc_t * const p_desc,
 {
 
     if (p_tok == 
-# 1968 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1968 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                 ((void *)0)
-# 1968 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1968 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                     )
     {
         return FDS_ERR_NULL_ARG;
@@ -37394,18 +37394,18 @@ ret_code_t fds_record_update(fds_record_desc_t * const p_desc,
 {
 
     if (p_desc == 
-# 1981 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1981 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                  ((void *)0)
-# 1981 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1981 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                      )
     {
         return FDS_ERR_NULL_ARG;
     }
 
     return write_enqueue(p_desc, p_record, 
-# 1986 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 1986 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                           ((void *)0)
-# 1986 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 1986 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                               , FDS_OP_UPDATE);
 }
 
@@ -37421,9 +37421,9 @@ ret_code_t fds_record_delete(fds_record_desc_t * const p_desc)
     }
 
     if (p_desc == 
-# 2000 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2000 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                  ((void *)0)
-# 2000 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2000 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                      )
     {
         return FDS_ERR_NULL_ARG;
@@ -37431,9 +37431,9 @@ ret_code_t fds_record_delete(fds_record_desc_t * const p_desc)
 
     p_op = queue_buf_get(&iput_ctx);
     if (p_op == 
-# 2006 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2006 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                ((void *)0)
-# 2006 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2006 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                    )
     {
         return FDS_ERR_NO_SPACE_IN_QUEUES;
@@ -37467,9 +37467,9 @@ ret_code_t fds_file_delete(uint16_t file_id)
 
     p_op = queue_buf_get(&iput_ctx);
     if (p_op == 
-# 2038 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2038 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                ((void *)0)
-# 2038 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2038 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                    )
     {
         return FDS_ERR_NO_SPACE_IN_QUEUES;
@@ -37498,9 +37498,9 @@ ret_code_t fds_gc(void)
 
     p_op = queue_buf_get(&iput_ctx);
     if (p_op == 
-# 2065 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2065 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                ((void *)0)
-# 2065 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2065 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                    )
     {
         return FDS_ERR_NO_SPACE_IN_QUEUES;
@@ -37514,9 +37514,9 @@ ret_code_t fds_gc(void)
     {
 
         m_gc.resume = 
-# 2077 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2077 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                      1
-# 2077 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2077 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                          ;
     }
 
@@ -37530,13 +37530,13 @@ ret_code_t fds_record_iterate(fds_record_desc_t * const p_desc,
                               fds_find_token_t * const p_token)
 {
     return record_find(
-# 2089 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2089 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                       ((void *)0)
-# 2089 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2089 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                           , 
-# 2089 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2089 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                             ((void *)0)
-# 2089 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2089 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                 , p_desc, p_token);
 }
 
@@ -37555,9 +37555,9 @@ ret_code_t fds_record_find_by_key(uint16_t record_key,
                                   fds_find_token_t * const p_token)
 {
     return record_find(
-# 2106 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2106 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                       ((void *)0)
-# 2106 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2106 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                           , &record_key, p_desc, p_token);
 }
 
@@ -37567,9 +37567,9 @@ ret_code_t fds_record_find_in_file(uint16_t file_id,
                                    fds_find_token_t * const p_token)
 {
     return record_find(&file_id, 
-# 2114 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2114 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                 ((void *)0)
-# 2114 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2114 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                     , p_desc, p_token);
 }
 
@@ -37578,9 +37578,9 @@ ret_code_t fds_descriptor_from_rec_id(fds_record_desc_t * const p_desc,
                                       uint32_t record_id)
 {
     if (p_desc == 
-# 2121 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2121 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                  ((void *)0)
-# 2121 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2121 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                      )
     {
         return FDS_ERR_NULL_ARG;
@@ -37598,13 +37598,13 @@ ret_code_t fds_record_id_from_desc(fds_record_desc_t const * const p_desc,
                                    uint32_t * const p_record_id)
 {
     if ((p_desc == 
-# 2137 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2137 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                   ((void *)0)
-# 2137 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2137 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                       ) || (p_record_id == 
-# 2137 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2137 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                                            ((void *)0)
-# 2137 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2137 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                                                ))
     {
         return FDS_ERR_NULL_ARG;
@@ -37628,9 +37628,9 @@ ret_code_t fds_stat(fds_stat_t * const p_stat)
     }
 
     if (p_stat == 
-# 2159 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
+# 2159 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c" 3 4
                  ((void *)0)
-# 2159 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
+# 2159 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/fds/fds.c"
                      )
     {
         return FDS_ERR_NULL_ARG;
