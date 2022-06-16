@@ -12,18 +12,20 @@ void setup()
   Serial.print("Get BLE Advertising status : ");
   Serial.println(get_dav_status);
   if (get_dav_status) {
-    Serial.println
-	("================= Set Configuration =================");
+    Serial.
+	println("================= Set Configuration =================");
     api.ble.settings.txPower.set(8);
     if (!(ret = api.ble.settings.advertiseInterval.set(2000))) {
-      Serial.printf
+      Serial.
+	  printf
 	  ("BLE Configuration - set advertise interval is incorrect! \r\n");
       return;
     }
     char dev_name[12] =
 	{ 'R', 'A', 'K', 'B', 'L', 'E', '-', '4', '6', '3', '1', '\0' };
     if (!(ret = api.ble.settings.broadcastName.set(dev_name, 12))) {
-      Serial.printf
+      Serial.
+	  printf
 	  ("BLE Configuration - set broadcast name is incorrect! \r\n");
       return;
     }
@@ -32,14 +34,15 @@ void setup()
     Serial.println("Set BLE TX Power : 8");
     Serial.println("Set BLE Advertising Interval : 2000");
     if (!(ret = api.ble.advertise.start(60))) {
-      Serial.printf
+      Serial.
+	  printf
 	  ("BLE Configuration - set start advertise parameter is incorrect! \r\n");
       return;
     }
-    Serial.println
-	("+++++++++++++++++ START Advertising +++++++++++++++++");
-    Serial.println
-	("================= Get Configuration =================");
+    Serial.
+	println("+++++++++++++++++ START Advertising +++++++++++++++++");
+    Serial.
+	println("================= Get Configuration =================");
     int8_t get_pwr = api.ble.settings.txPower.get();
     int32_t get_adv_interval = api.ble.settings.advertiseInterval.get();
     char *get_position_2_mac_addr = api.ble.mac.get(2);

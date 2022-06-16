@@ -5,9 +5,9 @@
 #define __STDC_VERSION__ 199901L
 #define __STDC_HOSTED__ 1
 #define __GNUC__ 10
-#define __GNUC_MINOR__ 3
+#define __GNUC_MINOR__ 2
 #define __GNUC_PATCHLEVEL__ 1
-#define __VERSION__ "10.3.1 20210824 (release)"
+#define __VERSION__ "10.2.1 20201103 (release)"
 #define __ATOMIC_RELAXED 0
 #define __ATOMIC_SEQ_CST 5
 #define __ATOMIC_ACQUIRE 2

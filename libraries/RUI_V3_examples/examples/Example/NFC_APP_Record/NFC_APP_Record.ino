@@ -29,8 +29,7 @@ void setup()
   };
   static const uint8_t android_package_name[] =
       { 'c', 'o', 'm', '.', 'a', 'n', 'd', 'r', 'o', 'i', 'd', '.', 'v',
-    'e', 'n', 'd', 'i', 'n', 'g'
-  };
+'e', 'n', 'd', 'i', 'n', 'g' };
 
   Serial.begin(115200);
 

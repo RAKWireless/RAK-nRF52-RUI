@@ -5,9 +5,9 @@
 #define __STDC_VERSION__ 199901L
 #define __STDC_HOSTED__ 1
 #define __GNUC__ 10
-#define __GNUC_MINOR__ 3
+#define __GNUC_MINOR__ 2
 #define __GNUC_PATCHLEVEL__ 1
-#define __VERSION__ "10.3.1 20210824 (release)"
+#define __VERSION__ "10.2.1 20201103 (release)"
 #define __ATOMIC_RELAXED 0
 #define __ATOMIC_SEQ_CST 5
 #define __ATOMIC_ACQUIRE 2
@@ -5736,7 +5736,7 @@
 
 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 1 3
 
 
 
@@ -5746,7 +5746,7 @@
 
 #define _STRING_H_ 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 1 3
 
 
 
@@ -5756,7 +5756,7 @@
 
 #define _ANSIDECL_H_ 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 1 3
 
 
 
@@ -5770,17 +5770,17 @@
 
 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_newlib_version.h" 1 3
 
 
 
 #define _NEWLIB_VERSION_H__ 1
 
-#define _NEWLIB_VERSION "4.1.0"
-#define __NEWLIB__ 4
-#define __NEWLIB_MINOR__ 1
+#define _NEWLIB_VERSION "3.3.0"
+#define __NEWLIB__ 3
+#define __NEWLIB_MINOR__ 3
 #define __NEWLIB_PATCHLEVEL__ 0
-# 15 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h" 2 3
+# 15 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 2 3
 
 
 
@@ -5791,7 +5791,7 @@
 
 
 #define _WANT_REGISTER_FINI 1
-# 37 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h" 3
+# 37 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 3
 #define _REENT_CHECK_VERIFY 1
 
 
@@ -5799,7 +5799,7 @@
 
 
 #define _MB_LEN_MAX 1
-# 53 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h" 3
+# 53 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 3
 #define HAVE_INITFINI_ARRAY 1
 
 
@@ -5826,28 +5826,26 @@
 
 
 #define _UNBUF_STREAM_OPT 1
-# 95 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h" 3
+# 95 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h" 3
 #define _RETARGETABLE_LOCKING 1
-# 11 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 2 3
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h" 1 3
+# 11 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 1 3
 
 #define __SYS_CONFIG_H__ 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h" 1 3
-# 77 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h" 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h" 1 3
+# 77 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h" 3
 #define __IEEE_LITTLE_ENDIAN 
-# 91 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h" 3
-#define _SUPPORTS_ERREXCEPT 
-# 496 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h" 3
+# 473 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h" 3
 #define __OBSOLETE_MATH_DEFAULT 1
 
 
 #define __OBSOLETE_MATH __OBSOLETE_MATH_DEFAULT
-# 5 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h" 2 3
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 1 3
-# 22 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 3
+# 5 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 1 3
+# 22 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3
 #define _SYS_FEATURES_H 
-# 33 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 3
+# 33 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3
 #define __GNUC_PREREQ(maj,min) ((__GNUC__ << 16) + __GNUC_MINOR__ >= ((maj) << 16) + (min))
 
 
@@ -5856,7 +5854,7 @@
 
 
 #define __GNUC_PREREQ__(ma,mi) __GNUC_PREREQ(ma, mi)
-# 249 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 3
+# 249 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3
 #define __ATFILE_VISIBLE 0
 
 
@@ -5892,7 +5890,7 @@
 
 
 #define __MISC_VISIBLE 0
-# 299 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 3
+# 299 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3
 #define __POSIX_VISIBLE 0
 
 
@@ -5900,12 +5898,12 @@
 
 
 #define __SVID_VISIBLE 0
-# 319 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 3
+# 319 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3
 #define __XSI_VISIBLE 0
-# 330 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h" 3
+# 330 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/features.h" 3
 #define __SSP_FORTIFY_LEVEL 0
-# 6 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h" 2 3
-# 224 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h" 3
+# 6 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 2 3
+# 224 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 3
 #define _POINTER_INT long
 
 
@@ -5917,7 +5915,7 @@
 
 
 #define __RAND_MAX 0x7fffffff
-# 250 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h" 3
+# 250 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h" 3
 #define __EXPORT 
 
 
@@ -5936,8 +5934,8 @@
 
 
 #define _READ_WRITE_BUFSIZE_TYPE int
-# 12 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 2 3
-# 31 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 3
+# 12 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 2 3
+# 31 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 3
 #define _BEGIN_STD_C 
 #define _END_STD_C 
 #define _NOTHROW 
@@ -5951,27 +5949,27 @@
 
 
 #define _ATTRIBUTE(attrs) __attribute__ (attrs)
-# 69 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 3
+# 69 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 3
 #define _ELIDABLE_INLINE static __inline__
 
 
 
 #define _NOINLINE __attribute__ ((__noinline__))
 #define _NOINLINE_STATIC _NOINLINE static
-# 11 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 2 3
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 1 3
-# 11 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
+# 11 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 1 3
+# 11 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _SYS_REENT_H_ 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h" 1 3
-# 14 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 2 3
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
-# 39 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h" 1 3
+# 14 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 39 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #define _STDDEF_H 
 #define _STDDEF_H_ 
 
 #define _ANSI_STDDEF_H 
-# 131 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 131 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #define _PTRDIFF_T 
 #define _T_PTRDIFF_ 
 #define _T_PTRDIFF 
@@ -5985,11 +5983,11 @@
 
 
 
-# 143 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 143 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 typedef int ptrdiff_t;
-# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_ptrdiff_t
-# 181 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 181 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #define __size_t__ 
 #define __SIZE_T__ 
 #define _SIZE_T 
@@ -6019,9 +6017,9 @@ typedef int ptrdiff_t;
 
 
 typedef unsigned int size_t;
-# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_size_t
-# 260 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 260 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #define __wchar_t__ 
 #define __WCHAR_T__ 
 #define _WCHAR_T 
@@ -6037,13 +6035,13 @@ typedef unsigned int size_t;
 #define __INT_WCHAR_T_H 
 #define _GCC_WCHAR_T 
 #define _WCHAR_T_DECLARED 
-# 287 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 287 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef _BSD_WCHAR_T_
-# 321 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 321 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 typedef unsigned int wchar_t;
-# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_wchar_t
-# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef NULL
 
 
@@ -6061,19 +6059,19 @@ typedef unsigned int wchar_t;
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 15 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 2 3
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 1 3
-# 20 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 3
+# 15 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 1 3
+# 20 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
 #define _SYS__TYPES_H 
 
 #define __need_size_t 
 #define __need_wint_t 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
-# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_ptrdiff_t
-# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_size_t
-# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_wchar_t
 
 
@@ -6087,7 +6085,7 @@ typedef unsigned int wchar_t;
 typedef unsigned int wint_t;
 
 #undef __need_wint_t
-# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef NULL
 
 
@@ -6105,26 +6103,26 @@ typedef unsigned int wint_t;
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 25 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 2 3
+# 25 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 2 3
 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_types.h" 1 3
 
 
 
 
 
 #define _MACHINE__TYPES_H 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 1 3
 
 
 
 
 
 #define _MACHINE__DEFAULT_TYPES_H 
-# 15 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3
+# 15 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3
 #define __EXP(x) __ ##x ##__
-# 26 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3
+# 26 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3
 #define __have_longlong64 1
 
 
@@ -6161,7 +6159,7 @@ typedef short unsigned int __uint16_t;
 
 
 #define ___int16_t_defined 1
-# 77 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3
+# 77 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3
 typedef long int __int32_t;
 
 typedef long unsigned int __uint32_t;
@@ -6169,7 +6167,7 @@ typedef long unsigned int __uint32_t;
 
 
 #define ___int32_t_defined 1
-# 103 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3
+# 103 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3
 typedef long long int __int64_t;
 
 typedef long long unsigned int __uint64_t;
@@ -6177,7 +6175,7 @@ typedef long long unsigned int __uint64_t;
 
 
 #define ___int64_t_defined 1
-# 134 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3
+# 134 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3
 typedef signed char __int_least8_t;
 
 typedef unsigned char __uint_least8_t;
@@ -6185,7 +6183,7 @@ typedef unsigned char __uint_least8_t;
 
 
 #define ___int_least8_t_defined 1
-# 160 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3
+# 160 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3
 typedef short int __int_least16_t;
 
 typedef short unsigned int __uint_least16_t;
@@ -6193,7 +6191,7 @@ typedef short unsigned int __uint_least16_t;
 
 
 #define ___int_least16_t_defined 1
-# 182 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3
+# 182 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3
 typedef long int __int_least32_t;
 
 typedef long unsigned int __uint_least32_t;
@@ -6201,7 +6199,7 @@ typedef long unsigned int __uint_least32_t;
 
 
 #define ___int_least32_t_defined 1
-# 200 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3
+# 200 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3
 typedef long long int __int_least64_t;
 
 typedef long long unsigned int __uint_least64_t;
@@ -6235,10 +6233,10 @@ typedef long long unsigned int __uintmax_t;
 typedef int __intptr_t;
 
 typedef unsigned int __uintptr_t;
-# 244 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h" 3
+# 244 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_default_types.h" 3
 #undef __EXP
-# 8 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h" 2 3
-# 28 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 2 3
+# 8 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_types.h" 2 3
+# 28 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 2 3
 
 
 typedef long __blkcnt_t;
@@ -6287,7 +6285,7 @@ typedef __uint32_t __id_t;
 
 
 typedef unsigned short __ino_t;
-# 90 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 3
+# 90 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
 typedef __uint32_t __mode_t;
 
 
@@ -6315,17 +6313,17 @@ typedef long __key_t;
 
 
 typedef long _fpos_t;
-# 127 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 3
+# 127 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
 #undef __size_t
 
 
 
 typedef unsigned int __size_t;
-# 146 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 3
+# 146 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
 #define unsigned signed
 typedef signed int _ssize_t;
 #undef unsigned
-# 158 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h" 3
+# 158 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h" 3
 typedef _ssize_t __ssize_t;
 
 
@@ -6388,7 +6386,7 @@ typedef unsigned long __useconds_t;
 
 
 typedef __builtin_va_list __va_list;
-# 16 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 2 3
+# 16 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
 
 #define _NULL 0
 
@@ -6396,11 +6394,11 @@ typedef __builtin_va_list __va_list;
 
 #define __Long long
 typedef unsigned long __ULong;
-# 34 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h" 1 3
+# 34 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/lock.h" 1 3
 
 #define __SYS_LOCK_H__ 
-# 33 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h" 3
+# 33 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/lock.h" 3
 struct __lock;
 typedef struct __lock * _LOCK_T;
 #define _LOCK_RECURSIVE_T _LOCK_T
@@ -6430,7 +6428,7 @@ extern void __retarget_lock_release(_LOCK_T lock);
 #define __lock_release(lock) __retarget_lock_release(lock)
 extern void __retarget_lock_release_recursive(_LOCK_T lock);
 #define __lock_release_recursive(lock) __retarget_lock_release_recursive(lock)
-# 35 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 2 3
+# 35 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 2 3
 typedef _LOCK_T _flock_t;
 
 
@@ -6484,7 +6482,7 @@ struct _on_exit_args {
 
  __ULong _is_cxa;
 };
-# 98 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
+# 98 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 struct _atexit {
  struct _atexit *_next;
  int _ind;
@@ -6499,12 +6497,12 @@ struct _atexit {
 
 
 #define _REENT_INIT_ATEXIT _NULL, _ATEXIT_INIT,
-# 122 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
+# 122 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 struct __sbuf {
  unsigned char *_base;
  int _size;
 };
-# 183 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
+# 183 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT_SMALL_CHECK_INIT(ptr) 
 
 
@@ -6558,7 +6556,7 @@ struct __sFILE {
   _mbstate_t _mbstate;
   int _flags2;
 };
-# 292 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
+# 292 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 typedef struct __sFILE __FILE;
 
 
@@ -6569,7 +6567,7 @@ struct _glue
   int _niobs;
   __FILE *_iobs;
 };
-# 317 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
+# 317 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _RAND48_SEED_0 (0x330e)
 #define _RAND48_SEED_1 (0xabcd)
 #define _RAND48_SEED_2 (0x1234)
@@ -6591,7 +6589,7 @@ struct _rand48 {
 #define _REENT_EMERGENCY_SIZE 25
 #define _REENT_ASCTIME_SIZE 26
 #define _REENT_SIGNAL_SIZE 24
-# 613 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
+# 613 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 struct _reent
 {
   int _errno;
@@ -6683,9 +6681,9 @@ struct _reent
 
 
 #define _REENT_INIT(var) { 0, _REENT_STDIO_STREAM(&(var), 0), _REENT_STDIO_STREAM(&(var), 1), _REENT_STDIO_STREAM(&(var), 2), 0, "", 0, _NULL, 0, _NULL, _NULL, 0, _NULL, _NULL, 0, _NULL, { { 0, _NULL, "", {0, 0, 0, 0, 0, 0, 0, 0, 0}, 0, 1, { {_RAND48_SEED_0, _RAND48_SEED_1, _RAND48_SEED_2}, {_RAND48_MULT_0, _RAND48_MULT_1, _RAND48_MULT_2}, _RAND48_ADD }, {0, {0}}, {0, {0}}, {0, {0}}, "", "", 0, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}}, {0, {0}} } }, _REENT_INIT_ATEXIT _NULL, {_NULL, 0, _NULL} }
-# 751 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
+# 751 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT_INIT_PTR_ZEROED(var) { (var)->_stdin = _REENT_STDIO_STREAM(var, 0); (var)->_stdout = _REENT_STDIO_STREAM(var, 1); (var)->_stderr = _REENT_STDIO_STREAM(var, 2); (var)->_new._reent._rand_next = 1; (var)->_new._reent._r48._seed[0] = _RAND48_SEED_0; (var)->_new._reent._r48._seed[1] = _RAND48_SEED_1; (var)->_new._reent._r48._seed[2] = _RAND48_SEED_2; (var)->_new._reent._r48._mult[0] = _RAND48_MULT_0; (var)->_new._reent._r48._mult[1] = _RAND48_MULT_1; (var)->_new._reent._r48._mult[2] = _RAND48_MULT_2; (var)->_new._reent._r48._add = _RAND48_ADD; }
-# 765 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
+# 765 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT_CHECK_RAND48(ptr) 
 #define _REENT_CHECK_MP(ptr) 
 #define _REENT_CHECK_TM(ptr) 
@@ -6744,7 +6742,7 @@ extern struct _reent *_impure_ptr ;
 extern struct _reent *const _global_impure_ptr ;
 
 void _reclaim_reent (struct _reent *);
-# 832 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h" 3
+# 832 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h" 3
 #define _REENT _impure_ptr
 
 
@@ -6755,15 +6753,15 @@ void _reclaim_reent (struct _reent *);
 
 
 #define _GLOBAL_ATEXIT (_GLOBAL_REENT->_atexit)
-# 12 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 2 3
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 1 3
-# 43 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 12 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 1 3
+# 43 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define _SYS_CDEFS_H_ 
 
 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
-# 48 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 2 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 48 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 2 3
 
 #define __PMT(args) args
 #define __DOTS , ...
@@ -6785,15 +6783,15 @@ void _reclaim_reent (struct _reent *);
 #define __bounded 
 #define __unbounded 
 #define __ptrvalue 
-# 78 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 78 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __has_extension __has_feature
 
 
 #define __has_feature(x) 0
-# 94 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 94 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __BEGIN_DECLS 
 #define __END_DECLS 
-# 107 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 107 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __GNUCLIKE_ASM 3
 #define __GNUCLIKE_MATH_BUILTIN_CONSTANTS 
 
@@ -6848,7 +6846,7 @@ void _reclaim_reent (struct _reent *);
 #define __CC_SUPPORTS_VARADIC_XXX 1
 
 #define __CC_SUPPORTS_DYNAMIC_ARRAY_INIT 1
-# 177 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 177 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __P(protos) protos
 #define __CONCAT1(x,y) x ## y
 #define __CONCAT(x,y) __CONCAT1(x,y)
@@ -6858,9 +6856,9 @@ void _reclaim_reent (struct _reent *);
 #define __const const
 #define __signed signed
 #define __volatile volatile
-# 230 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 230 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __weak_symbol __attribute__((__weak__))
-# 243 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 243 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __dead2 __attribute__((__noreturn__))
 #define __pure2 __attribute__((__const__))
 #define __unused __attribute__((__unused__))
@@ -6878,7 +6876,7 @@ void _reclaim_reent (struct _reent *);
 
 
 #define __alloc_align(x) __attribute__((__alloc_align__(x)))
-# 280 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 280 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define _Alignas(x) __aligned(x)
 
 
@@ -6887,13 +6885,19 @@ void _reclaim_reent (struct _reent *);
 
 
 #define _Alignof(x) __alignof(x)
-# 302 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 296 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
+#define _Atomic(T) struct { T volatile __val; }
+
+
+
+
+
 #define _Noreturn __dead2
-# 331 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 331 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define _Thread_local __thread
-# 351 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 351 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __generic(expr,t,yes,no) __builtin_choose_expr( __builtin_types_compatible_p(__typeof(expr), t), yes, no)
-# 366 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 366 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __min_size(x) static (x)
 
 
@@ -6943,9 +6947,9 @@ void _reclaim_reent (struct _reent *);
 
 
 #define __unreachable() __builtin_unreachable()
-# 434 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 434 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __restrict restrict
-# 467 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 467 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __predict_true(exp) __builtin_expect((exp), 1)
 #define __predict_false(exp) __builtin_expect((exp), 0)
 
@@ -6959,12 +6963,12 @@ void _reclaim_reent (struct _reent *);
 
 
 #define __hidden __attribute__((__visibility__("hidden")))
-# 489 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 489 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __offsetof(type,field) offsetof(type, field)
 #define __rangeof(type,start,end) (__offsetof(type, end) - __offsetof(type, start))
-# 500 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 500 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __containerof(x,s,m) ({ const volatile __typeof(((s *)0)->m) *__x = (x); __DEQUALIFY(s *, (const volatile char *)__x - __offsetof(s, m));})
-# 522 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 522 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __printflike(fmtarg,firstvararg) __attribute__((__format__ (__printf__, fmtarg, firstvararg)))
 
 #define __scanflike(fmtarg,firstvararg) __attribute__((__format__ (__scanf__, fmtarg, firstvararg)))
@@ -6973,7 +6977,7 @@ void _reclaim_reent (struct _reent *);
 #define __strfmonlike(fmtarg,firstvararg) __attribute__((__format__ (__strfmon__, fmtarg, firstvararg)))
 
 #define __strftimelike(fmtarg,firstvararg) __attribute__((__format__ (__strftime__, fmtarg, firstvararg)))
-# 539 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 539 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __printf0like(fmtarg,firstvararg) 
 
 
@@ -6994,7 +6998,7 @@ void _reclaim_reent (struct _reent *);
 #define __sym_compat(sym,impl,verid) __asm__(".symver " #impl ", " #sym "@" #verid)
 
 #define __sym_default(sym,impl,verid) __asm__(".symver " #impl ", " #sym "@@" #verid)
-# 593 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 593 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __FBSDID(s) struct __hack
 
 
@@ -7035,10 +7039,10 @@ void _reclaim_reent (struct _reent *);
 #define _Null_unspecified 
 #define __NULLABILITY_PRAGMA_PUSH 
 #define __NULLABILITY_PRAGMA_POP 
-# 653 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 653 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __arg_type_tag(arg_kind,arg_idx,type_tag_idx) 
 #define __datatype_type_tag(kind,type) 
-# 672 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
+# 672 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h" 3
 #define __lock_annotate(x) 
 
 
@@ -7078,27 +7082,23 @@ void _reclaim_reent (struct _reent *);
 
 
 #define __no_lock_analysis __lock_annotate(no_thread_safety_analysis)
-# 721 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h" 3
-#define __nosanitizeaddress 
-#define __nosanitizethread 
-
 
 
 #define __guarded_by(x) __lock_annotate(guarded_by(x))
 #define __pt_guarded_by(x) __lock_annotate(pt_guarded_by(x))
-# 13 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 2 3
+# 13 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
 
 
 #define __need_size_t 
 #define __need_NULL 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
-# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_ptrdiff_t
-# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_size_t
-# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_wchar_t
-# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef NULL
 
 
@@ -7116,8 +7116,8 @@ void _reclaim_reent (struct _reent *);
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 18 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 2 3
-# 27 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 3
+# 18 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
+# 27 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
 
 
 void * memchr (const void *, int, size_t);
@@ -7144,19 +7144,19 @@ char *strstr (const char *, const char *);
 char *strtok (char *restrict, const char *restrict);
 
 size_t strxfrm (char *restrict, const char *restrict, size_t);
-# 86 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 3
+# 86 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
 char *_strdup_r (struct _reent *, const char *);
 
 
 
 char *_strndup_r (struct _reent *, const char *, size_t);
-# 112 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 3
+# 112 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
 char * _strerror_r (struct _reent *, int, int, int *);
-# 134 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 3
+# 134 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
 char *strsignal (int __signo);
-# 175 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 3
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h" 1 3
-# 176 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h" 2 3
+# 175 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/string.h" 1 3
+# 176 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/string.h" 2 3
 
 
 # 47 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/backend/cc310/cc310_backend_ecc.c" 2
@@ -7165,15 +7165,15 @@ char *strsignal (int __signo);
 # 42 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/nrf_crypto_mem.h"
 #define NRF_CRYPTO_MEM_H__ 
 # 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/nrf_crypto_mem.h"
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h" 1 3 4
-# 9 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h" 3 4
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 1 3 4
-# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 1 3 4
+# 9 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 1 3 4
+# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define _STDINT_H 
 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 1 3 4
-# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 1 3 4
+# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define _SYS__INTSUP_H 
 
 
@@ -7181,7 +7181,7 @@ char *strsignal (int __signo);
 
 
 #define __STDINT_EXP(x) __ ##x ##__
-# 35 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 35 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
        
        
        
@@ -7206,7 +7206,7 @@ char *strsignal (int __signo);
 #define __int20__ +2
 #define int +2
 #define long +4
-# 67 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 67 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define _INTPTR_EQ_INT 
 
 
@@ -7223,11 +7223,11 @@ char *strsignal (int __signo);
 
 
 #define __INT8 "hh"
-# 93 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 93 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __INT16 "h"
-# 104 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 104 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __INT32 "l"
-# 113 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 113 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __INT64 "ll"
 
 
@@ -7236,7 +7236,7 @@ char *strsignal (int __signo);
 
 
 #define __FAST8 
-# 129 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 129 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __FAST16 
 
 
@@ -7245,17 +7245,17 @@ char *strsignal (int __signo);
 
 
 #define __FAST32 
-# 147 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 147 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __FAST64 "ll"
 
 
 
 #define __LEAST8 "hh"
-# 162 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 162 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __LEAST16 "h"
-# 173 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 173 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __LEAST32 "l"
-# 182 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 182 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #define __LEAST64 "ll"
 
 #undef signed
@@ -7269,18 +7269,18 @@ char *strsignal (int __signo);
        
        
        
-# 194 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 194 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #undef __int20
        
-# 195 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h" 3 4
+# 195 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_intsup.h" 3 4
 #undef __int20__
        
        
-# 14 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 2 3 4
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h" 1 3 4
-# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h" 3 4
+# 14 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 2 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h" 1 3 4
+# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h" 3 4
 #define _SYS__STDINT_H 
-# 20 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h" 3 4
+# 20 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_stdint.h" 3 4
 typedef __int8_t int8_t ;
 #define _INT8_T_DECLARED 
 
@@ -7345,7 +7345,7 @@ typedef __intptr_t intptr_t;
 
 typedef __uintptr_t uintptr_t;
 #define _UINTPTR_T_DECLARED 
-# 15 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 2 3 4
+# 15 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 2 3 4
 
 
 
@@ -7373,7 +7373,7 @@ typedef __uint_least32_t uint_least32_t;
 typedef __int_least64_t int_least64_t;
 typedef __uint_least64_t uint_least64_t;
 #define __int_least64_t_defined 1
-# 51 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 51 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
   typedef int int_fast8_t;
   typedef unsigned int uint_fast8_t;
 #define __int_fast8_t_defined 1
@@ -7407,11 +7407,11 @@ typedef __uint_least64_t uint_least64_t;
   typedef long long int int_fast64_t;
   typedef long long unsigned int uint_fast64_t;
 #define __int_fast64_t_defined 1
-# 128 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 128 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INTPTR_MIN (-__INTPTR_MAX__ - 1)
 #define INTPTR_MAX (__INTPTR_MAX__)
 #define UINTPTR_MAX (__UINTPTR_MAX__)
-# 152 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 152 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT8_MIN (-__INT8_MAX__ - 1)
 #define INT8_MAX (__INT8_MAX__)
 #define UINT8_MAX (__UINT8_MAX__)
@@ -7425,7 +7425,7 @@ typedef __uint_least64_t uint_least64_t;
 #define INT_LEAST8_MIN (-__INT_LEAST8_MAX__ - 1)
 #define INT_LEAST8_MAX (__INT_LEAST8_MAX__)
 #define UINT_LEAST8_MAX (__UINT_LEAST8_MAX__)
-# 174 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 174 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT16_MIN (-__INT16_MAX__ - 1)
 #define INT16_MAX (__INT16_MAX__)
 #define UINT16_MAX (__UINT16_MAX__)
@@ -7439,39 +7439,39 @@ typedef __uint_least64_t uint_least64_t;
 #define INT_LEAST16_MIN (-__INT_LEAST16_MAX__ - 1)
 #define INT_LEAST16_MAX (__INT_LEAST16_MAX__)
 #define UINT_LEAST16_MAX (__UINT_LEAST16_MAX__)
-# 196 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 196 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT32_MIN (-__INT32_MAX__ - 1)
 #define INT32_MAX (__INT32_MAX__)
 #define UINT32_MAX (__UINT32_MAX__)
-# 212 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 212 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_LEAST32_MIN (-__INT_LEAST32_MAX__ - 1)
 #define INT_LEAST32_MAX (__INT_LEAST32_MAX__)
 #define UINT_LEAST32_MAX (__UINT_LEAST32_MAX__)
-# 230 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 230 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT64_MIN (-__INT64_MAX__ - 1)
 #define INT64_MAX (__INT64_MAX__)
 #define UINT64_MAX (__UINT64_MAX__)
-# 246 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 246 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_LEAST64_MIN (-__INT_LEAST64_MAX__ - 1)
 #define INT_LEAST64_MAX (__INT_LEAST64_MAX__)
 #define UINT_LEAST64_MAX (__UINT_LEAST64_MAX__)
-# 262 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 262 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST8_MIN (-__INT_FAST8_MAX__ - 1)
 #define INT_FAST8_MAX (__INT_FAST8_MAX__)
 #define UINT_FAST8_MAX (__UINT_FAST8_MAX__)
-# 278 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 278 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST16_MIN (-__INT_FAST16_MAX__ - 1)
 #define INT_FAST16_MAX (__INT_FAST16_MAX__)
 #define UINT_FAST16_MAX (__UINT_FAST16_MAX__)
-# 294 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 294 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST32_MIN (-__INT_FAST32_MAX__ - 1)
 #define INT_FAST32_MAX (__INT_FAST32_MAX__)
 #define UINT_FAST32_MAX (__UINT_FAST32_MAX__)
-# 310 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 310 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT_FAST64_MIN (-__INT_FAST64_MAX__ - 1)
 #define INT_FAST64_MAX (__INT_FAST64_MAX__)
 #define UINT_FAST64_MAX (__UINT_FAST64_MAX__)
-# 326 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 326 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INTMAX_MAX (__INTMAX_MAX__)
 #define INTMAX_MIN (-INTMAX_MAX - 1)
 
@@ -7510,9 +7510,9 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define WCHAR_MIN (__WCHAR_MIN__)
-# 374 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 374 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define WCHAR_MAX (__WCHAR_MAX__)
-# 384 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 384 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define WINT_MAX (__WINT_MAX__)
 
 
@@ -7527,19 +7527,19 @@ typedef __uint_least64_t uint_least64_t;
 
 #define INT8_C(x) __INT8_C(x)
 #define UINT8_C(x) __UINT8_C(x)
-# 408 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 408 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT16_C(x) __INT16_C(x)
 #define UINT16_C(x) __UINT16_C(x)
-# 420 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 420 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT32_C(x) __INT32_C(x)
 #define UINT32_C(x) __UINT32_C(x)
-# 433 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 433 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INT64_C(x) __INT64_C(x)
 #define UINT64_C(x) __UINT64_C(x)
-# 449 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h" 3 4
+# 449 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdint.h" 3 4
 #define INTMAX_C(x) __INTMAX_C(x)
 #define UINTMAX_C(x) __UINTMAX_C(x)
-# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h" 2 3 4
+# 10 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdint.h" 2 3 4
 
 
 
@@ -7550,8 +7550,8 @@ typedef __uint_least64_t uint_least64_t;
 #define SDK_COMMON_H__ 
 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h" 1 3 4
-# 29 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 1 3 4
+# 29 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
 #define _STDBOOL_H 
 
 
@@ -7559,7 +7559,7 @@ typedef __uint_least64_t uint_least64_t;
 #define bool _Bool
 #define true 1
 #define false 0
-# 52 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h" 3 4
+# 52 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
 # 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_common.h" 2
 
@@ -7745,7 +7745,7 @@ typedef uint32_t ret_code_t;
 
 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
 # 55 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/app_util.h" 2
 
 
@@ -32143,7 +32143,7 @@ typedef enum
 # 50 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_alloca.h"
 #define SDK_ALLOCA_H__ 
 # 66 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_alloca.h"
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/malloc.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/malloc.h" 1 3
 
 
 
@@ -32153,14 +32153,14 @@ typedef enum
 
 
 #define __need_size_t 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
-# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 155 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_ptrdiff_t
-# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 231 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_size_t
-# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 340 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef __need_wchar_t
-# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 3 4
+# 390 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
 #undef NULL
 
 
@@ -32178,16 +32178,16 @@ typedef enum
 
 
 #define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 11 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/malloc.h" 2 3
+# 11 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/malloc.h" 2 3
 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/malloc.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/malloc.h" 1 3
 
 #define _MACHMALLOC_H_ 
-# 14 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/malloc.h" 2 3
-# 22 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/malloc.h" 3
+# 14 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/malloc.h" 2 3
+# 22 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/malloc.h" 3
 
-# 22 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/malloc.h" 3
+# 22 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/malloc.h" 3
 struct mallinfo {
   size_t arena;
   size_t ordblks;
@@ -32335,7 +32335,7 @@ extern void _mstats_r (struct _reent *, char *);
 extern void cfree (void *);
 # 67 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/util/sdk_alloca.h" 2
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/alloca.h" 1 3
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/alloca.h" 1 3
 
 
 
@@ -32376,7 +32376,7 @@ extern void cfree (void *);
 # 42 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/nrf_crypto_ecc.h"
 #define NRF_CRYPTO_ECC_H__ 
 # 69 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/nrf_crypto_ecc.h"
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
 # 70 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/nrf_crypto_ecc.h" 2
 
 # 1 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/nrf_crypto_error.h" 1
@@ -32435,7 +32435,7 @@ char const * nrf_crypto_error_string_get(ret_code_t error);
 
 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
 # 47 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/nrf_crypto_ecc_shared.h" 2
 # 57 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/nrf_crypto_ecc_shared.h"
 #define NRF_CRYPTO_INTERNAL_ECC_PRIVATE_KEY_INIT_VALUE (0x4D465276)
@@ -32507,7 +32507,7 @@ ret_code_t nrf_crypto_internal_ecc_raw_input_check(
 
 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
 # 47 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/libraries/crypto/nrf_crypto_ecc_backend.h" 2
 
 
@@ -32546,7 +32546,7 @@ ret_code_t nrf_crypto_internal_ecc_raw_input_check(
 
 
 
-# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h" 1 3 4
+# 1 "/home/eddieho/tool/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
 # 45 "/home/eddieho/tmp/phase2_release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/external/nrf_cc310/include/ssi_pal_types_plat.h" 2
 
 

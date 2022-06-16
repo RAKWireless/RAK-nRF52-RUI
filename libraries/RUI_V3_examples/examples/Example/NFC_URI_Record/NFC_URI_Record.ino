@@ -32,8 +32,7 @@ void setup()
 
   static const uint8_t url[] =
       { 'r', 'a', 'k', 'w', 'i', 'r', 'e', 'l', 'e', 's', 's', '.', 'c',
-    'o', 'm'
-  };
+'o', 'm' };
 
   Serial.begin(115200);
 
