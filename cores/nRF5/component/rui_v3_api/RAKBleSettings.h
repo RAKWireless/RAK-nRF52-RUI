@@ -61,7 +61,7 @@ class RAKBleSettings {
 	 * @par	Syntax
 	 *	api.bel.setting.advertiseInterval.set(adv_interval)
 	 *
-	 * @param	adv_interval	1000ms ~10240ms
+	 * @param	adv_interval	20ms ~10240ms
    * @return	bool
 	 * @retval	TRUE for success
 	 * @retval	FALSE for failure
@@ -72,7 +72,7 @@ class RAKBleSettings {
 	 *	Get the current advertisement interval.
 	 * @par	Syntax
 	 *	api.ble.settings.advertiseInterval.get()
-	 * @return	Return the current advertisement interval(1000ms ~10240ms)
+	 * @return	Return the current advertisement interval(20ms ~10240ms)
 	 */
         int32_t get();
     };

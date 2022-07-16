@@ -2689,7 +2689,7 @@
 // <e> NRFX_PDM_ENABLED - nrfx_pdm - PDM peripheral driver
 //==========================================================
 #ifndef NRFX_PDM_ENABLED
-#define NRFX_PDM_ENABLED 0
+#define NRFX_PDM_ENABLED 1
 #endif
 // <o> NRFX_PDM_CONFIG_MODE  - Mode
  
@@ -3537,6 +3537,13 @@
 
 // </e>
 
+// <q> NRFX_SYSTICK_ENABLED  - nrfx_systick - ARM(R) SysTick driver
+
+
+#ifndef NRFX_SYSTICK_ENABLED
+#define NRFX_SYSTICK_ENABLED 1
+#endif
+
 // <e> NRFX_RTC_ENABLED - nrfx_rtc - RTC peripheral driver
 //==========================================================
 #ifndef NRFX_RTC_ENABLED
@@ -3786,7 +3793,7 @@
 #ifndef NRFX_SPIM3_ENABLED
 #define NRFX_SPIM3_ENABLED 1
 #define SPI3_ENABLED 1
-#define NRFX_SPIM_EXTENDED_ENABLED 1
+#define NRFX_SPIM_EXTENDED_ENABLED 0
 #define NRFX_SPIM3_NRF52840_ANOMALY_198_WORKAROUND_ENABLED 0
 #endif
 
@@ -5171,7 +5178,7 @@
 // <e> PDM_ENABLED - nrf_drv_pdm - PDM peripheral driver - legacy layer
 //==========================================================
 #ifndef PDM_ENABLED
-#define PDM_ENABLED 0
+#define PDM_ENABLED 1
 #endif
 // <o> PDM_CONFIG_MODE  - Mode
  
@@ -6383,7 +6390,7 @@
 // <7=> 7 
 
 #ifndef USBD_CONFIG_IRQ_PRIORITY
-#define USBD_CONFIG_IRQ_PRIORITY 2
+#define USBD_CONFIG_IRQ_PRIORITY 3
 #endif
 
 // <o> USBD_CONFIG_DMASCHEDULER_MODE  - USBD SMA scheduler working scheme

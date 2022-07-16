@@ -100,7 +100,7 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
                 {
                     nRet = AT_OK;
                 }
-                else if (ret = -UDRV_BUSY)
+                else if (ret == -UDRV_BUSY)
                 {
                     nRet = AT_BUSY_ERROR;
                 } else {
@@ -292,6 +292,46 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             }
             break;
         }
+        case SERVICE_MODE_PROTO_ATCMD_SYSV:
+        {
+            if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
+                nRet = AT_PARAM_ERROR;
+            } else {
+                float bat_lvl;
+                service_battery_get_SysVolt_level (&bat_lvl);
+                memset(buff, 0, 256);
+                reply_len = sprintf(buff+sizeof(header), "%f", bat_lvl);
+                header.length = __builtin_bswap16(reply_len);
+                header.flag = PROTO_ATCMD_FLAG_RESPONSE;
+                header.atcmd_id = atcmd_id;
+                memcpy(buff, &header, sizeof(header));
+
+                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+reply_len, NULL);
+                nRet = AT_OK;
+            }
+            break;
+        }
+#ifdef SUPPORT_BLE
+        case SERVICE_MODE_PROTO_ATCMD_BLEMAC:
+        {
+            if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
+                nRet = AT_PARAM_ERROR;
+            } else {
+                uint8_t blemac[12];
+                udrv_ble_get_macaddress(blemac);
+                memset(buff, 0, 256);
+                reply_len = sprintf(buff+sizeof(header), "%s", blemac);
+                header.length = __builtin_bswap16(reply_len);
+                header.flag = PROTO_ATCMD_FLAG_RESPONSE;
+                header.atcmd_id = atcmd_id;
+                memcpy(buff, &header, sizeof(header));
+
+                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+reply_len, NULL);
+                nRet = AT_OK;
+            }
+            break;
+        }
+#endif 
         case SERVICE_MODE_PROTO_ATCMD_LOCK:
         {
             //if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
@@ -1939,7 +1979,7 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
                 {
                     nRet = AT_OK;
                 }
-                else if (ret = -UDRV_BUSY)
+                else if (ret == -UDRV_BUSY)
                 {
                     nRet = AT_BUSY_ERROR;
                 }
@@ -2713,8 +2753,42 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             break;
         }
 #endif
+        case SERVICE_MODE_PROTO_ATCMD_AUTOSLEEP:
+        {
+            if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
+                uint8_t autosleep;
+
+                if (payload_len != 1) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                autosleep = *arg;
+
+                if (autosleep != 0 && autosleep != 1) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+
+                if (service_nvm_set_auto_sleep_time_to_nvm(autosleep) == UDRV_RETURN_OK) {
+                    nRet = AT_OK;
+                } else {
+                    nRet = AT_ERROR;
+                }
+            } else {
+                memset(buff, 0, 256);
+                *(buff+sizeof(header)) = (uint8_t)service_nvm_get_auto_sleep_time_from_nvm();
+                header.length = __builtin_bswap16(1);
+                header.flag = PROTO_ATCMD_FLAG_RESPONSE;
+                header.atcmd_id = atcmd_id;
+                memcpy(buff, &header, sizeof(header));
+
+                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+1, NULL);
+                nRet = AT_OK;
+            }
+            break;
+        }
         //case SERVICE_MODE_PROTO_ATCMD_DELBONDS:
-        //case SERVICE_MODE_PROTO_ATCMD_AUTOSLEEP:
         default:
         {
             /* do nothing */

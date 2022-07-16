@@ -477,6 +477,7 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
+#define LORA_RF_LP 1
 #define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
@@ -524,6 +525,7 @@
 #define SUPPORT_BLE 1
 #define SUPPORT_NFC 1
 #define SUPPORT_SPI 1
+#define SUPPORT_AT 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 # 23 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c"
 # 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/math.h" 1 3
@@ -4688,6 +4690,8 @@ typedef struct
     void *p_context;
 } udrv_system_event_t;
 
+typedef void (*UDRV_TASK_HANDLER) (void);
+
 void udrv_system_event_init(void);
 
 int32_t udrv_system_event_produce(udrv_system_event_t *event);
@@ -4710,6 +4714,12 @@ int32_t udrv_system_user_app_timer_create (timer_handler tmr_handler, TimerMode_
 int32_t udrv_system_user_app_timer_start (uint32_t count, void *m_data);
 
 int32_t udrv_system_user_app_timer_stop (void);
+
+int32_t udrv_create_thread(char *name, UDRV_TASK_HANDLER handler);
+void udrv_destroy_thread(char *name);
+void udrv_destroy_myself(void);
+void udrv_thread_lock(void);
+void udrv_thread_unlock(void);
 # 33 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/sx126x/radio.c" 2
 
 extern 

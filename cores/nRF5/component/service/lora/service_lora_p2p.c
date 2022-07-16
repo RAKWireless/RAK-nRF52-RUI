@@ -1,3 +1,5 @@
+#ifdef SUPPORT_LORA
+
 #include <stddef.h>
 #include <stdint.h>
 #include "udrv_errno.h"
@@ -12,6 +14,7 @@
 #include "radio.h"
 #include "service_lora_test.h"
 #include "soft-se/aes.h"
+#include "board.h"
 
 static int PKCS7Cutting(char *p, int plen);
 static int PKCS7Padding(char *p, int plen);
@@ -380,6 +383,26 @@ int32_t service_lora_p2p_set_freq(uint32_t freq)
 {
     if ((freq < 150e6) || (freq > 960e6))
         return -UDRV_WRONG_ARG;
+    
+#ifdef  rak3172
+        /* Only RAK3172 supports hardware high and low frequency detection */
+        uint8_t hardware_freq = 0;
+        hardware_freq =  BoardGetHardwareFreq();
+        if(hardware_freq)
+        {
+            if(freq < 600e6)
+            {
+                return -UDRV_WRONG_ARG;
+            }
+        }
+        else
+        {
+            if(freq >= 600e6)
+            {
+                return -UDRV_WRONG_ARG;
+            }
+        }
+#endif
 
     service_nvm_set_freq_to_nvm(freq);
     service_lora_p2p_config();
@@ -796,3 +819,4 @@ int32_t service_lora_p2p_register_recv_cb(service_lora_p2p_recv_cb_type callback
     return UDRV_RETURN_OK;
 }
 
+#endif

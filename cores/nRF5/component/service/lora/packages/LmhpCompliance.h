@@ -21,6 +21,8 @@
 #ifndef __LMHP_COMPLIANCE__
 #define __LMHP_COMPLIANCE__
 
+#ifdef SUPPORT_LORA
+
 #include "LoRaMac.h"
 #include "LmHandlerTypes.h"
 #include "LmhPackage.h"
@@ -64,5 +66,7 @@ typedef struct LmhpComplianceParams_s
 }LmhpComplianceParams_t;
 
 LmhPackage_t *LmphCompliancePackageFactory( void );
+
+#endif // end SUPPORT_LORA
 
 #endif // __LMHP_COMPLIANCE__

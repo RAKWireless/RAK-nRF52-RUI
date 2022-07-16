@@ -1,3 +1,4 @@
+#ifdef SUPPORT_AT
 #ifdef SUPPORT_LORA
 #include "atcmd_multicast.h"
 #include "udrv_errno.h"
@@ -209,4 +210,5 @@ int At_Lstmulc(SERIAL_PORT port, char *cmd, stParam *param)
         return AT_PARAM_ERROR;
     }
 }
+#endif
 #endif

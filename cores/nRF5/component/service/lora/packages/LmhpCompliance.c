@@ -18,6 +18,8 @@
  *
  * \author    Miguel Luis ( Semtech )
  */
+#ifdef SUPPORT_LORA
+
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -288,6 +290,11 @@ static void LmhpComplianceOnMcpsIndication( McpsIndication_t* mcpsIndication )
 
     if( mcpsIndication->RxData == false )
     {
+        if(ComplianceTestState.IsRunning == true)
+        {
+            // Increment the compliance certification protocol downlink counter
+            ComplianceTestState.DownLinkCounter++;       
+        }
         return;
     }
 
@@ -505,3 +512,5 @@ static void OnComplianceTxNextPacketTimerEvent( void* context )
     udrv_system_event_produce(&rui_lora_event);
     udrv_powersave_in_sleep = false;
 }
+
+#endif

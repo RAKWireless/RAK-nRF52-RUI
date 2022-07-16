@@ -69,8 +69,12 @@
 #define NUS_SERVICE_UUID_TYPE           BLE_UUID_TYPE_VENDOR_BEGIN                  /**< UUID type for the Nordic UART Service (vendor specific). */
 #define APP_BLE_OBSERVER_PRIO           2                                           /**< Application's BLE observer priority. You shouldn't need to modify this value. */
 #define APP_SOC_OBSERVER_PRIO           1                                           /**< Applications' SoC observer priority. You shouldn't need to modify this value. */
-#define APP_ADV_INTERVAL                1600                                        /**< The advertising interval (in units of 0.625 ms. This value corresponds to 100 ms). */
-#define MIN_ADV_INTERVAL                1000                                        /**< Minimum advertising interval 1000 ms */
+#define APP_ADV_INTERVAL                480                                         /**< The advertising interval (in units of 0.625 ms. This value corresponds to 100 ms). */
+#define MIN_ADV_INTERVAL                100                                         /**< Minimum advertising interval 1000 ms */
+
+#define MIN_CONN_ADV_INTERVAL           20                                          /**  Minimum advertising interval (in ms).*/
+#define MIN_NON_CONN_ADV_INTERVAL       100                                         /**	 Minimum advertising interval for non-connectable advertisements (in ms).*/
+#define MAX_ADV_INTERVAL                10240                                       /**  Maximum advertising interval (in ms).*/
 #define APP_ADV_TIMEOUT_LIMITED_MAX     180                                         /**< Maximum advertising time in 10 ms units corresponding to TGAP(lim_adv_timeout) = 180 s in limited discoverable mode. */
 #define MIN_CONN_INTERVAL               MSEC_TO_UNITS(20, UNIT_1_25_MS)             /**< Minimum acceptable connection interval (20 ms), Connection interval uses 1.25 ms units. */
 #define MAX_CONN_INTERVAL               MSEC_TO_UNITS(75, UNIT_1_25_MS)             /**< Maximum acceptable connection interval (75 ms), Connection interval uses 1.25 ms units. */

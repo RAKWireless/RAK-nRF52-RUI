@@ -1,3 +1,5 @@
+#ifdef SUPPORT_LORA
+
 #include "service_lora_test.h"
 #include <stddef.h>
 #include <stdint.h>
@@ -185,3 +187,4 @@ static bool SendFrame( void )
     return UDRV_RETURN_OK;
 }
 
+#endif 

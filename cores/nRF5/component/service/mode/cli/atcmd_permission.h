@@ -14,6 +14,10 @@
 #define ATR_PERM            ATCMD_PERM_READ
 #endif
 
+#ifndef AT_DEBUG_PERM
+#define AT_DEBUG_PERM       ATCMD_PERM_READ | ATCMD_PERM_WRITE
+#endif
+
 #ifndef AT_BOOT_PERM
 #define AT_BOOT_PERM        ATCMD_PERM_READ
 #endif
@@ -70,12 +74,25 @@
 #define AT_ALIAS_PERM       ATCMD_PERM_READ | ATCMD_PERM_WRITE
 #endif
 
+#ifndef AT_SYSV_PERM
+#define AT_SYSV_PERM        ATCMD_PERM_READ
+#endif
+
 #ifndef AT_UID_PERM
 #define AT_UID_PERM         ATCMD_PERM_READ | ATCMD_PERM_WRITE
 #endif
 
+#ifndef AT_BLEMAC_PERM
+#define AT_BLEMAC_PERM      ATCMD_PERM_READ
+#endif
+
+
 #ifndef AT_SLEEP_PERM
 #define AT_SLEEP_PERM       ATCMD_PERM_WRITE
+#endif
+
+#ifndef AT_AUTOSLEEP_PERM
+#define AT_AUTOSLEEP_PERM       ATCMD_PERM_READ | ATCMD_PERM_WRITE
 #endif
 
 #ifndef AT_LOCK_PERM
@@ -216,6 +233,10 @@
 
 #ifndef AT_LINKCHECK_PERM
 #define AT_LINKCHECK_PERM   ATCMD_PERM_READ | ATCMD_PERM_WRITE
+#endif
+
+#ifndef AT_TIMEREQ_PERM
+#define AT_TIMEREQ_PERM   ATCMD_PERM_READ | ATCMD_PERM_WRITE
 #endif
 
 #ifndef AT_PGSLOT_PERM
@@ -368,6 +389,10 @@
 
 #ifndef AT_CW_PERM
 #define AT_CW_PERM      	ATCMD_PERM_READ | ATCMD_PERM_WRITE
+#endif
+
+#ifndef AT_CELL_PERM
+#define AT_CELL_PERM      	ATCMD_PERM_READ | ATCMD_PERM_WRITE 
 #endif
 
 #endif

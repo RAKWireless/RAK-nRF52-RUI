@@ -36,7 +36,7 @@
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
- * | AT+PSF?            | --                 | AT+PSF: configure P2P Spreading Factor (5-12)                     | OK                 |
+ * | AT+PSF?            | --                 | AT+PSF: configure P2P Spreading Factor (6-12)                     | OK                 |
  * | AT+PSF=?           | --                 | <interger>                                                        | OK                 |
  * | AT+PSF=\<Param\>   | <interger>         | --                                                                | OK / AT_PARAM_ERROR|
  * | Example<br>AT+PSF=?| --                 | 7                                                                 | OK                 |
