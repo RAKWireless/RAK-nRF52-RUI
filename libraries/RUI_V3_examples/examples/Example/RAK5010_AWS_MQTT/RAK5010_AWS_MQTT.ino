@@ -239,9 +239,10 @@ void setup()
   Serial.println("Connect to MQTT server:");
   command = "AT+QMTCONN=0,\"rak5010\"\r";
   bg96_write(command.c_str());
+  delay(20000);
   command = "AT+QMTCONN?\r";
   bg96_write(command.c_str());
-  delay(2000);
+  delay(20000);
 
   Serial.println("MQTT & Subscribe to topic messages:");
   command = "AT+QMTSUB=0,1,\"$aws/things/rak5010/shadow/update/accepted\",1\r";
