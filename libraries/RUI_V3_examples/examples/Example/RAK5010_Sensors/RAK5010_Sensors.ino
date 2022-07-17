@@ -38,7 +38,6 @@ void loop()
         Serial.printf("Light = %.2f lux\r\n", sensor.opt3001.lux());
         Serial.println("---------------------------------------------------");
     } else {
-        Serial.println("Please plug in the sensor OPT3001 and Reboot");
         Serial.println("OPT3001 update fail!");
     }
 

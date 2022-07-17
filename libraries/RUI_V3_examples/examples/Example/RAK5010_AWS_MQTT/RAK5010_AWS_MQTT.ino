@@ -95,6 +95,14 @@ void setup()
   Serial.println("RAKwireless RAK5010 MQTT with SSL Example");
   Serial.println("------------------------------------------------------");
 
+  // begin for I2C
+  Wire.begin();
+
+  Serial.printf("SHTC3 init %s\r\n", sensor.shtc3.init() ? "Success" : "Fail");
+  Serial.printf("LPS22HB init %s\r\n", sensor.lps22hb.init() ? "Success" : "Fail");
+  Serial.printf("OPT3001 init %s\r\n", sensor.opt3001.init() ? "Success" : "Fail");
+  Serial.printf("LIS3DH init %s\r\n", sensor.lis3dh.init() ? "Success" : "Fail");
+
   command = "ATE1\r";
   bg96_write(command.c_str());
 
@@ -245,11 +253,6 @@ void setup()
   delay(20000);
 
   Serial.println("MQTT & Subscribe to topic messages:");
-  command = "AT+QMTSUB=0,1,\"$aws/things/rak5010/shadow/update/accepted\",1\r";
-  bg96_write(command.c_str());
-  delay(10000);
-
-  Serial.println("MQTT & Subscribe to topic messages again:");
   command = "AT+QMTSUB=0,1,\"$aws/things/rak5010/shadow/update\",1\r";
   bg96_write(command.c_str());
   delay(10000); 
@@ -257,16 +260,46 @@ void setup()
 
 void loop()
 {
-  Serial.println("MQTT & Publish messages:");
-  command = "AT+QMTPUB=0,1,1,0,\"$aws/things/rak5010/shadow/update/accepted\"\r";
-  bg96_write(command.c_str());
-  command = "Hello RAKwireless!!\r\032";
-  bg96_write(command.c_str());
-  delay(10000);  
- 
+  char data[256];
+
   command = "AT+QMTPUB=0,1,1,0,\"$aws/things/rak5010/shadow/update\"\r";
   bg96_write(command.c_str());
-  command = "Update Status...\r\032";
+
+  // SHTC3
+  if (sensor.shtc3.update()) {
+      sprintf(data, "Temperature = %.2f。C\r\n", sensor.shtc3.temperature());
+      bg96_write(data);
+      sprintf(data, "Humidity = %.2f%%\r\n", sensor.shtc3.humidity());
+      bg96_write(data);
+  } else {
+      Serial.println("SHTC3 update fail!");
+  }
+
+  // LPS22HB
+  sprintf(data, "Pressure = %.2f hPa\r\n", sensor.lps22hb.pressure());
+  bg96_write(data);
+
+  // OPT3001
+  if (sensor.opt3001.update()) {
+      sprintf(data, "Light = %.2f lux\r\n", sensor.opt3001.lux());
+      bg96_write(data);
+  } else {
+      Serial.println("OPT3001 update fail!");
+  }
+
+  // LIS2DH
+  if (sensor.lis3dh.update()) {
+      sprintf(data, "The X  acceleration = %.2f\r\n", sensor.lis3dh.x());
+      bg96_write(data);
+      sprintf(data, "The Y  acceleration = %.2f\r\n", sensor.lis3dh.y());
+      bg96_write(data);
+      sprintf(data, "The Z  acceleration = %.2f\r\n", sensor.lis3dh.z());
+      bg96_write(data);
+  } else {
+      Serial.println("LIS3DH update fail!");
+  }
+
+  command = "\032";
   bg96_write(command.c_str());
   delay(10000); 
 }
