@@ -122,6 +122,16 @@ int At_Cellular (SERIAL_PORT port, char *cmd, stParam *param)
                 parser_cmd_timeout = atoi(p) * 1000;
                 start_time = udrv_rtc_get_timestamp((RtcID_E)SYS_RTC_COUNTER_PORT);
             }
+            //AT+QHTTPURL
+            if (!strcasecmp(cell_cmd, "QHTTPURL")) {
+                cellular_parser_enable = true;
+
+                char *p = strtok(param->argv[0], ",");
+                parser_cmd_size = atoi(p);
+                p = strtok(NULL, ",");
+                parser_cmd_timeout = atoi(p) * 1000;
+                start_time = udrv_rtc_get_timestamp((RtcID_E)SYS_RTC_COUNTER_PORT);
+            }
         }
         goto exit_cellular;
         }
@@ -175,6 +185,7 @@ exit_cmd_not_support:
 void service_mode_cli_cellular_handler(SERIAL_PORT port, uint8_t ch) {
     end_time = udrv_rtc_get_timestamp((RtcID_E)SYS_RTC_COUNTER_PORT);
     if ((end_time - start_time) >= parser_cmd_timeout) {
+        service_mode_cli_handler(port, ch);
         sgCurPos = 0;
         sgCnt = 0;
         cellular_parser_enable = false;

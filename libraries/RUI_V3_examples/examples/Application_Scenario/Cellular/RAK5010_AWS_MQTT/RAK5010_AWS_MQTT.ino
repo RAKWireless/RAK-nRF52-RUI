@@ -1,5 +1,30 @@
 
+void publish_routine();
+
 String command; //String to store BG96 commnads
+char last_resp[256];
+
+//Read data from BG96
+void bg96_read() {
+    int len = 0;
+    uint32_t cnt = 0;
+
+    memset(last_resp, 0, 256);
+    while (Serial1.available() == 0) {
+        if (cnt++ & 0x200000) {
+            Serial.println("read abort!");
+            break;
+        }
+    }
+
+    while(Serial1.available()>0) {
+        char buf;
+        buf = (char)Serial1.read();
+        len += sprintf(last_resp+len, "%c", buf);
+        delay(1);
+    }
+    Serial.printf("%s", last_resp);
+}
 
 //Write commnads to BG96
 void bg96_write(const char *command) {
@@ -103,167 +128,312 @@ void setup()
   Serial.printf("OPT3001 init %s\r\n", sensor.opt3001.init() ? "Success" : "Fail");
   Serial.printf("LIS3DH init %s\r\n", sensor.lis3dh.init() ? "Success" : "Fail");
 
-  command = "ATE1\r";
+  command = "ATE0\r";
   bg96_write(command.c_str());
+
+  bg96_read();
 
   command = "at&f0\r";
   bg96_write(command.c_str());
 
+  bg96_read();
+
   Serial.println("Enable extended time zone and local time:");
   command = "AT+CTZR=2\r";
   bg96_write(command.c_str());
+
+  bg96_read();
+
   command = "AT+CTZR?\r";  //Get the local time
   bg96_write(command.c_str());
- 
+
+  bg96_read();
+
+  Serial.println("Upload CA Certificate to UFS:");
+  command = "AT+QFDEL=\"cacert.pem\"\r";
+  bg96_write(command.c_str());
+
+  bg96_read();
+
+  command = "AT+QFUPL=\"cacert.pem\",1187,100\r";
+  bg96_write(command.c_str());
+  bg96_write(pem_CA);
+
+  bg96_read();
+
+  Serial.println("Upload Client Certificate to UFS:");
+  command = "AT+QFDEL=\"client.pem\"\r";
+  bg96_write(command.c_str());
+
+  bg96_read();
+
+  command = "AT+QFUPL=\"client.pem\",1220,100\r";
+  bg96_write(command.c_str());
+  bg96_write(pem_cert);
+
+  bg96_read();
+
+  Serial.println("Upload Client Private Key to UFS:");
+  command = "AT+QFDEL=\"user_key.pem\"\r";
+  bg96_write(command.c_str());
+
+  bg96_read();
+
+  command = "AT+QFUPL=\"user_key.pem\",1679,100\r";
+  bg96_write(command.c_str());
+  bg96_write(pem_pkey);
+
+  bg96_read();
+
+  //if (api.system.timer.create(RAK_TIMER_0, (RAK_TIMER_HANDLER)publish_routine, RAK_TIMER_PERIODIC) != true) {
+  //  Serial.printf("Creating timer failed.\r\n");
+  //  return;
+  //}
+  //if (api.system.timer.start(RAK_TIMER_0, 180000, NULL) != true) {
+  //  Serial.printf("Starting timer failed.\r\n");
+  //  return;
+  //}
+
+  api.system.lpm.set(0);
+}
+
+void publish_routine()
+{
+  char data[256];
+
   // Deactivate a PDP Context 
   command = "AT+QIDEACT=1\r";
   bg96_write(command.c_str());
-  delay(3000);
+
+  bg96_read();
 
   Serial.println("Registration the indicate registration status:");
   command = "AT+CREG=1\r";
   bg96_write(command.c_str());
+
+  bg96_read();
+
   command = "AT+CPIN?\r";  //Waiting for (U)SIM PIN to be given
   bg96_write(command.c_str());
    
+  bg96_read();
+
   Serial.println("Setup the Operators setting during 30~60sec after APN is ready:");
   command = "AT+COPS=1,0,\"Far EasTone\",9\r";
   bg96_write(command.c_str());
-  delay(500);
-  Serial.println("Setup the Operators setting during 20sec after APN is ready:");
-  delay(20000);
+
+  bg96_read();
+
   command = "AT+COPS?\r";
   bg96_write(command.c_str());
-  
+
+  bg96_read();
+
+  while (1) {
+    if (strstr(last_resp, "+COPS: 1,0,\"Far EasTone\",9") != NULL) {
+      Serial.printf("operator selected!\r\n");
+      break;
+    }
+    command = "AT+COPS=1,0,\"Far EasTone\",9\r";
+    bg96_write(command.c_str());
+    command = "AT+COPS?\r";
+    bg96_write(command.c_str());
+
+    Serial.println("Wait again until receiving +COPS: 1,0,\"Far EasTone\",9");
+    bg96_read();
+  }
+
   Serial.println("Query the Network Registration Status:");
   command = "AT+CREG?\r";
   bg96_write(command.c_str());
-     
+
+  bg96_read();
+
+  while (1) {
+    if (strstr(last_resp, "+CREG: 1,1") != NULL) {
+      Serial.printf("registered!\r\n");
+      break;
+    }
+    command = "AT+COPS=1,0,\"Far EasTone\",9\r";
+    bg96_write(command.c_str());
+    command = "AT+CREG?\r";
+    bg96_write(command.c_str());
+
+    Serial.println("Wait again until receiving +CREG: 1,1");
+    bg96_read();
+  }
+
   Serial.println("Configure APN:");
   //command = "AT+QICSGP=1,1,\"nbiot\",\"\",\"\",1\r";
   command = "AT+QICSGP=1,1,\"FET Internet\",\"\",\"\",1\r";
   bg96_write(command.c_str());
-  delay(1000);
+
+  bg96_read();
 
   // Activate a PDP Context
   command = "AT+QIACT=1\r";
   bg96_write(command.c_str());
-  delay(1000);
+
+  bg96_read();
 
   // Configure Address of DNS Server
   command = "AT+QIDNSCFG=1,\"8.8.8.8\",\"8.8.8.4\"\r";
   bg96_write(command.c_str());
 
+  bg96_read();
+
   command = "AT+CTZR?\r";  //Get the local time
   bg96_write(command.c_str());
+
+  bg96_read();
 
   command = "AT+QNWINFO\r";
   bg96_write(command.c_str());
 
+  bg96_read();
+
   command = "AT+QPING=1,\"8.8.8.8\"\r";
   bg96_write(command.c_str());
+
+  bg96_read();
 
   Serial.println("Use SSL TCP secure connection for MQTT:");
   command = "AT+QMTCFG=\"ssl\",0,1,2\r";
   bg96_write(command.c_str());
 
-  Serial.println("Upload CA Certificate to UFS:");
-  command = "AT+QFDEL=\"cacert.pem\"\r";
-  bg96_write(command.c_str());
-  command = "AT+QFUPL=\"cacert.pem\",1187,100\r";
-  bg96_write(command.c_str());
-  bg96_write(pem_CA);
-  delay(20000);
-
-  Serial.println("Upload Client Certificate to UFS:");
-  command = "AT+QFDEL=\"client.pem\"\r";
-  bg96_write(command.c_str());
-  command = "AT+QFUPL=\"client.pem\",1220,100\r";
-  bg96_write(command.c_str());
-  bg96_write(pem_cert);
-  delay(20000);
-
-  Serial.println("Upload Client Private Key to UFS:");
-  command = "AT+QFDEL=\"user_key.pem\"\r";
-  bg96_write(command.c_str());
-  command = "AT+QFUPL=\"user_key.pem\",1679,100\r";
-  bg96_write(command.c_str());
-  bg96_write(pem_pkey);
-  delay(20000);
+  bg96_read();
 
   Serial.println("Configure the path of CA certificate for SSL context 2:");
   command = "AT+QSSLCFG=\"cacert\",2,\"cacert.pem\"\r";
   bg96_write(command.c_str());
+
+  bg96_read();
+
   command = "AT+QSSLCFG=\"cacert\",2\r";
   bg96_write(command.c_str());
     
+  bg96_read();
+
   Serial.println("Configure the path of client certificate for SSL context 2");
   command = "AT+QSSLCFG=\"clientcert\",2,\"client.pem\"\r";
   bg96_write(command.c_str());
+
+  bg96_read();
+
   command = "AT+QSSLCFG=\"clientcert\",2\r";
   bg96_write(command.c_str());
-         
+
+  bg96_read();
+
   Serial.println("Configure the path of client private key for SSL context 2:");
   command = "AT+QSSLCFG=\"clientkey\",2,\"user_key.pem\"\r";
   bg96_write(command.c_str());
+
+  bg96_read();
+
   command = "AT+QSSLCFG=\"clientkey\",2\r";
   bg96_write(command.c_str());
+
+  bg96_read();
 
   Serial.println("Enable SSL authentication mode:");
   command = "AT+QSSLCFG=\"seclevel\",2,2\r";
   bg96_write(command.c_str());
+
+  bg96_read();
+
   command = "AT+QSSLCFG=\"seclevel\",2\r";
   bg96_write(command.c_str());
+
+  bg96_read();
 
   Serial.println("SSL authentication version:");
   command = "AT+QSSLCFG=\"sslversion\",2,4\r";
   bg96_write(command.c_str());
+
+  bg96_read();
+
   command = "AT+QSSLCFG=\"sslversion\",2\r";
   bg96_write(command.c_str());
 
+  bg96_read();
+
   Serial.println("Cipher suite:");
-  command = "AT+QSSLCFG=\"ciphersuite\",2,\"0XFFFF\"\r";
+  command = "AT+QSSLCFG=\"ciphersuite\",2,0XFFFF\r";
   bg96_write(command.c_str());
+
+  bg96_read();
+
   command = "AT+QSSLCFG=\"ciphersuite\",2\r";
   bg96_write(command.c_str());
+
+  bg96_read();
 
   Serial.println("Ignore the time of authentication:");
   command = "AT+QSSLCFG=\"ignorelocaltime\",2,1\r";
   bg96_write(command.c_str());
+
+  bg96_read();
+
   command = "AT+QSSLCFG=\"ignorelocaltime\",2\r";
   bg96_write(command.c_str());
+
+  bg96_read();
 
   Serial.println("List Files Information:");
   command = "AT+QFLST\r";
   bg96_write(command.c_str());
-    
+
+  bg96_read();
+
   Serial.println("Start MQTT SSL connection:");
   command = "AT+QMTOPEN=0,\"ach7fkebnh9qw-ats.iot.ap-southeast-1.amazonaws.com\",8883\r";
   bg96_write(command.c_str());
+
+  bg96_read();
+
+  for (int i = 0 ; i < 20 ; i++) {
+    if (strstr(last_resp, "+QMTOPEN: 0,0") != NULL) {
+      break;
+    }
+    Serial.println("Wait again until receiving +QMTOPEN: 0,0");
+    bg96_read();
+  }
+
   command = "AT+QMTOPEN?\r";
   bg96_write(command.c_str());
-  delay(10000);  
+
+  bg96_read();
 
   Serial.println("Connect to MQTT server:");
   command = "AT+QMTCONN=0,\"rak5010\"\r";
   bg96_write(command.c_str());
-  delay(20000);
+
+  bg96_read();
+
+  for (int i = 0 ; i < 20 ; i++) {
+    if (strstr(last_resp, "+QMTCONN: 0,0,0") != NULL) {
+      break;
+    }
+    Serial.println("Wait again until receiving +QMTCONN: 0,0,0");
+    bg96_read();
+  }
+
   command = "AT+QMTCONN?\r";
   bg96_write(command.c_str());
-  delay(20000);
 
-  Serial.println("MQTT & Subscribe to topic messages:");
-  command = "AT+QMTSUB=0,1,\"$aws/things/rak5010/shadow/update\",1\r";
-  bg96_write(command.c_str());
-  delay(10000); 
-}
+  bg96_read();
 
-void loop()
-{
-  char data[256];
+  //Serial.println("MQTT & Subscribe to topic messages:");
+  //command = "AT+QMTSUB=0,1,\"$aws/things/rak5010/shadow/update\",1\r";
+  //bg96_write(command.c_str());
+
+  //bg96_read();
 
   command = "AT+QMTPUB=0,1,1,0,\"$aws/things/rak5010/shadow/update\"\r";
   bg96_write(command.c_str());
+
+  bg96_read();
 
   // SHTC3
   if (sensor.shtc3.update()) {
@@ -301,5 +471,13 @@ void loop()
 
   command = "\032";
   bg96_write(command.c_str());
-  delay(10000); 
+
+  bg96_read();
+}
+
+void loop()
+{
+  publish_routine();
+  //api.system.scheduler.task.destroy();
+  api.system.sleep.all(180000);
 }
