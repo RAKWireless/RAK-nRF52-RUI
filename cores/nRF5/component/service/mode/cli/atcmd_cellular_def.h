@@ -1,3 +1,4 @@
+#ifdef RAK5010_EVB
 /**
  *
  * @page ATCMD AT Command Manual
@@ -78,3 +79,5 @@
 #define ATCMD_CELLULAR              "ATCELL"
 
 #endif //_ATCMD_CELLULAR_DEF_H_
+
+#endif //RAK51010_EVB

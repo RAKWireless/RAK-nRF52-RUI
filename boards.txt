@@ -131,8 +131,8 @@ WisTrioRAK5010Board.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
 # BG96 AUTOREAD Menu
 menu.auto_display_cellular_response=Auto Display Cellular Response
 
-WisTrioRAK5010Board.menu.auto_display_cellular_response.1=On
-WisTrioRAK5010Board.menu.auto_display_cellular_response.1.build.bg96_flag=-DAUTO_DISPLAY_CELLULAR_RESPONSE
-WisTrioRAK5010Board.menu.auto_display_cellular_response.2=Off
-WisTrioRAK5010Board.menu.auto_display_cellular_response.2.build.bg96_flag=-UAUTO_DISPLAY_CELLULAR_RESPONSE
+WisTrioRAK5010Board.menu.auto_display_cellular_response.1=Off
+WisTrioRAK5010Board.menu.auto_display_cellular_response.1.build.bg96_flag=-UAUTO_DISPLAY_CELLULAR_RESPONSE
+WisTrioRAK5010Board.menu.auto_display_cellular_response.2=On
+WisTrioRAK5010Board.menu.auto_display_cellular_response.2.build.bg96_flag=-DAUTO_DISPLAY_CELLULAR_RESPONSE
 

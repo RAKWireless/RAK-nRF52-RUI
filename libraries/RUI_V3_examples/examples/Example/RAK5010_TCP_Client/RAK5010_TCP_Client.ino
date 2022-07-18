@@ -29,11 +29,11 @@ void setup()
     // NOTE:While turning Off "Auto Display Cellular Response" on ArduinoIDE menu, make sure open the code below
     //      Otherwise you will miss the response from BG96. 
     // Setup a timer to get data from BG96
-//    if (api.system.timer.create(RAK_TIMER_0, (RAK_TIMER_HANDLER)bg96_read, RAK_TIMER_PERIODIC) != true) {
-//        Serial.println("Creating timer failed");
-//    } else if (api.system.timer.start(RAK_TIMER_0, 1000, NULL) != true) { // Set the period you like ,Default 1 second
-//        Serial.println("Starting timer failed");
-//    }
+    if (api.system.timer.create(RAK_TIMER_0, (RAK_TIMER_HANDLER)bg96_read, RAK_TIMER_PERIODIC) != true) {
+        Serial.println("Creating timer failed");
+    } else if (api.system.timer.start(RAK_TIMER_0, 1000, NULL) != true) { // Set the period you like ,Default 1 second
+        Serial.println("Starting timer failed");
+    }
 
     // Send "AT" to check BG96 is working
     command = "AT\r";

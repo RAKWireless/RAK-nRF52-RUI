@@ -1,3 +1,4 @@
+#ifdef RAK5010_EVB
 #ifdef SUPPORT_AT
 #include <string.h>
 #include <ctype.h>
@@ -241,3 +242,5 @@ void service_mode_cli_cellular_handler(SERIAL_PORT port, uint8_t ch) {
 }
 
 #endif 
+
+#endif // RAK5010_EVB
