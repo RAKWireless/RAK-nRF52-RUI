@@ -42689,21 +42689,21 @@ extern const uint32_t g_ADigitalPinMap[];
 
 #define PIN_A0 WB_A0
 #define PIN_A1 WB_A1
-#define PIN_A2 (28)
-#define PIN_A3 (29)
-#define PIN_A4 (30)
-#define PIN_A5 (31)
-#define PIN_A6 (0xff)
-#define PIN_A7 (0xff)
+#define PIN_A2 P0_02
+#define PIN_A3 P0_03
+#define PIN_A4 P0_04
+#define PIN_A5 P0_28
+#define PIN_A6 P0_29
+#define PIN_A7 P0_30
 
 static const uint8_t A0 = 5;
 static const uint8_t A1 = 31;
-static const uint8_t A2 = (28);
-static const uint8_t A3 = (29);
-static const uint8_t A4 = (30);
-static const uint8_t A5 = (31);
-static const uint8_t A6 = (0xff);
-static const uint8_t A7 = (0xff);
+static const uint8_t A2 = 2;
+static const uint8_t A3 = 3;
+static const uint8_t A4 = 4;
+static const uint8_t A5 = 28;
+static const uint8_t A6 = 29;
+static const uint8_t A7 = 30;
 
 #define ADC_RESOLUTION 14
 
@@ -42782,8 +42782,17 @@ static const uint8_t SCK = 3;
 #define SPIM3_SCK WB_SPI_CLK
 #define SPI_CSN_PIN SPIM3_NSS
 
+#define _ADC1 PIN_A0
+#define _ADC2 PIN_A1
+#define _ADC3 PIN_A2
+#define _ADC4 PIN_A3
+#define _ADC5 PIN_A4
+#define _ADC6 PIN_A5
+#define _ADC7 PIN_A6
+#define _ADC8 PIN_A7
+
 #define USE_FULL_ASSERT 
-# 47 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pin_define.h"
+# 56 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pin_define.h"
 #define assert_param(expr) ((expr) ? (void)0U : app_error_handler(ASSERT_ERROR, __LINE__, (const uint8_t *)__FILE__))
 
 

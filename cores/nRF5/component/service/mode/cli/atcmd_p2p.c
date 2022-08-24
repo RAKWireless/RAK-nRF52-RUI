@@ -100,7 +100,7 @@ int At_P2pSF(SERIAL_PORT port, char *cmd, stParam *param)
         if (0 != at_check_digital_uint32_t(param->argv[0], &spreading_factor))
             return AT_PARAM_ERROR;
 
-        if ((spreading_factor < 6) || (spreading_factor > 12))
+        if ((spreading_factor < 5) || (spreading_factor > 12))
             return AT_PARAM_ERROR;
 
         if (service_lora_p2p_set_sf((uint8_t)spreading_factor) != UDRV_RETURN_OK)
@@ -144,7 +144,7 @@ int At_P2pBW(SERIAL_PORT port, char *cmd, stParam *param)
         }
         else
         {
-            if(bandwidth > 500 )
+            if(bandwidth > 9 )
             return AT_PARAM_ERROR;
         }
 

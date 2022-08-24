@@ -477,6 +477,8 @@ extern "C"
     uint8_t service_lora_get_timereq(void);
 
     int32_t service_lora_set_timereq(uint8_t mode);
+
+    void service_lora_systemMaxRxError(void);
 #ifdef __cplusplus
 }
 #endif

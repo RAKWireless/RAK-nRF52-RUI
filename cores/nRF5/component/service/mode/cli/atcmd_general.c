@@ -26,7 +26,7 @@ extern const char *repo_info;
 extern const char *cli_version;
 extern const char *api_version;
 #endif
-
+extern const char BOOT_VERSION;
 
 int At_Dfu (SERIAL_PORT port, char *cmd, stParam *param)
 {
@@ -215,6 +215,16 @@ int At_Sn (SERIAL_PORT port, char *cmd, stParam *param)
     }
 }
 
+int At_Bootver (SERIAL_PORT port, char *cmd, stParam *param)
+{
+    if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
+        atcmd_printf("%s=%s\r\n", cmd, &BOOT_VERSION);
+        return AT_OK;
+    } else {
+        return AT_PARAM_ERROR;
+    }
+}
+
 int At_GetBat (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
@@ -368,7 +378,7 @@ int At_GetUid (SERIAL_PORT port, char *cmd, stParam *param)
 #endif
 
 #ifdef SUPPORT_BLE
-int At_GetBLEMac (SERIAL_PORT port, char *cmd, stParam *param)
+int At_BLEMac (SERIAL_PORT port, char *cmd, stParam *param)
 {
     if (param->argc == 1 && !strcmp(param->argv[0], "?")) {
         ble_gap_addr_t gap_addr;
@@ -383,9 +393,30 @@ int At_GetBLEMac (SERIAL_PORT port, char *cmd, stParam *param)
         }
         atcmd_printf("\r\n");
         return AT_OK;
-    } else {
-        return AT_PARAM_ERROR;
+    } 
+    else if (param->argc == 1)
+    {
+        int32_t ret;
+        if (strlen(param->argv[0]) != 12)
+            return AT_PARAM_ERROR;
+        for (int i = 0 ; i < strlen(param->argv[0]) ; i++) {
+            if ((param->argv[0][i] < 0x30 || param->argv[0][i] > 0x39) && 
+                (param->argv[0][i] < 0x41 || param->argv[0][i] > 0x46) && 
+                (param->argv[0][i] < 0x61 || param->argv[0][i] > 0x66)) {
+                return AT_PARAM_ERROR;
+            }
+        }
+        if(udrv_ble_set_macaddress(param->argv[0]) != UDRV_RETURN_OK)
+            return AT_ERROR;
+
+        if(service_nvm_set_ble_mac_to_nvm(param->argv[0],strlen(param->argv[0])) != UDRV_RETURN_OK)
+            return AT_ERROR;
+
+        return AT_OK;
     }
+    else 
+        return AT_PARAM_ERROR;
+
 }
 
 #endif

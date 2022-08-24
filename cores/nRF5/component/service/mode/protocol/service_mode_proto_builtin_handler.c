@@ -17,6 +17,7 @@ extern const char *build_time;
 extern const char *repo_info;
 extern const char *cli_version;
 extern const char *api_version;
+extern const char BOOT_VERSION;
 
 void service_mode_proto_echo_request_handler (SERIAL_PORT port, uint8_t *payload, uint16_t length) {
     uint8_t flag = PROTO_FLAG_RESPONSE;
@@ -315,7 +316,15 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
         case SERVICE_MODE_PROTO_ATCMD_BLEMAC:
         {
             if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
-                nRet = AT_PARAM_ERROR;
+                if (payload_len != 12) {
+                    nRet = AT_PARAM_ERROR;
+                    goto out;
+                }
+                if (udrv_ble_set_macaddress(arg) == UDRV_RETURN_OK) {
+                    nRet = AT_OK;
+                } else {
+                    nRet = AT_ERROR;
+                }
             } else {
                 uint8_t blemac[12];
                 udrv_ble_get_macaddress(blemac);
@@ -332,6 +341,23 @@ void service_mode_proto_atcmd_request_handler (SERIAL_PORT port, uint8_t *payloa
             break;
         }
 #endif 
+        case SERVICE_MODE_PROTO_ATCMD_BOOTVER:
+        {
+            if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {
+                nRet = AT_PARAM_ERROR;
+            } else {
+                memset(buff, 0, 256);
+                reply_len = sprintf(buff+sizeof(header), "%s", &BOOT_VERSION);
+                header.length = __builtin_bswap16(reply_len);
+                header.flag = PROTO_ATCMD_FLAG_RESPONSE;
+                header.atcmd_id = atcmd_id;
+                memcpy(buff, &header, sizeof(header));
+
+                service_mode_proto_send(port, PROTO_FLAG_RESPONSE, 0x01, buff, sizeof(header)+reply_len, NULL);
+                nRet = AT_OK;
+            }
+            break;
+        }
         case SERVICE_MODE_PROTO_ATCMD_LOCK:
         {
             //if (flag & PROTO_ATCMD_FLAG_WR_OR_EXE) {

@@ -67,6 +67,8 @@ typedef struct LmhpComplianceParams_s
 
 LmhPackage_t *LmphCompliancePackageFactory( void );
 
+void OnComplianceTxNextPacketTimerEvent( void *context );
+
 #endif // end SUPPORT_LORA
 
 #endif // __LMHP_COMPLIANCE__

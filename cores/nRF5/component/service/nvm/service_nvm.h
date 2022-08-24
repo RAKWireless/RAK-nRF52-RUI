@@ -76,6 +76,15 @@ int32_t service_nvm_get_atcmd_alias_from_nvm(uint8_t *buff, uint32_t len);
 
 int32_t service_nvm_set_atcmd_alias_to_nvm(uint8_t *buff, uint32_t len);
 
+#ifdef SUPPORT_BLE
+/***********************************************************/
+/* BLE                                                     */
+/***********************************************************/
+uint8_t service_nvm_set_ble_mac_to_nvm(uint8_t *buff, uint32_t len);
+
+uint8_t service_nvm_get_ble_mac_from_nvm(uint8_t *buff, uint32_t len);
+#endif
+
 /***********************************************************/
 /* User Data                                               */
 /***********************************************************/

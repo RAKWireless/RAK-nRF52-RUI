@@ -200,6 +200,17 @@ If x is NOT passed, the function will default to returning a string, all upperca
      */
     char* get(uint8_t pos);
     char* get(void);
+    /**@par Description
+     *      Set the current Device MAC Address
+     * @ingroup BLE_MAC
+     * @par Syntax
+     *      api.ble.mac.set(mac)\n
+     * @param   mac  the BLE mac address
+     * @return  bool
+     * @retval  TRUE for success
+     * @retval  FALSE for failure
+     */
+    bool set(char *mac);
   private:
     uint8_t devmac[13];
     uint8_t twomac[3];

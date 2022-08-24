@@ -111,6 +111,7 @@ at_cmd_info atcmd_info_tbl[] =
 /* General Command */
     {ATCMD_ATTENTION,/*0*/          At_Attention,          0, "",AT_PERM},
     {ATCMD_BOOT,     /*4*/          At_Dfu,                0, "enter bootloader mode for firmware upgrade", AT_BOOT_PERM},
+    {ATCMD_BOOTVER,  /*95*/         At_Bootver,            0, "get the version of RUI Bootloader", AT_BOOTVER_PERM},
 #ifdef SUPPORT_AT    
     {ATCMD_REBOOT,   /*1*/          At_Reboot,             0, "triggers a reset of the MCU", ATZ_PERM},
     {ATCMD_ATR,      /*3*/          At_Restore,            0, "restore default parameters", ATR_PERM},
@@ -134,7 +135,7 @@ at_cmd_info atcmd_info_tbl[] =
     {ATCMD_UID,      /*91*/         At_GetUid,             0, "", AT_UID_PERM},
 #endif
 #ifdef SUPPORT_BLE
-    {ATCMD_BLEMAC,   /*94*/         At_GetBLEMac,          0, "get the BLE Mac address", AT_BLEMAC_PERM},
+    {ATCMD_BLEMAC,   /*94*/         At_BLEMac,          0, "get the BLE Mac address", AT_BLEMAC_PERM},
 #endif
 /* Sleep Command */
     {ATCMD_SLEEP,    /*85*/         At_Sleep,              0, "enter sleep mode for a period of time (ms)", AT_SLEEP_PERM},
@@ -205,7 +206,7 @@ at_cmd_info atcmd_info_tbl[] =
     {ATCMD_NWM,      /*55*/         At_NwkWorkMode,        0, "get or set the network working mode (0 = P2P_LORA, 1 = LoRaWAN, 2 = P2P_FSK)", AT_NWM_PERM},
     {ATCMD_PFREQ,    /*56*/         At_P2pFreq,            0, "configure P2P Frequency", AT_PFREQ_PERM},
     {ATCMD_PSF,      /*57*/         At_P2pSF,              0, "configure P2P Spreading Factor (5-12)", AT_PSF_PERM},
-    {ATCMD_PBW,      /*58*/         At_P2pBW,              0, "configure P2P Bandwidth(LORA:125,250,500 FSK:4800-467000)", AT_PBW_PERM},
+    {ATCMD_PBW,      /*58*/         At_P2pBW,              0, "configure P2P Bandwidth(LORA: 0 = 125, 1 = 250, 2 = 500, 3 = 7.8, 4 = 10.4, 5 = 15.63, 6 = 20.83, 7 = 31.25, 8 = 41.67, 9 = 62.5  FSK:4800-467000)", AT_PBW_PERM},
     {ATCMD_PCR,      /*59*/         At_P2pCR,              0, "configure P2P Code Rate(0=4/5, 1=4/6, 2=4/7, 3=4/8)", AT_PCR_PERM},
     {ATCMD_PPL,      /*60*/         At_P2pPL,              0, "configure P2P Preamble Length (5-65535)", AT_PPL_PERM},
     {ATCMD_PTP,      /*61*/         At_P2pTP,              0, "configure P2P TX Power(5-22)", AT_PTP_PERM},
@@ -419,10 +420,10 @@ int At_Parser (SERIAL_PORT port, char *buff, int len)
                     atcmd_printf("\r\nAT+<CMD>?: help on <CMD>\r\nAT+<CMD>: run <CMD>\r\nAT+<CMD>=<value>: set the value\r\nAT+<CMD>=?: get the value\r\n");
                     //followed by the help of all commands:
                     At_CmdList(port, &param);
-		} else {
+                } else {
                     atcmd_printf("%s: %s\r\n", atcmd_info_tbl[i].atCmd, atcmd_info_tbl[i].CmdUsage);
-		}
-		nRet = AT_OK;
+                }
+                nRet = AT_OK;
             } else {
                 if (atcmd_info_tbl[i].permission & ATCMD_PERM_DISABLE)
                 {
@@ -431,7 +432,7 @@ int At_Parser (SERIAL_PORT port, char *buff, int len)
                 } 
                 if (!strcmp(param.argv[0], "?") && !(atcmd_info_tbl[i].permission & (ATCMD_PERM_READ | ATCMD_PERM_WRITEONCEREAD)))
                 {
-                    nRet = AT_ERROR;
+                    nRet = AT_PARAM_ERROR;
                     goto exit_rsp;
                 }
                 else if (strcmp(param.argv[0], "?") && param.argc > 0)

@@ -146,7 +146,7 @@ static void LmhpComplianceOnMlmeConfirm( MlmeConfirm_t *mlmeConfirm );
 /*!
  * Function executed on TxNextPacket Timeout event
  */
-static void OnComplianceTxNextPacketTimerEvent( void *context );
+//void OnComplianceTxNextPacketTimerEvent( void *context );
 
 /*!
  * Processes the data to transmit on port \ref COMPLIANCE_PORT
@@ -276,7 +276,7 @@ static LmHandlerErrorStatus_t LmhpComplianceTxProcess( void )
     };
 
     // Schedule next transmission
-    TimerStart( &ComplianceTxNextPacketTimer );
+    //TimerStart( &ComplianceTxNextPacketTimer );
 
     return LmhpCompliancePackage.OnSendRequest( &appData, ( LmHandlerMsgTypes_t )ComplianceTestState.IsTxConfirmed );
 }
@@ -506,7 +506,7 @@ static void LmhpComplianceProcess( void )
     }
 }
 
-static void OnComplianceTxNextPacketTimerEvent( void* context )
+void OnComplianceTxNextPacketTimerEvent( void* context )
 {
     ComplianceTestState.TxPending = true;
     udrv_system_event_produce(&rui_lora_event);

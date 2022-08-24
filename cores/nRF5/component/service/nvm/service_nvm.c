@@ -98,6 +98,9 @@ int32_t service_nvm_set_default_config_to_nvm(void) {
         }
     }
     g_rui_cfg_t.baudrate = DEFAULT_SERIAL_BAUDRATE;
+#ifdef SUPPORT_BLE
+    memset(g_rui_cfg_t.g_ble_cfg_t.mac,0x00,sizeof(g_rui_cfg_t.g_ble_cfg_t.mac));
+#endif
 
     memcpy(g_rui_cfg_t.serial_passwd, passwd, 8);
     g_rui_cfg_t.auto_sleep_time = 1;
@@ -158,7 +161,7 @@ int32_t service_nvm_set_default_config_to_nvm(void) {
     g_rui_cfg_t.g_lora_p2p_cfg_t.Frequency = 868000000; // 150MHz - 960MHz
 #endif
     g_rui_cfg_t.g_lora_p2p_cfg_t.Spreadfact = 7;// 6 - 12
-    g_rui_cfg_t.g_lora_p2p_cfg_t.Bandwidth = 125; // 125 kHz, 250 kHz, 500 kHz
+    g_rui_cfg_t.g_lora_p2p_cfg_t.Bandwidth = 0; // 0 - 9 
     g_rui_cfg_t.g_lora_p2p_cfg_t.Codingrate = 0;// 0: 4/5, 1: 4/6, 2: 4/7, 3: 4/8
     g_rui_cfg_t.g_lora_p2p_cfg_t.Preamlen = 8;  // 2 - 65535
     g_rui_cfg_t.g_lora_p2p_cfg_t.Powerdbm = 14; // 5 - 22
@@ -378,6 +381,37 @@ uint8_t service_nvm_get_debug_level_from_nvm()
 {
     return g_rui_cfg_t.debug_level;
 }
+
+#ifdef SUPPORT_BLE
+/***********************************************************/
+/* BLE                                                     */
+/***********************************************************/
+uint8_t service_nvm_set_ble_mac_to_nvm(uint8_t *buff, uint32_t len)
+{
+    if (len != 12) {
+        return -UDRV_WRONG_ARG;
+    }
+    for (int i = 0 ; i < len ; i++)
+    {
+        if ((buff[i] < 0x30 || buff[i] > 0x39) &&
+            (buff[i] < 0x41 || buff[i] > 0x46) &&
+            (buff[i] < 0x61 || buff[i] > 0x66)) {
+                return -UDRV_WRONG_ARG;
+        }
+    }
+    memcpy(g_rui_cfg_t.g_ble_cfg_t.mac,buff,len);
+    return udrv_flash_write(SERVICE_NVM_RUI_CONFIG_NVM_ADDR, sizeof(rui_cfg_t), (uint8_t *)&g_rui_cfg_t);
+}
+
+uint8_t service_nvm_get_ble_mac_from_nvm(uint8_t *buff, uint32_t len)
+{
+    if (len != sizeof(g_rui_cfg_t.g_ble_cfg_t.mac)) {
+        return -UDRV_BUFF_OVERFLOW;
+    }
+    memcpy(buff, g_rui_cfg_t.g_ble_cfg_t.mac, sizeof(g_rui_cfg_t.g_ble_cfg_t.mac));
+    return UDRV_RETURN_OK;
+}
+#endif
 
 #ifdef SUPPORT_LORA
 /***********************************************************/

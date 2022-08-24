@@ -116,6 +116,8 @@ extern "C"
 
     int32_t udrv_ble_get_macaddress(uint8_t *macaddr);
 
+    int32_t udrv_ble_set_macaddress(uint8_t *macaddr);
+
     int32_t udrv_ble_set_adv_interval(uint32_t adv_interval);
 
     int32_t udrv_ble_get_adv_interval();

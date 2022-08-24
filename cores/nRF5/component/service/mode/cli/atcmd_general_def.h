@@ -170,16 +170,27 @@
  * | AT+SYSV=?          | --                 | <float>                                                           | OK                 |
  * | Example<br>AT+SYSV=?| --                | 3.0                                                              | OK                 |
  *
- * @subsection ATCMD_general_18 AT+BLEMAC: get the BLE Mac address
+ * @subsection ATCMD_general_18 AT+BLEMAC: get or set the BLE Mac address
  *
- * This command allows the user to get the BLE Mac address
+ * This command allows the user to get or set the BLE Mac address
  *
  * | Command            | Input parameter    | Return value                                                      | Return code        |
  * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
  * | AT+BLEMAC?         | --                 | AT+BLEMAC: get the BLE Mac address                                | OK                 |
  * | AT+BLEMAC=?        | --                 | <string>:<string>:<string>:<string>:<string>:<string>             | OK                 |
+ * | AT+BLEMAC=\<Input\>| <string,12 char>   | <string>                                                          | OK                 |
  * | Example<br>AT+BLEMAC=?| --              | dc:a1:26:1e:e6:84                                                 | OK                 |
+ * | Example<br>AT+BLEMAC=| ffffffffffff     | --                                                                | OK                 |
  *
+ * @subsection ATCMD_general_19 AT+BOOTVER: get the version of RUI Bootloader
+ *
+ * This command allows the user to get the version of RUI Bootloader
+ *
+ * | Command            | Input parameter    | Return value                                                      | Return code        |
+ * |:------------------:|:------------------:|:------------------------------------------------------------------|:------------------:|
+ * | AT+BOOTVER?        | --                 | AT+BOOTVER: get the version of RUI Bootloader                     | OK                 |
+ * | AT+BOOTVER=?       | --                 | <string>                                                          | OK                 |
+ * | Example<br>AT+BOOTVER=?| --             | RUI STM32WLE5CC Bootloader v0.5                                   | OK                 |
  */
 
 #ifndef _ATCMD_GENERAL_DEF_H_
@@ -189,6 +200,7 @@
 #define ATCMD_REBOOT                "ATZ"
 #define ATCMD_ATR                   "ATR"
 #define ATCMD_BOOT                  "AT+BOOT"
+#define ATCMD_BOOTVER               "AT+BOOTVER"
 #define ATCMD_DEBUG					"AT+DEBUG"
 #define ATCMD_ATE                   "ATE"
 #define ATCMD_FSN                   "AT+FSN"

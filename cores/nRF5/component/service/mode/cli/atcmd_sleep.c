@@ -63,19 +63,9 @@ int At_AutoSleep(SERIAL_PORT port, char *cmd, stParam *param)
 
         input = strtoul(param->argv[0], NULL, 10);
 
-        if (input != 0 && input != 1 && input != 2)
+        if (input != 0 && input != 1)
         {
             return AT_PARAM_ERROR;
-        }
-
-        if (input == 2)
-        {
-            if (service_nvm_set_auto_sleep_time_to_nvm(0) == UDRV_RETURN_OK) {
-                udrv_sleep_ms(0);
-                return AT_OK;
-            } else {
-                return AT_ERROR;
-            }
         }
 
         ret = service_nvm_set_auto_sleep_time_to_nvm(input);

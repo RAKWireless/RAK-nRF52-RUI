@@ -250,7 +250,8 @@ void publish_routine()
   bg96_read();
 
   while (1) {
-    if (strstr(last_resp, "+CREG: 1,1") != NULL) {
+    if (strstr(last_resp, "+CREG: 1,1") != NULL || 
+        strstr(last_resp, "+CREG: 1,5") != NULL) {
       Serial.printf("registered!\r\n");
       break;
     }

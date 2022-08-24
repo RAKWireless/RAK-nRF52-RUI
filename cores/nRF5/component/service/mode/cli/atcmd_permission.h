@@ -54,6 +54,10 @@
 #define AT_VER_PERM         ATCMD_PERM_READ
 #endif
 
+#ifndef AT_BOOTVER_PERM
+#define AT_BOOTVER_PERM         ATCMD_PERM_READ
+#endif
+
 #ifndef AT_CLIVER_PERM
 #define AT_CLIVER_PERM      ATCMD_PERM_READ
 #endif
@@ -83,7 +87,7 @@
 #endif
 
 #ifndef AT_BLEMAC_PERM
-#define AT_BLEMAC_PERM      ATCMD_PERM_READ
+#define AT_BLEMAC_PERM      ATCMD_PERM_READ | ATCMD_PERM_WRITE
 #endif
 
 

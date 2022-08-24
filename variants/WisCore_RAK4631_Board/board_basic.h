@@ -149,7 +149,8 @@ typedef struct {
 typedef struct{
     uint8_t work_mode;  // 0:ble peripheral  1:ble central  2:ble observer 
     uint8_t long_range_enable;
-    uint8_t reserve[14];
+    uint8_t mac[12];
+    uint8_t reserve[2];
 }ble_central_cfg_t;
 
 typedef struct{

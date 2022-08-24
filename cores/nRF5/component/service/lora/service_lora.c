@@ -437,24 +437,23 @@ static void MlmeConfirm(MlmeConfirm_t *mlmeConfirm)
 
             udrv_system_timer_stop(SYSTIMER_LORAWAN);
 
-            if (service_lora_get_auto_join())
+    
+            if (++auto_join_retry_cnt > service_lora_get_auto_join_max_cnt())
             {
-                if (++auto_join_retry_cnt > service_lora_get_auto_join_max_cnt())
+                auto_join_retry_cnt = 0;
+            }
+            else
+            {
+                if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_auto_join, HTMR_PERIODIC) == UDRV_RETURN_OK)
                 {
-                    auto_join_retry_cnt = 0;
+                    udrv_system_timer_start(SYSTIMER_LORAWAN, service_lora_get_auto_join_period() * 1000, NULL);
                 }
                 else
                 {
-                    if (udrv_system_timer_create(SYSTIMER_LORAWAN, service_lora_auto_join, HTMR_PERIODIC) == UDRV_RETURN_OK)
-                    {
-                        udrv_system_timer_start(SYSTIMER_LORAWAN, service_lora_get_auto_join_period() * 1000, NULL);
-                    }
-                    else
-                    {
-                        udrv_serial_log_printf("+EVT:JOIN_FAILED_%d\r\n", __LINE__);
-                    }
+                    udrv_serial_log_printf("+EVT:JOIN_FAILED_%d\r\n", __LINE__);
                 }
             }
+          
 
             //Consider join request in join callback, so use system event.
             if (service_lora_join_callback != NULL) {
@@ -828,6 +827,12 @@ int32_t service_lora_init(SERVICE_LORA_BAND band)
             goto out;
         }
 
+        if ((ret = service_lora_set_rx2freq(service_nvm_get_rx2fq_from_nvm(), false)) != UDRV_RETURN_OK)
+        {
+            //Because the scope of rx2 is related to the region, in order to prevent ATR errors, no processing is done here
+            //goto out;
+        }
+
         if ((ret = service_lora_set_jn1dl(service_nvm_get_jn1dl_from_nvm(), false)) != UDRV_RETURN_OK)
         {
             goto out;
@@ -857,8 +862,11 @@ int32_t service_lora_init(SERVICE_LORA_BAND band)
         /* Single channel register function */
         AU915_SingleChannelRegisterCallback(&SingleChannelAU915);
         US915_SingleChannelRegisterCallback(&SingleChannelUS915);
+
+        /* Compensate the timer */
+        service_lora_systemMaxRxError();
  
-        /**************************************************************************************
+    /**************************************************************************************
      *
      * Step 3. Start to enable LoRaWAN stack.
      *
@@ -868,6 +876,7 @@ int32_t service_lora_init(SERVICE_LORA_BAND band)
         {
             goto out;
         }
+
     }
     else
     {
@@ -1372,6 +1381,16 @@ int32_t service_lora_set_band(SERVICE_LORA_BAND band)
             return -UDRV_INTERNAL_ERR;
         }
         if ((ret = service_nvm_set_rx2dr_to_nvm(mibReq.Param.Rx2Channel.Datarate)) != LORAMAC_STATUS_OK)
+        {
+            return ret;
+        }
+
+        mibReq.Type = MIB_RX2_DEFAULT_CHANNEL;
+        if (LoRaMacMibGetRequestConfirm(&mibReq) != LORAMAC_STATUS_OK)
+        {
+            return -UDRV_INTERNAL_ERR;
+        }
+        if ((ret = service_nvm_set_rx2fq_to_nvm(mibReq.Param.Rx2Channel.Frequency)) != LORAMAC_STATUS_OK)
         {
             return ret;
         }
@@ -3152,7 +3171,7 @@ LmHandlerErrorStatus_t LmHandlerSend( LmHandlerAppData_t *appData, LmHandlerMsgT
     info.port = appData->Port;
 
     info.retry_valid = true;
-    info.retry = 8;
+    info.retry = service_lora_get_retry()+1;
 
     info.confirm_valid = true;
     if (isTxConfirmed == true) {
@@ -3360,6 +3379,17 @@ static uint8_t AlternateDrUS915Callback()
         }
     }
     return CurrentDr;
+}
+
+void service_lora_systemMaxRxError()
+{
+    MibRequestConfirm_t mibReq;
+ 
+    // Update the DEFAULT_SYSTEM_MAX_RX_ERROR
+    mibReq.Type = MIB_SYSTEM_MAX_RX_ERROR;
+    mibReq.Param.SystemMaxRxError = 25;
+    if( LoRaMacMibSetRequestConfirm( &mibReq ) != LORAMAC_STATUS_OK )
+    return;
 }
 
 #endif

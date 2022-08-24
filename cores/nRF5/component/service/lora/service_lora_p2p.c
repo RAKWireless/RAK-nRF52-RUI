@@ -192,23 +192,12 @@ int32_t service_lora_p2p_config(void)
 
     if (SERVICE_LORA_P2P == service_lora_get_nwm())
     {
-        switch (g_rui_cfg_t.g_lora_p2p_cfg_t.Bandwidth)
-        {
-        case 125:
-            bandwidth = 0;
-            break;
-        case 250:
-            bandwidth = 1;
-            break;
-        case 500:
-            bandwidth = 2;
-            break;
-        default:
-            break;
-        }
+        //NULL
     }
     else if (SERVICE_LORA_FSK == service_lora_get_nwm())
     {
+        //Because RadioGetFskBandwidthRegValue( bandwidth << 1 ); 
+        // SX126x badwidth is double sided
         bandwidth = (g_rui_cfg_t.g_lora_p2p_cfg_t.fsk_rxbw >> 1);
     }
 
@@ -417,7 +406,7 @@ uint8_t service_lora_p2p_get_sf(void)
 
 int32_t service_lora_p2p_set_sf(uint8_t spreadfact)
 {
-    if ((spreadfact < 6) || (spreadfact > 12))
+    if ((spreadfact < 5) || (spreadfact > 12))
         return -UDRV_WRONG_ARG;
 
     service_nvm_set_sf_to_nvm(spreadfact);
@@ -435,7 +424,7 @@ int32_t service_lora_p2p_set_bandwidth(uint32_t bandwidth)
 {
     if (SERVICE_LORA_P2P == service_lora_get_nwm())
     {
-        if ((bandwidth != 125) && (bandwidth != 250) && (bandwidth != 500))
+        if (bandwidth > 9)
         {
             return -UDRV_WRONG_ARG;
         }

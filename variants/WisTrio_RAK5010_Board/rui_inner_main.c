@@ -474,6 +474,7 @@ void rui_init(void)
     SERVICE_MODE_TYPE mode;
     uint32_t baudrate;
     uint8_t set_dev_name[30];
+    uint8_t mac[12];
     uint8_t rbuff[8] = {0};
     NRF_POWER->DCDCEN = 1;
 
@@ -512,6 +513,8 @@ void rui_init(void)
     sprintf(set_dev_name,"RAK.%02X%02X%02X",rbuff[5],rbuff[6],rbuff[7]);
     udrv_ble_set_device_name(set_dev_name,strlen(set_dev_name));
 #endif
+    service_nvm_get_ble_mac_from_nvm(mac,12);
+    udrv_ble_set_macaddress(mac);
     udrv_ble_advertising_start(APP_ADV_TIMEOUT_IN_SECONDS);
     udrv_serial_init(SERIAL_BLE0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 #endif

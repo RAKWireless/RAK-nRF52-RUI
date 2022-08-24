@@ -21,12 +21,13 @@ int At_GetHwModel (SERIAL_PORT port, char *cmd, stParam *param);
 int At_GetHwID (SERIAL_PORT port, char *cmd, stParam *param);
 int At_Alias (SERIAL_PORT port, char *cmd, stParam *param);
 int At_GetSysVolt (SERIAL_PORT port, char *cmd, stParam *param);
+int At_Bootver (SERIAL_PORT port, char *cmd, stParam *param);
 #endif
 #ifdef rak3172
 int At_GetUid (SERIAL_PORT port, char *cmd, stParam *param);
 #endif
 #ifdef SUPPORT_BLE
-int At_GetBLEMac (SERIAL_PORT port, char *cmd, stParam *param);
+int At_BLEMac (SERIAL_PORT port, char *cmd, stParam *param);
 #endif
 
 #endif //_ATCMD_GENERAL_H_

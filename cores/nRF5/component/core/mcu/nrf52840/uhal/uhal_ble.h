@@ -326,6 +326,7 @@ int32_t uhal_ble_set_device_name(char *devic_name, uint8_t device_name_length);
 char* uhal_ble_get_device_name(void);
 
 int32_t uhal_ble_get_macaddress(uint8_t *macaddr);
+int32_t uhal_ble_set_macaddress(uint8_t *macaddr);
 int32_t uhal_ble_set_adv_interval(uint32_t adv_interval);
 int32_t uhal_ble_get_adv_interval(void);
 void uhal_ble_set_adv_slow_mode(uint8_t adv_mode);
