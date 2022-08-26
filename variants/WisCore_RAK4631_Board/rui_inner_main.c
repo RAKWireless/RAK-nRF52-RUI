@@ -383,7 +383,7 @@ void rui_init(void)
     SERVICE_MODE_TYPE mode;
     uint32_t baudrate;
     uint8_t set_dev_name[30];
-    uint8_t mac[12];
+    uint8_t mac[13] = {0};
     uint8_t rbuff[8] = {0};
     NRF_POWER->DCDCEN = 1;
 
