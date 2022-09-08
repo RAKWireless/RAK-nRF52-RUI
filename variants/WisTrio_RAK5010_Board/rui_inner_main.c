@@ -484,9 +484,6 @@ void rui_init(void)
     NRF_LOG_INFO("RUI Version: %s", sw_version);
     udrv_sys_clock_init();
 
-#ifdef SUPPORT_MULTITASK
-    SysTick_Config(SystemCoreClock / 100);      /* Configure SysTick to generate an interrupt every 10 ms */
-#endif
 
     udrv_timer_init();
 
@@ -499,6 +496,10 @@ void rui_init(void)
 #endif
 #ifdef SUPPORT_USB
     uhal_usb_enable(SERIAL_USB0);
+#endif
+
+#ifdef SUPPORT_MULTITASK
+    SysTick_Config(SystemCoreClock / 100);      /* Configure SysTick to generate an interrupt every 10 ms */
 #endif
 
     udrv_flash_init();

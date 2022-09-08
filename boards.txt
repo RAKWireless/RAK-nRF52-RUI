@@ -19,7 +19,7 @@
 menu.softdevice=Bootloader
 menu.debug=Debug
 menu.supportnfc=Support NFC
-
+menu.supportat=Support AT
 # ----------------------------------
 # WisBlock Core RAK4630 Board
 # ----------------------------------
@@ -76,6 +76,12 @@ WisCoreRAK4631Board.menu.supportnfc.1= Disable
 WisCoreRAK4631Board.menu.supportnfc.1.build.nfc_flag=-DCONFIG_NFCT_PINS_AS_GPIOS
 WisCoreRAK4631Board.menu.supportnfc.2= Enable
 WisCoreRAK4631Board.menu.supportnfc.2.build.nfc_flag=-DSUPPORT_NFC -UCONFIG_NFCT_PINS_AS_GPIOS
+
+WisCoreRAK4631Board.menu.supportat.1=On
+WisCoreRAK4631Board.menu.supportat.1.build.support_at_flag=-DSUPPORT_AT
+WisCoreRAK4631Board.menu.supportat.2=Off
+WisCoreRAK4631Board.menu.supportat.2.build.support_at_flag=-USUPPORT_AT
+
 
 # ----------------------------------
 # WisTrio Cellular RAK5010 Board
@@ -136,6 +142,12 @@ WisTrioRAK5010Board.menu.auto_display_cellular_response.1.build.bg96_flag=-UAUTO
 WisTrioRAK5010Board.menu.auto_display_cellular_response.2=On
 WisTrioRAK5010Board.menu.auto_display_cellular_response.2.build.bg96_flag=-DAUTO_DISPLAY_CELLULAR_RESPONSE
 
+WisTrioRAK5010Board.menu.supportat.1=On
+WisTrioRAK5010Board.menu.supportat.1.build.support_at_flag=-DSUPPORT_AT
+WisTrioRAK5010Board.menu.supportat.2=Off
+WisTrioRAK5010Board.menu.supportat.2.build.support_at_flag=-USUPPORT_AT
+
+
 # ----------------------------------
 # WisBlock Core RAK3400 Board
 # ----------------------------------
@@ -192,4 +204,10 @@ WisCoreRAK3401Board.menu.supportnfc.1= Disable
 WisCoreRAK3401Board.menu.supportnfc.1.build.nfc_flag=-DCONFIG_NFCT_PINS_AS_GPIOS
 WisCoreRAK3401Board.menu.supportnfc.2= Enable
 WisCoreRAK3401Board.menu.supportnfc.2.build.nfc_flag=-DSUPPORT_NFC -UCONFIG_NFCT_PINS_AS_GPIOS
+
+WisCoreRAK3401Board.menu.supportat.1=On
+WisCoreRAK3401Board.menu.supportat.1.build.support_at_flag=-DSUPPORT_AT
+WisCoreRAK3401Board.menu.supportat.2=Off
+WisCoreRAK3401Board.menu.supportat.2.build.support_at_flag=-USUPPORT_AT
+
 
