@@ -462,7 +462,7 @@ void rui_init(void)
         }
     }
 
-#ifdef WDT_SUPPORT
+#ifdef SUPPORT_WDT
     udrv_wdt_init();
     udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
 #endif
@@ -472,6 +472,10 @@ void rui_init(void)
 
 void rui_running(void)
 {
+#ifdef SUPPORT_WDT
+    udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
+#endif
+
     nrf_ble_lesc_request_handler();
 
     udrv_system_event_consume();

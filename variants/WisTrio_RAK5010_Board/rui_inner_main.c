@@ -554,7 +554,7 @@ void rui_init(void)
         }
     }
 
-#ifdef WDT_SUPPORT
+#ifdef SUPPORT_WDT
     udrv_wdt_init();
     udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
 #endif
@@ -564,7 +564,12 @@ void rui_init(void)
     Gsm_Init();
 
     // RAK5010 Senaor init
-    rui_rak5010_sensor_init();
+    if(rui_rak5010_sensor_init()) {
+        udrv_serial_log_printf("Version: RAK5010\r\n");
+    } else {
+        udrv_serial_log_printf("Version: RAK5010-M\r\n");
+    }
+
 
 }
 

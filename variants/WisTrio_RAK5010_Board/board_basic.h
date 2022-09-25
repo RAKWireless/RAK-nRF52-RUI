@@ -83,6 +83,10 @@ typedef struct _lorap2p_param{
     /* 2*Fdev + BR) < BW */
     uint32_t deviation;
     uint32_t fsk_rxbw;
+    bool iqinverted;
+    uint32_t symbol_timeout;
+    uint16_t syncword;
+    bool fix_length_payload;
 }S_LORAP2P_PARAM;
 
 typedef struct {
@@ -153,6 +157,9 @@ typedef struct{
 }rtc_delta_t;
 
 typedef struct {
+    // If you want to add a new variable to this structure, add its store handler in service_nvm.c. 
+    // Note the points the file "service_nvm.c": 
+    // structure :STORE_REOGANIZED fountion: service_nvm_store_config, service_nvm_read_config
     uint32_t magic_num;
     uint32_t version_code;
 #ifdef SUPPORT_LORA
