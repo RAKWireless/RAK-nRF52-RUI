@@ -304,11 +304,6 @@ static uint8_t uhal_Usbd_send_buffer[256]={0};
 #endif
 static ble_advertising_init_t init;
 static int uhal_is_scanning = 0;
- 
-
-void uhal_ble_connect_handler(BLE_HANDLER handler);
-void uhal_ble_disconnect_handler(BLE_HANDLER handler);
-
 
 void uhal_ble_stack_init(void);
 void uhal_gap_params_init(void);

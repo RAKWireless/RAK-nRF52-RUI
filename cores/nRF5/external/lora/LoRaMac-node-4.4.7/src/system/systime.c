@@ -521,7 +521,6 @@
 #define __STACK_SIZE 7168
 #define DEBUG 1
 #define WISBLOCK_BASE_5005_O 1
-#define SUPPORT_WDT 1
 #define SUPPORT_USB 1
 #define SUPPORT_BLE 1
 #define SUPPORT_NFC 1
@@ -3085,9 +3084,6 @@ void RtcBkupRead( uint32_t* data0, uint32_t* data1 );
 void RtcProcess( void );
 # 195 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/rtc-board.h"
 TimerTime_t RtcTempCompensation( TimerTime_t period, float temperature );
-
-
-uint32_t RtcGetMaxticks();
 # 27 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.c" 2
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h" 1
 # 26 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/systime.h"

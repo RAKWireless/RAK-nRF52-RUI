@@ -68,14 +68,6 @@ extern "C"
         SET_SIGNED_WITH_MITM = 6    /* Set sec_mode pointed to by ptr to require signing or encryption with MITM protection.*/
     } chars_security_req;
 
-
-    typedef enum
-    {
-        BLE_CONNECTED = 1,
-        BLE_DISCONNECTED 
-    } Event;
-
-
     typedef void (*BLE_CUS_NOTIFY_HANDLER) (uint16_t, uint8_t *);
 
     typedef void (*BLE_CUS_SEND_HANDLER) (uint16_t, uint8_t *);
@@ -84,8 +76,6 @@ extern "C"
 
     typedef void (*BLE_KEYBOARD_HANDLER) (uint16_t, uint8_t);
 
-    typedef void (*BLE_HANDLER)(void);
-    
     void udrv_ble_cus_register_notify_handler (BLE_CUS_NOTIFY_HANDLER handler);
 
     void udrv_ble_cus_register_send_handler (BLE_CUS_SEND_HANDLER handler);
@@ -93,9 +83,7 @@ extern "C"
     void udrv_ble_scan_data_handler (BLE_SCAN_DATA_HANDLER handler);
 
     void udrv_ble_keyboard_handler (BLE_KEYBOARD_HANDLER handler);
-    
-    void udrv_ble_register_callback_handler (Event event,BLE_HANDLER handler);
-    
+
     void udrv_ble_stack_start(void);
 
     void udrv_ble_services_start(void);
