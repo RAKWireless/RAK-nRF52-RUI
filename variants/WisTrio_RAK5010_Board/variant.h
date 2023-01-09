@@ -111,6 +111,7 @@ extern const uint32_t g_ADigitalPinMap[];
 #define AIN                 P0_05//5           // J10
 #define NRF_RXD1            P0_08//8           // BG96
 #define NRF_TXD1            P0_06//6           // BG96
+#define GREEN_LED           P0_12
 
 /*
  * Analog pins

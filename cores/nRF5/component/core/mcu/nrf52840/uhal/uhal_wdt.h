@@ -6,10 +6,8 @@
 #include "nrf_drv_wdt.h"
 #include "nrf_log.h"
 
-#define WDT_FEED_PERIOD     8*1000
-
 void uhal_wdt_feed(void);
 
-void uhal_wdt_init(void);
+void uhal_wdt_init(uint32_t period);
 
 #endif

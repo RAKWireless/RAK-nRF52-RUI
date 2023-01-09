@@ -43,11 +43,16 @@
 #include "sysIrqHandlers.h"
 
 extern bool sched_start;
+
 extern tcb_ thread_pool[THREAD_POOL_SIZE];
 extern tcb_ *current_thread;
 extern unsigned long int current_sp;
 #else
 bool no_busy_loop = false;
+#endif
+
+#ifdef SUPPORT_WDT
+extern bool is_custom_wdt;
 #endif
 
 static udrv_system_event_t rui_user_app_event = {.request = UDRV_SYS_EVT_OP_USER_APP, .p_context = NULL};
@@ -345,6 +350,7 @@ void rui_init(void)
     service_nvm_get_ble_mac_from_nvm(mac,12);
     udrv_ble_set_macaddress(mac);
     udrv_ble_advertising_start(APP_ADV_TIMEOUT_IN_SECONDS);
+    service_nvm_set_mode_type_to_nvm(SERIAL_BLE0, SERVICE_MODE_TYPE_CLI);
     udrv_serial_init(SERIAL_BLE0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 #endif
 #ifdef SUPPORT_NFC
@@ -364,9 +370,8 @@ void rui_init(void)
         }
     }
 
-#ifdef WDT_SUPPORT
-    udrv_wdt_init();
-    udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
+#ifdef SUPPORT_WDT
+    is_custom_wdt = false;
 #endif
 
     udrv_system_event_init();
@@ -374,6 +379,10 @@ void rui_init(void)
 
 void rui_running(void)
 {
+#ifdef SUPPORT_WDT
+    udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
+#endif
+
     nrf_ble_lesc_request_handler();
 
     udrv_system_event_consume();
@@ -395,6 +404,13 @@ void rui_user_thread(void)
     //user init
     rui_setup();
 
+#ifdef SUPPORT_WDT
+    if(!is_custom_wdt) {
+        udrv_wdt_init(WDT_FEED_PERIOD);
+        udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
+    }
+#endif
+
     while (1) {
         rui_loop();
     }
@@ -409,6 +425,12 @@ void main(void)
 #ifndef SUPPORT_MULTITASK
     //user init
     rui_setup();
+#ifdef SUPPORT_WDT
+    if(!is_custom_wdt) {
+        udrv_wdt_init(UDRV_WDT_FEED_PERIOD);
+        udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
+    }
+#endif
 #endif
 
 #ifdef TOGGLE_LED_PER_SEC
