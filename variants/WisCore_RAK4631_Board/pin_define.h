@@ -34,15 +34,6 @@
 #define SPIM3_SCK               WB_SPI_CLK//NRF_GPIO_PIN_MAP(0,3)
 #define SPI_CSN_PIN             SPIM3_NSS
 
-#define _ADC1   PIN_A0
-#define _ADC2   PIN_A1
-#define _ADC3   PIN_A2
-#define _ADC4   PIN_A3
-#define _ADC5   PIN_A4
-#define _ADC6   PIN_A5
-#define _ADC7   PIN_A6
-#define _ADC8   PIN_A7
-
 #define USE_FULL_ASSERT
 #ifdef  USE_FULL_ASSERT
 /**

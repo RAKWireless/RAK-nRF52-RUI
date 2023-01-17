@@ -89,10 +89,6 @@ typedef struct _lorap2p_param{
     /* 2*Fdev + BR) < BW */
     uint32_t deviation;
     uint32_t fsk_rxbw;
-    bool iqinverted;
-    uint32_t symbol_timeout;
-    uint16_t syncword;
-    bool fix_length_payload;
 }S_LORAP2P_PARAM;
 
 typedef struct {
@@ -153,8 +149,7 @@ typedef struct {
 typedef struct{
     uint8_t work_mode;  // 0:ble peripheral  1:ble central  2:ble observer 
     uint8_t long_range_enable;
-    uint8_t mac[12];
-    uint8_t reserve[2];
+    uint8_t reserve[14];
 }ble_central_cfg_t;
 
 typedef struct{
@@ -163,8 +158,7 @@ typedef struct{
 }rtc_delta_t;
 
 typedef struct {
-    uint32_t magic_num;
-    uint32_t version_code;
+    uint32_t crc_verify;
 #ifdef SUPPORT_LORA
     uint8_t lora_work_mode;
     S_LORAP2P_PARAM g_lora_p2p_cfg_t;
@@ -184,67 +178,39 @@ typedef struct {
     uint32_t auto_sleep_time;
     uint8_t sn[18];
     uint8_t alias[16];
-    uint8_t debug_level;
-    uint8_t firmware_ver[32];
-    uint8_t hwmodel[32];
-    uint8_t cli_ver[32];
 } rui_cfg_t;
 
+typedef struct {
+    rui_cfg_t cfg;
+    uint32_t magic;
+    /**************************************************
+     *                                                *
+     * XXX: MUST put new RUI config here.             *
+     *                                                *
+     **************************************************/
+} rui_cfg_new_t;
+
+typedef struct {
+    uint32_t crc_verify;
+#ifdef SUPPORT_LORA
+    uint8_t lora_work_mode;
+    S_LORAP2P_PARAM g_lora_p2p_cfg_t;
+#endif
+#ifdef SUPPORT_BLE
+    ble_central_cfg_t g_ble_cfg_t;
+#endif
+#ifdef SUPPORT_LORA
+    lora_cfg_t g_lora_cfg_t;
+#endif
+    rtc_delta_t g_rtc_delta_t;
+    SERVICE_MODE_TYPE mode_type[SERIAL_MAX];
+    uint32_t baudrate;
+    uint8_t atcmd_echo;
+    uint8_t serial_passwd[9];
+    uint32_t auto_sleep_time;
+    uint8_t sn[18];
+    uint8_t alias[16];
+} rui_cfg_legacy_t;
+
 uint32_t get_batt_table_size(void);
-
-#define RUI_CFG_V85_SZ                              524
-#define RUI_CFG_V87_SZ                              528
-#define RUI_CFG_V99_SZ                              532
-
-//The offset in memory of the address of the element in rui_cfg relative to the starting position of rui_cfg
-#define ELEM_OFS_V85_crc_verify                     0
-#define ELEM_OFS_V85_lora_work_mode                 4
-#define ELEM_OFS_V85_g_lora_p2p_cfg_t               8
-#define ELEM_OFS_V85_g_ble_cfg_t                    44
-#define ELEM_OFS_V85_g_lora_cfg_t                   60
-#define ELEM_OFS_V85_g_rtc_delta_t                  452
-#define ELEM_OFS_V85_mode_type                      460
-#define ELEM_OFS_V85_baudrate                       468
-#define ELEM_OFS_V85_atcmd_echo                     472
-#define ELEM_OFS_V85_serial_passwd                  473
-#define ELEM_OFS_V85_auto_sleep_time                484
-#define ELEM_OFS_V85_sn                             488
-#define ELEM_OFS_V85_alias                          506
-
-//follows are differences in version 87
-//The content between crc_verify and mode_type has same offset as v85
-#define ELEM_OFS_V87_crc_verify                     ELEM_OFS_V85_crc_verify
-#define ELEM_OFS_V87_lora_work_mode                 ELEM_OFS_V85_lora_work_mode
-#define ELEM_OFS_V87_g_lora_p2p_cfg_t               ELEM_OFS_V85_g_lora_p2p_cfg_t
-#define ELEM_OFS_V87_g_ble_cfg_t                    ELEM_OFS_V85_g_ble_cfg_t
-#define ELEM_OFS_V87_g_lora_cfg_t                   ELEM_OFS_V85_g_lora_cfg_t
-#define ELEM_OFS_V87_g_rtc_delta_t                  ELEM_OFS_V85_g_rtc_delta_t
-#define ELEM_OFS_V87_mode_type                      ELEM_OFS_V85_mode_type
-#define ELEM_OFS_V87_serial_lock_status             466
-#define ELEM_OFS_V87_baudrate                       472
-#define ELEM_OFS_V87_atcmd_echo                     476
-#define ELEM_OFS_V87_serial_passwd                  477
-#define ELEM_OFS_V87_auto_sleep_time                488
-#define ELEM_OFS_V87_sn                             492
-#define ELEM_OFS_V87_alias                          510
-
-
-//follows are differences in version 99
-//The content between crc_verify and alias has same offset as v87
-#define ELEM_OFS_V99_crc_verify                     ELEM_OFS_V87_crc_verify
-#define ELEM_OFS_V99_lora_work_mode                 ELEM_OFS_V87_lora_work_mode
-#define ELEM_OFS_V99_g_lora_p2p_cfg_t               ELEM_OFS_V87_g_lora_p2p_cfg_t
-#define ELEM_OFS_V99_g_ble_cfg_t                    ELEM_OFS_V87_g_ble_cfg_t
-#define ELEM_OFS_V99_g_lora_cfg_t                   ELEM_OFS_V87_g_lora_cfg_t
-#define ELEM_OFS_V99_g_rtc_delta_t                  ELEM_OFS_V87_g_rtc_delta_t
-#define ELEM_OFS_V99_mode_type                      ELEM_OFS_V87_mode_type
-#define ELEM_OFS_V99_serial_lock_status             ELEM_OFS_V87_serial_lock_status
-#define ELEM_OFS_V99_baudrate                       ELEM_OFS_V87_baudrate
-#define ELEM_OFS_V99_atcmd_echo                     ELEM_OFS_V87_atcmd_echo
-#define ELEM_OFS_V99_serial_passwd                  ELEM_OFS_V87_serial_passwd
-#define ELEM_OFS_V99_auto_sleep_time                ELEM_OFS_V87_auto_sleep_time
-#define ELEM_OFS_V99_sn                             ELEM_OFS_V87_sn
-#define ELEM_OFS_V99_alias                          ELEM_OFS_V87_alias
-#define ELEM_OFS_V99_magic                          528
-
 #endif

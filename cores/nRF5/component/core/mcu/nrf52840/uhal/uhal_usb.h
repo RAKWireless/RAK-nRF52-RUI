@@ -33,8 +33,6 @@ void uhal_usb_flush (SERIAL_PORT Port, uint32_t Timeout);
 
 size_t uhal_usb_read_available(SERIAL_PORT Port);
 
-bool uhal_usb_opened(SERIAL_PORT Port);
-
 void uhal_usb_suspend(void);
 
 void uhal_usb_resume(void);

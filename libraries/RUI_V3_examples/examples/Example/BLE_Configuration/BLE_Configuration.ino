@@ -3,7 +3,7 @@ void setup()
 {
   bool ret;
   Serial.begin(115200);
-  delay(10000);
+
   Serial.println("RAKwireless BLE Configuration Example");
   Serial.println("------------------------------------------------------");
 

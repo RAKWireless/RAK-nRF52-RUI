@@ -37,23 +37,6 @@
 #include "nrf_ble_lesc.h"
 #include "udrv_powersave.h"
 #include "udrv_errno.h"
-#ifdef SUPPORT_MULTITASK
-#include "nrf_drv_systick.h"
-#include "uhal_sched.h"
-#include "sysIrqHandlers.h"
-
-extern bool sched_start;
-
-extern tcb_ thread_pool[THREAD_POOL_SIZE];
-extern tcb_ *current_thread;
-extern unsigned long int current_sp;
-#else
-bool no_busy_loop = false;
-#endif
-
-#ifdef SUPPORT_WDT
-extern bool is_custom_wdt;
-#endif
 
 #ifdef SUPPORT_LORA
 #include "radio.h"
@@ -63,6 +46,7 @@ extern service_lora_join_cb service_lora_join_callback;
 #endif
 
 static udrv_system_event_t rui_user_app_event = {.request = UDRV_SYS_EVT_OP_USER_APP, .p_context = NULL};
+uint32_t orig_auto_sleep_time;
 static bool run_user_app = false;
 
 extern bool udrv_powersave_in_sleep;
@@ -76,7 +60,7 @@ static void on_error(void)
     // To allow the buffer to be flushed by the host.
     udrv_delay_ms(100);
 #endif
-    HardFault_Handler();
+    NVIC_SystemReset();
 }
 
 void app_error_handler(uint32_t error_code, uint32_t line_num, const uint8_t *p_file_name)
@@ -118,9 +102,6 @@ void OnTimerEvent()
     udrv_gpio_toggle_logic(BLUE_LED);
 }
 #endif
-/********************************************************************/
-/* RUI handler functions                                            */
-/********************************************************************/
 
 void rui_event_handler_func(void *data, uint16_t size) {
     udrv_system_event_t *event = (udrv_system_event_t *)data;
@@ -340,6 +321,11 @@ void rui_event_handler_func(void *data, uint16_t size) {
             break;
         }
 #endif
+        case UDRV_SYS_EVT_OP_USER_APP:
+        {
+            run_user_app = true;
+            break;
+        }
         case UDRV_SYS_EVT_OP_USER_TIMER:
         case UDRV_SYS_EVT_OP_SYS_TIMER:
         {
@@ -383,12 +369,28 @@ void rui_event_handler_func(void *data, uint16_t size) {
     }
 }
 
+void rui_user_application_timer_handler(void *p_context)
+{
+    uint32_t curr_auto_sleep_time = service_nvm_get_auto_sleep_time_from_nvm();
+
+    udrv_system_event_produce(&rui_user_app_event);
+
+    if (curr_auto_sleep_time != orig_auto_sleep_time) {
+        udrv_system_user_app_timer_stop();
+        orig_auto_sleep_time = curr_auto_sleep_time;
+        if (curr_auto_sleep_time != 0) {
+            udrv_system_user_app_timer_start(curr_auto_sleep_time, NULL);
+        }
+    }
+
+    udrv_powersave_in_sleep = false;
+}
+
 void rui_init(void)
 {
     SERVICE_MODE_TYPE mode;
     uint32_t baudrate;
     uint8_t set_dev_name[30];
-    uint8_t mac[13] = {0};
     uint8_t rbuff[8] = {0};
     NRF_POWER->DCDCEN = 1;
 
@@ -411,9 +413,6 @@ void rui_init(void)
     uhal_usb_enable(SERIAL_USB0);
 #endif
 
-#ifdef SUPPORT_MULTITASK
-    SysTick_Config(SystemCoreClock / 100);      /* Configure SysTick to generate an interrupt every 10 ms */
-#endif
 
     udrv_flash_init();
     service_nvm_init_config();
@@ -427,10 +426,7 @@ void rui_init(void)
     sprintf(set_dev_name,"RAK.%02X%02X%02X",rbuff[5],rbuff[6],rbuff[7]);
     udrv_ble_set_device_name(set_dev_name,strlen(set_dev_name));
 #endif
-    service_nvm_get_ble_mac_from_nvm(mac,12);
-    udrv_ble_set_macaddress(mac);
     udrv_ble_advertising_start(APP_ADV_TIMEOUT_IN_SECONDS);
-    service_nvm_set_mode_type_to_nvm(SERIAL_BLE0, SERVICE_MODE_TYPE_CLI);
     udrv_serial_init(SERIAL_BLE0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 #endif
 #ifdef SUPPORT_NFC
@@ -468,68 +464,32 @@ void rui_init(void)
         }
     }
 
-#ifdef SUPPORT_WDT
-    is_custom_wdt = false;
+#ifdef WDT_SUPPORT
+    udrv_wdt_init();
+    udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
 #endif
 
     udrv_system_event_init();
+    udrv_system_user_app_timer_create((timer_handler)rui_user_application_timer_handler, HTMR_PERIODIC);
+    if ((orig_auto_sleep_time = service_nvm_get_auto_sleep_time_from_nvm()) != 0) {
+        udrv_system_user_app_timer_start(orig_auto_sleep_time, NULL);
+    }
 }
 
 void rui_running(void)
 {
-#ifdef SUPPORT_WDT
-    udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
-#endif
-
     nrf_ble_lesc_request_handler();
 
     udrv_system_event_consume();
 }
-
-#ifdef SUPPORT_MULTITASK
-void rui_system_thread(void)
-{
-    while (1) {
-        rui_running();
-        if (service_nvm_get_auto_sleep_time_from_nvm() && uhal_sched_run_queue_empty()) {
-            udrv_sleep_ms(0);
-        }
-    }
-}
-
-void rui_user_thread(void)
-{
-    //user init
-    rui_setup();
-
-#ifdef SUPPORT_WDT
-    if(!is_custom_wdt) {
-        udrv_wdt_init(WDT_FEED_PERIOD);
-        udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
-    }
-#endif
-
-    while (1) {
-        rui_loop();
-    }
-}
-#endif
 
 void main(void)
 {
     //system init
     rui_init();
 
-#ifndef SUPPORT_MULTITASK
     //user init
     rui_setup();
-#ifdef SUPPORT_WDT
-    if(!is_custom_wdt) {
-        udrv_wdt_init(UDRV_WDT_FEED_PERIOD);
-        udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
-    }
-#endif
-#endif
 
 #ifdef TOGGLE_LED_PER_SEC
     udrv_gpio_set_dir(BLUE_LED, GPIO_DIR_OUT);
@@ -555,42 +515,27 @@ void main(void)
         }
         case SERVICE_LORA_FSK:
         {
-            udrv_serial_log_printf("FSK.\r\n");
+            udrv_serial_log_printf("LoRa FSK.\r\n");
             break;
         }
     }
 #endif
-    if (run_user_app) {
-        HardFault_Handler();
-    }
 
-#ifdef SUPPORT_MULTITASK
-    memset(thread_pool, 0, sizeof(tcb_)*THREAD_POOL_SIZE);
-
-    uhal_sched_create_sys_thread("sys thread", rui_system_thread);
-    uhal_sched_create_thread("usr thread", rui_user_thread);
-
-    uhal_sched_init();
-
-    sched_start = true;
-
-    while (1) {
-        //__asm("WFI");
-    }
-#else
     while(1)
     {
         //system loop
         rui_running();
 
         //user loop
-        if (!no_busy_loop) {
+        if (run_user_app) {
             rui_loop();
+            run_user_app = false;
+        }
+
+        if (orig_auto_sleep_time != 0) {
+            udrv_mcu_sleep_ms(POWERSAVE_NO_TIMEOUT);
         } else {
-            if (service_nvm_get_auto_sleep_time_from_nvm()) {
-                udrv_sleep_ms(0);
-            }
+            run_user_app = true;
         }
     }
-#endif
 }

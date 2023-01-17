@@ -142,14 +142,14 @@ extern const uint32_t g_ADigitalPinMap[];
 /*
  * Analog pins
  */
-#define PIN_A0 WB_A0    // channel3 
-#define PIN_A1 WB_A1    // channel7
-#define PIN_A2 P0_02    // channel0
-#define PIN_A3 P0_03    // channel1
-#define PIN_A4 P0_04    // channel2
-#define PIN_A5 P0_28    // channel4
-#define PIN_A6 P0_29    // channel5
-#define PIN_A7 P0_30    // channel6
+#define PIN_A0 WB_A0
+#define PIN_A1 WB_A1
+#define PIN_A2 (28)
+#define PIN_A3 (29)
+#define PIN_A4 (30)
+#define PIN_A5 (31)
+#define PIN_A6 (0xff)
+#define PIN_A7 (0xff)
 
 static const uint8_t A0 = PIN_A0;
 static const uint8_t A1 = PIN_A1;

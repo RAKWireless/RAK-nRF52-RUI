@@ -1,9 +1,7 @@
 
 void setup()
 {
-  Serial.begin(115200);
-
-  Serial.println("RAKwireless RAK4631 Example");
+  Serial.println("RAKwireless RAK3272LP-SiP Example");
   Serial.println("------------------------------------------------------");
 }
 

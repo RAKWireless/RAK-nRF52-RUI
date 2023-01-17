@@ -1,9 +1,9 @@
 
-/*Advertising data can be created by users, and BLE advertisements can only contain up to 31 bytes of data in their payload.
-Here is an Example: 
+/*Adversting data can be created by users, and BLE advertisements can only contain up to 31 bytes of data in their payload.
+Here is an Exampl: 
 Bluetooth Low Energy Beacons can advertise web addresses.
 The URLs have to be in Eddystone format. 
-Data : 02 01 06 03 03 aa fe 12 16 aa fe 10 f8 01 72 61 6b 77 69 72 65 6c 65 73 73 07
+Data : 02 01 06 03 03 aa fe 12 16 aa fe 10 EC 01 72 61 6b 77 69 72 65 6c 65 73 73 07
   0x02, 0x01,   // BLE specific constants
   0x06,         // Flags
   0x03,         // Length of Service List

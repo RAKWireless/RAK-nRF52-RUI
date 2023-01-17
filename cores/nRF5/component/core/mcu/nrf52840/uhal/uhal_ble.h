@@ -69,12 +69,8 @@
 #define NUS_SERVICE_UUID_TYPE           BLE_UUID_TYPE_VENDOR_BEGIN                  /**< UUID type for the Nordic UART Service (vendor specific). */
 #define APP_BLE_OBSERVER_PRIO           2                                           /**< Application's BLE observer priority. You shouldn't need to modify this value. */
 #define APP_SOC_OBSERVER_PRIO           1                                           /**< Applications' SoC observer priority. You shouldn't need to modify this value. */
-#define APP_ADV_INTERVAL                480                                         /**< The advertising interval (in units of 0.625 ms. This value corresponds to 100 ms). */
-#define MIN_ADV_INTERVAL                100                                         /**< Minimum advertising interval 1000 ms */
-
-#define MIN_CONN_ADV_INTERVAL           20                                          /**  Minimum advertising interval (in ms).*/
-#define MIN_NON_CONN_ADV_INTERVAL       100                                         /**	 Minimum advertising interval for non-connectable advertisements (in ms).*/
-#define MAX_ADV_INTERVAL                10240                                       /**  Maximum advertising interval (in ms).*/
+#define APP_ADV_INTERVAL                1600                                        /**< The advertising interval (in units of 0.625 ms. This value corresponds to 100 ms). */
+#define MIN_ADV_INTERVAL                1000                                        /**< Minimum advertising interval 1000 ms */
 #define APP_ADV_TIMEOUT_LIMITED_MAX     180                                         /**< Maximum advertising time in 10 ms units corresponding to TGAP(lim_adv_timeout) = 180 s in limited discoverable mode. */
 #define MIN_CONN_INTERVAL               MSEC_TO_UNITS(20, UNIT_1_25_MS)             /**< Minimum acceptable connection interval (20 ms), Connection interval uses 1.25 ms units. */
 #define MAX_CONN_INTERVAL               MSEC_TO_UNITS(75, UNIT_1_25_MS)             /**< Maximum acceptable connection interval (75 ms), Connection interval uses 1.25 ms units. */
@@ -84,6 +80,17 @@
 #define NEXT_CONN_PARAMS_UPDATE_DELAY   APP_TIMER_TICKS(30000)                      /**< Time between each call to sd_ble_gap_conn_param_update after the first call (30 seconds). */
 #define MAX_CONN_PARAMS_UPDATE_COUNT    3                                           /**< Number of attempts before giving up the connection parameter negotiation. */
 #define DEAD_BEEF                       0xDEADBEEF                                  /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
+
+BLE_NUS_DEF(m_nus, NRF_SDH_BLE_TOTAL_LINK_COUNT);                                   /**< BLE NUS service instance. */
+NRF_BLE_GATT_DEF(m_gatt);                                                           /**< GATT module instance. */
+BLE_ADVERTISING_DEF(m_advertising);                                                 /**< Advertising module instance. */
+
+static uint16_t   m_conn_handle          = BLE_CONN_HANDLE_INVALID;                 /**< Handle of the current connection. */
+static uint16_t   m_ble_nus_max_data_len = BLE_GATT_ATT_MTU_DEFAULT - 3;            /**< Maximum length of data (in bytes) that can be transmitted to the peer by the Nordic UART service module. */
+static ble_uuid_t m_adv_uuids[]          =                                          /**< Universally unique service identifier. */
+{
+    {BLE_UUID_NUS_SERVICE, NUS_SERVICE_UUID_TYPE}
+};
 
 /*****************************************Pairing Mode*********************************/
 #define LESC_MITM_NC                    1                                               /**< Use MITM (Numeric Comparison). */
@@ -124,8 +131,45 @@
                                         0x45, 0x56, 0x67, 0x78, \
                                         0x89, 0x9a, 0xab, 0xbc, \
                                         0xcd, 0xde, 0xef, 0xf0            /**< Proprietary UUID for Beacon. */
+static ble_gap_adv_params_t m_adv_params;                                  /**< Parameters to be passed to the stack when starting advertising. */
+static ble_advdata_t beacon_advdata;
+static ble_advdata_t beacon_srdata;
+static ble_advdata_manuf_data_t manuf_specific_data;
+
+static uint8_t              m_adv_handle = BLE_GAP_ADV_SET_HANDLE_NOT_SET; /**< Advertising handle used to identify an advertising set. */
+static uint8_t              m_enc_advdata[BLE_GAP_ADV_SET_DATA_SIZE_MAX];  /**< Buffer for storing an encoded advertising set. */
+static uint8_t              m_enc_srdata[BLE_GAP_ADV_SET_DATA_SIZE_MAX];  /**< Buffer for storing an encoded scan set. */
+
 #define UUID_VAL_OFFSET_IN_BEACON_INFO  1                                  /**< Position of the MSB of the UUID Value in m_beacon_info array. */
 #define MAJ_VAL_OFFSET_IN_BEACON_INFO   18                                 /**< Position of the MSB of the Major Value in m_beacon_info array. */
+
+/**@brief Struct that contains pointers to the encoded advertising data. */
+static ble_gap_adv_data_t m_adv_data =
+{
+    .adv_data =
+    {
+        .p_data = m_enc_advdata,
+        .len    = BLE_GAP_ADV_SET_DATA_SIZE_MAX
+    },
+    .scan_rsp_data =
+    {
+        .p_data = m_enc_srdata,
+        .len    = BLE_GAP_ADV_SET_DATA_SIZE_MAX
+    }
+};
+
+static uint8_t m_beacon_info[APP_BEACON_INFO_LENGTH] =                    /**< Information advertised by the Beacon. */
+{
+    APP_DEVICE_TYPE,     // Manufacturer specific information. Specifies the device type in this
+                         // implementation.
+    APP_ADV_DATA_LENGTH, // Manufacturer specific information. Specifies the length of the
+                         // manufacturer specific data in this implementation.
+    APP_BEACON_UUID,     // 128 bit UUID value.
+    APP_MAJOR_VALUE,     // Major arbitrary value that can be used to distinguish between Beacons.
+    APP_MINOR_VALUE,     // Minor arbitrary value that can be used to distinguish between Beacons.
+    APP_MEASURED_RSSI    // Manufacturer specific information. The Beacon's measured TX power in
+                         // this implementation.
+};
 
 /*************************************Define for Beacon Mode***********************************************/
 
@@ -134,6 +178,10 @@
 APP_TIMER_DEF(ble_mode_id);   // timer ID
 #define BLE_MODE_SWITCH          5*1000
 
+BLE_NUS_C_DEF(m_ble_nus_c);                                             /**< BLE NUS service client instance. */
+//BLE_RCS_C_ARRAY_DEF(m_rcs_c, NRF_SDH_BLE_CENTRAL_LINK_COUNT);           /**< Rak Custom client instances. */
+BLE_DB_DISCOVERY_ARRAY_DEF(m_db_disc, NRF_SDH_BLE_CENTRAL_LINK_COUNT);  /**< Database discovery module instances. */
+NRF_BLE_SCAN_DEF(m_scan);                                               /**< Scanning Module instance. */
 #define TARGET_UUID                                 BLE_UUID_SERVICE_PRIMARY       /**< Target device name that application is looking for. */
 static char const m_target_periph_name[] = "BLE Sensor";                /**< Name of the device to try to connect to. This name is searched for in the scanning report data. */
 #define BLE_GAP_SCAN_INTERVAL_MS_MIN                3                   /**< Minimum Scan interval in ms. */
@@ -152,6 +200,31 @@ static char const m_target_periph_name[] = "BLE Sensor";                /**< Nam
 
 static void scan_start(void);
 
+// Scan parameters requested for scanning and connection.
+static ble_gap_scan_params_t m_scan_param_coded_phy =               // Long Range support
+{
+    .extended      = 1,                                             // must to change sdk_config "NRF_BLE_SCAN_BUFFER" 31 -> 255
+    .active        = 1,
+    .interval      = SCAN_INTERVAL,
+    .window        = SCAN_WINDOW,                                   /**< Scan window in 625 us units. @sa BLE_GAP_SCAN_WINDOW.
+                                                                        If scan_phys contains both @ref BLE_GAP_PHY_1MBPS and
+                                                                        @ref BLE_GAP_PHY_CODED interval shall be larger than or
+                                                                        equal to twice the scan window. */
+    .timeout       = 0x0000,                                        // No timeout.
+    .scan_phys     = BLE_GAP_PHY_CODED, 
+    .filter_policy = BLE_GAP_SCAN_FP_ACCEPT_ALL,
+};
+
+static ble_gap_scan_params_t m_scan_param_1MBps =
+{
+    .active        = 1,
+    .interval      = SCAN_INTERVAL,
+    .window        = SCAN_WINDOW,
+    .timeout       = 0x0000,                                        // No timeout.
+    .scan_phys     = BLE_GAP_PHY_AUTO,                              //BLE_GAP_PHY_1MBPS,
+    .filter_policy = BLE_GAP_SCAN_FP_ACCEPT_ALL,
+};
+
 // ble device running mode
 typedef enum
 {
@@ -159,6 +232,16 @@ typedef enum
     BLE_WORK_CENTRAL,
     BLE_WORK_OBSERVER
 } ble_work_mode_t;
+
+//extern rui_cfg_t g_rui_cfg_t;
+static ble_central_cfg_t uhal_g_ble_cfg_t =
+    {
+        /* BLE default configuration */
+        .work_mode = BLE_WORK_PERIPHERAL,
+        .long_range_enable = 0,
+};
+
+static uint8_t g_ble_current_mode = BLE_WORK_PERIPHERAL;
 
 
 #ifdef S132
@@ -215,11 +298,8 @@ static ble_gap_conn_params_t const m_connection_param =
 #include "app_usbd_serial_num.h"
 static uint8_t uhal_Usbd_send_buffer[256]={0};
 #endif
- 
-void uhal_gatt_evt_handler(nrf_ble_gatt_t *p_gatt, nrf_ble_gatt_evt_t const *p_evt);
-void uhal_ble_connect_handler(BLE_HANDLER handler);
-void uhal_ble_disconnect_handler(BLE_HANDLER handler);
-
+static ble_advertising_init_t init;
+static int uhal_is_scanning = 0;
 
 void uhal_ble_stack_init(void);
 void uhal_gap_params_init(void);
@@ -242,7 +322,6 @@ int32_t uhal_ble_set_device_name(char *devic_name, uint8_t device_name_length);
 char* uhal_ble_get_device_name(void);
 
 int32_t uhal_ble_get_macaddress(uint8_t *macaddr);
-int32_t uhal_ble_set_macaddress(uint8_t *macaddr);
 int32_t uhal_ble_set_adv_interval(uint32_t adv_interval);
 int32_t uhal_ble_get_adv_interval(void);
 void uhal_ble_set_adv_slow_mode(uint8_t adv_mode);

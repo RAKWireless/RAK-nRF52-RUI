@@ -194,9 +194,6 @@ void RtcProcess( void );
  */
 TimerTime_t RtcTempCompensation( TimerTime_t period, float temperature );
 
-
-uint32_t RtcGetMaxticks();
-
 #ifdef __cplusplus
 }
 #endif
