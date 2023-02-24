@@ -22,7 +22,9 @@ extern "C"
         DRV_BLE_TX_POWER_2DBM = (0x2UL),      /**< 2 dBm radio transmit power.   */
         DRV_BLE_TX_POWER_0DBM = (0x00UL),     /**< 0 dBm radio transmit power.   */
         DRV_BLE_TX_POWER_NEG4DBM = (0xFCUL),  /**< -4 dBm radio transmit power.  */
+        DRV_BLE_TX_POWER_NEG5DBM = (0xFBUL),  /**< -5 dBm radio transmit power.  */ // Edited by Sercan ERAT 
         DRV_BLE_TX_POWER_NEG8DBM = (0xF8UL),  /**< -8 dBm radio transmit power.  */
+        DRV_BLE_TX_POWER_NEG10DBM = (0xF6UL), /**< -10 dBm radio transmit power.  */ // Edited by Sercan ERAT 
         DRV_BLE_TX_POWER_NEG12DBM = (0xF4UL), /**< -12 dBm radio transmit power. */
         DRV_BLE_TX_POWER_NEG16DBM = (0xF0UL), /**< -16 dBm radio transmit power. */
         DRV_BLE_TX_POWER_NEG20DBM = (0xECUL), /**< -20 dBm radio transmit power. */
@@ -68,6 +70,14 @@ extern "C"
         SET_SIGNED_WITH_MITM = 6    /* Set sec_mode pointed to by ptr to require signing or encryption with MITM protection.*/
     } chars_security_req;
 
+
+    typedef enum
+    {
+        BLE_CONNECTED = 1,
+        BLE_DISCONNECTED 
+    } Event;
+
+
     typedef void (*BLE_CUS_NOTIFY_HANDLER) (uint16_t, uint8_t *);
 
     typedef void (*BLE_CUS_SEND_HANDLER) (uint16_t, uint8_t *);
@@ -76,6 +86,8 @@ extern "C"
 
     typedef void (*BLE_KEYBOARD_HANDLER) (uint16_t, uint8_t);
 
+    typedef void (*BLE_HANDLER)(void);
+    
     void udrv_ble_cus_register_notify_handler (BLE_CUS_NOTIFY_HANDLER handler);
 
     void udrv_ble_cus_register_send_handler (BLE_CUS_SEND_HANDLER handler);
@@ -83,7 +95,9 @@ extern "C"
     void udrv_ble_scan_data_handler (BLE_SCAN_DATA_HANDLER handler);
 
     void udrv_ble_keyboard_handler (BLE_KEYBOARD_HANDLER handler);
-
+    
+    void udrv_ble_register_callback_handler (Event event,BLE_HANDLER handler);
+    
     void udrv_ble_stack_start(void);
 
     void udrv_ble_services_start(void);
@@ -115,6 +129,8 @@ extern "C"
     char *udrv_ble_get_device_name();
 
     int32_t udrv_ble_get_macaddress(uint8_t *macaddr);
+
+    int32_t udrv_ble_set_macaddress(uint8_t *macaddr);
 
     int32_t udrv_ble_set_adv_interval(uint32_t adv_interval);
 
@@ -169,8 +185,6 @@ extern "C"
     int32_t udrv_nus_set_keypairing(uint8_t *pairing_key, uint8_t key_length);
     
     int32_t udrv_nus_set_permission(uint8_t permission);
-
-    
 #ifdef __cplusplus
 }
 #endif

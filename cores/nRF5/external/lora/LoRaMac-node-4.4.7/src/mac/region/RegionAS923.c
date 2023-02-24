@@ -477,7 +477,6 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_RF_LP 1
 #define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
@@ -525,6 +524,7 @@
 #define SUPPORT_BLE 1
 #define SUPPORT_NFC 1
 #define SUPPORT_SPI 1
+#define SUPPORT_AT 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
 # 31 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/radio/radio.h" 1
@@ -8356,13 +8356,7 @@ uint8_t RegionAS923SubBandGet();
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h" 1
 
 #define __SERVICE_LORA_TEST_H__ 
-
-
-
-
-
-
-
+# 12 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h"
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pin_define.h" 1
 
 
@@ -9548,7 +9542,7 @@ uint8_t RegionAS923SubBandGet();
 # 2682 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_NFCT_CONFIG_DEBUG_COLOR 0
 # 2692 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
-#define NRFX_PDM_ENABLED 0
+#define NRFX_PDM_ENABLED 1
 
 
 
@@ -9876,7 +9870,13 @@ uint8_t RegionAS923SubBandGet();
 #define NRFX_RNG_CONFIG_INFO_COLOR 0
 # 3533 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RNG_CONFIG_DEBUG_COLOR 0
-# 3543 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3544 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+#define NRFX_SYSTICK_ENABLED 1
+
+
+
+
+
 #define NRFX_RTC_ENABLED 0
 
 
@@ -9917,7 +9917,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_RTC_DEFAULT_CONFIG_RELIABLE 0
-# 3597 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3604 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RTC_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -9925,17 +9925,17 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_RTC_CONFIG_LOG_ENABLED 0
-# 3614 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3621 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RTC_CONFIG_LOG_LEVEL 3
-# 3630 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3637 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RTC_CONFIG_INFO_COLOR 0
-# 3646 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3653 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_RTC_CONFIG_DEBUG_COLOR 0
-# 3656 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3663 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_ENABLED 1
-# 3666 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3673 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_RESOLUTION 1
-# 3682 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3689 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_OVERSAMPLE 0
 
 
@@ -9944,7 +9944,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_SAADC_CONFIG_LP_MODE 0
-# 3704 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3711 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_IRQ_PRIORITY 6
 
 
@@ -9952,13 +9952,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_SAADC_CONFIG_LOG_ENABLED 0
-# 3721 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3728 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_LOG_LEVEL 3
-# 3737 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3744 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_INFO_COLOR 0
-# 3753 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3760 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SAADC_CONFIG_DEBUG_COLOR 0
-# 3763 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3770 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_ENABLED 1
 
 
@@ -9987,9 +9987,9 @@ uint8_t RegionAS923SubBandGet();
 #define SPI3_ENABLED 1
 #define NRFX_SPIM_EXTENDED_ENABLED 0
 #define NRFX_SPIM3_NRF52840_ANOMALY_198_WORKAROUND_ENABLED 0
-# 3801 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3808 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_MISO_PULL_CFG 1
-# 3816 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3823 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -9997,13 +9997,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_SPIM_CONFIG_LOG_ENABLED 0
-# 3833 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3840 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_CONFIG_LOG_LEVEL 3
-# 3849 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3856 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_CONFIG_INFO_COLOR 0
-# 3865 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3872 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_CONFIG_DEBUG_COLOR 0
-# 3881 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3888 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -10033,7 +10033,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_SPIS2_ENABLED 0
-# 3924 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3931 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10055,13 +10055,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_SPIS_CONFIG_LOG_ENABLED 0
-# 3955 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3962 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIS_CONFIG_LOG_LEVEL 3
-# 3971 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3978 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIS_CONFIG_INFO_COLOR 0
-# 3987 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 3994 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIS_CONFIG_DEBUG_COLOR 0
-# 4003 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4010 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPIS_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -10091,9 +10091,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_SPI2_ENABLED 1
-# 4041 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4048 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPI_MISO_PULL_CFG 1
-# 4056 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4063 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPI_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10101,13 +10101,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_SPI_CONFIG_LOG_ENABLED 0
-# 4073 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4080 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPI_CONFIG_LOG_LEVEL 3
-# 4089 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4096 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPI_CONFIG_INFO_COLOR 0
-# 4105 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4112 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SPI_CONFIG_DEBUG_COLOR 0
-# 4115 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4122 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SWI_ENABLED 0
 
 
@@ -10163,13 +10163,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_SWI_CONFIG_LOG_ENABLED 0
-# 4180 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4187 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SWI_CONFIG_LOG_LEVEL 3
-# 4196 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4203 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SWI_CONFIG_INFO_COLOR 0
-# 4212 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4219 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_SWI_CONFIG_DEBUG_COLOR 0
-# 4222 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4229 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_ENABLED 1
 
 
@@ -10210,13 +10210,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TIMER4_ENABLED 1
-# 4278 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4285 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_FREQUENCY 0
-# 4287 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4294 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_MODE 0
-# 4298 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4305 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH 0
-# 4313 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4320 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10224,13 +10224,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_TIMER_CONFIG_LOG_ENABLED 0
-# 4330 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4337 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_CONFIG_LOG_LEVEL 3
-# 4346 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4353 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_CONFIG_INFO_COLOR 0
-# 4362 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4369 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TIMER_CONFIG_DEBUG_COLOR 0
-# 4372 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4379 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_ENABLED 1
 
 
@@ -10245,7 +10245,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_TWIM1_ENABLED 1
-# 4395 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4402 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_DEFAULT_CONFIG_FREQUENCY 26738688
 
 
@@ -10254,7 +10254,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_TWIM_DEFAULT_CONFIG_HOLD_BUS_UNINIT 0
-# 4417 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4424 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10262,13 +10262,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_TWIM_CONFIG_LOG_ENABLED 0
-# 4434 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4441 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_CONFIG_LOG_LEVEL 3
-# 4450 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4457 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_CONFIG_INFO_COLOR 0
-# 4466 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4473 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_CONFIG_DEBUG_COLOR 0
-# 4481 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4488 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -10291,9 +10291,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_TWIS1_ENABLED 0
-# 4511 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4518 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_ASSUME_INIT_AFTER_RESET_ONLY 0
-# 4520 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4527 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_NO_SYNC_MODE 0
 
 
@@ -10305,11 +10305,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_TWIS_DEFAULT_CONFIG_ADDR1 0
-# 4540 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4547 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_DEFAULT_CONFIG_SCL_PULL 0
-# 4550 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4557 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_DEFAULT_CONFIG_SDA_PULL 0
-# 4565 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4572 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10317,13 +10317,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_TWIS_CONFIG_LOG_ENABLED 0
-# 4582 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4589 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_CONFIG_LOG_LEVEL 3
-# 4598 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4605 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_CONFIG_INFO_COLOR 0
-# 4614 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4621 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWIS_CONFIG_DEBUG_COLOR 0
-# 4624 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4631 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_ENABLED 1
 
 
@@ -10338,7 +10338,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_TWI1_ENABLED 0
-# 4647 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4654 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_DEFAULT_CONFIG_FREQUENCY 26738688
 
 
@@ -10347,7 +10347,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_TWI_DEFAULT_CONFIG_HOLD_BUS_UNINIT 0
-# 4669 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4676 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10355,13 +10355,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_TWI_CONFIG_LOG_ENABLED 0
-# 4686 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4693 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_CONFIG_LOG_LEVEL 3
-# 4702 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4709 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_CONFIG_INFO_COLOR 0
-# 4718 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4725 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_TWI_CONFIG_DEBUG_COLOR 0
-# 4728 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4735 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_ENABLED 1
 
 
@@ -10372,13 +10372,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_UARTE1_ENABLED 1
-# 4746 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4753 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_HWFC 0
-# 4755 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4762 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_PARITY 0
-# 4780 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4787 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_BAUDRATE 30801920
-# 4795 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4802 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10386,25 +10386,25 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_UARTE_CONFIG_LOG_ENABLED 0
-# 4812 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4819 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_CONFIG_LOG_LEVEL 3
-# 4828 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4835 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_CONFIG_INFO_COLOR 0
-# 4844 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4851 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UARTE_CONFIG_DEBUG_COLOR 0
-# 4854 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4861 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_ENABLED 1
 
 
 
 #define NRFX_UART0_ENABLED 0
-# 4867 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4874 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_HWFC 0
-# 4876 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4883 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_PARITY 0
-# 4901 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4908 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_BAUDRATE 30924800
-# 4916 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4923 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10412,23 +10412,23 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_UART_CONFIG_LOG_ENABLED 0
-# 4933 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4940 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_CONFIG_LOG_LEVEL 3
-# 4949 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4956 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_CONFIG_INFO_COLOR 0
-# 4965 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4972 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_UART_CONFIG_DEBUG_COLOR 0
-# 4975 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4982 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_ENABLED 1
-# 4989 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 4996 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_IRQ_PRIORITY 3
-# 4998 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5005 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_DMASCHEDULER_MODE 0
-# 5011 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5018 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_DMASCHEDULER_ISO_BOOST 1
-# 5021 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5028 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_ISO_IN_ZLP 0
-# 5032 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5039 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_USE_WORKAROUND_FOR_ANOMALY_211 0
 
 
@@ -10438,7 +10438,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_WDT_ENABLED 0
-# 5050 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5057 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_WDT_CONFIG_BEHAVIOUR 1
 
 
@@ -10447,7 +10447,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_WDT_CONFIG_RELOAD_VALUE 2000
-# 5072 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5079 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_WDT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10455,15 +10455,15 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_WDT_CONFIG_LOG_ENABLED 0
-# 5089 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5096 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_WDT_CONFIG_LOG_LEVEL 3
-# 5105 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5112 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_WDT_CONFIG_INFO_COLOR 0
-# 5121 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5128 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_WDT_CONFIG_DEBUG_COLOR 0
-# 5131 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5138 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLOCK_ENABLED 1
-# 5142 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5149 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_LF_SRC 1
 
 
@@ -10472,7 +10472,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define CLOCK_CONFIG_LF_CAL_ENABLED 0
-# 5166 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5173 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10481,7 +10481,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 
-#define PDM_ENABLED 0
+#define PDM_ENABLED 1
 
 
 
@@ -10490,11 +10490,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define PDM_CONFIG_MODE 1
-# 5191 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5198 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_EDGE 0
-# 5201 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5208 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_CLOCK_FREQ 138412032
-# 5218 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5225 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10504,13 +10504,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define POWER_ENABLED 1
-# 5242 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5249 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define POWER_CONFIG_IRQ_PRIORITY 6
-# 5251 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5258 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define POWER_CONFIG_DEFAULT_DCDCEN 1
-# 5260 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5267 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define POWER_CONFIG_DEFAULT_DCDCENHV 0
-# 5269 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5276 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PPI_ENABLED 1
 
 
@@ -10545,20 +10545,20 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define PWM_DEFAULT_CONFIG_OUT3_PIN 31
-# 5317 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5324 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_BASE_CLOCK 4
-# 5326 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5333 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_COUNT_MODE 0
 
 
 
 
 #define PWM_DEFAULT_CONFIG_TOP_VALUE 1000
-# 5342 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5349 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_LOAD_MODE 0
-# 5351 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5358 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_STEP_MODE 0
-# 5368 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5375 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10581,15 +10581,15 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define PWM2_ENABLED 0
-# 5403 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5410 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
-# 5415 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5422 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_NRF52_ANOMALY_109_EGU_INSTANCE 5
-# 5425 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5432 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_ENABLED 0
-# 5439 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5446 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_REPORTPER 0
-# 5454 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5461 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_SAMPLEPER 7
 
 
@@ -10617,7 +10617,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define QDEC_CONFIG_LEDPRE 511
-# 5489 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5496 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_LEDPOL 1
 
 
@@ -10633,7 +10633,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define QDEC_CONFIG_SAMPLE_INTEN 0
-# 5520 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5527 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10654,15 +10654,15 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define QSPI_CONFIG_XIP_OFFSET 0
-# 5551 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5558 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_READOC 0
-# 5562 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5569 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_WRITEOC 0
-# 5571 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5578 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_ADDRMODE 0
-# 5580 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5587 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_MODE 0
-# 5603 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5610 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_FREQUENCY 15
 
 
@@ -10694,7 +10694,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define QSPI_PIN_IO3 NRF_QSPI_PIN_NOT_CONNECTED
-# 5650 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5657 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QSPI_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10715,7 +10715,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define RNG_CONFIG_POOL_SIZE 64
-# 5686 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5693 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RNG_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10738,7 +10738,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define RTC_DEFAULT_CONFIG_RELIABLE 0
-# 5724 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5731 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RTC_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10774,9 +10774,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define SAADC_ENABLED 1
-# 5768 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5775 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_RESOLUTION 1
-# 5784 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5791 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_OVERSAMPLE 0
 
 
@@ -10785,7 +10785,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define SAADC_CONFIG_LP_MODE 0
-# 5808 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5815 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10795,11 +10795,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define SPIS_ENABLED 0
-# 5832 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5839 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
-# 5843 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5850 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_DEFAULT_MODE 0
-# 5852 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5859 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_DEFAULT_BIT_ORDER 0
 
 
@@ -10836,7 +10836,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define SPIS2_ENABLED 0
-# 5901 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5908 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -10846,9 +10846,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define SPI_ENABLED 1
-# 5925 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5932 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPI_DEFAULT_CONFIG_IRQ_PRIORITY 6
-# 5935 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5942 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SPI_DRV_MISO_PULLUP_CFG 1
 
 
@@ -10890,7 +10890,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define SPI2_USE_EASY_DMA 0
-# 5991 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 5998 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -10900,13 +10900,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TIMER_ENABLED 1
-# 6015 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6022 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_FREQUENCY 0
-# 6024 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6031 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_MODE 0
-# 6035 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6042 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_BIT_WIDTH 0
-# 6052 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6059 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10936,7 +10936,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TIMER3_ENABLED 1
-# 6095 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6102 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_ENABLED 0
 
 
@@ -10951,9 +10951,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TWIS1_ENABLED 0
-# 6117 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6124 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_ASSUME_INIT_AFTER_RESET_ONLY 0
-# 6126 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6133 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_NO_SYNC_MODE 0
 
 
@@ -10965,11 +10965,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TWIS_DEFAULT_CONFIG_ADDR1 0
-# 6146 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6153 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_DEFAULT_CONFIG_SCL_PULL 0
-# 6156 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6163 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_DEFAULT_CONFIG_SDA_PULL 0
-# 6173 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6180 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -10979,7 +10979,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TWI_ENABLED 1
-# 6190 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6197 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWI_DEFAULT_CONFIG_FREQUENCY 26738688
 
 
@@ -10995,7 +10995,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TWI_DEFAULT_CONFIG_HOLD_BUS_UNINIT 0
-# 6221 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6228 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWI_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -11023,7 +11023,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TWI1_USE_EASY_DMA 0
-# 6262 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6269 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIM_NRF52_ANOMALY_109_WORKAROUND_ENABLED 0
 
 
@@ -11041,11 +11041,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define UART_DEFAULT_CONFIG_HWFC 0
-# 6287 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6294 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_DEFAULT_CONFIG_PARITY 0
-# 6310 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6317 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_DEFAULT_CONFIG_BAUDRATE 30801920
-# 6327 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6334 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_DEFAULT_CONFIG_IRQ_PRIORITY 6
 
 
@@ -11081,15 +11081,15 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define UART1_ENABLED 1
-# 6370 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6377 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_ENABLED 1
-# 6386 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
-#define USBD_CONFIG_IRQ_PRIORITY 2
-# 6395 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6393 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+#define USBD_CONFIG_IRQ_PRIORITY 3
+# 6402 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_DMASCHEDULER_MODE 0
-# 6408 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6415 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_DMASCHEDULER_ISO_BOOST 1
-# 6419 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6426 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_ISO_IN_ZLP 0
 
 
@@ -11099,7 +11099,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define WDT_ENABLED 1
-# 6437 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6444 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define WDT_CONFIG_BEHAVIOUR 9
 
 
@@ -11108,11 +11108,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define WDT_CONFIG_RELOAD_VALUE 100000
-# 6461 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6468 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define WDT_CONFIG_IRQ_PRIORITY 6
-# 6482 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6489 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_TWI_SENSOR_ENABLED 0
-# 6495 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6502 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_FIFO_ENABLED 1
 
 
@@ -11155,11 +11155,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_SDCARD_ENABLED 0
-# 6545 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6552 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_SDCARD_SPI_INSTANCE 0
-# 6559 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6566 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_SDCARD_FREQ_INIT 67108864
-# 6573 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6580 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_SDCARD_FREQ_DATA 1073741824
 
 
@@ -11169,11 +11169,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_TIMER_ENABLED 1
-# 6593 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6600 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_RTC_FREQUENCY 0
-# 6610 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6617 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_IRQ_PRIORITY 6
-# 6620 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6627 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_OP_QUEUE_SIZE 50
 
 
@@ -11182,11 +11182,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_TIMER_CONFIG_USE_SCHEDULER 0
-# 6637 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6644 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_KEEPS_RTC_ACTIVE 0
-# 6648 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6655 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_SAFE_WINDOW_MS 300000
-# 6658 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6665 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_WITH_PROFILER 0
 
 
@@ -11195,7 +11195,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_TIMER_CONFIG_SWI_NUMBER 0
-# 6676 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6683 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_UART_ENABLED 1
 
 
@@ -11205,7 +11205,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_UART_DRIVER_INSTANCE 1
-# 6696 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6703 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_AUDIO_ENABLED 0
 
 
@@ -11213,15 +11213,15 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_ENABLED 1
-# 6711 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6718 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_VID 0x1915
-# 6721 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6728 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_PID 0x521F
-# 6730 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6737 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DEVICE_VER_MAJOR 1
-# 6739 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6746 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DEVICE_VER_MINOR 0
-# 6748 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6755 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DEVICE_VER_SUB 0
 
 
@@ -11237,9 +11237,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_CONFIG_MAX_POWER 100
-# 6771 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6778 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_POWER_EVENTS_PROCESS 1
-# 6782 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6789 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_EVENT_QUEUE_ENABLE 0
 
 
@@ -11249,13 +11249,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_CONFIG_EVENT_QUEUE_SIZE 32
-# 6805 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6812 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_SOF_HANDLING_MODE 2
-# 6820 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6827 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_SOF_TIMESTAMP_PROVIDE 0
-# 6830 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6837 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_DESC_STRING_SIZE 31
-# 6839 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6846 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_DESC_STRING_UTF_ENABLED 0
 
 
@@ -11279,9 +11279,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_STRINGS_MANUFACTURER_EXTERN 0
-# 6875 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6882 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_STRINGS_MANUFACTURER APP_USBD_STRING_DESC("Nordic Semiconductor")
-# 6885 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6892 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_STRING_ID_PRODUCT 2
 
 
@@ -11297,7 +11297,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_STRINGS_PRODUCT APP_USBD_STRING_DESC("Rak4631 Serial COM")
-# 6909 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6916 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_STRING_ID_SERIAL 3
 
 
@@ -11313,7 +11313,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_STRING_SERIAL g_extern_serial_number
-# 6933 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6940 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_STRING_ID_CONFIGURATION 4
 
 
@@ -11329,7 +11329,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_STRINGS_CONFIGURATION APP_USBD_STRING_DESC("Default configuration")
-# 6968 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 6975 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_STRINGS_USER X(APP_USER_1, , APP_USBD_STRING_DESC("User 1"))
 
 
@@ -11347,9 +11347,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_HID_DEFAULT_IDLE_RATE 0
-# 6993 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7000 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_HID_REPORT_IDLE_TABLE_SIZE 4
-# 7002 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7009 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_HID_GENERIC_ENABLED 0
 
 
@@ -11399,25 +11399,25 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define FDS_ENABLED 1
-# 7062 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7069 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_VIRTUAL_PAGES 3
-# 7075 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7082 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_VIRTUAL_PAGE_SIZE 1024
-# 7084 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7091 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_VIRTUAL_PAGES_RESERVED 4
-# 7103 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7110 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_BACKEND 2
-# 7116 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7123 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_OP_QUEUE_SIZE 4
-# 7132 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7139 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_CRC_CHECK_ON_READ 0
-# 7143 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7150 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_CRC_CHECK_ON_WRITE 0
-# 7156 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7163 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define FDS_MAX_USERS 4
-# 7167 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7174 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define HARDFAULT_HANDLER_ENABLED 1
-# 7181 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7188 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define HARDFAULT_HANDLER_GDB_PSP_BACKTRACE 1
 
 
@@ -11449,9 +11449,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define HCI_SLIP_ENABLED 0
-# 7233 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7240 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define HCI_UART_BAUDRATE 30801920
-# 7242 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7249 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define HCI_UART_FLOW_CONTROL 0
 
 
@@ -11485,7 +11485,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define HCI_MAX_PACKET_SIZE_IN_BITS 8000
-# 7283 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7290 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LED_SOFTBLINK_ENABLED 0
 
 
@@ -11603,13 +11603,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define MEM_MANAGER_CONFIG_LOG_ENABLED 0
-# 7410 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7417 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MEM_MANAGER_CONFIG_LOG_LEVEL 3
-# 7426 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7433 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MEM_MANAGER_CONFIG_INFO_COLOR 0
-# 7442 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7449 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MEM_MANAGER_CONFIG_DEBUG_COLOR 0
-# 7451 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7458 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MEM_MANAGER_DISABLE_API_PARAM_CHECK 0
 
 
@@ -11665,7 +11665,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_BALLOC_CLI_CMDS 0
-# 7515 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7522 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CSENSE_ENABLED 0
 
 
@@ -11722,9 +11722,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TIMER1_FOR_CSENSE 2
-# 7579 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7586 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MEASUREMENT_PERIOD 20
-# 7590 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7597 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_FPRINTF_ENABLED 1
 
 
@@ -11738,7 +11738,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_QUEUE_CLI_CMDS 0
-# 7611 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7618 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SERIAL_ENABLED 1
 
 
@@ -11746,9 +11746,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_FSTORAGE_ENABLED 1
-# 7631 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7638 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_FSTORAGE_PARAM_CHECK_DISABLED 0
-# 7645 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7652 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_FSTORAGE_SD_QUEUE_SIZE 4
 
 
@@ -11758,9 +11758,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_FSTORAGE_SD_MAX_RETRIES 8
-# 7663 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7670 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_FSTORAGE_SD_MAX_WRITE_SIZE 4096
-# 7675 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7682 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_GFX_ENABLED 0
 
 
@@ -11782,9 +11782,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_PWR_MGMT_CONFIG_DEBUG_PIN_ENABLED 0
-# 7734 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7741 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_SLEEP_DEBUG_PIN 31
-# 7745 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7752 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_CPU_USAGE_MONITOR_ENABLED 0
 
 
@@ -11798,7 +11798,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_PWR_MGMT_CONFIG_STANDBY_TIMEOUT_S 3
-# 7766 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7773 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_FPU_SUPPORT_ENABLED 1
 
 
@@ -11821,7 +11821,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_PWR_MGMT_CONFIG_HANDLER_PRIORITY_COUNT 3
-# 7810 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7817 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SECTION_ITER_ENABLED 1
 
 
@@ -11894,9 +11894,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TASK_MANAGER_CONFIG_STACK_PROFILER_ENABLED 1
-# 7894 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7901 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TASK_MANAGER_CONFIG_STACK_GUARD 7
-# 7906 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7913 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BUTTON_ENABLED 1
 
 
@@ -11905,11 +11905,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define BUTTON_HIGH_ACCURACY_ENABLED 0
-# 7926 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7933 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CDC_ACM_ENABLED 1
-# 7936 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7943 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CDC_ACM_ZLP_ON_EPSIZE_WRITE 1
-# 7949 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 7956 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_ENABLED 0
 
 
@@ -11962,7 +11962,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_CLI_HISTORY_ELEMENT_COUNT 8
-# 8009 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8016 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_VT100_COLORS_ENABLED 1
 
 
@@ -11977,7 +11977,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 
-#define NRF_CLI_LOG_BACKEND 1
+#define NRF_CLI_LOG_BACKEND 0
 
 
 
@@ -11996,24 +11996,24 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_LOG_BACKEND_UART_TX_PIN 29
-# 8064 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8071 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BACKEND_UART_BAUDRATE 30801920
-# 8074 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8081 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BACKEND_UART_TEMP_BUFFER_SIZE 256
-# 8089 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8096 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BACKEND_RTT_ENABLED 1
-# 8099 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8106 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BACKEND_RTT_TEMP_BUFFER_SIZE 128
 
 
 
 
 #define NRF_LOG_BACKEND_RTT_TX_RETRY_DELAY_MS 1
-# 8115 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8122 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BACKEND_RTT_TX_RETRY_CNT 3
-# 8124 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8131 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_STR_FORMATTER_TIMESTAMP_FORMAT_ENABLED 1
-# 8134 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8141 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_ENABLED 1
 
 
@@ -12021,21 +12021,21 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_LOG_USES_COLORS 1
-# 8155 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8162 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_COLOR_DEFAULT 3
-# 8171 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8178 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_ERROR_COLOR 2
-# 8187 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8194 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_WARNING_COLOR 7
-# 8201 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8208 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_DEFAULT_LEVEL 4
-# 8210 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8217 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_DEFERRED 0
-# 8228 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8235 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_BUFSIZE 1024
-# 8242 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8249 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_STR_PUSH_BUFFER_SIZE 128
-# 8251 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8258 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_ALLOW_OVERFLOW 1
 
 
@@ -12049,7 +12049,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_LOG_TIMESTAMP_DEFAULT_FREQUENCY 0
-# 8272 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8279 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_FILTERS_ENABLED 0
 
 
@@ -12058,17 +12058,17 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_LOG_CLI_CMDS 0
-# 8292 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8299 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_MSGPOOL_ELEMENT_SIZE 20
-# 8302 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8309 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LOG_MSGPOOL_ELEMENT_COUNT 8
-# 8319 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8326 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MPU_CONFIG_LOG_ENABLED 0
-# 8330 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8337 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MPU_CONFIG_LOG_LEVEL 3
-# 8346 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8353 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MPU_CONFIG_INFO_COLOR 0
-# 8362 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8369 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MPU_CONFIG_DEBUG_COLOR 0
 
 
@@ -12078,11 +12078,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_STACK_GUARD_CONFIG_LOG_ENABLED 0
-# 8381 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8388 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_STACK_GUARD_CONFIG_LOG_LEVEL 3
-# 8397 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8404 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_STACK_GUARD_CONFIG_INFO_COLOR 0
-# 8413 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8420 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_STACK_GUARD_CONFIG_DEBUG_COLOR 0
 
 
@@ -12092,19 +12092,19 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TASK_MANAGER_CONFIG_LOG_ENABLED 0
-# 8432 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8439 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TASK_MANAGER_CONFIG_LOG_LEVEL 3
-# 8448 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8455 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TASK_MANAGER_CONFIG_INFO_COLOR 0
-# 8464 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8471 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TASK_MANAGER_CONFIG_DEBUG_COLOR 0
-# 8478 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8485 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_LOG_ENABLED 0
-# 8489 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8496 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_LOG_LEVEL 3
-# 8505 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8512 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_INFO_COLOR 0
-# 8521 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8528 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_DEBUG_COLOR 0
 
 
@@ -12114,11 +12114,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define COMP_CONFIG_LOG_ENABLED 0
-# 8540 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8547 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_LOG_LEVEL 3
-# 8556 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8563 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_INFO_COLOR 0
-# 8572 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8579 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define COMP_CONFIG_DEBUG_COLOR 0
 
 
@@ -12128,11 +12128,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define GPIOTE_CONFIG_LOG_ENABLED 0
-# 8591 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8598 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define GPIOTE_CONFIG_LOG_LEVEL 3
-# 8607 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8614 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define GPIOTE_CONFIG_INFO_COLOR 0
-# 8623 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8630 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define GPIOTE_CONFIG_DEBUG_COLOR 0
 
 
@@ -12142,11 +12142,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define LPCOMP_CONFIG_LOG_ENABLED 0
-# 8642 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8649 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LPCOMP_CONFIG_LOG_LEVEL 3
-# 8658 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8665 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LPCOMP_CONFIG_INFO_COLOR 0
-# 8674 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8681 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define LPCOMP_CONFIG_DEBUG_COLOR 0
 
 
@@ -12156,11 +12156,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define MAX3421E_HOST_CONFIG_LOG_ENABLED 0
-# 8693 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8700 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MAX3421E_HOST_CONFIG_LOG_LEVEL 3
-# 8709 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8716 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MAX3421E_HOST_CONFIG_INFO_COLOR 0
-# 8725 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8732 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define MAX3421E_HOST_CONFIG_DEBUG_COLOR 0
 
 
@@ -12170,11 +12170,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRFX_USBD_CONFIG_LOG_ENABLED 0
-# 8744 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8751 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_LOG_LEVEL 3
-# 8760 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8767 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_INFO_COLOR 0
-# 8776 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8783 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRFX_USBD_CONFIG_DEBUG_COLOR 0
 
 
@@ -12184,11 +12184,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define PDM_CONFIG_LOG_ENABLED 0
-# 8795 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8802 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_LOG_LEVEL 3
-# 8811 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8818 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_INFO_COLOR 0
-# 8827 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8834 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PDM_CONFIG_DEBUG_COLOR 0
 
 
@@ -12198,11 +12198,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define PPI_CONFIG_LOG_ENABLED 0
-# 8846 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8853 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PPI_CONFIG_LOG_LEVEL 3
-# 8862 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8869 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PPI_CONFIG_INFO_COLOR 0
-# 8878 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8885 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PPI_CONFIG_DEBUG_COLOR 0
 
 
@@ -12212,11 +12212,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define PWM_CONFIG_LOG_ENABLED 0
-# 8897 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8904 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_CONFIG_LOG_LEVEL 3
-# 8913 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8920 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_CONFIG_INFO_COLOR 0
-# 8929 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8936 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PWM_CONFIG_DEBUG_COLOR 0
 
 
@@ -12226,11 +12226,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define QDEC_CONFIG_LOG_ENABLED 0
-# 8948 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8955 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_LOG_LEVEL 3
-# 8964 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8971 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_INFO_COLOR 0
-# 8980 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 8987 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define QDEC_CONFIG_DEBUG_COLOR 0
 
 
@@ -12240,11 +12240,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define RNG_CONFIG_LOG_ENABLED 0
-# 8999 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9006 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RNG_CONFIG_LOG_LEVEL 3
-# 9015 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9022 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RNG_CONFIG_INFO_COLOR 0
-# 9031 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9038 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RNG_CONFIG_DEBUG_COLOR 0
 
 
@@ -12261,11 +12261,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define RTC_CONFIG_LOG_ENABLED 0
-# 9057 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9064 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RTC_CONFIG_LOG_LEVEL 3
-# 9073 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9080 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RTC_CONFIG_INFO_COLOR 0
-# 9089 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9096 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define RTC_CONFIG_DEBUG_COLOR 0
 
 
@@ -12275,11 +12275,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define SAADC_CONFIG_LOG_ENABLED 0
-# 9108 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9115 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_LOG_LEVEL 3
-# 9124 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9131 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_INFO_COLOR 0
-# 9140 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9147 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SAADC_CONFIG_DEBUG_COLOR 0
 
 
@@ -12289,11 +12289,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define SPIS_CONFIG_LOG_ENABLED 0
-# 9159 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9166 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_CONFIG_LOG_LEVEL 3
-# 9175 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9182 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_CONFIG_INFO_COLOR 0
-# 9191 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9198 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPIS_CONFIG_DEBUG_COLOR 0
 
 
@@ -12303,11 +12303,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define SPI_CONFIG_LOG_ENABLED 0
-# 9210 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9217 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPI_CONFIG_LOG_LEVEL 3
-# 9226 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9233 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPI_CONFIG_INFO_COLOR 0
-# 9242 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9249 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SPI_CONFIG_DEBUG_COLOR 0
 
 
@@ -12317,11 +12317,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TIMER_CONFIG_LOG_ENABLED 0
-# 9261 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9268 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_CONFIG_LOG_LEVEL 3
-# 9277 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9284 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_CONFIG_INFO_COLOR 0
-# 9293 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9300 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TIMER_CONFIG_DEBUG_COLOR 0
 
 
@@ -12331,11 +12331,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TWIS_CONFIG_LOG_ENABLED 0
-# 9312 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9319 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_CONFIG_LOG_LEVEL 3
-# 9328 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9335 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_CONFIG_INFO_COLOR 0
-# 9344 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9351 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWIS_CONFIG_DEBUG_COLOR 0
 
 
@@ -12345,11 +12345,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define TWI_CONFIG_LOG_ENABLED 0
-# 9363 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9370 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWI_CONFIG_LOG_LEVEL 3
-# 9379 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9386 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWI_CONFIG_INFO_COLOR 0
-# 9395 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9402 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define TWI_CONFIG_DEBUG_COLOR 0
 
 
@@ -12359,11 +12359,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define UART_CONFIG_LOG_ENABLED 0
-# 9414 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9421 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_CONFIG_LOG_LEVEL 3
-# 9430 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9437 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_CONFIG_INFO_COLOR 0
-# 9446 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9453 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define UART_CONFIG_DEBUG_COLOR 0
 
 
@@ -12373,11 +12373,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define USBD_CONFIG_LOG_ENABLED 0
-# 9465 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9472 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_LOG_LEVEL 3
-# 9481 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9488 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_INFO_COLOR 0
-# 9497 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9504 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define USBD_CONFIG_DEBUG_COLOR 0
 
 
@@ -12387,21 +12387,21 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define WDT_CONFIG_LOG_ENABLED 0
-# 9516 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9523 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define WDT_CONFIG_LOG_LEVEL 3
-# 9532 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9539 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define WDT_CONFIG_INFO_COLOR 0
-# 9548 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9555 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define WDT_CONFIG_DEBUG_COLOR 0
-# 9562 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9569 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_LOG_ENABLED 0
-# 9573 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9580 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_LOG_LEVEL 3
-# 9589 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9596 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_INITIAL_LOG_LEVEL 3
-# 9605 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9612 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_INFO_COLOR 0
-# 9621 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9628 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_TIMER_CONFIG_DEBUG_COLOR 0
 
 
@@ -12411,11 +12411,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_CDC_ACM_CONFIG_LOG_ENABLED 0
-# 9640 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9647 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CDC_ACM_CONFIG_LOG_LEVEL 3
-# 9656 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9663 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CDC_ACM_CONFIG_INFO_COLOR 0
-# 9672 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9679 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CDC_ACM_CONFIG_DEBUG_COLOR 0
 
 
@@ -12425,11 +12425,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_CONFIG_LOG_ENABLED 0
-# 9691 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9698 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_LOG_LEVEL 3
-# 9707 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9714 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_INFO_COLOR 0
-# 9723 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9730 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_CONFIG_DEBUG_COLOR 0
 
 
@@ -12439,11 +12439,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_DUMMY_CONFIG_LOG_ENABLED 0
-# 9742 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9749 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DUMMY_CONFIG_LOG_LEVEL 3
-# 9758 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9765 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DUMMY_CONFIG_INFO_COLOR 0
-# 9774 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9781 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_DUMMY_CONFIG_DEBUG_COLOR 0
 
 
@@ -12453,11 +12453,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_MSC_CONFIG_LOG_ENABLED 0
-# 9793 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9800 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_MSC_CONFIG_LOG_LEVEL 3
-# 9809 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9816 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_MSC_CONFIG_INFO_COLOR 0
-# 9825 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9832 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_MSC_CONFIG_DEBUG_COLOR 0
 
 
@@ -12467,11 +12467,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_LOG_ENABLED 0
-# 9844 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9851 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_LOG_LEVEL 3
-# 9860 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9867 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_INFO_COLOR 0
-# 9876 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9883 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define APP_USBD_NRF_DFU_TRIGGER_CONFIG_DEBUG_COLOR 0
 
 
@@ -12481,13 +12481,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_ATFIFO_CONFIG_LOG_ENABLED 0
-# 9895 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9902 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_LOG_LEVEL 3
-# 9907 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9914 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 9923 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9930 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_INFO_COLOR 0
-# 9939 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9946 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_ATFIFO_CONFIG_DEBUG_COLOR 0
 
 
@@ -12497,13 +12497,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_BALLOC_CONFIG_LOG_ENABLED 0
-# 9958 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9965 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BALLOC_CONFIG_LOG_LEVEL 3
-# 9974 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9981 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BALLOC_CONFIG_INITIAL_LOG_LEVEL 3
-# 9990 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 9997 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BALLOC_CONFIG_INFO_COLOR 0
-# 10006 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10013 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BALLOC_CONFIG_DEBUG_COLOR 0
 
 
@@ -12513,13 +12513,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_LOG_ENABLED 0
-# 10025 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10032 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_LOG_LEVEL 3
-# 10037 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10044 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10053 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10060 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_INFO_COLOR 0
-# 10069 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10076 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_EMPTY_CONFIG_DEBUG_COLOR 0
 
 
@@ -12529,13 +12529,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_BLOCK_DEV_QSPI_CONFIG_LOG_ENABLED 0
-# 10088 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10095 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_LOG_LEVEL 3
-# 10100 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10107 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10116 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10123 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_INFO_COLOR 0
-# 10132 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10139 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_QSPI_CONFIG_DEBUG_COLOR 0
 
 
@@ -12545,13 +12545,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_BLOCK_DEV_RAM_CONFIG_LOG_ENABLED 0
-# 10151 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10158 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_LOG_LEVEL 3
-# 10163 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10170 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10179 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10186 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_INFO_COLOR 0
-# 10195 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10202 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLOCK_DEV_RAM_CONFIG_DEBUG_COLOR 0
 
 
@@ -12561,11 +12561,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_CLI_BLE_UART_CONFIG_LOG_ENABLED 0
-# 10214 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10221 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_BLE_UART_CONFIG_LOG_LEVEL 3
-# 10230 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10237 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_BLE_UART_CONFIG_INFO_COLOR 0
-# 10246 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10253 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_BLE_UART_CONFIG_DEBUG_COLOR 0
 
 
@@ -12575,11 +12575,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_CLI_LIBUARTE_CONFIG_LOG_ENABLED 0
-# 10265 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10272 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_LIBUARTE_CONFIG_LOG_LEVEL 3
-# 10281 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10288 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_LIBUARTE_CONFIG_INFO_COLOR 0
-# 10297 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10304 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_LIBUARTE_CONFIG_DEBUG_COLOR 0
 
 
@@ -12589,11 +12589,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_CLI_UART_CONFIG_LOG_ENABLED 0
-# 10316 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10323 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_UART_CONFIG_LOG_LEVEL 3
-# 10332 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10339 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_UART_CONFIG_INFO_COLOR 0
-# 10348 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10355 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_CLI_UART_CONFIG_DEBUG_COLOR 0
 
 
@@ -12603,11 +12603,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_LIBUARTE_CONFIG_LOG_ENABLED 0
-# 10367 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10374 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LIBUARTE_CONFIG_LOG_LEVEL 3
-# 10383 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10390 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LIBUARTE_CONFIG_INFO_COLOR 0
-# 10399 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10406 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_LIBUARTE_CONFIG_DEBUG_COLOR 0
 
 
@@ -12617,11 +12617,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_MEMOBJ_CONFIG_LOG_ENABLED 0
-# 10418 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10425 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MEMOBJ_CONFIG_LOG_LEVEL 3
-# 10434 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10441 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MEMOBJ_CONFIG_INFO_COLOR 0
-# 10450 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10457 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_MEMOBJ_CONFIG_DEBUG_COLOR 0
 
 
@@ -12631,11 +12631,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_PWR_MGMT_CONFIG_LOG_ENABLED 0
-# 10469 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10476 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_LOG_LEVEL 3
-# 10485 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10492 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_INFO_COLOR 0
-# 10501 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10508 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_PWR_MGMT_CONFIG_DEBUG_COLOR 0
 
 
@@ -12645,13 +12645,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_QUEUE_CONFIG_LOG_ENABLED 0
-# 10520 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10527 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_QUEUE_CONFIG_LOG_LEVEL 3
-# 10532 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10539 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_QUEUE_CONFIG_LOG_INIT_FILTER_LEVEL 3
-# 10548 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10555 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_QUEUE_CONFIG_INFO_COLOR 0
-# 10564 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10571 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_QUEUE_CONFIG_DEBUG_COLOR 0
 
 
@@ -12661,11 +12661,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_SDH_ANT_LOG_ENABLED 0
-# 10583 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10590 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_ANT_LOG_LEVEL 3
-# 10599 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10606 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_ANT_INFO_COLOR 0
-# 10615 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10622 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_ANT_DEBUG_COLOR 0
 
 
@@ -12675,11 +12675,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_SDH_BLE_LOG_ENABLED 1
-# 10634 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10641 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_LOG_LEVEL 3
-# 10650 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10657 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_INFO_COLOR 0
-# 10666 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10673 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_DEBUG_COLOR 0
 
 
@@ -12689,11 +12689,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_SDH_LOG_ENABLED 1
-# 10685 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10692 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_LOG_LEVEL 3
-# 10701 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10708 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_INFO_COLOR 0
-# 10717 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10724 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_DEBUG_COLOR 0
 
 
@@ -12703,11 +12703,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_SDH_SOC_LOG_ENABLED 1
-# 10736 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10743 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_LOG_LEVEL 3
-# 10752 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10759 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_INFO_COLOR 0
-# 10768 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10775 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_DEBUG_COLOR 0
 
 
@@ -12717,11 +12717,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_SORTLIST_CONFIG_LOG_ENABLED 0
-# 10787 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10794 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SORTLIST_CONFIG_LOG_LEVEL 3
-# 10803 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10810 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SORTLIST_CONFIG_INFO_COLOR 0
-# 10819 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10826 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SORTLIST_CONFIG_DEBUG_COLOR 0
 
 
@@ -12731,11 +12731,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_TWI_SENSOR_CONFIG_LOG_ENABLED 0
-# 10838 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10845 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_TWI_SENSOR_CONFIG_LOG_LEVEL 3
-# 10854 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10861 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_TWI_SENSOR_CONFIG_INFO_COLOR 0
-# 10870 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10877 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_TWI_SENSOR_CONFIG_DEBUG_COLOR 0
 
 
@@ -12745,21 +12745,21 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define PM_LOG_ENABLED 1
-# 10889 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10896 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PM_LOG_LEVEL 3
-# 10905 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10912 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PM_LOG_INFO_COLOR 0
-# 10921 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10928 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define PM_LOG_DEBUG_COLOR 0
-# 10935 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10942 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_LOG_ENABLED 0
-# 10946 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10953 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_LOG_LEVEL 3
-# 10962 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10969 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_INFO_COLOR 0
-# 10978 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 10985 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SER_HAL_TRANSPORT_CONFIG_DEBUG_COLOR 0
-# 11002 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11009 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_AC_REC_ENABLED 0
 
 
@@ -12782,7 +12782,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define ADVANCED_ADVDATA_SUPPORT 0
-# 11032 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11039 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_BLE_OOB_ADVDATA_PARSER_ENABLED 0
 
 
@@ -12795,13 +12795,13 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NFC_BLE_PAIR_LIB_LOG_ENABLED 0
-# 11054 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11061 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_BLE_PAIR_LIB_LOG_LEVEL 3
-# 11070 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11077 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_BLE_PAIR_LIB_INFO_COLOR 0
-# 11086 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11093 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_BLE_PAIR_LIB_DEBUG_COLOR 0
-# 11099 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11106 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_NFC_SEC_PARAM_BOND 1
 
 
@@ -12830,11 +12830,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define BLE_NFC_SEC_PARAM_KDIST_PEER_ID 1
-# 11145 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11152 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_NFC_SEC_PARAM_MIN_KEY_SIZE 7
-# 11162 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11169 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_NFC_SEC_PARAM_MAX_KEY_SIZE 16
-# 11174 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11181 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_BLE_PAIR_MSG_ENABLED 0
 
 
@@ -12912,11 +12912,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NFC_NDEF_MSG_PARSER_LOG_ENABLED 0
-# 11261 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11268 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_MSG_PARSER_LOG_LEVEL 3
-# 11277 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11284 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_MSG_PARSER_INFO_COLOR 0
-# 11288 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11295 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_RECORD_ENABLED 1
 
 
@@ -12929,11 +12929,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NFC_NDEF_RECORD_PARSER_LOG_ENABLED 0
-# 11310 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11317 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_RECORD_PARSER_LOG_LEVEL 3
-# 11326 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11333 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_RECORD_PARSER_INFO_COLOR 0
-# 11337 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11344 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_NDEF_TEXT_RECORD_ENABLED 1
 
 
@@ -12960,55 +12960,55 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NFC_PLATFORM_LOG_ENABLED 4
-# 11373 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11380 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_PLATFORM_LOG_LEVEL 3
-# 11389 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11396 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_PLATFORM_INFO_COLOR 0
-# 11405 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11412 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_PLATFORM_DEBUG_COLOR 0
-# 11415 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11422 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T2T_PARSER_ENABLED 0
 
 
 
 
 #define NFC_T2T_PARSER_LOG_ENABLED 0
-# 11431 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11438 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T2T_PARSER_LOG_LEVEL 3
-# 11447 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11454 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T2T_PARSER_INFO_COLOR 0
-# 11457 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11464 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_APDU_ENABLED 0
 
 
 
 
 #define NFC_T4T_APDU_LOG_ENABLED 0
-# 11473 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11480 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_APDU_LOG_LEVEL 3
-# 11489 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11496 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_APDU_LOG_COLOR 0
-# 11499 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11506 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_CC_FILE_PARSER_ENABLED 0
 
 
 
 
 #define NFC_T4T_CC_FILE_PARSER_LOG_ENABLED 0
-# 11515 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11522 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_CC_FILE_PARSER_LOG_LEVEL 3
-# 11531 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11538 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_CC_FILE_PARSER_INFO_COLOR 0
-# 11541 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11548 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_HL_DETECTION_PROCEDURES_ENABLED 0
 
 
 
 
 #define NFC_T4T_HL_DETECTION_PROCEDURES_LOG_ENABLED 0
-# 11557 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11564 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_HL_DETECTION_PROCEDURES_LOG_LEVEL 3
-# 11573 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11580 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_HL_DETECTION_PROCEDURES_INFO_COLOR 0
 
 
@@ -13035,11 +13035,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NFC_T4T_TLV_BLOCK_PARSER_LOG_ENABLED 0
-# 11609 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11616 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_TLV_BLOCK_PARSER_LOG_LEVEL 3
-# 11625 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11632 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NFC_T4T_TLV_BLOCK_PARSER_INFO_COLOR 0
-# 11646 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11653 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SEGGER_RTT_CONFIG_BUFFER_SIZE_UP 512
 
 
@@ -13056,11 +13056,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define SEGGER_RTT_CONFIG_MAX_NUM_DOWN_BUFFERS 2
-# 11676 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11683 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define SEGGER_RTT_CONFIG_DEFAULT_MODE 0
-# 11691 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11698 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_ENABLED 1
-# 11704 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11711 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_GAP_DATA_LENGTH 27
 
 
@@ -13103,11 +13103,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_SDH_BLE_VS_UUID_COUNT 3
-# 11765 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11772 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_SERVICE_CHANGED 0
-# 11779 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11786 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_OBSERVER_PRIO_LEVELS 4
-# 11789 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 11796 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_ADV_BLE_OBSERVER_PRIO 1
 
 
@@ -13347,7 +13347,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NFC_BLE_PAIR_LIB_BLE_OBSERVER_PRIO 1
-# 12174 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12181 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_BLE_BMS_BLE_OBSERVER_PRIO 2
 
 
@@ -13396,11 +13396,11 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define PM_BLE_OBSERVER_PRIO 1
-# 12236 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12243 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_ENABLED 1
-# 12253 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12260 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_DISPATCH_MODEL 0
-# 12269 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12276 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_CLOCK_LF_SRC 1
 
 
@@ -13415,9 +13415,9 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_SDH_CLOCK_LF_RC_TEMP_CTIV 0
-# 12301 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12308 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_CLOCK_LF_ACCURACY 7
-# 12315 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12322 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_REQ_OBSERVER_PRIO_LEVELS 2
 
 
@@ -13435,7 +13435,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_SDH_STACK_OBSERVER_PRIO_LEVELS 2
-# 12342 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12349 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define CLOCK_CONFIG_STATE_OBSERVER_PRIO 0
 
 
@@ -13451,17 +13451,17 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define RNG_CONFIG_STATE_OBSERVER_PRIO 0
-# 12371 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12378 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_ANT_STACK_OBSERVER_PRIO 0
-# 12380 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12387 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_BLE_STACK_OBSERVER_PRIO 0
-# 12389 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12396 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_STACK_OBSERVER_PRIO 0
-# 12404 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12411 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_ENABLED 1
-# 12414 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12421 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NRF_SDH_SOC_OBSERVER_PRIO_LEVELS 2
-# 12424 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12431 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define BLE_ADV_SOC_OBSERVER_PRIO 1
 
 
@@ -13488,7 +13488,7 @@ uint8_t RegionAS923SubBandGet();
 
 
 #define NRF_BL_SETTINGS_PAGE_PROTECT 1
-# 12460 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
+# 12467 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/sdk_config.h"
 #define NDEF_FILE_SIZE 1024
 # 46 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/integration/nrfx/nrfx_config.h" 2
 # 45 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/nrfx.h" 2
@@ -42727,21 +42727,21 @@ extern const uint32_t g_ADigitalPinMap[];
 
 #define PIN_A0 WB_A0
 #define PIN_A1 WB_A1
-#define PIN_A2 (28)
-#define PIN_A3 (29)
-#define PIN_A4 (30)
-#define PIN_A5 (31)
-#define PIN_A6 (0xff)
-#define PIN_A7 (0xff)
+#define PIN_A2 P0_02
+#define PIN_A3 P0_03
+#define PIN_A4 P0_04
+#define PIN_A5 P0_28
+#define PIN_A6 P0_29
+#define PIN_A7 P0_30
 
 static const uint8_t A0 = 5;
 static const uint8_t A1 = 31;
-static const uint8_t A2 = (28);
-static const uint8_t A3 = (29);
-static const uint8_t A4 = (30);
-static const uint8_t A5 = (31);
-static const uint8_t A6 = (0xff);
-static const uint8_t A7 = (0xff);
+static const uint8_t A2 = 2;
+static const uint8_t A3 = 3;
+static const uint8_t A4 = 4;
+static const uint8_t A5 = 28;
+static const uint8_t A6 = 29;
+static const uint8_t A7 = 30;
 
 #define ADC_RESOLUTION 14
 
@@ -42820,8 +42820,17 @@ static const uint8_t SCK = 3;
 #define SPIM3_SCK WB_SPI_CLK
 #define SPI_CSN_PIN SPIM3_NSS
 
+#define _ADC1 PIN_A0
+#define _ADC2 PIN_A1
+#define _ADC3 PIN_A2
+#define _ADC4 PIN_A3
+#define _ADC5 PIN_A4
+#define _ADC6 PIN_A5
+#define _ADC7 PIN_A6
+#define _ADC8 PIN_A7
+
 #define USE_FULL_ASSERT 
-# 47 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pin_define.h"
+# 56 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/pin_define.h"
 #define assert_param(expr) ((expr) ? (void)0U : app_error_handler(ASSERT_ERROR, __LINE__, (const uint8_t *)__FILE__))
 
 
@@ -42833,14 +42842,14 @@ static const uint8_t SCK = 3;
 #define UART1_RXD_PIN PIN_SERIAL1_RX
 #define UART2_TXD_PIN 0xFF
 #define UART2_RXD_PIN 0xFF
-# 11 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h" 2
+# 13 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h" 2
 
 
 
 
 
 #define LORA_TEST_DEBUG(fmt,args...) 
-# 59 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h"
+# 61 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h"
 typedef struct
 {
   uint32_t modem;
@@ -42850,33 +42859,33 @@ typedef struct
   uint32_t bandwidthAfc;
   uint16_t preambleLen;
   
-# 67 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h" 3 4
- _Bool 
-# 67 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h"
-      fixLen;
-  uint8_t payloadLen;
-  
 # 69 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h" 3 4
  _Bool 
 # 69 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h"
-      crcOn;
+      fixLen;
+  uint8_t payloadLen;
   
-# 70 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h" 3 4
+# 71 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h" 3 4
  _Bool 
-# 70 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h"
-      FreqHopOn;
-  uint8_t HopPeriod;
+# 71 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h"
+      crcOn;
   
 # 72 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h" 3 4
  _Bool 
 # 72 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h"
+      FreqHopOn;
+  uint8_t HopPeriod;
+  
+# 74 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h" 3 4
+ _Bool 
+# 74 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h"
       iqInverted;
 
 
   
-# 75 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h" 3 4
+# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h" 3 4
  _Bool 
-# 75 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h"
+# 77 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora_test.h"
       rxContinuous;
   uint32_t symbTimeout;
 
@@ -42925,7 +42934,1484 @@ int32_t service_lora_tth(const testParameter_t *param);
 int32_t service_lora_get_cw(testCwParameter_t *param);
 int32_t service_lora_set_cw(testCwParameter_t *param);
 # 35 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 1
+# 10 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+#define __SERVICE_LORA_H__ 
+# 24 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/apps/LoRaMac/common/LmHandler/LmHandlerTypes.h" 1
+# 22 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/apps/LoRaMac/common/LmHandler/LmHandlerTypes.h"
+#define __LORAMAC_HANDLER_TYPES_H__ 
 
+
+
+
+
+
+#define LMH_SYS_TIME_UPDATE_NEW_API 1
+
+
+
+
+typedef enum
+{
+    LORAMAC_HANDLER_ADR_OFF = 0,
+    LORAMAC_HANDLER_ADR_ON = !LORAMAC_HANDLER_ADR_OFF
+}LmHandlerAdrStates_t;
+
+
+
+
+typedef enum
+{
+    LORAMAC_HANDLER_RESET = 0,
+    LORAMAC_HANDLER_SET = !LORAMAC_HANDLER_RESET
+}LmHandlerFlagStatus_t;
+
+
+
+
+typedef enum
+{
+    LORAMAC_HANDLER_ERROR = -1,
+    LORAMAC_HANDLER_SUCCESS = 0
+}LmHandlerErrorStatus_t;
+
+
+
+
+typedef enum
+{
+    LORAMAC_HANDLER_UNCONFIRMED_MSG = 0,
+    LORAMAC_HANDLER_CONFIRMED_MSG = !LORAMAC_HANDLER_UNCONFIRMED_MSG
+}LmHandlerMsgTypes_t;
+
+
+
+
+typedef enum
+{
+    LORAMAC_HANDLER_FALSE = 0,
+    LORAMAC_HANDLER_TRUE = !LORAMAC_HANDLER_FALSE
+}LmHandlerBoolean_t;
+
+typedef enum
+{
+    LORAMAC_HANDLER_BEACON_ACQUIRING,
+    LORAMAC_HANDLER_BEACON_LOST,
+    LORAMAC_HANDLER_BEACON_RX,
+    LORAMAC_HANDLER_BEACON_NRX
+}LmHandlerBeaconState_t;
+
+typedef enum
+{
+    LORAMAC_HANDLER_NVM_RESTORE,
+    LORAMAC_HANDLER_NVM_STORE,
+}LmHandlerNvmContextStates_t;
+
+
+
+
+typedef struct CommissioningParams_s
+{
+    
+# 95 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/apps/LoRaMac/common/LmHandler/LmHandlerTypes.h" 3 4
+   _Bool 
+# 95 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/apps/LoRaMac/common/LmHandler/LmHandlerTypes.h"
+        IsOtaaActivation;
+    uint8_t DevEui[8];
+    uint8_t JoinEui[8];
+    uint8_t SePin[4];
+    uint32_t NetworkId;
+    uint32_t DevAddr;
+}CommissioningParams_t;
+
+
+
+
+typedef struct LmHandlerAppData_s
+{
+    uint8_t Port;
+    uint8_t BufferSize;
+    uint8_t *Buffer;
+}LmHandlerAppData_t;
+
+typedef struct LmHandlerRequestParams_s
+{
+    uint8_t IsMcpsRequest;
+    LoRaMacStatus_t Status;
+    union
+    {
+        Mcps_t Mcps;
+        Mlme_t Mlme;
+    }RequestType;
+}LmHandlerRequestParams_t;
+# 25 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 2
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h" 1
+# 39 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+#define __SECURE_ELEMENT_H__ 
+
+
+
+
+
+
+
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 1
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+#define __LORAMAC_CRYPTO_H__ 
+
+
+
+
+
+
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 1 3
+
+
+
+
+
+
+
+#define _STDLIB_H_ 
+
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h" 1 3
+# 11 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 2 3
+
+
+#define __need_size_t 
+#define __need_wchar_t 
+#define __need_NULL 
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 1 3 4
+# 155 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+#undef __need_ptrdiff_t
+# 231 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+#undef __need_size_t
+# 340 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+#undef __need_wchar_t
+# 390 "/opt/gcc-arm-none-eabi-10-2020-q4-major/lib/gcc/arm-none-eabi/10.2.1/include/stddef.h" 3 4
+#undef NULL
+
+
+
+
+#define NULL ((void *)0)
+
+
+
+
+
+#undef __need_NULL
+
+
+
+
+#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+# 17 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 2 3
+
+
+
+# 1 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/stdlib.h" 1 3
+
+#define _MACHSTDLIB_H_ 
+# 21 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 2 3
+# 33 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
+
+
+
+# 35 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
+typedef struct
+{
+  int quot;
+  int rem;
+} div_t;
+
+typedef struct
+{
+  long quot;
+  long rem;
+} ldiv_t;
+
+
+typedef struct
+{
+  long long int quot;
+  long long int rem;
+} lldiv_t;
+
+
+
+#define __compar_fn_t_defined 
+typedef int (*__compar_fn_t) (const void *, const void *);
+
+
+#define EXIT_FAILURE 1
+#define EXIT_SUCCESS 0
+
+#define RAND_MAX __RAND_MAX
+
+int __locale_mb_cur_max (void);
+
+#define MB_CUR_MAX __locale_mb_cur_max()
+
+void abort (void) __attribute__ ((__noreturn__));
+int abs (int);
+
+
+
+
+
+int atexit (void (*__func)(void));
+double atof (const char *__nptr);
+
+
+
+int atoi (const char *__nptr);
+int _atoi_r (struct _reent *, const char *__nptr);
+long atol (const char *__nptr);
+long _atol_r (struct _reent *, const char *__nptr);
+void * bsearch (const void *__key,
+         const void *__base,
+         size_t __nmemb,
+         size_t __size,
+         __compar_fn_t _compar);
+void *calloc(size_t, size_t) __attribute__((__malloc__)) __attribute__((__warn_unused_result__))
+      __attribute__((__alloc_size__(1, 2))) ;
+div_t div (int __numer, int __denom);
+void exit (int __status) __attribute__ ((__noreturn__));
+void free (void *) ;
+char * getenv (const char *__string);
+char * _getenv_r (struct _reent *, const char *__string);
+
+
+
+char * _findenv (const char *, int *);
+char * _findenv_r (struct _reent *, const char *, int *);
+
+
+
+
+long labs (long);
+ldiv_t ldiv (long __numer, long __denom);
+void *malloc(size_t) __attribute__((__malloc__)) __attribute__((__warn_unused_result__)) __attribute__((__alloc_size__(1))) ;
+int mblen (const char *, size_t);
+int _mblen_r (struct _reent *, const char *, size_t, _mbstate_t *);
+int mbtowc (wchar_t *restrict, const char *restrict, size_t);
+int _mbtowc_r (struct _reent *, wchar_t *restrict, const char *restrict, size_t, _mbstate_t *);
+int wctomb (char *, wchar_t);
+int _wctomb_r (struct _reent *, char *, wchar_t, _mbstate_t *);
+size_t mbstowcs (wchar_t *restrict, const char *restrict, size_t);
+size_t _mbstowcs_r (struct _reent *, wchar_t *restrict, const char *restrict, size_t, _mbstate_t *);
+size_t wcstombs (char *restrict, const wchar_t *restrict, size_t);
+size_t _wcstombs_r (struct _reent *, char *restrict, const wchar_t *restrict, size_t, _mbstate_t *);
+# 137 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
+char * _mkdtemp_r (struct _reent *, char *);
+int _mkostemp_r (struct _reent *, char *, int);
+int _mkostemps_r (struct _reent *, char *, int, int);
+int _mkstemp_r (struct _reent *, char *);
+int _mkstemps_r (struct _reent *, char *, int);
+char * _mktemp_r (struct _reent *, char *) __attribute__ ((__deprecated__("the use of `mktemp' is dangerous; use `mkstemp' instead")));
+void qsort (void *__base, size_t __nmemb, size_t __size, __compar_fn_t _compar);
+int rand (void);
+void *realloc(void *, size_t) __attribute__((__warn_unused_result__)) __attribute__((__alloc_size__(2))) ;
+# 159 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
+void srand (unsigned __seed);
+double strtod (const char *restrict __n, char **restrict __end_PTR);
+double _strtod_r (struct _reent *,const char *restrict __n, char **restrict __end_PTR);
+
+float strtof (const char *restrict __n, char **restrict __end_PTR);
+
+
+
+
+
+
+
+long strtol (const char *restrict __n, char **restrict __end_PTR, int __base);
+long _strtol_r (struct _reent *,const char *restrict __n, char **restrict __end_PTR, int __base);
+unsigned long strtoul (const char *restrict __n, char **restrict __end_PTR, int __base);
+unsigned long _strtoul_r (struct _reent *,const char *restrict __n, char **restrict __end_PTR, int __base);
+# 191 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
+int system (const char *__string);
+# 202 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
+void _Exit (int __status) __attribute__ ((__noreturn__));
+
+
+
+
+int _putenv_r (struct _reent *, char *__string);
+void * _reallocf_r (struct _reent *, void *, size_t);
+
+
+
+int _setenv_r (struct _reent *, const char *__string, const char *__value, int __overwrite);
+# 224 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
+char * __itoa (int, char *, int);
+char * __utoa (unsigned, char *, int);
+# 263 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
+long long atoll (const char *__nptr);
+
+long long _atoll_r (struct _reent *, const char *__nptr);
+
+long long llabs (long long);
+lldiv_t lldiv (long long __numer, long long __denom);
+long long strtoll (const char *restrict __n, char **restrict __end_PTR, int __base);
+
+long long _strtoll_r (struct _reent *, const char *restrict __n, char **restrict __end_PTR, int __base);
+
+unsigned long long strtoull (const char *restrict __n, char **restrict __end_PTR, int __base);
+
+unsigned long long _strtoull_r (struct _reent *, const char *restrict __n, char **restrict __end_PTR, int __base);
+# 284 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
+int _unsetenv_r (struct _reent *, const char *__string);
+
+
+
+
+
+
+
+char * _dtoa_r (struct _reent *, double, int, int, int *, int*, char**);
+
+void * _malloc_r (struct _reent *, size_t) ;
+void * _calloc_r (struct _reent *, size_t, size_t) ;
+void _free_r (struct _reent *, void *) ;
+void * _realloc_r (struct _reent *, void *, size_t) ;
+void _mstats_r (struct _reent *, char *);
+
+int _system_r (struct _reent *, const char *);
+
+void __eprintf (const char *, const char *, unsigned int, const char *);
+# 322 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
+extern long double _strtold_r (struct _reent *, const char *restrict, char **restrict);
+
+extern long double strtold (const char *restrict, char **restrict);
+# 339 "/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdlib.h" 3
+
+# 46 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 2
+
+
+
+
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacMessageTypes.h" 1
+# 38 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacMessageTypes.h"
+#define __LORAMAC_MESSAGE_TYPES_H__ 
+
+
+
+
+
+
+
+# 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacHeaderTypes.h" 1
+# 47 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacMessageTypes.h" 2
+
+
+
+
+
+# 51 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacMessageTypes.h"
+typedef struct sLoRaMacMessageJoinRequest
+{
+
+
+
+    uint8_t* Buffer;
+
+
+
+    uint8_t BufSize;
+
+
+
+    LoRaMacHeader_t MHDR;
+
+
+
+    uint8_t JoinEUI[8];
+
+
+
+    uint8_t DevEUI[8];
+
+
+
+    uint16_t DevNonce;
+
+
+
+    uint32_t MIC;
+}LoRaMacMessageJoinRequest_t;
+
+
+
+
+typedef struct sLoRaMacMessageReJoinType1
+{
+
+
+
+    uint8_t* Buffer;
+
+
+
+    uint8_t BufSize;
+
+
+
+    LoRaMacHeader_t MHDR;
+
+
+
+    uint8_t ReJoinType;
+
+
+
+    uint8_t JoinEUI[8];
+
+
+
+    uint8_t DevEUI[8];
+
+
+
+    uint16_t RJcount1;
+
+
+
+    uint32_t MIC;
+}LoRaMacMessageReJoinType1_t;
+
+
+
+
+typedef struct sLoRaMacMessageReJoinType0or2
+{
+
+
+
+    uint8_t* Buffer;
+
+
+
+    uint8_t BufSize;
+
+
+
+    LoRaMacHeader_t MHDR;
+
+
+
+    uint8_t ReJoinType;
+
+
+
+    uint8_t NetID[3];
+
+
+
+    uint8_t DevEUI[8];
+
+
+
+    uint16_t RJcount0;
+
+
+
+    uint32_t MIC;
+}LoRaMacMessageReJoinType0or2_t;
+
+
+
+
+typedef struct sLoRaMacMessageJoinAccept
+{
+
+
+
+    uint8_t* Buffer;
+
+
+
+    uint8_t BufSize;
+
+
+
+    LoRaMacHeader_t MHDR;
+
+
+
+    uint8_t JoinNonce[3];
+
+
+
+    uint8_t NetID[3];
+
+
+
+    uint32_t DevAddr;
+
+
+
+    LoRaMacDLSettings_t DLSettings;
+
+
+
+    uint8_t RxDelay;
+
+
+
+    uint8_t CFList[16];
+
+
+
+    uint32_t MIC;
+}LoRaMacMessageJoinAccept_t;
+
+
+
+
+
+
+typedef struct sLoRaMacMessageData
+{
+
+
+
+    uint8_t* Buffer;
+
+
+
+    uint8_t BufSize;
+
+
+
+    LoRaMacHeader_t MHDR;
+
+
+
+    LoRaMacFrameHeader_t FHDR;
+
+
+
+    uint8_t FPort;
+
+
+
+    uint8_t* FRMPayload;
+
+
+
+    uint8_t FRMPayloadSize;
+
+
+
+    uint32_t MIC;
+}LoRaMacMessageData_t;
+
+
+
+
+typedef enum eLoRaMacMessageType
+{
+
+
+
+    LORAMAC_MSG_TYPE_JOIN_REQUEST,
+
+
+
+    LORAMAC_MSG_TYPE_RE_JOIN_1,
+
+
+
+    LORAMAC_MSG_TYPE_RE_JOIN_0_2,
+
+
+
+    LORAMAC_MSG_TYPE_JOIN_ACCEPT,
+
+
+
+    LORAMAC_MSG_TYPE_DATA,
+
+
+
+    LORAMAC_MSG_TYPE_UNDEF,
+}LoRaMacMessageType_t;
+
+
+
+
+typedef struct sLoRaMacMessage
+{
+    LoRaMacMessageType_t Type;
+    union uMessage
+    {
+        LoRaMacMessageJoinRequest_t JoinReq;
+        LoRaMacMessageReJoinType1_t ReJoin1;
+        LoRaMacMessageReJoinType0or2_t ReJoin0or2;
+        LoRaMacMessageJoinAccept_t JoinAccept;
+        LoRaMacMessageData_t Data;
+    }Message;
+}LoRaMacMessage_t;
+# 51 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h" 2
+
+
+
+
+
+#define USE_LRWAN_1_1_X_CRYPTO 0
+
+
+
+
+#define USE_RANDOM_DEV_NONCE 1
+
+
+
+
+#define USE_JOIN_NONCE_COUNTER_CHECK 0
+
+
+
+
+#define FCNT_DOWN_INITAL_VALUE 0xFFFFFFFF
+
+
+
+
+typedef enum eLoRaMacCryptoStatus
+{
+
+
+
+    LORAMAC_CRYPTO_SUCCESS = 0,
+
+
+
+    LORAMAC_CRYPTO_FAIL_MIC,
+
+
+
+    LORAMAC_CRYPTO_FAIL_ADDRESS,
+
+
+
+    LORAMAC_CRYPTO_FAIL_JOIN_NONCE,
+
+
+
+    LORAMAC_CRYPTO_FAIL_RJCOUNT0_OVERFLOW,
+
+
+
+    LORAMAC_CRYPTO_FAIL_FCNT_ID,
+
+
+
+    LORAMAC_CRYPTO_FAIL_FCNT_SMALLER,
+
+
+
+    LORAMAC_CRYPTO_FAIL_FCNT_DUPLICATED,
+
+
+
+    LORAMAC_CRYPTO_FAIL_MAX_GAP_FCNT,
+
+
+
+    LORAMAC_CRYPTO_FAIL_PARAM,
+
+
+
+    LORAMAC_CRYPTO_ERROR_NPE,
+
+
+
+    LORAMAC_CRYPTO_ERROR_INVALID_KEY_ID,
+
+
+
+    LORAMAC_CRYPTO_ERROR_INVALID_ADDR_ID,
+
+
+
+    LORAMAC_CRYPTO_ERROR_INVALID_VERSION,
+
+
+
+    LORAMAC_CRYPTO_ERROR_BUF_SIZE,
+
+
+
+    LORAMAC_CRYPTO_ERROR_SECURE_ELEMENT_FUNC,
+
+
+
+    LORAMAC_CRYPTO_ERROR_PARSER,
+
+
+
+    LORAMAC_CRYPTO_ERROR_SERIALIZER,
+
+
+
+    LORAMAC_CRYPTO_ERROR_RJCOUNT1_OVERFLOW,
+
+
+
+    LORAMAC_CRYPTO_ERROR,
+}LoRaMacCryptoStatus_t;
+
+
+
+
+
+
+
+typedef void ( *LoRaMacCryptoNvmEvent )( void );
+# 176 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoInit( LoRaMacCryptoNvmData_t* nvm );
+# 187 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoSetLrWanVersion( Version_t version );
+# 198 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoGetFCntDown( FCntIdentifier_t fCntID, uint16_t maxFCntGap, uint32_t frameFcnt, uint32_t* currentDown );
+
+
+
+
+
+
+
+LoRaMacCryptoStatus_t LoRaMacCryptoGetFCntUp( uint32_t* currentUp );
+# 215 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoSetMulticastReference( MulticastCtx_t* multicastList );
+# 224 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoSetKey( KeyIdentifier_t keyID, uint8_t* key );
+# 233 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoPrepareJoinRequest( LoRaMacMessageJoinRequest_t* macMsg );
+# 242 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoPrepareReJoinType1( LoRaMacMessageReJoinType1_t* macMsg );
+# 251 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoPrepareReJoinType0or2( LoRaMacMessageReJoinType0or2_t* macMsg );
+# 262 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoHandleJoinAccept( JoinReqIdentifier_t joinReqType, uint8_t* joinEUI, LoRaMacMessageJoinAccept_t* macMsg );
+# 273 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoSecureMessage( uint32_t fCntUp, uint8_t txDr, uint8_t txCh, LoRaMacMessageData_t* macMsg );
+# 285 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoUnsecureMessage( AddressIdentifier_t addrID, uint32_t address, FCntIdentifier_t fCntID, uint32_t fCntDown, LoRaMacMessageData_t* macMsg );
+# 300 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoDeriveMcRootKey( uint8_t versionMinor, KeyIdentifier_t keyID );
+# 310 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoDeriveMcKEKey( KeyIdentifier_t keyID );
+# 322 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/LoRaMacCrypto.h"
+LoRaMacCryptoStatus_t LoRaMacCryptoDeriveMcSessionKeyPair( AddressIdentifier_t addrID, uint32_t mcAddr );
+# 48 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h" 2
+
+
+
+
+
+typedef enum eSecureElementStatus
+{
+
+
+
+    SECURE_ELEMENT_SUCCESS = 0,
+
+
+
+    SECURE_ELEMENT_FAIL_CMAC,
+
+
+
+    SECURE_ELEMENT_ERROR_NPE,
+
+
+
+    SECURE_ELEMENT_ERROR_INVALID_KEY_ID,
+
+
+
+    SECURE_ELEMENT_ERROR_INVALID_LORAWAM_SPEC_VERSION,
+
+
+
+    SECURE_ELEMENT_ERROR_BUF_SIZE,
+
+
+
+    SECURE_ELEMENT_ERROR,
+
+
+
+    SECURE_ELEMENT_FAIL_ENCRYPT,
+}SecureElementStatus_t;
+# 96 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+SecureElementStatus_t SecureElementInit( SecureElementNvmData_t* nvm );
+# 105 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+SecureElementStatus_t SecureElementSetKey( KeyIdentifier_t keyID, uint8_t* key );
+# 117 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+SecureElementStatus_t SecureElementComputeAesCmac( uint8_t* micBxBuffer, uint8_t* buffer, uint16_t size, KeyIdentifier_t keyID, uint32_t* cmac );
+# 128 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+SecureElementStatus_t SecureElementVerifyAesCmac( uint8_t* buffer, uint16_t size, uint32_t expectedCmac, KeyIdentifier_t keyID );
+# 139 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+SecureElementStatus_t SecureElementAesEncrypt( uint8_t* buffer, uint16_t size, KeyIdentifier_t keyID, uint8_t* encBuffer );
+# 149 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+SecureElementStatus_t SecureElementDeriveAndStoreKey( uint8_t* input, KeyIdentifier_t rootKeyID, KeyIdentifier_t targetKeyID );
+# 162 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+SecureElementStatus_t SecureElementProcessJoinAccept( JoinReqIdentifier_t joinReqType, uint8_t* joinEui,
+                                                      uint16_t devNonce, uint8_t* encJoinAccept,
+                                                      uint8_t encJoinAcceptSize, uint8_t* decJoinAccept,
+                                                      uint8_t* versionMinor );
+
+
+
+
+
+
+
+SecureElementStatus_t SecureElementRandomNumber( uint32_t* randomNum );
+
+
+
+
+
+
+
+SecureElementStatus_t SecureElementSetDevEui( uint8_t* devEui );
+
+
+
+
+
+
+uint8_t* SecureElementGetDevEui( void );
+
+
+
+
+
+
+
+SecureElementStatus_t SecureElementSetJoinEui( uint8_t* joinEui );
+
+
+
+
+
+
+uint8_t* SecureElementGetJoinEui( void );
+
+
+
+
+
+
+
+SecureElementStatus_t SecureElementSetPin( uint8_t* pin );
+
+
+
+
+
+
+uint8_t* SecureElementGetPin( void );
+
+
+
+
+
+
+# 224 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h" 3 4
+_Bool 
+# 224 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/secure-element.h"
+    Get_McRoot_Key(uint8_t *key);
+# 26 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 2
+
+#define SERVICE_LORA_DLINK_BUFF_SIZE 256
+
+#define LORAWAN_VERSION "LoRaWAN 1.0.3"
+
+#define SERVICE_LORA_CHANNEL_ALL 0U
+#define SERVICE_LORA_CHANNEL_0_63 0x00ff
+#define SERVICE_LORA_CHANNEL_0_7 (1 << 0)
+#define SERVICE_LORA_CHANNEL_8_15 (1 << 1)
+#define SERVICE_LORA_CHANNEL_16_23 (1 << 2)
+#define SERVICE_LORA_CHANNEL_24_31 (1 << 3)
+#define SERVICE_LORA_CHANNEL_32_39 (1 << 4)
+#define SERVICE_LORA_CHANNEL_40_47 (1 << 5)
+#define SERVICE_LORA_CHANNEL_48_55 (1 << 6)
+#define SERVICE_LORA_CHANNEL_56_63 (1 << 7)
+#define SERVICE_LORA_CHANNEL_80_87 (1 << 10)
+#define SERVICE_LORA_CHANNEL_88_95 (1 << 11)
+
+    typedef enum _SERVICE_LORA_MAC_CMD
+    {
+        SERVICE_LORA_MAC_CMD_NONE,
+        SERVICE_LORA_MAC_CMD_DEVICE_TIME,
+        SERVICE_LORA_MAC_CMD_PING_SLOT_INFO,
+    } SERVICE_LORA_MAC_CMD;
+
+    typedef enum _SERVICE_LORA_CLASS_B_STATE
+    {
+        SERVICE_LORA_CLASS_B_S0,
+        SERVICE_LORA_CLASS_B_S1,
+        SERVICE_LORA_CLASS_B_S2,
+        SERVICE_LORA_CLASS_B_S3,
+        SERVICE_LORA_CLASS_B_COMPLETED,
+    } SERVICE_LORA_CLASS_B_STATE;
+
+    typedef enum _TIMEREQ_STATE
+    {
+       TIMEREQ_DISABLED,
+       TIMEREQ_ENABLED
+    } TIMEREQ_STATE;
+
+    typedef struct SERVICE_LORA_RECEIVE
+    {
+
+
+
+        uint8_t Port;
+
+
+
+        uint8_t RxDatarate;
+
+
+
+        uint8_t *Buffer;
+
+
+
+        uint8_t BufferSize;
+
+
+
+
+        int16_t Rssi;
+
+
+
+        int8_t Snr;
+
+
+
+
+        uint32_t DownLinkCounter;
+    } SERVICE_LORA_RECEIVE_T;
+
+    typedef void (*service_lora_recv_cb)(SERVICE_LORA_RECEIVE_T *data);
+    typedef void (*service_lora_join_cb)(int32_t status);
+    typedef void (*service_lora_send_cb)(int32_t status);
+
+    typedef enum _SERVICE_LORA_TX_POWER
+    {
+        SERVICE_LORA_TX_POWER_0 = 0,
+        SERVICE_LORA_TX_POWER_1 = 1,
+        SERVICE_LORA_TX_POWER_2 = 2,
+        SERVICE_LORA_TX_POWER_3 = 3,
+        SERVICE_LORA_TX_POWER_4 = 4,
+        SERVICE_LORA_TX_POWER_5 = 5,
+        SERVICE_LORA_TX_POWER_6 = 6,
+        SERVICE_LORA_TX_POWER_7 = 7,
+        SERVICE_LORA_TX_POWER_8 = 8,
+        SERVICE_LORA_TX_POWER_9 = 9,
+        SERVICE_LORA_TX_POWER_10 = 10,
+        SERVICE_LORA_TX_POWER_11 = 11,
+        SERVICE_LORA_TX_POWER_12 = 12,
+        SERVICE_LORA_TX_POWER_13 = 13,
+        SERVICE_LORA_TX_POWER_14 = 14,
+        SERVICE_LORA_TX_POWER_15 = 15,
+        SERVICE_LORA_TX_POWER_MAX = 15,
+    } SERVICE_LORA_TX_POWER;
+
+    typedef struct sbeacon_bgw
+    {
+        uint16_t GPS_coordinate;
+        uint32_t latitude;
+        uint32_t longitude;
+        uint32_t net_ID;
+        uint32_t gateway_ID;
+    } beacon_bgw_t;
+
+    typedef struct sdelay_send
+    {
+        uint8_t buffer[256];
+        uint16_t len;
+        uint8_t flag;
+    }delay_send_t;
+
+    typedef enum _SERVICE_LORA_WORK_MODE
+    {
+        SERVICE_LORA_P2P = 0,
+        SERVICE_LORAWAN = 1,
+        SERVICE_LORA_FSK = 2
+    } SERVICE_LORA_WORK_MODE;
+
+    typedef enum _LINK_CHECK_MODE
+    {
+        LINK_CHECK_DISABLE = 0,
+        LINK_CHECK_ONCE = 1,
+        LINK_CHECK_EVERYTIME = 2
+    } LINK_CHECK_MODE;
+
+    typedef enum _SERVICE_LORA_CONFIRM_MODE
+    {
+        SERVICE_LORA_NO_ACK = 0,
+        SERVICE_LORA_ACK = 1,
+    } SERVICE_LORA_CONFIRM_MODE;
+
+    typedef enum _SERVICE_LORA_JOIN_MODE
+    {
+        SERVICE_LORA_ABP = 0,
+        SERVICE_LORA_OTAA = 1,
+    } SERVICE_LORA_JOIN_MODE;
+
+    typedef enum _SERVICE_LORA_DATA_RATE
+    {
+        SERVICE_LORA_DR_0 = 0,
+        SERVICE_LORA_DR_1 = 1,
+        SERVICE_LORA_DR_2 = 2,
+        SERVICE_LORA_DR_3 = 3,
+        SERVICE_LORA_DR_4 = 4,
+        SERVICE_LORA_DR_5 = 5,
+        SERVICE_LORA_DR_6 = 6,
+        SERVICE_LORA_DR_7 = 7,
+        SERVICE_LORA_DR_8 = 8,
+        SERVICE_LORA_DR_9 = 9,
+        SERVICE_LORA_DR_10 = 10,
+        SERVICE_LORA_DR_11 = 11,
+        SERVICE_LORA_DR_12 = 12,
+        SERVICE_LORA_DR_13 = 13,
+        SERVICE_LORA_DR_14 = 14,
+        SERVICE_LORA_DR_15 = 15,
+    } SERVICE_LORA_DATA_RATE;
+
+    typedef enum _SERVICE_LORA_CH_EIGHT_MODE
+    {
+        SERVICE_LORA_CH_EIGHT_MODE_0,
+        SERVICE_LORA_CH_EIGHT_MODE_1,
+        SERVICE_LORA_CH_EIGHT_MODE_2,
+        SERVICE_LORA_CH_EIGHT_MODE_3,
+        SERVICE_LORA_CH_EIGHT_MODE_4,
+        SERVICE_LORA_CH_EIGHT_MODE_5,
+        SERVICE_LORA_CH_EIGHT_MODE_6,
+        SERVICE_LORA_CH_EIGHT_MODE_7,
+        SERVICE_LORA_CH_EIGHT_MODE_8
+    } SERVICE_LORA_CH_EIGHT_MODE;
+
+    typedef struct _SERVICE_LORA_SEND_INFO
+    {
+        uint8_t port;
+        
+# 203 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+       _Bool 
+# 203 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+            retry_valid;
+        uint8_t retry;
+        
+# 205 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+       _Bool 
+# 205 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+            confirm_valid;
+        SERVICE_LORA_CONFIRM_MODE confirm;
+    } SERVICE_LORA_SEND_INFO;
+
+    typedef enum _SERVICE_LORA_CLASS
+    {
+        SERVICE_LORA_CLASS_A = 0,
+        SERVICE_LORA_CLASS_B = 1,
+        SERVICE_LORA_CLASS_C = 2,
+    } SERVICE_LORA_CLASS;
+
+    typedef enum _AS923_SUB_BAND
+    {
+        AS923_1 = 1,
+        AS923_2 = 2,
+        AS923_3 = 3,
+        AS923_4 = 4
+    } AS923_SUB_BAND;
+
+
+
+
+    typedef enum _SERVICE_LORA_BAND
+    {
+
+
+
+        SERVICE_LORA_AS923 = LORAMAC_REGION_AS923,
+
+
+
+        SERVICE_LORA_AU915 = LORAMAC_REGION_AU915,
+
+
+
+        SERVICE_LORA_CN470 = LORAMAC_REGION_CN470,
+
+
+
+        SERVICE_LORA_CN779 = LORAMAC_REGION_CN779,
+
+
+
+        SERVICE_LORA_EU433 = LORAMAC_REGION_EU433,
+
+
+
+        SERVICE_LORA_EU868 = LORAMAC_REGION_EU868,
+
+
+
+        SERVICE_LORA_KR920 = LORAMAC_REGION_KR920,
+
+
+
+        SERVICE_LORA_IN865 = LORAMAC_REGION_IN865,
+
+
+
+        SERVICE_LORA_US915 = LORAMAC_REGION_US915,
+
+
+
+
+        SERVICE_LORA_RU864 = LORAMAC_REGION_RU864,
+# 280 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+       SERVICE_LORA_AS923_2 = 20,
+
+       SERVICE_LORA_AS923_3 = 21,
+
+       SERVICE_LORA_AS923_4 = 22,
+
+    } SERVICE_LORA_BAND;
+
+    LmHandlerErrorStatus_t LmHandlerPackageRegister( uint8_t id, void *params );
+    
+# 289 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+   _Bool 
+# 289 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+        LmHandlerPackageIsInitialized( uint8_t id );
+    
+# 290 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+   _Bool 
+# 290 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+        LmHandlerPackageIsRunning( uint8_t id );
+    void LmHandlerPackagesProcess( void );
+
+    int32_t service_lora_init(SERVICE_LORA_BAND band);
+
+    SERVICE_LORA_BAND service_lora_get_band(void);
+
+    int32_t service_lora_set_band(SERVICE_LORA_BAND band);
+
+
+
+    int32_t service_lora_get_mask(uint16_t *mask);
+
+    int32_t service_lora_set_mask(uint16_t *mask, 
+# 303 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                 _Bool 
+# 303 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                      commit);
+
+
+    int32_t service_lora_get_app_eui(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_set_app_eui(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_get_app_key(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_set_app_key(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_get_app_skey(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_set_app_skey(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_get_dev_addr(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_set_dev_addr(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_get_dev_eui(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_set_dev_eui(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_get_net_id(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_set_nwk_id(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_get_nwk_skey(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_set_nwk_skey(uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_get_McRoot_key(uint8_t *buff);
+
+    int32_t service_lora_set_lora_default(void);
+
+    uint8_t service_lora_get_retry(void);
+
+    int32_t service_lora_set_retry(uint8_t retry);
+
+    SERVICE_LORA_CONFIRM_MODE service_lora_get_cfm(void);
+
+    int32_t service_lora_set_cfm(SERVICE_LORA_CONFIRM_MODE cfm);
+
+    
+# 346 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+   _Bool 
+# 346 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+        service_lora_get_cfs(void);
+
+    int32_t service_lora_join(int32_t param1, int32_t param2, int32_t param3, int32_t param4);
+
+    SERVICE_LORA_WORK_MODE service_lora_get_nwm(void);
+
+    int32_t service_lora_set_nwm(SERVICE_LORA_WORK_MODE nwm);
+
+    SERVICE_LORA_JOIN_MODE service_lora_get_njm(void);
+
+    int32_t service_lora_set_njm(SERVICE_LORA_JOIN_MODE njm, 
+# 356 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                            _Bool 
+# 356 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                                 commit);
+
+    
+# 358 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+   _Bool 
+# 358 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+        service_lora_get_njs(void);
+
+    int32_t service_lora_send(uint8_t *buff, uint32_t len, SERVICE_LORA_SEND_INFO info, 
+# 360 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                                                       _Bool 
+# 360 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                                                            blocking);
+
+    
+# 362 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+   _Bool 
+# 362 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+        service_lora_get_adr(void);
+
+    int32_t service_lora_set_adr(
+# 364 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                _Bool 
+# 364 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                     adr, 
+# 364 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                          _Bool 
+# 364 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                               commit);
+
+    SERVICE_LORA_CLASS service_lora_get_class(void);
+
+    SERVICE_LORA_CLASS service_lora_get_real_class_from_stack(void);
+
+    int32_t service_lora_set_class(SERVICE_LORA_CLASS device_class, 
+# 370 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                                   _Bool 
+# 370 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                                        commit);
+
+    
+# 372 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+   _Bool 
+# 372 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+        service_lora_get_dcs(void);
+
+    int32_t service_lora_set_dcs(uint8_t dutycycle, 
+# 374 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                   _Bool 
+# 374 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                        commit );
+
+    SERVICE_LORA_DATA_RATE service_lora_get_dr(void);
+
+    int32_t service_lora_set_dr(SERVICE_LORA_DATA_RATE dr, 
+# 378 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                          _Bool 
+# 378 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                               commit);
+
+    uint32_t service_lora_get_jn1dl(void);
+
+    int32_t service_lora_set_jn1dl(uint32_t jn1dl, 
+# 382 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                  _Bool 
+# 382 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                       commit);
+
+    uint32_t service_lora_get_jn2dl(void);
+
+    int32_t service_lora_set_jn2dl(uint32_t jn2dl, 
+# 386 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                  _Bool 
+# 386 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                       commit);
+
+    
+# 388 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+   _Bool 
+# 388 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+        service_lora_get_pub_nwk_mode(void);
+
+    int32_t service_lora_set_pub_nwk_mode(
+# 390 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                         _Bool 
+# 390 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                              pnm, 
+# 390 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                   _Bool 
+# 390 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                        commit);
+
+    uint32_t service_lora_get_rx1dl(void);
+
+    int32_t service_lora_set_rx1dl(uint32_t rx1dl, 
+# 394 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                  _Bool 
+# 394 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                       commit);
+
+    uint32_t service_lora_get_rx2dl(void);
+
+    int32_t service_lora_set_rx2dl(uint32_t rx2dl, 
+# 398 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                  _Bool 
+# 398 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                       commit);
+
+    uint8_t service_lora_get_txpower(void);
+
+    int32_t service_lora_set_txpower(uint8_t txp, 
+# 402 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                 _Bool 
+# 402 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                      commit);
+
+    uint8_t service_lora_get_ping_slot_periodicity(void);
+
+    int32_t service_lora_set_ping_slot_periodicity(uint8_t periodicity);
+
+    uint32_t service_lora_get_beacon_freq(void);
+
+    uint32_t service_lora_get_beacon_time(void);
+
+    int16_t service_lora_get_rssi(void);
+
+    int8_t service_lora_get_snr(void);
+
+    int32_t service_lora_get_local_time(char *local_time);
+
+    uint32_t service_lora_get_lorawan_version(char **version);
+
+    uint32_t service_lora_get_rx2freq(void);
+
+    uint32_t service_lora_set_rx2freq(uint32_t freq,
+# 422 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                   _Bool 
+# 422 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                        commit);
+
+    uint32_t service_lora_set_rx2dr(SERVICE_LORA_DATA_RATE datarate, 
+# 424 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                                    _Bool 
+# 424 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                                         commit);
+
+    SERVICE_LORA_DATA_RATE service_lora_get_rx2dr(void);
+
+    int32_t service_lora_set_linkcheck(uint8_t mode);
+
+    uint8_t service_lora_get_linkcheck(void);
+
+    void service_lora_lptp_send_callback(int status);
+
+    int32_t service_lora_lptp_send(uint8_t port, 
+# 434 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                                _Bool 
+# 434 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                                     ack, uint8_t *p_data, uint16_t len);
+
+    
+# 436 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+   _Bool 
+# 436 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+        service_lora_get_join_start(void);
+
+    int32_t service_lora_set_join_start(
+# 438 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                       _Bool 
+# 438 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                            join_start);
+
+    
+# 440 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+   _Bool 
+# 440 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+        service_lora_get_auto_join(void);
+
+    int32_t service_lora_set_auto_join(
+# 442 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h" 3 4
+                                      _Bool 
+# 442 "/home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h"
+                                           auto_join);
+
+    uint32_t service_lora_get_auto_join_period(void);
+
+    int32_t service_lora_set_auto_join_period(uint32_t auto_join_period);
+
+    uint32_t service_lora_get_auto_join_max_cnt(void);
+
+    int32_t service_lora_set_auto_join_max_cnt(uint32_t auto_join_period);
+
+    int32_t service_lora_get_last_recv(uint8_t *port, uint8_t *buff, uint32_t len);
+
+    int32_t service_lora_set_che(uint8_t sub_band);
+
+    int32_t service_lora_get_che(void);
+
+    beacon_bgw_t service_lora_get_beacon_gwspecific(void);
+
+    int32_t service_lora_get_chs(void);
+
+    int32_t service_lora_set_chs(uint32_t frequency);
+
+    int32_t service_lora_register_recv_cb(service_lora_recv_cb callback);
+
+    int32_t service_lora_register_join_cb(service_lora_join_cb callback);
+
+    int32_t service_lora_register_send_cb(service_lora_send_cb callback);
+
+    uint32_t service_lora_get_beacon_dr(void);
+
+    SERVICE_LORA_CLASS_B_STATE service_lora_get_class_b_state(void);
+
+    int32_t service_lora_query_txPossible(int16_t len);
+
+    void service_lora_suspend(void);
+
+    void service_lora_resume(void);
+
+    uint8_t service_lora_get_timereq(void);
+
+    int32_t service_lora_set_timereq(uint8_t mode);
+
+    void service_lora_systemMaxRxError(void);
+
+    int32_t service_lora_get_lbt();
+    int32_t service_lora_set_lbt(uint8_t enable);
+    int16_t service_lora_get_lbt_rssi();
+    int32_t service_lora_set_lbt_rssi(int16_t rssi);
+    uint32_t service_lora_get_lbt_scantime();
+    int32_t service_lora_set_lbt_scantime(uint32_t time);
+# 36 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 2
 
 #define CHANNELS_MASK_SIZE 1
 
@@ -43976,9 +45462,45 @@ LoRaMacStatus_t RegionAS923NextChannel( NextChanParams_t* nextChanParams, uint8_
 
     if( status == LORAMAC_STATUS_OK )
     {
-# 1005 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
-        *channel = enabledChannels[randr( 0, nbEnabledChannels - 1 )];
 
+        if(SERVICE_LORA_AS923 == service_lora_get_band()&& (
+# 983 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+                                                           1
+# 983 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+                                                               ==service_lora_get_lbt()))
+        {
+
+        uint8_t channelNext = 0;
+        uint16_t lbt_rssi = service_lora_get_lbt_rssi();
+        uint32_t lbt_time = service_lora_get_lbt_scantime();
+
+        for( uint8_t i = 0, j = randr( 0, nbEnabledChannels - 1 ); i < 16; i++ )
+        {
+            channelNext = enabledChannels[j];
+            j = ( j + 1 ) % nbEnabledChannels;
+
+
+
+            if( Radio.IsChannelFree( RegionNvmGroup2->Channels[channelNext].Frequency, 200000, lbt_rssi, lbt_time ) == 
+# 997 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+                                                                                                                      1 
+# 997 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+                                                                                                                           )
+            {
+
+                *channel = channelNext;
+                return LORAMAC_STATUS_OK;
+            }
+        }
+
+
+        status = LORAMAC_STATUS_NO_FREE_CHANNEL_FOUND;
+        }
+        else
+        {
+
+            *channel = enabledChannels[randr( 0, nbEnabledChannels - 1 )];
+        }
     }
     else if( status == LORAMAC_STATUS_NO_CHANNEL_FOUND )
     {
@@ -43991,22 +45513,22 @@ LoRaMacStatus_t RegionAS923NextChannel( NextChanParams_t* nextChanParams, uint8_
 LoRaMacStatus_t RegionAS923ChannelAdd( ChannelAddParams_t* channelAdd )
 {
     
-# 1018 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1024 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
    _Bool 
-# 1018 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1024 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
         drInvalid = 
-# 1018 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1024 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                     0
-# 1018 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1024 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                          ;
     
-# 1019 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1025 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
    _Bool 
-# 1019 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1025 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
         freqInvalid = 
-# 1019 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1025 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                       0
-# 1019 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1025 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                            ;
     uint8_t id = channelAdd->ChannelId;
 
@@ -44022,84 +45544,84 @@ LoRaMacStatus_t RegionAS923ChannelAdd( ChannelAddParams_t* channelAdd )
 
 
     if( RegionCommonValueInRange( channelAdd->NewChannel->DrRange.Fields.Min, 0, 7 ) == 
-# 1033 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1039 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                                                                                                                                0 
-# 1033 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1039 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                                                                                                                                      )
     {
         drInvalid = 
-# 1035 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1041 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                    1
-# 1035 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1041 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                        ;
     }
     if( RegionCommonValueInRange( channelAdd->NewChannel->DrRange.Fields.Max, 0, 7 ) == 
-# 1037 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1043 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                                                                                                                                0 
-# 1037 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1043 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                                                                                                                                      )
     {
         drInvalid = 
-# 1039 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1045 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                    1
-# 1039 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1045 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                        ;
     }
     if( channelAdd->NewChannel->DrRange.Fields.Min > channelAdd->NewChannel->DrRange.Fields.Max )
     {
         drInvalid = 
-# 1043 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1049 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                    1
-# 1043 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1049 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                        ;
     }
 
 
     if( freqInvalid == 
-# 1047 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1053 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                       0 
-# 1047 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1053 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                             )
     {
         if( VerifyRfFreq( channelAdd->NewChannel->Frequency ) == 
-# 1049 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1055 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                                                                 0 
-# 1049 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1055 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                                                                       )
         {
             freqInvalid = 
-# 1051 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1057 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                          1
-# 1051 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1057 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                              ;
         }
     }
 
 
     if( ( drInvalid == 
-# 1056 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1062 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                       1 
-# 1056 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1062 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                            ) && ( freqInvalid == 
-# 1056 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1062 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                                                  1 
-# 1056 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1062 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                                                       ) )
     {
         return LORAMAC_STATUS_FREQ_AND_DR_INVALID;
     }
     if( drInvalid == 
-# 1060 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1066 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                     1 
-# 1060 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1066 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                          )
     {
         return LORAMAC_STATUS_DATARATE_INVALID;
     }
     if( freqInvalid == 
-# 1064 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1070 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
                       1 
-# 1064 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1070 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                            )
     {
         return LORAMAC_STATUS_FREQUENCY_INVALID;
@@ -44112,9 +45634,9 @@ LoRaMacStatus_t RegionAS923ChannelAdd( ChannelAddParams_t* channelAdd )
 }
 
 
-# 1075 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1081 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
 _Bool 
-# 1075 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1081 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
     RegionAS923ChannelsRemove( ChannelRemoveParams_t* channelRemove )
 {
     uint8_t id = channelRemove->ChannelId;
@@ -44122,9 +45644,9 @@ _Bool
     if( id < 2 )
     {
         return 
-# 1081 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
+# 1087 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c" 3 4
               0
-# 1081 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
+# 1087 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/mac/region/RegionAS923.c"
                    ;
     }
 

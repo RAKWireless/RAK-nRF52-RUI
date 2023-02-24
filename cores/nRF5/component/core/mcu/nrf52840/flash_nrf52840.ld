@@ -2,7 +2,7 @@
 
 SEARCH_DIR(.)
 GROUP(-lgcc -lc -lnosys)
-
+BOOT_VERSION = 0xfd800;
 MEMORY
 {
   FLASH (rx) : ORIGIN = 0x27000, LENGTH = 0x88000

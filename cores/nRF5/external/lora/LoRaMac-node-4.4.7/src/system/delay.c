@@ -477,7 +477,6 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
-#define LORA_RF_LP 1
 #define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
@@ -525,6 +524,7 @@
 #define SUPPORT_BLE 1
 #define SUPPORT_NFC 1
 #define SUPPORT_SPI 1
+#define SUPPORT_AT 1
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c"
 # 23 "/home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.4.7/src/system/delay.c"
 # 1 "/home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/delay-board.h" 1

@@ -37,7 +37,7 @@
 #include "service_nvm.h"
 
 // MCU Wake Up Time
-#define MIN_ALARM_DELAY                             3 // in ticks
+#define MIN_ALARM_DELAY                             10 // in ticks  10 * 30us
 
 // sub-second number of bits
 #define N_PREDIV_S                                  10
@@ -143,8 +143,13 @@ void RtcInit( void )
  */
 uint32_t RtcSetTimerContext( void )
 {
-    RtcTimerContext.Time = udrv_rtc_get_counter(SYS_RTC_COUNTER_PORT);
-    return (uint32_t)RtcTimerContext.Time;
+    uint32_t counter = udrv_rtc_get_counter(SYS_RTC_COUNTER_PORT);
+    uint32_t temp = RtcTimerContext.Time;
+    RtcTimerContext.Time = counter;
+    if( counter < temp )
+        return RtcGetMaxticks() + counter;
+    else
+        return (uint32_t)RtcTimerContext.Time;
 }
 
 /*!
@@ -209,8 +214,7 @@ void RtcDelayMs( uint32_t delay )
  */
 void RtcSetAlarm( uint32_t timeout )
 {
-    uhal_rtc_cancel_alarm(SYS_RTC_COUNTER_PORT);
-    udrv_rtc_set_alarm(SYS_RTC_COUNTER_PORT, timeout, NULL);
+    RtcStartAlarm( timeout );
 }
 
 void RtcStopAlarm( void )
@@ -220,19 +224,13 @@ void RtcStopAlarm( void )
 
 void RtcStartAlarm( uint32_t timeout )
 {
-    uint32_t old_ts = RtcGetTimerContext();
-    uint64_t now = udrv_rtc_get_counter(SYS_RTC_COUNTER_PORT);
-    udrv_rtc_cancel_alarm(SYS_RTC_COUNTER_PORT);
-    if ( (old_ts + timeout) > now) {
-        udrv_rtc_set_alarm(SYS_RTC_COUNTER_PORT, (old_ts + timeout - now), NULL);
-    } else {
-        udrv_rtc_set_alarm(SYS_RTC_COUNTER_PORT, 0, NULL);
-    }
+    uhal_rtc_cancel_alarm(SYS_RTC_COUNTER_PORT);
+    udrv_rtc_set_alarm(SYS_RTC_COUNTER_PORT, timeout, &RtcTimerContext.Time);
 }
 
 uint32_t RtcGetTimerValue( void )
 {
-    return (uint32_t)udrv_rtc_get_counter(SYS_RTC_COUNTER_PORT);
+   return uhal_rtc_get_counter_calculation_overflow((RtcID_E)SYS_RTC_COUNTER_PORT);
 }
 
 uint32_t RtcGetTimerElapsedTime( void )
@@ -288,3 +286,10 @@ TimerTime_t RtcTempCompensation( TimerTime_t period, float temperature )
 {
     return period;
 }
+
+
+uint32_t RtcGetMaxticks()
+{
+    return uhal_rtc_get_max_ticks();
+}
+
