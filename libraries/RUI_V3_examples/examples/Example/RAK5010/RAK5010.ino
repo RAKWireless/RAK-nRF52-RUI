@@ -44,7 +44,8 @@ int get_sensor(SERIAL_PORT port, char *cmd, stParam * param)
 
 void setup()
 {
-    Serial.begin(115200);
+    uint32_t baudrate = Serial.getBaudrate();
+    Serial.begin(baudrate);
 
     Serial.println("RAKwireless RAK5010 Example");
     Serial.println("------------------------------------------------------");
