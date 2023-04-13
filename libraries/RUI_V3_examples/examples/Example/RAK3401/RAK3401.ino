@@ -3,7 +3,7 @@ void setup()
 {
     uint32_t baudrate = Serial.getBaudrate();
     Serial.begin(baudrate);
-    Serial.println("RAKwireless RAK3401 Example");
+    Serial.println("RAKwireless RAK3401");
     Serial.println("------------------------------------------------------");
 }
 

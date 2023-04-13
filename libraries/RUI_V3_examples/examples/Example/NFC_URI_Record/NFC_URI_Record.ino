@@ -27,6 +27,8 @@ static void nfc_t4t_callback(void *p_context, RAK_NFC_T4T_EVENT event,
 
 void setup()
 {
+    Serial.begin(115200);
+    delay(2000);
     /*set LED pin to OUTPUT */
     pinMode(LED_GREEN, OUTPUT);
 
@@ -34,7 +36,6 @@ void setup()
     { 'r', 'a', 'k', 'w', 'i', 'r', 'e', 'l', 'e', 's', 's', '.', 'c',
 'o', 'm' };
 
-    Serial.begin(115200);
 
 #ifdef SUPPORT_NFC
     api.nfc.init(false, false, nfc_t4t_callback);	// NFC tag init

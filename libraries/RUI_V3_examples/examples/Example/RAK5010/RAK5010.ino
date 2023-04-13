@@ -47,7 +47,7 @@ void setup()
     uint32_t baudrate = Serial.getBaudrate();
     Serial.begin(baudrate);
 
-    Serial.println("RAKwireless RAK5010 Example");
+    Serial.println("RAKwireless RAK5010");
     Serial.println("------------------------------------------------------");
 
     // begin for I2C

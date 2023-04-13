@@ -3,7 +3,7 @@ void setup()
 {
     uint32_t baudrate = Serial.getBaudrate();
     Serial.begin(baudrate);
-    Serial.println("RAKwireless RAK4631 Example");
+    Serial.println("RAKwireless RAK4631");
     Serial.println("------------------------------------------------------");
 
     // Start BLE UART advertisement for 30 seconds
