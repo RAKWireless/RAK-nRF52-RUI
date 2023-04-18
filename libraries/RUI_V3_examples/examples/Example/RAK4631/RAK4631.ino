@@ -5,6 +5,7 @@ void setup()
     Serial.begin(baudrate);
     Serial.println("RAKwireless RAK4631");
     Serial.println("------------------------------------------------------");
+    Serial.printf("Version: %s\r\n", api.system.firmwareVersion.get().c_str());
 
     // Start BLE UART advertisement for 30 seconds
 	Serial6.begin(115200, RAK_AT_MODE);

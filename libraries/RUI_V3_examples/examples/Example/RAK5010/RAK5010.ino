@@ -49,6 +49,7 @@ void setup()
 
     Serial.println("RAKwireless RAK5010");
     Serial.println("------------------------------------------------------");
+    Serial.printf("Version: %s\r\n", api.system.firmwareVersion.get().c_str());
 
     // begin for I2C
     Wire.begin();
