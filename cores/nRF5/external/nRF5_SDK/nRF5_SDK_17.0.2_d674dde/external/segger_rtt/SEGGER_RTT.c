@@ -31767,7 +31767,7 @@ uint8_t privilege_level_get(void);
 
 
 
-#define NRF_CLI_LOG_BACKEND 1
+#define NRF_CLI_LOG_BACKEND 0
 
 
 

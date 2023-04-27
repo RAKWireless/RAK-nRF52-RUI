@@ -211,10 +211,16 @@ rak1904::update()
     if (!Wire.endTransmission() == 0)
 	return false;
 
+    settings.accelSampleRate = 400;
+    applySettings();
+    delay(20);
+
     readFloatAccelX();
     readFloatAccelY();
     readFloatAccelZ();
 
+    settings.accelSampleRate = 0;
+    applySettings();
     return true;
 }
 
@@ -233,6 +239,9 @@ rak1904::applySettings(void)
     // Build CTRL_REG1
     dataToWrite = 0;
     switch (settings.accelSampleRate) {
+    case 0:
+	dataToWrite |= (0x00 << 4);
+    break;
     case 1:
 	dataToWrite |= (0x01 << 4);
 	break;

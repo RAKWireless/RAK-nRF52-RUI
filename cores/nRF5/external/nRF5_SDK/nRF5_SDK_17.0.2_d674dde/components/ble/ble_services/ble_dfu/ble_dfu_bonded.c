@@ -29401,7 +29401,7 @@ _Static_assert(sizeof(nrf_svc_func_reg_t) % 4 == 0, "unspecified message");
 
 
 
-#define NRF_CLI_LOG_BACKEND 1
+#define NRF_CLI_LOG_BACKEND 0
 
 
 

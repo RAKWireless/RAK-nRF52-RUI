@@ -143,8 +143,13 @@ void RtcInit( void )
  */
 uint32_t RtcSetTimerContext( void )
 {
-    RtcTimerContext.Time = udrv_rtc_get_counter(SYS_RTC_COUNTER_PORT);
-    return (uint32_t)RtcTimerContext.Time;
+    uint32_t counter = udrv_rtc_get_counter(SYS_RTC_COUNTER_PORT);
+    uint32_t temp = RtcTimerContext.Time;
+    RtcTimerContext.Time = counter;
+    if( counter < temp )
+        return RtcGetMaxticks() + counter;
+    else
+        return (uint32_t)RtcTimerContext.Time;
 }
 
 /*!
@@ -287,3 +292,4 @@ uint32_t RtcGetMaxticks()
 {
     return uhal_rtc_get_max_ticks();
 }
+

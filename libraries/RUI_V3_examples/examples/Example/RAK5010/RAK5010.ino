@@ -1,4 +1,8 @@
 
+#ifndef rak5010
+#error "Please select WisTrio Cellular RAK5010 Board and compile again"
+#endif
+
 int get_sensor(SERIAL_PORT port, char *cmd, stParam * param)
 {
    // SHTC3

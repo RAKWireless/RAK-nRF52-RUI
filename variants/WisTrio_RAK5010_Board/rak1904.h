@@ -2,6 +2,7 @@
 #define __RAK_1904_H_
 
 #include "Wire.h"
+#include "wiring_time.h"
 
 // values for commInterface
 #define I2C_MODE 0

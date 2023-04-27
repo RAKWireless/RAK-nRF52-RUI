@@ -6864,7 +6864,7 @@ extern uintmax_t _wcstoumax_r(struct _reent *, const wchar_t *restrict, wchar_t 
 
 
 
-#define NRF_CLI_LOG_BACKEND 1
+#define NRF_CLI_LOG_BACKEND 0
 
 
 

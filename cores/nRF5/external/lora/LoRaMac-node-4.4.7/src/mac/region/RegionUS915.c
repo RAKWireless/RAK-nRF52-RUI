@@ -11938,7 +11938,7 @@ uint32_t RegionBaseUSCalcDownlinkFrequency( uint8_t channel, uint32_t frequency,
 
 
 
-#define NRF_CLI_LOG_BACKEND 1
+#define NRF_CLI_LOG_BACKEND 0
 
 
 

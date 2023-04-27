@@ -4132,7 +4132,7 @@
 
 
 
-#define NRF_CLI_LOG_BACKEND 1
+#define NRF_CLI_LOG_BACKEND 0
 
 
 

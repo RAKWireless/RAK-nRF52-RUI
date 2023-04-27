@@ -396,9 +396,12 @@ void rui_init(void)
 
     log_init();
     NRF_LOG_INFO("RUI Version: %s", sw_version);
+    udrv_timer_init();
+
+    udrv_flash_init();
+    service_nvm_init_config();
     udrv_sys_clock_init();
 
-    udrv_timer_init();
 
 #ifdef SUPPORT_USB
     udrv_serial_init(SERIAL_USB0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
@@ -415,8 +418,6 @@ void rui_init(void)
     SysTick_Config(SystemCoreClock / 100);      /* Configure SysTick to generate an interrupt every 10 ms */
 #endif
 
-    udrv_flash_init();
-    service_nvm_init_config();
 
     baudrate = service_nvm_get_baudrate_from_nvm();
     udrv_serial_init(SERIAL_UART0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
@@ -429,9 +430,9 @@ void rui_init(void)
 #endif
     service_nvm_get_ble_mac_from_nvm(mac,12);
     udrv_ble_set_macaddress(mac);
-    udrv_ble_advertising_start(APP_ADV_TIMEOUT_IN_SECONDS);
-    service_nvm_set_mode_type_to_nvm(SERIAL_BLE0, SERVICE_MODE_TYPE_CLI);
-    udrv_serial_init(SERIAL_BLE0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
+    //udrv_ble_advertising_start(APP_ADV_TIMEOUT_IN_SECONDS);
+    //service_nvm_set_mode_type_to_nvm(SERIAL_BLE0, SERVICE_MODE_TYPE_CLI);
+    //udrv_serial_init(SERIAL_BLE0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 #endif
 #ifdef SUPPORT_NFC
     udrv_serial_init(SERIAL_NFC, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);

@@ -4752,7 +4752,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
-#define NRF_CLI_LOG_BACKEND 1
+#define NRF_CLI_LOG_BACKEND 0
 
 
 

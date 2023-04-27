@@ -33816,7 +33816,7 @@ static inline void * nrf_section_iter_get(nrf_section_iter_t const * p_iter)
 
 
 
-#define NRF_CLI_LOG_BACKEND 1
+#define NRF_CLI_LOG_BACKEND 0
 
 
 

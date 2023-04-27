@@ -6190,7 +6190,7 @@ typedef uint32_t ret_code_t;
 
 
 
-#define NRF_CLI_LOG_BACKEND 1
+#define NRF_CLI_LOG_BACKEND 0
 
 
 

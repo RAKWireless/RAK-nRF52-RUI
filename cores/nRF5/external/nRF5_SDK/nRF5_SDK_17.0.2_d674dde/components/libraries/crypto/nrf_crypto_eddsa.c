@@ -5065,7 +5065,7 @@ ret_code_t nrf_crypto_internal_ecc_raw_input_check(
 
 
 
-#define NRF_CLI_LOG_BACKEND 1
+#define NRF_CLI_LOG_BACKEND 0
 
 
 

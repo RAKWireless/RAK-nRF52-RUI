@@ -1,4 +1,9 @@
 
+#ifndef rak5010
+#error "Please select WisTrio Cellular RAK5010 Board and compile again"
+#endif
+
+
 String command; //String to store BG96 commnads
 
 //Read data from BG96
@@ -12,8 +17,7 @@ void bg96_read() {
 
 //Write commnads to BG96
 void bg96_write(const char *command) {
-    while(*command)
-    {
+    while(*command){
         Serial1.write(*command);
         command++;
     }

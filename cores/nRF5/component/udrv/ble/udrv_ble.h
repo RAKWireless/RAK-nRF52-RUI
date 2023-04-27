@@ -22,7 +22,9 @@ extern "C"
         DRV_BLE_TX_POWER_2DBM = (0x2UL),      /**< 2 dBm radio transmit power.   */
         DRV_BLE_TX_POWER_0DBM = (0x00UL),     /**< 0 dBm radio transmit power.   */
         DRV_BLE_TX_POWER_NEG4DBM = (0xFCUL),  /**< -4 dBm radio transmit power.  */
+        DRV_BLE_TX_POWER_NEG5DBM = (0xFBUL),  /**< -5 dBm radio transmit power.  */ // Edited by Sercan ERAT 
         DRV_BLE_TX_POWER_NEG8DBM = (0xF8UL),  /**< -8 dBm radio transmit power.  */
+        DRV_BLE_TX_POWER_NEG10DBM = (0xF6UL), /**< -10 dBm radio transmit power.  */ // Edited by Sercan ERAT 
         DRV_BLE_TX_POWER_NEG12DBM = (0xF4UL), /**< -12 dBm radio transmit power. */
         DRV_BLE_TX_POWER_NEG16DBM = (0xF0UL), /**< -16 dBm radio transmit power. */
         DRV_BLE_TX_POWER_NEG20DBM = (0xECUL), /**< -20 dBm radio transmit power. */
@@ -183,8 +185,6 @@ extern "C"
     int32_t udrv_nus_set_keypairing(uint8_t *pairing_key, uint8_t key_length);
     
     int32_t udrv_nus_set_permission(uint8_t permission);
-
-    
 #ifdef __cplusplus
 }
 #endif
