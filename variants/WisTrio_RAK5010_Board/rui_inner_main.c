@@ -42,11 +42,16 @@
 #include "sysIrqHandlers.h"
 
 extern bool sched_start;
+
 extern tcb_ thread_pool[THREAD_POOL_SIZE];
 extern tcb_ *current_thread;
 extern unsigned long int current_sp;
 #else
 bool no_busy_loop = false;
+#endif
+
+#ifdef SUPPORT_WDT
+extern bool is_custom_wdt;
 #endif
 
 #ifdef SUPPORT_LORA
@@ -484,9 +489,6 @@ void rui_init(void)
     NRF_LOG_INFO("RUI Version: %s", sw_version);
     udrv_sys_clock_init();
 
-#ifdef SUPPORT_MULTITASK
-    SysTick_Config(SystemCoreClock / 100);      /* Configure SysTick to generate an interrupt every 10 ms */
-#endif
 
     udrv_timer_init();
 
@@ -499,6 +501,10 @@ void rui_init(void)
 #endif
 #ifdef SUPPORT_USB
     uhal_usb_enable(SERIAL_USB0);
+#endif
+
+#ifdef SUPPORT_MULTITASK
+    SysTick_Config(SystemCoreClock / 100);      /* Configure SysTick to generate an interrupt every 10 ms */
 #endif
 
     udrv_flash_init();
@@ -516,6 +522,7 @@ void rui_init(void)
     service_nvm_get_ble_mac_from_nvm(mac,12);
     udrv_ble_set_macaddress(mac);
     udrv_ble_advertising_start(APP_ADV_TIMEOUT_IN_SECONDS);
+    service_nvm_set_mode_type_to_nvm(SERIAL_BLE0, SERVICE_MODE_TYPE_CLI);
     udrv_serial_init(SERIAL_BLE0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 #endif
 #ifdef SUPPORT_NFC
@@ -553,9 +560,8 @@ void rui_init(void)
         }
     }
 
-#ifdef WDT_SUPPORT
-    udrv_wdt_init();
-    udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
+#ifdef SUPPORT_WDT
+    is_custom_wdt = false;
 #endif
 
     udrv_system_event_init();
@@ -563,7 +569,12 @@ void rui_init(void)
     Gsm_Init();
 
     // RAK5010 Senaor init
-    rui_rak5010_sensor_init();
+    if(rui_rak5010_sensor_init()) {
+        udrv_serial_log_printf("Version: RAK5010\r\n");
+    } else {
+        udrv_serial_log_printf("Version: RAK5010-M\r\n");
+    }
+
 
 }
 
@@ -580,6 +591,10 @@ void rui_running(void)
         cellular_last_status = get_bg96_status();
         reinit_start = 0;
     }
+
+#ifdef SUPPORT_WDT
+    udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
+#endif
 
     nrf_ble_lesc_request_handler();
 
@@ -610,6 +625,13 @@ void rui_user_thread(void)
     //user init
     rui_setup();
 
+#ifdef SUPPORT_WDT
+    if(!is_custom_wdt) {
+        udrv_wdt_init(WDT_FEED_PERIOD);
+        udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
+    }
+#endif
+
     while (1) {
         rui_loop();
     }
@@ -624,6 +646,12 @@ void main(void)
 #ifndef SUPPORT_MULTITASK
     //user init
     rui_setup();
+#ifdef SUPPORT_WDT
+    if(!is_custom_wdt) {
+        udrv_wdt_init(UDRV_WDT_FEED_PERIOD);
+        udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
+    }
+#endif
 #endif
 
 #ifdef TOGGLE_LED_PER_SEC
