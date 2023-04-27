@@ -477,6 +477,7 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
+#define LORA_RF_LP 1
 #define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
@@ -11938,7 +11939,7 @@ uint32_t RegionBaseUSCalcDownlinkFrequency( uint8_t channel, uint32_t frequency,
 
 
 
-#define NRF_CLI_LOG_BACKEND 0
+#define NRF_CLI_LOG_BACKEND 1
 
 
 

@@ -13,12 +13,13 @@ static bool McuInitialized = false;
 
 void BoardCriticalSectionBegin( uint32_t *mask )
 {
-    uhal_sys_board_critical_section_begin(mask);
+    *mask = __get_PRIMASK( );
+    __disable_irq( );
 }
 
 void BoardCriticalSectionEnd( uint32_t *mask )
 {
-    uhal_sys_board_critical_section_end(mask);
+    __set_PRIMASK( *mask );
 }
 
 void BoardInitMcu( void )

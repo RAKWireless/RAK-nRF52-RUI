@@ -1,8 +1,4 @@
 
-#ifndef rak5010
-#error "Please select WisTrio Cellular RAK5010 Board and compile again"
-#endif
-
 String command; //String to store BG96 commnads
 
 //Read data from BG96

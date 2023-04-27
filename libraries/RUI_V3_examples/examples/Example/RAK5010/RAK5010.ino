@@ -1,8 +1,4 @@
 
-#ifndef rak5010
-#error "Please select WisTrio Cellular RAK5010 Board and compile again"
-#endif
-
 int get_sensor(SERIAL_PORT port, char *cmd, stParam * param)
 {
    // SHTC3
@@ -44,12 +40,10 @@ int get_sensor(SERIAL_PORT port, char *cmd, stParam * param)
 
 void setup()
 {
-    uint32_t baudrate = Serial.getBaudrate();
-    Serial.begin(baudrate);
+    Serial.begin(115200);
 
-    Serial.println("RAKwireless RAK5010");
+    Serial.println("RAKwireless RAK5010 Example");
     Serial.println("------------------------------------------------------");
-    Serial.printf("Version: %s\r\n", api.system.firmwareVersion.get().c_str());
 
     // begin for I2C
     Wire.begin();

@@ -25,6 +25,4 @@ int32_t uhal_sys_timer_stop (SysTimerID_E timer_id);
 
 void uhal_timer_handler_handler(void *pdata);
 
-uint64_t uhal_get_microsecond(void);
-
 #endif  // #ifndef _UHAL_TIMER_H_

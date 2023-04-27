@@ -477,6 +477,7 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
+#define LORA_RF_LP 1
 #define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
@@ -29401,7 +29402,7 @@ _Static_assert(sizeof(nrf_svc_func_reg_t) % 4 == 0, "unspecified message");
 
 
 
-#define NRF_CLI_LOG_BACKEND 0
+#define NRF_CLI_LOG_BACKEND 1
 
 
 

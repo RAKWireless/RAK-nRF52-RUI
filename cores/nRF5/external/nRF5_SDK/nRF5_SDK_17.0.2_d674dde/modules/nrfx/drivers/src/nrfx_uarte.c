@@ -477,6 +477,7 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
+#define LORA_RF_LP 1
 #define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
@@ -4138,7 +4139,7 @@
 
 
 
-#define NRF_CLI_LOG_BACKEND 0
+#define NRF_CLI_LOG_BACKEND 1
 
 
 
@@ -38155,7 +38156,7 @@ static void apply_config(nrfx_uarte_t const * p_instance,
     }
     if (p_config->pselrxd != 0xFFFFFFFF)
     {
-        nrf_gpio_cfg_input(p_config->pselrxd, NRF_GPIO_PIN_PULLUP);
+        nrf_gpio_cfg_input(p_config->pselrxd, NRF_GPIO_PIN_NOPULL);
     }
 
     nrf_uarte_baudrate_set(p_instance->p_reg, p_config->baudrate);
@@ -38315,8 +38316,6 @@ void nrfx_uarte_uninit(nrfx_uarte_t const * p_instance)
     nrf_uarte_shorts_disable(p_reg, NRF_UARTE_SHORT_ENDRX_STARTRX);
 
 
-
-    p_cb->rx_buffer_length = 0;
     if (p_cb->rx_buffer_length)
     {
         nrf_uarte_event_clear(p_reg, NRF_UARTE_EVENT_RXTO);
@@ -38340,9 +38339,9 @@ void nrfx_uarte_uninit(nrfx_uarte_t const * p_instance)
 
     p_cb->state = NRFX_DRV_STATE_UNINITIALIZED;
     p_cb->handler = 
-# 332 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+# 330 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
                    ((void *)0)
-# 332 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+# 330 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
                        ;
     if (1 && (0 >= NRF_LOG_SEVERITY_INFO) && (NRF_LOG_SEVERITY_INFO <= 4)) { if (NRF_LOG_SEVERITY_DEBUG >= NRF_LOG_SEVERITY_INFO) { nrf_log_frontend_std_1(((NRF_LOG_SEVERITY_INFO) | (((uint32_t)(&m_nrf_log_UARTE_logs_data_const) - (uint32_t)&__start_log_const_data) / sizeof(nrf_log_module_const_data_t)) << 16), "Instance uninitialized: %d.", (uint32_t)(p_instance->drv_inst_idx)); } };
 }
@@ -38352,10 +38351,10 @@ nrfx_err_t nrfx_uarte_tx(nrfx_uarte_t const * p_instance,
                          size_t length)
 {
     uarte_control_block_t * p_cb = &m_cb[p_instance->drv_inst_idx];
-    if (0) { if (p_cb->state == NRFX_DRV_STATE_INITIALIZED) { } else { assert_nrf_callback((uint16_t)341, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
-    if (0) { if (p_data) { } else { assert_nrf_callback((uint16_t)342, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
-    if (0) { if (length > 0) { } else { assert_nrf_callback((uint16_t)343, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
-    if (0) { if (((((p_instance->drv_inst_idx) == NRFX_UARTE0_INST_IDX) && (((length) < (1U << 16)) && ((0) < (1U << 16)))) || (((p_instance->drv_inst_idx) == NRFX_UARTE1_INST_IDX) && (((length) < (1U << 16)) && ((0) < (1U << 16)))) || 0 || 0)) { } else { assert_nrf_callback((uint16_t)344, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
+    if (0) { if (p_cb->state == NRFX_DRV_STATE_INITIALIZED) { } else { assert_nrf_callback((uint16_t)339, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
+    if (0) { if (p_data) { } else { assert_nrf_callback((uint16_t)340, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
+    if (0) { if (length > 0) { } else { assert_nrf_callback((uint16_t)341, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
+    if (0) { if (((((p_instance->drv_inst_idx) == NRFX_UARTE0_INST_IDX) && (((length) < (1U << 16)) && ((0) < (1U << 16)))) || (((p_instance->drv_inst_idx) == NRFX_UARTE1_INST_IDX) && (((length) < (1U << 16)) && ((0) < (1U << 16)))) || 0 || 0)) { } else { assert_nrf_callback((uint16_t)342, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
 
     nrfx_err_t err_code;
 
@@ -38394,20 +38393,20 @@ nrfx_err_t nrfx_uarte_tx(nrfx_uarte_t const * p_instance,
     nrf_uarte_task_trigger(p_instance->p_reg, NRF_UARTE_TASK_STARTTX);
 
     if (p_cb->handler == 
-# 382 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+# 380 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
                         ((void *)0)
-# 382 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+# 380 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
                             )
     {
         
-# 384 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+# 382 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
        _Bool 
-# 384 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+# 382 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
             endtx;
         
-# 385 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+# 383 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
        _Bool 
-# 385 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+# 383 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
             txstopped;
         do
         {
@@ -38437,9 +38436,9 @@ nrfx_err_t nrfx_uarte_tx(nrfx_uarte_t const * p_instance,
 }
 
 
-# 413 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+# 411 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
 _Bool 
-# 413 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+# 411 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
     nrfx_uarte_tx_in_progress(nrfx_uarte_t const * p_instance)
 {
     return (m_cb[p_instance->drv_inst_idx].tx_buffer_length != 0);
@@ -38451,10 +38450,10 @@ nrfx_err_t nrfx_uarte_rx(nrfx_uarte_t const * p_instance,
 {
     uarte_control_block_t * p_cb = &m_cb[p_instance->drv_inst_idx];
 
-    if (0) { if (m_cb[p_instance->drv_inst_idx].state == NRFX_DRV_STATE_INITIALIZED) { } else { assert_nrf_callback((uint16_t)424, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
-    if (0) { if (p_data) { } else { assert_nrf_callback((uint16_t)425, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
-    if (0) { if (length > 0) { } else { assert_nrf_callback((uint16_t)426, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
-    if (0) { if (((((p_instance->drv_inst_idx) == NRFX_UARTE0_INST_IDX) && (((length) < (1U << 16)) && ((0) < (1U << 16)))) || (((p_instance->drv_inst_idx) == NRFX_UARTE1_INST_IDX) && (((length) < (1U << 16)) && ((0) < (1U << 16)))) || 0 || 0)) { } else { assert_nrf_callback((uint16_t)427, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
+    if (0) { if (m_cb[p_instance->drv_inst_idx].state == NRFX_DRV_STATE_INITIALIZED) { } else { assert_nrf_callback((uint16_t)422, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
+    if (0) { if (p_data) { } else { assert_nrf_callback((uint16_t)423, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
+    if (0) { if (length > 0) { } else { assert_nrf_callback((uint16_t)424, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
+    if (0) { if (((((p_instance->drv_inst_idx) == NRFX_UARTE0_INST_IDX) && (((length) < (1U << 16)) && ((0) < (1U << 16)))) || (((p_instance->drv_inst_idx) == NRFX_UARTE1_INST_IDX) && (((length) < (1U << 16)) && ((0) < (1U << 16)))) || 0 || 0)) { } else { assert_nrf_callback((uint16_t)425, (uint8_t *)"/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"); } };
 
     nrfx_err_t err_code;
 
@@ -38470,13 +38469,13 @@ nrfx_err_t nrfx_uarte_rx(nrfx_uarte_t const * p_instance,
     }
 
     
-# 442 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+# 440 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
    _Bool 
-# 442 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+# 440 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
         second_buffer = 
-# 442 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+# 440 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
                         0
-# 442 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+# 440 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
                              ;
 
     if (p_cb->handler)
@@ -38500,9 +38499,9 @@ nrfx_err_t nrfx_uarte_rx(nrfx_uarte_t const * p_instance,
             return err_code;
         }
         second_buffer = 
-# 464 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+# 462 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
                        1
-# 464 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+# 462 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
                            ;
     }
 
@@ -38535,25 +38534,25 @@ nrfx_err_t nrfx_uarte_rx(nrfx_uarte_t const * p_instance,
     }
 
     if (m_cb[p_instance->drv_inst_idx].handler == 
-# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+# 493 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
                                                  ((void *)0)
-# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+# 493 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
                                                      )
     {
+        
+# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+       _Bool 
+# 495 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+            endrx;
+        
+# 496 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+       _Bool 
+# 496 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+            rxto;
         
 # 497 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
        _Bool 
 # 497 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
-            endrx;
-        
-# 498 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
-       _Bool 
-# 498 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
-            rxto;
-        
-# 499 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
-       _Bool 
-# 499 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
             error;
         do {
             endrx = nrf_uarte_event_check(p_instance->p_reg, NRF_UARTE_EVENT_ENDRX);
@@ -38583,9 +38582,9 @@ nrfx_err_t nrfx_uarte_rx(nrfx_uarte_t const * p_instance,
 }
 
 
-# 527 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+# 525 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
 _Bool 
-# 527 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+# 525 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
     nrfx_uarte_rx_ready(nrfx_uarte_t const * p_instance)
 {
     return nrf_uarte_event_check(p_instance->p_reg, NRF_UARTE_EVENT_ENDRX);
@@ -38631,9 +38630,9 @@ void nrfx_uarte_tx_abort(nrfx_uarte_t const * p_instance)
     nrf_uarte_event_clear(p_instance->p_reg, NRF_UARTE_EVENT_TXSTOPPED);
     nrf_uarte_task_trigger(p_instance->p_reg, NRF_UARTE_TASK_STOPTX);
     if (p_cb->handler == 
-# 571 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
+# 569 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c" 3 4
                         ((void *)0)
-# 571 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
+# 569 "/home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/src/nrfx_uarte.c"
                             )
     {
         while (!nrf_uarte_event_check(p_instance->p_reg, NRF_UARTE_EVENT_TXSTOPPED))

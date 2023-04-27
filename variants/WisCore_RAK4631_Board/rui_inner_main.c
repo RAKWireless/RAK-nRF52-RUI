@@ -43,16 +43,11 @@
 #include "sysIrqHandlers.h"
 
 extern bool sched_start;
-
 extern tcb_ thread_pool[THREAD_POOL_SIZE];
 extern tcb_ *current_thread;
 extern unsigned long int current_sp;
 #else
 bool no_busy_loop = false;
-#endif
-
-#ifdef SUPPORT_WDT
-extern bool is_custom_wdt;
 #endif
 
 #ifdef SUPPORT_LORA
@@ -396,12 +391,13 @@ void rui_init(void)
 
     log_init();
     NRF_LOG_INFO("RUI Version: %s", sw_version);
-    udrv_timer_init();
-
-    udrv_flash_init();
-    service_nvm_init_config();
     udrv_sys_clock_init();
 
+#ifdef SUPPORT_MULTITASK
+    SysTick_Config(SystemCoreClock / 100);      /* Configure SysTick to generate an interrupt every 10 ms */
+#endif
+
+    udrv_timer_init();
 
 #ifdef SUPPORT_USB
     udrv_serial_init(SERIAL_USB0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
@@ -414,10 +410,8 @@ void rui_init(void)
     uhal_usb_enable(SERIAL_USB0);
 #endif
 
-#ifdef SUPPORT_MULTITASK
-    SysTick_Config(SystemCoreClock / 100);      /* Configure SysTick to generate an interrupt every 10 ms */
-#endif
-
+    udrv_flash_init();
+    service_nvm_init_config();
 
     baudrate = service_nvm_get_baudrate_from_nvm();
     udrv_serial_init(SERIAL_UART0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
@@ -430,9 +424,8 @@ void rui_init(void)
 #endif
     service_nvm_get_ble_mac_from_nvm(mac,12);
     udrv_ble_set_macaddress(mac);
-    //udrv_ble_advertising_start(APP_ADV_TIMEOUT_IN_SECONDS);
-    //service_nvm_set_mode_type_to_nvm(SERIAL_BLE0, SERVICE_MODE_TYPE_CLI);
-    //udrv_serial_init(SERIAL_BLE0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
+    udrv_ble_advertising_start(APP_ADV_TIMEOUT_IN_SECONDS);
+    udrv_serial_init(SERIAL_BLE0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 #endif
 #ifdef SUPPORT_NFC
     udrv_serial_init(SERIAL_NFC, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
@@ -469,8 +462,9 @@ void rui_init(void)
         }
     }
 
-#ifdef SUPPORT_WDT
-    is_custom_wdt = false;
+#ifdef WDT_SUPPORT
+    udrv_wdt_init();
+    udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
 #endif
 
     udrv_system_event_init();
@@ -478,10 +472,6 @@ void rui_init(void)
 
 void rui_running(void)
 {
-#ifdef SUPPORT_WDT
-    udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
-#endif
-
     nrf_ble_lesc_request_handler();
 
     udrv_system_event_consume();
@@ -503,13 +493,6 @@ void rui_user_thread(void)
     //user init
     rui_setup();
 
-#ifdef SUPPORT_WDT
-    if(!is_custom_wdt) {
-        udrv_wdt_init(WDT_FEED_PERIOD);
-        udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
-    }
-#endif
-
     while (1) {
         rui_loop();
     }
@@ -524,12 +507,6 @@ void main(void)
 #ifndef SUPPORT_MULTITASK
     //user init
     rui_setup();
-#ifdef SUPPORT_WDT
-    if(!is_custom_wdt) {
-        udrv_wdt_init(UDRV_WDT_FEED_PERIOD);
-        udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
-    }
-#endif
 #endif
 
 #ifdef TOGGLE_LED_PER_SEC

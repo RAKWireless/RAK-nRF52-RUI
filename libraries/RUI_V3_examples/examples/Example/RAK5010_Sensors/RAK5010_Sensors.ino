@@ -1,9 +1,4 @@
 
-#ifndef rak5010
-#error "Please select WisTrio Cellular RAK5010 Board and compile again"
-#endif
-
-
 void setup()
 {
     Serial.begin(115200);
