@@ -11,6 +11,7 @@ void setup()
     //If you want to read and write data through BLE API operations, you need to set BLE Serial (Serail6) to Custom Mode
     Serial6.begin(115200, RAK_CUSTOM_MODE); // RAK_CUSTOM_MODE, RAK_AT_MODE
     Serial.begin(115200);
+    delay(2000);
 
     Serial.println("RAKwireless BLE UART Example");
     Serial.println("------------------------------------------------------");

@@ -1,4 +1,6 @@
 
+extern const char *sw_version;
+
 #ifndef rak5010
 #error "Please select WisTrio Cellular RAK5010 Board and compile again"
 #endif
@@ -47,8 +49,9 @@ void setup()
     uint32_t baudrate = Serial.getBaudrate();
     Serial.begin(baudrate);
 
-    Serial.println("RAKwireless RAK5010 Example");
+    Serial.println("RAKwireless RAK5010");
     Serial.println("------------------------------------------------------");
+    Serial.printf("Version: %s\r\n", sw_version);
 
     // begin for I2C
     Wire.begin();

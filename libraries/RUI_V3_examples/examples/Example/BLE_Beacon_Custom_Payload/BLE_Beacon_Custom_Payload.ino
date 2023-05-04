@@ -36,6 +36,7 @@ uint8_t cus_adv_url[] ={
 void setup()
 {
     Serial.begin(115200);
+    delay(2000);
     Serial.println("RAKwireless BLE Beacon Customize Payload Example");
     Serial.println("------------------------------------------------------");
 
