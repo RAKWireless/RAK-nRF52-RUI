@@ -58,6 +58,11 @@ void setup()
 
     api.system.atMode.add("SENSOR", "This get sensor data.",
       "SENSOR", get_sensor);
+
+    // Start BLE UART advertisement for 30 seconds
+    Serial6.begin(115200, RAK_AT_MODE);
+    api.ble.settings.blemode(RAK_BLE_UART_MODE);
+    api.ble.uart.start(30);
 }
 
 void loop()
