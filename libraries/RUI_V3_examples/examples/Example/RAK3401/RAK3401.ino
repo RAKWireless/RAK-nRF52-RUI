@@ -1,18 +1,9 @@
 
-extern const char *sw_version;
-
 void setup()
 {
-    uint32_t baudrate = Serial.getBaudrate();
-    Serial.begin(baudrate);
-    Serial.println("RAKwireless RAK3401");
+    Serial.begin(115200);
+    Serial.println("RAKwireless RAK3401 Example");
     Serial.println("------------------------------------------------------");
-    Serial.printf("Version: %s\r\n", sw_version);
-
-    // Start BLE UART advertisement for 30 seconds
-    Serial6.begin(115200, RAK_AT_MODE);
-    api.ble.settings.blemode(RAK_BLE_UART_MODE);
-    api.ble.uart.start(30);
 }
 
 void loop()

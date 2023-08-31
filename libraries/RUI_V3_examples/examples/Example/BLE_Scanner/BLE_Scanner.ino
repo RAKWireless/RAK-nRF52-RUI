@@ -60,8 +60,6 @@ void scan_callback(int8_t rssi_value, uint8_t * device_mac,
 void setup()
 {
     bool ret;
-    Serial.begin(115200);
-    delay(2000);
 
     Serial.println("RAKwireless BLE Scanner Example");
     Serial.println("------------------------------------------------------");

@@ -63,7 +63,6 @@ void setup()
         0x80, 0x5f, 0x9b, 0x34, 0xfb};
   
     Serial.begin(115200);
-    delay(2000);
   
     Serial.println("RAKwireless BLE Custom Services Example");
     Serial.println("------------------------------------------------------");

@@ -126,13 +126,11 @@ void rui_event_handler_func(void *data, uint16_t size) {
             /* escape now immediately */
             switch (mode)
             {
-#ifdef SUPPORT_BINARY
                 case SERVICE_MODE_TYPE_PROTOCOL:
                 {
                     service_mode_proto_deinit(port);
                     break;
                 }
-#endif
                 default:
                 {
                     break;
@@ -159,13 +157,11 @@ void rui_event_handler_func(void *data, uint16_t size) {
                             }
                             break;
                         }
-#ifdef SUPPORT_BINARY
                         case SERVICE_MODE_TYPE_PROTOCOL:
                         {
                             service_mode_proto_recv(SERIAL_UART1, Buf[0]);
                             break;
                         }
-#endif
                         default:
                         {
                             break;
@@ -188,13 +184,11 @@ void rui_event_handler_func(void *data, uint16_t size) {
                             }
                             break;
                         }
-#ifdef SUPPORT_BINARY
                         case SERVICE_MODE_TYPE_PROTOCOL:
                         {
                             service_mode_proto_recv(SERIAL_UART0, Buf[0]);
                             break;
                         }
-#endif
                         default:
                         {
                             break;
@@ -222,13 +216,11 @@ void rui_event_handler_func(void *data, uint16_t size) {
                             }
                             break;
                         }
-#ifdef SUPPORT_BINARY
                         case SERVICE_MODE_TYPE_PROTOCOL:
                         {
                             service_mode_proto_recv(SERIAL_USB0, Buf[0]);
                             break;
                         }
-#endif
                         default:
                         {
                             break;
@@ -257,13 +249,11 @@ void rui_event_handler_func(void *data, uint16_t size) {
                             }
                             break;
                         }
-#ifdef SUPPORT_BINARY
                         case SERVICE_MODE_TYPE_PROTOCOL:
                         {
                             service_mode_proto_recv(SERIAL_BLE0, Buf[0]);
                             break;
                         }
-#endif
                         default:
                         {
                             break;
@@ -374,13 +364,11 @@ void rui_init(void)
             service_mode_cli_init((SERIAL_PORT)i);
         }
     }
-#ifdef SUPPORT_BINARY
     for (int i = 0 ; i < SERIAL_MAX ; i++) {
         if (service_nvm_get_mode_type_from_nvm((SERIAL_PORT)i) == SERVICE_MODE_TYPE_PROTOCOL) {
             service_mode_proto_init((SERIAL_PORT)i);
         }
     }
-#endif
 
 #ifdef SUPPORT_WDT
     is_custom_wdt = false;
