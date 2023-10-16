@@ -142,11 +142,13 @@ void rui_event_handler_func(void *data, uint16_t size) {
                 }
 #endif
 #endif
+#ifdef SUPPORT_BINARY
                 case SERVICE_MODE_TYPE_PROTOCOL:
                 {
                     service_mode_proto_deinit(port);
                     break;
                 }
+#endif
                 default:
                 {
                     break;
@@ -182,11 +184,13 @@ void rui_event_handler_func(void *data, uint16_t size) {
                         }
 #endif
 #endif
+#ifdef SUPPORT_BINARY
                         case SERVICE_MODE_TYPE_PROTOCOL:
                         {
                             service_mode_proto_recv(SERIAL_UART1, Buf[0]);
                             break;
                         }
+#endif
                         default:
                         {
                             break;
@@ -218,11 +222,13 @@ void rui_event_handler_func(void *data, uint16_t size) {
                         }
 #endif
 #endif
+#ifdef SUPPORT_BINARY
                         case SERVICE_MODE_TYPE_PROTOCOL:
                         {
                             service_mode_proto_recv(SERIAL_UART0, Buf[0]);
                             break;
                         }
+#endif
                         default:
                         {
                             break;
@@ -259,11 +265,13 @@ void rui_event_handler_func(void *data, uint16_t size) {
                         }
 #endif
 #endif
+#ifdef SUPPORT_BINARY
                         case SERVICE_MODE_TYPE_PROTOCOL:
                         {
                             service_mode_proto_recv(SERIAL_USB0, Buf[0]);
                             break;
                         }
+#endif
                         default:
                         {
                             break;
@@ -301,11 +309,13 @@ void rui_event_handler_func(void *data, uint16_t size) {
                         }
 #endif
 #endif
+#ifdef SUPPORT_BINARY
                         case SERVICE_MODE_TYPE_PROTOCOL:
                         {
                             service_mode_proto_recv(SERIAL_BLE0, Buf[0]);
                             break;
                         }
+#endif
                         default:
                         {
                             break;
@@ -438,8 +448,11 @@ void rui_init(void)
     udrv_serial_init(SERIAL_NFC, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 #endif
 
-#ifdef SUPPORT_LORA
-    service_lora_init(service_lora_get_band());
+#if defined(SUPPORT_LORA)
+    service_lora_init(service_nvm_get_band_from_nvm());
+#elif defined(SUPPORT_LORA_P2P)
+    BoardInitMcu();
+    service_lora_p2p_init();
 #else
     udrv_rtc_init(SYS_RTC_COUNTER_PORT, NULL);
 #endif
@@ -463,11 +476,13 @@ void rui_init(void)
     }
 #endif
 #endif
+#ifdef SUPPORT_BINARY
     for (int i = 0 ; i < SERIAL_MAX ; i++) {
         if (service_nvm_get_mode_type_from_nvm((SERIAL_PORT)i) == SERVICE_MODE_TYPE_PROTOCOL) {
             service_mode_proto_init((SERIAL_PORT)i);
         }
     }
+#endif
 
 #ifdef SUPPORT_WDT
     is_custom_wdt = false;
@@ -523,7 +538,9 @@ void main(void)
 
 #ifndef SUPPORT_MULTITASK
     //user init
+NRF_LOG_INFO("rui_setup");
     rui_setup();
+NRF_LOG_INFO("rui_setup done");
 #ifdef SUPPORT_WDT
     if(!is_custom_wdt) {
         udrv_wdt_init(UDRV_WDT_FEED_PERIOD);
@@ -531,7 +548,6 @@ void main(void)
     }
 #endif
 #endif
-
 #ifdef TOGGLE_LED_PER_SEC
     udrv_gpio_set_dir(BLUE_LED, GPIO_DIR_OUT);
     if (udrv_system_timer_create(SYSTIMER_LED, OnTimerEvent, HTMR_PERIODIC) == UDRV_RETURN_OK)
@@ -540,9 +556,13 @@ void main(void)
     }
 #endif
 
-#ifdef SUPPORT_LORA
+#if defined(SUPPORT_LORA) || defined(SUPPORT_LORA_P2P)
     udrv_serial_log_printf("Current Work Mode: ");
+#ifdef SUPPORT_LORA
     switch (service_lora_get_nwm())
+#else
+    switch (service_lora_p2p_get_nwm())
+#endif
     {
         case SERVICE_LORA_P2P:
         {

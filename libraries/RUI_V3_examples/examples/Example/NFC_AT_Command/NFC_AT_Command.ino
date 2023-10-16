@@ -34,7 +34,8 @@ static void nfc_t4t_callback(void *p_context, RAK_NFC_T4T_EVENT event,
 
 void setup()
 {
-    delay(3000);
+    Serial.begin(115200);
+    delay(2000);
     Serial.println("Example Start");
     /*set LED pin to OUTPUT */
     pinMode(LED_GREEN, OUTPUT);
@@ -43,7 +44,6 @@ void setup()
     static const uint8_t language[] = { 'e', 'n' };	// the language of the NFC tag (2 Bytes)
     static const uint8_t payload[] = { 'N', 'F', 'C', ' ', 'D', 'e', 'f', 'a', 'u', 'l', 't' };	// the payload of NFC tag (MAX: 244 bytes)
   
-    Serial.begin(115200);
   
 #ifdef SUPPORT_NFC
     api.nfc.init(true, true, nfc_t4t_callback);	// NFC tag init

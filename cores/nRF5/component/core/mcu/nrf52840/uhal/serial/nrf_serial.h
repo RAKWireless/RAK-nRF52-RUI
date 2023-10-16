@@ -116,6 +116,15 @@ typedef enum {
             .interrupt_priority = _irq_prio,             \
     }
 
+typedef struct {
+    uint8_t * p_buff;
+    volatile uint32_t  read_pos;
+    volatile uint32_t  write_pos;
+    uint16_t buf_size_mask;
+    bool m_ovf;
+} serial_queues_ctx_t;
+
+
 /**
  * @brief Serial port RX and TX queues.
  *
@@ -123,9 +132,9 @@ typedef enum {
  *       structure.
  * */
 typedef struct {
-    nrf_queue_t const * p_rxq;    //!< Receive queue handle.
-    nrf_queue_t const * p_txq;    //!< Transmit queue handle.
-} nrf_serial_queues_t;
+    serial_queues_ctx_t * p_rxq;    //!< Receive queue handle.
+    serial_queues_ctx_t * p_txq;    //!< Transmit queue handle.
+} serial_queues_t;
 
 /**
  * @brief Creates an instance of serial port queues.
@@ -134,12 +143,26 @@ typedef struct {
  * @param _tx_size  TX queue size.
  * @param _rx_size  RX queue size.
  * */
-#define NRF_SERIAL_QUEUES_DEF(_name, _tx_size, _rx_size)                       \
-    NRF_QUEUE_DEF(uint8_t, _name##_rxq, _rx_size, NRF_QUEUE_MODE_NO_OVERFLOW); \
-    NRF_QUEUE_DEF(uint8_t, _name##_txq, _tx_size, NRF_QUEUE_MODE_NO_OVERFLOW); \
-    static const nrf_serial_queues_t _name = {                                 \
-        .p_rxq = &_name##_rxq,                                                 \
-        .p_txq = &_name##_txq,                                                 \
+#define NRF_SERIAL_QUEUES_DEF(_name, _tx_size, _rx_size)            \
+    static uint8_t _name##_rxq[_rx_size];                           \
+    static uint8_t _name##_txq[_tx_size];                           \
+    static serial_queues_ctx_t _name##_rxq_ctx = {                  \
+        .p_buff = _name##_rxq,                                      \
+        .read_pos = 0,                                              \
+        .write_pos = 0,                                             \
+        .buf_size_mask = _rx_size - 1,                              \
+        .m_ovf = false,                                             \
+    };                                                              \
+    static serial_queues_ctx_t _name##_txq_ctx = {                  \
+        .p_buff = _name##_txq,                                      \
+        .read_pos = 0,                                              \
+        .write_pos = 0,                                             \
+        .buf_size_mask = _tx_size - 1,                              \
+        .m_ovf = false,                                             \
+    };                                                              \
+    static serial_queues_t _name = {                                \
+        .p_rxq = &_name##_rxq_ctx,                                  \
+        .p_txq = &_name##_txq_ctx,                                  \
     }
 
 /**
@@ -206,7 +229,7 @@ typedef void (*nrf_serial_sleep_handler_t)(void);
 typedef struct {
     nrf_serial_mode_t mode;         //!< Serial port mode.
 
-    nrf_serial_queues_t const *  p_queues;      //!< Serial port queues.
+    serial_queues_t const *  p_queues;      //!< Serial port queues.
     nrf_serial_buffers_t const * p_buffers;     //!< DMA buffers.
     nrf_serial_evt_handler_t     ev_handler;    //!< Event handler.
     nrf_serial_sleep_handler_t   sleep_handler; //!< Sleep mode handler.
@@ -390,8 +413,14 @@ ret_code_t nrf_serial_rx_drain(nrf_serial_t const * p_serial);
 
 /** @} */
 
+uint32_t queue_put(serial_queues_ctx_t * ctx, uint8_t byte);
+uint32_t queue_get(serial_queues_ctx_t * ctx, uint8_t *byte);
+uint32_t queue_flush(serial_queues_ctx_t * ctx);
+uint32_t queue_read(serial_queues_ctx_t * ctx, uint8_t * p_byte_array,uint32_t p_size);
+uint32_t queue_length(serial_queues_ctx_t * ctx);
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* NRF_SERIAL_H__ */
+

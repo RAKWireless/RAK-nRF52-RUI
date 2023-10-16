@@ -3,7 +3,9 @@ LIB_SRC += rui_inner_main.c
 ifneq ($(strip $(SUPPORT_LORA)),0)
 LIB_SRC += sx126x-board.c gpio-board.c delay-board.c spi-board.c board.c rtc-board.c
 endif
-
+ifneq ($(strip $(SUPPORT_LORA_P2P)),0)
+LIB_SRC += sx126x-board.c gpio-board.c delay-board.c spi-board.c board.c rtc-board.c
+endif
 LIB_ASRC :=
 LIBRARY_NAME := rak4631
 LOCAL_CFLAGS :=

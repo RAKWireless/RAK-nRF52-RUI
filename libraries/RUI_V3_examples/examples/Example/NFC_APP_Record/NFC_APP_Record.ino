@@ -32,6 +32,7 @@ void setup()
         'e', 'n', 'd', 'i', 'n', 'g' };
 
     Serial.begin(115200);
+    delay(2000);
 
 #ifdef SUPPORT_NFC
     api.nfc.init(true, false, nfc_t4t_callback);	// NFC tag init

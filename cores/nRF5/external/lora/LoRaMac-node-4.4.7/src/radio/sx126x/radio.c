@@ -477,6 +477,7 @@
 #define __USES_INITFINI__ 1
 #define nrf52840 1
 #define SUPPORT_LORA 1
+#define SUPPORT_LORA_P2P 1
 #define LORA_IO_SPI_PORT 2
 #define SYS_RTC_COUNTER_PORT 2
 #define ATCMD_CUST_TABLE_SIZE 64
@@ -511,6 +512,7 @@
 #define REGION_IN865 1
 #define REGION_US915 1
 #define REGION_RU864 1
+#define REGION_LA915 1
 #define SOFT_SE 1
 #define SECURE_ELEMENT_PRE_PROVISIONED 1
 #define LORAMAC_CLASSB_ENABLED 1
@@ -4655,7 +4657,7 @@ unsigned long udrv_get_microsecond(void);
 #define SEED_LENGTH 4
 
 
-#define EVENT_QUEUE_SIZE (32)
+#define EVENT_QUEUE_SIZE (128)
 #define EVENT_DATA_SIZE (8)
 
 

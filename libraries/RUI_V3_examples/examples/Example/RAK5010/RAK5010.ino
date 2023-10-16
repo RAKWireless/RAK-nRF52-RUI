@@ -1,4 +1,6 @@
 
+extern const char *sw_version;
+
 #ifndef rak5010
 #error "Please select WisTrio Cellular RAK5010 Board and compile again"
 #endif
@@ -44,16 +46,23 @@ int get_sensor(SERIAL_PORT port, char *cmd, stParam * param)
 
 void setup()
 {
-    Serial.begin(115200);
+    uint32_t baudrate = Serial.getBaudrate();
+    Serial.begin(baudrate);
 
-    Serial.println("RAKwireless RAK5010 Example");
+    Serial.println("RAKwireless RAK5010");
     Serial.println("------------------------------------------------------");
+    Serial.printf("Version: %s\r\n", sw_version);
 
     // begin for I2C
     Wire.begin();
 
     api.system.atMode.add("SENSOR", "This get sensor data.",
       "SENSOR", get_sensor);
+
+    // Start BLE UART advertisement for 30 seconds
+    Serial6.begin(115200, RAK_AT_MODE);
+    api.ble.settings.blemode(RAK_BLE_UART_MODE);
+    api.ble.uart.start(30);
 }
 
 void loop()
