@@ -31,6 +31,7 @@ menu.supportKR920=Support LoRaWAN Region KR920
 menu.supportIN865=Support LoRaWAN Region IN865
 menu.supportUS915=Support LoRaWAN Region US915
 menu.supportRU864=Support LoRaWAN Region RU864
+menu.supportLA915=Support LoRaWAN Region LA915
 # ----------------------------------
 # WisBlock Core RAK4630 Board
 # ----------------------------------
@@ -155,6 +156,11 @@ WisCoreRAK4631Board.menu.supportRU864.1=On
 WisCoreRAK4631Board.menu.supportRU864.1.build.regionRU864=-DREGION_RU864
 WisCoreRAK4631Board.menu.supportRU864.2=Off
 WisCoreRAK4631Board.menu.supportRU864.2.build.regionRU864= 
+
+WisCoreRAK4631Board.menu.supportLA915.1=On
+WisCoreRAK4631Board.menu.supportLA915.1.build.regionLA915=-DREGION_LA915
+WisCoreRAK4631Board.menu.supportLA915.2=Off
+WisCoreRAK4631Board.menu.supportLA915.2.build.regionLA915= 
 
 # ----------------------------------
 # WisTrio Cellular RAK5010 Board
