@@ -37,6 +37,8 @@
 #include "nrf_ble_lesc.h"
 #include "udrv_powersave.h"
 #include "udrv_errno.h"
+#include "nrf_gpio.h"
+#include "nrf_drv_gpiote.h"
 #ifdef SUPPORT_MULTITASK
 #include "nrf_drv_systick.h"
 #include "uhal_sched.h"
@@ -55,10 +57,11 @@ bool no_busy_loop = false;
 extern bool is_custom_wdt;
 #endif
 
-#ifdef SUPPORT_LORA
+#if defined(SUPPORT_LORA) || defined(SUPPORT_LORA_P2P)
 #include "radio.h"
+#endif
+#ifdef SUPPORT_LORA
 #include "LoRaMac.h"
-
 extern service_lora_join_cb service_lora_join_callback;
 #endif
 
@@ -326,7 +329,7 @@ void rui_event_handler_func(void *data, uint16_t size) {
             break;
         }
 #endif
-#ifdef SUPPORT_LORA
+#if defined(SUPPORT_LORA) || defined(SUPPORT_LORA_P2P)
         case UDRV_SYS_EVT_OP_LORAWAN:
         {
             // Process Radio IRQ
@@ -334,14 +337,17 @@ void rui_event_handler_func(void *data, uint16_t size) {
             {
                 Radio.IrqProcess( );
             }
-
+#ifdef SUPPORT_LORA
             // Processes the LoRaMac events
             LoRaMacProcess( );
 
             // Call all packages process functions
             LmHandlerPackagesProcess( );
+#endif
             break;
         }
+#endif
+#ifdef SUPPORT_LORA
         case UDRV_SYS_EVT_OP_LORAWAN_JOIN_CB:
         {
             if (service_lora_join_callback != NULL) {
@@ -401,7 +407,7 @@ void rui_init(void)
     uint8_t mac[13] = {0};
     uint8_t rbuff[8] = {0};
     NRF_POWER->DCDCEN = 1;
-
+    nrf_drv_gpiote_init();
     //udrv_gpio_init();
 
     log_init();

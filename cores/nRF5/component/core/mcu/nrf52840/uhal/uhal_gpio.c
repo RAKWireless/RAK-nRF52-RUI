@@ -236,12 +236,12 @@ void uhal_gpio_set_wakeup_disable(uint32_t pin) {
         return;
     }
 
-#ifdef SUPPORT_LORA
+#if defined(SUPPORT_LORA) || defined(SUPPORT_LORA_P2P)
     if (pin != 47) {//LoRa interrupt
 #endif
         nrf_drv_gpiote_in_uninit((nrfx_gpiote_pin_t)pin);
         gpio_status[pin].wakeup_source = false;
-#ifdef SUPPORT_LORA
+#if defined(SUPPORT_LORA) || defined(SUPPORT_LORA_P2P)
     }
 #endif
 }
@@ -265,7 +265,7 @@ void uhal_gpio_suspend(void) {
             continue;
 	}
 
-#ifdef SUPPORT_LORA
+#if defined(SUPPORT_LORA) || defined(SUPPORT_LORA_P2P)
         if (i == 47)
         {
             if (udrv_powersave_in_deep_sleep) {
@@ -313,7 +313,7 @@ void uhal_gpio_resume(void) {
             continue;
 	}
 
-#ifdef SUPPORT_LORA
+#if defined(SUPPORT_LORA) || defined(SUPPORT_LORA_P2P)
         if (i == 47) {//LoRa interrupt
             if (udrv_powersave_in_deep_sleep) {
                 uhal_gpio_intc_trigger_mode((uint32_t)i, GPIO_INTC_RISING_EDGE);

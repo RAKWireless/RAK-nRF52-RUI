@@ -36,6 +36,8 @@
 #include "nrf_ble_lesc.h"
 #include "udrv_powersave.h"
 #include "udrv_errno.h"
+#include "nrf_gpio.h"
+#include "nrf_drv_gpiote.h"
 #ifdef SUPPORT_MULTITASK
 #include "nrf_drv_systick.h"
 #include "uhal_sched.h"
@@ -493,6 +495,7 @@ void rui_init(void)
     uint8_t rbuff[8] = {0};
     NRF_POWER->DCDCEN = 1;
 
+    nrf_drv_gpiote_init();
     //udrv_gpio_init();
 
     log_init();

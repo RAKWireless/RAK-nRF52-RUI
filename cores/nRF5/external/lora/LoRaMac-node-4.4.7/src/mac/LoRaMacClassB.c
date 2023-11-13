@@ -10593,7 +10593,7 @@ static void LoRaMacClassBProcessBeacon( void )
                         if( SysTimeToMs( Ctx.BeaconCtx.NextBeaconRx ) > currentTime )
                         {
 
-                            beaconEventTime = TimerTempCompensation( SysTimeToMs( Ctx.BeaconCtx.NextBeaconRx ) - currentTime, Ctx.BeaconCtx.Temperature );
+                            beaconEventTime = TimerTempCompensation( SysTimeToMs( Ctx.BeaconCtx.NextBeaconRx ) - currentTime, Ctx.BeaconCtx.Temperature ) - 100;
 
                             if( ( int32_t ) beaconEventTime > beaconRxConfig.WindowOffset )
                             {
