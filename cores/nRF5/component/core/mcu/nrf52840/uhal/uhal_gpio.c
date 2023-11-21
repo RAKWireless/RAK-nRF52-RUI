@@ -268,9 +268,6 @@ void uhal_gpio_suspend(void) {
 #if defined(SUPPORT_LORA) || defined(SUPPORT_LORA_P2P)
         if (i == 47)
         {
-            if (udrv_powersave_in_deep_sleep) {
-                nrf_drv_gpiote_in_uninit((nrfx_gpiote_pin_t)i);
-            }
             continue;
         }
 #endif
@@ -315,10 +312,6 @@ void uhal_gpio_resume(void) {
 
 #if defined(SUPPORT_LORA) || defined(SUPPORT_LORA_P2P)
         if (i == 47) {//LoRa interrupt
-            if (udrv_powersave_in_deep_sleep) {
-                uhal_gpio_intc_trigger_mode((uint32_t)i, GPIO_INTC_RISING_EDGE);
-                udrv_gpio_register_isr((uint32_t)i, (gpio_isr_func)RadioOnDioIrq);
-            }
             continue;
         }
 #endif
