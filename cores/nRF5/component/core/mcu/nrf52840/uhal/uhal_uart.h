@@ -18,7 +18,7 @@
 
 #define UHAL_UART_NO_TIMEOUT NRF_SERIAL_MAX_TIMEOUT
 
-void uhal_uart_register_onewire_handler (SERIAL_CLI_HANDLER handler);
+void uhal_uart_register_onewire_handler (SERIAL_UART_HANDLER handler);
 
 void uhal_uart_init (SERIAL_PORT Port, uint32_t BaudRate, SERIAL_WORD_LEN_E DataBits, SERIAL_STOP_BIT_E StopBits, SERIAL_PARITY_E Parity, SERIAL_WIRE_MODE_E WireMode);
 

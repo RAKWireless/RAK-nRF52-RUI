@@ -63,6 +63,17 @@ uint32_t queue_put(serial_queues_ctx_t * ctx, uint8_t byte)
     return NRF_ERROR_NO_MEM;
 }
 
+uint32_t queue_peek(serial_queues_ctx_t * ctx, uint8_t *byte)
+{
+    if (queue_length(ctx) != 0)
+    {
+        *byte = ctx->p_buff[ctx->read_pos & ctx->buf_size_mask];
+        return NRF_SUCCESS;
+    }
+
+    return NRF_ERROR_NO_MEM;
+}
+
 uint32_t queue_get(serial_queues_ctx_t * ctx, uint8_t *byte)
 {
     if (queue_length(ctx) != 0)
@@ -84,6 +95,7 @@ uint32_t queue_flush(serial_queues_ctx_t * ctx)
 
 uint32_t queue_length(serial_queues_ctx_t * ctx)
 {
+
     uint32_t tmp = ctx->read_pos;
     return ctx->write_pos - tmp;
 }
@@ -115,7 +127,12 @@ static void event_handler(nrf_serial_t const * p_serial,
 {
     if (p_serial->p_ctx->p_config->ev_handler)
     {
-        p_serial->p_ctx->p_config->ev_handler(p_serial, event);
+        if(p_serial->instance.inst_idx == 0)
+            p_serial->p_ctx->p_config->ev_handler(SERIAL_UART0, event);
+        else if(p_serial->instance.inst_idx == 1)
+            p_serial->p_ctx->p_config->ev_handler(SERIAL_UART1, event);
+        else if(p_serial->instance.inst_idx == 2)
+            p_serial->p_ctx->p_config->ev_handler(SERIAL_UART2, event);
     }
 }
 
@@ -161,7 +178,7 @@ static size_t serial_rx(nrf_serial_t const * p_serial,
 }
 
 static size_t serial_tx(nrf_serial_t const * p_serial,
-                        uint8_t const * p_buff,
+                        uint8_t * p_buff,
                         size_t length)
 {
     size_t tx_len = 0;
@@ -228,6 +245,7 @@ static void uart_event_handler(nrf_drv_uart_event_t * p_event, void * p_context)
 
             serial_queues_ctx_t * p_rxq = p_serial->p_ctx->p_config->p_queues->p_rxq;
 #ifndef RUI_BOOTLOADER
+
             udrv_powersave_in_sleep = false;
             if (p_serial->instance.inst_idx == 0) {
                 for (int i = 0 ; i < p_event->data.rxtx.bytes ; i++) {
@@ -249,7 +267,7 @@ static void uart_event_handler(nrf_drv_uart_event_t * p_event, void * p_context)
 #endif
             }
             
-            //event_handler(p_serial, NRF_SERIAL_EVENT_RX_DATA);
+            event_handler(p_serial, NRF_SERIAL_EVENT_RX_DATA);
             if(queue_length(p_rxq) <= p_rxq->buf_size_mask)
             {
                 (void)nrf_drv_uart_rx(&p_serial->instance,
@@ -389,6 +407,36 @@ ret_code_t nrf_serial_uninit(nrf_serial_t const * p_serial)
     return NRF_SUCCESS;
 }
 
+ret_code_t nrf_serial_single_wire_uninit(nrf_serial_t const * p_serial)
+{
+    ASSERT(p_serial);
+
+    if (!p_serial->p_ctx->p_config)
+    {
+        /*Already uninitialized.*/
+        return NRF_ERROR_MODULE_NOT_INITIALIZED;
+    }
+
+    if (!nrf_mtx_trylock(&p_serial->p_ctx->write_lock))
+    {
+        return NRF_ERROR_BUSY;
+    }
+    if (!nrf_mtx_trylock(&p_serial->p_ctx->read_lock))
+    {
+        nrf_mtx_unlock(&p_serial->p_ctx->write_lock);
+        return NRF_ERROR_BUSY;
+    }
+
+    nrf_drv_uart_uninit(&p_serial->instance);
+    if (p_serial->p_ctx->p_config->p_queues)
+    {
+        queue_flush(p_serial->p_ctx->p_config->p_queues->p_txq);
+    }
+
+    memset(p_serial->p_ctx, 0, sizeof(nrf_serial_ctx_t));
+    return NRF_SUCCESS;
+}
+
 typedef struct {
     volatile bool expired;
 } nrf_serial_timeout_ctx_t;
@@ -448,11 +496,11 @@ ret_code_t nrf_serial_write(nrf_serial_t const * p_serial,
         return NRF_SUCCESS;
     }
 
-    if (!nrfx_is_in_ram(p_data) &&
+    /*if (!nrfx_is_in_ram(p_data) &&
          p_serial->p_ctx->p_config->mode == NRF_SERIAL_MODE_DMA)
     {
         return NRF_ERROR_INVALID_ADDR;
-    }
+    }*/
 
     if (!nrf_mtx_trylock(&p_serial->p_ctx->write_lock))
     {
@@ -477,9 +525,20 @@ ret_code_t nrf_serial_write(nrf_serial_t const * p_serial,
     }
 
     size_t left = size;
-    uint8_t const * p_buff = p_data;
     tx_done = 0;
-    size_t wcnt = serial_tx(p_serial, p_buff, left);
+    size_t wcnt = 0;
+    if (!nrfx_is_in_ram(p_data) &&
+         p_serial->p_ctx->p_config->mode == NRF_SERIAL_MODE_DMA)
+    {
+        uint8_t p_buff_ram[size];
+        memcpy(p_buff_ram,p_data,size);    
+        wcnt = serial_tx(p_serial, p_buff_ram, left);
+    }
+    else
+    {
+        uint8_t  * p_buff = p_data;
+        wcnt = serial_tx(p_serial, p_buff, left);
+    }
     do
     {
         if (tx_done == 1)
