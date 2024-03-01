@@ -10,7 +10,7 @@ extern int sensor_init_flag;
 
 uint8_t uart_err_flag = 0;
 
-static void (*ONEWIRE_HANDLER) (void *);
+static void (*ONEWIRE_HANDLER) (SERIAL_PORT, SERIAL_UART_EVT);
 
 //static void serial_event_handler(struct nrf_serial_s const * p_serial,nrf_serial_event_t event);
 
@@ -213,7 +213,7 @@ static void uhal_single_wire_tx_mode(SERIAL_PORT port)
 {
     if (uart_wire_mode[port] == SERIAL_ONE_WIRE_TX_PIN_MODE) {
         if (port == SERIAL_UART0) {
-            ret_code_t ret = nrf_serial_uninit(&serial_uart0);
+            ret_code_t ret = nrf_serial_single_wire_uninit(&serial_uart0);
             if ((ret != NRF_SUCCESS) &&
                 (ret != NRF_ERROR_MODULE_NOT_INITIALIZED) &&
                 (ret != NRF_ERROR_BUSY))
@@ -226,7 +226,7 @@ static void uhal_single_wire_tx_mode(SERIAL_PORT port)
             ret = nrf_serial_init(&serial_uart0, &m_uart0_drv_config, &serial0_config);
             APP_ERROR_CHECK(ret);
         } else  if (port == SERIAL_UART1) {
-            ret_code_t ret = nrf_serial_uninit(&serial_uart1);
+            ret_code_t ret = nrf_serial_single_wire_uninit(&serial_uart1);
             if ((ret != NRF_SUCCESS) &&
                 (ret != NRF_ERROR_MODULE_NOT_INITIALIZED) &&
                 (ret != NRF_ERROR_BUSY))
@@ -241,7 +241,7 @@ static void uhal_single_wire_tx_mode(SERIAL_PORT port)
         }
     } else if (uart_wire_mode[port] == SERIAL_ONE_WIRE_RX_PIN_MODE) {
         if (port == SERIAL_UART0) {
-            ret_code_t ret = nrf_serial_uninit(&serial_uart0);
+            ret_code_t ret = nrf_serial_single_wire_uninit(&serial_uart0);
             if ((ret != NRF_SUCCESS) &&
                 (ret != NRF_ERROR_MODULE_NOT_INITIALIZED) &&
                 (ret != NRF_ERROR_BUSY))
@@ -254,7 +254,7 @@ static void uhal_single_wire_tx_mode(SERIAL_PORT port)
             ret = nrf_serial_init(&serial_uart0, &m_uart0_drv_config, &serial0_config);
             APP_ERROR_CHECK(ret);
         } else  if (port == SERIAL_UART1) {
-            ret_code_t ret = nrf_serial_uninit(&serial_uart1);
+            ret_code_t ret = nrf_serial_single_wire_uninit(&serial_uart1);
             if ((ret != NRF_SUCCESS) &&
                 (ret != NRF_ERROR_MODULE_NOT_INITIALIZED) &&
                 (ret != NRF_ERROR_BUSY))
@@ -275,7 +275,7 @@ static void uhal_single_wire_rx_mode(SERIAL_PORT port)
 {
     if (uart_wire_mode[port] == SERIAL_ONE_WIRE_TX_PIN_MODE) {
         if (port == SERIAL_UART0) {
-            ret_code_t ret = nrf_serial_uninit(&serial_uart0);
+            ret_code_t ret = nrf_serial_single_wire_uninit(&serial_uart0);
             if ((ret != NRF_SUCCESS) &&
                 (ret != NRF_ERROR_MODULE_NOT_INITIALIZED) &&
                 (ret != NRF_ERROR_BUSY))
@@ -288,7 +288,7 @@ static void uhal_single_wire_rx_mode(SERIAL_PORT port)
             ret = nrf_serial_init(&serial_uart0, &m_uart0_drv_config, &serial0_config);
             APP_ERROR_CHECK(ret);
         } else  if (port == SERIAL_UART1) {
-            ret_code_t ret = nrf_serial_uninit(&serial_uart1);
+            ret_code_t ret = nrf_serial_single_wire_uninit(&serial_uart1);
             if ((ret != NRF_SUCCESS) &&
                 (ret != NRF_ERROR_MODULE_NOT_INITIALIZED) &&
                 (ret != NRF_ERROR_BUSY))
@@ -303,7 +303,7 @@ static void uhal_single_wire_rx_mode(SERIAL_PORT port)
         }
     } else if (uart_wire_mode[port] == SERIAL_ONE_WIRE_RX_PIN_MODE) {
         if (port == SERIAL_UART0) {
-            ret_code_t ret = nrf_serial_uninit(&serial_uart0);
+            ret_code_t ret = nrf_serial_single_wire_uninit(&serial_uart0);
             if ((ret != NRF_SUCCESS) &&
                 (ret != NRF_ERROR_MODULE_NOT_INITIALIZED) &&
                 (ret != NRF_ERROR_BUSY))
@@ -316,7 +316,7 @@ static void uhal_single_wire_rx_mode(SERIAL_PORT port)
             ret = nrf_serial_init(&serial_uart0, &m_uart0_drv_config, &serial0_config);
             APP_ERROR_CHECK(ret);
         } else  if (port == SERIAL_UART1) {
-            ret_code_t ret = nrf_serial_uninit(&serial_uart1);
+            ret_code_t ret = nrf_serial_single_wire_uninit(&serial_uart1);
             if ((ret != NRF_SUCCESS) &&
                 (ret != NRF_ERROR_MODULE_NOT_INITIALIZED) &&
                 (ret != NRF_ERROR_BUSY))
@@ -334,9 +334,10 @@ static void uhal_single_wire_rx_mode(SERIAL_PORT port)
     single_wire_mode[port] = SINGLE_WIRE_MODE_RX;
 }
 
-void uhal_uart_register_onewire_handler (SERIAL_CLI_HANDLER handler)
+void uhal_uart_register_onewire_handler (SERIAL_UART_HANDLER handler)
 {
     ONEWIRE_HANDLER = handler;
+    serial1_config.ev_handler = ONEWIRE_HANDLER;
 }
 
 void uhal_uart_init (SERIAL_PORT Port, uint32_t BaudRate, SERIAL_WORD_LEN_E DataBits, SERIAL_STOP_BIT_E StopBits, SERIAL_PARITY_E Parity, SERIAL_WIRE_MODE_E WireMode)
@@ -427,11 +428,11 @@ int32_t uhal_uart_peek (SERIAL_PORT Port)
     uint8_t ch;
 
     if (Port == SERIAL_UART0) {
-        if (nrf_queue_generic_pop(serial_uart0.p_ctx->p_config->p_queues->p_rxq, &ch, true) == NRF_SUCCESS) {
+        if(queue_peek(serial_uart0.p_ctx->p_config->p_queues->p_rxq,&ch) == NRF_SUCCESS) {
             return (int32_t)ch;
         }
     } else if (Port == SERIAL_UART1) {
-        if (nrf_queue_generic_pop(serial_uart1.p_ctx->p_config->p_queues->p_rxq, &ch, true) == NRF_SUCCESS) {
+        if(queue_peek(serial_uart1.p_ctx->p_config->p_queues->p_rxq,&ch ) == NRF_SUCCESS) {
             return (int32_t)ch;
         }
     }
@@ -442,8 +443,10 @@ void uhal_uart_flush (SERIAL_PORT Port, uint32_t Timeout)
 {
     if (Port == SERIAL_UART0) {
         nrf_serial_flush(&serial_uart0, Timeout);
+        //queue_flush(serial_uart0.p_ctx->p_config->p_queues->p_rxq);
     } else if (Port == SERIAL_UART1) {
         nrf_serial_flush(&serial_uart1, Timeout);
+        //queue_flush(serial_uart1.p_ctx->p_config->p_queues->p_rxq);
     }
 }
 
