@@ -28,6 +28,17 @@
 #include "udrv_spimst.h"
 #include "pin_define.h"
 
+/*!
+ * Generic definition
+ */
+#ifndef SUCCESS
+#define SUCCESS                                     1
+#endif
+
+#ifndef FAIL
+#define FAIL                                        0
+#endif
+
 static udrv_spimst_port get_udrv_spimst_id(SpiId_t spiId) {
     //configured by feature.mk
     return LORA_IO_SPI_PORT;

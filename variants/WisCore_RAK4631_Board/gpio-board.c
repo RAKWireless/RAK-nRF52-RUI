@@ -27,6 +27,17 @@
 #include "gpio-board.h"
 #include "udrv_gpio.h"
 
+/*!
+ * Generic definition
+ */
+#ifndef SUCCESS
+#define SUCCESS                                     1
+#endif
+
+#ifndef FAIL
+#define FAIL                                        0
+#endif
+
 void GpioMcuInit( Gpio_t *obj, PinNames pin, PinModes mode, PinConfigs config, PinTypes type, uint32_t value )
 {
     if( pin < IOE_0 )

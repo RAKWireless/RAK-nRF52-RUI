@@ -29,10 +29,6 @@ void uhal_wdt_init(uint32_t period)
 {
     uint32_t err_code = NRF_SUCCESS;
 
-    if(period != 15 && period != 30 && period != 60 && period != 120 && period != 250 && period != 500 && period != 1000 && period != 2000 && period != 4000 && period != 8000 )
-    {
-        period = 8000;
-    }
     // Configure WDT.
     nrf_drv_wdt_config_t config = NRF_DRV_WDT_DEAFULT_CONFIG;
 	config.behaviour = NRF_WDT_BEHAVIOUR_PAUSE_SLEEP_HALT;

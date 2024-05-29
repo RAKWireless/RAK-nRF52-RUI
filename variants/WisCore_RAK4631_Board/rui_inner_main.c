@@ -455,6 +455,7 @@ void rui_init(void)
 #endif
 
 #if defined(SUPPORT_LORA)
+    service_lora_mac_nvm_data_init();
     service_lora_init(service_nvm_get_band_from_nvm());
 #elif defined(SUPPORT_LORA_P2P)
     BoardInitMcu();
@@ -495,6 +496,11 @@ void rui_init(void)
 #endif
 
     udrv_system_event_init();
+
+#ifdef SUPPORT_LORA
+    if(service_nvm_get_certi_from_nvm() == 1)
+        service_lora_certification(1);
+#endif
 }
 
 void rui_running(void)
