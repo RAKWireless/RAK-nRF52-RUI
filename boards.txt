@@ -117,20 +117,20 @@ WisCoreRAK4631Board.menu.supportAU915.1.build.regionAU915=-DREGION_AU915
 WisCoreRAK4631Board.menu.supportAU915.2=Off
 WisCoreRAK4631Board.menu.supportAU915.2.build.regionAU915= 
 
-WisCoreRAK4631Board.menu.supportCN470.1=On
-WisCoreRAK4631Board.menu.supportCN470.1.build.regionCN470=-DREGION_CN470
 WisCoreRAK4631Board.menu.supportCN470.2=Off
 WisCoreRAK4631Board.menu.supportCN470.2.build.regionCN470= 
+WisCoreRAK4631Board.menu.supportCN470.1=On
+WisCoreRAK4631Board.menu.supportCN470.1.build.regionCN470=-DREGION_CN470
 
-WisCoreRAK4631Board.menu.supportCN779.1=On
-WisCoreRAK4631Board.menu.supportCN779.1.build.regionCN779=-DREGION_CN779
 WisCoreRAK4631Board.menu.supportCN779.2=Off
 WisCoreRAK4631Board.menu.supportCN779.2.build.regionCN779= 
+WisCoreRAK4631Board.menu.supportCN779.1=On
+WisCoreRAK4631Board.menu.supportCN779.1.build.regionCN779=-DREGION_CN779
 
-WisCoreRAK4631Board.menu.supportEU433.1=On
-WisCoreRAK4631Board.menu.supportEU433.1.build.regionEU433=-DREGION_EU433
 WisCoreRAK4631Board.menu.supportEU433.2=Off
 WisCoreRAK4631Board.menu.supportEU433.2.build.regionEU433= 
+WisCoreRAK4631Board.menu.supportEU433.1=On
+WisCoreRAK4631Board.menu.supportEU433.1.build.regionEU433=-DREGION_EU433
 
 WisCoreRAK4631Board.menu.supportEU868.1=On
 WisCoreRAK4631Board.menu.supportEU868.1.build.regionEU868=-DREGION_EU868
