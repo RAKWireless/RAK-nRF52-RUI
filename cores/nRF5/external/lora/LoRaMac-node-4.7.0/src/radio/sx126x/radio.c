@@ -29,10 +29,6 @@
 #include "sx126x.h"
 #include "sx126x-board.h"
 #include "board.h"
-#include "udrv_system.h"
-
-extern bool udrv_powersave_in_sleep;
-static udrv_system_event_t rui_lora_event = {.request = UDRV_SYS_EVT_OP_LORAWAN, .p_context = NULL};
 
 /*!
  * \brief Initializes the radio
@@ -1236,8 +1232,6 @@ void RadioOnTxTimeoutIrq( void* context )
     {
         RadioEvents->TxTimeout( );
     }
-    udrv_system_event_produce(&rui_lora_event);
-    udrv_powersave_in_sleep = false;
 }
 
 void RadioOnRxTimeoutIrq( void* context )
@@ -1246,15 +1240,11 @@ void RadioOnRxTimeoutIrq( void* context )
     {
         RadioEvents->RxTimeout( );
     }
-    udrv_system_event_produce(&rui_lora_event);
-    udrv_powersave_in_sleep = false;
 }
 
 void RadioOnDioIrq( void* context )
 {
     IrqFired = true;
-    udrv_system_event_produce(&rui_lora_event);
-    udrv_powersave_in_sleep = false;
 }
 
 void RadioIrqProcess( void )
