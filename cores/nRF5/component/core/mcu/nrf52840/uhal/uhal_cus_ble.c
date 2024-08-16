@@ -87,7 +87,6 @@ extern uint32_t uhal_ble_wlock_cnt;
 #define APP_FEATURE_NOT_SUPPORTED BLE_GATT_STATUS_ATTERR_APP_BEGIN + 2 /**< Reply when unsupported features are requested. */
 APP_TIMER_DEF(m_notification_timer_id);
 
-static uint8_t m_custom_value = 0;
 static uint16_t m_ble_nus_max_data_len = BLE_GATT_ATT_MTU_DEFAULT - 3; /**< Maximum length of data (in bytes) that can be transmitted to the peer by the Nordic UART service module. */
 
 /* YOUR_JOB: Add code to initialize the services used by the application.*/
@@ -300,7 +299,6 @@ static void on_write(ble_cus_t *p_cus, ble_evt_t const *p_ble_evt)
             if (ble_srv_is_notification_enabled(p_evt_write->data))
             {
                 evt.evt_type = BLE_CUS_EVT_NOTIFICATION_ENABLED;
-                //ble_cus_custom_value_update(&m_cus, m_custom_value, cus_char_att[cus_chars_now].char_uuid);
                 cus_char_att[cus_chars_now].is_notify_enable = 1;
                 ble_cus_custom_value_update(&m_cus, cus_char_att[cus_chars_now].notify_data, cus_char_att[cus_chars_now].char_uuid);
             }
@@ -638,41 +636,8 @@ static void pm_evt_handler(pm_evt_t const *p_evt)
     }
 }
 
-/**@brief Function for handling the Battery measurement timer timeout.
- *
- * @details This function will be called each time the battery level measurement timer expires.
- *
- * @param[in] p_context  Pointer used for passing some arbitrary information (context) from the
- *                       app_start_timer() call to the timeout handler.
- */
-static void notification_timeout_handler(void *p_context)
-{
-    UNUSED_PARAMETER(p_context);
-    ret_code_t err_code;
-
-    // Increment the value of m_custom_value before nortifing it.
-    m_custom_value++;
-    //NRF_LOG_INFO("m_custom_value = %d" , m_custom_value);
-    //err_code = ble_cus_custom_value_update(&m_cus, m_custom_value, CUSTOM_VALUE_CHAR_UUID_1);
-    //APP_ERROR_CHECK(err_code);
-}
-
-/**@brief Function for the Timer initialization.
- *
- * @details Initializes the timer module. This creates and starts application timers.
- */
 void cus_timers_init(void)
 {
-    // Initialize timer module.
-    //ret_code_t err_code = app_timer_init();
-    //APP_ERROR_CHECK(err_code);
-
-    // Create timers.
-
-    /* YOUR_JOB: Create any timers to be used by the application*/
-    ret_code_t err_code = app_timer_create(&m_notification_timer_id, APP_TIMER_MODE_REPEATED, notification_timeout_handler);
-    NRF_LOG_DEBUG("notification_timeout_handler");
-    APP_ERROR_CHECK(err_code);
 }
 
 /**@brief Function for the GAP initialization.

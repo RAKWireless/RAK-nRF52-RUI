@@ -173,6 +173,8 @@ extern "C"
     int32_t udrv_ble_set_scan_interval_window(uint16_t scan_interval, uint16_t scan_window);
 
     void udrv_ble_scan_start(uint16_t scan_sec); 
+    
+    void udrv_ble_scan_stop(void); 
 
     void udrv_ble_hid_start();
 

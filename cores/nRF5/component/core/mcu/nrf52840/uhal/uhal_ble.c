@@ -4,6 +4,10 @@
 #include "udrv_serial.h"
 
 #ifdef SUPPORT_BLE
+#define NRF_BLE_GQ_QUEUE_SIZE   4
+#ifndef NRF_BLE_GQ_BLE_OBSERVER_PRIO
+#define NRF_BLE_GQ_BLE_OBSERVER_PRIO 1
+#endif
 BLE_NUS_DEF(m_nus, NRF_SDH_BLE_TOTAL_LINK_COUNT);                                   /**< BLE NUS service instance. */
 NRF_BLE_GATT_DEF(m_gatt);
 BLE_ADVERTISING_DEF(m_advertising);                                                 /**< Advertising module instance. */
@@ -12,6 +16,7 @@ BLE_NUS_C_DEF(m_ble_nus_c);                                             /**< BLE
 //BLE_RCS_C_ARRAY_DEF(m_rcs_c, NRF_SDH_BLE_CENTRAL_LINK_COUNT);           /**< Rak Custom client instances. */
 BLE_DB_DISCOVERY_ARRAY_DEF(m_db_disc, NRF_SDH_BLE_CENTRAL_LINK_COUNT);  /**< Database discovery module instances. */
 NRF_BLE_SCAN_DEF(m_scan);                                               /**< Scanning Module instance. */
+NRF_BLE_GQ_DEF(m_ble_gatt_queue, NRF_SDH_BLE_CENTRAL_LINK_COUNT, NRF_BLE_GQ_QUEUE_SIZE);
 
 static uint16_t   m_conn_handle          = BLE_CONN_HANDLE_INVALID;                 /**< Handle of the current connection. */
 static uint16_t   m_ble_nus_max_data_len = BLE_GATT_ATT_MTU_DEFAULT - 3;            /**< Maximum length of data (in bytes) that can be transmitted to the peer by the Nordic UART service module. */
@@ -88,6 +93,10 @@ static ble_central_cfg_t uhal_g_ble_cfg_t =
         .work_mode = BLE_WORK_PERIPHERAL,
         .long_range_enable = 0,
 };
+
+static void nus_c_init(void);
+
+static void db_discovery_init(void);
 
 static uint8_t g_ble_current_mode = BLE_WORK_PERIPHERAL;
 
@@ -261,9 +270,12 @@ static void ble_on_adv_evt(ble_adv_evt_t ble_adv_evt)
     case BLE_ADV_EVT_FAST:
         break;
     case BLE_ADV_EVT_IDLE:
-        nrf_queue_reset(&ble_rxq);
-        uhal_is_advertising = 0;
-        uhal_ble_wake_unlock();
+        if (ble_parameter.service_mode == DRV_BLE_UART_MODE)
+        {
+            nrf_queue_reset(&ble_rxq);
+            uhal_is_advertising = 0;
+            uhal_ble_wake_unlock();
+        }
         break;
     default:
         break;
@@ -551,6 +563,8 @@ void uhal_conn_params_init(void)
 
     err_code = ble_conn_params_init(&cp_init);
     APP_ERROR_CHECK(err_code);
+    db_discovery_init();
+    nus_c_init();
 }
 
 #ifdef BLE_CENTRAL_SUPPORT
@@ -722,7 +736,14 @@ static void db_disc_handler(ble_db_discovery_evt_t *p_evt)
 
 static void db_discovery_init(void)
 {
-    ret_code_t err_code = ble_db_discovery_init(db_disc_handler);
+    ble_db_discovery_init_t db_init;
+
+    memset(&db_init, 0, sizeof(ble_db_discovery_init_t));
+
+    db_init.evt_handler  = db_disc_handler;
+    db_init.p_gatt_queue = &m_ble_gatt_queue;
+
+    ret_code_t err_code = ble_db_discovery_init(&db_init);
     APP_ERROR_CHECK(err_code);
 }
 
@@ -733,7 +754,7 @@ static void ble_nus_c_evt_handler(ble_nus_c_t *p_ble_nus_c, ble_nus_c_evt_t cons
     switch (p_ble_nus_evt->evt_type)
     {
     case BLE_NUS_C_EVT_DISCOVERY_COMPLETE:
-        NRF_LOG_INFO("Discovery complete.");
+        NRF_LOG_INFO("(NUS) Discovery complete.");
         err_code = ble_nus_c_handles_assign(p_ble_nus_c, p_ble_nus_evt->conn_handle, &p_ble_nus_evt->handles);
         APP_ERROR_CHECK(err_code);
         break;
@@ -742,14 +763,18 @@ static void ble_nus_c_evt_handler(ble_nus_c_t *p_ble_nus_c, ble_nus_c_evt_t cons
         break;
 
     case BLE_NUS_C_EVT_DISCONNECTED:
-        NRF_LOG_INFO("Disconnected.");
-        scan_start();
+        NRF_LOG_INFO("(NUS) Disconnected.");
         break;
 
     default:
         // No implementation needed.
         break;
     }
+}
+static void nus_error_handler(uint32_t nrf_error)
+{
+    NRF_LOG_INFO("nus_error_handler:%u",nrf_error);
+    APP_ERROR_HANDLER(nrf_error);
 }
 
 static void nus_c_init(void)
@@ -758,6 +783,8 @@ static void nus_c_init(void)
     ble_nus_c_init_t init;
 
     init.evt_handler = ble_nus_c_evt_handler;
+    init.error_handler = nus_error_handler;
+    init.p_gatt_queue  = &m_ble_gatt_queue;
 
     err_code = ble_nus_c_init(&m_ble_nus_c, &init);
     APP_ERROR_CHECK(err_code); 
@@ -783,7 +810,6 @@ static void scan_evt_handler(scan_evt_t const * p_scan_evt)
         {
             NRF_LOG_INFO("(BLE Scan) Scan timed out.");
             uhal_is_scanning = 0;
-            NRF_LOG_DEBUG("%d: %s(): unlock:", __LINE__, __func__);
             uhal_ble_wake_unlock();
         } break;
 
@@ -798,7 +824,7 @@ static void scan_evt_handler(scan_evt_t const * p_scan_evt)
 }
 
 
-static void scan_init(bool connect_if_match)
+void uhal_scan_init(bool connect_if_match)
 {
 
 #if S132
@@ -827,6 +853,7 @@ static void scan_init(bool connect_if_match)
 
     err_code = nrf_ble_scan_init(&m_scan, &init_scan, scan_evt_handler);
     APP_ERROR_CHECK(err_code);
+
 
 #endif
 }
@@ -863,6 +890,8 @@ void uhal_ble_mode_switch_timer_handler(void *p_context)
 
 void uhal_ble_central_config(void)
 {
+    uhal_app_ble_mode_switch();
+    /*
     if ((BLE_WORK_CENTRAL == uhal_g_ble_cfg_t.work_mode) || (BLE_WORK_OBSERVER == uhal_g_ble_cfg_t.work_mode))
     {
         db_discovery_init();
@@ -870,12 +899,13 @@ void uhal_ble_central_config(void)
 
         app_timer_create(&ble_mode_id, APP_TIMER_MODE_SINGLE_SHOT, uhal_ble_mode_switch_timer_handler);
         app_timer_start(ble_mode_id, APP_TIMER_TICKS(BLE_MODE_SWITCH), NULL);
-    }
+    }*/
 }
 
 void uhal_app_ble_mode_switch(void)
 {
     // stop advertising
+    /*
     if (m_conn_handle != BLE_CONN_HANDLE_INVALID)
     {
         ret_code_t err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
@@ -883,16 +913,14 @@ void uhal_app_ble_mode_switch(void)
     }
     sd_ble_gap_adv_stop((&m_advertising)->adv_handle);
 
-    uhal_is_advertising = 0;
+    uhal_is_advertising = 0;*/
     // start scanning
     if (BLE_WORK_CENTRAL == uhal_g_ble_cfg_t.work_mode)
     {
-        scan_init(true);
         g_ble_current_mode = BLE_WORK_CENTRAL;
     }
     else
     {
-        scan_init(false);
         g_ble_current_mode = BLE_WORK_OBSERVER;
     }
 
@@ -1015,16 +1043,6 @@ static void on_ble_pairing_evt(uint16_t conn_handle, ble_evt_t const * p_ble_evt
 
     switch (p_ble_evt->header.evt_id)
     {
-        case BLE_GAP_EVT_CONNECTED:
-            break;
-
-        case BLE_GAP_EVT_DISCONNECTED:
-            break;
-
-        case BLE_GAP_EVT_SEC_PARAMS_REQUEST:
-            NRF_LOG_INFO("BLE_GAP_EVT_SEC_PARAMS_REQUEST");
-            break;
-
         case BLE_GAP_EVT_PASSKEY_DISPLAY:
             memcpy(passkey, p_ble_evt->evt.gap_evt.params.passkey_display.passkey, BLE_GAP_PASSKEY_LEN);
             passkey[BLE_GAP_PASSKEY_LEN] = 0x00;
@@ -1033,14 +1051,6 @@ static void on_ble_pairing_evt(uint16_t conn_handle, ble_evt_t const * p_ble_evt
                          p_ble_evt->evt.gap_evt.params.passkey_display.match_request);
             udrv_serial_printf(DEFAULT_SERIAL_CONSOLE, "Please input [%s] passcode to your smartphone apps.\r\n", passkey);
 
-            break;
-
-        case BLE_GAP_EVT_AUTH_KEY_REQUEST:
-            NRF_LOG_INFO("BLE_GAP_EVT_AUTH_KEY_REQUEST");
-            break;
-
-        case BLE_GAP_EVT_LESC_DHKEY_REQUEST:
-            NRF_LOG_INFO("BLE_GAP_EVT_LESC_DHKEY_REQUEST");
             break;
 
          case BLE_GAP_EVT_AUTH_STATUS:
@@ -1089,20 +1099,10 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 
         case BLE_GAP_EVT_CONNECTED:
         {
-            NRF_LOG_INFO("(NUS) Connected.");
+            NRF_LOG_INFO("(EVT) Connected.");
             nrf_queue_reset(&ble_rxq);
             uhal_is_advertising = 0;
-            uint8_t msg[] = "Connected.\r\n";
-    #ifdef SUPPORT_USB
-            memset(uhal_Usbd_send_buffer, 0, 256);
-            sprintf(uhal_Usbd_send_buffer, "Connected.\r\n");
-            usbd_send(uhal_Usbd_send_buffer, strlen(uhal_Usbd_send_buffer));     
-            
-    #endif
-            err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
-            APP_ERROR_CHECK(err_code);
-            //m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
-
+            udrv_serial_printf(DEFAULT_SERIAL_CONSOLE, "Connected.\r\n");
     #ifdef BLE_CENTRAL_SUPPORT
             if (BLE_WORK_CENTRAL == g_ble_current_mode)
             {
@@ -1142,15 +1142,10 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 
         case BLE_GAP_EVT_DISCONNECTED:
         {
-            NRF_LOG_INFO("(NUS)Disconnected.");
+            NRF_LOG_INFO("(EVT) Disconnected.");
             nrf_queue_reset(&ble_rxq);
             m_conn_handle = BLE_CONN_HANDLE_INVALID;
-            uint8_t msg[] = "Disconnected.\r\n";
-    #ifdef SUPPORT_USB
-            memset(uhal_Usbd_send_buffer, 0, 256);
-            sprintf(uhal_Usbd_send_buffer, "Disconnected.\r\n");
-            usbd_send(uhal_Usbd_send_buffer, strlen(uhal_Usbd_send_buffer));
-    #endif
+            udrv_serial_printf(DEFAULT_SERIAL_CONSOLE, "Disconnected.\r\n");
 
     #ifdef BLE_CENTRAL_SUPPORT
             if ((BLE_WORK_PERIPHERAL == g_ble_current_mode) && ((BLE_WORK_CENTRAL == uhal_g_ble_cfg_t.work_mode) || (BLE_WORK_OBSERVER == uhal_g_ble_cfg_t.work_mode)))
@@ -1166,7 +1161,6 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
             {
                 DISCONNECT_HANDLER(); 
             }
-            //NRF_LOG_DEBUG("%d: %s(): unlock:", __LINE__, __func__);
             uhal_ble_wake_unlock();
         
         }
@@ -1207,9 +1201,7 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
         case BLE_GAP_EVT_TIMEOUT:
         {
             //for ble central mode to scan and connection 
-            NRF_LOG_INFO("(BLE Scan) Scan timed out.");
-            NRF_LOG_DEBUG("Connection Request timed out.");
-            uhal_is_scanning = 0;
+            NRF_LOG_INFO("BLE_GAP_EVT_TIMEOUT");
         }
         break;
 
@@ -1358,6 +1350,11 @@ void uhal_stop_ble(void)
     sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
     nrf_queue_reset(&ble_rxq);
     uhal_is_advertising = 0;
+    if(uhal_is_scanning)
+    {
+        nrf_ble_scan_stop();
+        uhal_is_scanning=0;
+    }
 
     uhal_ble_wake_unlock_all();
 }
@@ -1373,11 +1370,8 @@ int32_t uhal_advertising_start(uint8_t time_out)
     
     if (ble_parameter.service_mode == DRV_BLE_UART_MODE)
     {
-        if(uhal_is_advertising)
-        {
-            err_code = sd_ble_gap_adv_stop((&m_advertising)->adv_handle);
-            uhal_ble_wake_unlock();
-        }
+        err_code = sd_ble_gap_adv_stop((&m_advertising)->adv_handle);
+        uhal_ble_wake_unlock();
         err_code = sd_ble_gap_tx_power_set(1, (&m_advertising)->adv_handle, ble_parameter.txpower);
         if(time_out == 0)
         {
@@ -1408,6 +1402,7 @@ int32_t uhal_advertising_start(uint8_t time_out)
         ble_advertising_modes_config_set(&m_advertising, &init.config);
         if(m_conn_handle == BLE_CONN_HANDLE_INVALID)
         {
+            NRF_LOG_DEBUG("ble_advertising_start");
             err_code = ble_advertising_start(&m_advertising, ble_parameter.adv_mode);
             
             APP_ERROR_CHECK(err_code);
@@ -1418,11 +1413,8 @@ int32_t uhal_advertising_start(uint8_t time_out)
     else if (ble_parameter.service_mode == DRV_BLE_BEACON_MODE)
     {
         NRF_LOG_DEBUG("(Beacon) Start.");
-        if(uhal_is_advertising)
-        {
-            err_code = sd_ble_gap_adv_stop(m_adv_handle);
-            uhal_ble_wake_unlock();
-        }
+        err_code = sd_ble_gap_adv_stop(m_adv_handle);
+        uhal_ble_wake_unlock();
         m_adv_params.properties.type = BLE_GAP_ADV_TYPE_NONCONNECTABLE_SCANNABLE_UNDIRECTED; //Beacon needs to be scannable to receive scan response
         m_adv_params.p_peer_addr = NULL; // Undirected advertisement.
         m_adv_params.filter_policy = BLE_GAP_ADV_FP_ANY;
@@ -1437,6 +1429,7 @@ int32_t uhal_advertising_start(uint8_t time_out)
         err_code = sd_ble_gap_tx_power_set(1, (&m_advertising)->adv_handle, ble_parameter.txpower);
 
         err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+        NRF_LOG_INFO("sd_ble_gap_adv_start:%u",err_code);
         APP_ERROR_CHECK(err_code);
         uhal_ble_wake_lock();
     }
@@ -1737,7 +1730,7 @@ int32_t uhal_ble_set_beacon_major(uint16_t major_value)
 
     err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
 
-    err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    //err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
 
     APP_ERROR_CHECK(err_code);
     switch (err_code)
@@ -1775,7 +1768,7 @@ int32_t uhal_ble_set_beacon_minor(uint16_t minor_value)
 
     err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
 
-    err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    //err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
 
     APP_ERROR_CHECK(err_code);
     switch (err_code)
@@ -1820,7 +1813,7 @@ int32_t uhal_ble_set_beacon_power(int8_t beacon_power)
 
         err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
 
-        err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+        //err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
 
         APP_ERROR_CHECK(err_code);
     }
@@ -1864,7 +1857,7 @@ int32_t uhal_ble_set_beacon_uuid(uint8_t beaconUuid[])
 
     err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
     
-    err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    //err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
 
     APP_ERROR_CHECK(err_code);
     switch (err_code)
@@ -1896,7 +1889,7 @@ int32_t uhal_ble_set_beacon_custom_payload(uint8_t cus_adv_data[], uint8_t cus_a
 
     err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
     
-    err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    //err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
 
     APP_ERROR_CHECK(err_code);
     switch (err_code)
@@ -1944,6 +1937,7 @@ int32_t uhal_ble_set_scan_interval_window(uint16_t scan_interval, uint16_t scan_
             err_code = nrf_ble_scan_params_set(&m_scan, &m_scan_param_1MBps);
             APP_ERROR_CHECK(err_code);
         }
+        scan_start();
     }
     
     switch (err_code)
@@ -1967,6 +1961,16 @@ void uhal_ble_scan_start(uint16_t scan_sec)
 
     uhal_ble_set_work_mode(BLE_WORK_CENTRAL, false);
     uhal_ble_central_config();
+}
+void uhal_ble_scan_stop(void)
+{
+    if(uhal_is_scanning)
+    {
+        nrf_ble_scan_stop();
+        uhal_is_scanning = 0;
+        NRF_LOG_DEBUG("(BLS Scan) Scan Stop");
+
+    }
 }
 
 int32_t uhal_nus_set_keypairing(uint8_t *pairing_key, uint8_t key_length)

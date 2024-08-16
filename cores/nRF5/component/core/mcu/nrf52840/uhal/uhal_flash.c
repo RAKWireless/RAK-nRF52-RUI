@@ -101,7 +101,6 @@ int32_t uhal_flash_write (uint32_t addr, uint8_t *buff, uint32_t len) {
     //    return -UDRV_WRONG_ARG;
     //}
 
-    NRF_LOG_INFO("Writing %u to flash address 0x%x.", len, addr);
     rc = nrf_fstorage_write(&fstorage, addr, buff, len, NULL);
     //APP_ERROR_CHECK(rc);
     if (rc != NRF_SUCCESS)
@@ -112,7 +111,6 @@ int32_t uhal_flash_write (uint32_t addr, uint8_t *buff, uint32_t len) {
     }
 
     wait_for_flash_ready(&fstorage);
-    NRF_LOG_INFO("Done.");
 
     return UDRV_RETURN_OK;
 }
@@ -124,12 +122,6 @@ int32_t uhal_flash_read (uint32_t addr, uint8_t *buff, uint32_t len) {
     uhal_advertising_stop(1);
 #endif
 #endif
-    //if (addr_is_within_bounds(&fstorage, addr, len) == false) {
-    //    NRF_LOG_ERROR("address 0x%x with %u is out of bound.", addr, len);
-    //    return -UDRV_WRONG_ARG;
-    //}
-
-    NRF_LOG_INFO("Reading %u from flash address 0x%x.", len, addr);
     rc = nrf_fstorage_read(&fstorage, addr, buff, len);
     if (rc != NRF_SUCCESS)
     {
@@ -144,7 +136,6 @@ int32_t uhal_flash_read (uint32_t addr, uint8_t *buff, uint32_t len) {
     uhal_advertising_stop(2);
 #endif
 #endif
-    NRF_LOG_INFO("Done.");
 
     return UDRV_RETURN_OK;
 }
@@ -158,12 +149,6 @@ int32_t uhal_flash_erase (uint32_t addr, uint32_t len) {
 #endif
     uint32_t page_cnt = len/fstorage.p_flash_info->erase_unit;
     
-    //if (addr_is_within_bounds(&fstorage, addr, len) == false) {
-    //    NRF_LOG_ERROR("address 0x%x with %u is out of bound.", addr, len);
-    //    return -UDRV_WRONG_ARG;
-    //}
-
-    NRF_LOG_INFO("Erasing %u (page count %u) from flash address 0x%x.", len, page_cnt, addr);
     rc = nrf_fstorage_erase(&fstorage, addr, page_cnt, NULL);
     if (rc != NRF_SUCCESS)
     {
@@ -173,7 +158,6 @@ int32_t uhal_flash_erase (uint32_t addr, uint32_t len) {
     }
 
     wait_for_flash_ready(&fstorage);
-    NRF_LOG_INFO("Done.");
 
     return UDRV_RETURN_OK;
 }
