@@ -4,10 +4,6 @@
 #include "udrv_serial.h"
 
 #ifdef SUPPORT_BLE
-#define NRF_BLE_GQ_QUEUE_SIZE   4
-#ifndef NRF_BLE_GQ_BLE_OBSERVER_PRIO
-#define NRF_BLE_GQ_BLE_OBSERVER_PRIO 1
-#endif
 BLE_NUS_DEF(m_nus, NRF_SDH_BLE_TOTAL_LINK_COUNT);                                   /**< BLE NUS service instance. */
 NRF_BLE_GATT_DEF(m_gatt);
 BLE_ADVERTISING_DEF(m_advertising);                                                 /**< Advertising module instance. */
@@ -16,7 +12,6 @@ BLE_NUS_C_DEF(m_ble_nus_c);                                             /**< BLE
 //BLE_RCS_C_ARRAY_DEF(m_rcs_c, NRF_SDH_BLE_CENTRAL_LINK_COUNT);           /**< Rak Custom client instances. */
 BLE_DB_DISCOVERY_ARRAY_DEF(m_db_disc, NRF_SDH_BLE_CENTRAL_LINK_COUNT);  /**< Database discovery module instances. */
 NRF_BLE_SCAN_DEF(m_scan);                                               /**< Scanning Module instance. */
-NRF_BLE_GQ_DEF(m_ble_gatt_queue, NRF_SDH_BLE_CENTRAL_LINK_COUNT, NRF_BLE_GQ_QUEUE_SIZE);
 
 static uint16_t   m_conn_handle          = BLE_CONN_HANDLE_INVALID;                 /**< Handle of the current connection. */
 static uint16_t   m_ble_nus_max_data_len = BLE_GATT_ATT_MTU_DEFAULT - 3;            /**< Maximum length of data (in bytes) that can be transmitted to the peer by the Nordic UART service module. */
@@ -94,10 +89,6 @@ static ble_central_cfg_t uhal_g_ble_cfg_t =
         .long_range_enable = 0,
 };
 
-static void nus_c_init(void);
-
-static void db_discovery_init(void);
-
 static uint8_t g_ble_current_mode = BLE_WORK_PERIPHERAL;
 
 static uint32_t uhal_ble_wlock_cnt;
@@ -105,8 +96,6 @@ static uint32_t uhal_ble_wlock_cnt;
 int uhal_is_advertising;
 
 extern uint8_t ble_current_service;
-
-static uint8_t always_advertise;
 
 extern ble_advertising_t m_hid_advertising;
 
@@ -185,6 +174,10 @@ static void uhal_nus_data_handler(ble_nus_evt_t *p_evt)
         size_t rx_available = nrf_queue_available_get(&ble_rxq);
 
         udrv_powersave_in_sleep = false;
+        //NRF_LOG_DEBUG("rx_available.(%d)",rx_available);
+        //NRF_LOG_DEBUG("Received data from BLE NUS.(%d)",p_evt->params.rx_data.length);
+        //NRF_LOG_HEXDUMP_DEBUG(p_evt->params.rx_data.p_data, p_evt->params.rx_data.length);
+        //udrv_serial_printf(DEFAULT_SERIAL_CONSOLE, "%s", p_evt->params.rx_data.p_data);
         if (rx_available >= p_evt->params.rx_data.length)
         {
 #ifndef RUI_BOOTLOADER
@@ -215,11 +208,13 @@ size_t uhal_nus_available()
     return (size_t)nrf_queue_utilization_get(&ble_rxq);
 }
 
+/**@snippet [Handling the data received over BLE] */
 int32_t uhal_nus_read(uint8_t *Buffer, int32_t NumberOfBytes)
 {
     return (int32_t)nrf_queue_out(&ble_rxq, Buffer, NumberOfBytes);
 }
 
+/**@snippet [Handling the data transmission over BLE] */
 int32_t uhal_nus_write(uint8_t *pdata, uint16_t length)
 {
     uint32_t ret;
@@ -248,8 +243,20 @@ int32_t uhal_nus_write(uint8_t *pdata, uint16_t length)
     return -UDRV_INTERNAL_ERR;
 }
 
+/**@brief Function for putting the chip into sleep mode.
+ *
+ * @note This function will not return.
+ */
 static void sleep_mode_enter(void)
 {
+    // uint32_t err_code = bsp_indication_set(BSP_INDICATE_IDLE);
+    // APP_ERROR_CHECK(err_code);
+
+    // Prepare wakeup buttons.
+    // err_code = bsp_btn_ble_sleep_mode_prepare();
+    // APP_ERROR_CHECK(err_code);
+
+    // Go to system-off mode (this function will not return; wakeup will cause a reset).
     uint32_t err_code = sd_power_system_off();
     APP_ERROR_CHECK(err_code);
 }
@@ -262,20 +269,107 @@ void uhal_ble_default_config()
     ble_parameter.service_mode = DRV_BLE_UART_MODE;
 
 }
+/*++++++++++++++++++++++++++++++++++++Handler for shutdown++++++++++++++++++++++++++++++++++++*/
+/**@brief Handler for shutdown preparation.
+ *
+ * @details During shutdown procedures, this function will be called at a 1 second interval
+ *          untill the function returns true. When the function returns true, it means that the
+ *          app is ready to reset to DFU mode.
+ *
+ * @param[in]   event   Power manager event.
+ *
+ * @retval  True if shutdown is allowed by this power manager handler, otherwise false.
+
+static bool app_shutdown_handler(nrf_pwr_mgmt_evt_t event)
+{
+    switch (event)
+    {
+        case NRF_PWR_MGMT_EVT_PREPARE_DFU:
+            NRF_LOG_INFO("Power management wants to reset to DFU mode.");
+            // YOUR_JOB: Get ready to reset into DFU mode
+            //
+            // If you aren't finished with any ongoing tasks, return "false" to
+            // signal to the system that reset is impossible at this stage.
+            //
+            // Here is an example using a variable to delay resetting the device.
+            //
+            // if (!m_ready_for_reset)
+            // {
+            //      return false;
+            // }
+            // else
+            //{
+            //
+            //    // Device ready to enter
+            //    uint32_t err_code;
+            //    err_code = sd_softdevice_disable();
+            //    APP_ERROR_CHECK(err_code);
+            //    err_code = app_timer_stop_all();
+            //    APP_ERROR_CHECK(err_code);
+            //}
+            break;
+
+        default:
+            // YOUR_JOB: Implement any of the other events available from the power management module:
+            //      -NRF_PWR_MGMT_EVT_PREPARE_SYSOFF
+            //      -NRF_PWR_MGMT_EVT_PREPARE_WAKEUP
+            //      -NRF_PWR_MGMT_EVT_PREPARE_RESET
+            return true;
+    }
+
+    NRF_LOG_INFO("Power management allowed to reset to DFU mode.");
+    return true;
+}
+ */
+//lint -esym(528, m_app_shutdown_handler)
+/**@brief Register application shutdown handler with priority 0.
+ 
+NRF_PWR_MGMT_HANDLER_REGISTER(app_shutdown_handler, 0);
+
+static void buttonless_dfu_sdh_state_observer(nrf_sdh_state_evt_t state, void * p_context)
+{
+    if (state == NRF_SDH_EVT_STATE_DISABLED)
+    {
+        // Softdevice was disabled before going into reset. Inform bootloader to skip CRC on next boot.
+        nrf_power_gpregret2_set(BOOTLOADER_DFU_SKIP_CRC);
+
+        //Go to system off.
+        nrf_pwr_mgmt_shutdown(NRF_PWR_MGMT_SHUTDOWN_GOTO_SYSOFF);
+    }
+}
+*/
+
+/* nrf_sdh state observer.
+NRF_SDH_STATE_OBSERVER(m_buttonless_dfu_state_obs, 0) =
+{
+    .handler = buttonless_dfu_sdh_state_observer,
+};
+ */
+/*--------------------------------Handler for shutdown--------------------------------*/
+
+/**@brief Function for handling advertising events.
+ * @details This function will be called for advertising events which are passed to the application.
+ *
+ * @param[in] ble_adv_evt  Advertising event.
+ */
 static void ble_on_adv_evt(ble_adv_evt_t ble_adv_evt)
 {
     uint32_t err_code;
+    //NRF_LOG_INFO("--------------------------------------(NUS)ble_on_adv_evt");
     switch (ble_adv_evt)
     {
     case BLE_ADV_EVT_FAST:
+        //err_code = bsp_indication_set(BSP_INDICATE_ADVERTISING);
+        //APP_ERROR_CHECK(err_code);
+        //NRF_LOG_DEBUG("ble_on_adv_evt->BLE_ADV_EVT_FAST");
         break;
     case BLE_ADV_EVT_IDLE:
-        if (ble_parameter.service_mode == DRV_BLE_UART_MODE)
-        {
-            nrf_queue_reset(&ble_rxq);
-            uhal_is_advertising = 0;
-            uhal_ble_wake_unlock();
-        }
+        //sleep_mode_enter();
+        nrf_queue_reset(&ble_rxq);
+        uhal_is_advertising = 0;
+        //NRF_LOG_DEBUG("ble_on_adv_evt->BLE_ADV_EVT_IDLE!");
+        //NRF_LOG_DEBUG("%d: %s(): unlock:", __LINE__, __func__);
+        uhal_ble_wake_unlock();
         break;
     default:
         break;
@@ -283,6 +377,10 @@ static void ble_on_adv_evt(ble_adv_evt_t ble_adv_evt)
 }
 
 
+/**@brief Function for handling Peer Manager events.
+ *
+ * @param[in] p_evt  Peer Manager event.
+ */
 static void nus_pm_evt_handler(pm_evt_t const * p_evt)
 {
     pm_handler_on_pm_evt(p_evt);
@@ -295,17 +393,17 @@ static void nus_pm_evt_handler(pm_evt_t const * p_evt)
             uhal_advertising_start(ble_parameter.adv_timeout);
             break;
         case PM_EVT_CONN_SEC_CONFIG_REQ:
-        {
+            NRF_LOG_DEBUG("(NUS)nus_pm_evt_handler -> Security configuration request");
             pm_conn_sec_config_t conn_sec_config = {.allow_repairing = true}; //allow repairing
             pm_conn_sec_config_reply(p_evt->conn_handle, &conn_sec_config);
             break;
-        }
         default:
             break;
     }
 }
 
 
+/**@brief Function for initializing the Peer Manager. */
 void uhal_nus_peer_manager_init(void)
 {
     if (ble_parameter.service_mode == DRV_BLE_BEACON_MODE)
@@ -351,6 +449,11 @@ void uhal_nus_peer_manager_init(void)
 }
 
 
+/**@brief Function for the GAP initialization.
+ *
+ * @details This function will set up all the necessary GAP (Generic Access Profile) parameters of
+ *          the device. It also sets the permissions and appearance.
+ */
 void uhal_gap_params_init(void)
 {
     if (ble_parameter.service_mode == DRV_BLE_BEACON_MODE)
@@ -369,6 +472,23 @@ void uhal_gap_params_init(void)
     uint8_t rbuff[8] = {0};
     service_lora_get_dev_eui(rbuff, 8);
 #endif
+    /*
+    const char* default_cus_dev_name = "";
+    NRF_LOG_INFO("1default_cus_dev_name = %s ", default_cus_dev_name);
+    NRF_LOG_INFO("2ble_parameter.custom_dev_name = %s ", ble_parameter.custom_dev_name);
+    if(!strcmp(ble_parameter.custom_dev_name, default_cus_dev_name))
+    {
+        char beacon_dev_name[30];
+        ble_gap_addr_t gap_addr;
+        err_code = sd_ble_gap_addr_get(&gap_addr);
+        APP_ERROR_CHECK(err_code);
+        sprintf(beacon_dev_name, "%s.%02X%02X%02X", DEVICE_NAME,
+                    gap_addr.addr[2],
+                    gap_addr.addr[1],
+                    gap_addr.addr[0]);
+        uhal_ble_set_device_name(beacon_dev_name);
+    }
+    */
     if (strlen(ble_parameter.custom_dev_name) == 0)
         sprintf(set_dev_name, "%s.%02X%02X%02X", DEVICE_NAME,
 #ifdef SUPPORT_LORA
@@ -407,6 +527,8 @@ void uhal_gap_params_init(void)
         //uint8_t passkey[] = "123456";
         passkey_opt.gap_opt.passkey.p_passkey = ble_parameter.pairing_key;
         err_code = sd_ble_opt_set(BLE_GAP_OPT_PASSKEY, &passkey_opt);
+        //NRF_LOG_DEBUG("(NUS)BLE use pairing Key :")
+        //NRF_LOG_HEXDUMP_DEBUG(ble_parameter.pairing_key, BLE_GAP_PASSKEY_LEN);
         APP_ERROR_CHECK(err_code);
     }
     else if (ble_parameter.permission == SET_ENC_NO_MITM)
@@ -416,6 +538,7 @@ void uhal_gap_params_init(void)
     
 }
 
+/**@brief Function for handling events from the GATT library. */
 void uhal_gatt_evt_handler(nrf_ble_gatt_t *p_gatt, nrf_ble_gatt_evt_t const *p_evt)
 {
     if ((m_conn_handle == p_evt->conn_handle) && (p_evt->evt_id == NRF_BLE_GATT_EVT_ATT_MTU_UPDATED))
@@ -428,6 +551,7 @@ void uhal_gatt_evt_handler(nrf_ble_gatt_t *p_gatt, nrf_ble_gatt_evt_t const *p_e
                   p_gatt->att_mtu_desired_periph);
 }
 
+/**@brief Function for initializing the GATT library. */
 void uhal_gatt_init(void)
 {
     if (ble_parameter.service_mode == DRV_BLE_BEACON_MODE)
@@ -441,9 +565,12 @@ void uhal_gatt_init(void)
     APP_ERROR_CHECK(err_code);
 }
 
+/**@brief Function for initializing the Advertising functionality.
+ */
 void uhal_advertising_init(void)
 {
     uint32_t err_code;
+    //ble_advertising_init_t init;
     if (ble_parameter.service_mode == DRV_BLE_UART_MODE)
     {
         memset(&init, 0, sizeof(init));
@@ -468,6 +595,7 @@ void uhal_advertising_init(void)
     }
     else if (ble_parameter.service_mode == DRV_BLE_BEACON_MODE)
     {
+        //---------------------------------------------------
 
         manuf_specific_data.company_identifier = APP_COMPANY_IDENTIFIER;
 
@@ -527,6 +655,17 @@ void uhal_advertising_init(void)
     }
 }
 
+/**@brief Function for handling an event from the Connection Parameters Module.
+ *
+ * @details This function will be called for all events in the Connection Parameters Module
+ *          which are passed to the application.
+ *
+ * @note All this function does is to disconnect. This could have been done by simply setting
+ *       the disconnect_on_fail config parameter, but instead we use the event handler
+ *       mechanism to demonstrate its use.
+ *
+ * @param[in] p_evt  Event received from the Connection Parameters Module.
+ */
 static void on_conn_params_evt(ble_conn_params_evt_t *p_evt)
 {
     uint32_t err_code;
@@ -537,11 +676,18 @@ static void on_conn_params_evt(ble_conn_params_evt_t *p_evt)
     }
 }
 
+/**@brief Function for handling errors from the Connection Parameters module.
+ *
+ * @param[in] nrf_error  Error code containing information about what went wrong.
+ */
 static void conn_params_error_handler(uint32_t nrf_error)
 {
+    //APP_ERROR_HANDLER(nrf_error);
     NRF_LOG_ERROR("%s: %d: %s(): nrf_error=%u", __FILE__, __LINE__, __func__, nrf_error);
 }
 
+/**@brief Function for initializing the Connection Parameters module.
+ */
 void uhal_conn_params_init(void)
 {
     if (ble_parameter.service_mode == DRV_BLE_BEACON_MODE)
@@ -563,12 +709,16 @@ void uhal_conn_params_init(void)
 
     err_code = ble_conn_params_init(&cp_init);
     APP_ERROR_CHECK(err_code);
-    db_discovery_init();
-    nus_c_init();
 }
 
 #ifdef BLE_CENTRAL_SUPPORT
 
+/*
+uint32_t uhal_ble_rcs_instance_pointer_get(uint8_t index)
+{
+    return &m_rcs_c[index];
+}
+*/
 __WEAK uint16_t ble_advdata_search_extra(uint8_t const *p_encoded_data,
                                          uint16_t data_len,
                                          uint16_t *p_offset,
@@ -672,6 +822,21 @@ __WEAK void rui_ble_scan_adv(int8_t rssi_value, uint8_t *p_adv_data, uint16_t ad
     {
         if (0x00 == memcmp(manu_date, p_manu_date, 3))
         {
+            //            NRF_LOG_INFO("The Beacon mac scanned is %02x-%02x-%02x-%02x-%02x-%02x",
+            //                            p_device_mac[5], p_device_mac[4], p_device_mac[3],
+            //                            p_device_mac[2], p_device_mac[1], p_device_mac[0]);
+            //            NRF_LOG_INFO("Manufactuer specific data is:");
+            //            NRF_LOG_HEXDUMP_INFO(p_manu_date, *(p_manu_date-2)-1);
+            //
+            //            NRF_LOG_INFO(" ");
+
+            //            #ifdef SUPPORT_USB
+            //                memset(uhal_Usbd_send_buffer, 0, 256);
+            //                sprintf(uhal_Usbd_send_buffer, "The Beacon mac scanned is %02x-%02x-%02x-%02x-%02x-%02x\r\n",
+            //                                p_device_mac[5], p_device_mac[4], p_device_mac[3],
+            //                                p_device_mac[2], p_device_mac[1], p_device_mac[0]);
+            //                usbd_send(uhal_Usbd_send_buffer,strlen(uhal_Usbd_send_buffer));
+            //            #endif
         }
     }
 
@@ -685,7 +850,40 @@ __WEAK void rui_ble_scan_adv(int8_t rssi_value, uint8_t *p_adv_data, uint16_t ad
                 rssi_value_bak = rssi_value;
 
                 uint8_t msg[64] = {0};
+/********************************* stop print to uart and usb ********************************************
+                sprintf(msg, "Received ADV report, RSSI %d", rssi_value);
+
+                NRF_LOG_INFO("%s", msg);
+                strcat(msg, "\r\n");
+#ifdef SUPPORT_USB
+                memset(uhal_Usbd_send_buffer, 0, 256);
+                sprintf(uhal_Usbd_send_buffer, "Received ADV report, RSSI %d\r\n", rssi_value);
+                usbd_send(uhal_Usbd_send_buffer, strlen(uhal_Usbd_send_buffer));
+#endif
+
+                sprintf(msg, "Device mac is %02x:%02x:%02x:%02x:%02x:%02x",
+                        p_device_mac[5], p_device_mac[4], p_device_mac[3],
+                        p_device_mac[2], p_device_mac[1], p_device_mac[0]);
+                NRF_LOG_INFO("%s", msg);
+                strcat(msg, "\r\n");
+#ifdef SUPPORT_USB
+                memset(uhal_Usbd_send_buffer, 0, 256);
+                sprintf(uhal_Usbd_send_buffer, "Device mac is %02x:%02x:%02x:%02x:%02x:%02x\r\n",
+                        p_device_mac[5], p_device_mac[4], p_device_mac[3],
+                        p_device_mac[2], p_device_mac[1], p_device_mac[0]);
+                usbd_send(uhal_Usbd_send_buffer, strlen(uhal_Usbd_send_buffer));
+#endif
+*************************************** stop print to uart and usb ***************************************/
+
                 uint8_t *dev_name = ble_advdata_parse(p_adv_data, adv_data_len, BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME);
+                NRF_LOG_DEBUG("Device name is : %s", dev_name);
+                NRF_LOG_INFO("RSSI : %d", rssi_value);
+                sprintf(msg, "Device mac is %02x:%02x:%02x:%02x:%02x:%02x",
+                        p_device_mac[5], p_device_mac[4], p_device_mac[3],
+                        p_device_mac[2], p_device_mac[1], p_device_mac[0]);
+                NRF_LOG_INFO("%s", msg);
+                NRF_LOG_DEBUG("Row data : ");
+                NRF_LOG_HEXDUMP_INFO(p_adv_data, adv_data_len);
                 if(SCAN_DATA_HANDLER && (adv_data_len !=0))
                 {
                     SCAN_DATA_HANDLER(rssi_value, p_device_mac, p_adv_data, adv_data_len);//rssi, mac address, raw data, raw data length
@@ -695,6 +893,10 @@ __WEAK void rui_ble_scan_adv(int8_t rssi_value, uint8_t *p_adv_data, uint16_t ad
     }
 }
 
+/**@brief Function for handling the advertising report BLE event.
+ *
+ * @param[in] p_adv_report  Advertising report from the SoftDevice.
+ */
 static void on_adv_report(ble_gap_evt_adv_report_t const *p_adv_report)
 {
     ret_code_t err_code;
@@ -729,24 +931,102 @@ static void on_adv_report(ble_gap_evt_adv_report_t const *p_adv_report)
 #endif
 }
 
+/**@brief Function for handling database discovery events.
+ *
+ * @details This function is a callback function to handle events from the database discovery module.
+ *          Depending on the UUIDs that are discovered, this function forwards the events
+ *          to their respective services.
+ *
+ * @param[in] p_event  Pointer to the database discovery event.
+ */
 static void db_disc_handler(ble_db_discovery_evt_t *p_evt)
 {
+    //    NRF_LOG_DEBUG("call to ble_rcs_on_db_disc_evt for instance %d and link 0x%x!",
+    //                  p_evt->conn_handle,
+    //                  p_evt->conn_handle);
+
+    //    ble_rcs_on_db_disc_evt(&m_rcs_c[p_evt->conn_handle], p_evt);
     ble_nus_c_on_db_disc_evt(&m_ble_nus_c, p_evt);
 }
 
+/** @brief Database discovery initialization.
+ */
 static void db_discovery_init(void)
 {
-    ble_db_discovery_init_t db_init;
-
-    memset(&db_init, 0, sizeof(ble_db_discovery_init_t));
-
-    db_init.evt_handler  = db_disc_handler;
-    db_init.p_gatt_queue = &m_ble_gatt_queue;
-
-    ret_code_t err_code = ble_db_discovery_init(&db_init);
+    ret_code_t err_code = ble_db_discovery_init(db_disc_handler);
     APP_ERROR_CHECK(err_code);
 }
 
+/**@brief Handles events coming from the Rak Custom central module.
+ *
+ * @param[in] p_rcs_c     The instance of RCS_C that triggered the event.
+ * @param[in] p_rcs_c_evt The RCS_C event.
+ */
+/*
+static void rcs_c_evt_handler(BLE_CLIENT *p_rcs_c, BLE_CLIENT_EVT *p_rcs_c_evt)
+{
+    uint8_t *pdata = p_rcs_c_evt->params.data.p_data;
+    uint16_t len = p_rcs_c_evt->params.data.len;
+
+    switch (p_rcs_c_evt->evt_type)
+    {
+    case BLE_RCS_C_EVT_DISCOVERY_COMPLETE:
+    {
+        ret_code_t err_code;
+
+        // Rak Custom Service discovered. Enable notification of read_notify_handle.
+        //err_code = ble_rcs_c_notify_cccd_enable(p_rcs_c);
+        //APP_ERROR_CHECK(err_code);
+
+        //rui_ble_tx_data_read(p_rcs_c);
+    }
+    break;
+
+    case BLE_RCS_C_EVT_NOTIFICATION:
+    {
+        rui_ble_rx_data_notify(pdata, len);
+    }
+    break;
+
+    case BLE_RCS_C_EVT_READ:
+    {
+        rui_ble_rx_data_read(pdata, len);
+    }
+    break;
+
+    default:
+        // No implementation needed.
+        break;
+    }
+}
+*/
+
+/**@brief Rak Custom collector initialization. */
+/*
+static void rcs_c_init(void)
+{
+    ret_code_t err_code;
+    ble_rcs_c_init_t rcs_c_init_obj;
+
+    rcs_c_init_obj.evt_handler = rcs_c_evt_handler;
+
+    for (uint32_t i = 0; i < NRF_SDH_BLE_CENTRAL_LINK_COUNT; i++)
+    {
+        err_code = ble_rcs_c_init(&m_rcs_c[i], &rcs_c_init_obj);
+        APP_ERROR_CHECK(err_code);
+    }
+}
+*/
+
+/**@brief Callback handling NUS Client events.
+ *
+ * @details This function is called to notify the application of NUS client events.
+ *
+ * @param[in]   p_ble_nus_c   NUS Client Handle. This identifies the NUS client
+ * @param[in]   p_ble_nus_evt Pointer to the NUS Client event.
+ */
+
+/**@snippet [Handling events from the ble_nus_c module] */
 static void ble_nus_c_evt_handler(ble_nus_c_t *p_ble_nus_c, ble_nus_c_evt_t const *p_ble_nus_evt)
 {
     ret_code_t err_code;
@@ -754,16 +1034,21 @@ static void ble_nus_c_evt_handler(ble_nus_c_t *p_ble_nus_c, ble_nus_c_evt_t cons
     switch (p_ble_nus_evt->evt_type)
     {
     case BLE_NUS_C_EVT_DISCOVERY_COMPLETE:
-        NRF_LOG_INFO("(NUS) Discovery complete.");
+        NRF_LOG_INFO("Discovery complete.");
         err_code = ble_nus_c_handles_assign(p_ble_nus_c, p_ble_nus_evt->conn_handle, &p_ble_nus_evt->handles);
         APP_ERROR_CHECK(err_code);
+
+        // err_code = ble_nus_c_tx_notif_enable(p_ble_nus_c);
+        // APP_ERROR_CHECK(err_code);
         break;
 
     case BLE_NUS_C_EVT_NUS_TX_EVT:
+        //rui_ble_rx_data_notify(p_ble_nus_evt->p_data, p_ble_nus_evt->data_len);
         break;
 
     case BLE_NUS_C_EVT_DISCONNECTED:
-        NRF_LOG_INFO("(NUS) Disconnected.");
+        NRF_LOG_INFO("Disconnected.");
+        scan_start();
         break;
 
     default:
@@ -771,26 +1056,24 @@ static void ble_nus_c_evt_handler(ble_nus_c_t *p_ble_nus_c, ble_nus_c_evt_t cons
         break;
     }
 }
-static void nus_error_handler(uint32_t nrf_error)
-{
-    NRF_LOG_INFO("nus_error_handler:%u",nrf_error);
-    APP_ERROR_HANDLER(nrf_error);
-}
 
+/**@brief Function for initializing the NUS Client. */
 static void nus_c_init(void)
 {
     ret_code_t err_code;
     ble_nus_c_init_t init;
 
     init.evt_handler = ble_nus_c_evt_handler;
-    init.error_handler = nus_error_handler;
-    init.p_gatt_queue  = &m_ble_gatt_queue;
 
     err_code = ble_nus_c_init(&m_ble_nus_c, &init);
     APP_ERROR_CHECK(err_code); 
 }
 
 
+/**@brief Function for handling Scaning events.
+ *
+ * @param[in]   p_scan_evt   Scanning event.
+ */
 static void scan_evt_handler(scan_evt_t const * p_scan_evt)
 {
     ret_code_t err_code;
@@ -798,6 +1081,8 @@ static void scan_evt_handler(scan_evt_t const * p_scan_evt)
     {
         case NRF_BLE_SCAN_EVT_WHITELIST_REQUEST:
         {
+            //on_whitelist_req();
+            //m_whitelist_disabled = false;
         } break;
 
         case NRF_BLE_SCAN_EVT_CONNECTING_ERROR:
@@ -810,7 +1095,9 @@ static void scan_evt_handler(scan_evt_t const * p_scan_evt)
         {
             NRF_LOG_INFO("(BLE Scan) Scan timed out.");
             uhal_is_scanning = 0;
+            NRF_LOG_DEBUG("%d: %s(): unlock:", __LINE__, __func__);
             uhal_ble_wake_unlock();
+            //scan_start();
         } break;
 
         case NRF_BLE_SCAN_EVT_FILTER_MATCH:
@@ -824,7 +1111,9 @@ static void scan_evt_handler(scan_evt_t const * p_scan_evt)
 }
 
 
-void uhal_scan_init(bool connect_if_match)
+/**@brief Function for initializing the scanning and setting the filters.
+ */
+static void scan_init(bool connect_if_match)
 {
 
 #if S132
@@ -851,24 +1140,60 @@ void uhal_scan_init(bool connect_if_match)
         init_scan.p_scan_param = &m_scan_param_1MBps;
     }
 
+    //err_code = nrf_ble_scan_init(&m_scan, &init_scan, NULL);
     err_code = nrf_ble_scan_init(&m_scan, &init_scan, scan_evt_handler);
     APP_ERROR_CHECK(err_code);
 
+    /* //(connect_if_match) If set to true, the module automatically connects after a filter match or successful identification of a device from the whitelist.
+    if (BLE_WORK_CENTRAL == uhal_g_ble_cfg_t.work_mode)
+    {
+        err_code = nrf_ble_scan_filter_set(&m_scan, SCAN_UUID_FILTER, &m_adv_uuids[0]);
+        APP_ERROR_CHECK(err_code);
 
+        ble_uuid_t target_uuid = {.uuid = TARGET_UUID, .type = BLE_UUID_TYPE_BLE};
+        err_code = nrf_ble_scan_filter_set(&m_scan, SCAN_UUID_FILTER, &target_uuid);
+        APP_ERROR_CHECK(err_code);
+
+        err_code = nrf_ble_scan_filters_enable(&m_scan, NRF_BLE_SCAN_UUID_FILTER, false);
+        APP_ERROR_CHECK(err_code);
+    }
+    */
 #endif
 }
 
+/**@brief Function for starting scanning. */
 static void scan_start(void)
 {
     ret_code_t ret;
+    uint8_t msg[64] = {0};
 
     if (BLE_WORK_CENTRAL == uhal_g_ble_cfg_t.work_mode)
     {
-        NRF_LOG_INFO("(BLS Scan) --- Start scanning...");
+        //sprintf(msg, "Start scanning for device name %s.", PERIPHERAL_DEVICE_NAME);
+        sprintf(msg, "Start scanning...");
+        NRF_LOG_INFO("(BLS Scan) --- %s", msg);
+        strcat(msg, "\r\n");
+/*************************************** stop print to uart and usb ***************************************
+#ifdef SUPPORT_USB
+        memset(uhal_Usbd_send_buffer, 0, 256);
+        //sprintf(uhal_Usbd_send_buffer, "Start scanning for device name %s.\r\n", PERIPHERAL_DEVICE_NAME);
+        sprintf(uhal_Usbd_send_buffer, "Start scanning...\r\n");
+        usbd_send(uhal_Usbd_send_buffer, strlen(uhal_Usbd_send_buffer));
+#endif
+**************************************** stop print to uart and usb ***************************************/
     }
     else if (BLE_WORK_OBSERVER == uhal_g_ble_cfg_t.work_mode)
     {
-        NRF_LOG_INFO("Start scanning for device broadcast data.");
+        sprintf(msg, "Start scanning for device broadcast data.");
+        NRF_LOG_INFO("%s", msg);
+        strcat(msg, "\r\n");
+/**************************************** stop print to uart and usb ***************************************
+#ifdef SUPPORT_USB
+        memset(uhal_Usbd_send_buffer, 0, 256);
+        sprintf(uhal_Usbd_send_buffer, "Start scanning for device broadcast data.\r\n");
+        usbd_send(uhal_Usbd_send_buffer, strlen(uhal_Usbd_send_buffer));
+#endif
+**************************************** stop print to uart and usb ***************************************/
     }
 
 #ifdef S132
@@ -881,6 +1206,9 @@ static void scan_start(void)
     APP_ERROR_CHECK(ret);
     uhal_is_scanning = 1;
 #endif
+
+    // Turn on the LED to signal scanning.
+    // bsp_board_led_on(CENTRAL_LED);
 }
 
 void uhal_ble_mode_switch_timer_handler(void *p_context)
@@ -890,37 +1218,38 @@ void uhal_ble_mode_switch_timer_handler(void *p_context)
 
 void uhal_ble_central_config(void)
 {
-    uhal_app_ble_mode_switch();
-    /*
     if ((BLE_WORK_CENTRAL == uhal_g_ble_cfg_t.work_mode) || (BLE_WORK_OBSERVER == uhal_g_ble_cfg_t.work_mode))
     {
         db_discovery_init();
+        //rcs_c_init();
         nus_c_init();
 
         app_timer_create(&ble_mode_id, APP_TIMER_MODE_SINGLE_SHOT, uhal_ble_mode_switch_timer_handler);
         app_timer_start(ble_mode_id, APP_TIMER_TICKS(BLE_MODE_SWITCH), NULL);
-    }*/
+    }
 }
 
 void uhal_app_ble_mode_switch(void)
 {
     // stop advertising
-    /*
     if (m_conn_handle != BLE_CONN_HANDLE_INVALID)
     {
         ret_code_t err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
         APP_ERROR_CHECK(err_code);
     }
     sd_ble_gap_adv_stop((&m_advertising)->adv_handle);
+    //maby call uhal_stop_ADV
 
-    uhal_is_advertising = 0;*/
+    uhal_is_advertising = 0;
     // start scanning
     if (BLE_WORK_CENTRAL == uhal_g_ble_cfg_t.work_mode)
     {
+        scan_init(true);
         g_ble_current_mode = BLE_WORK_CENTRAL;
     }
     else
     {
+        scan_init(false);
         g_ble_current_mode = BLE_WORK_OBSERVER;
     }
 
@@ -957,6 +1286,10 @@ static void disconnect(uint16_t conn_handle, void *p_context)
     }
 }
 
+/**@brief Function for handling dfu events from the Buttonless Secure DFU service
+ *
+ * @param[in]   event   Event from the Buttonless Secure DFU service.
+ */
 static void ble_dfu_evt_handler(ble_dfu_buttonless_evt_type_t event)
 {
     NRF_LOG_DEBUG("(DFU) ble_dfu_evt_handler");
@@ -981,15 +1314,22 @@ static void ble_dfu_evt_handler(ble_dfu_buttonless_evt_type_t event)
     }
 
     case BLE_DFU_EVT_BOOTLOADER_ENTER:
+        // YOUR_JOB: Write app-specific unwritten data to FLASH, control finalization of this
+        //           by delaying reset by reporting false in app_shutdown_handler
         NRF_LOG_INFO("Device will enter bootloader mode...");
+        //udrv_enter_dfu();
         break;
 
     case BLE_DFU_EVT_BOOTLOADER_ENTER_FAILED:
         NRF_LOG_ERROR("Request to enter bootloader mode failed asynchroneously.");
+        // YOUR_JOB: Take corrective measures to resolve the issue
+        //           like calling APP_ERROR_CHECK to reset the device.
         break;
 
     case BLE_DFU_EVT_RESPONSE_SEND_ERROR:
         NRF_LOG_ERROR("Request to send a response to client failed.");
+        // YOUR_JOB: Take corrective measures to resolve the issue
+        //           like calling APP_ERROR_CHECK to reset the device.
         APP_ERROR_CHECK(false);
         break;
 
@@ -1001,6 +1341,8 @@ static void ble_dfu_evt_handler(ble_dfu_buttonless_evt_type_t event)
 
 #endif //DFU_SUPPORT
 
+/**@brief Function for initializing services that will be used by the application.
+ */
 void uhal_services_init(void)
 {
     if (ble_parameter.service_mode == DRV_BLE_BEACON_MODE)
@@ -1043,6 +1385,16 @@ static void on_ble_pairing_evt(uint16_t conn_handle, ble_evt_t const * p_ble_evt
 
     switch (p_ble_evt->header.evt_id)
     {
+        case BLE_GAP_EVT_CONNECTED:
+            break;
+
+        case BLE_GAP_EVT_DISCONNECTED:
+            break;
+
+        case BLE_GAP_EVT_SEC_PARAMS_REQUEST:
+            NRF_LOG_INFO("BLE_GAP_EVT_SEC_PARAMS_REQUEST");
+            break;
+
         case BLE_GAP_EVT_PASSKEY_DISPLAY:
             memcpy(passkey, p_ble_evt->evt.gap_evt.params.passkey_display.passkey, BLE_GAP_PASSKEY_LEN);
             passkey[BLE_GAP_PASSKEY_LEN] = 0x00;
@@ -1051,6 +1403,18 @@ static void on_ble_pairing_evt(uint16_t conn_handle, ble_evt_t const * p_ble_evt
                          p_ble_evt->evt.gap_evt.params.passkey_display.match_request);
             udrv_serial_printf(DEFAULT_SERIAL_CONSOLE, "Please input [%s] passcode to your smartphone apps.\r\n", passkey);
 
+            //if (p_ble_evt->evt.gap_evt.params.passkey_display.match_request)
+            //{
+            //    on_match_request(conn_handle, role);
+            //}
+            break;
+
+        case BLE_GAP_EVT_AUTH_KEY_REQUEST:
+            NRF_LOG_INFO("BLE_GAP_EVT_AUTH_KEY_REQUEST");
+            break;
+
+        case BLE_GAP_EVT_LESC_DHKEY_REQUEST:
+            NRF_LOG_INFO("BLE_GAP_EVT_LESC_DHKEY_REQUEST");
             break;
 
          case BLE_GAP_EVT_AUTH_STATUS:
@@ -1072,6 +1436,11 @@ static void on_ble_pairing_evt(uint16_t conn_handle, ble_evt_t const * p_ble_evt
     }
 }
  
+/**@brief Function for handling BLE events.
+ *
+ * @param[in]   p_ble_evt   Bluetooth stack event.
+ * @param[in]   p_context   Unused.
+ */
 static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 {
     uint32_t err_code;
@@ -1099,10 +1468,20 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 
         case BLE_GAP_EVT_CONNECTED:
         {
-            NRF_LOG_INFO("(EVT) Connected.");
+            NRF_LOG_INFO("(NUS) Connected.");
             nrf_queue_reset(&ble_rxq);
             uhal_is_advertising = 0;
-            udrv_serial_printf(DEFAULT_SERIAL_CONSOLE, "Connected.\r\n");
+            uint8_t msg[] = "Connected.\r\n";
+    #ifdef SUPPORT_USB
+            memset(uhal_Usbd_send_buffer, 0, 256);
+            sprintf(uhal_Usbd_send_buffer, "Connected.\r\n");
+            usbd_send(uhal_Usbd_send_buffer, strlen(uhal_Usbd_send_buffer));     
+            
+    #endif
+            err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
+            APP_ERROR_CHECK(err_code);
+            //m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
+
     #ifdef BLE_CENTRAL_SUPPORT
             if (BLE_WORK_CENTRAL == g_ble_current_mode)
             {
@@ -1142,10 +1521,15 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
 
         case BLE_GAP_EVT_DISCONNECTED:
         {
-            NRF_LOG_INFO("(EVT) Disconnected.");
+            NRF_LOG_INFO("(NUS)Disconnected.");
             nrf_queue_reset(&ble_rxq);
             m_conn_handle = BLE_CONN_HANDLE_INVALID;
-            udrv_serial_printf(DEFAULT_SERIAL_CONSOLE, "Disconnected.\r\n");
+            uint8_t msg[] = "Disconnected.\r\n";
+    #ifdef SUPPORT_USB
+            memset(uhal_Usbd_send_buffer, 0, 256);
+            sprintf(uhal_Usbd_send_buffer, "Disconnected.\r\n");
+            usbd_send(uhal_Usbd_send_buffer, strlen(uhal_Usbd_send_buffer));
+    #endif
 
     #ifdef BLE_CENTRAL_SUPPORT
             if ((BLE_WORK_PERIPHERAL == g_ble_current_mode) && ((BLE_WORK_CENTRAL == uhal_g_ble_cfg_t.work_mode) || (BLE_WORK_OBSERVER == uhal_g_ble_cfg_t.work_mode)))
@@ -1161,6 +1545,7 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
             {
                 DISCONNECT_HANDLER(); 
             }
+            NRF_LOG_DEBUG("%d: %s(): unlock:", __LINE__, __func__);
             uhal_ble_wake_unlock();
         
         }
@@ -1201,7 +1586,9 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
         case BLE_GAP_EVT_TIMEOUT:
         {
             //for ble central mode to scan and connection 
-            NRF_LOG_INFO("BLE_GAP_EVT_TIMEOUT");
+            NRF_LOG_INFO("(BLE Scan) Scan timed out.");
+            NRF_LOG_DEBUG("Connection Request timed out.");
+            uhal_is_scanning = 0;
         }
         break;
 
@@ -1231,16 +1618,13 @@ static void ble_evt_handler(ble_evt_t const *p_ble_evt, void *p_context)
         {
             nrf_queue_reset(&ble_rxq);
             uhal_is_advertising = 0;
-            //NRF_LOG_INFO("(NUS)BLE_GAP_EVT_ADV_SET_TERMINATED");
-            if(always_advertise == 1 && ble_parameter.service_mode == DRV_BLE_UART_MODE)
-            {
-                ble_advertising_start(&m_advertising, ble_parameter.adv_mode);
-            }
+            NRF_LOG_INFO("(NUS)BLE_GAP_EVT_ADV_SET_TERMINATED");
         }
         break;
         case BLE_EVT_USER_MEM_REQUEST:
+            NRF_LOG_INFO("(NUS)BLE_EVT_USER_MEM_REQUEST.");
             err_code = sd_ble_user_mem_reply(p_ble_evt->evt.gattc_evt.conn_handle, NULL);
-            NRF_LOG_INFO("(NUS)BLE_EVT_USER_MEM_REQUEST err_code = %d" , err_code);
+            NRF_LOG_INFO("BLE_EVT_USER_MEM_REQUEST err_code = %d" , err_code);
             APP_ERROR_CHECK(err_code);
             break;
         case BLE_GATTS_EVT_RW_AUTHORIZE_REQUEST:
@@ -1297,9 +1681,11 @@ static void soc_evt_handler(uint32_t evt_id, void * p_context)
         {
             if(evt_id == NRF_EVT_FLASH_OPERATION_SUCCESS)
             {
+                //NRF_LOG_DEBUG("(SOC)Evt handler -> NRF_EVT_FLASH_OPERATION_SUCCESS");
             }
             else
             {
+                //NRF_LOG_DEBUG("(SOC)Evt handler -> NRF_EVT_FLASH_OPERATION_ERROR");
             }
             if(uhal_is_advertising && (g_ble_current_mode == BLE_WORK_PERIPHERAL))
             {
@@ -1314,6 +1700,10 @@ static void soc_evt_handler(uint32_t evt_id, void * p_context)
     }
 }
 
+/**@brief Function for the SoftDevice initialization.
+ *
+ * @details This function initializes the SoftDevice and the BLE event interrupt.
+ */
 
 void uhal_ble_stack_init(void)
 {
@@ -1344,47 +1734,47 @@ void uhal_ble_stack_init(void)
     NRF_SDH_SOC_OBSERVER(m_soc_observer, APP_SOC_OBSERVER_PRIO, soc_evt_handler, NULL);
 }
 
+/**@brief  Function for stop BLE. */
 void uhal_stop_ble(void)
 {
+    //NRF_LOG_DEBUG("[STOP SOFTDEVICE!!!]");
     uhal_advertising_stop(0);
     sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
     nrf_queue_reset(&ble_rxq);
     uhal_is_advertising = 0;
-    if(uhal_is_scanning)
-    {
-        nrf_ble_scan_stop();
-        uhal_is_scanning=0;
-    }
+    //uhal_ble_default_config(); //reset to default ble config
 
+    //NRF_LOG_DEBUG("%d: %s(): unlock all:", __LINE__, __func__);
     uhal_ble_wake_unlock_all();
 }
 
+/**@brief Function for starting advertising. */
 int32_t uhal_advertising_start(uint8_t time_out)
 {
     uint32_t err_code;
 
     if (time_out > APP_ADV_TIMEOUT_LIMITED_MAX)
     {
+        NRF_LOG_DEBUG("Out of APP_ADV_TIMEOUT_LIMITED_MAX");
         return -UDRV_INTERNAL_ERR;
     }
     
     if (ble_parameter.service_mode == DRV_BLE_UART_MODE)
     {
-        err_code = sd_ble_gap_adv_stop((&m_advertising)->adv_handle);
-        uhal_ble_wake_unlock();
+        //NRF_LOG_DEBUG("(NUS) Start.");
+        if(uhal_is_advertising)
+        {
+            err_code = sd_ble_gap_adv_stop((&m_advertising)->adv_handle);
+            //NRF_LOG_DEBUG("(NUS) Stop Advertising. : %d", err_code);
+            //NRF_LOG_DEBUG("%d: %s(): unlock:", __LINE__, __func__);
+            uhal_ble_wake_unlock();
+        }
         err_code = sd_ble_gap_tx_power_set(1, (&m_advertising)->adv_handle, ble_parameter.txpower);
-        if(time_out == 0)
-        {
-            time_out = APP_ADV_TIMEOUT_IN_SECONDS;
-            always_advertise = 1;
-        }
-        else
-        {
-            always_advertise = 0;
-        }
+        //NRF_LOG_DEBUG("(NUS) Set TX Power : %x", err_code);
 
         if (ble_parameter.adv_mode == DRV_BLE_ADV_MODE_FAST)
         {
+            //NRF_LOG_DEBUG("(NUS) DRV_BLE_ADV_MODE_FAST");
             init.config.ble_adv_slow_enabled = false;
             init.config.ble_adv_fast_enabled = true;
             init.config.ble_adv_fast_interval = ble_parameter.adv_interval;
@@ -1392,6 +1782,7 @@ int32_t uhal_advertising_start(uint8_t time_out)
         }
         else if (ble_parameter.adv_mode == DRV_BLE_ADV_MODE_SLOW)
         {
+            //NRF_LOG_DEBUG("(NUS) DRV_BLE_ADV_MODE_SLOW");
             init.config.ble_adv_fast_enabled = false;
             init.config.ble_adv_slow_enabled = true;
             init.config.ble_adv_slow_interval = ble_parameter.adv_interval;
@@ -1399,22 +1790,30 @@ int32_t uhal_advertising_start(uint8_t time_out)
         }
         ble_parameter.adv_timeout = time_out;
         
+        //NRF_LOG_DEBUG("(NUS) advertising interval = %d (ms)", ble_parameter.adv_interval * 0.625) ;
+        //NRF_LOG_DEBUG("(NUS) advertising timeout = %d (sec)", time_out);
         ble_advertising_modes_config_set(&m_advertising, &init.config);
         if(m_conn_handle == BLE_CONN_HANDLE_INVALID)
         {
-            NRF_LOG_DEBUG("ble_advertising_start");
             err_code = ble_advertising_start(&m_advertising, ble_parameter.adv_mode);
             
+            //NRF_LOG_DEBUG("(NUS) Start Advertising. err_code : %x", err_code);
             APP_ERROR_CHECK(err_code);
         }
+        //NRF_LOG_DEBUG("%d: %s(): lock:", __LINE__, __func__);
         uhal_ble_wake_lock();
         
     }
     else if (ble_parameter.service_mode == DRV_BLE_BEACON_MODE)
     {
         NRF_LOG_DEBUG("(Beacon) Start.");
-        err_code = sd_ble_gap_adv_stop(m_adv_handle);
-        uhal_ble_wake_unlock();
+        if(uhal_is_advertising)
+        {
+            err_code = sd_ble_gap_adv_stop(m_adv_handle);
+            //NRF_LOG_DEBUG("sd_ble_gap_adv_stop : %d", err_code);
+            //NRF_LOG_DEBUG("%d: %s(): unlock:", __LINE__, __func__);
+            uhal_ble_wake_unlock();
+        }
         m_adv_params.properties.type = BLE_GAP_ADV_TYPE_NONCONNECTABLE_SCANNABLE_UNDIRECTED; //Beacon needs to be scannable to receive scan response
         m_adv_params.p_peer_addr = NULL; // Undirected advertisement.
         m_adv_params.filter_policy = BLE_GAP_ADV_FP_ANY;
@@ -1422,15 +1821,18 @@ int32_t uhal_advertising_start(uint8_t time_out)
             m_adv_params.interval = ble_parameter.adv_interval;
         else
             m_adv_params.interval = MIN_NON_CONN_ADV_INTERVAL;
-        m_adv_params.duration = time_out * 100;
-
+        m_adv_params.duration = 0; // Never time out.
         sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
 
         err_code = sd_ble_gap_tx_power_set(1, (&m_advertising)->adv_handle, ble_parameter.txpower);
+        //NRF_LOG_DEBUG("(NUS) Set TX Power : %x", err_code);
 
         err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
-        NRF_LOG_INFO("sd_ble_gap_adv_start:%u",err_code);
+        //NRF_LOG_DEBUG("sd_ble_gap_adv_start : %d", err_code);
+        err_code = bsp_indication_set(BSP_INDICATE_ADVERTISING);
+        //NRF_LOG_DEBUG("bsp_indication_set : %d", err_code);
         APP_ERROR_CHECK(err_code);
+        //NRF_LOG_DEBUG("%d: %s(): unlock:", __LINE__, __func__);
         uhal_ble_wake_lock();
     }
     else if (ble_parameter.service_mode == DRV_BLE_HID_MODE)
@@ -1450,6 +1852,12 @@ int32_t uhal_advertising_start(uint8_t time_out)
     }
 }
 
+/** @brief  Function for stop advertising. 
+ *  @param[in] temp_processing 
+ *    0 : Nothing , for API 
+ *    1 : For Flash Write/Erase operation. need to close advertising before operating flash
+ *    2 : For Flash Read operation. need to start advertising after operating flash   
+*/
 int32_t uhal_advertising_stop(uint8_t temp_processing)
 {
     uint32_t err_code;
@@ -1463,6 +1871,9 @@ int32_t uhal_advertising_stop(uint8_t temp_processing)
     if (ble_parameter.service_mode == DRV_BLE_UART_MODE)
     {
         err_code = sd_ble_gap_adv_stop((&m_advertising)->adv_handle);
+        //NRF_LOG_DEBUG("stop adv 1 :%d",err_code);
+        err_code = sd_ble_gap_adv_stop((&m_advertising)->adv_handle);
+        //NRF_LOG_DEBUG("stop adv 2 :%d",err_code);
     }
     else if (ble_parameter.service_mode == DRV_BLE_BEACON_MODE)
     {
@@ -1490,6 +1901,7 @@ int32_t uhal_advertising_stop(uint8_t temp_processing)
     }
 }
 
+/**@brief  Function for set TX Power. */
 void uhal_ble_set_txpower(drv_ble_tx_power_t tx_power)
 {
     if(uhal_is_advertising)
@@ -1500,6 +1912,7 @@ void uhal_ble_set_txpower(drv_ble_tx_power_t tx_power)
         sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
 }
 
+/**@brief  Function for get TX Power. */
 int32_t uhal_ble_get_txpower()
 {
     return ble_parameter.txpower;
@@ -1514,10 +1927,14 @@ int32_t uhal_ble_set_device_name(char *devic_name, uint8_t device_name_length)
     char set_dev_name[BLE_GAP_DEVNAME_DEFAULT_LEN];
     sprintf(set_dev_name, "%s", devic_name);
 
+    //NRF_LOG_INFO("Input BLE Set DEVNAME = %s ", set_dev_name);
+    //NRF_LOG_INFO("Input BLE Length = %d ", device_name_length);
+
     if(strlen(set_dev_name) <= 30)
         set_dev_name[strlen(set_dev_name)+1] = '\0';
 
     err_code = sd_ble_gap_device_name_set(&sec_mode, set_dev_name, device_name_length);
+    //NRF_LOG_DEBUG("(sd_ble_gap_device_name_set) : %d", err_code);
 
     if (ble_parameter.custom_dev_name != devic_name) {
         memset(ble_parameter.custom_dev_name, 0, sizeof(ble_parameter.custom_dev_name));
@@ -1527,16 +1944,19 @@ int32_t uhal_ble_set_device_name(char *devic_name, uint8_t device_name_length)
     if(ble_parameter.service_mode == DRV_BLE_UART_MODE)
     {
         err_code = ble_advertising_advdata_update(&m_advertising, &init.advdata, &init.srdata);
+        //NRF_LOG_DEBUG("(NUS)SET Device Name : %d", err_code);
     }
     else if(ble_parameter.service_mode == DRV_BLE_HID_MODE)
     {
         err_code = ble_advertising_advdata_update(&m_hid_advertising, &hid_adv_init.advdata, NULL);
+        //NRF_LOG_DEBUG("(HID)SET Device Name : %x", err_code);
     }
     else if (ble_parameter.service_mode == DRV_BLE_BEACON_MODE)
     {
         if(uhal_is_advertising)
         {
             err_code = sd_ble_gap_adv_stop(m_adv_handle);
+            //NRF_LOG_DEBUG("(Beacon) Adv Stop.");
 
             err_code = ble_advdata_encode(&beacon_srdata, m_adv_data.scan_rsp_data.p_data, &m_adv_data.scan_rsp_data.len);
             APP_ERROR_CHECK(err_code);
@@ -1545,13 +1965,16 @@ int32_t uhal_ble_set_device_name(char *devic_name, uint8_t device_name_length)
             APP_ERROR_CHECK(err_code);
             
             err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+            //NRF_LOG_DEBUG("(Beacon) set dev name - Adv reStart.");
         }
         
     }
     switch (err_code)
     {
+        //NRF_LOG_INFO("Broadcasting name update = %d ", err_code);
         case NRF_SUCCESS:
             strncpy(ble_parameter.custom_dev_name, devic_name, device_name_length);
+            //NRF_LOG_INFO("BLE Set DEVNAME = %s ", ble_parameter.custom_dev_name);
             return UDRV_RETURN_OK;
         default:
             return -UDRV_INTERNAL_ERR;
@@ -1579,6 +2002,7 @@ int32_t uhal_ble_get_macaddress(uint8_t *macaddr)
             gap_addr.addr[5], gap_addr.addr[4], gap_addr.addr[3],
             gap_addr.addr[2], gap_addr.addr[1], gap_addr.addr[0]);
 
+    //NRF_LOG_DEBUG("Get BLE MAC Address = %s", macaddr);
     switch (err_code)
     {
     case NRF_SUCCESS:
@@ -1621,6 +2045,7 @@ int32_t uhal_ble_set_macaddress(uint8_t *macaddr)
     if(uhal_is_advertising)
         uhal_advertising_start(ble_parameter.adv_timeout);
 
+    //NRF_LOG_DEBUG("Set BLE MAC Address = %s", macaddr);
     return UDRV_RETURN_OK;
 }
 
@@ -1649,11 +2074,13 @@ int32_t uhal_ble_set_adv_interval(uint32_t adv_interval)
         }
     }
     ble_parameter.adv_interval = (adv_interval / 0.625);
+    //NRF_LOG_DEBUG("uhal_ble_set_adv_interval = %d", ble_parameter.adv_interval);
     return UDRV_RETURN_OK;
 }
 
 int32_t uhal_ble_get_adv_interval()
 {
+    //NRF_LOG_DEBUG("uhal_ble_get_adv_interval = %d", ble_parameter.adv_interval);
     return (ble_parameter.adv_interval * 0.625);
 }
 
@@ -1699,6 +2126,7 @@ uint8_t uhal_ble_get_adv_fast_mode()
 
 void uhal_ble_switch_service_mode(drv_ble_service_mode service_mode)
 {
+    //NRF_LOG_DEBUG("uhal_ble_switch_service_mode : %d", service_mode);
     ble_parameter.service_mode = (drv_ble_service_mode)service_mode;
     ble_current_service = (drv_ble_service_mode)service_mode;
 }
@@ -1708,13 +2136,19 @@ int32_t uhal_ble_set_beacon_major(uint16_t major_value)
     uint32_t err_code = NRF_SUCCESS;
     if (ble_parameter.service_mode != DRV_BLE_BEACON_MODE)
     {
+        //NRF_LOG_DEBUG("ble_parameter.service_mode : %d", ble_parameter.service_mode);
         err_code = UDRV_INTERNAL_ERR;
     }
+    //NRF_LOG_DEBUG("Setting Beacon MAJOR : %d ", major_value);
     err_code = sd_ble_gap_adv_stop(m_adv_handle);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_stop = %d", err_code);
 
     uint8_t index = MAJ_VAL_OFFSET_IN_BEACON_INFO;
     m_beacon_info[index++] = MSB_16(major_value);
     m_beacon_info[index++] = LSB_16(major_value);
+
+    //NRF_LOG_DEBUG("major_value[0] : %d", MSB_16(major_value));
+    //NRF_LOG_DEBUG("major_value[1] : %d", LSB_16(major_value));
 
     manuf_specific_data.data.p_data = (uint8_t *)m_beacon_info;
     //manuf_specific_data.data.size = APP_BEACON_INFO_LENGTH;
@@ -1727,11 +2161,16 @@ int32_t uhal_ble_set_beacon_major(uint16_t major_value)
     beacon_advdata.p_manuf_specific_data = &manuf_specific_data;
 
     err_code = ble_advdata_encode(&beacon_advdata, m_adv_data.adv_data.p_data, &m_adv_data.adv_data.len);
+    //NRF_LOG_DEBUG("ble_advdata_encode = %d", err_code);
 
     err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_set_configure = %d", err_code);
 
-    //err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_start = %d", err_code);
 
+    //err_code = bsp_indication_set(BSP_INDICATE_ADVERTISING);
+    //NRF_LOG_DEBUG("bsp_indication_set = %d", err_code);
     APP_ERROR_CHECK(err_code);
     switch (err_code)
     {
@@ -1746,13 +2185,19 @@ int32_t uhal_ble_set_beacon_minor(uint16_t minor_value)
     uint32_t err_code = NRF_SUCCESS;
     if (ble_parameter.service_mode != DRV_BLE_BEACON_MODE)
     {
+        //NRF_LOG_DEBUG("ble_parameter.service_mode : %d", ble_parameter.service_mode);
         err_code = UDRV_INTERNAL_ERR;
     }
+    //NRF_LOG_DEBUG("Setting Beacon MINOR : %d", minor_value);
     err_code = sd_ble_gap_adv_stop(m_adv_handle);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_stop = %d", err_code);
 
     uint8_t index = MAJ_VAL_OFFSET_IN_BEACON_INFO + 2;
     m_beacon_info[index++] = MSB_16(minor_value);
     m_beacon_info[index++] = LSB_16(minor_value);
+
+    //NRF_LOG_DEBUG("minor_value[0] : %d", MSB_16(minor_value));
+    //NRF_LOG_DEBUG("minor_value[1] : %d", LSB_16(minor_value));
 
     manuf_specific_data.data.p_data = (uint8_t *)m_beacon_info;
     //manuf_specific_data.data.size = APP_BEACON_INFO_LENGTH;
@@ -1765,11 +2210,16 @@ int32_t uhal_ble_set_beacon_minor(uint16_t minor_value)
     beacon_advdata.p_manuf_specific_data = &manuf_specific_data;
 
     err_code = ble_advdata_encode(&beacon_advdata, m_adv_data.adv_data.p_data, &m_adv_data.adv_data.len);
+    //NRF_LOG_DEBUG("ble_advdata_encode = %d", err_code);
 
     err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_set_configure = %d", err_code);
 
-    //err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_start = %d", err_code);
 
+    //err_code = bsp_indication_set(BSP_INDICATE_ADVERTISING);
+    //NRF_LOG_DEBUG("bsp_indication_set = %d", err_code);
     APP_ERROR_CHECK(err_code);
     switch (err_code)
     {
@@ -1785,19 +2235,25 @@ int32_t uhal_ble_set_beacon_power(int8_t beacon_power)
     uint32_t err_code = NRF_SUCCESS;
     if (ble_parameter.service_mode != DRV_BLE_BEACON_MODE)
     {
+        //NRF_LOG_DEBUG("ble_parameter.service_mode : %d", ble_parameter.service_mode);
         err_code = UDRV_INTERNAL_ERR;
     }
     if(beacon_power < -128 || beacon_power > 0)
     {
+        //NRF_LOG_DEBUG("Input Beacon Power(RSSI) out of rang. The value must be between 0 ~ -128");
         err_code = UDRV_INTERNAL_ERR;
     }
+    //NRF_LOG_DEBUG("Input Beacon Power : %d", beacon_power);
     
     if(err_code == NRF_SUCCESS)
     {
         err_code = sd_ble_gap_adv_stop(m_adv_handle);
+        //NRF_LOG_DEBUG("sd_ble_gap_adv_stop = %d", err_code);
 
         uint8_t index = MAJ_VAL_OFFSET_IN_BEACON_INFO + 4;
         m_beacon_info[index++] = beacon_power + 256 ;
+
+        //NRF_LOG_DEBUG("Setting Beacon Power : %x", beacon_power + 256);
 
         manuf_specific_data.data.p_data = (uint8_t *)m_beacon_info;
         //manuf_specific_data.data.size = APP_BEACON_INFO_LENGTH;
@@ -1810,11 +2266,16 @@ int32_t uhal_ble_set_beacon_power(int8_t beacon_power)
         beacon_advdata.p_manuf_specific_data = &manuf_specific_data;
 
         err_code = ble_advdata_encode(&beacon_advdata, m_adv_data.adv_data.p_data, &m_adv_data.adv_data.len);
+        //NRF_LOG_DEBUG("ble_advdata_encode = %d", err_code);
 
         err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
+        //NRF_LOG_DEBUG("sd_ble_gap_adv_set_configure = %d", err_code);
 
-        //err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+        err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+        //NRF_LOG_DEBUG("sd_ble_gap_adv_start = %d", err_code);
 
+        //err_code = bsp_indication_set(BSP_INDICATE_ADVERTISING);
+        //NRF_LOG_DEBUG("bsp_indication_set = %d", err_code);
         APP_ERROR_CHECK(err_code);
     }
     switch (err_code)
@@ -1832,15 +2293,19 @@ int32_t uhal_ble_set_beacon_uuid(uint8_t beaconUuid[])
     uint32_t err_code = NRF_SUCCESS;
     if (ble_parameter.service_mode != DRV_BLE_BEACON_MODE)
     {
+        //NRF_LOG_DEBUG("ble_parameter.service_mode : %d", ble_parameter.service_mode);
         err_code = UDRV_INTERNAL_ERR;
     }
+    //NRF_LOG_DEBUG("uhal_ble_set_beacon_uuid");
     err_code = sd_ble_gap_adv_stop(m_adv_handle);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_stop = %d", err_code);
     
     uint8_t index = UUID_VAL_OFFSET_IN_BEACON_INFO;
 
     for (int i = 0; i < 16; i++)
     {
         m_beacon_info[++index] = beaconUuid[i];
+        //NRF_LOG_DEBUG("beaconUuid[%d] = %02x", i, beaconUuid[i]);
     }
 
     manuf_specific_data.data.p_data = (uint8_t *)m_beacon_info;
@@ -1854,11 +2319,16 @@ int32_t uhal_ble_set_beacon_uuid(uint8_t beaconUuid[])
     beacon_advdata.p_manuf_specific_data = &manuf_specific_data;
 
     err_code = ble_advdata_encode(&beacon_advdata, m_adv_data.adv_data.p_data, &m_adv_data.adv_data.len);
+    //NRF_LOG_DEBUG("ble_advdata_encode = %d", err_code);
 
     err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_set_configure = %d", err_code);
     
-    //err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_start = %d", err_code);
 
+    //err_code = bsp_indication_set(BSP_INDICATE_ADVERTISING);
+    //NRF_LOG_DEBUG("bsp_indication_set = %d", err_code);
     APP_ERROR_CHECK(err_code);
     switch (err_code)
     {
@@ -1874,22 +2344,29 @@ int32_t uhal_ble_set_beacon_custom_payload(uint8_t cus_adv_data[], uint8_t cus_a
     uint32_t err_code = NRF_SUCCESS;
     if (ble_parameter.service_mode != DRV_BLE_BEACON_MODE)
     {
+        //NRF_LOG_DEBUG("ble_parameter.service_mode : %d", ble_parameter.service_mode);
         return UDRV_INTERNAL_ERR;
     }
 
     if(cus_adv_len > BLE_GAP_ADV_SET_DATA_SIZE_MAX)
     {
+        //NRF_LOG_DEBUG("BLE advertisements can only contain up to 31 bytes of data in their payload.");
         return UDRV_INTERNAL_ERR;
     }
 
     err_code = sd_ble_gap_adv_stop(m_adv_handle);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_stop = %d", err_code);
     
+    //NRF_LOG_DEBUG("(Beacon)Custom Payload : ");
+    //NRF_LOG_HEXDUMP_INFO(cus_adv_data, cus_adv_len);
     memset(m_adv_data.adv_data.p_data, 0, BLE_GAP_ADV_SET_DATA_SIZE_MAX);
     memcpy(m_adv_data.adv_data.p_data, cus_adv_data, cus_adv_len);
 
     err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_set_configure = %d", err_code);
     
-    //err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
+    //NRF_LOG_DEBUG("sd_ble_gap_adv_start = %d", err_code);
 
     APP_ERROR_CHECK(err_code);
     switch (err_code)
@@ -1923,6 +2400,8 @@ int32_t uhal_ble_set_scan_interval_window(uint16_t scan_interval, uint16_t scan_
     m_scan_param_coded_phy.window = (scan_window / 0.625);
     m_scan_param_1MBps.window = (scan_window / 0.625);
     
+    //NRF_LOG_DEBUG("(BLE Scan) interval = %d", m_scan_param_coded_phy.interval);
+    //NRF_LOG_DEBUG("(BLE Scan) window = %d", m_scan_param_coded_phy.window);
 
     if(uhal_is_scanning)
     {
@@ -1937,7 +2416,6 @@ int32_t uhal_ble_set_scan_interval_window(uint16_t scan_interval, uint16_t scan_
             err_code = nrf_ble_scan_params_set(&m_scan, &m_scan_param_1MBps);
             APP_ERROR_CHECK(err_code);
         }
-        scan_start();
     }
     
     switch (err_code)
@@ -1952,25 +2430,17 @@ void uhal_ble_set_work_mode(ble_work_mode_t mode, bool long_range_enable)
 {
     uhal_g_ble_cfg_t.work_mode = mode;
     uhal_g_ble_cfg_t.long_range_enable = long_range_enable;
+    //return nrf_nvmc_write(NRF_FSTORAGE_BASE_ADDR,&g_rui_cfg_t,sizeof(g_rui_cfg_t));
 }
 
 void uhal_ble_scan_start(uint16_t scan_sec)
 {
+    //NRF_LOG_DEBUG("(BLE Scan) Start (sec): %d", scan_sec);
     m_scan_param_coded_phy.timeout = ((scan_sec * 1000) / 10);
     m_scan_param_1MBps.timeout = ((scan_sec * 1000) / 10);
 
     uhal_ble_set_work_mode(BLE_WORK_CENTRAL, false);
     uhal_ble_central_config();
-}
-void uhal_ble_scan_stop(void)
-{
-    if(uhal_is_scanning)
-    {
-        nrf_ble_scan_stop();
-        uhal_is_scanning = 0;
-        NRF_LOG_DEBUG("(BLS Scan) Scan Stop");
-
-    }
 }
 
 int32_t uhal_nus_set_keypairing(uint8_t *pairing_key, uint8_t key_length)
@@ -1984,8 +2454,13 @@ int32_t uhal_nus_set_keypairing(uint8_t *pairing_key, uint8_t key_length)
     }
     
 
+    //NRF_LOG_DEBUG("uhal_nus_set_keypairing - key length: %d",strlen(pairing_key));
+    //memccpy(ble_parameter.pairing_key, pairing_key, key_length - 1);
     strncpy(ble_parameter.pairing_key, pairing_key, BLE_GAP_PASSKEY_LEN);
+    //ble_parameter.pairing_key = pairing_key
     ble_parameter.pairing_key[BLE_GAP_PASSKEY_LEN] = 0x00;
+    //NRF_LOG_DEBUG("(NUS)uhal_nus_set_keypairing :")
+    //NRF_LOG_HEXDUMP_DEBUG(ble_parameter.pairing_key, BLE_GAP_PASSKEY_LEN);
     switch (err_code)
     {
         case NRF_SUCCESS:
@@ -2002,6 +2477,7 @@ int32_t uhal_nus_set_permission(uint8_t permission)
     if( (permission == SET_ENC_NO_MITM) || (permission == SET_ENC_WITH_MITM))
     {
         ble_parameter.permission = permission;
+        //NRF_LOG_DEBUG("uhal_nus_set_permission = %d", permission);
     }
     else
     {

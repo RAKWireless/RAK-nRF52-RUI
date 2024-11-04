@@ -53,11 +53,7 @@ int32_t service_lora_addmulc(McSession_t McSession)
             McSession.GroupID = i;
 
             channel.IsRemotelySetup = false;
-#ifdef LORA_STACK_104
-            channel.RxParams.Class = McSession.Devclass;
-#else
             channel.Class = McSession.Devclass;
-#endif
             channel.IsEnabled = true;
             channel.GroupID = McSession.GroupID ;
             channel.Address = McSession.Address;
@@ -66,139 +62,6 @@ int32_t service_lora_addmulc(McSession_t McSession)
             channel.FCountMin = 0;
             channel.FCountMax = 0xFFFF;
 
-#ifdef LORA_STACK_104
-            if (McSession.Devclass == 2)    //classC multicast group
-            {
-                //channel.RxParams.ClassC.Frequency
-                if(McSession.Frequency!=0)
-                {
-                    channel.RxParams.Params.ClassC.Frequency = McSession.Frequency;
-                    channel.RxParams.Params.ClassC.Datarate = McSession.Datarate;
-                }
-                else
-                {
-                    SERVICE_LORA_BAND band = service_lora_get_band();
-                    switch (band)
-                    {
-                        case SERVICE_LORA_AS923:
-                        channel.RxParams.Params.ClassC.Frequency = 923200000;
-                        channel.RxParams.Params.ClassC.Datarate = 2;
-                        break;
-                        case SERVICE_LORA_AU915:
-                        channel.RxParams.Params.ClassC.Frequency = 923300000;
-                        channel.RxParams.Params.ClassC.Datarate = 8;
-                        break;
-                        case SERVICE_LORA_CN470 :
-                        channel.RxParams.Params.ClassC.Frequency = 505300000;
-                        channel.RxParams.Params.ClassC.Datarate = 0;
-                        break;
-                        case SERVICE_LORA_CN779 :
-                        channel.RxParams.Params.ClassC.Frequency = 786000000;
-                        channel.RxParams.Params.ClassC.Datarate = 0;
-                        break;
-                        case SERVICE_LORA_EU433  :
-                        channel.RxParams.Params.ClassC.Frequency = 434665000;
-                        channel.RxParams.Params.ClassC.Datarate = 0;
-                        break;
-                        case SERVICE_LORA_EU868  :
-                        channel.RxParams.Params.ClassC.Frequency = 869525000;
-                        channel.RxParams.Params.ClassC.Datarate = 0;
-                        break;
-                        case SERVICE_LORA_KR920   :
-                        channel.RxParams.Params.ClassC.Frequency = 921900000;
-                        channel.RxParams.Params.ClassC.Datarate =  0;
-                        break;
-                        case SERVICE_LORA_IN865  :
-                        channel.RxParams.Params.ClassC.Frequency = 866550000;
-                        channel.RxParams.Params.ClassC.Datarate =  2;
-                        break;
-                        case SERVICE_LORA_US915  :
-                        channel.RxParams.Params.ClassC.Frequency = 923300000;
-                        channel.RxParams.Params.ClassC.Datarate =8;
-                        break;
-                        case SERVICE_LORA_RU864 :
-                        channel.RxParams.Params.ClassC.Frequency = 869100000;
-                        channel.RxParams.Params.ClassC.Datarate = 0;
-                        break;
-                        case SERVICE_LORA_LA915 :
-                        channel.RxParams.Params.ClassC.Frequency = 923300000;
-                        channel.RxParams.Params.ClassC.Datarate = 8;
-                        break;
-                        default:
-                        return -UDRV_PARAM_ERR;
-                    }
-                    McSession.Frequency = channel.RxParams.Params.ClassC.Frequency;
-                    McSession.Datarate = channel.RxParams.Params.ClassC.Datarate;
-                }
-            }
-            else   //classB multicast group
-            {
-                if(McSession.Frequency!=0)
-                {
-                    channel.RxParams.Params.ClassB.Frequency = McSession.Frequency;
-                    channel.RxParams.Params.ClassB.Datarate = McSession.Datarate;
-                    channel.RxParams.Params.ClassB.Periodicity = McSession.Periodicity;
-                }
-                else
-                {
-                    /* Increase channel default value */
-                    SERVICE_LORA_BAND band = service_lora_get_band();
-                    switch (band)
-                    {
-                        case SERVICE_LORA_AS923:          //RP002-1.0.3  P68
-                        channel.RxParams.Params.ClassB.Frequency = 923400000;
-                        channel.RxParams.Params.ClassB.Datarate = 3;
-                        break;
-                        case SERVICE_LORA_AU915:          //RP002-1.0.3  P52
-                        channel.RxParams.Params.ClassB.Frequency = 923300000;
-                        channel.RxParams.Params.ClassB.Datarate = 8;
-                        break;
-                        case SERVICE_LORA_CN470 :         //RP002-1.0.3  P60
-                        channel.RxParams.Params.ClassB.Frequency = 494900000;
-                        channel.RxParams.Params.ClassB.Datarate = 2;
-                        break;
-                        case SERVICE_LORA_CN779 :         //RP002-1.0.3  P41
-                        channel.RxParams.Params.ClassB.Frequency = 785000000;
-                        channel.RxParams.Params.ClassB.Datarate = 3;
-                        break;
-                        case SERVICE_LORA_EU433  :        //RP002-1.0.3  P45
-                        channel.RxParams.Params.ClassB.Frequency = 434665000;
-                        channel.RxParams.Params.ClassB.Datarate = 3;
-                        break;
-                        case SERVICE_LORA_EU868  :        //RP002-1.0.3  P29
-                        channel.RxParams.Params.ClassB.Frequency = 869525000;
-                        channel.RxParams.Params.ClassB.Datarate = 3;
-                        break;
-                        case SERVICE_LORA_KR920   :       //RP002-1.0.3  P74
-                        channel.RxParams.Params.ClassB.Frequency = 923100000;
-                        channel.RxParams.Params.ClassB.Datarate =  3;
-                        break;
-                        case SERVICE_LORA_IN865  :        //RP002-1.0.3  P79
-                        channel.RxParams.Params.ClassB.Frequency = 866550000;
-                        channel.RxParams.Params.ClassB.Datarate =  4;
-                        break;
-                        case SERVICE_LORA_US915  :        //RP002-1.0.3  P35
-                        channel.RxParams.Params.ClassB.Frequency = 923300000;
-                        channel.RxParams.Params.ClassB.Datarate =8;
-                        break;
-                        case SERVICE_LORA_RU864 :         //RP002-1.0.3  P84
-                        channel.RxParams.Params.ClassB.Frequency = 86890000;
-                        channel.RxParams.Params.ClassB.Datarate = 3;
-                        break;
-                        case SERVICE_LORA_LA915 :
-                        channel.RxParams.Params.ClassB.Frequency = 923300000;
-                        channel.RxParams.Params.ClassB.Datarate = 10;
-                        break;
-                        default:
-                        return -UDRV_PARAM_ERR;
-                    }
-
-                    McSession.Frequency = channel.RxParams.Params.ClassB.Frequency;
-                    McSession.Datarate = channel.RxParams.Params.ClassB.Datarate;
-                    channel.RxParams.Params.ClassB.Periodicity = McSession.Periodicity;
-                }
-            }
-#else
             if (McSession.Devclass == 2)    //classC multicast group
             {
                 //channel.RxParams.ClassC.Frequency
@@ -329,8 +192,8 @@ int32_t service_lora_addmulc(McSession_t McSession)
                     McSession.Datarate = channel.RxParams.ClassB.Datarate;
                     channel.RxParams.ClassB.Periodicity = McSession.Periodicity;
                 }
+
             }
-#endif
             if (LoRaMacMcChannelSetup(&channel) != LORAMAC_STATUS_OK)
             {
                 return -UDRV_PARAM_ERR;

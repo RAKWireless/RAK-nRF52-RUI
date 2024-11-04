@@ -32,7 +32,6 @@ void udrv_ble_services_start(void)
     service_nvm_get_ble_mac_from_nvm(mac,12);
     if(!ble_services_is_enable)
     {
-        uhal_scan_init(false);
         uhal_gap_params_init();
         #ifndef rak11720
         udrv_ble_set_macaddress(mac);
@@ -46,7 +45,6 @@ void udrv_ble_services_start(void)
     }
     else
     {
-        uhal_scan_init(false);
         uhal_gap_params_init();
         udrv_ble_set_macaddress(mac);
         uhal_gatt_init();
@@ -279,12 +277,12 @@ void udrv_ble_register_callback_handler (Event event,BLE_HANDLER handler)
   
 void udrv_ble_scan_start(uint16_t scan_sec)
 {
-    uhal_ble_scan_start(scan_sec);
-}
-
-void udrv_ble_scan_stop(void)
-{
-    uhal_ble_scan_stop();
+        udrv_ble_stop();
+        #ifndef rak11720
+        udrv_ble_services_start();
+        uhal_advertising_start(APP_ADV_TIMEOUT_IN_SECONDS);
+        #endif
+        uhal_ble_scan_start(scan_sec);
 }
 
 void udrv_ble_hid_start()

@@ -22,9 +22,6 @@
 #define __LMH_PACKAGE_H__
 
 #ifdef SUPPORT_LORA
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -33,11 +30,7 @@ extern "C" {
 /*!
  * Maximum number of packages
  */
-#ifdef LORA_STACK_104
-#define PKG_MAX_NUMBER                              4
-#else
 #define PKG_MAX_NUMBER                              5
-#endif
 
 typedef struct LmhPackage_s
 {
@@ -63,15 +56,6 @@ typedef struct LmhPackage_s
      *                [true: Initialized, false: Not initialized]
      */
     bool ( *IsInitialized )( void );
-#ifdef LORA_STACK_104
-    /*!
-     * Returns if a package transmission is pending or not.
-     *
-     * \retval status Package transmission status
-     *                [true: pending, false: Not pending]
-     */
-    bool ( *IsTxPending )( void );
-#else
     /*!
      * Returns the package operation status.
      *
@@ -79,7 +63,6 @@ typedef struct LmhPackage_s
      *                [true: Running, false: Not running]
      */
     bool ( *IsRunning )( void );
-#endif
     /*!
      * Processes the internal package events.
      */
@@ -136,11 +119,10 @@ typedef struct LmhPackage_s
     * Join a LoRa Network in classA
     *
     * \Note if the device is ABP, this is a pass through function
-    *
+    * 
     * \param [IN] isOtaa Indicates which activation mode must be used
     */
     void ( *OnJoinRequest )( bool isOtaa );
-#ifndef LORA_STACK_104
     /*!
      * Instructs the MAC layer to send a ClassA uplink
      *
@@ -151,31 +133,19 @@ typedef struct LmhPackage_s
      *                processed else \ref LORAMAC_HANDLER_ERROR
      */
     LmHandlerErrorStatus_t ( *OnSendRequest )( LmHandlerAppData_t *appData, LmHandlerMsgTypes_t isTxConfirmed );
-#endif
     /*!
     * Requests network server time update
     *
     * \retval status Returns \ref LORAMAC_HANDLER_SET if joined else \ref LORAMAC_HANDLER_RESET
     */
     LmHandlerErrorStatus_t ( *OnDeviceTimeRequest )( void );
-#if( LMH_SYS_TIME_UPDATE_NEW_API == 1 )
-    /*!
-     * Notifies the upper layer that the system time has been updated.
-     *
-     * \param [in] isSynchronized Indicates if the system time is synchronized in the range +/-1 second
-     * \param [in] timeCorrection Received time correction value
-     */
-    void ( *OnSysTimeUpdate )( bool isSynchronized, int32_t timeCorrection );
-#else
     /*!
      * Notifies the upper layer that the system time has been updated.
      */
     void ( *OnSysTimeUpdate )( void );
-#endif
+
 }LmhPackage_t;
 
-#ifdef __cplusplus
-}
-#endif
 #endif // end SUPPORT_LORA
+
 #endif // __LMH_PACKAGE_H__

@@ -266,9 +266,7 @@ size_t uhal_ble_serial_read_available (SERIAL_PORT Port);
 
 void uhal_ble_set_work_mode(ble_work_mode_t mode, bool long_range_enable);
 int32_t uhal_ble_set_scan_interval_window(uint16_t scan_interval, uint16_t scan_window);
-void uhal_scan_init(bool connect_if_match);
 void uhal_ble_scan_start(uint16_t scan_sec);
-void uhal_ble_scan_stop(void);
 void uhal_nus_peer_manager_init(void);
 int32_t uhal_nus_set_keypairing(uint8_t *pairing_key, uint8_t key_length);
 int32_t uhal_nus_set_permission(uint8_t permission);
