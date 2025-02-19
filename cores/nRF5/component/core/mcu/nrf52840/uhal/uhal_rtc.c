@@ -49,6 +49,7 @@ static uint32_t max_ticks;
 static rtc_handler compare0_handler;
 static uint32_t alarm_cnt = 0;
 static bool change_freq;
+static uint8_t alarm_overflow = 0;
 static udrv_system_event_t rui_rtc_event = {.request = UDRV_SYS_EVT_OP_RTC, .p_context = NULL};
 
 uint32_t uhal_rtc_tick2ms(uint32_t tick) {
@@ -60,6 +61,9 @@ uint32_t uhal_rtc_tick2us(uint32_t tick) {
 }
 
 uint32_t uhal_rtc_ms2tick(uint32_t ms) {
+    if(ms > 1000)
+        return (uint32_t)((float)ms/(float)1000*(float)SYS_RTC_FREQ);
+    else
     return (uint32_t)((float)ms*(float)SYS_RTC_FREQ/(float)1000);
 }
 
@@ -108,11 +112,24 @@ static void uhal_rtc_handler(nrf_drv_rtc_int_type_t int_type)
     }
     if (int_type == NRF_DRV_RTC_INT_COMPARE0)
     {
-        if (compare0_handler) {
-            udrv_powersave_in_sleep = false;
-            udrv_system_event_produce(&rui_rtc_event);
+        if(alarm_overflow == 0)
+        {
+            if (compare0_handler) {
+                    udrv_powersave_in_sleep = false;
+                    udrv_system_event_produce(&rui_rtc_event);
+            }
+            alarm_cnt = 0;
         }
-        alarm_cnt = 0;
+        else
+        {
+
+            uint32_t int_mask = NRF_RTC_INT_COMPARE0_MASK;
+            nrf_rtc_int_enable(uhal_rtc2.p_reg, int_mask);
+            nrf_rtc_event_enable(uhal_rtc2.p_reg,int_mask);
+
+            //uhal_rtc_set_alarm(SYS_RTC_COUNTER_PORT,max_ticks,uhal_rtc_get_counter(SYS_RTC_COUNTER_PORT));
+            alarm_overflow--;
+        }
     }
 }
 
@@ -195,6 +212,10 @@ int32_t uhal_rtc_set_alarm (RtcID_E timer_id, uint32_t count, void *m_data) {
     nrf_drv_rtc_t *nrf_rtc_inst_p = get_nrf_rtc_inst(timer_id);
     uint32_t compare_val = 0;
     uint32_t timeout_ticks = count + *(uint32_t*)m_data;
+    if(count > max_ticks)
+    {
+        alarm_overflow = count/max_ticks;
+    }
 
     if(timeout_ticks < max_ticks)
     {
@@ -202,7 +223,7 @@ int32_t uhal_rtc_set_alarm (RtcID_E timer_id, uint32_t count, void *m_data) {
     }
     else
     {
-        compare_val =  count - (max_ticks -  *(uint32_t*)m_data);
+        compare_val =  timeout_ticks % max_ticks;
     }
     err_code = nrf_drv_rtc_cc_set(nrf_rtc_inst_p, 0, compare_val, true);
     APP_ERROR_CHECK(err_code);

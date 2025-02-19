@@ -15,12 +15,15 @@ void uhal_sys_reboot(void)
 #ifndef RUI_BOOTLOADER
 void uhal_sys_board_critical_section_begin(uint32_t *mask)
 {
-    udrv_thread_lock();
+    //udrv_thread_lock();
+    *mask = __get_PRIMASK();
+    __disable_irq();
 }
 
 void uhal_sys_board_critical_section_end(uint32_t *mask)
 {
-    udrv_thread_unlock();
+    //udrv_thread_lock();
+    __set_PRIMASK(*mask);
 }
 
 static int32_t uhal_sys_crypto_init(void)

@@ -455,6 +455,9 @@ void rui_init(void)
 #endif
 
 #if defined(SUPPORT_LORA)
+#ifdef LORA_STACK_104
+    service_lora_mac_nvm_data_init();
+#endif
     service_lora_init(service_nvm_get_band_from_nvm());
 #elif defined(SUPPORT_LORA_P2P)
     BoardInitMcu();
@@ -495,6 +498,13 @@ void rui_init(void)
 #endif
 
     udrv_system_event_init();
+
+#ifdef SUPPORT_LORA
+#ifdef LORA_STACK_104
+    if(service_nvm_get_certi_from_nvm() == 1)
+        service_lora_certification(1);
+#endif
+#endif
 }
 
 void rui_running(void)
@@ -503,9 +513,26 @@ void rui_running(void)
     udrv_wdt_feed();//Consider software reset case, reload WDT counter first.
 #endif
 
+#ifdef SUPPORT_LORA
+#ifdef LORA_STACK_104
+    // Process Radio IRQ
+    if( Radio.IrqProcess != NULL )
+    {
+        Radio.IrqProcess( );
+    }
+#endif
+#endif
+
     nrf_ble_lesc_request_handler();
 
+    if(uhal_ble_dtm_is_inited() == 1)
+        dtm_wait();
+
     udrv_system_event_consume();
+    LoRaMacProcess( );
+
+    // Call all packages process functions
+    LmHandlerPackagesProcess();
 }
 
 #ifdef SUPPORT_MULTITASK
@@ -544,9 +571,7 @@ void main(void)
 
 #ifndef SUPPORT_MULTITASK
     //user init
-NRF_LOG_INFO("rui_setup");
     rui_setup();
-NRF_LOG_INFO("rui_setup done");
 #ifdef SUPPORT_WDT
     if(!is_custom_wdt) {
         udrv_wdt_init(UDRV_WDT_FEED_PERIOD);
