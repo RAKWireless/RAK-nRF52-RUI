@@ -22,7 +22,7 @@ void uhal_sys_board_critical_section_begin(uint32_t *mask)
 
 void uhal_sys_board_critical_section_end(uint32_t *mask)
 {
-    //udrv_thread_lock();
+    //udrv_thread_unlock();
     __set_PRIMASK(*mask);
 }
 

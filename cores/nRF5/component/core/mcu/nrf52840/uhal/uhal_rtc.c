@@ -237,6 +237,7 @@ int32_t uhal_rtc_cancel_alarm (RtcID_E timer_id) {
     nrf_drv_rtc_t *nrf_rtc_inst_p = get_nrf_rtc_inst(timer_id);
 
     alarm_cnt = 0;
+    alarm_overflow = 0;
 
     return nrf_drv_rtc_cc_disable(nrf_rtc_inst_p, 0);
 }
