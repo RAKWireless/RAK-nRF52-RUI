@@ -47,6 +47,9 @@
 #include "atcmd_cellular.h"
 #include "atcmd_cellular_def.h"
 #endif
+#ifdef RAK11160
+#include "atcmd_esp.h"
+#endif
 
 void At_RespOK (char* pStr)
 {
@@ -139,7 +142,7 @@ at_cmd_info atcmd_info_tbl[] =
 #endif
 #ifdef SUPPORT_BLE
     {ATCMD_BLEMAC,   /*94*/         At_BLEMac,             0, "get or set the BLE Mac address", AT_BLEMAC_PERM},
-#ifdef rak11720
+#if defined(rak11720) || defined(rak4630)
     {ATCMD_BLEDTM,   /*97*/         At_BLEDTM,             0, "BLE DTM", AT_BLEDTM_PERM},
 #endif
 #endif
@@ -266,6 +269,10 @@ at_cmd_info atcmd_info_tbl[] =
 #endif
     {ATCMD_FIXLENGTHPAYLOAD,/*68*/  At_fixLengthPayload,   0, "get or set P2P fix length payload on/off ( 1 = on, 0 = off)", AT_FIXLENGTHPAYLOAD_PERM},
 
+#endif
+#ifdef RAK11160
+    {ATCMD_ESP,                     At_Esp,                0, "Switch the ESP32 AT mode ( 0 = off, 1 = on )", ATCMD_PERM_READ | ATCMD_PERM_WRITE},
+    {ATCMD_ESPPOWER,                At_EspPower,           0, "Turn off the ESP32 power supply and enter low-power mode ( 0 = power on, 1 = power off )", ATCMD_PERM_READ | ATCMD_PERM_WRITE},
 #endif
 #ifdef RAK5010_EVB
 /* LTE */

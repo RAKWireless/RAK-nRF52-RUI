@@ -28,6 +28,9 @@ typedef enum _SERVICE_MODE_TYPE
 #endif
 #endif
     SERVICE_MODE_TYPE_CUSTOM,
+#ifdef SUPPORT_ESP32
+    SERVICE_MODE_TYPE_ESP32,
+#endif
 } SERVICE_MODE_TYPE;
 
 #ifdef __cplusplus

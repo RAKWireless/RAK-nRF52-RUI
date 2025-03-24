@@ -921,6 +921,8 @@ void yield(void);
 #include "Wire.h"
 #include "SPI.h"
 
-
+#ifdef RAK11160
+#include "board.h"
+#endif
 
 #endif

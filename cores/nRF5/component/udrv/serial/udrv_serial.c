@@ -719,6 +719,12 @@ void serial_fallback_handler(SERIAL_PORT port, uint8_t ch) {
     if (mode == SERVICE_MODE_TYPE_CLI) {
         return;
     }
+#ifdef RAK11160
+    if (mode == SERVICE_MODE_TYPE_ESP32)
+    {
+        return;
+    }
+#endif
 
     serial_state[port] = serial_transitions[serial_state[port]][serial_ch2evt(ch)];
 

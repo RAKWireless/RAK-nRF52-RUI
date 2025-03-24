@@ -1,11 +1,11 @@
-#define FW_REVISION "RUI_4.1.2_RAK3401"
+#define FW_REVISION "RUI_4.2.1_RAK3401"
 #define MODEL_ID "rak3400"
 #define CHIP_ID "nrf52840"
-#define BUILD_DATE "20241101"
-#define BUILD_TIME "023528"
-#define REPO_INFO "b652bb78:aab1a74a:81495284:4785713c:0566edaa:9a906d7c:c129743d:9d64089f:69e7409c:d0c0bdf9:6a3d6842:b9d39ab6:d5c6e88d:a29aaa6e:da54579d:d1e75214:1365fb0c:714946eb:a20a3374:f9550051"
-#define CLI_REVISION "1.5.13"
-#define API_REVISION "3.2.9"
+#define BUILD_DATE "20250324"
+#define BUILD_TIME "031951"
+#define REPO_INFO "f9dc6cc5:3c02530f:e1c47999:083932e9:30c599dc:cbc9c9fd:5ccec381:827629a7:7f328f76:1de43ba9:5a430559:6a3d6842:b9d39ab6:d5c6e88d:a29aaa6e:da54579d:d1e75214:1365fb0c:714946eb:d447b20c:0f0b6d76"
+#define CLI_REVISION "1.5.14"
+#define API_REVISION "3.2.10"
 const char *sw_version = {FW_REVISION};
 const char *model_id = {MODEL_ID};
 const char *chip_id = {CHIP_ID};

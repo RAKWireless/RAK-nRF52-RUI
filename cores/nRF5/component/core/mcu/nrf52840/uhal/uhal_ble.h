@@ -52,6 +52,7 @@
 #include "nrf_ble_qwr.h"
 #include "peer_manager.h"
 #include "peer_manager_handler.h"
+#include "ble_dtm.h"
 
 #ifdef DFU_SUPPORT
 #include "ble_dfu.h"
@@ -266,11 +267,16 @@ size_t uhal_ble_serial_read_available (SERIAL_PORT Port);
 
 void uhal_ble_set_work_mode(ble_work_mode_t mode, bool long_range_enable);
 int32_t uhal_ble_set_scan_interval_window(uint16_t scan_interval, uint16_t scan_window);
+void uhal_scan_init(bool connect_if_match);
 void uhal_ble_scan_start(uint16_t scan_sec);
+void uhal_ble_scan_stop(void);
 void uhal_nus_peer_manager_init(void);
 int32_t uhal_nus_set_keypairing(uint8_t *pairing_key, uint8_t key_length);
 int32_t uhal_nus_set_permission(uint8_t permission);
 void uhal_ble_wake_lock (void);
 void uhal_ble_wake_unlock (void);
 void uhal_ble_wake_unlock_all (void);
+uint32_t uhal_ble_hci_write(uint8_t *raw_data,uint8_t len);
+int32_t uhal_ble_hci_read(uint8_t *recv,uint32_t *recv_bytes);
+void uhal_ble_set_dtm_txpower(int tx_power);
 #endif  // #ifndef _UHAL_BLE_H_

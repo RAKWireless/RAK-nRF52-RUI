@@ -189,7 +189,7 @@ int32_t service_lora_trssi(int16_t *rssiVal)
     *rssiVal = Radio.Rssi(MODEM_FSK);
     Radio.Sleep();
     TestState &= ~RX_TEST_RSSI;
-    return *rssiVal;
+    return UDRV_RETURN_OK;
   }
   else
   {

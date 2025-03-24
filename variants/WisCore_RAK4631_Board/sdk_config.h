@@ -100,7 +100,7 @@
 // <e> BLE_DTM_ENABLED - ble_dtm - Module for testing RF/PHY using DTM commands
 //==========================================================
 #ifndef BLE_DTM_ENABLED
-#define BLE_DTM_ENABLED 0
+#define BLE_DTM_ENABLED 1
 #endif
 // <o> NRF_RADIO_ANTENNA_PIN_1 - Antenna 1 GPIO pin 
 #ifndef NRF_RADIO_ANTENNA_PIN_1
@@ -4232,7 +4232,7 @@
  
 
 #ifndef NRFX_TIMER0_ENABLED
-#define NRFX_TIMER0_ENABLED 0
+#define NRFX_TIMER0_ENABLED 1
 #endif
 
 // <q> NRFX_TIMER1_ENABLED  - Enable TIMER1 instance
@@ -6063,7 +6063,7 @@
  
 
 #ifndef TIMER0_ENABLED
-#define TIMER0_ENABLED 0
+#define TIMER0_ENABLED 1
 #endif
 
 // <q> TIMER1_ENABLED  - Enable TIMER1 instance
