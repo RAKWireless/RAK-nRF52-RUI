@@ -223,6 +223,10 @@ uint32_t service_nvm_get_auto_sleep_time_from_nvm(void);
 
 int32_t service_nvm_set_auto_sleep_time_to_nvm(uint32_t time);
 
+uint8_t service_nvm_get_auto_sleep_level_from_nvm(void);
+
+uint8_t service_nvm_set_auto_sleep_level_to_nvm(uint32_t level);
+
 int32_t service_nvm_get_atcmd_alias_from_nvm(uint8_t *buff, uint32_t len);
 
 int32_t service_nvm_set_atcmd_alias_to_nvm(uint8_t *buff, uint32_t len);

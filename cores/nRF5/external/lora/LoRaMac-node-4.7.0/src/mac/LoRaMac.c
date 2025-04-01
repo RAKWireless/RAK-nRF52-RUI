@@ -48,6 +48,7 @@
 
 #include "LoRaMac.h"
 #include "udrv_system.h"
+#include "service_lora_arssi.h"
 
 /*!
  * Maximum PHY layer payload size
@@ -3051,6 +3052,7 @@ static LoRaMacStatus_t ScheduleTx( bool allowDelayedTx )
     }
 
     // Try to send now
+    service_lora_arssi_tx_callback(MacCtx.Channel);
     return SendFrameOnChannel( MacCtx.Channel );
 }
 

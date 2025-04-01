@@ -227,5 +227,63 @@ public:
        */
   bool set(uint8_t value);
 };
+class lpmlvl
+{
+public:
+  /**@par   Description
+       *        This api allows to get the low power level (Only work on RAK3172 series)
+       *
+       * @par   Syntax
+       *    api.system.lpmlvl.get()
+       * @retval    uint8_t for low power level
+       * @par         Example
+       * @verbatim
+     void setup()
+     {
+         Serial.begin(115200);
 
+         Serial.printf("Set the low power level %s\n\r", api.system.lpmlvl.set(1) ? "Success" : "Fail");
+     }
+
+     void loop()
+     {
+         Serial.printf("The low power level = %d\n\r", api.system.lpmlvl.get());
+
+         delay(1000);
+     }
+
+         @endverbatim
+       */
+  uint8_t get();
+  /**@par   Description
+       *        This api allows to set the low power level
+       *
+       * @par   Syntax
+       *    api.system.lpmlvl.set(value)
+       *
+       * @note  Only 1 or 2 is acceptable
+       * @param value   1 or 2
+ * @return  bool
+       * @retval    TRUE for setting low power level success
+       * @retval    FALSE for setting low power level failure
+       * @par         Example
+       * @verbatim
+     void setup()
+     {
+         Serial.begin(115200);
+
+         Serial.printf("Set the low power level %s\n\r", api.system.lpmlvl.set(1) ? "Success" : "Fail");
+     }
+
+     void loop()
+     {
+         Serial.printf("The low power level = %d\n\r", api.system.lpmlvl.get());
+
+         delay(1000);
+     }
+
+         @endverbatim
+       */
+  bool set(uint8_t value);
+};
 #endif

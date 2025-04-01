@@ -109,3 +109,20 @@ bool lpm::set(uint8_t value) {
       return false;
   }
 }
+
+uint8_t lpmlvl::get() {
+  return (uint8_t)service_nvm_get_auto_sleep_level_from_nvm();
+}
+
+bool lpmlvl::set(uint8_t value) {
+  if (value != 1 && value != 2)
+  	return false;
+  if (service_nvm_set_auto_sleep_level_to_nvm((uint32_t)value) == UDRV_RETURN_OK)
+  {
+      return true;
+  }
+  else
+  {
+      return false;
+  }
+}

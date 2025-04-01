@@ -159,6 +159,7 @@ class RAKSystem {
     RAKSystem();
     class sleep sleep;
     class lpm lpm;
+    class lpmlvl lpmlvl;
     class wdt wdt;
 
     class firmwareVersion {

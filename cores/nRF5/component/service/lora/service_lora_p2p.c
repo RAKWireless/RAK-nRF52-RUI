@@ -94,12 +94,6 @@ static void OnTxDone(void)
 {
     lora_p2p_status.isRadioBusy = false;
 
-    LORA_P2P_DEBUG("%s\r\n", __func__);
-    if (service_get_debug_level()) {
-        udrv_serial_log_printf("%s\r\n", __func__);
-    }
-    LORA_TEST_DEBUG("service_lora_p2p_send_callback %08x",service_lora_p2p_send_callback);
-
     if ((*service_lora_p2p_send_callback)!=NULL)
     {
         (*service_lora_p2p_send_callback)();
@@ -371,17 +365,47 @@ int32_t service_lora_p2p_init(void)
     return UDRV_RETURN_OK;
 }
 
+static void service_lora_p2p_gen_crypto_IV(uint8_t *buff, uint32_t len)
+{
+	uint8_t iv[16];
+    uint8_t iv_flag=1;
+    uint32_t random_iv;
+	service_lora_p2p_get_crypto_IV(iv,sizeof(iv));
+    for(int i=0;i<16;i++)
+    {
+        if(iv[i] != 0)
+    	{
+        	iv_flag = 0;
+            break;
+        }
+    }
+    if(iv_flag)
+    {
+    	for(int i=4;i>0;i--)
+        {
+        	random_iv = Radio.Random();
+            iv[4*i-4] = (uint8_t)(random_iv);
+            iv[4*i-3] = (uint8_t)(random_iv>>=8);
+            iv[4*i-2] = (uint8_t)(random_iv >>= 8 );
+            iv[4*i-1] = (uint8_t)(random_iv >>=  8);
+		}
+    }
+    memcpy(buff,iv,sizeof(iv));
+    memset(iv,0,sizeof(iv));
+    service_lora_p2p_set_crypto_IV(iv,sizeof(iv));
+}
+
 int32_t service_lora_p2p_send(uint8_t *p_data, uint8_t len, bool cad_enable)
 {
     if (lora_p2p_status.isRadioBusy == true && lora_p2p_status.isContinue_compatible_tx == false)
         return -UDRV_BUSY;
 
-    service_lora_p2p_config();
-
     if (true == service_lora_p2p_get_crypto_enable())
         len = service_lora_p2p_encrpty(p_data, len, lora_p2p_buf);
     else
         memcpy(lora_p2p_buf, p_data, len);
+
+    service_lora_p2p_config();
 
     udrv_powersave_wake_lock();
     Radio.Standby();
@@ -410,6 +434,12 @@ int32_t service_lora_p2p_send(uint8_t *p_data, uint8_t len, bool cad_enable)
 
 
     if (service_get_debug_level()) {
+        if (true == service_lora_p2p_get_crypto_enable())
+        {
+            udrv_serial_log_printf("LoRa P2P TX IV: ");
+            p2p_printf_hex(lora_p2p_buf+len-16,16);
+            udrv_serial_log_printf("\r\n");
+        }
         udrv_serial_log_printf("LoRa P2P send data: (%d) ", len);
         p2p_printf_hex(lora_p2p_buf, len);
         udrv_serial_log_printf("\r\n");
@@ -808,11 +838,14 @@ int32_t service_lora_p2p_encrpty(uint8_t *indata, uint16_t inlen,uint8_t *outdat
     for (i = 0; i < pad_length; i++)
         LORA_TEST_DEBUG("%02X", buf[i]);
 
-    service_lora_p2p_get_crypto_IV(iv,16);
+    //service_lora_p2p_get_crypto_IV(iv,16);
+    service_lora_p2p_gen_crypto_IV(iv,16);
 
     service_lora_p2p_get_crypto_key(key, 16);
     aes_set_key(key, 16, &ctx);
     crypt_state = aes_cbc_encrypt(buf, outdata, n_block, iv, &ctx);
+    memcpy(outdata+pad_length,iv,16);
+    pad_length+=16;
     LORA_TEST_DEBUG("crypt_state %d", crypt_state);
     for (i = 0; i < pad_length; i++)
         LORA_TEST_DEBUG("%02X", outdata[i]);
@@ -829,7 +862,18 @@ int32_t service_lora_p2p_decrpty(uint8_t *indata, uint16_t inlen, uint8_t *outda
     uint8_t crypt_state;
     uint8_t cut_length;
 
-    service_lora_p2p_get_crypto_IV(iv,16);
+    //service_lora_p2p_get_crypto_IV(iv,16);
+    for(i=0;i<16;i++)
+    {
+        iv[i] = *(indata+inlen-16+i);
+    }
+    inlen -=16;
+    if (service_get_debug_level())
+    {
+        udrv_serial_log_printf("LoRa P2P RX IV: ");
+        p2p_printf_hex(iv,16);
+        udrv_serial_log_printf("\r\n");
+    }
 
     service_lora_p2p_get_crypto_key(key, 16);
     aes_set_key(key, 16, &ctx);
