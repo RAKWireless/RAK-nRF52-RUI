@@ -823,6 +823,7 @@ int32_t service_lora_p2p_encrpty(uint8_t *indata, uint16_t inlen,uint8_t *outdat
     uint16_t i;
     aes_context ctx;
     uint8_t iv[16];
+    uint8_t tmp[16];
     uint8_t n_block;
     uint8_t pad_length;
 
@@ -840,11 +841,11 @@ int32_t service_lora_p2p_encrpty(uint8_t *indata, uint16_t inlen,uint8_t *outdat
 
     //service_lora_p2p_get_crypto_IV(iv,16);
     service_lora_p2p_gen_crypto_IV(iv,16);
-
+    memcpy(tmp,iv,sizeof(tmp));
     service_lora_p2p_get_crypto_key(key, 16);
     aes_set_key(key, 16, &ctx);
     crypt_state = aes_cbc_encrypt(buf, outdata, n_block, iv, &ctx);
-    memcpy(outdata+pad_length,iv,16);
+    memcpy(outdata+pad_length,tmp,16);
     pad_length+=16;
     LORA_TEST_DEBUG("crypt_state %d", crypt_state);
     for (i = 0; i < pad_length; i++)
