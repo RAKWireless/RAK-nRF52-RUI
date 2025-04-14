@@ -272,7 +272,7 @@ at_cmd_info atcmd_info_tbl[] =
 #endif
 #ifdef RAK11160
     {ATCMD_ESP,                     At_Esp,                0, "Switch the ESP32 AT mode ( 0 = off, 1 = on )", ATCMD_PERM_READ | ATCMD_PERM_WRITE},
-    {ATCMD_ESPPOWER,                At_EspPower,           0, "Turn off the ESP32 power supply and enter low-power mode ( 0 = power on, 1 = power off )", ATCMD_PERM_READ | ATCMD_PERM_WRITE},
+    {ATCMD_ESPPOWER,                At_EspPower,           0, "Control ESP32-C2 power via CHIP_EN pin (0 = off, 1 = on)", ATCMD_PERM_READ | ATCMD_PERM_WRITE},
 #endif
 #ifdef RAK5010_EVB
 /* LTE */

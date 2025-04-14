@@ -129,6 +129,16 @@ bool RAKLoraP2P::psend(uint8_t length, uint8_t *payload) {
     {
         return false;
     }
+
+    if ((true == service_lora_p2p_get_crypto_enable()) && (length > 223))
+    {
+        return false;
+    }
+    else if (length > 253)
+    {
+        return false;
+    }
+
     bool cad_enable = service_lora_p2p_get_CAD();
     if (service_lora_p2p_send(payload, length, cad_enable) == UDRV_RETURN_OK) {
         return true;
@@ -139,6 +149,15 @@ bool RAKLoraP2P::psend(uint8_t length, uint8_t *payload) {
 
 bool RAKLoraP2P::psend(uint8_t length, uint8_t *payload, bool cad_enable ) {
     if (SERVICE_LORAWAN == service_lora_p2p_get_nwm())
+    {
+        return false;
+    }
+
+    if ((true == service_lora_p2p_get_crypto_enable()) && (length > 223))
+    {
+        return false;
+    }
+    else if (length > 253)
     {
         return false;
     }
