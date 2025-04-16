@@ -134,7 +134,7 @@ bool RAKLoraP2P::psend(uint8_t length, uint8_t *payload) {
     {
         return false;
     }
-    else if (length > 253)
+    else if (length > 250)
     {
         return false;
     }

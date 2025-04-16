@@ -328,7 +328,7 @@ int At_P2pSend(SERIAL_PORT port, char *cmd, stParam *param)
         }
         else
         {
-            if ((datalen % 2) || (datalen > 2 * 253)) //the maximum of length is 253 when enable encrypt
+            if ((datalen % 2) || (datalen > 2 * 250)) //the maximum of length is 250 when enable encrypt
                 return AT_PARAM_ERROR;
         }
        

@@ -1,9 +1,9 @@
 #define FW_REVISION "RUI_4.2.1_RAK3401"
 #define MODEL_ID "rak3400"
 #define CHIP_ID "nrf52840"
-#define BUILD_DATE "20250414"
-#define BUILD_TIME "112143"
-#define REPO_INFO "ed4e68c7:3c02530f:e1c47999:083932e9:30c599dc:cbc9c9fd:5ccec381:827629a7:7f328f76:1de43ba9:d09f97af:6a3d6842:b9d39ab6:d5c6e88d:a29aaa6e:da54579d:d1e75214:1365fb0c:714946eb:8eaa2f3d:0f0b6d76"
+#define BUILD_DATE "20250416"
+#define BUILD_TIME "021357"
+#define REPO_INFO "ed4e68c7:3c02530f:e1c47999:083932e9:30c599dc:cbc9c9fd:5ccec381:827629a7:7f328f76:1de43ba9:f429aea7:6a3d6842:b9d39ab6:d5c6e88d:a29aaa6e:da54579d:d1e75214:1365fb0c:714946eb:9cd8d65c:0f0b6d76"
 #define CLI_REVISION "1.5.14"
 #define API_REVISION "3.2.10"
 const char *sw_version = {FW_REVISION};
