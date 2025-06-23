@@ -2,7 +2,7 @@
 #include "nrf_log.h"
 #include "udrv_system.h"
 #include "udrv_serial.h"
-
+#if 0
 #ifdef SUPPORT_BLE
 #define NRF_BLE_GQ_QUEUE_SIZE   4
 #ifndef NRF_BLE_GQ_BLE_OBSERVER_PRIO
@@ -2114,6 +2114,141 @@ int32_t uhal_ble_hci_read(uint8_t *recv,uint32_t *recv_bytes)
 void uhal_ble_set_dtm_txpower(int tx_power)
 {
     dtm_set_txpower((uint32_t)tx_power);
+}
+
+#endif
+#else
+//for rui lpm
+static uint32_t uhal_ble_wlock_cnt;
+
+void uhal_ble_wake_lock (void) {
+    uhal_ble_wlock_cnt++;
+}
+
+void uhal_ble_wake_unlock (void) {
+    if (uhal_ble_wlock_cnt > 0) {
+        uhal_ble_wlock_cnt--;
+    }
+}
+
+void uhal_ble_wake_unlock_all (void) {
+    while (uhal_ble_wlock_cnt > 0) {
+        uhal_ble_wlock_cnt--;
+    }
+}
+
+/**@brief Function for initializing the BLE stack.
+ *
+ * @details Initializes the SoftDevice and the BLE event interrupt.
+ */
+static void ble_stack_init(void)
+{
+    ret_code_t err_code;
+
+    err_code = nrf_sdh_enable_request();
+    APP_ERROR_CHECK(err_code);
+
+    // Configure the BLE stack using the default settings.
+    // Fetch the start address of the application RAM.
+    uint32_t ram_start = 0;
+    err_code = nrf_sdh_ble_default_cfg_set(APP_BLE_CONN_CFG_TAG, &ram_start);
+    APP_ERROR_CHECK(err_code);
+
+    // Enable BLE stack.
+    err_code = nrf_sdh_ble_enable(&ram_start);
+    APP_ERROR_CHECK(err_code);
+}
+
+void uhal_ble_stack_init(void)
+{
+    ble_stack_init();
+}
+
+void uhal_stop_ble(void)
+{
+}
+
+void uhal_gap_params_init(void)
+{
+}
+
+void uhal_gatt_init(void)
+{
+}
+
+void uhal_conn_params_init(void)
+{
+}
+
+void uhal_nus_peer_manager_init(void)
+{
+}
+
+void uhal_services_init(void)
+{
+}
+
+void uhal_advertising_init(void)
+{
+}
+
+int32_t uhal_advertising_start(uint8_t time_out)
+{
+    return 0;
+}
+
+int32_t uhal_advertising_stop(uint8_t temp_processing)
+{
+    return 0;
+}
+
+
+//ble_serial
+void uhal_ble_serial_init (SERIAL_PORT Port, uint32_t BaudRate, SERIAL_WORD_LEN_E DataBits, SERIAL_STOP_BIT_E StopBits, SERIAL_PARITY_E Parity, SERIAL_WIRE_MODE_E WireMode) {
+    return;
+}
+
+void uhal_ble_serial_deinit (SERIAL_PORT Port) {
+    return;
+}
+
+int32_t uhal_ble_serial_write (SERIAL_PORT Port, uint8_t const *Buffer, int32_t NumberOfBytes, uint32_t Timeout) {
+    return 0;
+}
+
+int32_t uhal_ble_serial_read (SERIAL_PORT Port, uint8_t *Buffer, int32_t NumberOfBytes, uint32_t Timeout) {
+    return 0;
+}
+
+int32_t uhal_ble_serial_peek (SERIAL_PORT Port) {
+    return 0;
+}
+
+void uhal_ble_serial_flush (SERIAL_PORT Port, uint32_t Timeout) {
+    return;
+}
+
+size_t uhal_ble_serial_read_available (SERIAL_PORT Port) {
+    return 0;
+}
+
+
+//dtm
+uint8_t uhal_ble_dtm_is_inited(void)
+{
+    return 0;
+}
+uint32_t uhal_ble_hci_write(uint8_t *raw_data,uint8_t len)
+{
+    return 0;
+}
+int32_t uhal_ble_hci_read(uint8_t *recv,uint32_t *recv_bytes)
+{
+    return 0;
+}
+void uhal_ble_set_dtm_txpower(int tx_power)
+{
+    return;
 }
 
 #endif

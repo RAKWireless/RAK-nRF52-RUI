@@ -424,7 +424,6 @@ void rui_init(void)
 #endif
 #ifdef SUPPORT_BLE
     udrv_ble_stack_start();  /* Need initialize ble service before enable the usb port. */
-    udrv_ble_services_start();
 #endif
 #ifdef SUPPORT_USB
     uhal_usb_enable(SERIAL_USB0);
@@ -434,22 +433,25 @@ void rui_init(void)
     SysTick_Config(SystemCoreClock / 100);      /* Configure SysTick to generate an interrupt every 10 ms */
 #endif
 
-
     baudrate = service_nvm_get_baudrate_from_nvm();
     udrv_serial_init(SERIAL_UART0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
     udrv_serial_init(SERIAL_UART1, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
+
 #ifdef SUPPORT_BLE
+    //udrv_ble_services_start();
 #ifdef SUPPORT_LORA
     service_lora_get_dev_eui(rbuff, 8);
-    sprintf(set_dev_name,"RAK.%02X%02X%02X",rbuff[5],rbuff[6],rbuff[7]);
-    udrv_ble_set_device_name(set_dev_name,strlen(set_dev_name));
+    sprintf(set_dev_name,"RAK_%02X%02X",rbuff[6],rbuff[7]);
+    //udrv_ble_set_device_name(set_dev_name,strlen(set_dev_name));
 #endif
     service_nvm_get_ble_mac_from_nvm(mac,12);
-    udrv_ble_set_macaddress(mac);
+    //udrv_ble_set_macaddress(mac);
     //udrv_ble_advertising_start(APP_ADV_TIMEOUT_IN_SECONDS);
+    //udrv_ble_advertising_start(0);
     //service_nvm_set_mode_type_to_nvm(SERIAL_BLE0, SERVICE_MODE_TYPE_CLI);
     //udrv_serial_init(SERIAL_BLE0, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 #endif
+
 #ifdef SUPPORT_NFC
     udrv_serial_init(SERIAL_NFC, baudrate, SERIAL_WORD_LEN_8, SERIAL_STOP_BIT_1, SERIAL_PARITY_DISABLE, SERIAL_TWO_WIRE_NORMAL_MODE);
 #endif
@@ -471,6 +473,7 @@ void rui_init(void)
             service_mode_cli_init((SERIAL_PORT)i);
         }
     }
+
 #ifdef SUPPORT_LORA
 #ifdef SUPPORT_PASSTHRU
     for (int i = 0 ; i < SERIAL_MAX ; i++) {
@@ -485,6 +488,7 @@ void rui_init(void)
     }
 #endif
 #endif
+
 #ifdef SUPPORT_BINARY
     for (int i = 0 ; i < SERIAL_MAX ; i++) {
         if (service_nvm_get_mode_type_from_nvm((SERIAL_PORT)i) == SERVICE_MODE_TYPE_PROTOCOL) {

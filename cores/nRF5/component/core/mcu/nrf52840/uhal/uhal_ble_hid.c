@@ -52,7 +52,7 @@
  *
  * Also it would accept pairing requests from any peer device.
  */
-
+#if 0
 #include <stdint.h>
 #include <string.h>
 #include "nordic_common.h"
@@ -1767,4 +1767,5 @@ int main(void)
 }
 */
 
+#endif
 #endif

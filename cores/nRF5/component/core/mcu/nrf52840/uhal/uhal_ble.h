@@ -65,42 +65,42 @@
 #endif // BLE_CENTRAL_SUPPORT
 
 #define APP_BLE_CONN_CFG_TAG            1                                           /**< A tag identifying the SoftDevice BLE configuration. */
-#define APP_FEATURE_NOT_SUPPORTED       BLE_GATT_STATUS_ATTERR_APP_BEGIN + 2        /**< Reply when unsupported features are requested. */
-#define DEVICE_NAME                     "RAK"                                       /**< Name of device. Will be included in the advertising data. */
-#define NUS_SERVICE_UUID_TYPE           BLE_UUID_TYPE_VENDOR_BEGIN                  /**< UUID type for the Nordic UART Service (vendor specific). */
-#define APP_BLE_OBSERVER_PRIO           2                                           /**< Application's BLE observer priority. You shouldn't need to modify this value. */
-#define APP_SOC_OBSERVER_PRIO           1                                           /**< Applications' SoC observer priority. You shouldn't need to modify this value. */
-#define APP_ADV_INTERVAL                480                                         /**< The advertising interval (in units of 0.625 ms. This value corresponds to 100 ms). */
-#define MIN_ADV_INTERVAL                100                                         /**< Minimum advertising interval 1000 ms */
+//#define APP_FEATURE_NOT_SUPPORTED       BLE_GATT_STATUS_ATTERR_APP_BEGIN + 2        /**< Reply when unsupported features are requested. */
+//#define DEVICE_NAME                     "RAK_0000"                                       /**< Name of device. Will be included in the advertising data. */
+//#define NUS_SERVICE_UUID_TYPE           BLE_UUID_TYPE_VENDOR_BEGIN                  /**< UUID type for the Nordic UART Service (vendor specific). */
+//#define APP_BLE_OBSERVER_PRIO           2                                           /**< Application's BLE observer priority. You shouldn't need to modify this value. */
+//#define APP_SOC_OBSERVER_PRIO           1                                           /**< Applications' SoC observer priority. You shouldn't need to modify this value. */
+//#define APP_ADV_INTERVAL                480                                         /**< The advertising interval (in units of 0.625 ms. This value corresponds to 100 ms). */
+//#define MIN_ADV_INTERVAL                100                                         /**< Minimum advertising interval 1000 ms */
 
-#define MIN_CONN_ADV_INTERVAL           20                                          /**  Minimum advertising interval (in ms).*/
-#define MIN_NON_CONN_ADV_INTERVAL       100                                         /**	 Minimum advertising interval for non-connectable advertisements (in ms).*/
-#define MAX_ADV_INTERVAL                10240                                       /**  Maximum advertising interval (in ms).*/
-#define APP_ADV_TIMEOUT_LIMITED_MAX     180                                         /**< Maximum advertising time in 10 ms units corresponding to TGAP(lim_adv_timeout) = 180 s in limited discoverable mode. */
-#define MIN_CONN_INTERVAL               MSEC_TO_UNITS(20, UNIT_1_25_MS)             /**< Minimum acceptable connection interval (20 ms), Connection interval uses 1.25 ms units. */
-#define MAX_CONN_INTERVAL               MSEC_TO_UNITS(75, UNIT_1_25_MS)             /**< Maximum acceptable connection interval (75 ms), Connection interval uses 1.25 ms units. */
-#define SLAVE_LATENCY                   0                                           /**< Slave latency. */
-#define CONN_SUP_TIMEOUT                MSEC_TO_UNITS(4000, UNIT_10_MS)             /**< Connection supervisory timeout (4 seconds), Supervision Timeout uses 10 ms units. */
-#define FIRST_CONN_PARAMS_UPDATE_DELAY  APP_TIMER_TICKS(5000)                       /**< Time from initiating event (connect or start of notification) to first time sd_ble_gap_conn_param_update is called (5 seconds). */
-#define NEXT_CONN_PARAMS_UPDATE_DELAY   APP_TIMER_TICKS(30000)                      /**< Time between each call to sd_ble_gap_conn_param_update after the first call (30 seconds). */
-#define MAX_CONN_PARAMS_UPDATE_COUNT    3                                           /**< Number of attempts before giving up the connection parameter negotiation. */
-#define DEAD_BEEF                       0xDEADBEEF                                  /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
+//#define MIN_CONN_ADV_INTERVAL           20                                          /**  Minimum advertising interval (in ms).*/
+//#define MIN_NON_CONN_ADV_INTERVAL       100                                         /**	 Minimum advertising interval for non-connectable advertisements (in ms).*/
+//#define MAX_ADV_INTERVAL                10240                                       /**  Maximum advertising interval (in ms).*/
+//#define APP_ADV_TIMEOUT_LIMITED_MAX     180                                         /**< Maximum advertising time in 10 ms units corresponding to TGAP(lim_adv_timeout) = 180 s in limited discoverable mode. */
+//#define MIN_CONN_INTERVAL               MSEC_TO_UNITS(20, UNIT_1_25_MS)             /**< Minimum acceptable connection interval (20 ms), Connection interval uses 1.25 ms units. */
+//#define MAX_CONN_INTERVAL               MSEC_TO_UNITS(75, UNIT_1_25_MS)             /**< Maximum acceptable connection interval (75 ms), Connection interval uses 1.25 ms units. */
+//#define SLAVE_LATENCY                   0                                           /**< Slave latency. */
+//#define CONN_SUP_TIMEOUT                MSEC_TO_UNITS(4000, UNIT_10_MS)             /**< Connection supervisory timeout (4 seconds), Supervision Timeout uses 10 ms units. */
+//#define FIRST_CONN_PARAMS_UPDATE_DELAY  APP_TIMER_TICKS(5000)                       /**< Time from initiating event (connect or start of notification) to first time sd_ble_gap_conn_param_update is called (5 seconds). */
+//#define NEXT_CONN_PARAMS_UPDATE_DELAY   APP_TIMER_TICKS(30000)                      /**< Time between each call to sd_ble_gap_conn_param_update after the first call (30 seconds). */
+//#define MAX_CONN_PARAMS_UPDATE_COUNT    3                                           /**< Number of attempts before giving up the connection parameter negotiation. */
+//#define DEAD_BEEF                       0xDEADBEEF                                  /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
 
 /*****************************************Pairing Mode*********************************/
-#define LESC_MITM_NC                    1                                               /**< Use MITM (Numeric Comparison). */
-#define SEC_PARAMS_BOND                 1                                               /**< Perform bonding. */
-#if LESC_MITM_NC
-#define SEC_PARAMS_MITM                 1                                               /**< Man In The Middle protection required. */
-#define SEC_PARAMS_IO_CAPABILITIES      BLE_GAP_IO_CAPS_DISPLAY_ONLY                    /**< Display Yes/No to force Numeric Comparison. */
-#else
-#define SEC_PARAMS_MITM                 0                                               /**< Man In The Middle protection required. */
-#define SEC_PARAMS_IO_CAPABILITIES      BLE_GAP_IO_CAPS_NONE                            /**< No I/O caps. */
-#endif
-#define SEC_PARAMS_LESC                 1                                               /**< LE Secure Connections pairing required. */
-#define SEC_PARAMS_KEYPRESS             0                                               /**< Keypress notifications not required. */
-#define SEC_PARAMS_OOB                  0                                               /**< Out Of Band data not available. */
-#define SEC_PARAMS_MIN_KEY_SIZE         7                                               /**< Minimum encryption key size in octets. */
-#define SEC_PARAMS_MAX_KEY_SIZE         16                                              /**< Maximum encryption key size in octets. */
+//#define LESC_MITM_NC                    1                                               /**< Use MITM (Numeric Comparison). */
+//#define SEC_PARAMS_BOND                 1                                               /**< Perform bonding. */
+//#if LESC_MITM_NC
+//#define SEC_PARAMS_MITM                 1                                               /**< Man In The Middle protection required. */
+//#define SEC_PARAMS_IO_CAPABILITIES      BLE_GAP_IO_CAPS_DISPLAY_ONLY                    /**< Display Yes/No to force Numeric Comparison. */
+//#else
+//#define SEC_PARAMS_MITM                 0                                               /**< Man In The Middle protection required. */
+//#define SEC_PARAMS_IO_CAPABILITIES      BLE_GAP_IO_CAPS_NONE                            /**< No I/O caps. */
+//#endif
+//#define SEC_PARAMS_LESC                 1                                               /**< LE Secure Connections pairing required. */
+//#define SEC_PARAMS_KEYPRESS             0                                               /**< Keypress notifications not required. */
+//#define SEC_PARAMS_OOB                  0                                               /**< Out Of Band data not available. */
+//#define SEC_PARAMS_MIN_KEY_SIZE         7                                               /**< Minimum encryption key size in octets. */
+//#define SEC_PARAMS_MAX_KEY_SIZE         16                                              /**< Maximum encryption key size in octets. */
 /***************************************************************************************/
 
 //extern rui_cfg_t g_rui_cfg_t;
@@ -114,19 +114,19 @@
 //static ble_evt_connect uhal_ble_evt_connect_callback = NULL; 
 //static ble_evt_disconnect uhal_ble_evt_disconnect_callback = NULL;
 /*************************************Define for Beacon Mode***********************************************/
-#define APP_BEACON_INFO_LENGTH          0x17                               /**< Total length of information advertised by the Beacon. */
-#define APP_ADV_DATA_LENGTH             0x15                               /**< Length of manufacturer specific data in the advertisement. */
-#define APP_DEVICE_TYPE                 0x02                               /**< 0x02 refers to Beacon. */
-#define APP_MEASURED_RSSI               0xC3                               /**< The Beacon's measured RSSI at 1 meter distance in dBm. */
-#define APP_COMPANY_IDENTIFIER          0x00FF                             /**< Company identifier for Nordic Semiconductor ASA(0x0059). as per www.bluetooth.org. */
-#define APP_MAJOR_VALUE                 0x01, 0x02                         /**< Major value used to identify Beacons. */
-#define APP_MINOR_VALUE                 0x03, 0x04                         /**< Minor value used to identify Beacons. */
-#define APP_BEACON_UUID                 0x01, 0x12, 0x23, 0x34, \
-                                        0x45, 0x56, 0x67, 0x78, \
-                                        0x89, 0x9a, 0xab, 0xbc, \
-                                        0xcd, 0xde, 0xef, 0xf0            /**< Proprietary UUID for Beacon. */
-#define UUID_VAL_OFFSET_IN_BEACON_INFO  1                                  /**< Position of the MSB of the UUID Value in m_beacon_info array. */
-#define MAJ_VAL_OFFSET_IN_BEACON_INFO   18                                 /**< Position of the MSB of the Major Value in m_beacon_info array. */
+//#define APP_BEACON_INFO_LENGTH          0x17                               /**< Total length of information advertised by the Beacon. */
+//#define APP_ADV_DATA_LENGTH             0x15                               /**< Length of manufacturer specific data in the advertisement. */
+//#define APP_DEVICE_TYPE                 0x02                               /**< 0x02 refers to Beacon. */
+//#define APP_MEASURED_RSSI               0xC3                               /**< The Beacon's measured RSSI at 1 meter distance in dBm. */
+//#define APP_COMPANY_IDENTIFIER          0x00FF                             /**< Company identifier for Nordic Semiconductor ASA(0x0059). as per www.bluetooth.org. */
+//#define APP_MAJOR_VALUE                 0x01, 0x02                         /**< Major value used to identify Beacons. */
+//#define APP_MINOR_VALUE                 0x03, 0x04                         /**< Minor value used to identify Beacons. */
+//#define APP_BEACON_UUID                 0x01, 0x12, 0x23, 0x34, \
+//                                        0x45, 0x56, 0x67, 0x78, \
+//                                        0x89, 0x9a, 0xab, 0xbc, \
+//                                        0xcd, 0xde, 0xef, 0xf0            /**< Proprietary UUID for Beacon. */
+//#define UUID_VAL_OFFSET_IN_BEACON_INFO  1                                  /**< Position of the MSB of the UUID Value in m_beacon_info array. */
+//#define MAJ_VAL_OFFSET_IN_BEACON_INFO   18                                 /**< Position of the MSB of the Major Value in m_beacon_info array. */
 
 /*************************************Define for Beacon Mode***********************************************/
 

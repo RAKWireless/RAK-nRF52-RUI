@@ -50,7 +50,7 @@
  * It can easily be used as a starting point for creating a new application, the comments identified
  * with 'YOUR_JOB' indicates where and how you can customize.
  */
-
+#if 0
 #include "uhal_cus_ble.h"
 
 extern uint32_t uhal_ble_wlock_cnt;
@@ -1312,7 +1312,7 @@ int main(void)
     }
 }
  */
-
+#endif
 /**
  * @}
  */

@@ -11749,7 +11749,7 @@
 
 // <o> NRF_SDH_BLE_VS_UUID_COUNT - The number of vendor-specific UUIDs. 
 #ifndef NRF_SDH_BLE_VS_UUID_COUNT
-#define NRF_SDH_BLE_VS_UUID_COUNT 3
+#define NRF_SDH_BLE_VS_UUID_COUNT 21
 #endif
 
 #else
@@ -11761,7 +11761,7 @@
 
 // <o> NRF_SDH_BLE_VS_UUID_COUNT - The number of vendor-specific UUIDs. 
 #ifndef NRF_SDH_BLE_VS_UUID_COUNT
-#define NRF_SDH_BLE_VS_UUID_COUNT 8 //Default 2 ,change from HID implement
+#define NRF_SDH_BLE_VS_UUID_COUNT 21 //Default 2 ,change from HID implement
 #endif
 
 #endif

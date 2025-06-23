@@ -53,7 +53,7 @@
 
 #ifndef BLE_CUS_H__
 #define BLE_CUS_H__
-
+/*
 #include <stdint.h>
 #include <stdbool.h>
 #include "ble.h"
@@ -96,7 +96,7 @@
 #define CUSTOM_VALUE_CHAR_UUID_2          0x1402
 #define CHARACTERISTIC_MAX_NUM  3
 static uint16_t custom_service_uuid = CUSTOM_SERVICE_UUID;
-
+*/
 // Forward declaration of the ble_cus_t type.
 typedef struct ble_cus_s ble_cus_t;
 
@@ -105,12 +105,13 @@ typedef struct ble_cus_s ble_cus_t;
  * @param   _name Name of the instance.
  * @hideinitializer
  */
+/*
 #define BLE_CUS_DEF(_name)                                                                          \
 static ble_cus_t _name;                                                                             \
 NRF_SDH_BLE_OBSERVER(_name ## _obs,                                                                 \
                      BLE_HRS_BLE_OBSERVER_PRIO,                                                     \
                      ble_cus_on_ble_evt, &_name)
-
+*/
 
 /**@brief Custom Service event type. */
 typedef enum
@@ -146,7 +147,7 @@ struct ble_cus_s
 {
     ble_cus_evt_handler_t         evt_handler;                    /**< Event handler to be called for handling events in the Custom Service. */
     uint16_t                      service_handle;                 /**< Handle of Custom Service (as provided by the BLE stack). */
-    ble_gatts_char_handles_t      custom_value_handles[CHARACTERISTIC_MAX_NUM];           /**< Handles related to the Custom Value characteristic. */
+    //ble_gatts_char_handles_t      custom_value_handles[CHARACTERISTIC_MAX_NUM];           /**< Handles related to the Custom Value characteristic. */
     //ble_gatts_char_handles_t      custom_value_handles_2;         /**< Handles related to the Custom Value characteristic. */
     uint16_t                      conn_handle;                    /**< Handle of the current connection (as provided by the BLE stack, is BLE_CONN_HANDLE_INVALID if not in a connection). */
     uint8_t                       uuid_type; 
@@ -162,7 +163,7 @@ typedef struct
     uint8_t *notify_data;
     uint8_t is_notify_enable;
 } cus_characteristic_attribute_t;
-
+/*
 void uhal_ble_cus_register_notify_handler (BLE_CUS_NOTIFY_HANDLER handler);
 void uhal_ble_cus_register_send_handler (BLE_CUS_SEND_HANDLER handler);
 void ble_cus_on_ble_evt(ble_evt_t const * p_ble_evt, void * p_context);
@@ -181,5 +182,5 @@ void cus_advertising_start(bool erase_bonds);
 void cus_notify(uint8_t *notify_data, uint16_t chars_uuid);  //send to smart phone apps
 void cus_write(uint8_t *send_data, uint16_t chars_uuid);     //send to smart phone apps
 uint8_t cus_is_notifyEnabled(uint16_t chars_uuid);
-
+*/
 #endif // BLE_CUS_H__
