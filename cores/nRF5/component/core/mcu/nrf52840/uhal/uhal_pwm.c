@@ -133,7 +133,7 @@ int32_t uhal_pwm_set_duty(udrv_pwm_port port, uint32_t duty) {
 
         ready_flag[port] = false;
 	while (app_pwm_channel_duty_set(&PWM0, 0, duty) == NRF_ERROR_BUSY);
-        while (!ready_flag[port]);
+        //while (!ready_flag[port]);
         pwm_status[port].duty = duty;
 #endif
     } else if (port == UDRV_PWM_1) {
@@ -144,7 +144,7 @@ int32_t uhal_pwm_set_duty(udrv_pwm_port port, uint32_t duty) {
 
         ready_flag[port] = false;
 	while (app_pwm_channel_duty_set(&PWM1, 0, duty) == NRF_ERROR_BUSY);
-        while (!ready_flag[port]);
+        //while (!ready_flag[port]);
         pwm_status[port].duty = duty;
 #endif
     } else if (port == UDRV_PWM_2) {
@@ -155,7 +155,7 @@ int32_t uhal_pwm_set_duty(udrv_pwm_port port, uint32_t duty) {
 
         ready_flag[port] = false;
 	while (app_pwm_channel_duty_set(&PWM2, 0, duty) == NRF_ERROR_BUSY);
-        while (!ready_flag[port]);
+        //while (!ready_flag[port]);
         pwm_status[port].duty = duty;
 #endif
     }
