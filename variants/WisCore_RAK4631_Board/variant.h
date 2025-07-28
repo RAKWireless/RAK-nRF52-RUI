@@ -95,8 +95,8 @@ extern const uint32_t g_ADigitalPinMap[];
 #define WB_SW1                 P1_01//33          // IO_SLOT
 #define WB_A0                  P0_05//5           // IO_SLOT
 #define WB_A1                  P0_31//31          // IO_SLOT
-#define WB_I2C1_SDA            P0_13//13          // SLOT_A SLOT_B SLOT_C SLOT_D IO_SLOT
-#define WB_I2C1_SCL            P0_14//14          // SLOT_A SLOT_B SLOT_C SLOT_D IO_SLOT
+#define WB_I2C1_SDA            P0_25//13          // SLOT_A SLOT_B SLOT_C SLOT_D IO_SLOT
+#define WB_I2C1_SCL            P0_24//14          // SLOT_A SLOT_B SLOT_C SLOT_D IO_SLOT
 #define WB_I2C2_SDA            P0_24//24          // IO_SLOT
 #define WB_I2C2_SCL            P0_25//25          // IO_SLOT
 #define WB_SPI_CS              P0_26//26          // SLOT_A SLOT_B SLOT_C SLOT_D IO_SLOT
