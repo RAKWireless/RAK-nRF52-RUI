@@ -27,12 +27,12 @@ static uhal_pwm_status_t pwm_status[UDRV_PWM_MAX];
 
 static UDRV_PWM_RESOLUTION pwm_resolution = UDRV_PWM_RESOLUTION_8BIT;
 
-static volatile bool ready_flag[UDRV_PWM_MAX];            // A flag indicating PWM status.
+static volatile bool ready_flag;            // A flag indicating PWM status.
 
 void pwm_ready_callback(uint32_t pwm_id)    // PWM callback function
 {
     //udrv_serial_log_printf("pwm_id=%u\r\n", pwm_id);
-    ready_flag[pwm_id] = true;
+    ready_flag = true;
 }
 
 UDRV_PWM_RESOLUTION uhal_pwm_get_resolution (void) {
@@ -61,19 +61,19 @@ static void pwm_init(udrv_pwm_port port, uint32_t freq_hz, uint8_t is_invert, ui
 #if (APP_PWM_ENABLED && TIMER1_ENABLED)
         err_code = app_pwm_init(&PWM0, &pwm_cfg, pwm_ready_callback);
         APP_ERROR_CHECK(err_code);
-        ready_flag[port] = true;
+        ready_flag = true;
 #endif
     } else if (port == UDRV_PWM_1) {
 #if (APP_PWM_ENABLED && TIMER2_ENABLED)
         err_code = app_pwm_init(&PWM1, &pwm_cfg, pwm_ready_callback);
         APP_ERROR_CHECK(err_code);
-        ready_flag[port] = true;
+        ready_flag = true;
 #endif
     } else if (port == UDRV_PWM_2) {
 #if (APP_PWM_ENABLED && TIMER3_ENABLED)
         err_code = app_pwm_init(&PWM2, &pwm_cfg, pwm_ready_callback);
         APP_ERROR_CHECK(err_code);
-        ready_flag[port] = true;
+        ready_flag = true;
 #endif
     }
 }
@@ -129,33 +129,33 @@ int32_t uhal_pwm_set_duty(udrv_pwm_port port, uint32_t duty) {
 #if (APP_PWM_ENABLED && TIMER1_ENABLED)
         if (pwm_status[port].enabled == false) {
             return -UDRV_NOT_INIT;
-	}
+        }
 
-        ready_flag[port] = false;
-	while (app_pwm_channel_duty_set(&PWM0, 0, duty) == NRF_ERROR_BUSY);
-        while (!ready_flag[port]);
+        ready_flag = false;
+        while (app_pwm_channel_duty_set(&PWM0, 0, duty) == NRF_ERROR_BUSY);
+        while (!ready_flag);
         pwm_status[port].duty = duty;
 #endif
     } else if (port == UDRV_PWM_1) {
 #if (APP_PWM_ENABLED && TIMER2_ENABLED)
         if (pwm_status[port].enabled == false) {
             return -UDRV_NOT_INIT;
-	}
+        }
 
-        ready_flag[port] = false;
-	while (app_pwm_channel_duty_set(&PWM1, 0, duty) == NRF_ERROR_BUSY);
-        while (!ready_flag[port]);
+        ready_flag = false;
+        while (app_pwm_channel_duty_set(&PWM1, 0, duty) == NRF_ERROR_BUSY);
+        while (!ready_flag);
         pwm_status[port].duty = duty;
 #endif
     } else if (port == UDRV_PWM_2) {
 #if (APP_PWM_ENABLED && TIMER3_ENABLED)
         if (pwm_status[port].enabled == false) {
             return -UDRV_NOT_INIT;
-	}
+        }
 
-        ready_flag[port] = false;
-	while (app_pwm_channel_duty_set(&PWM2, 0, duty) == NRF_ERROR_BUSY);
-        while (!ready_flag[port]);
+        ready_flag = false;
+        while (app_pwm_channel_duty_set(&PWM2, 0, duty) == NRF_ERROR_BUSY);
+        while (!ready_flag);
         pwm_status[port].duty = duty;
 #endif
     }
