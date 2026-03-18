@@ -67,4 +67,10 @@ out/external/lora/LoRaMac-node-4.7.0/src/mac/region/RegionUS915.c: \
  /home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_sd_def.h \
  /home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/components/softdevice/s140/headers/nrf_soc.h \
  /home/jenkins/workspace/RUI_Release/rui-v3/external/nRF5_SDK/nRF5_SDK_17.0.2_d674dde/modules/nrfx/drivers/nrfx_errors.h \
- /home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/variant.h
+ /home/jenkins/workspace/RUI_Release/rui-v3/component/core/board/rak4630/variant.h \
+ /home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/service_lora.h \
+ /home/jenkins/workspace/RUI_Release/rui-v3/component/service/lora/LmHandler/LmHandlerTypes.h \
+ /home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.7.0/src/mac/secure-element.h \
+ /home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.7.0/src/mac/LoRaMacCrypto.h \
+ /home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.7.0/src/mac/LoRaMacMessageTypes.h \
+ /home/jenkins/workspace/RUI_Release/rui-v3/external/lora/LoRaMac-node-4.7.0/src/mac/LoRaMacHeaderTypes.h
