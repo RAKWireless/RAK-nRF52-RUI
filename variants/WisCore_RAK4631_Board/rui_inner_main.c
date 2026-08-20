@@ -500,6 +500,7 @@ void rui_init(void)
     udrv_system_event_init();
 
 #ifdef SUPPORT_LORA
+    service_lora_schedule_auto_join();
 #ifdef LORA_STACK_104
     if(service_nvm_get_certi_from_nvm() == 1)
         service_lora_certification(1);
@@ -520,6 +521,12 @@ void rui_running(void)
     {
         Radio.IrqProcess( );
     }
+
+    // Processes the LoRaMac events
+    LoRaMacProcess( );
+
+    // Call all packages process functions
+    LmHandlerPackagesProcess( );
 #endif
 #endif
 
