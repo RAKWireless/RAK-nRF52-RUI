@@ -56,6 +56,9 @@ void SystemCoreClockUpdate(void)
 
 void SystemInit(void)
 {
+    /* Workaround for Errata 246 "SYSTEM: Intermittent extra current consumption when going to sleep". */
+    *(volatile uint32_t *)0x4007AC84UL = 0x00000002UL;
+
     /* Enable SWO trace functionality. If ENABLE_SWO is not defined, SWO pin will be used as GPIO (see Product
        Specification to see which one). */
     #if defined (ENABLE_SWO)

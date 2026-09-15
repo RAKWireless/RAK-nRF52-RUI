@@ -117,6 +117,11 @@ void SX126xInit( DioIrqHandler dioIrq )
     SX126xIoIrqInit( dioIrq );
 
     SX126xWakeup( );
+#if defined( rak11720 )
+    // Match CheckDeviceReady: keep the RF switch powered while the radio is awake.
+    // Wakeup sets standby directly, so the following commands will not enable it.
+    SX126xAntSwOn( );
+#endif
     SX126xSetStandby( STDBY_RC );
 
     // Initialize TCXO control

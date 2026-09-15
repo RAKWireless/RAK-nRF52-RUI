@@ -2,6 +2,7 @@
 #include "nrf_log.h"
 #include "udrv_system.h"
 #include "udrv_serial.h"
+#include "udrv_rtc.h"
 
 #ifdef SUPPORT_BLE
 #define NRF_BLE_GQ_QUEUE_SIZE   4
@@ -222,30 +223,58 @@ int32_t uhal_nus_read(uint8_t *Buffer, int32_t NumberOfBytes)
     return (int32_t)nrf_queue_out(&ble_rxq, Buffer, NumberOfBytes);
 }
 
-int32_t uhal_nus_write(uint8_t *pdata, uint16_t length)
+#define UHAL_NUS_TX_TIMEOUT_MS 100U
+
+static int32_t uhal_nus_send_chunk(uint8_t *data, uint16_t length)
 {
+    uint64_t deadline =
+        udrv_rtc_get_timestamp((RtcID_E)SYS_RTC_COUNTER_PORT) +
+        UHAL_NUS_TX_TIMEOUT_MS;
     uint32_t ret;
 
-    if (m_conn_handle != BLE_CONN_HANDLE_INVALID) {
-        uint8_t *p = pdata;
-        uint16_t remaining = length, chunk_len = BLE_NUS_MAX_DATA_LEN;
-        while (remaining > BLE_NUS_MAX_DATA_LEN) {
-            while ((ret = ble_nus_data_send(&m_nus, p, &chunk_len, m_conn_handle))) {
-                if (ret == NRF_ERROR_INVALID_STATE || ret == NRF_ERROR_INVALID_PARAM) {
-                    return -UDRV_INTERNAL_ERR;
-                }
-                NRF_LOG_ERROR("sending failed. (%u)", ret);
+    for (;;)
+    {
+        uint16_t send_length = length;
+
+        ret = ble_nus_data_send(&m_nus, data, &send_length, m_conn_handle);
+        if (ret == NRF_SUCCESS)
+        {
+            return UDRV_RETURN_OK;
+        }
+        if ((ret == NRF_ERROR_INVALID_STATE) ||
+            (ret == NRF_ERROR_INVALID_PARAM))
+        {
+            return -UDRV_INTERNAL_ERR;
+        }
+        if (udrv_rtc_get_timestamp((RtcID_E)SYS_RTC_COUNTER_PORT) >=
+            deadline)
+        {
+            NRF_LOG_ERROR("NUS tx timed out, dropping %u bytes. (%u)",
+                          length, ret);
+            return -UDRV_BUSY;
+        }
+    }
+}
+
+int32_t uhal_nus_write(uint8_t *pdata, uint16_t length)
+{
+    if (m_conn_handle != BLE_CONN_HANDLE_INVALID)
+    {
+        uint8_t *data = pdata;
+        uint16_t remaining = length;
+        int32_t ret;
+
+        while (remaining > BLE_NUS_MAX_DATA_LEN)
+        {
+            ret = uhal_nus_send_chunk(data, BLE_NUS_MAX_DATA_LEN);
+            if (ret != UDRV_RETURN_OK)
+            {
+                return ret;
             }
-            p += BLE_NUS_MAX_DATA_LEN;
+            data += BLE_NUS_MAX_DATA_LEN;
             remaining -= BLE_NUS_MAX_DATA_LEN;
         }
-        while ((ret = ble_nus_data_send(&m_nus, p, &remaining, m_conn_handle))) {
-            if (ret == NRF_ERROR_INVALID_STATE || ret == NRF_ERROR_INVALID_PARAM) {
-                return -UDRV_INTERNAL_ERR;
-            }
-            NRF_LOG_ERROR("sending failed. (%u)", ret);
-        }
-        return UDRV_RETURN_OK;
+        return uhal_nus_send_chunk(data, remaining);
     }
     return -UDRV_INTERNAL_ERR;
 }
